@@ -1,54 +1,54 @@
 /* eslint-disable no-unused-vars */
 import { ICheck, IConnect } from './interfaces'
 import {
-  IResMainCategory,
-  IResRecommendMainCategory,
-  IResBanner,
-  IResProduct,
-  IResTop20Products,
-  IResCategoryWithChild,
-  IResCategory,
-  IResRecommendCategory,
   IResAllCategoryInSearchTool,
-  IResSupplierHilight,
-  IResMessageList,
-  IResMessageDetail,
-  IResSavedListProducts,
-  IResSavedListSuppliers,
+  IResBanner,
+  IResCategory,
+  IResCategoryWithChild,
   IResFilterResultProduct,
-  IResProductGroupDetail,
+  IResFilterResultSupplier,
+  IResGetPaymentMethod,
+  IResInquiryProductList,
+  IResInterest,
+  IResMainCategory,
+  IResMessageDetail,
+  IResMessageList,
+  IResProduct,
   IResProductDescription,
   IResProductDetail,
+  IResProductGroupDetail,
   IResProductV2,
   IResProductWithCount,
-  IResRecommendSupplier,
-  IResFilterResultSupplier,
-  IResSupplierWithSavedList,
-  IResSupplierOverview,
-  IResSupplierContact,
-  IResSupplierFactory,
-  IResSupplierCersAndDocs,
-  IResSupplierImgAndVerifiedImg,
-  IResSupplierCustomPage,
-  IResRfqScore,
-  IResQuotaRfq,
-  IResShippingMethod,
-  IResGetPaymentMethod,
-  IResRfqList,
-  IResReplyRfqList,
   IResQuotaInquiry,
-  IResSupplier,
-  IResInquiryProductList,
+  IResQuotaRfq,
+  IResRecommendCategory,
+  IResRecommendMainCategory,
+  IResRecommendSupplier,
+  IResReplyRfqList,
+  IResRfqList,
+  IResRfqScore,
+  IResSavedListProducts,
+  IResSavedListSuppliers,
   IResSearchResultLocation,
-  IResInterest
+  IResShippingMethod,
+  IResSupplier,
+  IResSupplierCersAndDocs,
+  IResSupplierContact,
+  IResSupplierCustomPage,
+  IResSupplierFactory,
+  IResSupplierHilight,
+  IResSupplierImgAndVerifiedImg,
+  IResSupplierOverview,
+  IResSupplierWithSavedList,
+  IResTop20Products
 } from './type-marketplace'
 
-export namespace geeesy {
+export namespace Geeesy {
   export type ResConnect = IConnect;
   export type ResCheck = ICheck;
 }
 
-export namespace geeesyMarketplace {
+export namespace GeeesyMarketplace {
   export type IMainCategory = IResMainCategory;
   export type IRecommendMainCategory = IResRecommendMainCategory;
   export type IBanner = IResBanner;
