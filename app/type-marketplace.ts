@@ -1,652 +1,591 @@
 export interface IResMainCategory {
-    category_main_id: string;
-    category_main_name: string;
-    category_main_icon_url: string;
-    category_main_image_url: string;
-    imp_factor: string;
+    categoryMainId: string;
+    categoryMainName: string;
+    categoryMainIconUrl: string;
+    categoryMainImageUrl: string;
+    impFactor: string;
   }
-  
-  export interface IResRecommendMainCategory {
-    category_id: string;
-    category_name: string;
-    category_image_url: string;
-    imp_factor: number;
-    supplier_count: number;
-    product_count: number;
+export interface IResRecommendMainCategory {
+    categoryId: string;
+    categoryName: string;
+    categoryImageUrl: string;
+    impFactor: number;
+    supplierCount: number;
+    productCount: number;
   }
-  
-  export interface IResBanner {
-    banner_title: string;
-    banner_link_url: string;
-    banner_image_url: string;
-    banner_sort_index: number;
+export interface IResBanner {
+    bannerTitle: string;
+    bannerLinkUrl: string;
+    bannerImageUrl: string;
+    bannerSortIndex: number;
   }
-  
-  export interface IResProduct {
-    product_id: string;
-    product_name: string;
-    product_image_url: string;
-    product_price: number;
-    product_unit: string;
-    product_currency_code: string;
-    pack_size_label: string;
-    pack_size_qty: number;
-    imp_factor: number;
-    min_order_qty: number;
-    product_group: IProductGroup;
-    supplier_id: string;
-    supplier_name: string;
-    supplier_verified: boolean;
+export interface IResProduct {
+    productId: string;
+    productName: string;
+    productImageUrl: string;
+    productPrice: number;
+    productUnit: string;
+    productCurrencyCode: string;
+    packSizeLabel: string;
+    packSizeQty: number;
+    impFactor: number;
+    minOrderQty: number;
+    productGroup: IProductGroup;
+    supplierId: string;
+    supplierName: string;
+    supplierVerified: boolean;
     savedlists: SavedList[];
   }
-  
   interface IProductGroup {
-    product_group_id: string;
-    product_group_name: string;
-    product_group_image_url: string;
+    productGroupId: string;
+    productGroupName: string;
+    productGroupImageUrl: string;
   }
-  
-  export interface IResRecommendProduct {} // Like a IProduct
-  
-  export interface IResTop20ProductsByCategory {} // Like a IProduct
-  
-  export interface IResTop20Products {
-    product_id: string;
-    product_name: string;
-    product_image_url: string;
-    product_group: IProductGroup;
+export interface IResRecommendProduct {} // Like a IProduct
+export interface IResTop20ProductsByCategory {} // Like a IProduct
+export interface IResTop20Products {
+    productId: string;
+    productName: string;
+    productImageUrl: string;
+    productGroup: IProductGroup;
     savedlists: SavedList[];
   }
-  
-  export interface IResCategoryWithChild {
-    category_id: string;
-    category_name: string;
-    category_image_url: string;
-    imp_factor: number;
-    child_categories: IChildCategory[];
+export interface IResCategoryWithChild {
+    categoryId: string;
+    categoryName: string;
+    categoryImageUrl: string;
+    impFactor: number;
+    childCategories: IChildCategory[];
   }
-  
-  export interface IResCategory {
-    category_id: string;
-    category_name: string;
-    category_icon_url: string;
-    category_image_url: string;
-    imp_factor: number;
+export interface IResCategory {
+    categoryId: string;
+    categoryName: string;
+    categoryIconUrl: string;
+    categoryImageUrl: string;
+    impFactor: number;
   }
-  
-  export interface IResRecommendCategory {
-    category_id: string;
-    category_name: string;
-    category_image_url: string;
-    supplier_count: number;
-    product_count: number;
-    imp_factor: number;
+export interface IResRecommendCategory {
+    categoryId: string;
+    categoryName: string;
+    categoryImageUrl: string;
+    supplierCount: number;
+    productCount: number;
+    impFactor: number;
   }
-  
-  interface IChildCategory {
-    category_id: string;
-    category_name: string;
-    imp_factor: number;
+interface IChildCategory {
+    categoryId: string;
+    categoryName: string;
+    impFactor: number;
   }
-  
-  export interface IResAllCategoryInSearchTool {
-    category_id: string;
-    category_name: string;
+export interface IResAllCategoryInSearchTool {
+    categoryId: string;
+    categoryName: string;
   }
-  
-  export interface IResSupplierHilight {
-    supplier_id: string;
-    supplier_name: string;
-    supplier_logo_url: string;
-    imp_factor: number;
+export interface IResSupplierHilight {
+    supplierId: string;
+    supplierName: string;
+    supplierLogoUrl: string;
+    impFactor: number;
   }
-  
-  export interface IResRelatedProducts {} // Like a IProduct
-  
-  export interface ICreateLatestVisitProducts {
-    user_id: string;
-    product_id: string;
-    product_name: string;
-    product_image_url: string;
-    product_price: number;
-    product_unit: string;
-    product_currency_code: string;
-    pack_size_label: string;
-    pack_size_qty: number;
-    imp_factor: number;
-    min_order_qty: number;
-    product_group: IProductGroup;
-    supplier_id: string;
-    supplier_name: string;
-    supplier_verified: boolean;
+export interface IResRelatedProducts {} // Like a IProduct
+export interface ICreateLatestVisitProducts {
+    userId: string;
+    productId: string;
+    productName: string;
+    productImageUrl: string;
+    productPrice: number;
+    productUnit: string;
+    productCurrencyCode: string;
+    packSizeLabel: string;
+    packSizeQty: number;
+    impFactor: number;
+    minOrderQty: number;
+    productGroup: IProductGroup;
+    supplierId: string;
+    supplierName: string;
+    supplierVerified: boolean;
     savedlists: SavedList[];
-  } // Like a IProduct + user_id
-  
-  export interface IResLatestVisitProducts {} // Like a Products
-  
-  export interface ICreateMessage {
+  } // Like a IProduct + userId
+export interface IResLatestVisitProducts {} // Like a Products
+export interface ICreateMessage {
     msg: string;
-    user_id: string;
-    msg_file_url: string[];
-    supplier_id: string;
+    userId: string;
+    msgFileUrl: string[];
+    supplierId: string;
   }
-  
-  export interface ICreateMessageReply {
-    user_id: string;
-    msg_name: string;
-    supplier_id: number;
+export interface ICreateMessageReply {
+    userId: string;
+    msgName: string;
+    supplierId: number;
   }
-  
-  export interface IResMessageList {
-    user_id: string;
-    supplier_logo_url: string;
-    msg_id: string;
-    msg_name: string;
-    supplier_id: string;
-    supplier_name: string;
-    msg_date: Date;
+export interface IResMessageList {
+    userId: string;
+    supplierLogoUrl: string;
+    msgId: string;
+    msgName: string;
+    supplierId: string;
+    supplierName: string;
+    msgDate: Date;
     unread: boolean;
   }
-  
-  export interface IResMessageDetail {
+export interface IResMessageDetail {
     msg: string;
-    msg_date: Date;
-    msg_file_url: string;
-    msg_is_replied: boolean;
+    msgDate: Date;
+    msgFileUrl: string;
+    msgIsReplied: boolean;
   }
-  
-  export interface ICreateSavedListProduct {
-    user_id: string;
-    savedlist_name: string;
-    product_id: string;
-    product_name: string;
-    product_image_url: string;
-    product_price: number;
-    product_unit: string;
-    product_currency_code: string;
-    pack_size_label: string;
-    pack_size_qty: number;
-    imp_factor: number;
-    product_group: IProductGroup;
-    supplier_id: number;
-    supplier_name: string;
-    supplier_company_email: string;
-    supplier_keyword: string[];
-    supplier_verified: boolean;
-    supplier_rating: number;
+export interface ICreateSavedListProduct {
+    userId: string;
+    savedlistName: string;
+    productId: string;
+    productName: string;
+    productImageUrl: string;
+    productPrice: number;
+    productUnit: string;
+    productCurrencyCode: string;
+    packSizeLabel: string;
+    packSizeQty: number;
+    impFactor: number;
+    productGroup: IProductGroup;
+    supplierId: number;
+    supplierName: string;
+    supplierCompanyEmail: string;
+    supplierKeyword: string[];
+    supplierVerified: boolean;
+    supplierRating: number;
     address: IAddress;
   }
-  
-  export interface IResSavedListProducts {
-    savedlist_id: string;
-    savedlist_name: string;
+export interface IResSavedListProducts {
+    savedlistId: string;
+    savedlistName: string;
     products: [
       {
-        product_id: string;
-        product_name: string;
-        product_image_url: string;
-        product_price: number;
-        product_unit: string;
-        product_currency_code: string;
-        pack_size_label: string;
-        pack_size_qty: number;
-        imp_factor: number;
-        product_group: IProductGroup;
-        supplier_id: string;
-        supplier_name: string;
-        supplier_company_email: string;
-        supplier_keyword: string[];
-        supplier_verified: boolean;
-        supplier_rating: number;
+        productId: string;
+        productName: string;
+        productImageUrl: string;
+        productPrice: number;
+        productUnit: string;
+        productCurrencyCode: string;
+        packSizeLabel: string;
+        packSizeQty: number;
+        impFactor: number;
+        productGroup: IProductGroup;
+        supplierId: string;
+        supplierName: string;
+        supplierCompanyEmail: string;
+        supplierKeyword: string[];
+        supplierVerified: boolean;
+        supplierRating: number;
         address: IAddress;
       }
     ];
-    supplier_count: number;
-    product_count: number;
+    supplierCount: number;
+    productCount: number;
   }
-  
-  interface SavedList {
-    savedlist_id: string;
-    savedlist_name: string;
+interface SavedList {
+    savedlistId: string;
+    savedlistName: string;
   }
-  
-  export interface ICreateSavedListSupplier {
-    user_id: string;
-    savedlist_name: string;
-    supplier_id: string;
-    supplier_name: string;
-    supplier_company_email: string;
-    supplier_keyword: string[];
-    supplier_verified: boolean;
-    supplier_rating: number;
-    supplier_company_website: string;
-    imp_factor: number;
+export interface ICreateSavedListSupplier {
+    userId: string;
+    savedlistName: string;
+    supplierId: string;
+    supplierName: string;
+    supplierCompanyEmail: string;
+    supplierKeyword: string[];
+    supplierVerified: boolean;
+    supplierRating: number;
+    supplierCompanyWebsite: string;
+    impFactor: number;
     address: IAddress;
-    shipping_zone: IShippingZone[];
+    shippingZone: IShippingZone[];
     products: IProductWithOutSupplier[];
-    supplier_count: number;
-    product_count: number;
+    supplierCount: number;
+    productCount: number;
   }
-  
-  export interface IResSavedListSuppliers {
-    savedlist_id: string;
-    savedlist_name: string;
+export interface IResSavedListSuppliers {
+    savedlistId: string;
+    savedlistName: string;
     suppliers: ISuppliers[];
-    supplier_count: number;
-    product_count: number;
+    supplierCount: number;
+    productCount: number;
   }
-  
-  interface ISuppliers {
-    supplier_id: string;
-    supplier_name: string;
-    supplier_company_email: string;
-    supplier_keyword: string[];
-    supplier_verified: boolean;
-    supplier_rating: number;
-    supplier_company_website: string;
-    imp_factor: number;
+interface ISuppliers {
+    supplierId: string;
+    supplierName: string;
+    supplierCompanyEmail: string;
+    supplierKeyword: string[];
+    supplierVerified: boolean;
+    supplierRating: number;
+    supplierCompanyWebsite: string;
+    impFactor: number;
     address: IAddress;
-    shipping_zone: IShippingZone[];
+    shippingZone: IShippingZone[];
     products: IProductWithOutSupplier[];
   }
-  
-  interface IProductWithOutSupplier {
-    product_id: string;
-    product_name: string;
-    product_image_url: string;
-    product_price: number;
-    product_unit: string;
-    product_currency_code: string;
-    pack_size_label: string;
-    pack_size_qty: number;
-    imp_factor: number;
-    min_order_qty: number;
-    product_group: IProductGroup;
+interface IProductWithOutSupplier {
+    productId: string;
+    productName: string;
+    productImageUrl: string;
+    productPrice: number;
+    productUnit: string;
+    productCurrencyCode: string;
+    packSizeLabel: string;
+    packSizeQty: number;
+    impFactor: number;
+    minOrderQty: number;
+    productGroup: IProductGroup;
     savedlists: SavedList[];
   }
-  
-  interface IShippingZone {
-    zone_name: string;
-    shipping_method: IShippingMethodInShippingZone[];
+interface IShippingZone {
+    zoneName: string;
+    shippingMethod: IShippingMethodInShippingZone[];
   }
-  
-  interface IShippingMethodInShippingZone {
-    shipping_method_name: string;
-    shipping_method_icon_url: string;
+interface IShippingMethodInShippingZone {
+    shippingMethodName: string;
+    shippingMethodIconUrl: string;
   }
-  
-  interface IAddress {
-    addr_name: string;
-    addr_full: string;
-    addr_number: string;
-    addr_province: string;
-    addr_amphoe: string;
-    addr_tambon: string;
-    addr_postcode: string;
-    addr_phone: string[];
-    addr_mobile: string[];
-    addr_fax: string[];
-    addr_lat: string;
-    addr_lng: string;
+interface IAddress {
+    addrName: string;
+    addrFull: string;
+    addrNumber: string;
+    addrProvince: string;
+    addrAmphoe: string;
+    addrTambon: string;
+    addrPostcode: string;
+    addrPhone: string[];
+    addrMobile: string[];
+    addrFax: string[];
+    addrLat: string;
+    addrLng: string;
   }
-  
-  export interface IResFilterResultProduct {
-    product_id: string;
-    product_name: string;
-    product_image_url: string;
-    product_price: number;
-    product_unit: string;
-    product_currency_code: string;
-    pack_size_label: string;
-    pack_size_qty: number;
-    imp_factor: number;
-    product_group: IProductGroup;
-    supplier_id: number;
-    supplier_name: string;
-    supplier_company_email: string;
-    supplier_keyword: string[];
-    supplier_verified: boolean;
-    supplier_rating: number;
+export interface IResFilterResultProduct {
+    productId: string;
+    productName: string;
+    productImageUrl: string;
+    productPrice: number;
+    productUnit: string;
+    productCurrencyCode: string;
+    packSizeLabel: string;
+    packSizeQty: number;
+    impFactor: number;
+    productGroup: IProductGroup;
+    supplierId: number;
+    supplierName: string;
+    supplierCompanyEmail: string;
+    supplierKeyword: string[];
+    supplierVerified: boolean;
+    supplierRating: number;
     address: IAddress;
     savedlists: SavedList[];
-    supplier_count: number;
-    product_count: number;
+    supplierCount: number;
+    productCount: number;
   }
-  
-  export interface IResProductMayLike {} // Like a IProduct
-  
-  export interface IResProductGroupDetail {
-    product_group_id: string;
-    product_group_image_url: string;
-    product_group_name: string;
-    product_source: string;
-    product_category_id: string;
-    product_category_custom_name: string;
-    product_currency_code: string;
-    product_origin: string;
-    product_channel: string[];
-    warehouse_id: string;
-    product_brand: string;
-    product_keyword: string[];
-    product_category_spec: IProductCategorySpec[];
-    product_video_cover_url: string;
+export interface IResProductMayLike {} // Like a IProduct
+export interface IResProductGroupDetail {
+    productGroupId: string;
+    productGroupImageUrl: string;
+    productGroupName: string;
+    productSource: string;
+    productCategoryId: string;
+    productCategoryCustomName: string;
+    productCurrencyCode: string;
+    productOrigin: string;
+    productChannel: string[];
+    warehouseId: string;
+    productBrand: string;
+    productKeyword: string[];
+    productCategorySpec: IProductCategorySpec[];
+    productVideoCoverUrl: string;
     savedlists: SavedList[];
     products: [
       {
-        product_name: string;
-        cost_price: number;
-        product_buy_price: number;
-        product_price: number;
-        product_sku: string;
-        product_unit: string;
-        product_wholesales: IProductWholeSale[];
-        product_barcode: string;
-        product_images_url: string[];
-        initial_stock: number;
-        product_package: IProductPackage;
-        stock_alert: number;
-        maximum_online_stock: number;
-        min_order_qty: number;
-        minimun_wholesale_qty: number;
-        wholesale_price: number;
-        retail_price: number;
-        pack_size_label: string;
-        pack_size_qty: number;
-        preparing_time: number;
-        free_ship_price: number;
-        free_ship_quantity: number;
+        productName: string;
+        costPrice: number;
+        productBuyPrice: number;
+        productPrice: number;
+        productSku: string;
+        productUnit: string;
+        productWholesales: IProductWholeSale[];
+        productBarcode: string;
+        productImagesUrl: string[];
+        initialStock: number;
+        productPackage: IProductPackage;
+        stockAlert: number;
+        maximumOnlineStock: number;
+        minOrderQty: number;
+        minimunWholesaleQty: number;
+        wholesalePrice: number;
+        retailPrice: number;
+        packSizeLabel: string;
+        packSizeQty: number;
+        preparingTime: number;
+        freeShipPrice: number;
+        freeShipQuantity: number;
         wholesale: IWholesale;
       }
     ];
     leadtime: ILeadTime[];
     suppliers: {
-      supplier_id: number;
-      supplier_name: string;
-      supplier_company_email: string;
-      supplier_keyword: string[];
-      supplier_verified: boolean;
-      supplier_rating: number;
-      imp_factor: number;
+      supplierId: number;
+      supplierName: string;
+      supplierCompanyEmail: string;
+      supplierKeyword: string[];
+      supplierVerified: boolean;
+      supplierRating: number;
+      impFactor: number;
       address: IAddress;
-      shipping_zone: IShippingZone[];
-      payment_method: IPaymentMethod;
+      shippingZone: IShippingZone[];
+      paymentMethod: IPaymentMethod;
     };
   }
-  
-  interface IPaymentMethod {
-    payment_method_type: string;
-    payment_method_type_attr: IPaymentMethodTypeAttr[];
+interface IPaymentMethod {
+    paymentMethodType: string;
+    paymentMethodTypeAttr: IPaymentMethodTypeAttr[];
   }
-  
-  interface IPaymentMethodTypeAttr {
-    payment_method_icon_url: string;
-    payment_method_name: string;
+interface IPaymentMethodTypeAttr {
+    paymentMethodIconUrl: string;
+    paymentMethodName: string;
   }
-  
-  interface IProductCategorySpec {
-    attri_name: string;
-    attri_value: string;
+interface IProductCategorySpec {
+    attriName: string;
+    attriValue: string;
   }
-  
-  interface IProductPackage {
+interface IProductPackage {
     weight: number;
-    weight_unit: string;
+    weightUnit: string;
     height: number;
-    height_unit: string;
+    heightUnit: string;
     width: number;
-    width_unit: string;
+    widthUnit: string;
     length: number;
-    length_unit: string;
+    lengthUnit: string;
   }
-  
-  interface IWholesale {
-    qty_minimum: number;
-    product_price: number;
-    retail_qty_minimum: number;
-    retail_product_price: number;
+interface IWholesale {
+    qtyMinimum: number;
+    productPrice: number;
+    retailQtyMinimum: number;
+    retailProductPrice: number;
   }
-  
-  interface ILeadTime {
+interface ILeadTime {
     qty: string[]; // ( [1, 100] length = 2 )
     day: number; // (nagotiable)
   }
-  
-  interface IProductWholeSale {
-    min_wholesale_qty: number;
-    product_wholesale_price: number;
-    retail_price: number;
+interface IProductWholeSale {
+    minWholesaleQty: number;
+    productWholesalePrice: number;
+    retailPrice: number;
   }
-  
-  export interface IResProductDescription {
+export interface IResProductDescription {
     description: string; // HTML
   }
-  
-  export interface IResProductBySupplier {} // Like a IProduct
-  
-  export interface IResRelatedProductByProduct {} // Like a IProduct
-  
-  export interface IResProductDetail {
-    product_id: string;
-    product_image_url: string;
-    product_name: string;
-    cost_price: number;
-    product_buy_price: number;
-    product_price: number;
-    product_sku: string;
-    product_unit: string;
-    product_wholesales: IProductWholeSale[];
-    product_source: string;
-    product_category_id: string;
-    product_category_custom_name: string;
-    product_currency_code: string;
-    product_barcode: string;
-    product_origin: string;
-    product_channel: string[];
-    product_images_url: string[];
-    initial_stock: number;
-    warehouse_id: string;
-    product_package: IProductPackage;
-    product_brand: string;
-    stock_alert: number;
-    maximum_online_stock: number;
-    min_order_qty: number;
-    minimun_wholesale_qty: number;
-    wholesale_price: number;
-    retail_price: number;
-    product_keyword: string[];
-    pack_size_label: string;
-    pack_size_qty: number;
-    preparing_time: number;
-    product_category_spec: IProductCategorySpec[];
-    free_ship_price: number;
-    free_ship_quantity: number;
-    product_video_cover_url: string;
+export interface IResProductBySupplier {} // Like a IProduct
+export interface IResRelatedProductByProduct {} // Like a IProduct
+export interface IResProductDetail {
+    productId: string;
+    productImageUrl: string;
+    productName: string;
+    costPrice: number;
+    productBuyPrice: number;
+    productPrice: number;
+    productSku: string;
+    productUnit: string;
+    productWholesales: IProductWholeSale[];
+    productSource: string;
+    productCategoryId: string;
+    productCategoryCustomName: string;
+    productCurrencyCode: string;
+    productBarcode: string;
+    productOrigin: string;
+    productChannel: string[];
+    productImagesUrl: string[];
+    initialStock: number;
+    warehouseId: string;
+    productPackage: IProductPackage;
+    productBrand: string;
+    stockAlert: number;
+    maximumOnlineStock: number;
+    minOrderQty: number;
+    minimunWholesaleQty: number;
+    wholesalePrice: number;
+    retailPrice: number;
+    productKeyword: string[];
+    packSizeLabel: string;
+    packSizeQty: number;
+    preparingTime: number;
+    productCategorySpec: IProductCategorySpec[];
+    freeShipPrice: number;
+    freeShipQuantity: number;
+    productVideoCoverUrl: string;
     wholesale: IWholesale;
     leadtime: ILeadTime[];
     suppliers: {
-      supplier_id: number;
-      supplier_name: string;
-      supplier_company_email: string;
-      supplier_keyword: string[];
-      supplier_verified: boolean;
-      supplier_rating: number;
-      imp_factor: number;
+      supplierId: number;
+      supplierName: string;
+      supplierCompanyEmail: string;
+      supplierKeyword: string[];
+      supplierVerified: boolean;
+      supplierRating: number;
+      impFactor: number;
       address: IAddress;
-      shipping_zone: IShippingZone[];
-      payment_method: IPaymentMethod;
+      shippingZone: IShippingZone[];
+      paymentMethod: IPaymentMethod;
     };
   }
-  
-  export interface IResProductV2 {
-    product_id: string;
-    product_name: string;
-    product_image_url: string;
-    product_price: number;
-    product_unit: string;
-    product_currency_code: string;
-    pack_size_label: string;
-    pack_size_qty: number;
-    product_group: IProductGroup;
-    supplier_id: number;
-    supplier_name: string;
-    supplier_company_email: string;
-    supplier_keyword: string[];
-    supplier_verified: boolean;
-    supplier_rating: number;
-    imp_factor: number;
+export interface IResProductV2 {
+    productId: string;
+    productName: string;
+    productImageUrl: string;
+    productPrice: number;
+    productUnit: string;
+    productCurrencyCode: string;
+    packSizeLabel: string;
+    packSizeQty: number;
+    productGroup: IProductGroup;
+    supplierId: number;
+    supplierName: string;
+    supplierCompanyEmail: string;
+    supplierKeyword: string[];
+    supplierVerified: boolean;
+    supplierRating: number;
+    impFactor: number;
     address: IAddress;
     savedlists: SavedList[];
-    supplier_count: number;
-    product_count: number;
+    supplierCount: number;
+    productCount: number;
   }
-  
-  export interface IResAllNewProduct {} // IProductV2
-  
-  export interface IResProductWithCount {
-    product_id: string;
-    product_name: string;
-    product_image_url: string;
-    product_price: number;
-    product_unit: string;
-    product_currency_code: string;
-    pack_size_label: string;
-    pack_size_qty: number;
-    imp_factor: number;
-    min_order_qty: number;
-    product_group: IProductGroup;
-    supplier_id: string;
-    supplier_name: string;
-    supplier_verified: boolean;
+export interface IResAllNewProduct {} // IProductV2
+export interface IResProductWithCount {
+    productId: string;
+    productName: string;
+    productImageUrl: string;
+    productPrice: number;
+    productUnit: string;
+    productCurrencyCode: string;
+    packSizeLabel: string;
+    packSizeQty: number;
+    impFactor: number;
+    minOrderQty: number;
+    productGroup: IProductGroup;
+    supplierId: string;
+    supplierName: string;
+    supplierVerified: boolean;
     savedlists: SavedList[];
-    supplier_count: number;
-    product_count: number;
+    supplierCount: number;
+    productCount: number;
   }
-  
-  export interface IResAllRelatedProduct {} // Like a IProductWithCount
-  
-  export interface IResAllVisitedProduct {} // Like a IProductWithCount
-  
-  export interface IResAllRecommendProduct {} // Like a IProductV2
-  
-  export interface IResRecommendSupplier {
-    supplier_id: number;
-    supplier_icon_url: string;
-    supplier_name: string;
-    supplier_company_email: string;
-    supplier_keyword: string[];
-    supplier_verified: boolean;
-    supplier_rating: number;
-    supplier_rating_amount: number;
-    imp_factor: number;
+export interface IResAllRelatedProduct {} // Like a IProductWithCount
+export interface IResAllVisitedProduct {} // Like a IProductWithCount
+export interface IResAllRecommendProduct {} // Like a IProductV2
+export interface IResRecommendSupplier {
+    supplierId: number;
+    supplierIconUrl: string;
+    supplierName: string;
+    supplierCompanyEmail: string;
+    supplierKeyword: string[];
+    supplierVerified: boolean;
+    supplierRating: number;
+    supplierRatingAmount: number;
+    impFactor: number;
     address: IAddress;
   }
-  
-  export interface IResFilterResultSupplier {
-    supplier_id: number;
-    supplier_name: string;
-    supplier_company_email: string;
-    supplier_keyword: string[];
-    supplier_verified: boolean;
-    supplier_rating: number;
-    supplier_company_website: string;
-    imp_factor: number;
+export interface IResFilterResultSupplier {
+    supplierId: number;
+    supplierName: string;
+    supplierCompanyEmail: string;
+    supplierKeyword: string[];
+    supplierVerified: boolean;
+    supplierRating: number;
+    supplierCompanyWebsite: string;
+    impFactor: number;
     address: IAddress;
-    shipping_zone: IShippingZone[];
+    shippingZone: IShippingZone[];
     products: IProductWithOutSupplier[];
     savedlists: SavedList[];
-    supplier_count: number;
-    product_count: number;
+    supplierCount: number;
+    productCount: number;
   }
-  
-  export interface IResSupplierWithSavedList {
-    supplier_id: number;
-    supplier_icon_url: string;
-    supplier_name: string;
-    supplier_company_email: string;
-    supplier_keyword: string[];
-    supplier_verified: boolean;
-    supplier_rating: number;
-    imp_factor: number;
+export interface IResSupplierWithSavedList {
+    supplierId: number;
+    supplierIconUrl: string;
+    supplierName: string;
+    supplierCompanyEmail: string;
+    supplierKeyword: string[];
+    supplierVerified: boolean;
+    supplierRating: number;
+    impFactor: number;
     address: IAddress;
     savedlists: SavedList[];
   }
-  
-  export interface IResSupplierMayLike {} // ISupplierWithSavedList
-  
-  export interface IResLatestVisitSupplier {} // ISupplierWithSavedList
-  
-  export interface IResSupplierOverview {
-    supplier_id: string;
-    supplier_name: string;
-    supplier_banner_url_array: string[];
-    supplier_company_code: string;
-    supplier_company_email: string;
-    supplier_verified: boolean;
-    supplier_rating: number;
-    supplier_rating_count: number;
-    supplier_score: number;
-    supplier_response_time: string;
-    imp_factor: number;
-    supplier_keyword: string[];
-    company_overview: string;
-    supplier_logo_url: string;
-    supplier_image_url: string;
-    supplier_color: string;
+export interface IResSupplierMayLike {} // ISupplierWithSavedList
+export interface IResLatestVisitSupplier {} // ISupplierWithSavedList
+export interface IResSupplierOverview {
+    supplierId: string;
+    supplierName: string;
+    supplierBannerUrlArray: string[];
+    supplierCompanyCode: string;
+    supplierCompanyEmail: string;
+    supplierVerified: boolean;
+    supplierRating: number;
+    supplierRatingCount: number;
+    supplierScore: number;
+    supplierResponseTime: string;
+    impFactor: number;
+    supplierKeyword: string[];
+    companyOverview: string;
+    supplierLogoUrl: string;
+    supplierImageUrl: string;
+    supplierColor: string;
     followers: number;
     ages: number;
-    business_type: string;
-    company_capital: number;
-    supplier_company_register_id: string;
-    main_product: string[];
+    businessType: string;
+    companyCapital: number;
+    supplierCompanyRegisterId: string;
+    mainProduct: string[];
     address: IAddress;
     employee: number;
-    shipping_zone: IShippingZone[];
-    payment_method: IPaymentMethod[];
-    credit_term: string[];
-    supplier_certificates: ISupplierCertificates[];
+    shippingZone: IShippingZone[];
+    paymentMethod: IPaymentMethod[];
+    creditTerm: string[];
+    supplierCertificates: ISupplierCertificates[];
   }
-  
-  export interface IResSupplierContact {
+export interface IResSupplierContact {
     address: IAddress;
-    address_supplier: IAddressSupplier[];
+    addressSupplier: IAddressSupplier[];
   }
-  
-  interface IAddressSupplier {
-    supplier_addr_name: string;
-    supplier_addr_full: string;
-    supplier_addr_number: string;
-    supplier_addr_province: string;
-    supplier_addr_amphoe: string;
-    supplier_addr_tambon: string;
-    supplier_addr_postcode: string;
-    supplier_addr_country: string;
-    supplier_addr_location_lat: number;
-    supplier_addr_location_lng: number;
-    supplier_addr_phone: string;
-    supplier_addr_mobile: string;
-    supplier_addr_fax: string;
-    supplier_addr_email: string;
-    supplier_addr_type: string;
-    office_hour: OfficeHour[];
+interface IAddressSupplier {
+    supplierAddrName: string;
+    supplierAddrFull: string;
+    supplierAddrNumber: string;
+    supplierAddrProvince: string;
+    supplierAddrAmphoe: string;
+    supplierAddrTambon: string;
+    supplierAddrPostcode: string;
+    supplierAddrCountry: string;
+    supplierAddrLocationLat: number;
+    supplierAddrLocationLng: number;
+    supplierAddrPhone: string;
+    supplierAddrMobile: string;
+    supplierAddrFax: string;
+    supplierAddrEmail: string;
+    supplierAddrType: string;
+    officeHour: OfficeHour[];
   }
-  
-  interface OfficeHour {
+interface OfficeHour {
     day: string;
     time: string;
   }
-  
-  export interface IResSupplierFactory {
-    factory_address: IFactoryAddress;
-    factory_area_unit: string;
-    factory_area: string;
-    factory_image_url: string[];
-    factory_capacity: string;
-    factory_capacity_unit: string;
+export interface IResSupplierFactory {
+    factoryAddress: IFactoryAddress;
+    factoryAreaUnit: string;
+    factoryArea: string;
+    factoryImageUrl: string[];
+    factoryCapacity: string;
+    factoryCapacityUnit: string;
   }
-  
-  interface IFactoryAddress {
+interface IFactoryAddress {
     name: string;
-    address_full: string;
+    addressFull: string;
     number: string;
     province: string;
     amphoe: string;
@@ -655,33 +594,30 @@ export interface IResMainCategory {
     lat: string;
     lng: string;
   }
-  
-  export interface IResSupplierCersAndDocs {
-    supplier_docs: ISupplierDocs[];
-    supplier_certificates: ISupplierCertificates[];
+export interface IResSupplierCersAndDocs {
+    supplierDocs: ISupplierDocs[];
+    supplierCertificates: ISupplierCertificates[];
   }
-  
-  export interface IResSupplierImgAndVerifiedImg {
-    supplier_image: ISupplierImage[];
-    supplier_images_verified: ISupplierImage[];
+export interface IResSupplierImgAndVerifiedImg {
+    supplierImage: ISupplierImage[];
+    supplierImagesVerified: ISupplierImage[];
   }
-  
-  interface ISupplierDocs {
+interface ISupplierDocs {
     url: string;
     type: string;
     title: string;
     expire: Date;
   }
-  interface ISupplierImage {
+interface ISupplierImage {
     type: string;
     title: string;
     image: IImages[];
   }
-  interface IImages {
+interface IImages {
     url: string;
     caption: string;
   }
-  interface ISupplierCertificates {
+interface ISupplierCertificates {
     url: string;
     type: string;
     title: string;
@@ -689,183 +625,162 @@ export interface IResMainCategory {
     private: boolean;
     issued: Date;
     issuer: string;
-    cer_name: string;
+    cerName: string;
   }
-  
-  export interface IResSupplierProduct {} // IProduct
-  
-  export interface IResSupplierWebsite {
-    company_description: string;
+export interface IResSupplierProduct {} // IProduct
+export interface IResSupplierWebsite {
+    companyDescription: string;
   }
-  
-  export interface IResSupplierCustomPage {
+export interface IResSupplierCustomPage {
     title: string;
     content: string;
   }
-  
-  export interface IResRfqScore {
-    rfq_score: number;
-    rfq_section_name: string;
+export interface IResRfqScore {
+    rfqScore: number;
+    rfqSectionName: string;
   }
-  
-  export interface IResQuotaRfq {
-    quota_rfq: number;
-    used_quota_rfq: number;
+export interface IResQuotaRfq {
+    quotaRfq: number;
+    usedQuotaRfq: number;
   }
-  
-  export interface IResShippingMethod {
-    shipping_method_id: string;
-    shipping_method_name: string;
-    shipping_method_icon_url: string;
+export interface IResShippingMethod {
+    shippingMethodId: string;
+    shippingMethodName: string;
+    shippingMethodIconUrl: string;
   }
-  
-  export interface IResGetPaymentMethod {
-    payment_method_id: string;
-    payment_method_type: string;
-    payment_method_type_attr: IPaymentMethodTypeAttr[];
+export interface IResGetPaymentMethod {
+    paymentMethodId: string;
+    paymentMethodType: string;
+    paymentMethodTypeAttr: IPaymentMethodTypeAttr[];
   }
-  
-  export interface ICreateRfq {
-    user_id: string;
-    rfq_request_date: Date;
-    rfq_score: number;
+export interface ICreateRfq {
+    userId: string;
+    rfqRequestDate: Date;
+    rfqScore: number;
     requestors: Requestors[];
     products: {
-      product_name: string;
-      product_keyword: string[];
-      product_category_id: string;
+      productName: string;
+      productKeyword: string[];
+      productCategoryId: string;
     };
-    product_info: {
-      product_qty: number;
-      product_unit: string;
-      product_currency_code: string;
+    productInfo: {
+      productQty: number;
+      productUnit: string;
+      productCurrencyCode: string;
     };
-    shipping_location: {
-      addr_full: string;
-      addr_number: string;
-      addr_province: string;
-      addr_amphoe: string;
-      addr_tambon: string;
-      addr_postcode: string;
-      shipping_method_id: string[];
+    shippingLocation: {
+      addrFull: string;
+      addrNumber: string;
+      addrProvince: string;
+      addrAmphoe: string;
+      addrTambon: string;
+      addrPostcode: string;
+      shippingMethodId: string[];
     };
-    processing_time: {
-      rfq_expiry_date: Date;
-      request_recieve_date: Date;
+    processingTime: {
+      rfqExpiryDate: Date;
+      requestRecieveDate: Date;
     };
-    payment_method: {
-      credit_term: number;
-      payment_method_id: string[];
+    paymentMethod: {
+      creditTerm: number;
+      paymentMethodId: string[];
     };
-    more_detail: {
-      image_url: string[];
+    moreDetail: {
+      imageUrl: string[];
       note: string;
     };
   }
-  
-  export interface IResRfqList {
-    product_name: string;
-    product_category_name: string;
-    rfq_expiry_date: Date;
-    seen_rfq_supplier_count: number;
-    reply_rfq_quotation_count: number;
+export interface IResRfqList {
+    productName: string;
+    productCategoryName: string;
+    rfqExpiryDate: Date;
+    seenRfqSupplierCount: number;
+    replyRfqQuotationCount: number;
   }
-  
-  export interface IResReplyRfqList {
-    supplier_name: string;
-    supplier_verified: boolean;
-    supplier_rating: string;
-    supplier_rating_amount: number;
-    price_per_unit: number;
-    min_order_qty: number;
+export interface IResReplyRfqList {
+    supplierName: string;
+    supplierVerified: boolean;
+    supplierRating: string;
+    supplierRatingAmount: number;
+    pricePerUnit: number;
+    minOrderQty: number;
   }
-  
-  export interface IResQuotaInquiry {
-    quota_inquiry: number;
-    used_quota_inquiry: number;
+export interface IResQuotaInquiry {
+    quotaInquiry: number;
+    usedQuotaInquiry: number;
   }
-  
-  export interface IResSupplier {
-    supplier_id: string;
-    supplier_name: string;
-    supplier_verified: boolean;
-    supplier_logo_url: string;
-    supplier_score: number;
-    supplier_response_time: string;
-    supplier_rating: string;
-    supplier_rating_amount: number;
-    supplier_ages: number;
-    supplier_company_email: string;
+export interface IResSupplier {
+    supplierId: string;
+    supplierName: string;
+    supplierVerified: boolean;
+    supplierLogoUrl: string;
+    supplierScore: number;
+    supplierResponseTime: string;
+    supplierRating: string;
+    supplierRatingAmount: number;
+    supplierAges: number;
+    supplierCompanyEmail: string;
     address: IAddress;
-    supplier_company_website: string;
-    supplier_keyword: string[];
+    supplierCompanyWebsite: string;
+    supplierKeyword: string[];
   }
-  
-  export interface ICreateInquiry {
-    user_id: number;
-    supplier_id: number;
-    product_id: number;
+export interface ICreateInquiry {
+    userId: number;
+    supplierId: number;
+    productId: number;
     requestors: Requestors[];
-    inquiry_message: string;
-    inquiry_images_url: string[];
+    inquiryMessage: string;
+    inquiryImagesUrl: string[];
   }
-  
-  interface Requestors {
+interface Requestors {
     name: string;
     email: string;
   }
-  
-  export interface IResInquiryProductList {
-    product_id: string;
-    product_name: string;
-    product_image_url: string;
-    product_price: number;
-    product_unit: string;
-    product_currency_code: string;
-    pack_size_label: string;
-    pack_size_qty: number;
-    imp_factor: number;
-    product_group: IProductGroup;
-    supplier_id: number;
-    supplier_name: string;
-    supplier_company_email: string;
-    supplier_keyword: string[];
-    supplier_verified: boolean;
-    supplier_rating: number;
+export interface IResInquiryProductList {
+    productId: string;
+    productName: string;
+    productImageUrl: string;
+    productPrice: number;
+    productUnit: string;
+    productCurrencyCode: string;
+    packSizeLabel: string;
+    packSizeQty: number;
+    impFactor: number;
+    productGroup: IProductGroup;
+    supplierId: number;
+    supplierName: string;
+    supplierCompanyEmail: string;
+    supplierKeyword: string[];
+    supplierVerified: boolean;
+    supplierRating: number;
     address: IAddress;
     savedlists: SavedList[];
     unread: false;
   }
-  
-  export interface IResSearchResultSupplier {} // Like a IFilterResultSupplier
-  
-  export interface IResSearchResultProduct {} // Like a IFilterResultProduct
-  
-  export interface IResSearchResultLocation {
-    supplier_id: number;
-    supplier_name: string;
-    supplier_company_email: string;
-    supplier_keyword: string[];
-    supplier_verified: boolean;
-    supplier_rating: number;
-    supplier_rating_count: number;
-    supplier_company_website: string;
-    imp_factor: number;
+export interface IResSearchResultSupplier {} // Like a IFilterResultSupplier
+export interface IResSearchResultProduct {} // Like a IFilterResultProduct
+export interface IResSearchResultLocation {
+    supplierId: number;
+    supplierName: string;
+    supplierCompanyEmail: string;
+    supplierKeyword: string[];
+    supplierVerified: boolean;
+    supplierRating: number;
+    supplierRatingCount: number;
+    supplierCompanyWebsite: string;
+    impFactor: number;
     address: IAddress;
-    shipping_zone: IShippingZone[];
+    shippingZone: IShippingZone[];
     products: IProductWithOutSupplier[];
-    company_map_location: CompanyMapLocation;
+    companyMapLocation: CompanyMapLocation;
   }
-  
-  interface CompanyMapLocation {
+interface CompanyMapLocation {
     lat: string;
     lng: string;
     location: string[];
-    pin_image_url: string;
+    pinImageUrl: string;
   }
-  
-  export interface IResInterest {
-    user_id: string;
-    category_id: number;
+export interface IResInterest {
+    userId: string;
+    categoryId: number;
   }
-  

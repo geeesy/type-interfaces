@@ -1,16 +1,16 @@
 /* eslint-disable no-unused-vars */
 import { ICheck, IConnect } from './interfaces'
-import { 
+import {
   IResMainCategory,
   IResRecommendMainCategory,
-  IResBanner, 
-  IResProduct, 
-  IResTop20Products, 
+  IResBanner,
+  IResProduct,
+  IResTop20Products,
   IResCategoryWithChild,
   IResCategory,
-  IResRecommendCategory, 
-  IResAllCategoryInSearchTool, 
-  IResSupplierHilight, 
+  IResRecommendCategory,
+  IResAllCategoryInSearchTool,
+  IResSupplierHilight,
   IResMessageList,
   IResMessageDetail,
   IResSavedListProducts,
@@ -40,7 +40,8 @@ import {
   IResSupplier,
   IResInquiryProductList,
   IResSearchResultLocation,
-  IResInterest} from './type-marketplace';
+  IResInterest
+} from './type-marketplace'
 
 export namespace geeesy {
   export type ResConnect = IConnect;
