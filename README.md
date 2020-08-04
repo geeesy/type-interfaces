@@ -12,10 +12,11 @@ Geeesy's API Interfaces for HTTP Client and Lambda Functions
 
 ## Usage
 
-```
-import { geeesy } from '@geeesy/type-interfaces'
+### Marketplace
+```javascript
+import { GeeesyMarketplace } from '@geeesy/type-interfaces'
 
-const foo: geeesy.IResponse = {
-  // to implement member
+const foo: GeeesyMarketplace.IResponse = {
+  // implement all members
 }
 ```

@@ -1,55 +1,55 @@
 /* eslint-disable no-unused-vars */
 import { ICheck, IConnect } from './interfaces'
 import {
-  IResMainCategory,
-  IResRecommendMainCategory,
-  IResBanner,
-  IResProduct,
-  IResTop20Products,
-  IResCategoryWithChild,
-  IResCategory,
-  IResRecommendCategory,
   IResAllCategoryInSearchTool,
-  IResSupplierHilight,
-  IResMessageList,
-  IResMessageDetail,
-  IResSavedListProducts,
-  IResSavedListSuppliers,
+  IResBanner,
+  IResCategory,
+  IResCategoryWithChild,
   IResFilterResultProduct,
-  IResProductGroupDetail,
+  IResFilterResultSupplier,
+  IResGetPaymentMethod,
+  IResInquiryProductList,
+  IResInterest,
+  IResMainCategory,
+  IResMessageDetail,
+  IResMessageList,
+  IResProduct,
   IResProductDescription,
   IResProductDetail,
+  IResProductGroupDetail,
   IResProductV2,
   IResProductWithCount,
+  IResQuotaInquiry,
+  IResQuotaRfq,
+  IResRecommendCategory,
+  IResRecommendMainCategory,
   IResRecommendSupplier,
-  IResFilterResultSupplier,
+  IResReplyRfqList,
+  IResRfqList,
+  IResRfqScore,
+  IResSavedListProducts,
+  IResSavedListSuppliers,
+  IResSearchResultLocation,
+  IResShippingMethod,
+  IResSupplier,
+  IResSupplierWebsite,
+  IResTop20Products,
+  IResSupplierHilight,
   IResSupplierWithSavedList,
   IResSupplierOverview,
   IResSupplierContact,
   IResSupplierFactory,
   IResSupplierCersAndDocs,
   IResSupplierImgAndVerifiedImg,
-  IResSupplierCustomPage,
-  IResRfqScore,
-  IResQuotaRfq,
-  IResShippingMethod,
-  IResGetPaymentMethod,
-  IResRfqList,
-  IResReplyRfqList,
-  IResQuotaInquiry,
-  IResSupplier,
-  IResInquiryProductList,
-  IResSearchResultLocation,
-  IResInterest,
-  IResSupplierWebsite
+  IResSupplierCustomPage
 } from './type-marketplace'
 
-export namespace geeesy {
+export namespace Geeesy {
   export type ResConnect = IConnect;
   export type ResCheck = ICheck;
 }
 
-export namespace geeesyMarketplace {
+export namespace GeeesyMarketplace {
   export type IMainCategory = IResMainCategory;
   export type IRecommendMainCategory = IResRecommendMainCategory;
   export type IBanner = IResBanner;
