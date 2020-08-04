@@ -4,9 +4,7 @@
   "description": "Geeesy's API Interfaces for HTTP Client and Lambda Functions",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
-  "directories": {
-    "lib": "./lib"
-  },
+  "files": ["lib"],
   "scripts": {
     "build": "tsc -b",
     "build:watch": "tsc --watch"
