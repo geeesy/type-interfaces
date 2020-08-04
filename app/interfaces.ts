@@ -1,9 +1,8 @@
 export interface IConnect {
-  statusCode: number;
   message: string;
 }
 
 export interface ICheck {
-  statusCode: number;
+  message: string;
   data: string;
 }
