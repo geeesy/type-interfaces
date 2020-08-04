@@ -40,7 +40,8 @@ import {
   IResSupplier,
   IResInquiryProductList,
   IResSearchResultLocation,
-  IResInterest
+  IResInterest,
+  IResSupplierWebsite
 } from './type-marketplace'
 
 export namespace geeesy {
@@ -89,4 +90,5 @@ export namespace geeesyMarketplace {
   export type IInquiryProductList = IResInquiryProductList;
   export type ISearchResultLocation = IResSearchResultLocation;
   export type IInterest = IResInterest;
+  export type ISupplierWebsite = IResSupplierWebsite;
 }
