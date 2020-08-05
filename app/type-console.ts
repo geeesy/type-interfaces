@@ -115,7 +115,11 @@ interface ShippingZone {
   zoneName: string;
   zoneProvince: string[];
   zonePostcode: string[];
-  zoneMethod: string[];
+  zoneMethod: ZoneMethod[];
+}
+interface ZoneMethod {
+  shippingMethodName: string
+  shippingMethodIconUrl: string
 }
 
 interface CompanyMetric {
