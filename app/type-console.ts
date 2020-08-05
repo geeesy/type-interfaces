@@ -240,7 +240,6 @@ interface CustomPage {
   content: string;
 }
 
-
 interface ProductWholesales {
   minWholesaleQty: number;
   productWholesalePrice: number;
