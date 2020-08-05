@@ -43,7 +43,7 @@ export interface IcsResSupplier {
       officeHour: [
         {
           day: string;
-          time: string;
+          time: string[];
         }
       ];
     }
@@ -70,10 +70,7 @@ export interface IcsResSupplier {
     supplierCountry: string;
   };
   companySetting: {
-    paymentCreditMethod: string[];
-    paymentWalletMethod: string[];
-    paymentBankingMethod: string[];
-    paymentCounterMethod: string[];
+    paymentMethod: IcsResPaymentMethod[];
     shippingZone: {
       zoneName: string;
       zoneProvince: string[];
@@ -254,10 +251,7 @@ export interface IcsResDistributor {
     distributorCountry: string;
   };
   companySetting: {
-    paymentCreditMethod: string[];
-    paymentWalletMethod: string[];
-    paymentBankingMethod: string[];
-    paymentCounterMethod: string[];
+    paymentMethod: IcsResPaymentMethod[];
     shippingZone: {
       zoneName: string;
       zoneProvince: string[];
@@ -367,90 +361,90 @@ export interface IcsResDistributor {
 }
 
 export interface IcsResMainCategory {
-  categoryMainId: string
-  categoryMainName: string
-  categoryMainIconUrl: string
-  categoryMainImageUrl: string
+  categoryMainId: string;
+  categoryMainName: string;
+  categoryMainIconUrl: string;
+  categoryMainImageUrl: string;
 }
 
 export interface IcsResCategory {
-  categoryId: string
-  categoryName: string
-  categoryIconUrl: string
-  categoryImageUrl: string
+  categoryId: string;
+  categoryName: string;
+  categoryIconUrl: string;
+  categoryImageUrl: string;
 }
 
 interface IcsCreateMainCategory {
-  categoryName: string
-  categoryImageUrl: string
+  categoryName: string;
+  categoryImageUrl: string;
   categoryRecommend: boolean;
-  categoryIconUrl: string
-  impFactor: number
-  categoryDescription: string
-  categoryBanners: string[]
+  categoryIconUrl: string;
+  impFactor: number;
+  categoryDescription: string;
+  categoryBanners: string[];
 }
 
 interface IcsCreateCategoryLevel {
-  categoryId: string
-  categoryName: string
-  categoryImageUrl: string
+  categoryId: string;
+  categoryName: string;
+  categoryImageUrl: string;
   categoryRecommend: boolean;
-  categoryIconUrl: string
-  impFactor: number
-  categoryBanners: string[]
+  categoryIconUrl: string;
+  impFactor: number;
+  categoryBanners: string[];
 }
 
 interface IcsCreateProduct {
-  supplierId: string
-  distributorId: string
-  productImageUrl: string[]
-  productName: string
-  costPrice: number
-  productBuyPrice: number
-  productPrice: number
-  productSku: string
-  productUnit: string
+  supplierId: string;
+  distributorId: string;
+  productImageUrl: string[];
+  productName: string;
+  costPrice: number;
+  productBuyPrice: number;
+  productPrice: number;
+  productSku: string;
+  productUnit: string;
   productWholesaleArray: [
     {
-      minWholesaleQty: number
-      productWholesalePrice: number
-      retailPrice: number
+      minWholesaleQty: number;
+      productWholesalePrice: number;
+      retailPrice: number;
     }
   ];
-  productSource: string
-  productCategoryId: string
-  productCategoryCustomName: string
-  productCurrencyCode: string
-  productBarcode: string
-  productOrigin: string
-  productChannel: string[]
-  productImageArrayUrl: string[]
+  productSource: string;
+  productCategoryId: string;
+  productCategoryCustomName: string;
+  productCurrencyCode: string;
+  productBarcode: string;
+  productOrigin: string;
+  productChannel: string[];
+  productImageArrayUrl: string[];
   productIsActive: boolean;
-  initialStock: number
-  warehouseId: string
+  initialStock: number;
+  warehouseId: string;
   productPackage: {
-    weight: number
-    weightUnit: string
-    height: number
-    heightUnit: string
-    width: number
-    widthUnit: string
-    length: number
-    lengthUnit: string
+    weight: number;
+    weightUnit: string;
+    height: number;
+    heightUnit: string;
+    width: number;
+    widthUnit: string;
+    length: number;
+    lengthUnit: string;
   };
-  productBrand: string
-  stockAlert: number
-  maximumOnlineStock: number
-  minOrderQty: number
+  productBrand: string;
+  stockAlert: number;
+  maximumOnlineStock: number;
+  minOrderQty: number;
   keepSellingPast: boolean;
-  minimumWholesaleQty: number
-  wholesalePrice: number
-  retailPrice: number
-  description: string
-  productKeyword: string[]
-  packSizeLabel: string
-  packSizeQty: number
-  preparingTime: number
+  minimumWholesaleQty: number;
+  wholesalePrice: number;
+  retailPrice: number;
+  description: string;
+  productKeyword: string[];
+  packSizeLabel: string;
+  packSizeQty: number;
+  preparingTime: number;
   productHilight: boolean;
   productMarketplace: boolean;
   recommendProduct: boolean;
@@ -458,47 +452,47 @@ interface IcsCreateProduct {
   newProduct: boolean;
   productCategorySpec: [
     {
-      attriName: string
-      attriValue: string
+      attriName: string;
+      attriValue: string;
     }
   ];
   showOnMarketplace: boolean;
   showOnInApp: boolean;
   wholesaleOnMarketplace: boolean;
   wholesaleInApp: boolean;
-  freeShipPrice: number
-  freeShipQuantity: number
-  productVideoCoverUrl: string
+  freeShipPrice: number;
+  freeShipQuantity: number;
+  productVideoCoverUrl: string;
   wholesale: {
-    qtyMinimum: number
-    productPrice: number
-    retailQtyMinimum: number
-    retailProductPrice: number
+    qtyMinimum: number;
+    productPrice: number;
+    retailQtyMinimum: number;
+    retailProductPrice: number;
   };
   leadTime: [
     {
-      qty: string[]
-      day: number
+      qty: string[];
+      day: number;
     }
   ];
 }
 
 interface IcsCreateProductGroup {
-  supplierId: string
-  distributorId: string
-  productGroupImageUrl: string[]
-  productGroupName: string
-  productSource: string
-  productCategoryId: string
-  productCategoryCustomName: string
-  productCurrencyCode: string
-  productOrigin: string
-  productChannel: string[]
+  supplierId: string;
+  distributorId: string;
+  productGroupImageUrl: string[];
+  productGroupName: string;
+  productSource: string;
+  productCategoryId: string;
+  productCategoryCustomName: string;
+  productCurrencyCode: string;
+  productOrigin: string;
+  productChannel: string[];
   productIsActive: boolean;
-  warehouseId: string
-  productBrand: string
-  description: string
-  productKeyword: string[]
+  warehouseId: string;
+  productBrand: string;
+  description: string;
+  productKeyword: string[];
   productHilight: boolean;
   productMarketplace: boolean;
   recommendProduct: boolean;
@@ -506,67 +500,67 @@ interface IcsCreateProductGroup {
   newProduct: boolean;
   productCategorySpec: [
     {
-      attriName: string
-      attriValue: string
+      attriName: string;
+      attriValue: string;
     }
   ];
   showOnMarketplace: boolean;
   showOnInApp: boolean;
   wholesaleOnMarketplace: boolean;
   wholesaleInApp: boolean;
-  productVideoCoverUrl: string
+  productVideoCoverUrl: string;
 
   products: [
     {
-      productName: string
-      costPrice: number
-      productBuyPrice: number
-      productPrice: number
-      productSku: string
-      productUnit: string
+      productName: string;
+      costPrice: number;
+      productBuyPrice: number;
+      productPrice: number;
+      productSku: string;
+      productUnit: string;
       productWholesaleArray: [
         {
-          minWholesaleQty: number
-          productWholesalePrice: number
-          retailPrice: number
+          minWholesaleQty: number;
+          productWholesalePrice: number;
+          retailPrice: number;
         }
       ];
-      productBarcode: string
-      productImageArrayUrl: string[]
+      productBarcode: string;
+      productImageArrayUrl: string[];
       productIsActive: boolean;
-      initialStock: number
+      initialStock: number;
       productPackage: {
-        weight: number
-        weightUnit: string
-        height: number
-        heightUnit: string
-        width: number
-        widthUnit: string
-        length: number
-        lengthUnit: string
+        weight: number;
+        weightUnit: string;
+        height: number;
+        heightUnit: string;
+        width: number;
+        widthUnit: string;
+        length: number;
+        lengthUnit: string;
       };
-      stockAlert: number
-      maximumOnlineStock: number
-      minOrderQty: number
+      stockAlert: number;
+      maximumOnlineStock: number;
+      minOrderQty: number;
       keepSellingPast: boolean;
-      minimumWholesaleQty: number
-      wholesalePrice: number
-      retailPrice: number
-      packSizeLabel: string
-      packSizeQty: number
-      preparingTime: number
-      freeShipPrice: number
-      freeShipQuantity: number
+      minimumWholesaleQty: number;
+      wholesalePrice: number;
+      retailPrice: number;
+      packSizeLabel: string;
+      packSizeQty: number;
+      preparingTime: number;
+      freeShipPrice: number;
+      freeShipQuantity: number;
       wholesale: {
-        qtyMinimum: number
-        productPrice: number
-        retailQtyMinimum: number
-        retailProductPrice: number
+        qtyMinimum: number;
+        productPrice: number;
+        retailQtyMinimum: number;
+        retailProductPrice: number;
       };
       leadTime: [
         {
-          qty: string[]
-          day: number
+          qty: string[];
+          day: number;
         }
       ];
     }
@@ -579,22 +573,22 @@ export interface IcsResProductCategorySpec {
 }
 
 export interface IcsResProductCategory {
-  productCategoryId: string
-  productCategoryName: string
-  productCategoryIconUrl: string
+  productCategoryId: string;
+  productCategoryName: string;
+  productCategoryIconUrl: string;
 }
 
 export interface IcsResProductMainCategory {
-  productMCategoryId: string
-  productMCategoryName: string
-  productMCategoryIconUrl: string
+  productMCategoryId: string;
+  productMCategoryName: string;
+  productMCategoryIconUrl: string;
 }
 
 interface IcsCreateProductCategory {
-  productCategoryName: string
-  productCategoryImageUrl: string
+  productCategoryName: string;
+  productCategoryImageUrl: string;
   productCategoryRecommend: boolean;
-  productCategoryIconUrl: string
+  productCategoryIconUrl: string;
   productCategorySpec: [
     {
       attriName: string;
@@ -604,11 +598,11 @@ interface IcsCreateProductCategory {
 }
 
 interface IcsCreateProductCategoryLevel {
-  productCategoryId: string
-  productCategoryName: string
-  productCategoryImageUrl: string
+  productCategoryId: string;
+  productCategoryName: string;
+  productCategoryImageUrl: string;
   productCategoryRecommend: boolean;
-  productCategoryIconUrl: string
+  productCategoryIconUrl: string;
   productCategorySpec: [
     {
       attriName: string;
@@ -627,37 +621,37 @@ interface IcsPaymentMethodTypeAttr {
 }
 
 interface IcsCreatePaymentMethod {
-  paymentMethodName: string
-  paymentMethodType: string
-  paymentMethodIconUrl: string
+  paymentMethodName: string;
+  paymentMethodType: string;
+  paymentMethodIconUrl: string;
 }
 
 interface IcsCreateRfqScore {
-  rfqSectionName: string
-  rfqScore: number
+  rfqSectionName: string;
+  rfqScore: number;
 }
 
 interface IcsCreateShippingMethod {
-  shippingMethodPostcode: number
-  shippingMethodName: string
-  shippingMethodIconUrl: string
+  shippingMethodPostcode: number;
+  shippingMethodName: string;
+  shippingMethodIconUrl: string;
 }
 
 export interface IcsResShippingMethod {
-  shippingMethodId: string
-  shippingMethodName: string
-  shippingMethodIconUrl: string
+  shippingMethodId: string;
+  shippingMethodName: string;
+  shippingMethodIconUrl: string;
 }
 
 export interface IcsResBanner {
-  bannerSortIndex: number
-  bannerLinkUrl: string
-  bannerTitle: string
-  bannerImageUrl: string
+  bannerSortIndex: number;
+  bannerLinkUrl: string;
+  bannerTitle: string;
+  bannerImageUrl: string;
 }
 
 interface IcsCreateVideo {
-  videoUrl: string
-  videoTitle: string
-  videoDescription: string
+  videoUrl: string;
+  videoTitle: string;
+  videoDescription: string;
 }
