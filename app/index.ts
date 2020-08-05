@@ -17,7 +17,7 @@ import {
   IResProductDescription,
   IResProductDetail,
   IResProductGroupDetail,
-  IResProductV2,
+  IResProductWithAddr,
   IResProductWithCount,
   IResQuotaInquiry,
   IResQuotaRfq,
@@ -68,7 +68,7 @@ export namespace GeeesyMarketplace {
   export type IProductGroupDetail = IResProductGroupDetail;
   export type IProductDescription = IResProductDescription;
   export type IProductDetail = IResProductDetail;
-  export type IProductV2 = IResProductV2;
+  export type IProductWithAddr = IResProductWithAddr;
   export type IProductWithCount = IResProductWithCount;
   export type IRecommendSupplier = IResRecommendSupplier;
   export type IFilterResultSupplier = IResFilterResultSupplier;
