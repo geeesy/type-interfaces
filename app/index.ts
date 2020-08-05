@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { ICheck, IConnect } from './interfaces'
+import { ICheck, IConnect } from "./interfaces";
 import {
   IResAllCategoryInSearchTool,
   IResBanner,
@@ -41,8 +41,21 @@ import {
   IResSupplierFactory,
   IResSupplierCersAndDocs,
   IResSupplierImgAndVerifiedImg,
-  IResSupplierCustomPage
-} from './type-marketplace'
+  IResSupplierCustomPage,
+} from "./type-marketplace";
+
+import {
+  IcsResPaymentMethod,
+  IcsResBanner,
+  IcsResCategory,
+  IcsResDistributor,
+  IcsResMainCategory,
+  IcsResProductCategory,
+  IcsResProductCategorySpec,
+  IcsResProductMainCategory,
+  IcsResShippingMethod,
+  IcsResSupplier,
+} from "./type-console";
 
 export namespace Geeesy {
   export type ResConnect = IConnect;
@@ -91,4 +104,17 @@ export namespace GeeesyMarketplace {
   export type ISearchResultLocation = IResSearchResultLocation;
   export type IInterest = IResInterest;
   export type ISupplierWebsite = IResSupplierWebsite;
+}
+
+export namespace GeeesyConsole {
+  export type IcsPaymentMethod = IcsResPaymentMethod
+  export type IcsBanner = IcsResBanner
+  export type IcsCategory = IcsResCategory
+  export type IcsDistributor = IcsResDistributor
+  export type IcsMainCategory = IcsResMainCategory
+  export type IcsProductCategory = IcsResProductCategory
+  export type IcsProductCategorySpec = IcsResProductCategorySpec
+  export type IcsProductMainCategory = IcsResProductMainCategory
+  export type IcsShippingMethod = IcsResShippingMethod
+  export type IcsSupplier = IcsResSupplier
 }
