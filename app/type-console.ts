@@ -150,10 +150,9 @@ interface ContactPerson {
 interface Image {
   type: string;
   title: string;
-  image: Image[];
+  image: ImageAttr[];
   verified: boolean;
 }
-
 interface ImageAttr {
   url: string;
   caption: string;
