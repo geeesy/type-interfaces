@@ -619,7 +619,7 @@ interface IcsCreateProductCategoryLevel {
 
 export interface IcsResPaymentMethod {
   paymentMethodType: string;
-  paymentMethodTypeAttr: IPaymentMethodTypeAttr[];
+  paymentMethodTypeAttr: IcsPaymentMethodTypeAttr[];
 }
 interface IcsPaymentMethodTypeAttr {
   paymentMethodIconUrl: string;
