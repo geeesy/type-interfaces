@@ -391,7 +391,7 @@ interface IcsCreateMainCategory {
 }
 
 interface IcsCreateCategoryLevel {
-  categoryId: number
+  categoryId: string
   categoryName: string
   categoryImageUrl: string
   categoryRecommend: boolean;
@@ -579,15 +579,15 @@ export interface IcsResProductCategorySpec {
 }
 
 export interface IcsResProductCategory {
-  productCategoryId: number
+  productCategoryId: string
   productCategoryName: string
-  productCategoryIcon: string
+  productCategoryIconUrl: string
 }
 
 export interface IcsResProductMainCategory {
-  productMCategoryId: number
+  productMCategoryId: string
   productMCategoryName: string
-  productMCategoryIcon: string
+  productMCategoryIconUrl: string
 }
 
 interface IcsCreateProductCategory {
@@ -604,7 +604,7 @@ interface IcsCreateProductCategory {
 }
 
 interface IcsCreateProductCategoryLevel {
-  productCategoryId: number
+  productCategoryId: string
   productCategoryName: string
   productCategoryImageUrl: string
   productCategoryRecommend: boolean;
