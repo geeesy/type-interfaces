@@ -100,9 +100,9 @@ interface BadgeSup {
 }
 
 interface BadgeDis {
-  DistributorWarranty: boolean;
-  DistributorSample: boolean;
-  DistributorCountry: string;
+  distributorWarranty: boolean;
+  distributorSample: boolean;
+  distributorCountry: string;
 }
 
 interface CompanySetting {
@@ -203,7 +203,12 @@ interface Factory {
   factoryCapacityUnit: string;
 }
 
-interface Indexing {
+interface IndexingSup {
+  supplierTag: string[];
+  supplierKeyword: string[];
+}
+
+interface IndexingDis {
   supplierTag: string[];
   supplierKeyword: string[];
 }
@@ -285,7 +290,7 @@ export interface IcsResSupplier {
   supplierDocs: Doc[];
   supplierCertificates: Certificate[];
   factory: Factory;
-  indexing: Indexing;
+  indexing: IndexingSup;
   geeesyAction: GeeesyActionSup;
   followers: number;
   businessType: string;
@@ -307,7 +312,7 @@ export interface IcsResDistributor {
   distributorDocs: Doc[];
   distributorCertificates: Certificate[];
   factory: Factory
-  indexing: Indexing
+  indexing: IndexingDis
   geeesyAction: GeeesyActionDis
   followers: number;
   businessType: string;
