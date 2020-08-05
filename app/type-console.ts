@@ -1,365 +1,314 @@
+interface CompanyInfoSup {
+  supplierName: string;
+  supplierCompanyCode: string;
+  supplierCompanyEmail: string;
+  supplierCompanyWebsite: string;
+  supplierCompanyRegisterId: string;
+  companyOverview: string;
+  companyDescription: string;
+  mainProduct: string[];
+}
+interface CompanyInfoDis {
+  distributorName: string;
+  distributorCompanyCode: string;
+  distributorCompanyEmail: string;
+  distributorCompanyWebsite: string;
+  distributorCompanyRegisterId: string;
+  companyOverview: string;
+  companyDescription: string;
+  mainProduct: string[];
+}
+
+interface CompanyMapLocation {
+  pinImageUrl: string;
+  lat: string;
+  lng: string;
+  location: string[];
+}
+
+interface CompanyBoard {
+  ownerName: string;
+  ownerEmail: string;
+  ownerMobile: string;
+  ownerPosition: string;
+}
+
+interface AddressSupplier {
+  supplierAddrName: string;
+  supplierAddrFull: string;
+  supplierAddrNumber: string;
+  supplierAddrProvince: string;
+  supplierAddrAmphoe: string;
+  supplierAddrTambon: string;
+  supplierAddrPostcode: string;
+  supplierAddrCountry: string;
+  supplierAddrLocationLat: number;
+  supplierAddrLocationLng: number;
+  supplierAddrPhone: string;
+  supplierAddrMobile: string;
+  supplierAddrFax: string;
+  supplierAddrEmail: string;
+  supplierAddrType: string;
+  officeHour: OfficeHour[];
+}
+
+interface AddressDistributor {
+  distributorAddrName: string;
+  distributorAddrFull: string;
+  distributorAddrNumber: string;
+  distributorAddrProvince: string;
+  distributorAddrAmphoe: string;
+  distributorAddrTambon: string;
+  distributorAddrPostcode: string;
+  distributorAddrCountry: string;
+  distributorAddrLocationLat: number;
+  distributorAddrLocationLng: number;
+  distributorAddrPhone: string;
+  distributorAddrMobile: string;
+  distributorAddrFax: string;
+  distributorAddrEmail: string;
+  distributorAddrType: string;
+  officeHour: OfficeHour[];
+}
+
+interface OfficeHour {
+  day: string;
+  time: string[];
+}
+
+interface Address {
+  addrName: string;
+  addrFull: string;
+  addrNumber: string;
+  addrProvince: string;
+  addrAmphoe: string;
+  addrTambon: string;
+  addrPostcode: string;
+  addrPhone: string[];
+  addrMobile: string[];
+  addrFax: string[];
+  addrEmail: string;
+  addrCountry: string;
+  addrLat: string;
+  addrLng: string;
+}
+
+interface BadgeSup {
+  supplierWarranty: boolean;
+  supplierSample: boolean;
+  supplierCountry: string;
+}
+
+interface BadgeDis {
+  DistributorWarranty: boolean;
+  DistributorSample: boolean;
+  DistributorCountry: string;
+}
+
+interface CompanySetting {
+  paymentMethod: IcsResPaymentMethod[];
+  shippingZone: ShippingZone;
+  creditTerm: string[];
+}
+
+interface ShippingZone {
+  zoneName: string;
+  zoneProvince: string[];
+  zonePostcode: string[];
+  zoneMethod: string[];
+}
+
+interface CompanyMetric {
+  ages: number;
+  leadTime: string[];
+  shippingDuration: string[];
+  employee: string[];
+  companyCapital: number;
+}
+
+interface CompanyAssetsSup {
+  supplierVideoUrl: string[];
+  supplierLogoUrl: string;
+  supplierColor: string;
+  supplierBannersUrl: string[];
+}
+interface CompanyAssetsDis {
+  distributorVideoUrl: string[];
+  distributorLogoUrl: string;
+  distributorColor: string;
+  distributorBannersUrl: string[];
+}
+
+interface ContactPerson {
+  contactName: string;
+  contactEmail: string;
+  contactMobile: string;
+  contactPosition: string;
+  contactKeyPerson: boolean;
+}
+
+interface Image {
+  type: string;
+  title: string;
+  image: Image[];
+  verified: boolean;
+}
+
+interface ImageAttr {
+  url: string;
+  caption: string;
+}
+
+interface Doc {
+  url: string;
+  type: string;
+  title: string;
+  expire: Date;
+  private: boolean;
+  verified: boolean;
+}
+
+interface Certificate {
+  url: string;
+  type: string;
+  title: string;
+  expire: Date;
+  private: boolean;
+  issued: Date;
+  issuer: string;
+  cerName: string;
+}
+
+interface FactoryAddress {
+  name: string;
+  addressFull: string;
+  number: string;
+  province: string;
+  amphoe: string;
+  tambon: string;
+  postcode: number;
+  lat: string;
+  lng: string;
+}
+
+interface Factory {
+  factoryAddress: FactoryAddress;
+  factoryAreaUnit: string;
+  factoryArea: string;
+  factoryImageUrl: string[];
+  factoryCapacity: string;
+  factoryCapacityUnit: string;
+}
+
+interface Indexing {
+  supplierTag: string[];
+  supplierKeyword: string[];
+}
+
+interface GeeesyActionSup {
+  supplierVerified: boolean;
+  supplierRating: number;
+  supplierScore: number;
+  supplierActive: boolean;
+  supplierRegisterDate: Date;
+  supplierHilight: boolean;
+  impFactor: number;
+  supplierRecommend: boolean;
+}
+
+interface GeeesyActionDis {
+  distributorVerified: boolean;
+  distributorRating: number;
+  distributorScore: number;
+  distributorActive: boolean;
+  distributorRegisterDate: Date;
+  distributorHilight: boolean;
+  impFactor: number;
+  distributorRecommend: boolean;
+}
+
+interface CustomPage {
+  title: string;
+  content: string;
+}
+
+
+interface ProductWholesales {
+  minWholesaleQty: number;
+  productWholesalePrice: number;
+  retailPrice: number;
+}
+
+interface ProductPackage {
+  weight: number;
+  weightUnit: string;
+  height: number;
+  heightUnit: string;
+  width: number;
+  widthUnit: string;
+  length: number;
+  lengthUnit: string;
+};
+
+interface ProductCategorySpec {
+  attriName: string;
+  attriValue: string;
+}
+
+interface LeadTime {
+  qty: string[];
+  day: number;
+}
+
+interface Wholesale {
+  qtyMinimum: number;
+  productPrice: number;
+  retailQtyMinimum: number;
+  retailProductPrice: number;
+};
+
 export interface IcsResSupplier {
-  companyInfo: {
-    supplierName: string;
-    supplierCompanyCode: string;
-    supplierCompanyEmail: string;
-    supplierCompanyWebsite: string;
-    supplierCompanyRegisterId: string;
-    companyOverview: string;
-    companyDescription: string;
-    mainProduct: string[];
-  };
-
-  companyMapLocation: {
-    pinImageUrl: string;
-    lat: string;
-    lng: string;
-    location: string[];
-  };
-
-  companyBoard: {
-    ownerName: string;
-    ownerEmail: string;
-    ownerMobile: string;
-    ownerPosition: string;
-  }[];
-
-  addressSupplier: {
-    supplierAddrName: string;
-    supplierAddrFull: string;
-    supplierAddrNumber: string;
-    supplierAddrProvince: string;
-    supplierAddrAmphoe: string;
-    supplierAddrTambon: string;
-    supplierAddrPostcode: string;
-    supplierAddrCountry: string;
-    supplierAddrLocationLat: number;
-    supplierAddrLocationLng: number;
-    supplierAddrPhone: string;
-    supplierAddrMobile: string;
-    supplierAddrFax: string;
-    supplierAddrEmail: string;
-    supplierAddrType: string;
-    officeHour: {
-      day: string;
-      time: string[];
-    }[];
-  }[];
-
-  address: {
-    addrName: string;
-    addrFull: string;
-    addrNumber: string;
-    addrProvince: string;
-    addrAmphoe: string;
-    addrTambon: string;
-    addrPostcode: string;
-    addrPhone: string[];
-    addrMobile: string[];
-    addrFax: string[];
-    addrEmail: string;
-    addrCountry: string;
-    addrLat: string;
-    addrLng: string;
-  };
-
-  badge: {
-    supplierWarranty: boolean;
-    supplierSample: boolean;
-    supplierCountry: string;
-  };
-
-  companySetting: {
-    paymentMethod: IcsResPaymentMethod[];
-    shippingZone: {
-      zoneName: string;
-      zoneProvince: string[];
-      zonePostcode: string[];
-      zoneMethod: string[];
-    };
-    creditTerm: string[];
-  };
-
-  companyMetric: {
-    ages: number;
-    leadTime: string[];
-    shippingDuration: string[];
-    employee: string[];
-    companyCapital: number;
-  };
-
-  companyAssets: {
-    supplierVideoUrl: string[];
-    supplierLogoUrl: string;
-    supplierColor: string;
-    supplierBannersUrl: string[];
-  };
-
-  contactPerson: {
-    contactName: string;
-    contactEmail: string;
-    contactMobile: string;
-    contactPosition: string;
-    contactKeyPerson: boolean;
-  }[];
-
-  supplierImages: {
-    type: string;
-    title: string;
-    image: [
-      {
-        url: string;
-        caption: string;
-      }
-    ];
-    verified: boolean;
-  }[];
-
-  supplierDocs: {
-    url: string;
-    type: string;
-    title: string;
-    expire: Date;
-    private: boolean;
-    verified: boolean;
-  }[];
-
-  supplierCertificates: {
-    url: string;
-    type: string;
-    title: string;
-    expire: Date;
-    private: boolean;
-    issued: Date;
-    issuer: string;
-    cerName: string;
-  }[];
-
-  factory: {
-    factoryAddress: {
-      name: string;
-      addressFull: string;
-      number: string;
-      province: string;
-      amphoe: string;
-      tambon: string;
-      postcode: number;
-      lat: string;
-      lng: string;
-    };
-    factoryAreaUnit: string;
-    factoryArea: string;
-    factoryImageUrl: string[];
-    factoryCapacity: string;
-    factoryCapacityUnit: string;
-  };
-
-  indexing: {
-    supplierTag: string[];
-    supplierKeyword: string[];
-  };
-
-  geeesyAction: {
-    supplierVerified: boolean;
-    supplierRating: number;
-    supplierScore: number;
-    supplierActive: boolean;
-    supplierRegisterDate: Date;
-    supplierHilight: boolean;
-    impFactor: number;
-    supplierRecommend: boolean;
-  };
-
+  companyInfo: CompanyInfoSup;
+  companyMapLocation: CompanyMapLocation;
+  companyBoard: CompanyBoard[];
+  addressSupplier: AddressSupplier[];
+  address: Address;
+  badge: BadgeSup;
+  companySetting: CompanySetting;
+  companyMetric: CompanyMetric;
+  companyAssets: CompanyAssetsSup;
+  contactPerson: ContactPerson[];
+  supplierImages: Image[];
+  supplierDocs: Doc[];
+  supplierCertificates: Certificate[];
+  factory: Factory;
+  indexing: Indexing;
+  geeesyAction: GeeesyActionSup;
   followers: number;
   businessType: string;
-
-  supplierCustomPage: {
-    title: string;
-    content: string;
-  }[];
+  supplierCustomPage: CustomPage[];
 }
 
 export interface IcsResDistributor {
-  companyInfo: {
-    distributorName: string;
-    distributorCompanyCode: string;
-    distributorCompanyEmail: string;
-    distributorCompanyWebsite: string;
-    distributorCompanyRegisterId: string;
-    companyOverview: string;
-    companyDescription: string;
-    mainProduct: string[];
-  };
-
-  companyMapLocation: {
-    pinImageUrl: string;
-    lat: string;
-    lng: string;
-    location: string[];
-  };
-
-  companyBoard: {
-    ownerName: string;
-    ownerEmail: string;
-    ownerMobile: string;
-    ownerPosition: string;
-  }[];
-
-  addressSupplier: {
-    distributorAddrName: string;
-    distributorAddrFull: string;
-    distributorAddrNumber: string;
-    distributorAddrProvince: string;
-    distributorAddrAmphoe: string;
-    distributorAddrTambon: string;
-    distributorAddrPostcode: string;
-    distributorAddrCountry: string;
-    distributorAddrLocationLat: number;
-    distributorAddrLocationLng: number;
-    distributorAddrPhone: string;
-    distributorAddrMobile: string;
-    distributorAddrFax: string;
-    distributorAddrEmail: string;
-    distributorAddrType: string;
-    officeHour: [
-      {
-        day: string;
-        time: string;
-      }
-    ];
-  }[];
-
-  address: {
-    addrName: string;
-    addrFull: string;
-    addrNumber: string;
-    addrProvince: string;
-    addrAmphoe: string;
-    addrTambon: string;
-    addrPostcode: string;
-    addrPhone: string[];
-    addrMobile: string[];
-    addrFax: string[];
-    addrEmail: string;
-    addrCountry: string;
-    addrLat: string;
-    addrLng: string;
-  };
-
-  badge: {
-    distributorWarranty: boolean;
-    distributorSample: boolean;
-    distributorCountry: string;
-  };
-
-  companySetting: {
-    paymentMethod: IcsResPaymentMethod[];
-    shippingZone: {
-      zoneName: string;
-      zoneProvince: string[];
-      zonePostcode: string[];
-      zoneMethod: string[];
-    };
-    creditTerm: string[];
-  };
-
-  companyMetric: {
-    ages: number;
-    leadTime: string[];
-    shippingDuration: string[];
-    employee: string[];
-    companyCapital: number;
-  };
-
-  companyAssets: {
-    distributorVideoUrl: string[];
-    distributorLogoUrl: string;
-    distributorColor: string;
-    distributorBannersUrl: string[];
-  };
-
-  contactPerson: {
-    contactName: string;
-    contactEmail: string;
-    contactMobile: string;
-    contactPosition: string;
-    contactKeyPerson: boolean;
-  }[];
-
-  distributorImages: {
-    type: string;
-    title: string;
-    image: [
-      {
-        url: string;
-        caption: string;
-      }
-    ];
-    verified: boolean;
-  }[];
-
-  distributorDocs: {
-    url: string;
-    type: string;
-    title: string;
-    expire: Date;
-    private: boolean;
-    verified: boolean;
-  }[];
-
-  distributorCertificates: {
-    url: string;
-    type: string;
-    title: string;
-    expire: Date;
-    private: boolean;
-    issued: Date;
-    issuer: string;
-    cerName: string;
-  }[];
-
-  factory: {
-    factoryAddress: {
-      name: string;
-      addressFull: string;
-      number: string;
-      province: string;
-      amphoe: string;
-      tambon: string;
-      postcode: number;
-      lat: string;
-      lng: string;
-    };
-
-    factoryAreaUnit: string;
-    factoryArea: string;
-    factoryImageUrl: string[];
-    factoryCapacity: string;
-    factoryCapacityUnit: string;
-  };
-
-  indexing: {
-    distributorTag: string[];
-    distributorKeyword: string[];
-  };
-
-  geeesyAction: {
-    distributorVerified: boolean;
-    distributorRating: number;
-    distributorScore: number;
-    distributorActive: boolean;
-    distributorRegisterDate: Date;
-    distributorHilight: boolean;
-    impFactor: number;
-    distributorRecommend: boolean;
-  };
-
+  companyInfo: CompanyInfoDis
+  companyMapLocation: CompanyMapLocation
+  companyBoard: CompanyBoard[];
+  addressDistributor: AddressDistributor[];
+  address: Address
+  badge: BadgeDis
+  companySetting: CompanySetting
+  companyMetric: CompanyMetric
+  companyAssets: CompanyAssetsDis
+  contactPerson: ContactPerson[];
+  distributorImages: Image[];
+  distributorDocs: Doc[];
+  distributorCertificates: Certificate[];
+  factory: Factory
+  indexing: Indexing
+  geeesyAction: GeeesyActionDis
   followers: number;
   businessType: string;
-  distributorCustomPage: {
-    title: string;
-    content: string;
-  }[];
+  distributorCustomPage: CustomPage[];
 }
 
 export interface IcsResMainCategory {
@@ -406,11 +355,7 @@ interface IcsCreateProduct {
   productPrice: number;
   productSku: string;
   productUnit: string;
-  productWholesaleArray: {
-    minWholesaleQty: number;
-    productWholesalePrice: number;
-    retailPrice: number;
-  }[];
+  productWholesales: ProductWholesales[];
   productSource: string;
   productCategoryId: string;
   productCategoryCustomName: string;
@@ -422,16 +367,7 @@ interface IcsCreateProduct {
   productIsActive: boolean;
   initialStock: number;
   warehouseId: string;
-  productPackage: {
-    weight: number;
-    weightUnit: string;
-    height: number;
-    heightUnit: string;
-    width: number;
-    widthUnit: string;
-    length: number;
-    lengthUnit: string;
-  };
+  productPackage: ProductPackage
   productBrand: string;
   stockAlert: number;
   maximumOnlineStock: number;
@@ -450,10 +386,7 @@ interface IcsCreateProduct {
   recommendProduct: boolean;
   showOnCompanyCard: boolean;
   newProduct: boolean;
-  productCategorySpec: {
-    attriName: string;
-    attriValue: string;
-  }[];
+  productCategorySpec: ProductCategorySpec[];
   showOnMarketplace: boolean;
   showOnInApp: boolean;
   wholesaleOnMarketplace: boolean;
@@ -461,16 +394,8 @@ interface IcsCreateProduct {
   freeShipPrice: number;
   freeShipQuantity: number;
   productVideoCoverUrl: string;
-  wholesale: {
-    qtyMinimum: number;
-    productPrice: number;
-    retailQtyMinimum: number;
-    retailProductPrice: number;
-  };
-  leadTime: {
-    qty: string[];
-    day: number;
-  }[];
+  wholesale: Wholesale
+  leadTime: LeadTime[];
 }
 
 interface IcsCreateProductGroup {
@@ -494,17 +419,12 @@ interface IcsCreateProductGroup {
   recommendProduct: boolean;
   showOnCompanyCard: boolean;
   newProduct: boolean;
-  productCategorySpec: {
-    attriName: string;
-    attriValue: string;
-  }[];
-
+  productCategorySpec: ProductCategorySpec[];
   showOnMarketplace: boolean;
   showOnInApp: boolean;
   wholesaleOnMarketplace: boolean;
   wholesaleInApp: boolean;
   productVideoCoverUrl: string;
-
   products: {
     productName: string;
     costPrice: number;
@@ -512,25 +432,12 @@ interface IcsCreateProductGroup {
     productPrice: number;
     productSku: string;
     productUnit: string;
-    productWholesaleArray: {
-      minWholesaleQty: number;
-      productWholesalePrice: number;
-      retailPrice: number;
-    }[];
+    productWholesales: ProductWholesales[];
     productBarcode: string;
     productImageArrayUrl: string[];
     productIsActive: boolean;
     initialStock: number;
-    productPackage: {
-      weight: number;
-      weightUnit: string;
-      height: number;
-      heightUnit: string;
-      width: number;
-      widthUnit: string;
-      length: number;
-      lengthUnit: string;
-    };
+    productPackage: ProductPackage
     stockAlert: number;
     maximumOnlineStock: number;
     minOrderQty: number;
@@ -543,16 +450,8 @@ interface IcsCreateProductGroup {
     preparingTime: number;
     freeShipPrice: number;
     freeShipQuantity: number;
-    wholesale: {
-      qtyMinimum: number;
-      productPrice: number;
-      retailQtyMinimum: number;
-      retailProductPrice: number;
-    };
-    leadTime: {
-      qty: string[];
-      day: number;
-    }[];
+    wholesale: Wholesale
+    leadTime: LeadTime[];
   }[];
 }
 
@@ -578,10 +477,7 @@ interface IcsCreateProductCategory {
   productCategoryImageUrl: string;
   productCategoryRecommend: boolean;
   productCategoryIconUrl: string;
-  productCategorySpec: {
-    attriName: string;
-    attriValue: string[];
-  }[];
+  productCategorySpec: ProductCategorySpec[];
 }
 
 interface IcsCreateProductCategoryLevel {
@@ -590,10 +486,7 @@ interface IcsCreateProductCategoryLevel {
   productCategoryImageUrl: string;
   productCategoryRecommend: boolean;
   productCategoryIconUrl: string;
-  productCategorySpec: {
-    attriName: string;
-    attriValue: string[];
-  }[];
+  productCategorySpec: ProductCategorySpec[];
 }
 
 export interface IcsResPaymentMethod {
