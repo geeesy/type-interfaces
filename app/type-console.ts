@@ -276,7 +276,7 @@ interface Wholesale {
 };
 
 export interface IcsResSupplier {
-  data: IcsSupplier
+  data: IcsSupplier[]
 }
 export interface IcsSupplier {
   companyInfo: CompanyInfoSup;
@@ -301,7 +301,7 @@ export interface IcsSupplier {
 }
 
 export interface IcsResDistributor {
-  data: IcsDistributor
+  data: IcsDistributor[]
 }
 export interface IcsDistributor {
   companyInfo: CompanyInfoDis
@@ -326,7 +326,7 @@ export interface IcsDistributor {
 }
 
 export interface IcsResMainCategory {
-  data: IcsMainCategory
+  data: IcsMainCategory[]
 }
 export interface IcsMainCategory {
   categoryMainId: string;
@@ -336,7 +336,7 @@ export interface IcsMainCategory {
 }
 
 export interface IcsResCategory {
-  data: IcsCategory
+  data: IcsCategory[]
 }
 export interface IcsCategory {
   categoryId: string;
@@ -476,7 +476,7 @@ interface IcsCreateProductGroup {
 }
 
 export interface IcsResProductCategorySpec {
-  data: IcsProductCategorySpec
+  data: IcsProductCategorySpec[]
 }
 export interface IcsProductCategorySpec {
   attriName: string;
@@ -484,7 +484,7 @@ export interface IcsProductCategorySpec {
 }
 
 export interface IcsResProductCategory {
-  data: IcsProductCategory
+  data: IcsProductCategory[]
 }
 export interface IcsProductCategory {
   productCategoryId: string;
@@ -493,7 +493,7 @@ export interface IcsProductCategory {
 }
 
 export interface IcsResProductMainCategory {
-  data: IcsProductMainCategory
+  data: IcsProductMainCategory[]
 }
 export interface IcsProductMainCategory {
   productMCategoryId: string;
@@ -519,7 +519,7 @@ interface IcsCreateProductCategoryLevel {
 }
 
 export interface IcsResPaymentMethod {
-  data: IcsPaymentMethod
+  data: IcsPaymentMethod[]
 }
 export interface IcsPaymentMethod {
   paymentMethodType: string;
@@ -548,7 +548,7 @@ interface IcsCreateShippingMethod {
 }
 
 export interface IcsResShippingMethod {
-  data: IcsShippingMethod
+  data: IcsShippingMethod[]
 }
 export interface IcsShippingMethod {
   shippingMethodId: string;
@@ -557,7 +557,7 @@ export interface IcsShippingMethod {
 }
 
 export interface IcsResBanner {
-  data: IcsBanner
+  data: IcsBanner[]
 }
 export interface IcsBanner {
   bannerSortIndex: number;
