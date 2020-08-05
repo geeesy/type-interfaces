@@ -107,7 +107,7 @@ interface BadgeDis {
 
 interface CompanySetting {
   paymentMethod: IcsResPaymentMethod[];
-  shippingZone: ShippingZone;
+  shippingZone: ShippingZone[];
   creditTerm: string[];
 }
 
@@ -209,8 +209,8 @@ interface IndexingSup {
 }
 
 interface IndexingDis {
-  supplierTag: string[];
-  supplierKeyword: string[];
+  distributorTag: string[];
+  distributorKeyword: string[];
 }
 
 interface GeeesyActionSup {

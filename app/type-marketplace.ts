@@ -245,6 +245,7 @@ interface IShippingMethodInShippingZone {
   shippingMethodName: string;
   shippingMethodIconUrl: string;
 }
+
 interface IAddress {
   addrName: string;
   addrFull: string;
