@@ -336,7 +336,7 @@ export interface IResProductGroupDetail {
     impFactor: number;
     address: IAddress;
     shippingZone: IShippingZone[];
-    paymentMethod: IPaymentMethod;
+    paymentMethod: IPaymentMethod[];
   };
 }
 interface IPaymentMethod {
@@ -429,7 +429,7 @@ export interface IResProductDetail {
     impFactor: number;
     address: IAddress;
     shippingZone: IShippingZone[];
-    paymentMethod: IPaymentMethod;
+    paymentMethod: IPaymentMethod[];
   };
 }
 export interface IResProductWithAddr {
