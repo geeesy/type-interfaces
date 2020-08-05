@@ -740,10 +740,10 @@ export interface IQuotaRfq {
   quotaRfq: number;
   usedQuotaRfq: number;
 }
-export interface IShippingMethod {
-  data?: IResShippingMethod[];
-}
 export interface IResShippingMethod {
+  data: IShippingMethod[];
+}
+export interface IShippingMethod {
   shippingMethodId: string;
   shippingMethodName: string;
   shippingMethodIconUrl: string;
