@@ -276,6 +276,9 @@ interface Wholesale {
 };
 
 export interface IcsResSupplier {
+  data: IcsSupplier[]
+}
+export interface IcsSupplier {
   companyInfo: CompanyInfoSup;
   companyMapLocation: CompanyMapLocation;
   companyBoard: CompanyBoard[];
@@ -298,6 +301,9 @@ export interface IcsResSupplier {
 }
 
 export interface IcsResDistributor {
+  data: IcsDistributor[]
+}
+export interface IcsDistributor {
   companyInfo: CompanyInfoDis
   companyMapLocation: CompanyMapLocation
   companyBoard: CompanyBoard[];
@@ -320,6 +326,9 @@ export interface IcsResDistributor {
 }
 
 export interface IcsResMainCategory {
+  data: IcsMainCategory[]
+}
+export interface IcsMainCategory {
   categoryMainId: string;
   categoryMainName: string;
   categoryMainIconUrl: string;
@@ -327,6 +336,9 @@ export interface IcsResMainCategory {
 }
 
 export interface IcsResCategory {
+  data: IcsCategory[]
+}
+export interface IcsCategory {
   categoryId: string;
   categoryName: string;
   categoryIconUrl: string;
@@ -464,17 +476,26 @@ interface IcsCreateProductGroup {
 }
 
 export interface IcsResProductCategorySpec {
+  data: IcsProductCategorySpec[]
+}
+export interface IcsProductCategorySpec {
   attriName: string;
   attriValue: string[];
 }
 
 export interface IcsResProductCategory {
+  data: IcsProductCategory[]
+}
+export interface IcsProductCategory {
   productCategoryId: string;
   productCategoryName: string;
   productCategoryIconUrl: string;
 }
 
 export interface IcsResProductMainCategory {
+  data: IcsProductMainCategory[]
+}
+export interface IcsProductMainCategory {
   productMCategoryId: string;
   productMCategoryName: string;
   productMCategoryIconUrl: string;
@@ -498,6 +519,9 @@ interface IcsCreateProductCategoryLevel {
 }
 
 export interface IcsResPaymentMethod {
+  data: IcsPaymentMethod[]
+}
+export interface IcsPaymentMethod {
   paymentMethodType: string;
   paymentMethodTypeAttr: IcsPaymentMethodTypeAttr[];
 }
@@ -524,12 +548,18 @@ interface IcsCreateShippingMethod {
 }
 
 export interface IcsResShippingMethod {
+  data: IcsShippingMethod[]
+}
+export interface IcsShippingMethod {
   shippingMethodId: string;
   shippingMethodName: string;
   shippingMethodIconUrl: string;
 }
 
 export interface IcsResBanner {
+  data: IcsBanner[]
+}
+export interface IcsBanner {
   bannerSortIndex: number;
   bannerLinkUrl: string;
   bannerTitle: string;
