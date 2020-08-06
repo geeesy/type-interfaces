@@ -58,7 +58,9 @@ import {
 
 export namespace Geeesy {
   export type ResConnect = IConnect;
-  export type ResCheck = ICheck & IData;
+  // export type ResCheck = ICheck & IData;
+  export type ResCheck = ICheck | Data;
+  export type Data = IData
 }
 
 export namespace GeeesyMarketplace {
