@@ -42,47 +42,47 @@ import {
   IResSupplierWebsite,
   IResSupplierWithSavedList,
   IResTop20Products,
-  IDataMainCategory,
-  IDataRecommendMainCategory,
-  IDataBanner,
-  IDataProduct,
-  IDataTop20Products,
-  IDataCategoryWithChild,
-  IDataCategory,
-  IDataRecommendCategory,
-  IDataAllCategoryInSearchTool,
-  IDataSupplierHilight,
-  IDataMessageList,
-  IDataMessageDetail,
-  IDataSavedListProducts,
-  IDataSavedListSuppliers,
-  IDataFilterResultProduct,
-  IDataProductGroupDetail,
-  IDataProductDescription,
-  IDataProductDetail,
-  IDataProductWithAddr,
-  IDataProductWithCount,
-  IDataRecommendSupplier,
-  IDataFilterResultSupplier,
-  IDataSupplierWithSavedList,
-  IDataSupplierOverview,
-  IDataSupplierContact,
-  IDataSupplierFactory,
-  IDataSupplierCersAndDocs,
-  IDataSupplierImgAndVerifiedImg,
-  IDataSupplierCustomPage,
-  IDataSupplierWebsite,
-  IDataRfqScore,
-  IDataQuotaRfq,
-  IDataShippingMethod,
-  IDataPaymentMethod,
-  IDataRfqList,
-  IDataReplyRfqList,
-  IDataQuotaInquiry,
-  IDataSupplier,
-  IDataInquiryProductList,
-  IDataSearchResultLocation,
-  IDataInterest
+  IMainCategory,
+  IRecommendMainCategory,
+  IBanner,
+  IProduct,
+  ITop20Products,
+  ICategoryWithChild,
+  ICategory,
+  IRecommendCategory,
+  IAllCategoryInSearchTool,
+  ISupplierHilight,
+  IMessageList,
+  IMessageDetail,
+  ISavedListProducts,
+  ISavedListSuppliers,
+  IFilterResultProduct,
+  IProductGroupDetail,
+  IProductDetail,
+  IProductDescription,
+  IProductWithAddr,
+  IProductWithCount,
+  IRecommendSupplier,
+  IFilterResultSupplier,
+  ISupplierWithSavedList,
+  ISupplierOverview,
+  ISupplierContact,
+  ISupplierFactory,
+  ISupplierCersAndDocs,
+  ISupplierImgAndVerifiedImg,
+  ISupplierWebsite,
+  ISupplierCustomPage,
+  IRfqScore,
+  IQuotaRfq,
+  IShippingMethod,
+  IPaymentMethods,
+  IRfqList,
+  IReplyRfqList,
+  IQuotaInquiry,
+  ISupplier,
+  IInquiryProductList,
+  ISearchResultLocation,
+  IInterest
 } from './type-marketplace'
 import {
   IcsResBanner,
@@ -107,134 +107,135 @@ import {
   IcsDataShippingMethod,
 } from "./type-console";
 
+
 export namespace Geeesy {
   export type ResConnect = IConnect;
   export type ResCheck = ICheck & IData;
 }
 
 export namespace GeeesyMarketplace {
-  export type IMainCategory = IResMainCategory | DataMainCategory;
-  export type DataMainCategory = IDataMainCategory;
+  export type ResMainCategory = IResMainCategory | MainCategory;
+  export type MainCategory = IMainCategory;
 
-  export type IRecommendMainCategory = IResRecommendMainCategory | DataRecommendMainCategory;
-  export type DataRecommendMainCategory = IDataRecommendMainCategory;
+  export type ResRecommendMainCategory = IResRecommendMainCategory | RecommendMainCategory;
+  export type RecommendMainCategory = IRecommendMainCategory;
 
-  export type IBanner = IResBanner | DataBanner;
-  export type DataBanner = IDataBanner;
+  export type ResBanner = IResBanner | Banner;
+  export type Banner = IBanner;
 
-  export type IProduct = IResProduct | DataProduct;
-  export type DataProduct = IDataProduct;
+  export type ResProduct = IResProduct | Product;
+  export type Product = IProduct;
 
-  export type ITop20Products = IResTop20Products | DataTop20Products;
-  export type DataTop20Products = IDataTop20Products;
+  export type ResTop20Products = IResTop20Products | Top20Products;
+  export type Top20Products = ITop20Products;
 
-  export type ICategoryWithChild = IResCategoryWithChild | DataCategoryWithChild;
-  export type DataCategoryWithChild = IDataCategoryWithChild;
+  export type ResCategoryWithChild = IResCategoryWithChild | CategoryWithChild;
+  export type CategoryWithChild = ICategoryWithChild;
 
-  export type ICategory = IResCategory | DataCategory;
-  export type DataCategory = IDataCategory;
+  export type ResCategory = IResCategory | Category;
+  export type Category = ICategory;
 
-  export type IRecommendCategory = IResRecommendCategory | DataRecommendCategory
-  export type DataRecommendCategory = IDataRecommendCategory;
+  export type ResRecommendCategory = IResRecommendCategory | RecommendCategory
+  export type RecommendCategory = IRecommendCategory;
 
-  export type IAllCategoryInSearchTool = IResAllCategoryInSearchTool | DataAllCategoryInSearchTool;
-  export type DataAllCategoryInSearchTool = IDataAllCategoryInSearchTool;
+  export type ResAllCategoryInSearchTool = IResAllCategoryInSearchTool | AllCategoryInSearchTool;
+  export type AllCategoryInSearchTool = IAllCategoryInSearchTool;
 
-  export type ISupplierHilight = IResSupplierHilight | DataSupplierHilight;
-  export type DataSupplierHilight = IDataSupplierHilight;
+  export type ResSupplierHilight = IResSupplierHilight | SupplierHilight;
+  export type SupplierHilight = ISupplierHilight;
 
-  export type IMessageList = IResMessageList | DataMessageList;
-  export type DataMessageList = IDataMessageList;
+  export type ResMessageList = IResMessageList | MessageList;
+  export type MessageList = IMessageList;
 
-  export type IMessageDetail = IResMessageDetail | DataMessageDetail;
-  export type DataMessageDetail = IDataMessageDetail;
+  export type ResMessageDetail = IResMessageDetail | MessageDetail;
+  export type MessageDetail = IMessageDetail;
 
-  export type ISavedListProducts = IResSavedListProducts | DataSavedListProducts;
-  export type DataSavedListProducts = IDataSavedListProducts;
+  export type ResSavedListProducts = IResSavedListProducts | SavedListProducts;
+  export type SavedListProducts = ISavedListProducts;
 
-  export type ISavedListSuppliers = IResSavedListSuppliers | DataSavedListSuppliers;
-  export type DataSavedListSuppliers = IDataSavedListSuppliers;
-  
-  export type IFilterResultProduct = IResFilterResultProduct | DataFilterResultProduct;
-  export type DataFilterResultProduct = IDataFilterResultProduct;
+  export type ResSavedListSuppliers = IResSavedListSuppliers | SavedListSuppliers;
+  export type SavedListSuppliers = ISavedListSuppliers;
 
-  export type IProductGroupDetail = IResProductGroupDetail | DataProductGroupDetail;
-  export type DataProductGroupDetail = IDataProductGroupDetail;
+  export type ResFilterResultProduct = IResFilterResultProduct | FilterResultProduct;
+  export type FilterResultProduct = IFilterResultProduct;
 
-  export type IProductDescription = IResProductDescription | DataProductDescription;
-  export type DataProductDescription = IDataProductDescription;
+  export type ResProductGroupDetail = IResProductGroupDetail | ProductGroupDetail;
+  export type ProductGroupDetail = IProductGroupDetail;
 
-  export type IProductDetail = IResProductDetail | DataProductDetail;
-  export type DataProductDetail = IDataProductDetail;
+  export type ResProductDescription = IResProductDescription | ProductDescription;
+  export type ProductDescription = IProductDescription;
 
-  export type IProductWithAddr = IResProductWithAddr | DataProductWithAddr;
-  export type DataProductWithAddr = IDataProductWithAddr;
+  export type ResProductDetail = IResProductDetail | ProductDetail;
+  export type ProductDetail = IProductDetail;
 
-  export type IProductWithCount = IResProductWithCount | DataProductWithCount;
-  export type DataProductWithCount = IDataProductWithCount;
+  export type ResProductWithAddr = IResProductWithAddr | ProductWithAddr;
+  export type ProductWithAddr = IProductWithAddr;
 
-  export type IRecommendSupplier = IResRecommendSupplier | DataRecommendSupplier;
-  export type DataRecommendSupplier = IDataRecommendSupplier;
+  export type ResProductWithCount = IResProductWithCount | ProductWithCount;
+  export type ProductWithCount = IProductWithCount;
 
-  export type IFilterResultSupplier = IResFilterResultSupplier | DataFilterResultSupplier;
-  export type DataFilterResultSupplier = IDataFilterResultSupplier;
+  export type ResRecommendSupplier = IResRecommendSupplier | RecommendSupplier;
+  export type RecommendSupplier = IRecommendSupplier;
 
-  export type ISupplierWithSavedList = IResSupplierWithSavedList | DataSupplierWithSavedList;
-  export type DataSupplierWithSavedList = IDataSupplierWithSavedList;
+  export type ResFilterResultSupplier = IResFilterResultSupplier | FilterResultSupplier;
+  export type FilterResultSupplier = IFilterResultSupplier;
 
-  export type ISupplierOverview = IResSupplierOverview | DataSupplierOverview;
-  export type DataSupplierOverview = IDataSupplierOverview;
+  export type ResSupplierWithSavedList = IResSupplierWithSavedList | SupplierWithSavedList;
+  export type SupplierWithSavedList = ISupplierWithSavedList;
 
-  export type ISupplierContact = IResSupplierContact | DataSupplierContact;
-  export type DataSupplierContact = IDataSupplierContact;
+  export type ResSupplierOverview = IResSupplierOverview | SupplierOverview;
+  export type SupplierOverview = ISupplierOverview;
 
-  export type ISupplierFactory = IResSupplierFactory | DataSupplierFactory;
-  export type DataSupplierFactory = IDataSupplierFactory;
+  export type ResSupplierContact = IResSupplierContact | SupplierContact;
+  export type SupplierContact = ISupplierContact;
 
-  export type ISupplierCersAndDocs = IResSupplierCersAndDocs | DataSupplierCersAndDocs;
-  export type DataSupplierCersAndDocs = IDataSupplierCersAndDocs;
+  export type ResSupplierFactory = IResSupplierFactory | SupplierFactory;
+  export type SupplierFactory = ISupplierFactory;
 
-  export type ISupplierImgAndVerifiedImg = IResSupplierImgAndVerifiedImg | DataSupplierImgAndVerifiedImg;
-  export type DataSupplierImgAndVerifiedImg = IDataSupplierImgAndVerifiedImg;
+  export type ResSupplierCersAndDocs = IResSupplierCersAndDocs | SupplierCersAndDocs;
+  export type SupplierCersAndDocs = ISupplierCersAndDocs;
 
-  export type ISupplierWebsite = IResSupplierWebsite | DataSupplierWebsite;
-  export type DataSupplierWebsite = IDataSupplierWebsite;
+  export type ResSupplierImgAndVerifiedImg = IResSupplierImgAndVerifiedImg | SupplierImgAndVerifiedImg;
+  export type SupplierImgAndVerifiedImg = ISupplierImgAndVerifiedImg;
 
-  export type ISupplierCustomPage = IResSupplierCustomPage | DataSupplierCustomPage;
-  export type DataSupplierCustomPage = IDataSupplierCustomPage;
+  export type ResSupplierWebsite = IResSupplierWebsite | SupplierWebsite;
+  export type SupplierWebsite = ISupplierWebsite;
 
-  export type IRfqScore = IResRfqScore | DataRfqScore;
-  export type DataRfqScore = IDataRfqScore;
+  export type ResSupplierCustomPage = IResSupplierCustomPage | SupplierCustomPage;
+  export type SupplierCustomPage = ISupplierCustomPage;
 
-  export type IQuotaRfq = IResQuotaRfq | DataQuotaRfq;
-  export type DataQuotaRfq = IDataQuotaRfq;
+  export type ResRfqScore = IResRfqScore | RfqScore;
+  export type RfqScore = IRfqScore;
 
-  export type IShippingMethod = IResShippingMethod | DataShippingMethod;
-  export type DataShippingMethod = IDataShippingMethod;
+  export type ResQuotaRfq = IResQuotaRfq | QuotaRfq;
+  export type QuotaRfq = IQuotaRfq;
 
-  export type IPaymentMethod = IResPaymentMethod | DataPaymentMethod;
-  export type DataPaymentMethod = IDataPaymentMethod;
+  export type ResShippingMethod = IResShippingMethod | ShippingMethod;
+  export type ShippingMethod = IShippingMethod;
 
-  export type IRfqList = IResRfqList | DataRfqList;
-  export type DataRfqList = IDataRfqList;
+  export type ResPaymentMethod = IResPaymentMethod | PaymentMethods;
+  export type PaymentMethods = IPaymentMethods;
 
-  export type IReplyRfqList = IResReplyRfqList | DataReplyRfqList;
-  export type DataReplyRfqList = IDataReplyRfqList;
+  export type ResRfqList = IResRfqList | RfqList;
+  export type RfqList = IRfqList;
 
-  export type IQuotaInquiry = IResQuotaInquiry | DataQuotaInquiry;
-  export type DataQuotaInquiry = IDataQuotaInquiry;
+  export type ResReplyRfqList = IResReplyRfqList | ReplyRfqList;
+  export type ReplyRfqList = IReplyRfqList;
 
-  export type ISupplier = IResSupplier | DataSupplier;
-  export type DataSupplier = IDataSupplier;
+  export type ResQuotaInquiry = IResQuotaInquiry | QuotaInquiry;
+  export type QuotaInquiry = IQuotaInquiry;
 
-  export type IInquiryProductList = IResInquiryProductList | DataInquiryProductList;
-  export type DataInquiryProductList = IDataInquiryProductList;
+  export type ResSupplier = IResSupplier | Supplier;
+  export type Supplier = ISupplier;
 
-  export type ISearchResultLocation = IResSearchResultLocation | DataSearchResultLocation;
-  export type DataSearchResultLocation = IDataSearchResultLocation;
+  export type ResInquiryProductList = IResInquiryProductList | InquiryProductList;
+  export type InquiryProductList = IInquiryProductList;
 
-  export type IInterest = IResInterest | DataInterest;
-  export type DataInterest = IDataInterest;
+  export type ResSearchResultLocation = IResSearchResultLocation | SearchResultLocation;
+  export type SearchResultLocation = ISearchResultLocation;
+
+  export type ResInterest = IResInterest | Interest;
+  export type Interest = IInterest;
 
 }
 
