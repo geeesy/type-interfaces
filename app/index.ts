@@ -242,28 +242,37 @@ export namespace GeeesyMarketplace {
 export namespace GeeesyConsole {
   export type IcsPaymentMethod = IcsResPaymentMethod | CsDataPaymentMethod;
   export type CsDataPaymentMethod = IcsDataPaymentMethod;
+  
   export type IcsBanner = IcsResBanner | CsDataBanner;
   export type CsDataBanner = IcsDataBanner;
+
   export type IcsCategory = IcsResCategory | CsDataCategory;
   export type CsDataCategory = IcsDataCategory;
+
   export type IcsDistributor = IcsResDistributor | CsDataDistributor;
   export type CsDataDistributor = IcsDataDistributor;
+
   export type IcsMainCategory = IcsResMainCategory | CsDataMainCategory;
   export type CsDataMainCategory = IcsDataMainCategory;
+
   export type IcsProductCategory =
     | IcsResProductCategory
     | CsDataProductCategory;
   export type CsDataProductCategory = IcsDataProductCategory;
+
   export type IcsProductCategorySpec =
     | IcsResProductCategorySpec
     | CsDataProductCategorySpec;
   export type CsDataProductCategorySpec = IcsDataProductCategorySpec;
+
   export type IcsProductMainCategory =
     | IcsResProductMainCategory
     | CsDataProductMainCategory;
   export type CsDataProductMainCategory = IcsDataProductMainCategory;
+
   export type IcsShippingMethod = IcsResShippingMethod | CsDataShippingMethod;
   export type CsDataShippingMethod = IcsDataShippingMethod;
+  
   export type IcsSupplier = IcsResSupplier | CsDataSupplier;
   export type CsDataSupplier = IcsDataSupplier;
 }
