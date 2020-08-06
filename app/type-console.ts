@@ -106,7 +106,7 @@ interface BadgeDis {
 }
 
 interface CompanySetting {
-  paymentMethod: IcsPaymentMethod[];
+  paymentMethod: IcsDataPaymentMethod[];
   shippingZone: ShippingZone[];
   creditTerm: string[];
 }
@@ -275,9 +275,9 @@ interface Wholesale {
 };
 
 export interface IcsResSupplier {
-  data: IcsSupplier[]
+  data: IcsDataSupplier[]
 }
-export interface IcsSupplier {
+export interface IcsDataSupplier {
   companyInfo: CompanyInfoSup;
   companyMapLocation: CompanyMapLocation;
   companyBoard: CompanyBoard[];
@@ -300,9 +300,9 @@ export interface IcsSupplier {
 }
 
 export interface IcsResDistributor {
-  data: IcsDistributor[]
+  data: IcsDataDistributor[]
 }
-export interface IcsDistributor {
+export interface IcsDataDistributor {
   companyInfo: CompanyInfoDis
   companyMapLocation: CompanyMapLocation
   companyBoard: CompanyBoard[];
@@ -325,9 +325,9 @@ export interface IcsDistributor {
 }
 
 export interface IcsResMainCategory {
-  data: IcsMainCategory[]
+  data: IcsDataMainCategory[]
 }
-export interface IcsMainCategory {
+export interface IcsDataMainCategory {
   categoryMainId: string;
   categoryMainName: string;
   categoryMainIconUrl: string;
@@ -335,9 +335,9 @@ export interface IcsMainCategory {
 }
 
 export interface IcsResCategory {
-  data: IcsCategory[]
+  data: IcsDataCategory[]
 }
-export interface IcsCategory {
+export interface IcsDataCategory {
   categoryId: string;
   categoryName: string;
   categoryIconUrl: string;
@@ -475,26 +475,26 @@ interface IcsCreateProductGroup {
 }
 
 export interface IcsResProductCategorySpec {
-  data: IcsProductCategorySpec[]
+  data: IcsDataProductCategorySpec[]
 }
-export interface IcsProductCategorySpec {
+export interface IcsDataProductCategorySpec {
   attriName: string;
   attriValue: string[];
 }
 
 export interface IcsResProductCategory {
-  data: IcsProductCategory[]
+  data: IcsDataProductCategory[]
 }
-export interface IcsProductCategory {
+export interface IcsDataProductCategory {
   productCategoryId: string;
   productCategoryName: string;
   productCategoryIconUrl: string;
 }
 
 export interface IcsResProductMainCategory {
-  data: IcsProductMainCategory[]
+  data: IcsDataProductMainCategory[]
 }
-export interface IcsProductMainCategory {
+export interface IcsDataProductMainCategory {
   productMCategoryId: string;
   productMCategoryName: string;
   productMCategoryIconUrl: string;
@@ -518,9 +518,9 @@ interface IcsCreateProductCategoryLevel {
 }
 
 export interface IcsResPaymentMethod {
-  data: IcsPaymentMethod[]
+  data: IcsDataPaymentMethod[]
 }
-export interface IcsPaymentMethod {
+export interface IcsDataPaymentMethod {
   paymentMethodType: string;
   paymentMethodTypeAttr: IcsPaymentMethodTypeAttr[];
 }
@@ -547,18 +547,18 @@ interface IcsCreateShippingMethod {
 }
 
 export interface IcsResShippingMethod {
-  data: IcsShippingMethod[]
+  data: IcsDataShippingMethod[]
 }
-export interface IcsShippingMethod {
+export interface IcsDataShippingMethod {
   shippingMethodId: string;
   shippingMethodName: string;
   shippingMethodIconUrl: string;
 }
 
 export interface IcsResBanner {
-  data: IcsBanner[]
+  data: IcsDataBanner[]
 }
-export interface IcsBanner {
+export interface IcsDataBanner {
   bannerSortIndex: number;
   bannerLinkUrl: string;
   bannerTitle: string;

@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { ICheck, IConnect, IData } from './interfaces'
+import { ICheck, IConnect, IData } from "./interfaces";
 import {
   IResAllCategoryInSearchTool,
   IResBanner,
@@ -41,8 +41,8 @@ import {
   IResSupplierOverview,
   IResSupplierWebsite,
   IResSupplierWithSavedList,
-  IResTop20Products
-} from './type-marketplace'
+  IResTop20Products,
+} from "./type-marketplace";
 import {
   IcsResBanner,
   IcsResCategory,
@@ -53,8 +53,18 @@ import {
   IcsResProductCategorySpec,
   IcsResProductMainCategory,
   IcsResShippingMethod,
-  IcsResSupplier
-} from './type-console'
+  IcsResSupplier,
+  IcsDataSupplier,
+  IcsDataDistributor,
+  IcsDataMainCategory,
+  IcsDataBanner,
+  IcsDataCategory,
+  IcsDataPaymentMethod,
+  IcsDataProductCategory,
+  IcsDataProductCategorySpec,
+  IcsDataProductMainCategory,
+  IcsDataShippingMethod,
+} from "./type-console";
 
 export namespace Geeesy {
   export type ResConnect = IConnect;
@@ -106,14 +116,30 @@ export namespace GeeesyMarketplace {
 }
 
 export namespace GeeesyConsole {
-  export type IcsPaymentMethod = IcsResPaymentMethod
-  export type IcsBanner = IcsResBanner
-  export type IcsCategory = IcsResCategory
-  export type IcsDistributor = IcsResDistributor
-  export type IcsMainCategory = IcsResMainCategory
-  export type IcsProductCategory = IcsResProductCategory
-  export type IcsProductCategorySpec = IcsResProductCategorySpec
-  export type IcsProductMainCategory = IcsResProductMainCategory
-  export type IcsShippingMethod = IcsResShippingMethod
-  export type IcsSupplier = IcsResSupplier
+  export type IcsPaymentMethod = IcsResPaymentMethod | CsDataPaymentMethod;
+  export type CsDataPaymentMethod = IcsDataPaymentMethod;
+  export type IcsBanner = IcsResBanner | CsDataBanner;
+  export type CsDataBanner = IcsDataBanner;
+  export type IcsCategory = IcsResCategory | CsDataCategory;
+  export type CsDataCategory = IcsDataCategory;
+  export type IcsDistributor = IcsResDistributor | CsDataDistributor;
+  export type CsDataDistributor = IcsDataDistributor;
+  export type IcsMainCategory = IcsResMainCategory | CsDataMainCategory;
+  export type CsDataMainCategory = IcsDataMainCategory;
+  export type IcsProductCategory =
+    | IcsResProductCategory
+    | CsDataProductCategory;
+  export type CsDataProductCategory = IcsDataProductCategory;
+  export type IcsProductCategorySpec =
+    | IcsResProductCategorySpec
+    | CsDataProductCategorySpec;
+  export type CsDataProductCategorySpec = IcsDataProductCategorySpec;
+  export type IcsProductMainCategory =
+    | IcsResProductMainCategory
+    | CsDataProductMainCategory;
+  export type CsDataProductMainCategory = IcsDataProductMainCategory;
+  export type IcsShippingMethod = IcsResShippingMethod | CsDataShippingMethod;
+  export type CsDataShippingMethod = IcsDataShippingMethod;
+  export type IcsSupplier = IcsResSupplier | CsDataSupplier;
+  export type CsDataSupplier = IcsDataSupplier;
 }
