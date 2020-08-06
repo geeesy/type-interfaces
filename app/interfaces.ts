@@ -4,5 +4,10 @@ export interface IConnect {
 
 export interface ICheck {
   message: string;
-  data: string;
+  data: IData[];
+}
+
+export interface IData {
+  id: string;
+  user: string;
 }

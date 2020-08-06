@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { ICheck, IConnect } from "./interfaces";
+import { ICheck, IConnect, IData } from './interfaces'
 import {
   IResAllCategoryInSearchTool,
   IResBanner,
@@ -32,34 +32,33 @@ import {
   IResSearchResultLocation,
   IResShippingMethod,
   IResSupplier,
-  IResSupplierWebsite,
-  IResTop20Products,
-  IResSupplierHilight,
-  IResSupplierWithSavedList,
-  IResSupplierOverview,
-  IResSupplierContact,
-  IResSupplierFactory,
   IResSupplierCersAndDocs,
-  IResSupplierImgAndVerifiedImg,
+  IResSupplierContact,
   IResSupplierCustomPage,
-} from "./type-marketplace";
-
+  IResSupplierFactory,
+  IResSupplierHilight,
+  IResSupplierImgAndVerifiedImg,
+  IResSupplierOverview,
+  IResSupplierWebsite,
+  IResSupplierWithSavedList,
+  IResTop20Products
+} from './type-marketplace'
 import {
-  IcsResPaymentMethod,
   IcsResBanner,
   IcsResCategory,
   IcsResDistributor,
   IcsResMainCategory,
+  IcsResPaymentMethod,
   IcsResProductCategory,
   IcsResProductCategorySpec,
   IcsResProductMainCategory,
   IcsResShippingMethod,
-  IcsResSupplier,
-} from "./type-console";
+  IcsResSupplier
+} from './type-console'
 
 export namespace Geeesy {
   export type ResConnect = IConnect;
-  export type ResCheck = ICheck;
+  export type ResCheck = ICheck | IData;
 }
 
 export namespace GeeesyMarketplace {
