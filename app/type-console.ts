@@ -106,7 +106,7 @@ interface BadgeDis {
 }
 
 interface CompanySetting {
-  paymentMethod: IcsResPaymentMethod[];
+  paymentMethod: IcsPaymentMethod[];
   shippingZone: ShippingZone[];
   creditTerm: string[];
 }
