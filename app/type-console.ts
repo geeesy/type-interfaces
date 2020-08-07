@@ -106,7 +106,7 @@ interface BadgeDis {
 }
 
 interface CompanySetting {
-  paymentMethod: IcsDataPaymentMethod[];
+  paymentMethod: IPaymentMethod[];
   shippingZone: ShippingZone[];
   creditTerm: string[];
 }
@@ -274,11 +274,11 @@ interface Wholesale {
   retailProductPrice: number;
 };
 
-export interface IcsResSupplier {
+export interface IResSupplierConsole {
   message: string;
-  data: IcsDataSupplier[]
+  data: ISupplierConsole[]
 }
-export interface IcsDataSupplier {
+export interface ISupplierConsole {
   companyInfo: CompanyInfoSup;
   companyMapLocation: CompanyMapLocation;
   companyBoard: CompanyBoard[];
@@ -300,11 +300,11 @@ export interface IcsDataSupplier {
   supplierCustomPage: CustomPage[];
 }
 
-export interface IcsResDistributor {
+export interface IResDistributor {
   message: string;
-  data: IcsDataDistributor[]
+  data: IDistributor[]
 }
-export interface IcsDataDistributor {
+export interface IDistributor {
   companyInfo: CompanyInfoDis
   companyMapLocation: CompanyMapLocation
   companyBoard: CompanyBoard[];
@@ -326,29 +326,29 @@ export interface IcsDataDistributor {
   distributorCustomPage: CustomPage[];
 }
 
-export interface IcsResMainCategory {
+export interface IResMainCategoryConsole {
   message: string;
-  data: IcsDataMainCategory[]
+  data: IMainCategoryConsole[]
 }
-export interface IcsDataMainCategory {
+export interface IMainCategoryConsole {
   categoryMainId: string;
   categoryMainName: string;
   categoryMainIconUrl: string;
   categoryMainImageUrl: string;
 }
 
-export interface IcsResCategory {
+export interface IResCategoryConsole {
   message: string;
-  data: IcsDataCategory[]
+  data: ICategoryConsole[]
 }
-export interface IcsDataCategory {
+export interface ICategoryConsole {
   categoryId: string;
   categoryName: string;
   categoryIconUrl: string;
   categoryImageUrl: string;
 }
 
-interface IcsCreateMainCategory {
+interface ICreateMainCategory {
   categoryName: string;
   categoryImageUrl: string;
   categoryRecommend: boolean;
@@ -358,7 +358,7 @@ interface IcsCreateMainCategory {
   categoryBanners: string[];
 }
 
-interface IcsCreateCategoryLevel {
+interface ICreateCategoryLevel {
   categoryId: string;
   categoryName: string;
   categoryImageUrl: string;
@@ -368,7 +368,7 @@ interface IcsCreateCategoryLevel {
   categoryBanners: string[];
 }
 
-interface IcsCreateProduct {
+interface ICreateProduct {
   supplierId: string;
   distributorId: string;
   productImageUrl: string[];
@@ -421,7 +421,7 @@ interface IcsCreateProduct {
   leadTime: LeadTime[];
 }
 
-interface IcsCreateProductGroup {
+interface ICreateProductGroup {
   supplierId: string;
   distributorId: string;
   productGroupImageUrl: string[];
@@ -478,36 +478,36 @@ interface IcsCreateProductGroup {
   }[];
 }
 
-export interface IcsResProductCategorySpec {
+export interface IResProductCategorySpec {
   message: string;
-  data: IcsDataProductCategorySpec[]
+  data: IProductCategorySpec[]
 }
-export interface IcsDataProductCategorySpec {
+export interface IProductCategorySpec {
   attriName: string;
   attriValue: string[];
 }
 
-export interface IcsResProductCategory {
+export interface IResProductCategory {
   message: string;
-  data: IcsDataProductCategory[]
+  data: IProductCategory[]
 }
-export interface IcsDataProductCategory {
+export interface IProductCategory {
   productCategoryId: string;
   productCategoryName: string;
   productCategoryIconUrl: string;
 }
 
-export interface IcsResProductMainCategory {
+export interface IResProductMainCategory {
   message: string;
-  data: IcsDataProductMainCategory[]
+  data: IProductMainCategory[]
 }
-export interface IcsDataProductMainCategory {
+export interface IProductMainCategory {
   productMCategoryId: string;
   productMCategoryName: string;
   productMCategoryIconUrl: string;
 }
 
-interface IcsCreateProductCategory {
+interface ICreateProductCategory {
   productCategoryName: string;
   productCategoryImageUrl: string;
   productCategoryRecommend: boolean;
@@ -515,7 +515,7 @@ interface IcsCreateProductCategory {
   productCategorySpec: ProductCategorySpec[];
 }
 
-interface IcsCreateProductCategoryLevel {
+interface ICreateProductCategoryLevel {
   productCategoryId: string;
   productCategoryName: string;
   productCategoryImageUrl: string;
@@ -524,58 +524,58 @@ interface IcsCreateProductCategoryLevel {
   productCategorySpec: ProductCategorySpec[];
 }
 
-export interface IcsResPaymentMethod {
+export interface IResPaymentMethodConsole {
   message: string;
-  data: IcsDataPaymentMethod[]
+  data: IPaymentMethod[]
 }
-export interface IcsDataPaymentMethod {
+export interface IPaymentMethod {
   paymentMethodType: string;
-  paymentMethodTypeAttr: IcsPaymentMethodTypeAttr[];
+  paymentMethodTypeAttr: IPaymentMethodTypeAttr[];
 }
-interface IcsPaymentMethodTypeAttr {
+interface IPaymentMethodTypeAttr {
   paymentMethodIconUrl: string;
   paymentMethodName: string;
 }
 
-interface IcsCreatePaymentMethod {
+interface ICreatePaymentMethod {
   paymentMethodName: string;
   paymentMethodType: string;
   paymentMethodIconUrl: string;
 }
 
-interface IcsCreateRfqScore {
+interface ICreateRfqScore {
   rfqSectionName: string;
   rfqScore: number;
 }
 
-interface IcsCreateShippingMethod {
+interface ICreateShippingMethod {
   shippingMethodPostcode: number;
   shippingMethodName: string;
   shippingMethodIconUrl: string;
 }
 
-export interface IcsResShippingMethod {
+export interface IResShippingMethodConsole {
   message: string;
-  data: IcsDataShippingMethod[]
+  data: IShippingMethodConsole[]
 }
-export interface IcsDataShippingMethod {
+export interface IShippingMethodConsole {
   shippingMethodId: string;
   shippingMethodName: string;
   shippingMethodIconUrl: string;
 }
 
-export interface IcsResBanner {
+export interface IResBannerConsole {
   message: string;
-  data: IcsDataBanner[]
+  data: IBannerConsole[]
 }
-export interface IcsDataBanner {
+export interface IBannerConsole {
   bannerSortIndex: number;
   bannerLinkUrl: string;
   bannerTitle: string;
   bannerImageUrl: string;
 }
 
-interface IcsCreateVideo {
+interface ICreateVideo {
   videoUrl: string;
   videoTitle: string;
   videoDescription: string;
