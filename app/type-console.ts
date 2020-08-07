@@ -275,6 +275,7 @@ interface Wholesale {
 };
 
 export interface IcsResSupplier {
+  message: string;
   data: IcsDataSupplier[]
 }
 export interface IcsDataSupplier {
@@ -300,6 +301,7 @@ export interface IcsDataSupplier {
 }
 
 export interface IcsResDistributor {
+  message: string;
   data: IcsDataDistributor[]
 }
 export interface IcsDataDistributor {
@@ -325,6 +327,7 @@ export interface IcsDataDistributor {
 }
 
 export interface IcsResMainCategory {
+  message: string;
   data: IcsDataMainCategory[]
 }
 export interface IcsDataMainCategory {
@@ -335,6 +338,7 @@ export interface IcsDataMainCategory {
 }
 
 export interface IcsResCategory {
+  message: string;
   data: IcsDataCategory[]
 }
 export interface IcsDataCategory {
@@ -475,6 +479,7 @@ interface IcsCreateProductGroup {
 }
 
 export interface IcsResProductCategorySpec {
+  message: string;
   data: IcsDataProductCategorySpec[]
 }
 export interface IcsDataProductCategorySpec {
@@ -483,6 +488,7 @@ export interface IcsDataProductCategorySpec {
 }
 
 export interface IcsResProductCategory {
+  message: string;
   data: IcsDataProductCategory[]
 }
 export interface IcsDataProductCategory {
@@ -492,6 +498,7 @@ export interface IcsDataProductCategory {
 }
 
 export interface IcsResProductMainCategory {
+  message: string;
   data: IcsDataProductMainCategory[]
 }
 export interface IcsDataProductMainCategory {
@@ -518,6 +525,7 @@ interface IcsCreateProductCategoryLevel {
 }
 
 export interface IcsResPaymentMethod {
+  message: string;
   data: IcsDataPaymentMethod[]
 }
 export interface IcsDataPaymentMethod {
@@ -547,6 +555,7 @@ interface IcsCreateShippingMethod {
 }
 
 export interface IcsResShippingMethod {
+  message: string;
   data: IcsDataShippingMethod[]
 }
 export interface IcsDataShippingMethod {
@@ -556,6 +565,7 @@ export interface IcsDataShippingMethod {
 }
 
 export interface IcsResBanner {
+  message: string;
   data: IcsDataBanner[]
 }
 export interface IcsDataBanner {
