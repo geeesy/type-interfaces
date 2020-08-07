@@ -82,7 +82,27 @@ import {
   ISupplier,
   IInquiryProductList,
   ISearchResultLocation,
-  IInterest
+  IInterest,
+  IResSurvey,
+  ISurvey,
+  IProductGroup,
+  IChildCategory,
+  IsavedList,
+  IProductWithOutSupplier,
+  IAddress,
+  IPaymentMethodTypeAttr,
+  IProductPackage,
+  IWholesale,
+  ILeadTime,
+  IProductWholeSale,
+  IAddressSupplier,
+  IOfficeHour,
+  IFactoryAddress,
+  ISupplierDocs,
+  ISupplierImage,
+  IImages,
+  ISupplierCertificates,
+  Requestors
 } from './type-marketplace'
 import {
   IResBannerConsole,
@@ -236,6 +256,31 @@ export namespace GeeesyMarketplace {
 
   export type ResInterest = IResInterest | Interest;
   export type Interest = IInterest;
+
+  export type ResSurvey = IResSurvey | Survey;
+  export type Survey = ISurvey;
+
+  export type ProductGroup = IProductGroup;
+  export type ChildCategory = IChildCategory;
+  export type savedList = IsavedList;
+  export type ProductWithOutSupplier = IProductWithOutSupplier;
+  export type Address = IAddress;
+  export type PaymentMethod = IPaymentMethod;
+  export type PaymentMethodTypeAttr = IPaymentMethodTypeAttr;
+  export type ProductCategorySpec = IProductCategorySpec;
+  export type ProductPackage = IProductPackage;
+  export type Wholesale = IWholesale;
+  export type LeadTime = ILeadTime;
+  export type ProductWholeSale = IProductWholeSale;
+  export type AddressSupplier = IAddressSupplier;
+  export type OfficeHour = IOfficeHour;
+  export type FactoryAddress = IFactoryAddress;
+  export type SupplierDocs = ISupplierDocs;
+  export type SupplierImage = ISupplierImage;
+  export type Images = IImages;
+  export type SupplierCertificates = ISupplierCertificates;
+  export type equestors = Requestors;
+
 
 }
 
