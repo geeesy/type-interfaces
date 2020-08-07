@@ -82,29 +82,49 @@ import {
   ISupplier,
   IInquiryProductList,
   ISearchResultLocation,
-  IInterest
+  IInterest,
+  IResSurvey,
+  ISurvey,
+  IProductGroup,
+  IChildCategory,
+  IsavedList,
+  IProductWithOutSupplier,
+  IAddress,
+  IPaymentMethodTypeAttr,
+  IProductPackage,
+  IWholesale,
+  ILeadTime,
+  IProductWholeSale,
+  IAddressSupplier,
+  IOfficeHour,
+  IFactoryAddress,
+  ISupplierDocs,
+  ISupplierImage,
+  IImages,
+  ISupplierCertificates,
+  Requestors
 } from './type-marketplace'
 import {
-  IcsResBanner,
-  IcsResCategory,
-  IcsResDistributor,
-  IcsResMainCategory,
-  IcsResPaymentMethod,
-  IcsResProductCategory,
-  IcsResProductCategorySpec,
-  IcsResProductMainCategory,
-  IcsResShippingMethod,
-  IcsResSupplier,
-  IcsDataSupplier,
-  IcsDataDistributor,
-  IcsDataMainCategory,
-  IcsDataBanner,
-  IcsDataCategory,
-  IcsDataPaymentMethod,
-  IcsDataProductCategory,
-  IcsDataProductCategorySpec,
-  IcsDataProductMainCategory,
-  IcsDataShippingMethod,
+  IResBannerConsole,
+  IResCategoryConsole,
+  IResDistributor,
+  IResMainCategoryConsole,
+  IResPaymentMethodConsole,
+  IResProductCategory,
+  IResProductCategorySpec,
+  IResProductMainCategory,
+  IResShippingMethodConsole,
+  IResSupplierConsole,
+  ISupplierConsole,
+  IDistributor,
+  IMainCategoryConsole,
+  IBannerConsole,
+  ICategoryConsole,
+  IPaymentMethod,
+  IProductCategory,
+  IProductCategorySpec,
+  IProductMainCategory,
+  IShippingMethodConsole,
 } from "./type-console";
 
 
@@ -239,42 +259,67 @@ export namespace GeeesyMarketplace {
   export type ResInterest = IResInterest | Interest;
   export type Interest = IInterest;
 
+  export type ResSurvey = IResSurvey | Survey;
+  export type Survey = ISurvey;
+
+  export type ProductGroup = IProductGroup;
+  export type ChildCategory = IChildCategory;
+  export type savedList = IsavedList;
+  export type ProductWithOutSupplier = IProductWithOutSupplier;
+  export type Address = IAddress;
+  export type PaymentMethod = IPaymentMethod;
+  export type PaymentMethodTypeAttr = IPaymentMethodTypeAttr;
+  export type ProductCategorySpec = IProductCategorySpec;
+  export type ProductPackage = IProductPackage;
+  export type Wholesale = IWholesale;
+  export type LeadTime = ILeadTime;
+  export type ProductWholeSale = IProductWholeSale;
+  export type AddressSupplier = IAddressSupplier;
+  export type OfficeHour = IOfficeHour;
+  export type FactoryAddress = IFactoryAddress;
+  export type SupplierDocs = ISupplierDocs;
+  export type SupplierImage = ISupplierImage;
+  export type Images = IImages;
+  export type SupplierCertificates = ISupplierCertificates;
+  export type equestors = Requestors;
+
+
 }
 
 export namespace GeeesyConsole {
-  export type IcsPaymentMethod = IcsResPaymentMethod | CsDataPaymentMethod;
-  export type CsDataPaymentMethod = IcsDataPaymentMethod;
+  export type ResPaymentMethod = IResPaymentMethodConsole | PaymentMethod;
+  export type PaymentMethod = IPaymentMethod;
   
-  export type IcsBanner = IcsResBanner | CsDataBanner;
-  export type CsDataBanner = IcsDataBanner;
+  export type ResBanner = IResBannerConsole | Banner;
+  export type Banner = IBannerConsole;
 
-  export type IcsCategory = IcsResCategory | CsDataCategory;
-  export type CsDataCategory = IcsDataCategory;
+  export type ResCategory = IResCategoryConsole | Category;
+  export type Category = ICategoryConsole;
 
-  export type IcsDistributor = IcsResDistributor | CsDataDistributor;
-  export type CsDataDistributor = IcsDataDistributor;
+  export type ResDistributor = IResDistributor | Distributor;
+  export type Distributor = IDistributor;
 
-  export type IcsMainCategory = IcsResMainCategory | CsDataMainCategory;
-  export type CsDataMainCategory = IcsDataMainCategory;
+  export type ResMainCategory = IResMainCategoryConsole | MainCategory;
+  export type MainCategory = IMainCategoryConsole;
 
-  export type IcsProductCategory =
-    | IcsResProductCategory
-    | CsDataProductCategory;
-  export type CsDataProductCategory = IcsDataProductCategory;
+  export type ResProductCategory =
+    | IResProductCategory
+    | ProductCategory;
+  export type ProductCategory = IProductCategory;
 
-  export type IcsProductCategorySpec =
-    | IcsResProductCategorySpec
-    | CsDataProductCategorySpec;
-  export type CsDataProductCategorySpec = IcsDataProductCategorySpec;
+  export type ResProductCategorySpec =
+    | IResProductCategorySpec
+    | ProductCategorySpec;
+  export type ProductCategorySpec = IProductCategorySpec;
 
-  export type IcsProductMainCategory =
-    | IcsResProductMainCategory
-    | CsDataProductMainCategory;
-  export type CsDataProductMainCategory = IcsDataProductMainCategory;
+  export type ResProductMainCategory =
+    | IResProductMainCategory
+    | ProductMainCategory;
+  export type ProductMainCategory = IProductMainCategory;
 
-  export type IcsShippingMethod = IcsResShippingMethod | CsDataShippingMethod;
-  export type CsDataShippingMethod = IcsDataShippingMethod;
+  export type ResShippingMethod = IResShippingMethodConsole | ShippingMethod;
+  export type ShippingMethod = IShippingMethodConsole;
   
-  export type IcsSupplier = IcsResSupplier | CsDataSupplier;
-  export type CsDataSupplier = IcsDataSupplier;
+  export type ResSupplier = IResSupplierConsole | Supplier;
+  export type Supplier = ISupplierConsole;
 }
