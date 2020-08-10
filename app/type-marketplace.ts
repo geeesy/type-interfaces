@@ -278,6 +278,8 @@ interface ISuppliers {
   address: IAddress;
   shippingZone: IShippingZone[];
   products: IProductWithOutSupplier[];
+  supplierLogoUrl: string;
+  supplierRatingAmount: number;
 }
 export interface IProductWithOutSupplier {
   productId: string;
@@ -876,6 +878,7 @@ export interface ISupplier {
   address: IAddress;
   supplierCompanyWebsite: string;
   supplierKeyword: string[];
+  savedLists: IsavedList[];
 }
 export interface ICreateInquiry {
   userId: string;
