@@ -944,6 +944,7 @@ export interface ISearchResultLocation {
   shippingZone: IShippingZone[];
   products: IProductWithOutSupplier[];
   companyMapLocation: CompanyMapLocation;
+  supplierLogoUrl: string;
 }
 interface CompanyMapLocation {
   lat: string;
