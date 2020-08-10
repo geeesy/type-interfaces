@@ -845,7 +845,7 @@ export interface IRfqList {
   rfqExpiryDate: Date;
   seenRfqSupplierCount: number;
   replyRfqQuotationCount: number;
-  rfqId: number;
+  rfqId: string;
 }
 export interface IResReplyRfqList {
   message: string;
