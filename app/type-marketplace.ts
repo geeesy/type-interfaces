@@ -229,6 +229,7 @@ export interface ISavedListProducts {
       supplierVerified: boolean;
       supplierRating: number;
       address: IAddress;
+      savedLists: IsavedList[];
     }
   ];
   supplierCount: number;
