@@ -114,8 +114,11 @@ export interface IResAllCategoryInSearchTool {
   data: IAllCategoryInSearchTool[];
 }
 export interface IAllCategoryInSearchTool {
-  categoryId: string;
-  categoryName: string;
+  categoryMainIconUrl: string,
+  categoryMainId: string,
+  categoryMainImageUrl: string,
+  categoryMainName: string,
+  impFactor: string,
 }
 export interface IResSupplierHilight {
   message: string;
@@ -230,6 +233,7 @@ export interface ISavedListProducts {
       supplierRating: number;
       address: IAddress;
       savedLists: IsavedList[];
+      supplierLogoUrl: string;
     }
   ];
   supplierCount: number;
@@ -596,6 +600,7 @@ export interface IFilterResultSupplier {
   savedLists: IsavedList[];
   supplierCount: number;
   productCount: number;
+  supplierLogoUrl: string;
 }
 export interface IResSupplierWithSavedList {
   message: string;
@@ -840,6 +845,7 @@ export interface IRfqList {
   rfqExpiryDate: Date;
   seenRfqSupplierCount: number;
   replyRfqQuotationCount: number;
+  id: number
 }
 export interface IResReplyRfqList {
   message: string;
