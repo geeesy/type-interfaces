@@ -213,31 +213,22 @@ export interface IResSavedListProducts {
 export interface ISavedListProducts {
   savedListId: string;
   savedListName: string;
-  products: [
-    {
-      productId: string;
-      productName: string;
-      productImageUrl: string;
-      productPrice: number;
-      productUnit: string;
-      productCurrencyCode: string;
-      packSizeLabel: string;
-      packSizeQty: number;
-      impFactor: number;
-      productGroup: IProductGroup;
-      supplierId: string;
-      supplierName: string;
-      supplierCompanyEmail: string;
-      supplierKeyword: string[];
-      supplierVerified: boolean;
-      supplierRating: number;
-      address: IAddress;
-      savedLists: IsavedList[];
-      supplierLogoUrl: string;
-    }
-  ];
   supplierCount: number;
   productCount: number;
+  supplierId: string;
+  supplierName: string;
+  supplierCompanyEmail: string;
+  supplierKeyword: string[];
+  supplierVerified: boolean;
+  supplierRating: number;
+  supplierCompanyWebsite: string;
+  impFactor: number;
+  address: IAddress;
+  products: IProductWithOutSupplier[];
+  savedLists: IsavedList[];
+  supplierLogoUrl: string;
+
+
 }
 export interface IsavedList {
   savedListId: string;
@@ -328,26 +319,20 @@ export interface IResFilterResultProduct {
   data: IFilterResultProduct[];
 }
 export interface IFilterResultProduct {
-  productId: string;
-  productName: string;
-  productImageUrl: string;
-  productPrice: number;
-  productUnit: string;
-  productCurrencyCode: string;
-  packSizeLabel: string;
-  packSizeQty: number;
-  impFactor: number;
-  productGroup: IProductGroup;
   supplierId: string;
   supplierName: string;
   supplierCompanyEmail: string;
   supplierKeyword: string[];
   supplierVerified: boolean;
   supplierRating: number;
+  supplierCompanyWebsite: string;
+  impFactor: number;
   address: IAddress;
+  products: IProductWithOutSupplier[];
   savedLists: IsavedList[];
   supplierCount: number;
   productCount: number;
+  supplierLogoUrl: string;
 }
 export interface IResProductMayLike { } // Like a IProduct
 export interface IResProductGroupDetail {
