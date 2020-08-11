@@ -348,6 +348,7 @@ export interface IFilterResultProduct {
   savedLists: IsavedList[];
   supplierCount: number;
   productCount: number;
+  supplierLogoUrl:string;
 }
 export interface IResProductMayLike { } // Like a IProduct
 export interface IResProductGroupDetail {
