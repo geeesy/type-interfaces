@@ -496,6 +496,7 @@ export interface IProductDetail {
     address: IAddress;
     shippingZone: IShippingZone[];
     paymentMethod: IPaymentMethod[];
+    supplierLogoUrl: string;
   };
 }
 export interface IResProductWithAddr {
