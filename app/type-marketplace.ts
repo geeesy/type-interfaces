@@ -558,7 +558,7 @@ export interface IResRecommendSupplier {
 }
 export interface IRecommendSupplier {
   supplierId: string;
-  supplierIconUrl: string;
+  supplierLogoUrl: string;
   supplierName: string;
   supplierCompanyEmail: string;
   supplierKeyword: string[];
@@ -595,7 +595,7 @@ export interface IResSupplierWithSavedList {
 }
 export interface ISupplierWithSavedList {
   supplierId: string;
-  supplierIconUrl: string;
+  supplierLogoUrl: string;
   supplierName: string;
   supplierCompanyEmail: string;
   supplierKeyword: string[];
