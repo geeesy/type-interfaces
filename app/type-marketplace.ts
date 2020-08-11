@@ -395,6 +395,7 @@ export interface IProductGroupDetail {
     address: IAddress;
     shippingZone: IShippingZone[];
     paymentMethod: IPaymentMethod[];
+    supplierLogoUrl: string;
   };
 }
 export interface IPaymentMethod {
