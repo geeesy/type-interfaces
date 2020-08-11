@@ -276,6 +276,7 @@ interface ISuppliers {
   products: IProductWithOutSupplier[];
   supplierLogoUrl: string;
   supplierRatingAmount: number;
+  savedLists: IsavedList[];
 }
 export interface IProductWithOutSupplier {
   productId: string;
