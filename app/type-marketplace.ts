@@ -314,6 +314,8 @@ export interface IAddress {
   addrFax: string[];
   addrLat: string;
   addrLng: string;
+  addrCountry:string;
+  addrEmail:string;
 }
 export interface IResFilterResultProduct {
   message: string;
@@ -395,6 +397,7 @@ export interface IProductGroupDetail {
     address: IAddress;
     shippingZone: IShippingZone[];
     paymentMethod: IPaymentMethod[];
+    supplierLogoUrl: string;
   };
 }
 export interface IPaymentMethod {
@@ -558,7 +561,7 @@ export interface IResRecommendSupplier {
 }
 export interface IRecommendSupplier {
   supplierId: string;
-  supplierIconUrl: string;
+  supplierLogoUrl: string;
   supplierName: string;
   supplierCompanyEmail: string;
   supplierKeyword: string[];
@@ -595,7 +598,7 @@ export interface IResSupplierWithSavedList {
 }
 export interface ISupplierWithSavedList {
   supplierId: string;
-  supplierIconUrl: string;
+  supplierLogoUrl: string;
   supplierName: string;
   supplierCompanyEmail: string;
   supplierKeyword: string[];
