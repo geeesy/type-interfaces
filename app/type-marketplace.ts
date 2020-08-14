@@ -314,6 +314,8 @@ export interface IAddress {
   addrFax: string[];
   addrLat: string;
   addrLng: string;
+  addrCountry:string;
+  addrEmail:string;
 }
 export interface IResFilterResultProduct {
   message: string;
