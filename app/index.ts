@@ -127,6 +127,14 @@ import {
   IShippingMethodConsole,
 } from "./type-console";
 
+import {
+  IResMarketPrice,
+  IMarketPrice,
+  IResManufacturerPrice,
+  IManufacturerPrice,
+  ICal
+} from "./type-inapp";
+
 
 export namespace Geeesy {
   export type ResConnect = IConnect;
@@ -411,6 +419,12 @@ export namespace GeeesyInApp {
   export type ResSurvey = IResSurvey | Survey;
   export type Survey = ISurvey;
 
+  export type ResMarketPrice = IResMarketPrice | MarketPrice;
+  export type MarketPrice = IMarketPrice;
+  
+  export type ResManufacturerPrice = IResManufacturerPrice | ManufacturerPrice;
+  export type ManufacturerPrice = IManufacturerPrice;
+
   export type ProductGroup = IProductGroup;
   export type ChildCategory = IChildCategory;
   export type savedList = IsavedList;
@@ -431,6 +445,7 @@ export namespace GeeesyInApp {
   export type Images = IImages;
   export type SupplierCertificates = ISupplierCertificates;
   export type equestors = Requestors;
+  export type Cal = ICal;
 
 
 }
@@ -438,7 +453,7 @@ export namespace GeeesyInApp {
 export namespace GeeesyConsole {
   export type ResPaymentMethod = IResPaymentMethodConsole | PaymentMethod;
   export type PaymentMethod = IPaymentMethod;
-  
+
   export type ResBanner = IResBannerConsole | Banner;
   export type Banner = IBannerConsole;
 
@@ -468,7 +483,7 @@ export namespace GeeesyConsole {
 
   export type ResShippingMethod = IResShippingMethodConsole | ShippingMethod;
   export type ShippingMethod = IShippingMethodConsole;
-  
+
   export type ResSupplier = IResSupplierConsole | Supplier;
   export type Supplier = ISupplierConsole;
 }
