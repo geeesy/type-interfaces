@@ -1,18 +1,52 @@
-/* eslint-disable no-unused-vars */
-import { ICheck, IConnect, IData } from "./interfaces";
 import {
+  IAddress,
+  IAddressSupplier,
+  IAllCategoryInSearchTool,
+  IBanner,
+  ICategory,
+  ICategoryWithChild,
+  IChildCategory,
+  IFactoryAddress,
+  IFilterResultProduct,
+  IFilterResultSupplier,
+  IImages,
+  IInquiryProductList,
+  IInterest,
+  ILeadTime,
+  IMainCategory,
+  IMessageDetail,
+  IMessageList,
+  IOfficeHour,
+  IPaymentMethodTypeAttr,
+  IPaymentMethods,
+  IProduct,
+  IProductDescription,
+  IProductDetail,
+  IProductGroup,
+  IProductGroupDetail,
+  IProductPackage,
+  IProductWholeSale,
+  IProductWithAddr,
+  IProductWithCount,
+  IProductWithOutSupplier,
+  IQuotaInquiry,
+  IQuotaRfq,
+  IRecommendCategory,
+  IRecommendMainCategory,
+  IRecommendSupplier,
+  IReplyRfqList,
   IResAllCategoryInSearchTool,
   IResBanner,
   IResCategory,
   IResCategoryWithChild,
   IResFilterResultProduct,
   IResFilterResultSupplier,
-  IResPaymentMethod,
   IResInquiryProductList,
   IResInterest,
   IResMainCategory,
   IResMessageDetail,
   IResMessageList,
+  IResPaymentMethod,
   IResProduct,
   IResProductDescription,
   IResProductDetail,
@@ -41,70 +75,42 @@ import {
   IResSupplierOverview,
   IResSupplierWebsite,
   IResSupplierWithSavedList,
+  IResSurvey,
   IResTop20Products,
-  IMainCategory,
-  IRecommendMainCategory,
-  IBanner,
-  IProduct,
-  ITop20Products,
-  ICategoryWithChild,
-  ICategory,
-  IRecommendCategory,
-  IAllCategoryInSearchTool,
-  ISupplierHilight,
-  IMessageList,
-  IMessageDetail,
+  IRfqList,
+  IRfqScore,
   ISavedListProducts,
   ISavedListSuppliers,
-  IFilterResultProduct,
-  IProductGroupDetail,
-  IProductDetail,
-  IProductDescription,
-  IProductWithAddr,
-  IProductWithCount,
-  IRecommendSupplier,
-  IFilterResultSupplier,
-  ISupplierWithSavedList,
-  ISupplierOverview,
-  ISupplierContact,
-  ISupplierFactory,
-  ISupplierCersAndDocs,
-  ISupplierImgAndVerifiedImg,
-  ISupplierWebsite,
-  ISupplierCustomPage,
-  IRfqScore,
-  IQuotaRfq,
-  IShippingMethod,
-  IPaymentMethods,
-  IRfqList,
-  IReplyRfqList,
-  IQuotaInquiry,
-  ISupplier,
-  IInquiryProductList,
   ISearchResultLocation,
-  IInterest,
-  IResSurvey,
-  ISurvey,
-  IProductGroup,
-  IChildCategory,
-  IsavedList,
-  IProductWithOutSupplier,
-  IAddress,
-  IPaymentMethodTypeAttr,
-  IProductPackage,
-  IWholesale,
-  ILeadTime,
-  IProductWholeSale,
-  IAddressSupplier,
-  IOfficeHour,
-  IFactoryAddress,
-  ISupplierDocs,
-  ISupplierImage,
-  IImages,
+  IShippingMethod,
+  ISupplier,
+  ISupplierCersAndDocs,
   ISupplierCertificates,
+  ISupplierContact,
+  ISupplierCustomPage,
+  ISupplierDocs,
+  ISupplierFactory,
+  ISupplierHilight,
+  ISupplierImage,
+  ISupplierImgAndVerifiedImg,
+  ISupplierOverview,
+  ISupplierWebsite,
+  ISupplierWithSavedList,
+  ISurvey,
+  ITop20Products,
+  IWholesale,
+  IsavedList,
   Requestors
 } from './type-marketplace'
 import {
+  IBannerConsole,
+  ICategoryConsole,
+  IDistributor,
+  IMainCategoryConsole,
+  IPaymentMethod,
+  IProductCategory,
+  IProductCategorySpec,
+  IProductMainCategory,
   IResBannerConsole,
   IResCategoryConsole,
   IResDistributor,
@@ -115,26 +121,18 @@ import {
   IResProductMainCategory,
   IResShippingMethodConsole,
   IResSupplierConsole,
-  ISupplierConsole,
-  IDistributor,
-  IMainCategoryConsole,
-  IBannerConsole,
-  ICategoryConsole,
-  IPaymentMethod,
-  IProductCategory,
-  IProductCategorySpec,
-  IProductMainCategory,
   IShippingMethodConsole,
-} from "./type-console";
-
+  ISupplierConsole
+} from './type-console'
 import {
-  IResMarketPrice,
+  ICal,
+  IManufacturerPrice,
   IMarketPrice,
   IResManufacturerPrice,
-  IManufacturerPrice,
-  ICal
-} from "./type-inapp";
-
+  IResMarketPrice
+} from './type-inapp'
+/* eslint-disable no-unused-vars */
+import { ICheck, IConnect, IData } from './interfaces'
 
 export namespace Geeesy {
   export type ResConnect = IConnect;
@@ -291,7 +289,6 @@ export namespace GeeesyMarketplace {
   export type SupplierCertificates = ISupplierCertificates;
   export type equestors = Requestors;
 
-
 }
 
 export namespace GeeesyInApp {
@@ -423,7 +420,7 @@ export namespace GeeesyInApp {
 
   export type ResMarketPrice = IResMarketPrice | MarketPrice;
   export type MarketPrice = IMarketPrice;
-  
+
   export type ResManufacturerPrice = IResManufacturerPrice | ManufacturerPrice;
   export type ManufacturerPrice = IManufacturerPrice;
 
@@ -448,7 +445,6 @@ export namespace GeeesyInApp {
   export type SupplierCertificates = ISupplierCertificates;
   export type equestors = Requestors;
   export type Cal = ICal;
-
 
 }
 
@@ -489,3 +485,5 @@ export namespace GeeesyConsole {
   export type ResSupplier = IResSupplierConsole | Supplier;
   export type Supplier = ISupplierConsole;
 }
+
+export { IProduct } from './type-marketplace'
