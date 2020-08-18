@@ -486,4 +486,6 @@ export namespace GeeesyConsole {
   export type Supplier = ISupplierConsole;
 }
 
-export * from './type-marketplace'
+export * as IMarketplace from './type-marketplace'
+export * as IInapp from './type-inapp'
+export * as IConsole from './type-console'
