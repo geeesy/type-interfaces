@@ -516,52 +516,21 @@ export interface IResProductWithAddr {
   message: string;
   data: IProductWithAddr[];
 }
-export interface IProductWithAddr {
-  productId: string;
-  productName: string;
-  productImageUrl: string;
-  productPrice: number;
-  productUnit: string;
-  productCurrencyCode: string;
-  packSizeLabel: string;
-  packSizeQty: number;
-  productGroup: IProductGroup;
-  supplierId: string;
-  supplierName: string;
+export interface IProductWithAddr extends IProduct {
   supplierCompanyEmail: string;
   supplierKeyword: string[];
-  supplierVerified: boolean;
   supplierRating: number;
-  impFactor: number;
   address: IAddress;
-  savedLists: IsavedList[];
   supplierCount: number;
   productCount: number;
-  productCategory: ISupProductCat;
 }
 export interface IResAllNewProduct extends IResProductWithAddr {} // IProductWithAddr
 export interface IResProductWithCount {
   message: string;
   data: IProductWithCount[];
 }
-export interface IProductWithCount {
-  productId: string;
-  productName: string;
-  productImageUrl: string;
-  productPrice: number;
-  productUnit: string;
-  productCurrencyCode: string;
-  packSizeLabel: string;
-  packSizeQty: number;
-  impFactor: number;
-  minOrderQty: number;
-  productGroup: IProductGroup;
-  supplierId: string;
-  supplierName: string;
-  supplierVerified: boolean;
-  savedLists: IsavedList[];
+export interface IProductWithCount extends IProduct {
   supplierCount: number;
-  productCategory: ISupProductCat;
 }
 export interface IResAllRelatedProduct extends IResProductWithCount {} // Like a IProductWithCount
 export interface IResAllVisitedProduct extends IResProductWithCount {} // Like a IProductWithCount
