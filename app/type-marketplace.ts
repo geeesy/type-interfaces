@@ -53,24 +53,24 @@ export interface IProduct {
   supplierName: string;
   supplierVerified: boolean;
   savedLists: IsavedList[];
-  productCategory: ISupProductCat
+  productCategory: ISupProductCat;
 }
 export interface IResSupProductCat {
-  message: string
-  data: ISupProductCat[]
+  message: string;
+  data: ISupProductCat[];
 }
 export interface ISupProductCat {
-  productCategoryId: string
-  productCategoryName: string
-  productCategoryIcon: string
+  productCategoryId: string;
+  productCategoryName: string;
+  productCategoryIcon: string;
 }
 export interface IProductGroup {
   productGroupId: string;
   productGroupName: string;
   productGroupImageUrl: string;
 }
-export interface IResRecommendProduct {} // Like a IProduct
-export interface IResTop20ProductsByCategory {} // Like a IProduct
+export interface IResRecommendProduct extends IResProduct {} // Like a IProduct
+export interface IResTop20ProductsByCategory extends IResProduct {} // Like a IProduct
 export interface IResTop20Products {
   message: string;
   data: ITop20Products[];
@@ -142,7 +142,7 @@ export interface ISupplierHilight {
   supplierLogoUrl: string;
   impFactor: number;
 }
-export interface IResRelatedProducts {} // Like a IProduct
+export interface IResRelatedProducts extends IResProduct {} // Like a IProduct
 export interface ICreateLatestVisitProducts {
   userId: string;
   productId: string;
@@ -161,7 +161,7 @@ export interface ICreateLatestVisitProducts {
   supplierVerified: boolean;
   savedLists: IsavedList[];
 } // Like a IProduct + userId
-export interface IResLatestVisitProducts {} // Like a Products
+export interface IResLatestVisitProducts extends IResProduct {} // Like a Products
 export interface ICreateMessage {
   msg: string;
   userId: string;
@@ -347,7 +347,7 @@ export interface IFilterResultProduct {
   productCount: number;
   supplierLogoUrl: string;
 }
-export interface IResProductMayLike {} // Like a IProduct
+export interface IResProductMayLike extends IResProduct {} // Like a IProduct
 export interface IResProductGroupDetail {
   message: string;
   data: IProductGroupDetail[];
@@ -454,8 +454,8 @@ export interface IResProductDescription {
 export interface IProductDescription {
   description: string; // HTML
 }
-export interface IResProductBySupplier {} // Like a IProduct
-export interface IResRelatedProductByProduct {} // Like a IProduct
+export interface IResProductBySupplier extends IResProduct {} // Like a IProduct
+export interface IResRelatedProductByProduct extends IResProduct {} // Like a IProduct
 export interface IResProductDetail {
   message: string;
   data: IProductDetail[];
@@ -516,55 +516,25 @@ export interface IResProductWithAddr {
   message: string;
   data: IProductWithAddr[];
 }
-export interface IProductWithAddr {
-  productId: string;
-  productName: string;
-  productImageUrl: string;
-  productPrice: number;
-  productUnit: string;
-  productCurrencyCode: string;
-  packSizeLabel: string;
-  packSizeQty: number;
-  productGroup: IProductGroup;
-  supplierId: string;
-  supplierName: string;
+export interface IProductWithAddr extends IProduct {
   supplierCompanyEmail: string;
   supplierKeyword: string[];
-  supplierVerified: boolean;
   supplierRating: number;
-  impFactor: number;
   address: IAddress;
-  savedLists: IsavedList[];
   supplierCount: number;
   productCount: number;
 }
-export interface IResAllNewProduct {} // IProductV2
+export interface IResAllNewProduct extends IResProductWithAddr {} // IProductWithAddr
 export interface IResProductWithCount {
   message: string;
   data: IProductWithCount[];
 }
-export interface IProductWithCount {
-  productId: string;
-  productName: string;
-  productImageUrl: string;
-  productPrice: number;
-  productUnit: string;
-  productCurrencyCode: string;
-  packSizeLabel: string;
-  packSizeQty: number;
-  impFactor: number;
-  minOrderQty: number;
-  productGroup: IProductGroup;
-  supplierId: string;
-  supplierName: string;
-  supplierVerified: boolean;
-  savedLists: IsavedList[];
+export interface IProductWithCount extends IProduct {
   supplierCount: number;
-  productCount: number;
 }
-export interface IResAllRelatedProduct {} // Like a IProductWithCount
-export interface IResAllVisitedProduct {} // Like a IProductWithCount
-export interface IResAllRecommendProduct {} // Like a IProductV2
+export interface IResAllRelatedProduct extends IResProductWithCount {} // Like a IProductWithCount
+export interface IResAllVisitedProduct extends IResProductWithCount {} // Like a IProductWithCount
+export interface IResAllRecommendProduct extends IResProductWithAddr {} // Like a IProductWithAddr
 export interface IResRecommendSupplier {
   message: string;
   data: IRecommendSupplier[];
@@ -618,8 +588,8 @@ export interface ISupplierWithSavedList {
   address: IAddress;
   savedLists: IsavedList[];
 }
-export interface IResSupplierMayLike {} // ISupplierWithSavedList
-export interface IResLatestVisitSupplier {} // ISupplierWithSavedList
+export interface IResSupplierMayLike extends IResSupplierWithSavedList {} // ISupplierWithSavedList
+export interface IResLatestVisitSupplier extends IResSupplierWithSavedList {} // ISupplierWithSavedList
 export interface IResSupplierOverview {
   message: string;
   data: ISupplierOverview[];
@@ -748,7 +718,7 @@ export interface ISupplierCertificates {
   issuer: string;
   cerName: string;
 }
-export interface IResSupplierProduct {} // IProduct
+export interface IResSupplierProduct extends IResProduct {} // IProduct
 export interface IResSupplierWebsite {
   message: string;
   data: ISupplierWebsite[];
@@ -924,8 +894,8 @@ export interface IInquiryProductList {
   savedLists: IsavedList[];
   unread: false;
 }
-export interface IResSearchResultSupplier {} // Like a IFilterResultSupplier
-export interface IResSearchResultProduct {} // Like a IFilterResultProduct
+export interface IResSearchResultSupplier extends IResSearchResultLocation {} // Like a IFilterResultSupplier
+export interface IResSearchResultProduct extends IResSearchResultLocation {} // Like a IFilterResultProduct
 export interface IResSearchResultLocation {
   message: string;
   data: ISearchResultLocation[];
