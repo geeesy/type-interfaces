@@ -53,6 +53,16 @@ export interface IProduct {
   supplierName: string;
   supplierVerified: boolean;
   savedLists: IsavedList[];
+  productCategory: ISupProductCat
+}
+export interface IResSupProductCat {
+  message: string
+  data: ISupProductCat[]
+}
+export interface ISupProductCat {
+  productCategoryId: string
+  productCategoryName: string
+  productCategoryIcon: string
 }
 export interface IProductGroup {
   productGroupId: string;

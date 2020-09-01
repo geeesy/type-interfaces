@@ -100,8 +100,10 @@ import {
   ITop20Products,
   IWholesale,
   IsavedList,
-  Requestors
-} from './type-marketplace'
+  Requestors,
+  IResSupProductCat,
+  ISupProductCat,
+} from "./type-marketplace";
 import {
   IBannerConsole,
   ICategoryConsole,
@@ -122,30 +124,32 @@ import {
   IResShippingMethodConsole,
   IResSupplierConsole,
   IShippingMethodConsole,
-  ISupplierConsole
-} from './type-console'
+  ISupplierConsole,
+} from "./type-console";
 import {
   ICal,
   IManufacturerPrice,
   IMarketPrice,
   IResManufacturerPrice,
-  IResMarketPrice
-} from './type-inapp'
+  IResMarketPrice,
+} from "./type-inapp";
 /* eslint-disable no-unused-vars */
-import { ICheck, IConnect, IData } from './interfaces'
+import { ICheck, IConnect, IData } from "./interfaces";
 
 export namespace Geeesy {
   export type ResConnect = IConnect;
   // export type ResCheck = ICheck & IData;
   export type ResCheck = ICheck | Data;
-  export type Data = IData
+  export type Data = IData;
 }
 
 export namespace GeeesyMarketplace {
   export type ResMainCategory = IResMainCategory | MainCategory;
   export type MainCategory = IMainCategory;
 
-  export type ResRecommendMainCategory = IResRecommendMainCategory | RecommendMainCategory;
+  export type ResRecommendMainCategory =
+    | IResRecommendMainCategory
+    | RecommendMainCategory;
   export type RecommendMainCategory = IRecommendMainCategory;
 
   export type ResBanner = IResBanner | Banner;
@@ -163,10 +167,12 @@ export namespace GeeesyMarketplace {
   export type ResCategory = IResCategory | Category;
   export type Category = ICategory;
 
-  export type ResRecommendCategory = IResRecommendCategory | RecommendCategory
+  export type ResRecommendCategory = IResRecommendCategory | RecommendCategory;
   export type RecommendCategory = IRecommendCategory;
 
-  export type ResAllCategoryInSearchTool = IResAllCategoryInSearchTool | AllCategoryInSearchTool;
+  export type ResAllCategoryInSearchTool =
+    | IResAllCategoryInSearchTool
+    | AllCategoryInSearchTool;
   export type AllCategoryInSearchTool = IAllCategoryInSearchTool;
 
   export type ResSupplierHilight = IResSupplierHilight | SupplierHilight;
@@ -181,16 +187,24 @@ export namespace GeeesyMarketplace {
   export type ResSavedListProducts = IResSavedListProducts | SavedListProducts;
   export type SavedListProducts = ISavedListProducts;
 
-  export type ResSavedListSuppliers = IResSavedListSuppliers | SavedListSuppliers;
+  export type ResSavedListSuppliers =
+    | IResSavedListSuppliers
+    | SavedListSuppliers;
   export type SavedListSuppliers = ISavedListSuppliers;
 
-  export type ResFilterResultProduct = IResFilterResultProduct | FilterResultProduct;
+  export type ResFilterResultProduct =
+    | IResFilterResultProduct
+    | FilterResultProduct;
   export type FilterResultProduct = IFilterResultProduct;
 
-  export type ResProductGroupDetail = IResProductGroupDetail | ProductGroupDetail;
+  export type ResProductGroupDetail =
+    | IResProductGroupDetail
+    | ProductGroupDetail;
   export type ProductGroupDetail = IProductGroupDetail;
 
-  export type ResProductDescription = IResProductDescription | ProductDescription;
+  export type ResProductDescription =
+    | IResProductDescription
+    | ProductDescription;
   export type ProductDescription = IProductDescription;
 
   export type ResProductDetail = IResProductDetail | ProductDetail;
@@ -205,10 +219,14 @@ export namespace GeeesyMarketplace {
   export type ResRecommendSupplier = IResRecommendSupplier | RecommendSupplier;
   export type RecommendSupplier = IRecommendSupplier;
 
-  export type ResFilterResultSupplier = IResFilterResultSupplier | FilterResultSupplier;
+  export type ResFilterResultSupplier =
+    | IResFilterResultSupplier
+    | FilterResultSupplier;
   export type FilterResultSupplier = IFilterResultSupplier;
 
-  export type ResSupplierWithSavedList = IResSupplierWithSavedList | SupplierWithSavedList;
+  export type ResSupplierWithSavedList =
+    | IResSupplierWithSavedList
+    | SupplierWithSavedList;
   export type SupplierWithSavedList = ISupplierWithSavedList;
 
   export type ResSupplierOverview = IResSupplierOverview | SupplierOverview;
@@ -220,16 +238,22 @@ export namespace GeeesyMarketplace {
   export type ResSupplierFactory = IResSupplierFactory | SupplierFactory;
   export type SupplierFactory = ISupplierFactory;
 
-  export type ResSupplierCersAndDocs = IResSupplierCersAndDocs | SupplierCersAndDocs;
+  export type ResSupplierCersAndDocs =
+    | IResSupplierCersAndDocs
+    | SupplierCersAndDocs;
   export type SupplierCersAndDocs = ISupplierCersAndDocs;
 
-  export type ResSupplierImgAndVerifiedImg = IResSupplierImgAndVerifiedImg | SupplierImgAndVerifiedImg;
+  export type ResSupplierImgAndVerifiedImg =
+    | IResSupplierImgAndVerifiedImg
+    | SupplierImgAndVerifiedImg;
   export type SupplierImgAndVerifiedImg = ISupplierImgAndVerifiedImg;
 
   export type ResSupplierWebsite = IResSupplierWebsite | SupplierWebsite;
   export type SupplierWebsite = ISupplierWebsite;
 
-  export type ResSupplierCustomPage = IResSupplierCustomPage | SupplierCustomPage;
+  export type ResSupplierCustomPage =
+    | IResSupplierCustomPage
+    | SupplierCustomPage;
   export type SupplierCustomPage = ISupplierCustomPage;
 
   export type ResRfqScore = IResRfqScore | RfqScore;
@@ -256,10 +280,14 @@ export namespace GeeesyMarketplace {
   export type ResSupplier = IResSupplier | Supplier;
   export type Supplier = ISupplier;
 
-  export type ResInquiryProductList = IResInquiryProductList | InquiryProductList;
+  export type ResInquiryProductList =
+    | IResInquiryProductList
+    | InquiryProductList;
   export type InquiryProductList = IInquiryProductList;
 
-  export type ResSearchResultLocation = IResSearchResultLocation | SearchResultLocation;
+  export type ResSearchResultLocation =
+    | IResSearchResultLocation
+    | SearchResultLocation;
   export type SearchResultLocation = ISearchResultLocation;
 
   export type ResInterest = IResInterest | Interest;
@@ -267,6 +295,9 @@ export namespace GeeesyMarketplace {
 
   export type ResSurvey = IResSurvey | Survey;
   export type Survey = ISurvey;
+
+  export type ResSupProductCat = IResSupProductCat | SupProductCat;
+  export type SupProductCat = ISupProductCat;
 
   export type ProductGroup = IProductGroup;
   export type ChildCategory = IChildCategory;
@@ -288,14 +319,15 @@ export namespace GeeesyMarketplace {
   export type Images = IImages;
   export type SupplierCertificates = ISupplierCertificates;
   export type equestors = Requestors;
-
 }
 
 export namespace GeeesyInApp {
   export type ResMainCategory = IResMainCategory | MainCategory;
   export type MainCategory = IMainCategory;
 
-  export type ResRecommendMainCategory = IResRecommendMainCategory | RecommendMainCategory;
+  export type ResRecommendMainCategory =
+    | IResRecommendMainCategory
+    | RecommendMainCategory;
   export type RecommendMainCategory = IRecommendMainCategory;
 
   export type ResBanner = IResBanner | Banner;
@@ -313,10 +345,12 @@ export namespace GeeesyInApp {
   export type ResCategory = IResCategory | Category;
   export type Category = ICategory;
 
-  export type ResRecommendCategory = IResRecommendCategory | RecommendCategory
+  export type ResRecommendCategory = IResRecommendCategory | RecommendCategory;
   export type RecommendCategory = IRecommendCategory;
 
-  export type ResAllCategoryInSearchTool = IResAllCategoryInSearchTool | AllCategoryInSearchTool;
+  export type ResAllCategoryInSearchTool =
+    | IResAllCategoryInSearchTool
+    | AllCategoryInSearchTool;
   export type AllCategoryInSearchTool = IAllCategoryInSearchTool;
 
   export type ResSupplierHilight = IResSupplierHilight | SupplierHilight;
@@ -331,16 +365,24 @@ export namespace GeeesyInApp {
   export type ResSavedListProducts = IResSavedListProducts | SavedListProducts;
   export type SavedListProducts = ISavedListProducts;
 
-  export type ResSavedListSuppliers = IResSavedListSuppliers | SavedListSuppliers;
+  export type ResSavedListSuppliers =
+    | IResSavedListSuppliers
+    | SavedListSuppliers;
   export type SavedListSuppliers = ISavedListSuppliers;
 
-  export type ResFilterResultProduct = IResFilterResultProduct | FilterResultProduct;
+  export type ResFilterResultProduct =
+    | IResFilterResultProduct
+    | FilterResultProduct;
   export type FilterResultProduct = IFilterResultProduct;
 
-  export type ResProductGroupDetail = IResProductGroupDetail | ProductGroupDetail;
+  export type ResProductGroupDetail =
+    | IResProductGroupDetail
+    | ProductGroupDetail;
   export type ProductGroupDetail = IProductGroupDetail;
 
-  export type ResProductDescription = IResProductDescription | ProductDescription;
+  export type ResProductDescription =
+    | IResProductDescription
+    | ProductDescription;
   export type ProductDescription = IProductDescription;
 
   export type ResProductDetail = IResProductDetail | ProductDetail;
@@ -355,10 +397,14 @@ export namespace GeeesyInApp {
   export type ResRecommendSupplier = IResRecommendSupplier | RecommendSupplier;
   export type RecommendSupplier = IRecommendSupplier;
 
-  export type ResFilterResultSupplier = IResFilterResultSupplier | FilterResultSupplier;
+  export type ResFilterResultSupplier =
+    | IResFilterResultSupplier
+    | FilterResultSupplier;
   export type FilterResultSupplier = IFilterResultSupplier;
 
-  export type ResSupplierWithSavedList = IResSupplierWithSavedList | SupplierWithSavedList;
+  export type ResSupplierWithSavedList =
+    | IResSupplierWithSavedList
+    | SupplierWithSavedList;
   export type SupplierWithSavedList = ISupplierWithSavedList;
 
   export type ResSupplierOverview = IResSupplierOverview | SupplierOverview;
@@ -370,16 +416,22 @@ export namespace GeeesyInApp {
   export type ResSupplierFactory = IResSupplierFactory | SupplierFactory;
   export type SupplierFactory = ISupplierFactory;
 
-  export type ResSupplierCersAndDocs = IResSupplierCersAndDocs | SupplierCersAndDocs;
+  export type ResSupplierCersAndDocs =
+    | IResSupplierCersAndDocs
+    | SupplierCersAndDocs;
   export type SupplierCersAndDocs = ISupplierCersAndDocs;
 
-  export type ResSupplierImgAndVerifiedImg = IResSupplierImgAndVerifiedImg | SupplierImgAndVerifiedImg;
+  export type ResSupplierImgAndVerifiedImg =
+    | IResSupplierImgAndVerifiedImg
+    | SupplierImgAndVerifiedImg;
   export type SupplierImgAndVerifiedImg = ISupplierImgAndVerifiedImg;
 
   export type ResSupplierWebsite = IResSupplierWebsite | SupplierWebsite;
   export type SupplierWebsite = ISupplierWebsite;
 
-  export type ResSupplierCustomPage = IResSupplierCustomPage | SupplierCustomPage;
+  export type ResSupplierCustomPage =
+    | IResSupplierCustomPage
+    | SupplierCustomPage;
   export type SupplierCustomPage = ISupplierCustomPage;
 
   export type ResRfqScore = IResRfqScore | RfqScore;
@@ -406,10 +458,14 @@ export namespace GeeesyInApp {
   export type ResSupplier = IResSupplier | Supplier;
   export type Supplier = ISupplier;
 
-  export type ResInquiryProductList = IResInquiryProductList | InquiryProductList;
+  export type ResInquiryProductList =
+    | IResInquiryProductList
+    | InquiryProductList;
   export type InquiryProductList = IInquiryProductList;
 
-  export type ResSearchResultLocation = IResSearchResultLocation | SearchResultLocation;
+  export type ResSearchResultLocation =
+    | IResSearchResultLocation
+    | SearchResultLocation;
   export type SearchResultLocation = ISearchResultLocation;
 
   export type ResInterest = IResInterest | Interest;
@@ -445,7 +501,6 @@ export namespace GeeesyInApp {
   export type SupplierCertificates = ISupplierCertificates;
   export type equestors = Requestors;
   export type Cal = ICal;
-
 }
 
 export namespace GeeesyConsole {
@@ -464,9 +519,7 @@ export namespace GeeesyConsole {
   export type ResMainCategory = IResMainCategoryConsole | MainCategory;
   export type MainCategory = IMainCategoryConsole;
 
-  export type ResProductCategory =
-    | IResProductCategory
-    | ProductCategory;
+  export type ResProductCategory = IResProductCategory | ProductCategory;
   export type ProductCategory = IProductCategory;
 
   export type ResProductCategorySpec =
@@ -486,6 +539,6 @@ export namespace GeeesyConsole {
   export type Supplier = ISupplierConsole;
 }
 
-export * as IMarketplace from './type-marketplace'
-export * as IInapp from './type-inapp'
-export * as IConsole from './type-console'
+export * as IMarketplace from "./type-marketplace";
+export * as IInapp from "./type-inapp";
+export * as IConsole from "./type-console";
