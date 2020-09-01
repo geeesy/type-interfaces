@@ -530,6 +530,7 @@ export interface IResProductWithCount {
   data: IProductWithCount[];
 }
 export interface IProductWithCount extends IProduct {
+  productCount: number;
   supplierCount: number;
 }
 export interface IResAllRelatedProduct extends IResProductWithCount {} // Like a IProductWithCount
