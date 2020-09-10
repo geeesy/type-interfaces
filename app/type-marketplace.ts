@@ -812,11 +812,24 @@ export interface IResRfqList {
 }
 export interface IRfqList {
   productName: string;
-  productCategoryName: string;
+  productCategoryName: string[];
   rfqExpiryDate: Date;
   seenRfqSupplierCount: number;
   replyRfqQuotationCount: number;
   rfqId: string;
+  rfqList: RfqList[];
+}
+interface RfqList {
+  id: string;
+  supplierName: string;
+  supplierRatingCount: number
+  productPrice: number
+  supplierRating: number;
+  supplierRecommend: boolean;
+  supplierVerified: boolean;
+  minOrderQty: number;
+  packSizeLabel: string;
+  packSizeQty: number;
 }
 export interface IResReplyRfqList {
   message: string;

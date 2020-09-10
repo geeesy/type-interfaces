@@ -4,6 +4,7 @@ export interface IResVideoList {
 }
 export interface IVideoList {
   videoUrl: string;
+  videoIFrame?: string
   videoTitle: string;
   videoDescription: string;
   supplierId?: string;
@@ -17,4 +18,20 @@ export interface IVideoList {
     supplierSample?: boolean;
     supplierCountry?: string;
   };
+}
+
+export interface IResOrderList {
+  message: string;
+  data: IOrderList;
+}
+export interface IOrderList {
+  poId: string;
+  channelUrl: string;
+  client: string;
+  image: string;
+  status: string;
+  shipping: string;
+  payment: string;
+  orderDate: string;
+  poNetAmount: string;
 }
