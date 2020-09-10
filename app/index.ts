@@ -134,6 +134,12 @@ import {
   IResMarketPrice,
 } from "./type-inapp";
 /* eslint-disable no-unused-vars */
+import {
+  IResVideoList,
+  IVideoList,
+  IResOrderList,
+  IOrderList,
+} from "./type-apps";
 import { ICheck, IConnect, IData } from "./interfaces";
 
 export namespace Geeesy {
@@ -539,6 +545,15 @@ export namespace GeeesyConsole {
   export type Supplier = ISupplierConsole;
 }
 
+export namespace GeeesyApps {
+  export type ResVideoList = IResVideoList | VideoList;
+  export type VideoList = IVideoList;
+
+  export type ResOrderList = IResOrderList | OrderList;
+  export type OrderList = IOrderList;
+}
+
 export * as IMarketplace from "./type-marketplace";
 export * as IInapp from "./type-inapp";
 export * as IConsole from "./type-console";
+export * as IApps from "./type-apps";

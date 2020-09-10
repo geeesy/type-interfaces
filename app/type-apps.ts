@@ -1,0 +1,37 @@
+export interface IResVideoList {
+  message: string;
+  data: IVideoList;
+}
+export interface IVideoList {
+  videoUrl: string;
+  videoIFrame?: string
+  videoTitle: string;
+  videoDescription: string;
+  supplierId?: string;
+  supplierIconUrl?: string;
+  supplierName?: string;
+  supplierCompanyEmail?: string;
+  supplierRating?: number;
+  supplierLogoUrl?: string;
+  badge?: {
+    supplierWarranty?: boolean;
+    supplierSample?: boolean;
+    supplierCountry?: string;
+  };
+}
+
+export interface IResOrderList {
+  message: string;
+  data: IOrderList;
+}
+export interface IOrderList {
+  poId: string;
+  channelUrl: string;
+  client: string;
+  image: string;
+  status: string;
+  shipping: string;
+  payment: string;
+  orderDate: string;
+  poNetAmount: string;
+}
