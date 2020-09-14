@@ -1,6 +1,6 @@
 export interface IResVideoList {
   message: string;
-  data: IVideoList;
+  data: IVideoList[];
 }
 export interface IVideoList {
   videoUrl: string;
@@ -22,7 +22,7 @@ export interface IVideoList {
 
 export interface IResOrderList {
   message: string;
-  data: IOrderList;
+  data: IOrderList[];
 }
 export interface IOrderList {
   poId: string;

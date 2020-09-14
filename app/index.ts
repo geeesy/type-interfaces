@@ -132,6 +132,8 @@ import {
   IMarketPrice,
   IResManufacturerPrice,
   IResMarketPrice,
+  IResCompareProduct,
+  ICompareProduct,
 } from "./type-inapp";
 /* eslint-disable no-unused-vars */
 import {
@@ -485,6 +487,9 @@ export namespace GeeesyInApp {
 
   export type ResManufacturerPrice = IResManufacturerPrice | ManufacturerPrice;
   export type ManufacturerPrice = IManufacturerPrice;
+
+  export type ResCompareProduct = IResCompareProduct | CompareProduct;
+  export type CompareProduct = ICompareProduct;
 
   export type ProductGroup = IProductGroup;
   export type ChildCategory = IChildCategory;
