@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import {
   IAddress,
   IAddressSupplier,
@@ -65,6 +66,7 @@ import {
   IResSavedListSuppliers,
   IResSearchResultLocation,
   IResShippingMethod,
+  IResSupProductCat,
   IResSupplier,
   IResSupplierCersAndDocs,
   IResSupplierContact,
@@ -83,6 +85,7 @@ import {
   ISavedListSuppliers,
   ISearchResultLocation,
   IShippingMethod,
+  ISupProductCat,
   ISupplier,
   ISupplierCersAndDocs,
   ISupplierCertificates,
@@ -100,13 +103,13 @@ import {
   ITop20Products,
   IWholesale,
   IsavedList,
-  Requestors,
-  IResSupProductCat,
-  ISupProductCat,
-} from "./type-marketplace";
+  Requestors
+} from './type-marketplace'
 import {
   IBannerConsole,
   ICategoryConsole,
+  ICreateCategoryLevel,
+  ICreateMainCategory,
   IDistributor,
   IMainCategoryConsole,
   IPaymentMethod,
@@ -124,25 +127,25 @@ import {
   IResShippingMethodConsole,
   IResSupplierConsole,
   IShippingMethodConsole,
-  ISupplierConsole,
-} from "./type-console";
+  ISupplierConsole
+} from './type-console'
 import {
   ICal,
+  ICompareProduct,
   IManufacturerPrice,
   IMarketPrice,
-  IResManufacturerPrice,
-  IResMarketPrice,
   IResCompareProduct,
-  ICompareProduct,
-} from "./type-inapp";
+  IResManufacturerPrice,
+  IResMarketPrice
+} from './type-inapp'
+import { ICheck, IConnect, IData } from './interfaces'
 /* eslint-disable no-unused-vars */
 import {
-  IResVideoList,
-  IVideoList,
-  IResOrderList,
   IOrderList,
-} from "./type-apps";
-import { ICheck, IConnect, IData } from "./interfaces";
+  IResOrderList,
+  IResVideoList,
+  IVideoList
+} from './type-apps'
 
 export namespace Geeesy {
   export type ResConnect = IConnect;
@@ -530,6 +533,10 @@ export namespace GeeesyConsole {
   export type ResMainCategory = IResMainCategoryConsole | MainCategory;
   export type MainCategory = IMainCategoryConsole;
 
+  // CREATE CATEGORY
+  export type CreateMainCategory = ICreateMainCategory;
+  export type CreateCategoryLevel = ICreateCategoryLevel;
+
   export type ResProductCategory = IResProductCategory | ProductCategory;
   export type ProductCategory = IProductCategory;
 
@@ -558,7 +565,7 @@ export namespace GeeesyApps {
   export type OrderList = IOrderList;
 }
 
-export * as IMarketplace from "./type-marketplace";
-export * as IInapp from "./type-inapp";
-export * as IConsole from "./type-console";
-export * as IApps from "./type-apps";
+export * as IMarketplace from './type-marketplace'
+export * as IInapp from './type-inapp'
+export * as IConsole from './type-console'
+export * as IApps from './type-apps'

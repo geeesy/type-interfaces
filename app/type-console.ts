@@ -348,24 +348,25 @@ export interface ICategoryConsole {
   categoryImageUrl: string;
 }
 
-interface ICreateMainCategory {
+export interface ICreateMainCategory {
   categoryName: string;
   categoryImageUrl: string;
   categoryRecommend: boolean;
   categoryIconUrl: string;
   impFactor: number;
   categoryDescription: string;
-  categoryBanners: string[];
+  categoryBannersUrl: string[];
+  isMainCat: boolean;
 }
 
-interface ICreateCategoryLevel {
-  categoryId: string;
+export interface ICreateCategoryLevel {
+  parentCatId: string;
   categoryName: string;
   categoryImageUrl: string;
   categoryRecommend: boolean;
   categoryIconUrl: string;
   impFactor: number;
-  categoryBanners: string[];
+  categoryDescription: string;
 }
 
 interface ICreateProduct {
