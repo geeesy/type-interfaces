@@ -326,15 +326,18 @@ export interface IDistributor {
   distributorCustomPage: CustomPage[];
 }
 
+// REVIEW: READ CATEGORY
 export interface IResMainCategoryConsole {
   message: string;
   data: IMainCategoryConsole[]
 }
 export interface IMainCategoryConsole {
-  categoryMainId: string;
-  categoryMainName: string;
-  categoryMainIconUrl: string;
-  categoryMainImageUrl: string;
+  categoryId: string;
+  categoryName: string;
+  categoryIconUrl: string;
+  categoryImageUrl: string;
+  impFactor: number;
+  categoryBannersUrl: string[];
 }
 
 export interface IResCategoryConsole {
@@ -346,8 +349,10 @@ export interface ICategoryConsole {
   categoryName: string;
   categoryIconUrl: string;
   categoryImageUrl: string;
+  impFactor: number;
 }
 
+// REVIEW: CREATE CATEGORY
 export interface ICreateMainCategory {
   categoryName: string;
   categoryImageUrl: string;
@@ -368,6 +373,8 @@ export interface ICreateCategoryLevel {
   impFactor: number;
   categoryDescription: string;
 }
+
+// === === === === ===
 
 interface ICreateProduct {
   supplierId: string;
