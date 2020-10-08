@@ -362,6 +362,7 @@ export interface ICreateMainCategory {
   categoryDescription: string;
   categoryBannersUrl: string[];
   isMainCat: boolean;
+  parentCatId?: string;
 }
 
 export interface ICreateCategoryLevel {
