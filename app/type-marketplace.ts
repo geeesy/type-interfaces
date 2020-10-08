@@ -1,153 +1,153 @@
 export interface IResMainCategory {
-  message: string;
+  messages: string;
   data: IMainCategory[];
 }
 export interface IMainCategory {
-  categoryMainId: string;
-  categoryMainName: string;
-  categoryMainIconUrl: string;
-  categoryMainImageUrl: string;
-  impFactor: string;
+  categoryMainIds: string;
+  categoryMainNames: string;
+  categoryMainIconsUrl: string;
+  categoryMainImagesUrl: string;
+  impFactors: string;
   categoryBanners: string[];
   categoryRecommend: boolean;
 }
 export interface IResRecommendMainCategory {
-  message: string;
+  messages: string;
   data: IRecommendMainCategory[];
 }
 export interface IRecommendMainCategory {
-  categoryId: string;
-  categoryName: string;
-  categoryImageUrl: string;
-  impFactor: number;
+  categoryIds: string;
+  categoryNames: string;
+  categoryImagesUrl: string;
+  impFactors: number;
   supplierCount: number;
   productCount: number;
 }
 export interface IResBanner {
-  message: string;
+  messages: string;
   data: IBanner[];
 }
 export interface IBanner {
   bannerTitle: string;
-  bannerLinkUrl: string;
-  bannerImageUrl: string;
+  bannerLinksUrl: string;
+  bannerImagesUrl: string;
   bannerSortIndex: number;
 }
 export interface IResProduct {
-  message: string;
+  messages: string;
   data: IProduct[];
 }
 export interface IProduct {
-  productId: string;
-  productName: string;
-  productImageUrl: string;
-  productPrice: number;
+  productIds: string;
+  productNames: string;
+  productImagesUrl: string;
+  productPrices: number;
   productUnit: string;
   productCurrencyCode: string;
   packSizeLabel: string;
   packSizeQty: number;
   impFactor: number;
   minOrderQty: number;
-  productGroup: IProductGroup;
-  supplierId: string;
-  supplierName: string;
+  productGroups: IProductGroup;
+  supplierIds: string;
+  supplierNames: string;
   supplierVerified: boolean;
   savedLists: IsavedList[];
-  productCategory: ISupProductCat;
+  productCategorys: ISupProductCat;
 }
 export interface IResSupProductCat {
   message: string;
   data: ISupProductCat[];
 }
 export interface ISupProductCat {
-  productCategoryId: string;
-  productCategoryName: string;
-  productCategoryIcon: string;
+  productCategoryIds: string;
+  productCategoryNames: string;
+  productCategoryIcons: string;
 }
 export interface IProductGroup {
-  productGroupId: string;
-  productGroupName: string;
-  productGroupImageUrl: string;
+  productGroupIds: string;
+  productGroupNames: string;
+  productGroupImagesUrl: string;
 }
 export interface IResRecommendProduct extends IResProduct {} // Like a IProduct
 export interface IResTop20ProductsByCategory extends IResProduct {} // Like a IProduct
 export interface IResTop20Products {
-  message: string;
+  messages: string;
   data: ITop20Products[];
 }
 export interface ITop20Products {
-  productId: string;
-  productName: string;
-  productImageUrl: string;
-  productGroup: IProductGroup;
+  productIds: string;
+  productNames: string;
+  productImagesUrl: string;
+  productGroups: IProductGroup;
   savedLists: IsavedList[];
 }
 export interface IResCategoryWithChild {
-  message: string;
+  messages: string;
   data: ICategoryWithChild[];
 }
 export interface ICategoryWithChild {
-  categoryId: string;
-  categoryName: string;
-  categoryImageUrl: string;
+  categoryIds: string;
+  categoryNames: string;
+  categoryImagesUrl: string;
   impFactor: number;
   childCategories: IChildCategory[];
 }
 export interface IResCategory {
-  message: string;
+  messages: string;
   data: ICategory[];
 }
 export interface ICategory {
-  categoryId: string;
-  categoryName: string;
-  categoryIconUrl: string;
-  categoryImageUrl: string;
+  categoryIds: string;
+  categoryNames: string;
+  categoryIconsUrl: string;
+  categoryImagesUrl: string;
   impFactor: number;
 }
 export interface IResRecommendCategory {
-  message: string;
+  messages: string;
   data: IRecommendCategory[];
 }
 export interface IRecommendCategory {
-  categoryId: string;
-  categoryName: string;
-  categoryImageUrl: string;
+  categoryIds: string;
+  categoryNames: string;
+  categoryImagesUrl: string;
   supplierCount: number;
   productCount: number;
   impFactor: number;
 }
 export interface IChildCategory {
-  categoryId: string;
-  categoryName: string;
+  categoryIds: string;
+  categoryNames: string;
   impFactor: number;
 }
 export interface IResAllCategoryInSearchTool {
-  message: string;
+  messages: string;
   data: IAllCategoryInSearchTool[];
 }
 export interface IAllCategoryInSearchTool {
-  categoryMainIconUrl: string;
-  categoryMainId: string;
-  categoryMainImageUrl: string;
-  categoryMainName: string;
+  categoryMainIconsUrl: string;
+  categoryMainIds: string;
+  categoryMainImagesUrl: string;
+  categoryMainNames: string;
   impFactor: string;
 }
 export interface IResSupplierHilight {
-  message: string;
+  messages: string;
   data: ISupplierHilight[];
 }
 export interface ISupplierHilight {
-  supplierId: string;
-  supplierName: string;
-  supplierLogoUrl: string;
+  supplierIds: string;
+  supplierNames: string;
+  supplierLogosUrl: string;
   impFactor: number;
 }
 export interface IResRelatedProducts extends IResProduct {} // Like a IProduct
 export interface ICreateLatestVisitProducts {
-  userId: string;
-  productId: string;
-  productName: string;
-  productImageUrl: string;
+  userIds: string;
+  productIds: string;
+  productNames: string;
+  productImagesUrl: string;
   productPrice: number;
   productUnit: string;
   productCurrencyCode: string;
@@ -155,65 +155,65 @@ export interface ICreateLatestVisitProducts {
   packSizeQty: number;
   impFactor: number;
   minOrderQty: number;
-  productGroup: IProductGroup;
-  supplierId: string;
-  supplierName: string;
+  productGroups: IProductGroup;
+  supplierIds: string;
+  supplierNames: string;
   supplierVerified: boolean;
   savedLists: IsavedList[];
 } // Like a IProduct + userId
 export interface IResLatestVisitProducts extends IResProduct {} // Like a Products
 export interface ICreateMessage {
   msg: string;
-  userId: string;
-  msgFileUrl: string[];
-  supplierId: string;
+  userIds: string;
+  msgFilesUrl: string[];
+  supplierIds: string;
 }
 export interface ICreateMessageReply {
-  userId: string;
-  msgName: string;
-  supplierId: string;
+  userIds: string;
+  msgNames: string;
+  supplierIds: string;
 }
 export interface IResMessageList {
   message: string;
   data: IMessageList[];
 }
 export interface IMessageList {
-  userId: string;
-  supplierLogoUrl: string;
-  msgId: string;
-  msgName: string;
-  supplierId: string;
-  supplierName: string;
+  userIds: string;
+  supplierLogosUrl: string;
+  msgIds: string;
+  msgNames: string;
+  supplierIds: string;
+  supplierNames: string;
   msgDate: Date;
   unread: boolean;
 }
 export interface IResMessageDetail {
-  message: string;
+  messages: string;
   data: IMessageDetail[];
 }
 export interface IMessageDetail {
   msg: string;
   msgDate: Date;
-  msgFileUrl: string;
+  msgFilesUrl: string;
   msgIsReplied: boolean;
 }
 export interface ICreateSavedListProduct {
-  userId: string;
-  savedListName: string;
-  productId: string;
-  productName: string;
-  productImageUrl: string;
-  productPrice: number;
+  userIds: string;
+  savedListNames: string;
+  productIds: string;
+  productNames: string;
+  productImagesUrl: string;
+  productPrices: number;
   productUnit: string;
   productCurrencyCode: string;
   packSizeLabel: string;
   packSizeQty: number;
   impFactor: number;
-  productGroup: IProductGroup;
-  supplierId: string;
-  supplierName: string;
-  supplierCompanyEmail: string;
-  supplierKeyword: string[];
+  productGroups: IProductGroup;
+  supplierIds: string;
+  supplierNames: string;
+  supplierCompanyEmails: string;
+  supplierKeywords: string[];
   supplierVerified: boolean;
   supplierRating: number;
   address: IAddress;
@@ -223,14 +223,14 @@ export interface IResSavedListProducts {
   data: ISavedListProducts[];
 }
 export interface ISavedListProducts {
-  savedListId: string;
-  savedListName: string;
+  savedListIds: string;
+  savedListNames: string;
   supplierCount: number;
   productCount: number;
-  supplierId: string;
-  supplierName: string;
-  supplierCompanyEmail: string;
-  supplierKeyword: string[];
+  supplierIds: string;
+  supplierNames: string;
+  supplierCompanyEmails: string;
+  supplierKeywords: string[];
   supplierVerified: boolean;
   supplierRating: number;
   supplierCompanyWebsite: string;
@@ -241,16 +241,16 @@ export interface ISavedListProducts {
   supplierLogoUrl: string;
 }
 export interface IsavedList {
-  savedListId: string;
-  savedListName: string;
+  savedListIds: string;
+  savedListNames: string;
 }
 export interface ICreateSavedListSupplier {
-  userId: string;
-  savedListName: string;
-  supplierId: string;
-  supplierName: string;
-  supplierCompanyEmail: string;
-  supplierKeyword: string[];
+  userIds: string;
+  savedListNames: string;
+  supplierIds: string;
+  supplierNames: string;
+  supplierCompanyEmails: string;
+  supplierKeywords: string[];
   supplierVerified: boolean;
   supplierRating: number;
   supplierCompanyWebsite: string;
@@ -262,21 +262,21 @@ export interface ICreateSavedListSupplier {
   productCount: number;
 }
 export interface IResSavedListSuppliers {
-  message: string;
+  messages: string;
   data: ISavedListSuppliers[];
 }
 export interface ISavedListSuppliers {
-  savedListId: string;
-  savedListName: string;
+  savedListIds: string;
+  savedListNames: string;
   suppliers: ISuppliers[];
   supplierCount: number;
   productCount: number;
 }
 interface ISuppliers {
-  supplierId: string;
-  supplierName: string;
-  supplierCompanyEmail: string;
-  supplierKeyword: string[];
+  supplierIds: string;
+  supplierNames: string;
+  supplierCompanyEmails: string;
+  supplierKeywords: string[];
   supplierVerified: boolean;
   supplierRating: number;
   supplierCompanyWebsite: string;
@@ -284,16 +284,16 @@ interface ISuppliers {
   address: IAddress;
   shippingZone: IShippingZone[];
   products: IProductWithOutSupplier[];
-  supplierLogoUrl: string;
+  supplierLogosUrl: string;
   supplierRatingAmount: number;
   savedLists: IsavedList[];
 }
 export interface IProductWithOutSupplier {
-  productId: string;
-  productName: string;
-  productImageUrl: string;
+  productIds: string;
+  productNames: string;
+  productImagesUrl: string;
   productPrice: number;
-  productUnit: string;
+  productUnits: string;
   productCurrencyCode: string;
   packSizeLabel: string;
   packSizeQty: number;
@@ -303,7 +303,7 @@ export interface IProductWithOutSupplier {
   savedLists: IsavedList[];
 }
 interface IShippingZone {
-  zoneName: string;
+  zoneNames: string;
   shippingMethod: IShippingMethodInShippingZone[];
 }
 interface IShippingMethodInShippingZone {
@@ -312,7 +312,7 @@ interface IShippingMethodInShippingZone {
 }
 
 export interface IAddress {
-  addrName: string;
+  addrNames: string;
   addrFull: string;
   addrNumber: string;
   addrProvince: string;
@@ -325,16 +325,16 @@ export interface IAddress {
   addrLat: string;
   addrLng: string;
   addrCountry: string;
-  addrEmail: string;
+  addrEmails: string;
 }
 export interface IResFilterResultProduct {
-  message: string;
+  messages: string;
   data: IFilterResultProduct[];
 }
 export interface IFilterResultProduct {
-  supplierId: string;
-  supplierName: string;
-  supplierCompanyEmail: string;
+  supplierIds: string;
+  supplierNames: string;
+  supplierCompanyEmails: string;
   supplierKeyword: string[];
   supplierVerified: boolean;
   supplierRating: number;
@@ -345,7 +345,7 @@ export interface IFilterResultProduct {
   savedLists: IsavedList[];
   supplierCount: number;
   productCount: number;
-  supplierLogoUrl: string;
+  supplierLogosUrl: string;
 }
 export interface IResProductMayLike extends IResProduct {} // Like a IProduct
 export interface IResProductGroupDetail {
@@ -353,29 +353,29 @@ export interface IResProductGroupDetail {
   data: IProductGroupDetail[];
 }
 export interface IProductGroupDetail {
-  productGroupId: string;
-  productGroupImageUrl: string;
-  productGroupName: string;
+  productGroupIds: string;
+  productGroupImagesUrl: string;
+  productGroupNames: string;
   productSource: string;
-  productCategoryId: string;
+  productCategoryIds: string;
   productCategoryCustomName: string;
   productCurrencyCode: string;
   productOrigin: string;
   productChannel: string[];
-  warehouseId: string;
-  productBrand: string;
-  productKeyword: string[];
+  warehouseIds: string;
+  productBrands: string;
+  productKeywords: string[];
   productCategorySpec: IProductCategorySpec[];
-  productVideoCoverUrl: string;
+  productVideosCoverUrl: string;
   savedLists: IsavedList[];
   products: [
     {
-      productName: string;
-      costPrice: number;
+      productNames: string;
+      costPrices: number;
       productBuyPrice: number;
       productPrice: number;
-      productSku: string;
-      productUnit: string;
+      productSkus: string;
+      productUnits: string;
       productWholesales: IProductWholeSale[];
       productBarcode: string;
       productImagesUrl: string[];
@@ -397,17 +397,17 @@ export interface IProductGroupDetail {
   ];
   leadTime: ILeadTime[];
   suppliers: {
-    supplierId: string;
-    supplierName: string;
-    supplierCompanyEmail: string;
-    supplierKeyword: string[];
+    supplierIds: string;
+    supplierNames: string;
+    supplierCompanyEmails: string;
+    supplierKeywords: string[];
     supplierVerified: boolean;
     supplierRating: number;
     impFactor: number;
     address: IAddress;
     shippingZone: IShippingZone[];
     paymentMethod: IPaymentMethod[];
-    supplierLogoUrl: string;
+    supplierLogosUrl: string;
   };
 }
 export interface IPaymentMethod {
@@ -415,12 +415,12 @@ export interface IPaymentMethod {
   paymentMethodTypeAttr: IPaymentMethodTypeAttr[];
 }
 export interface IPaymentMethodTypeAttr {
-  paymentMethodIconUrl: string;
-  paymentMethodName: string;
+  paymentMethodIconsUrl: string;
+  paymentMethodNames: string;
 }
 export interface IProductCategorySpec {
-  attriName: string;
-  attriValue: string;
+  attriNames: string;
+  attriValues: string;
 }
 export interface IProductPackage {
   weight: number;
@@ -434,7 +434,7 @@ export interface IProductPackage {
 }
 export interface IWholesale {
   qtyMinimum: number;
-  productPrice: number;
+  productPrices: number;
   retailQtyMinimum: number;
   retailProductPrice: number;
 }
@@ -448,7 +448,7 @@ export interface IProductWholeSale {
   retailPrice: number;
 }
 export interface IResProductDescription {
-  message: string;
+  messages: string;
   data: IProductDescription[];
 }
 export interface IProductDescription {
@@ -461,9 +461,9 @@ export interface IResProductDetail {
   data: IProductDetail[];
 }
 export interface IProductDetail {
-  productId: string;
+  productIds: string;
   productImageUrl: string;
-  productName: string;
+  productNames: string;
   costPrice: number;
   productBuyPrice: number;
   productPrice: number;
@@ -495,7 +495,7 @@ export interface IProductDetail {
   productCategorySpec: IProductCategorySpec[];
   freeShipPrice: number;
   freeShipQuantity: number;
-  productVideoCoverUrl: string;
+  productVideosCoverUrl: string;
   wholesale: IWholesale;
   leadTime: ILeadTime[];
   suppliers: {
@@ -541,9 +541,9 @@ export interface IResRecommendSupplier {
   data: IRecommendSupplier[];
 }
 export interface IRecommendSupplier {
-  supplierId: string;
-  supplierLogoUrl: string;
-  supplierName: string;
+  supplierIds: string;
+  supplierLogosUrl: string;
+  supplierNames: string;
   supplierCompanyEmail: string;
   supplierKeyword: string[];
   supplierVerified: boolean;
@@ -553,14 +553,14 @@ export interface IRecommendSupplier {
   address: IAddress;
 }
 export interface IResFilterResultSupplier {
-  message: string;
+  messages: string;
   data: IFilterResultSupplier[];
 }
 export interface IFilterResultSupplier {
-  supplierId: string;
-  supplierName: string;
-  supplierCompanyEmail: string;
-  supplierKeyword: string[];
+  supplierIds: string;
+  supplierNames: string;
+  supplierCompanyEmails: string;
+  supplierKeywords: string[];
   supplierVerified: boolean;
   supplierRating: number;
   supplierCompanyWebsite: string;
@@ -574,15 +574,15 @@ export interface IFilterResultSupplier {
   supplierLogoUrl: string;
 }
 export interface IResSupplierWithSavedList {
-  message: string;
+  messages: string;
   data: ISupplierWithSavedList[];
 }
 export interface ISupplierWithSavedList {
-  supplierId: string;
-  supplierLogoUrl: string;
-  supplierName: string;
-  supplierCompanyEmail: string;
-  supplierKeyword: string[];
+  supplierIds: string;
+  supplierLogosUrl: string;
+  supplierNames: string;
+  supplierCompanyEmails: string;
+  supplierKeywords: string[];
   supplierVerified: boolean;
   supplierRating: number;
   impFactor: number;
@@ -596,8 +596,8 @@ export interface IResSupplierOverview {
   data: ISupplierOverview[];
 }
 export interface ISupplierOverview {
-  supplierId: string;
-  supplierName: string;
+  supplierIds: string;
+  supplierNames: string;
   supplierBannerUrlArray: string[];
   supplierCompanyCode: string;
   supplierCompanyEmail: string;
@@ -609,15 +609,15 @@ export interface ISupplierOverview {
   impFactor: number;
   supplierKeyword: string[];
   companyOverview: string;
-  supplierLogoUrl: string;
-  supplierImageUrl: string;
-  supplierColor: string;
+  supplierLogosUrl: string;
+  supplierImagessUrl: string;
+  supplierColors: string;
   followers: number;
   ages: number;
   businessType: string;
   companyCapital: number;
   supplierCompanyRegisterId: string;
-  mainProduct: string[];
+  mainProducts: string[];
   address: IAddress;
   employee: number;
   shippingZone: IShippingZone[];
@@ -626,7 +626,7 @@ export interface ISupplierOverview {
   supplierCertificates: ISupplierCertificates[];
 }
 export interface IResSupplierContact {
-  message: string;
+  messages: string;
   data: ISupplierContact[];
 }
 export interface ISupplierContact {
@@ -634,7 +634,7 @@ export interface ISupplierContact {
   addressSupplier: IAddressSupplier[];
 }
 export interface IAddressSupplier {
-  supplierAddrName: string;
+  supplierAddrNames: string;
   supplierAddrFull: string;
   supplierAddrNumber: string;
   supplierAddrProvince: string;
@@ -647,16 +647,16 @@ export interface IAddressSupplier {
   supplierAddrPhone: string;
   supplierAddrMobile: string;
   supplierAddrFax: string;
-  supplierAddrEmail: string;
+  supplierAddrEmails: string;
   supplierAddrType: string;
   officeHour: IOfficeHour[];
 }
 export interface IOfficeHour {
-  day: string;
-  time: string;
+  days: string;
+  times: string;
 }
 export interface IResSupplierFactory {
-  message: string;
+  messages: string;
   data: ISupplierFactory[];
 }
 export interface ISupplierFactory {
@@ -668,7 +668,7 @@ export interface ISupplierFactory {
   factoryCapacityUnit: string;
 }
 export interface IFactoryAddress {
-  name: string;
+  names: string;
   addressFull: string;
   number: string;
   province: string;
@@ -679,7 +679,7 @@ export interface IFactoryAddress {
   lng: string;
 }
 export interface IResSupplierCersAndDocs {
-  message: string;
+  messages: string;
   data: ISupplierCersAndDocs[];
 }
 export interface ISupplierCersAndDocs {
@@ -687,7 +687,7 @@ export interface ISupplierCersAndDocs {
   supplierCertificates: ISupplierCertificates[];
 }
 export interface IResSupplierImgAndVerifiedImg {
-  message: string;
+  messages: string;
   data: ISupplierImgAndVerifiedImg[];
 }
 export interface ISupplierImgAndVerifiedImg {
@@ -696,8 +696,8 @@ export interface ISupplierImgAndVerifiedImg {
 }
 export interface ISupplierDocs {
   url: string;
-  type: string;
-  title: string;
+  types: string;
+  titles: string;
   expire: Date;
 }
 export interface ISupplierImage {
@@ -721,7 +721,7 @@ export interface ISupplierCertificates {
 }
 export interface IResSupplierProduct extends IResProduct {} // IProduct
 export interface IResSupplierWebsite {
-  message: string;
+  messages: string;
   data: ISupplierWebsite[];
 }
 export interface ISupplierWebsite {
@@ -752,7 +752,7 @@ export interface IQuotaRfq {
   usedQuotaRfq: number;
 }
 export interface IResShippingMethod {
-  message: string;
+  messages: string;
   data: IShippingMethod[];
 }
 export interface IShippingMethod {
@@ -761,7 +761,7 @@ export interface IShippingMethod {
   shippingMethodIconUrl: string;
 }
 export interface IResPaymentMethod {
-  message: string;
+  messages: string;
   data: IPaymentMethods[];
 }
 export interface IPaymentMethods {
@@ -770,18 +770,18 @@ export interface IPaymentMethods {
   paymentMethodTypeAttr: IPaymentMethodTypeAttr[];
 }
 export interface ICreateRfq {
-  userId: string;
-  rfqRequestDate: Date;
-  rfqScore: number;
+  userIds: string;
+  rfqRequestDates: Date;
+  rfqScores: number;
   requestors: Requestors[];
   products: {
-    productName: string;
-    productKeyword: string[];
-    productCategoryId: string;
+    productNames: string;
+    productKeywords: string[];
+    productCategoryIds: string;
   };
   productInfo: {
     productQty: number;
-    productUnit: string;
+    productUnits: string;
     productCurrencyCode: string;
   };
   shippingLocation: {
@@ -811,8 +811,8 @@ export interface IResRfqList {
   data: IRfqList[];
 }
 export interface IRfqList {
-  productName: string;
-  productCategoryName: string[];
+  productNames: string;
+  productCategoryNames: string[];
   rfqExpiryDate: Date;
   seenRfqSupplierCount: number;
   replyRfqQuotationCount: number;
@@ -821,7 +821,7 @@ export interface IRfqList {
 }
 interface RfqList {
   id: string;
-  supplierName: string;
+  supplierNames: string;
   supplierRatingCount: number
   productPrice: number
   supplierRating: number;
@@ -836,7 +836,7 @@ export interface IResReplyRfqList {
   data: IReplyRfqList[];
 }
 export interface IReplyRfqList {
-  supplierName: string;
+  supplierNames: string;
   supplierVerified: boolean;
   supplierRating: string;
   supplierRatingAmount: number;
@@ -844,7 +844,7 @@ export interface IReplyRfqList {
   minOrderQty: number;
 }
 export interface IResQuotaInquiry {
-  message: string;
+  messages: string;
   data: IQuotaInquiry[];
 }
 export interface IQuotaInquiry {
@@ -852,14 +852,14 @@ export interface IQuotaInquiry {
   usedQuotaInquiry: number;
 }
 export interface IResSupplier {
-  message: string;
+  messages: string;
   data: ISupplier[];
 }
 export interface ISupplier {
-  supplierId: string;
-  supplierName: string;
+  supplierIds: string;
+  supplierNames: string;
   supplierVerified: boolean;
-  supplierLogoUrl: string;
+  supplierLogosUrl: string;
   supplierScore: number;
   supplierResponseTime: string;
   supplierRating: string;
@@ -872,9 +872,9 @@ export interface ISupplier {
   savedLists: IsavedList[];
 }
 export interface ICreateInquiry {
-  userId: string;
-  supplierId: string;
-  productId: string;
+  userIds: string;
+  supplierIds: string;
+  productIds: string;
   requestors: Requestors[];
   inquiryMessage: string;
   inquiryImagesUrl: string[];
@@ -888,9 +888,9 @@ export interface IResInquiryProductList {
   data: IInquiryProductList[];
 }
 export interface IInquiryProductList {
-  productId: string;
-  productName: string;
-  productImageUrl: string;
+  productIds: string;
+  productNames: string;
+  productImagesUrl: string;
   productPrice: number;
   productUnit: string;
   productCurrencyCode: string;
@@ -898,10 +898,10 @@ export interface IInquiryProductList {
   packSizeQty: number;
   impFactor: number;
   productGroup: IProductGroup;
-  supplierId: string;
+  supplierIds: string;
   supplierName: string;
   supplierCompanyEmail: string;
-  supplierKeyword: string[];
+  supplierKeywords: string[];
   supplierVerified: boolean;
   supplierRating: number;
   address: IAddress;
@@ -915,8 +915,8 @@ export interface IResSearchResultLocation {
   data: ISearchResultLocation[];
 }
 export interface ISearchResultLocation {
-  supplierId: string;
-  supplierName: string;
+  supplierIds: string;
+  supplierNames: string;
   supplierCompanyEmail: string;
   supplierKeyword: string[];
   supplierVerified: boolean;
@@ -928,24 +928,24 @@ export interface ISearchResultLocation {
   shippingZone: IShippingZone[];
   products: IProductWithOutSupplier[];
   companyMapLocation: CompanyMapLocation;
-  supplierLogoUrl: string;
+  supplierLogosUrl: string;
 }
 interface CompanyMapLocation {
   lat: string;
   lng: string;
   location: string[];
-  pinImageUrl: string;
+  pinImagesUrl: string;
 }
 export interface IResInterest {
   message: string;
   data: IInterest[];
 }
 export interface IInterest {
-  userId: string;
-  categoryId: string;
+  userIds: string;
+  categoryIds: string;
 }
 export interface IResSurvey {
-  message: string;
+  messages: string;
   data: ISurvey[];
 }
 export interface ISurvey {

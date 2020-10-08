@@ -1,39 +1,39 @@
 import { IProduct } from "./type-marketplace";
 
 export interface IResMarketPrice {
-  message: string;
+  messages: string;
   data: IMarketPrice[];
 }
 export interface IMarketPrice {
-  date: string;
-  price: number;
-  month: string;
+  dates: string;
+  prices: number;
+  months: string;
 }
 export interface IResManufacturerPrice {
-  message: string;
+  messages: string;
   data: IManufacturerPrice[];
 }
 export interface IManufacturerPrice {
-  supplierId: string;
-  supplierName: string;
+  supplierIds: string;
+  supplierNames: string;
   supplierAges: number;
   supplierWarranty: Boolean;
-  suppierSample: boolean;
-  supplierCountry: string;
+  suppierSamples: boolean;
+  supplierCountrys: string;
   supplierRating: number;
   cal: ICal;
 }
 export interface ICal {
-  productPrice: number;
+  productsPrice: number;
   MinOrderQty: number;
-  month: string;
+  months: string;
 }
 export interface IResCompareProduct {
-  message: string;
+  messages: string;
   data: ICompareProduct[];
 }
 export interface ICompareProduct {
-  productId: string;
-  compareName: string;
+  productIds: string;
+  compareNames: string;
   compareProducts: IProduct[];
 }
