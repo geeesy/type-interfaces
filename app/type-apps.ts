@@ -3,16 +3,16 @@ export interface IResVideoList {
   data: IVideoList[];
 }
 export interface IVideoList {
-  videoUrl: string;
+  videoUrls: string;
   videoIFrame?: string
   videoTitle: string;
   videoDescription: string;
-  supplierId?: string;
-  supplierIconUrl?: string;
+  supplierIds?: string;
+  supplierIconsUrl?: string;
   supplierName?: string;
-  supplierCompanyEmail?: string;
+  supplierCompanysEmail?: string;
   supplierRating?: number;
-  supplierLogoUrl?: string;
+  supplierLogosUrl?: string;
   badge?: {
     supplierWarranty?: boolean;
     supplierSample?: boolean;
@@ -25,13 +25,13 @@ export interface IResOrderList {
   data: IOrderList[];
 }
 export interface IOrderList {
-  poId: string;
-  channelUrl: string;
+  poIds: string;
+  channelsUrl: string;
   client: string;
-  image: string;
+  images: string;
   status: string;
   shipping: string;
-  payment: string;
+  payments: string;
   orderDate: string;
   poNetAmount: string;
 }

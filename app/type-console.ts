@@ -1,42 +1,42 @@
 interface CompanyInfoSup {
-  supplierName: string;
-  supplierCompanyCode: string;
-  supplierCompanyEmail: string;
-  supplierCompanyWebsite: string;
-  supplierCompanyRegisterId: string;
+  supplierNames: string;
+  supplierCompanyCodes: string;
+  supplierCompanyEmails: string;
+  supplierCompanyWebsites: string;
+  supplierCompanyRegisterIds: string;
   companyOverview: string;
   companyDescription: string;
-  mainProduct: string[];
+  mainProducts: string[];
 }
 interface CompanyInfoDis {
-  distributorName: string;
-  distributorCompanyCode: string;
-  distributorCompanyEmail: string;
-  distributorCompanyWebsite: string;
-  distributorCompanyRegisterId: string;
+  distributorNames: string;
+  distributorCompanyCodes: string;
+  distributorCompanyEmails: string;
+  distributorCompanyWebsites: string;
+  distributorCompanyRegisterIds: string;
   companyOverview: string;
   companyDescription: string;
-  mainProduct: string[];
+  mainProducts: string[];
 }
 
 interface CompanyMapLocation {
-  pinImageUrl: string;
+  pinImagesUrl: string;
   lat: string;
   lng: string;
-  location: string[];
+  locations: string[];
 }
 
 interface CompanyBoard {
-  ownerName: string;
-  ownerEmail: string;
-  ownerMobile: string;
-  ownerPosition: string;
+  ownerNames: string;
+  ownerEmails: string;
+  ownerMobiles: string;
+  ownerPositions: string;
 }
 
 interface AddressSupplier {
-  supplierAddrName: string;
+  supplierAddrNames: string;
   supplierAddrFull: string;
-  supplierAddrNumber: string;
+  supplierAddrNumbers: string;
   supplierAddrProvince: string;
   supplierAddrAmphoe: string;
   supplierAddrTambon: string;
@@ -44,8 +44,8 @@ interface AddressSupplier {
   supplierAddrCountry: string;
   supplierAddrLocationLat: number;
   supplierAddrLocationLng: number;
-  supplierAddrPhone: string;
-  supplierAddrMobile: string;
+  supplierAddrPhones: string;
+  supplierAddrMobiles: string;
   supplierAddrFax: string;
   supplierAddrEmail: string;
   supplierAddrType: string;
@@ -53,7 +53,7 @@ interface AddressSupplier {
 }
 
 interface AddressDistributor {
-  distributorAddrName: string;
+  distributorAddrNames: string;
   distributorAddrFull: string;
   distributorAddrNumber: string;
   distributorAddrProvince: string;
@@ -63,29 +63,29 @@ interface AddressDistributor {
   distributorAddrCountry: string;
   distributorAddrLocationLat: number;
   distributorAddrLocationLng: number;
-  distributorAddrPhone: string;
-  distributorAddrMobile: string;
+  distributorAddrPhones: string;
+  distributorAddrMobiles: string;
   distributorAddrFax: string;
-  distributorAddrEmail: string;
+  distributorAddrEmails: string;
   distributorAddrType: string;
   officeHour: OfficeHour[];
 }
 
 interface OfficeHour {
-  day: string;
-  time: string[];
+  days: string;
+  times: string[];
 }
 
 interface Address {
-  addrName: string;
+  addrNames: string;
   addrFull: string;
   addrNumber: string;
   addrProvince: string;
   addrAmphoe: string;
   addrTambon: string;
   addrPostcode: string;
-  addrPhone: string[];
-  addrMobile: string[];
+  addrPhones: string[];
+  addrMobiles: string[];
   addrFax: string[];
   addrEmail: string;
   addrCountry: string;
@@ -106,13 +106,13 @@ interface BadgeDis {
 }
 
 interface CompanySetting {
-  paymentMethod: IPaymentMethod[];
-  shippingZone: ShippingZone[];
-  creditTerm: string[];
+  paymentsMethod: IPaymentMethod[];
+  shippingsZone: ShippingZone[];
+  creditsTerm: string[];
 }
 
 interface ShippingZone {
-  zoneName: string;
+  zoneNames: string;
   zoneProvince: string[];
   zonePostcode: string[];
   zoneMethod: ZoneMethod[];
@@ -131,35 +131,35 @@ interface CompanyMetric {
 }
 
 interface CompanyAssetsSup {
-  supplierVideoUrl: string[];
-  supplierLogoUrl: string;
-  supplierColor: string;
+  supplierVideosUrl: string[];
+  supplierLogosUrl: string;
+  supplierColors: string;
   supplierBannersUrl: string[];
 }
 interface CompanyAssetsDis {
-  distributorVideoUrl: string[];
-  distributorLogoUrl: string;
-  distributorColor: string;
+  distributorVideosUrl: string[];
+  distributorLogosUrl: string;
+  distributorColors: string;
   distributorBannersUrl: string[];
 }
 
 interface ContactPerson {
-  contactName: string;
-  contactEmail: string;
-  contactMobile: string;
-  contactPosition: string;
-  contactKeyPerson: boolean;
+  contactNames: string;
+  contactEmails: string;
+  contactMobiles: string;
+  contactPositions: string;
+  contactKeyPersons: boolean;
 }
 
 interface Image {
   type: string;
   title: string;
-  image: ImageAttr[];
+  images: ImageAttr[];
   verified: boolean;
 }
 interface ImageAttr {
   url: string;
-  caption: string;
+  captions: string;
 }
 
 interface Doc {
@@ -179,11 +179,11 @@ interface Certificate {
   private: boolean;
   issued: Date;
   issuer: string;
-  cerName: string;
+  cerNames: string;
 }
 
 interface FactoryAddress {
-  name: string;
+  names: string;
   addressFull: string;
   number: string;
   province: string;
@@ -198,7 +198,7 @@ interface Factory {
   factoryAddress: FactoryAddress;
   factoryAreaUnit: string;
   factoryArea: string;
-  factoryImageUrl: string[];
+  factoryImagesUrl: string[];
   factoryCapacity: string;
   factoryCapacityUnit: string;
 }
@@ -269,7 +269,7 @@ interface LeadTime {
 
 interface Wholesale {
   qtyMinimum: number;
-  productPrice: number;
+  productsPrice: number;
   retailQtyMinimum: number;
   retailProductPrice: number;
 };
@@ -288,7 +288,7 @@ export interface ISupplierConsole {
   companySetting: CompanySetting;
   companyMetric: CompanyMetric;
   companyAssets: CompanyAssetsSup;
-  contactPerson: ContactPerson[];
+  contactPersons: ContactPerson[];
   supplierImages: Image[];
   supplierDocs: Doc[];
   supplierCertificates: Certificate[];
@@ -301,7 +301,7 @@ export interface ISupplierConsole {
 }
 
 export interface IResDistributor {
-  message: string;
+  messages: string;
   data: IDistributor[]
 }
 export interface IDistributor {
@@ -331,10 +331,10 @@ export interface IResMainCategoryConsole {
   data: IMainCategoryConsole[]
 }
 export interface IMainCategoryConsole {
-  categoryMainId: string;
-  categoryMainName: string;
-  categoryMainIconUrl: string;
-  categoryMainImageUrl: string;
+  categoryMainIds: string;
+  categoryMainNames: string;
+  categoryMainIconsUrl: string;
+  categoryMainImagesUrl: string;
 }
 
 export interface IResCategoryConsole {
@@ -342,54 +342,54 @@ export interface IResCategoryConsole {
   data: ICategoryConsole[]
 }
 export interface ICategoryConsole {
-  categoryId: string;
-  categoryName: string;
-  categoryIconUrl: string;
-  categoryImageUrl: string;
+  categoryIds: string;
+  categoryNames: string;
+  categoryIconsUrl: string;
+  categoryImagesUrl: string;
 }
 
 interface ICreateMainCategory {
-  categoryName: string;
-  categoryImageUrl: string;
-  categoryRecommend: boolean;
-  categoryIconUrl: string;
+  categoryNames: string;
+  categoryImagesUrl: string;
+  categoryRecommends: boolean;
+  categoryIconsUrl: string;
   impFactor: number;
   categoryDescription: string;
   categoryBanners: string[];
 }
 
 interface ICreateCategoryLevel {
-  categoryId: string;
-  categoryName: string;
-  categoryImageUrl: string;
-  categoryRecommend: boolean;
-  categoryIconUrl: string;
+  categoryIds: string;
+  categoryNames: string;
+  categoryImagesUrl: string;
+  categoryRecommends: boolean;
+  categoryIconsUrl: string;
   impFactor: number;
   categoryBanners: string[];
 }
 
 interface ICreateProduct {
-  supplierId: string;
-  distributorId: string;
-  productImageUrl: string[];
-  productName: string;
-  costPrice: number;
-  productBuyPrice: number;
-  productPrice: number;
+  supplierIds: string;
+  distributorIds: string;
+  productImagesUrl: string[];
+  productNames: string;
+  costPrices: number;
+  productBuysPrice: number;
+  productPrices: number;
   productSku: string;
   productUnit: string;
   productWholesales: ProductWholesales[];
   productSource: string;
-  productCategoryId: string;
+  productCategoryIds: string;
   productCategoryCustomName: string;
-  productCurrencyCode: string;
+  productCurrencysCode: string;
   productBarcode: string;
   productOrigin: string;
-  productChannel: string[];
-  productImageArrayUrl: string[];
+  productChannels: string[];
+  productImagesArrayUrl: string[];
   productIsActive: boolean;
-  initialStock: number;
-  warehouseId: string;
+  initialStocks: number;
+  warehouseIds: string;
   productPackage: ProductPackage
   productBrand: string;
   stockAlert: number;
@@ -422,26 +422,26 @@ interface ICreateProduct {
 }
 
 interface ICreateProductGroup {
-  supplierId: string;
-  distributorId: string;
-  productGroupImageUrl: string[];
-  productGroupName: string;
+  supplierIds: string;
+  distributorIds: string;
+  productGroupImagesUrl: string[];
+  productGroupNames: string;
   productSource: string;
-  productCategoryId: string;
-  productCategoryCustomName: string;
-  productCurrencyCode: string;
+  productCategoryIds: string;
+  productCategoryCustomNames: string;
+  productCurrencyCodes: string;
   productOrigin: string;
   productChannel: string[];
   productIsActive: boolean;
-  warehouseId: string;
+  warehouseIds: string;
   productBrand: string;
   description: string;
-  productKeyword: string[];
+  productKeywords: string[];
   productHilight: boolean;
   productMarketplace: boolean;
-  recommendProduct: boolean;
-  showOnCompanyCard: boolean;
-  newProduct: boolean;
+  recommendProducts: boolean;
+  showOnCompanyCards: boolean;
+  newProducts: boolean;
   productCategorySpec: ProductCategorySpec[];
   showOnMarketplace: boolean;
   showOnInApp: boolean;
@@ -449,18 +449,18 @@ interface ICreateProductGroup {
   wholesaleInApp: boolean;
   productVideoCoverUrl: string;
   products: {
-    productName: string;
+    productNames: string;
     costPrice: number;
-    productBuyPrice: number;
-    productPrice: number;
+    productBuysPrice: number;
+    productPrices: number;
     productSku: string;
     productUnit: string;
     productWholesales: ProductWholesales[];
     productBarcode: string;
-    productImageArrayUrl: string[];
+    productImagesArrayUrl: string[];
     productIsActive: boolean;
     initialStock: number;
-    productPackage: ProductPackage
+    productPackages: ProductPackage
     stockAlert: number;
     maximumOnlineStock: number;
     minOrderQty: number;
@@ -483,8 +483,8 @@ export interface IResProductCategorySpec {
   data: IProductCategorySpec[]
 }
 export interface IProductCategorySpec {
-  attriName: string;
-  attriValue: string[];
+  attriNames: string;
+  attriValues: string[];
 }
 
 export interface IResProductCategory {
@@ -492,9 +492,9 @@ export interface IResProductCategory {
   data: IProductCategory[]
 }
 export interface IProductCategory {
-  productCategoryId: string;
-  productCategoryName: string;
-  productCategoryIconUrl: string;
+  productCategoryIds: string;
+  productCategoryNames: string;
+  productCategoryIconsUrl: string;
 }
 
 export interface IResProductMainCategory {
@@ -502,25 +502,25 @@ export interface IResProductMainCategory {
   data: IProductMainCategory[]
 }
 export interface IProductMainCategory {
-  productMCategoryId: string;
-  productMCategoryName: string;
-  productMCategoryIconUrl: string;
+  productMCategoryIds: string;
+  productMCategoryNames: string;
+  productMCategoryIconsUrl: string;
 }
 
 interface ICreateProductCategory {
-  productCategoryName: string;
-  productCategoryImageUrl: string;
+  productCategoryNames: string;
+  productCategoryImagesUrl: string;
   productCategoryRecommend: boolean;
-  productCategoryIconUrl: string;
+  productCategoryIconsUrl: string;
   productCategorySpec: ProductCategorySpec[];
 }
 
 interface ICreateProductCategoryLevel {
-  productCategoryId: string;
-  productCategoryName: string;
-  productCategoryImageUrl: string;
+  productCategoryIds: string;
+  productCategoryNames: string;
+  productCategoryImagesUrl: string;
   productCategoryRecommend: boolean;
-  productCategoryIconUrl: string;
+  productCategoryIconsUrl: string;
   productCategorySpec: ProductCategorySpec[];
 }
 
@@ -534,49 +534,49 @@ export interface IPaymentMethod {
 }
 interface IPaymentMethodTypeAttr {
   paymentMethodIconUrl: string;
-  paymentMethodName: string;
+  paymentMethodNames: string;
 }
 
 interface ICreatePaymentMethod {
-  paymentMethodName: string;
+  paymentMethodNames: string;
   paymentMethodType: string;
-  paymentMethodIconUrl: string;
+  paymentMethodIconsUrl: string;
 }
 
 interface ICreateRfqScore {
-  rfqSectionName: string;
+  rfqSectionsNames: string;
   rfqScore: number;
 }
 
 interface ICreateShippingMethod {
   shippingMethodPostcode: number;
-  shippingMethodName: string;
-  shippingMethodIconUrl: string;
+  shippingMethodNames: string;
+  shippingMethodIconsUrl: string;
 }
 
 export interface IResShippingMethodConsole {
-  message: string;
+  messages: string;
   data: IShippingMethodConsole[]
 }
 export interface IShippingMethodConsole {
-  shippingMethodId: string;
-  shippingMethodName: string;
-  shippingMethodIconUrl: string;
+  shippingMethodIds: string;
+  shippingMethodNames: string;
+  shippingMethodIconsUrl: string;
 }
 
 export interface IResBannerConsole {
-  message: string;
+  messages: string;
   data: IBannerConsole[]
 }
 export interface IBannerConsole {
   bannerSortIndex: number;
-  bannerLinkUrl: string;
+  bannerLinksUrl: string;
   bannerTitle: string;
-  bannerImageUrl: string;
+  bannerImagesUrl: string;
 }
 
 interface ICreateVideo {
-  videoUrl: string;
-  videoTitle: string;
-  videoDescription: string;
+  videosUrl: string;
+  videosTitle: string;
+  videosDescription: string;
 }
