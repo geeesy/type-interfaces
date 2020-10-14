@@ -35,3 +35,47 @@ export interface IOrderList {
   orderDate: string;
   poNetAmount: string;
 }
+
+// REVIEW: RFQ
+
+export interface IRfqCreate {
+  productTitle: string;
+  productKeywords: string[];
+  productCategoryId: string;
+  productQty: string;
+  productUnit: string;
+  productUnitPrice: string;
+  productCurrency: string;
+  productDescription: string;
+  productImagesUrl: string;
+  timeQuotationToExpired: string;
+  shippingLoc: string[];
+  shippingMethods: string[];
+  shippingTimePeriod: string[];
+  creditTerm: string;
+  paymentMethods: string[];
+  sellerSizes: string[];
+  sellerBusinessTypes: string[];
+  sellerAges: string[];
+  sellerProvinces: string[];
+  sellerCertificate: boolean;
+  sellerVerifiedByGeeesy: boolean;
+  buyerFullName: string;
+  buyerEmail: string;
+  buyerMobile: string;
+  buyerCompany: string;
+  buyerCompanyPhone: string;
+  buyerContactAddress: string;
+  rfqScore: number;
+}
+
+export interface IRfq extends IRfqCreate {
+  rfqId: string;
+}
+
+export interface IResRfq {
+  status: string;
+  statusText: string;
+  message: string;
+  data: IRfq[];
+}
