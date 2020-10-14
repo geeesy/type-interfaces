@@ -81,87 +81,24 @@ export interface IRfqCreateDataProduct {
   productCurrency: string;
   productDescription: string;
   productImagesUrl: string;
-  timeQuotationToExpired: string;
-  shippingLoc: string[];
-  shippingMethods: string[];
-  shippingTimePeriod: string[];
-  creditTerm: string;
-  paymentMethods: string[];
-  sellerSizes: string[];
-  sellerBusinessTypes: string[];
-  sellerAges: string[];
-  sellerProvinces: string[];
-  sellerCertificate: boolean;
-  sellerVerifiedByGeeesy: boolean;
-  buyerFullName: string;
-  buyerEmail: string;
-  buyerMobile: string;
-  buyerCompany: string;
-  buyerCompanyPhone: string;
-  buyerContactAddress: string;
-  rfqScore: number;
 }
 
 export interface IRfqCreateDataRequest {
-  productTitle: string;
-  productKeywords: string[];
-  productCategoryId: string;
-  productQty: string;
-  productUnit: string;
-  productUnitPrice: string;
-  productCurrency: string;
-  productDescription: string;
-  productImagesUrl: string;
   timeQuotationToExpired: string;
   shippingLoc: string[];
   shippingMethods: string[];
   shippingTimePeriod: string[];
   creditTerm: string;
   paymentMethods: string[];
-  sellerSizes: string[];
-  sellerBusinessTypes: string[];
-  sellerAges: string[];
-  sellerProvinces: string[];
-  sellerCertificate: boolean;
-  sellerVerifiedByGeeesy: boolean;
-  buyerFullName: string;
-  buyerEmail: string;
-  buyerMobile: string;
-  buyerCompany: string;
-  buyerCompanyPhone: string;
-  buyerContactAddress: string;
-  rfqScore: number;
 }
 
 export interface IRfqCreateDataSeller {
-  productTitle: string;
-  productKeywords: string[];
-  productCategoryId: string;
-  productQty: string;
-  productUnit: string;
-  productUnitPrice: string;
-  productCurrency: string;
-  productDescription: string;
-  productImagesUrl: string;
-  timeQuotationToExpired: string;
-  shippingLoc: string[];
-  shippingMethods: string[];
-  shippingTimePeriod: string[];
-  creditTerm: string;
-  paymentMethods: string[];
   sellerSizes: string[];
   sellerBusinessTypes: string[];
   sellerAges: string[];
   sellerProvinces: string[];
   sellerCertificate: boolean;
   sellerVerifiedByGeeesy: boolean;
-  buyerFullName: string;
-  buyerEmail: string;
-  buyerMobile: string;
-  buyerCompany: string;
-  buyerCompanyPhone: string;
-  buyerContactAddress: string;
-  rfqScore: number;
 }
 
 export interface IRfqCreateDataBuyer {
