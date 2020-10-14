@@ -151,6 +151,7 @@ import {
   IRfqCreateDataRequest,
   IRfqCreateDataSeller,
   IRfqCreateParams,
+  IRfqFormCreate,
   IVideoList
 } from './type-apps'
 
@@ -572,6 +573,7 @@ export namespace GeeesyApps {
   export type OrderList = IOrderList;
 
   export type CreateRfq = IRfqCreateDataProduct & IRfqCreateDataRequest & IRfqCreateDataSeller & IRfqCreateDataBuyer & IRfqCreateParams
+  export type RfqFormCreate = IRfqFormCreate
   export type RfqDataProduct = IRfqCreateDataProduct
   export type RfqDataRequest = IRfqCreateDataRequest
   export type RfqDataSeller = IRfqCreateDataSeller

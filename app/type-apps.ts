@@ -71,6 +71,13 @@ export interface IRfq {
   senderId: string;
 }
 
+export interface IRfqFormCreate {
+  dataProduct: IRfqCreateDataProduct
+  dataRequest: IRfqCreateDataRequest
+  dataSeller: IRfqCreateDataSeller
+  dataBuyer: IRfqCreateDataBuyer
+}
+
 export interface IRfqCreateDataProduct {
   productTitle: string;
   productKeywords: string[];
