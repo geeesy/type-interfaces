@@ -572,6 +572,10 @@ export namespace GeeesyApps {
   export type OrderList = IOrderList;
 
   export type CreateRfq = IRfqCreateDataProduct & IRfqCreateDataRequest & IRfqCreateDataSeller & IRfqCreateDataBuyer & IRfqCreateParams
+  export type RfqDataProduct = IRfqCreateDataProduct
+  export type RfqDataRequest = IRfqCreateDataRequest
+  export type RfqDataSeller = IRfqCreateDataSeller
+  export type RfqDataBuyer = IRfqCreateDataBuyer
   export type ResRfq = IResRfq | IRfq
   export type Rfq = IRfq
 
