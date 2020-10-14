@@ -71,10 +71,6 @@ export interface IRfq {
   senderId: string;
 }
 
-/**
- * @description
- * Form Interface for rfq creation
- */
 export interface IRfqFormCreate {
   dataProduct: IRfqCreateDataProduct
   dataRequest: IRfqCreateDataRequest

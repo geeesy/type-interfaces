@@ -573,6 +573,13 @@ export namespace GeeesyApps {
   export type OrderList = IOrderList;
 
   export type CreateRfq = IRfqCreateDataProduct & IRfqCreateDataRequest & IRfqCreateDataSeller & IRfqCreateDataBuyer & IRfqCreateParams
+
+  /**
+   * @description
+   * Form Interface for RFQ creation
+   * @param
+   * senderId
+   */
   export type RfqFormCreate = IRfqFormCreate
   export type RfqDataProduct = IRfqCreateDataProduct
   export type RfqDataRequest = IRfqCreateDataRequest
