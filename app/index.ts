@@ -143,7 +143,10 @@ import { ICheck, IConnect, IData } from './interfaces'
 import {
   IOrderList,
   IResOrderList,
+  IResRfq,
   IResVideoList,
+  IRfq,
+  IRfqCreate,
   IVideoList
 } from './type-apps'
 
@@ -563,6 +566,11 @@ export namespace GeeesyApps {
 
   export type ResOrderList = IResOrderList | OrderList;
   export type OrderList = IOrderList;
+
+  export type CreateRfq = IRfqCreate
+  export type ResRfq = IResRfq | IRfq
+  export type Rfq = IRfq
+
 }
 
 export * as IMarketplace from './type-marketplace'
