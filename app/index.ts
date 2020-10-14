@@ -146,7 +146,11 @@ import {
   IResRfq,
   IResVideoList,
   IRfq,
-  IRfqCreate,
+  IRfqCreateDataBuyer,
+  IRfqCreateDataProduct,
+  IRfqCreateDataRequest,
+  IRfqCreateDataSeller,
+  IRfqCreateParams,
   IVideoList
 } from './type-apps'
 
@@ -567,7 +571,7 @@ export namespace GeeesyApps {
   export type ResOrderList = IResOrderList | OrderList;
   export type OrderList = IOrderList;
 
-  export type CreateRfq = IRfqCreate
+  export type CreateRfq = IRfqCreateDataProduct & IRfqCreateDataRequest & IRfqCreateDataSeller & IRfqCreateDataBuyer & IRfqCreateParams
   export type ResRfq = IResRfq | IRfq
   export type Rfq = IRfq
 

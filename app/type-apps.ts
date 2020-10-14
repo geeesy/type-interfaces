@@ -38,7 +38,40 @@ export interface IOrderList {
 
 // REVIEW: RFQ
 
-export interface IRfqCreate {
+export interface IRfq {
+  rfqId: string;
+  productTitle: string;
+  productKeywords: string[];
+  productCategoryId: string;
+  productQty: string;
+  productUnit: string;
+  productUnitPrice: string;
+  productCurrency: string;
+  productDescription: string;
+  productImagesUrl: string;
+  timeQuotationToExpired: string;
+  shippingLoc: string[];
+  shippingMethods: string[];
+  shippingTimePeriod: string[];
+  creditTerm: string;
+  paymentMethods: string[];
+  sellerSizes: string[];
+  sellerBusinessTypes: string[];
+  sellerAges: string[];
+  sellerProvinces: string[];
+  sellerCertificate: boolean;
+  sellerVerifiedByGeeesy: boolean;
+  buyerFullName: string;
+  buyerEmail: string;
+  buyerMobile: string;
+  buyerCompany: string;
+  buyerCompanyPhone: string;
+  buyerContactAddress: string;
+  rfqScore: number;
+  senderId: string;
+}
+
+export interface IRfqCreateDataProduct {
   productTitle: string;
   productKeywords: string[];
   productCategoryId: string;
@@ -69,8 +102,80 @@ export interface IRfqCreate {
   rfqScore: number;
 }
 
-export interface IRfq extends IRfqCreate {
-  rfqId: string;
+export interface IRfqCreateDataRequest {
+  productTitle: string;
+  productKeywords: string[];
+  productCategoryId: string;
+  productQty: string;
+  productUnit: string;
+  productUnitPrice: string;
+  productCurrency: string;
+  productDescription: string;
+  productImagesUrl: string;
+  timeQuotationToExpired: string;
+  shippingLoc: string[];
+  shippingMethods: string[];
+  shippingTimePeriod: string[];
+  creditTerm: string;
+  paymentMethods: string[];
+  sellerSizes: string[];
+  sellerBusinessTypes: string[];
+  sellerAges: string[];
+  sellerProvinces: string[];
+  sellerCertificate: boolean;
+  sellerVerifiedByGeeesy: boolean;
+  buyerFullName: string;
+  buyerEmail: string;
+  buyerMobile: string;
+  buyerCompany: string;
+  buyerCompanyPhone: string;
+  buyerContactAddress: string;
+  rfqScore: number;
+}
+
+export interface IRfqCreateDataSeller {
+  productTitle: string;
+  productKeywords: string[];
+  productCategoryId: string;
+  productQty: string;
+  productUnit: string;
+  productUnitPrice: string;
+  productCurrency: string;
+  productDescription: string;
+  productImagesUrl: string;
+  timeQuotationToExpired: string;
+  shippingLoc: string[];
+  shippingMethods: string[];
+  shippingTimePeriod: string[];
+  creditTerm: string;
+  paymentMethods: string[];
+  sellerSizes: string[];
+  sellerBusinessTypes: string[];
+  sellerAges: string[];
+  sellerProvinces: string[];
+  sellerCertificate: boolean;
+  sellerVerifiedByGeeesy: boolean;
+  buyerFullName: string;
+  buyerEmail: string;
+  buyerMobile: string;
+  buyerCompany: string;
+  buyerCompanyPhone: string;
+  buyerContactAddress: string;
+  rfqScore: number;
+}
+
+export interface IRfqCreateDataBuyer {
+  buyerFullName: string;
+  buyerEmail: string;
+  buyerMobile: string;
+  buyerCompany: string;
+  buyerCompanyPhone: string;
+  buyerContactAddress: string;
+}
+
+export interface IRfqCreateParams {
+  rfqScore: number;
+  senderId: string;
 }
 
 export interface IResRfq {
