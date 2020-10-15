@@ -148,6 +148,7 @@ import {
   IResVideoList,
   IRfi,
   IRfiFormCreate,
+  IRfiFormCreateParams,
   IRfiFormGroupBuyer,
   IRfiFormGroupProduct,
   IRfiFormGroupRequest,
@@ -580,7 +581,7 @@ export namespace GeeesyApps {
 
   /**
    * @description
-   * Form Interface for RFQ creation
+   * FORM Interface for RFQ creation
    * @param
    * senderId
    */
@@ -589,14 +590,14 @@ export namespace GeeesyApps {
   export type RfqFormGroupRequest = IRfqFormGroupRequest
   export type RfqFormGroupSeller = IRfqFormGroupSeller
   export type RfqFormGroupBuyer = IRfqFormGroupBuyer
-  export type RfqFormCreateParam = IRfqFormCreateParams
+  export type RfqFormCreateParams = IRfqFormCreateParams
   export type RfqFormSubmit = IRfqFormGroupProduct & IRfqFormGroupRequest & IRfqFormGroupSeller & IRfqFormGroupBuyer & IRfqFormCreateParams
   export type ResRfq = IResRfq | IRfq
   export type Rfq = IRfq
 
   /**
    * @description
-   * Form Interface for RFI/Inquiry creation
+   * FORM Interface for RFI/Inquiry creation
    * @param
    * senderId
    * supplierId
@@ -606,6 +607,8 @@ export namespace GeeesyApps {
   export type RfiFormGroupProduct = IRfiFormGroupProduct
   export type RfiFormGroupRequest = IRfiFormGroupRequest
   export type RfiFormGroupBuyer = IRfiFormGroupBuyer
+  export type RfiFormCreateParams = IRfiFormCreateParams
+  export type RfiFormSubmit = IRfiFormGroupBuyer & IRfiFormGroupProduct & IRfiFormGroupRequest & IRfiFormCreateParams
   export type ResRfi = IResRfi | IRfi
   export type Rfi = IRfi
 
