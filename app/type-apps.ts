@@ -142,7 +142,7 @@ export interface IRfqFormGroupRequest {
 }
 
 export interface IRfqFormGroupSeller {
-  sellerSize: string;
+  sellerSizes: string[];
   sellerBusinessTypes: string[];
   sellerAge: string;
   sellerProvinces: string[];
