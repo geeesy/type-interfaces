@@ -142,7 +142,11 @@ import { ICheck, IConnect, IData } from './interfaces'
 /* eslint-disable no-unused-vars */
 import {
   IOrderList,
+  IQuotation,
+  IQuotationFormCreate,
+  IQuotationFormCreateParams,
   IResOrderList,
+  IResQuotation,
   IResRfi,
   IResRfq,
   IResVideoList,
@@ -611,6 +615,21 @@ export namespace GeeesyApps {
   export type RfiFormSubmit = IRfiFormGroupBuyer & IRfiFormGroupProduct & IRfiFormGroupRequest & IRfiFormCreateParams
   export type ResRfi = IResRfi | IRfi
   export type Rfi = IRfi
+
+  /**
+   * @description
+   * FORM Interface for Quotation creation
+   * @param
+   * senderId
+   * receiverId
+   * buyerId
+   * sellerId
+   */
+  export type QuotationFormCreate = IQuotationFormCreate
+  export type QuotationFormCreateParams = IQuotationFormCreateParams
+  export type QuotationFormSubmit = IQuotationFormCreate & IQuotationFormCreateParams
+  export type ResQuotation = IResQuotation | IQuotation
+  export type Quotation = IQuotation
 
 }
 

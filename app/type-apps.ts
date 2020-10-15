@@ -36,88 +36,59 @@ export interface IOrderList {
   poNetAmount: string;
 }
 
-// REVIEW: RFQ & RFI ===
-
-export interface IRfq {
-  rfqId: string;
-  senderId: string;
-  productTitle: string;
-  productKeywords: string[];
-  productCategoryId: string;
-  productQty: string;
-  productUnit: string;
-  productUnitPrice: string;
-  productCurrency: string;
-  productDescription: string;
-  productImagesUrl: string[];
-  timeLateRfqToQuo: string;
-  shippingLoc: string[];
-  shippingMethods: string[];
-  shippingTimePeriod: string[];
-  creditTerm: string;
-  paymentMethods: string[];
-  sellerSizes: string[];
-  sellerBusinessTypes: string[];
-  sellerAge: string;
-  sellerProvinces: string[];
-  sellerCertificate: boolean;
-  sellerVerifiedByGeeesy: boolean;
-  buyerFullName: string;
-  buyerEmail: string;
-  buyerMobile: string;
-  buyerCompany: string;
-  buyerCompanyPhone: string;
-  buyerCompanyAddress: string;
-  rfqScore: number;
+/* #region  ANCHOR: QUOTATION */
+export interface IQuotationFormCreate {
+  senderContact: string[];
+  receiverContact: string[];
+  buyerContact: string[];
+  sellerContact: string[];
+  quoProductsData: IQuoProduct[];
+  quoNote: string;
+  quoAttachments: string[];
+  quoTotalPrice: string;
+  quoTotalDiscountPrice: string;
+  quoCreditTerm: string;
+  quoNo: string;
+  quoDate: string;
+  quoExpiryDate: string;
+  quoShippingDate: string;
 }
 
-export interface IRfi {
-  rfiId: string;
+export interface IQuotationFormCreateParams {
   senderId: string;
-  supplierId: string;
+  receiverId: string;
+  buyerId: string;
+  sellerId: string;
+}
+
+export interface IQuotation extends IQuotationFormCreate, IQuotationFormCreateParams {
+  quotationId: string;
+}
+
+export interface IQuoProduct {
   productId: string;
-  productQty: string;
+  productName: string;
+  discountUnitPrice: string;
+  unitPrice: string;
+  productQty: string
   productUnit: string;
-  rfiInfo: string;
-  rfiImagesUrl: string[];
-  buyerFullName: string;
-  buyerEmail: string;
-  buyerMobile: string;
-  buyerCompany: string;
-  buyerCompanyPhone: string;
-  buyerCompanyAddress: string;
 }
 
+export interface IResQuotation {
+  status: string;
+  statusText: string;
+  message: string;
+  data: IQuotation[];
+}
+
+/* #endregion */
+
+/* #region  ANCHOR: RFQ */
 export interface IRfqFormCreate {
   formGroupProduct: IRfqFormGroupProduct
   formGroupRequest: IRfqFormGroupRequest
   formGroupSeller: IRfqFormGroupSeller
   formGroupBuyer: IRfqFormGroupBuyer
-}
-
-export interface IRfiFormCreate {
-  formGroupProduct: IRfiFormGroupProduct
-  formGroupRequest: IRfiFormGroupRequest
-  formGroupBuyer: IRfiFormGroupBuyer
-}
-
-export interface IRfiFormGroupProduct {
-  productQty: string;
-  productUnit: string;
-}
-
-export interface IRfiFormGroupRequest {
-  rfiInfo: string;
-  rfiImagesUrl: string[];
-}
-
-export interface IRfiFormGroupBuyer {
-  buyerFullName: string;
-  buyerEmail: string;
-  buyerMobile: string;
-  buyerCompany: string;
-  buyerCompanyPhone: string;
-  buyerCompanyAddress: string;
 }
 
 export interface IRfqFormGroupProduct {
@@ -164,10 +135,37 @@ export interface IRfqFormCreateParams {
   senderId: string;
 }
 
-export interface IRfiFormCreateParams {
+export interface IRfq {
+  rfqId: string;
   senderId: string;
-  supplierId: string;
-  productId: string;
+  productTitle: string;
+  productKeywords: string[];
+  productCategoryId: string;
+  productQty: string;
+  productUnit: string;
+  productUnitPrice: string;
+  productCurrency: string;
+  productDescription: string;
+  productImagesUrl: string[];
+  timeLateRfqToQuo: string;
+  shippingLoc: string[];
+  shippingMethods: string[];
+  shippingTimePeriod: string[];
+  creditTerm: string;
+  paymentMethods: string[];
+  sellerSizes: string[];
+  sellerBusinessTypes: string[];
+  sellerAge: string;
+  sellerProvinces: string[];
+  sellerCertificate: boolean;
+  sellerVerifiedByGeeesy: boolean;
+  buyerFullName: string;
+  buyerEmail: string;
+  buyerMobile: string;
+  buyerCompany: string;
+  buyerCompanyPhone: string;
+  buyerCompanyAddress: string;
+  rfqScore: number;
 }
 
 export interface IResRfq {
@@ -176,6 +174,43 @@ export interface IResRfq {
   message: string;
   data: IRfq[];
 }
+/* #endregion */
+
+/* #region  ANCHOR: INQUIRY (RFI) */
+export interface IRfiFormCreate {
+  formGroupProduct: IRfiFormGroupProduct
+  formGroupRequest: IRfiFormGroupRequest
+  formGroupBuyer: IRfiFormGroupBuyer
+}
+
+export interface IRfiFormGroupProduct {
+  productQty: string;
+  productUnit: string;
+}
+
+export interface IRfiFormGroupRequest {
+  rfiInfo: string;
+  rfiImagesUrl: string[];
+}
+
+export interface IRfiFormGroupBuyer {
+  buyerFullName: string;
+  buyerEmail: string;
+  buyerMobile: string;
+  buyerCompany: string;
+  buyerCompanyPhone: string;
+  buyerCompanyAddress: string;
+}
+
+export interface IRfiFormCreateParams {
+  senderId: string;
+  supplierId: string;
+  productId: string;
+}
+
+export interface IRfi extends IRfiFormGroupProduct, IRfiFormGroupRequest, IRfiFormGroupBuyer, IRfiFormCreateParams {
+  rfiId: string;
+}
 
 export interface IResRfi {
   status: string;
@@ -183,3 +218,4 @@ export interface IResRfi {
   message: string;
   data: IRfi[];
 }
+/* #endregion */
