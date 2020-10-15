@@ -156,7 +156,7 @@ export interface IRfqFormGroupBuyer {
   buyerMobile: string;
   buyerCompany: string;
   buyerCompanyPhone: string;
-  buyerContactAddress: string;
+  buyerCompanyAddress: string;
 }
 
 export interface IRfqFormCreateParams {
