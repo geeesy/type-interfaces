@@ -143,15 +143,21 @@ import { ICheck, IConnect, IData } from './interfaces'
 import {
   IOrderList,
   IResOrderList,
+  IResRfi,
   IResRfq,
   IResVideoList,
+  IRfi,
+  IRfiFormCreate,
+  IRfiFormGroupBuyer,
+  IRfiFormGroupProduct,
+  IRfiFormGroupRequest,
   IRfq,
-  IRfqCreateDataBuyer,
-  IRfqCreateDataProduct,
-  IRfqCreateDataRequest,
-  IRfqCreateDataSeller,
-  IRfqCreateParams,
   IRfqFormCreate,
+  IRfqFormCreateParams,
+  IRfqFormGroupBuyer,
+  IRfqFormGroupProduct,
+  IRfqFormGroupRequest,
+  IRfqFormGroupSeller,
   IVideoList
 } from './type-apps'
 
@@ -572,7 +578,7 @@ export namespace GeeesyApps {
   export type ResOrderList = IResOrderList | OrderList;
   export type OrderList = IOrderList;
 
-  export type CreateRfq = IRfqCreateDataProduct & IRfqCreateDataRequest & IRfqCreateDataSeller & IRfqCreateDataBuyer & IRfqCreateParams
+  export type RfqFormSubmit = IRfqFormGroupProduct & IRfqFormGroupRequest & IRfqFormGroupSeller & IRfqFormGroupBuyer & IRfqFormCreateParams
 
   /**
    * @description
@@ -581,12 +587,27 @@ export namespace GeeesyApps {
    * senderId
    */
   export type RfqFormCreate = IRfqFormCreate
-  export type RfqDataProduct = IRfqCreateDataProduct
-  export type RfqDataRequest = IRfqCreateDataRequest
-  export type RfqDataSeller = IRfqCreateDataSeller
-  export type RfqDataBuyer = IRfqCreateDataBuyer
+  export type RfqFormGroupProduct = IRfqFormGroupProduct
+  export type RfqFormGroupRequest = IRfqFormGroupRequest
+  export type RfqFormGroupSeller = IRfqFormGroupSeller
+  export type RfqFormGroupBuyer = IRfqFormGroupBuyer
   export type ResRfq = IResRfq | IRfq
   export type Rfq = IRfq
+
+  /**
+   * @description
+   * Form Interface for RFI/Inquiry creation
+   * @param
+   * senderId
+   * supplierId
+   * productId
+   */
+  export type RfiFormCreate = IRfiFormCreate
+  export type RfiFormGroupProduct = IRfiFormGroupProduct
+  export type RfiFormGroupRequest = IRfiFormGroupRequest
+  export type RfiFormGroupBuyer = IRfiFormGroupBuyer
+  export type ResRfi = IResRfi | IRfi
+  export type Rfi = IRfi
 
 }
 

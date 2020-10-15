@@ -36,10 +36,11 @@ export interface IOrderList {
   poNetAmount: string;
 }
 
-// REVIEW: RFQ
+// REVIEW: RFQ & RFI ===
 
 export interface IRfq {
   rfqId: string;
+  senderId: string;
   productTitle: string;
   productKeywords: string[];
   productCategoryId: string;
@@ -48,7 +49,7 @@ export interface IRfq {
   productUnitPrice: string;
   productCurrency: string;
   productDescription: string;
-  productImagesUrl: string;
+  productImagesUrl: string[];
   timeQuotationToExpired: string;
   shippingLoc: string[];
   shippingMethods: string[];
@@ -66,19 +67,60 @@ export interface IRfq {
   buyerMobile: string;
   buyerCompany: string;
   buyerCompanyPhone: string;
-  buyerContactAddress: string;
+  buyerCompanyAddress: string;
   rfqScore: number;
+}
+
+export interface IRfi {
+  rfiId: string;
   senderId: string;
+  supplierId: string;
+  productId: string;
+  productQty: string;
+  productUnit: string;
+  rfiInfo: string;
+  rfiImagesUrl: string[];
+  buyerFullName: string;
+  buyerEmail: string;
+  buyerMobile: string;
+  buyerCompany: string;
+  buyerCompanyPhone: string;
+  buyerCompanyAddress: string;
 }
 
 export interface IRfqFormCreate {
-  dataProduct: IRfqCreateDataProduct
-  dataRequest: IRfqCreateDataRequest
-  dataSeller: IRfqCreateDataSeller
-  dataBuyer: IRfqCreateDataBuyer
+  formGroupProduct: IRfqFormGroupProduct
+  formGroupRequest: IRfqFormGroupRequest
+  formGroupSeller: IRfqFormGroupSeller
+  formGroupBuyer: IRfqFormGroupBuyer
 }
 
-export interface IRfqCreateDataProduct {
+export interface IRfiFormCreate {
+  formGroupProduct: IRfiFormGroupProduct
+  formGroupRequest: IRfiFormGroupRequest
+  formGroupBuyer: IRfiFormGroupBuyer
+}
+
+export interface IRfiFormGroupProduct {
+  productQty: string;
+  productUnit: string;
+}
+
+export interface IRfiFormGroupRequest {
+  rfiInfo: string;
+  rfiImagesUrl: string[];
+}
+
+export interface IRfiFormGroupBuyer {
+  buyerFullName: string;
+  buyerEmail: string;
+  buyerMobile: string;
+  buyerCompany: string;
+  buyerCompanyPhone: string;
+  buyerCompanyAddress: string;
+}
+
+export interface IRfqFormGroupProduct {
   productTitle: string;
   productKeywords: string[];
   productCategoryId: string;
@@ -90,7 +132,7 @@ export interface IRfqCreateDataProduct {
   productImagesUrl: string;
 }
 
-export interface IRfqCreateDataRequest {
+export interface IRfqFormGroupRequest {
   timeQuotationToExpired: string;
   shippingLoc: string[];
   shippingMethods: string[];
@@ -99,7 +141,7 @@ export interface IRfqCreateDataRequest {
   paymentMethods: string[];
 }
 
-export interface IRfqCreateDataSeller {
+export interface IRfqFormGroupSeller {
   sellerSizes: string[];
   sellerBusinessTypes: string[];
   sellerAges: string[];
@@ -108,7 +150,7 @@ export interface IRfqCreateDataSeller {
   sellerVerifiedByGeeesy: boolean;
 }
 
-export interface IRfqCreateDataBuyer {
+export interface IRfqFormGroupBuyer {
   buyerFullName: string;
   buyerEmail: string;
   buyerMobile: string;
@@ -117,9 +159,15 @@ export interface IRfqCreateDataBuyer {
   buyerContactAddress: string;
 }
 
-export interface IRfqCreateParams {
+export interface IRfqFormCreateParams {
   rfqScore: number;
   senderId: string;
+}
+
+export interface IRfiFormCreateParams {
+  senderId: string;
+  supplierId: string;
+  productId: string;
 }
 
 export interface IResRfq {
@@ -127,4 +175,11 @@ export interface IResRfq {
   statusText: string;
   message: string;
   data: IRfq[];
+}
+
+export interface IResRfi {
+  status: string;
+  statusText: string;
+  message: string;
+  data: IRfi[];
 }
