@@ -58,7 +58,7 @@ export interface IRfq {
   paymentMethods: string[];
   sellerSizes: string[];
   sellerBusinessTypes: string[];
-  sellerAges: string[];
+  sellerAge: string;
   sellerProvinces: string[];
   sellerCertificate: boolean;
   sellerVerifiedByGeeesy: boolean;
@@ -142,9 +142,9 @@ export interface IRfqFormGroupRequest {
 }
 
 export interface IRfqFormGroupSeller {
-  sellerSizes: string[];
+  sellerSize: string;
   sellerBusinessTypes: string[];
-  sellerAges: string[];
+  sellerAge: string;
   sellerProvinces: string[];
   sellerCertificate: boolean;
   sellerVerifiedByGeeesy: boolean;
