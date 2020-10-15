@@ -50,7 +50,7 @@ export interface IRfq {
   productCurrency: string;
   productDescription: string;
   productImagesUrl: string[];
-  timeQuotationToExpired: string;
+  timeLateRfqToQuo: string;
   shippingLoc: string[];
   shippingMethods: string[];
   shippingTimePeriod: string[];
