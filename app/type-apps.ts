@@ -133,7 +133,7 @@ export interface IRfqFormGroupProduct {
 }
 
 export interface IRfqFormGroupRequest {
-  timeQuotationToExpired: string;
+  timeLateRfqToQuo: string;
   shippingLoc: string[];
   shippingMethods: string[];
   shippingTimePeriod: string[];
