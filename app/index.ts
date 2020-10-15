@@ -578,8 +578,6 @@ export namespace GeeesyApps {
   export type ResOrderList = IResOrderList | OrderList;
   export type OrderList = IOrderList;
 
-  export type RfqFormSubmit = IRfqFormGroupProduct & IRfqFormGroupRequest & IRfqFormGroupSeller & IRfqFormGroupBuyer & IRfqFormCreateParams
-
   /**
    * @description
    * Form Interface for RFQ creation
@@ -591,6 +589,8 @@ export namespace GeeesyApps {
   export type RfqFormGroupRequest = IRfqFormGroupRequest
   export type RfqFormGroupSeller = IRfqFormGroupSeller
   export type RfqFormGroupBuyer = IRfqFormGroupBuyer
+  export type RfqFormCreateParam = IRfqFormCreateParams
+  export type RfqFormSubmit = IRfqFormGroupProduct & IRfqFormGroupRequest & IRfqFormGroupSeller & IRfqFormGroupBuyer & IRfqFormCreateParams
   export type ResRfq = IResRfq | IRfq
   export type Rfq = IRfq
 
