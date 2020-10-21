@@ -36,22 +36,102 @@ export interface IOrderList {
   poNetAmount: string;
 }
 
+// === === ===
+
+export interface ISocial {
+  line: string;
+  facebook: string;
+}
+
+export interface ICompanyTaxInfo {
+  regisNo: string;
+  taxNo: string;
+  isHq: boolean;
+  branch: {
+    id: string;
+    name: string;
+    address: string;
+  }
+}
+
+export interface ICompanyContactInfo {
+  companyName: string;
+  companyPhone: string[];
+  companyFax: string[];
+  companyWebsite: string[];
+  companyEmail: string[];
+  companySocial: ISocial;
+  contactAddress: string;
+  billingAddress: string;
+  shippingAddress: string;
+  companyNote: string;
+  companyTaxInfo: ICompanyTaxInfo
+}
+
+export interface IPersonContactInfo {
+  fullName: string;
+  email: string[];
+  mobile: string[];
+  social: ISocial[];
+  address: string;
+  note: string;
+}
+
+export interface ISenderContact {
+  senderContactInfo: IPersonContactInfo;
+  senderCompanyContactInfo: ICompanyContactInfo;
+}
+
+export interface IReceiverContact {
+  receiverContactInfo: IPersonContactInfo;
+  receiverCompanyContactInfo: ICompanyContactInfo;
+}
+
+export interface IProductRow {
+  productId: string;
+  productName: string;
+  productCoverUrl: string;
+  productSku: string;
+  productUnitPrice: string;
+  productUnit: string;
+  discountUnitPrice: string;
+  productQty: string;
+}
+
 /* #region  ANCHOR: QUOTATION */
 export interface IQuotationFormCreate {
-  senderContact: string[];
-  receiverContact: string[];
-  buyerContact: string[];
-  sellerContact: string[];
-  quoProductsData: IQuoProduct[];
-  quoNote: string;
-  quoAttachments: string[];
-  quoTotalPrice: string;
-  quoTotalDiscountPrice: string;
-  quoCreditTerm: string;
-  quoNo: string;
-  quoDate: string;
-  quoExpiryDate: string;
-  quoShippingDate: string;
+  formGroupSender: ISenderContact;
+  formGroupReceiver: IReceiverContact;
+  formGroupProducts: IProductRow[];
+  formGroupAccounting: IQuotationFormGroupAccounting;
+  formGroupData: IQuotationFormGroupData;
+}
+
+export interface IQuotationFormGroupAccounting {
+  subtotalAmount: number
+  totalDiscountAmount: number
+  netAmount: number
+  vat: number
+  grandTotalAmount: number
+  taxWithheldPercent: number
+  isVatInc: boolean;
+}
+
+export interface IQuotationFormGroupData {
+  docNo: string;
+  docDate: string;
+  validUntilDate: string;
+  expiryDate: string;
+  creditDay: string;
+  shippingDate: string;
+  remark: string
+  termsCondition: string;
+  senderNote: string
+  receiverNote: string
+  sellerNote: string
+  buyerNote: string
+  attachmentsUrl: string[]
+  signatureUrl: string
 }
 
 export interface IQuotationFormCreateParams {
@@ -59,19 +139,13 @@ export interface IQuotationFormCreateParams {
   receiverId: string;
   buyerId: string;
   sellerId: string;
+  rfqId: string;
 }
 
 export interface IQuotation extends IQuotationFormCreate, IQuotationFormCreateParams {
   quotationId: string;
-}
-
-export interface IQuoProduct {
-  productId: string;
-  productName: string;
-  discountUnitPrice: string;
-  unitPrice: string;
-  productQty: string
-  productUnit: string;
+  createdAt: string;
+  updatedAt: string;
 }
 
 export interface IResQuotation {
@@ -133,6 +207,22 @@ export interface IRfqFormGroupBuyer {
 export interface IRfqFormCreateParams {
   rfqScore: number;
   senderId: string;
+}
+
+export interface IRfqList {
+  createdAt: string;
+  productImageUrl: string;
+  productTitle: string;
+  productQty: string;
+  productUnit: string;
+  buyerFullName: string;
+  buyerEmail: string;
+  buyerMobile: string;
+  buyerCompany: string;
+  buyerCompanyPhone: string;
+  buyerCompanyAddress: string;
+  rfqScore: number;
+  shippingTimePeriod: string;
 }
 
 export interface IRfq {
