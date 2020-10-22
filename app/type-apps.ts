@@ -36,7 +36,14 @@ export interface IOrderList {
   poNetAmount: string;
 }
 
-// === === ===
+// === === === STUB: Version 2.x
+
+export interface IApprover {
+  nameTitle: string;
+  fullName: string;
+  position: string;
+  signatureUrl: string;
+}
 
 export interface ISocial {
   line: string;
@@ -98,13 +105,14 @@ export interface IProductRow {
   productQty: string;
 }
 
-/* #region  ANCHOR: QUOTATION */
+/* #region  REVIEW: QUOTATION */
 export interface IQuotationFormCreate {
   formGroupSender: ISenderContact;
   formGroupReceiver: IReceiverContact;
   formGroupProducts: IProductRow[];
   formGroupAccounting: IQuotationFormGroupAccounting;
   formGroupData: IQuotationFormGroupData;
+  formGroupApprover: IQuotationFormGroupApprover;
 }
 
 export interface IQuotationFormGroupAccounting {
@@ -131,7 +139,11 @@ export interface IQuotationFormGroupData {
   sellerNote: string
   buyerNote: string
   attachmentsUrl: string[]
-  signatureUrl: string
+}
+
+export interface IQuotationFormGroupApprover {
+  approver: IApprover[]
+  stampUrl: string
 }
 
 export interface IQuotationFormCreateParams {
@@ -157,7 +169,7 @@ export interface IResQuotation {
 
 /* #endregion */
 
-/* #region  ANCHOR: RFQ */
+/* #region  FIXME: RFQ */
 export interface IRfqFormCreate {
   formGroupProduct: IRfqFormGroupProduct
   formGroupRequest: IRfqFormGroupRequest
@@ -266,7 +278,7 @@ export interface IResRfq {
 }
 /* #endregion */
 
-/* #region  ANCHOR: INQUIRY (RFI) */
+/* #region  FIXME: INQUIRY (RFI) */
 export interface IRfiFormCreate {
   formGroupProduct: IRfiFormGroupProduct
   formGroupRequest: IRfiFormGroupRequest
