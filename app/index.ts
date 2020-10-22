@@ -617,20 +617,24 @@ export namespace GeeesyApps {
   export type ResQuotation = IResQuotation | IQuotation
   export type Quotation = IQuotation
 
+
+  /**
+   * @description
+   * FORM Interface for PO creation
+   * @param
+
+   */
+  export type POFormCreate = IPOFormCreate
+  export type POFormCreateParams = IPOFormCreateParams
+  export type POFormSubmit = IPOFormCreate & IPOFormCreateParams
+  export type ResPO = IResPO | IPO
+  export type PO = IPO
+
+
 }
 
 
-/**
- * @description
- * FORM Interface for PO creation
- * @param
 
- */
-export type POFormCreate = IPOFormCreate
-export type POFormCreateParams = IPOFormCreateParams
-export type POFormSubmit = IPOFormCreate & IPOFormCreateParams
-export type ResPO = IResPO | IPO
-export type PO = IPO
 
 
 export * as IMarketplace from './type-marketplace'
