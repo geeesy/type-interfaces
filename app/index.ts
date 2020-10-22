@@ -590,10 +590,6 @@ export namespace GeeesyApps {
    * senderId
    */
   export type RfqFormCreate = IRfqFormCreate
-  export type RfqFormGroupProduct = IRfqFormGroupProduct
-  export type RfqFormGroupRequest = IRfqFormGroupRequest
-  export type RfqFormGroupSeller = IRfqFormGroupSeller
-  export type RfqFormGroupBuyer = IRfqFormGroupBuyer
   export type RfqFormCreateParams = IRfqFormCreateParams
   export type RfqFormSubmit = IRfqFormGroupProduct & IRfqFormGroupRequest & IRfqFormGroupSeller & IRfqFormGroupBuyer & IRfqFormCreateParams
   export type ResRfq = IResRfq | IRfq
@@ -608,9 +604,6 @@ export namespace GeeesyApps {
    * productId
    */
   export type RfiFormCreate = IRfiFormCreate
-  export type RfiFormGroupProduct = IRfiFormGroupProduct
-  export type RfiFormGroupRequest = IRfiFormGroupRequest
-  export type RfiFormGroupBuyer = IRfiFormGroupBuyer
   export type RfiFormCreateParams = IRfiFormCreateParams
   export type RfiFormSubmit = IRfiFormGroupBuyer & IRfiFormGroupProduct & IRfiFormGroupRequest & IRfiFormCreateParams
   export type ResRfi = IResRfi | IRfi

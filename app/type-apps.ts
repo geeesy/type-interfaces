@@ -321,3 +321,143 @@ export interface IResRfi {
   data: IRfi[];
 }
 /* #endregion */
+
+export interface IInquiryFormCreate {
+  formGroupProduct: IInquiryFormGroupProduct;
+  formGoupData: IInquiryFormGroupData;
+
+}
+
+export interface IInquiryFormGroupProduct {
+  description: String;
+  productqty: String;
+  productUnit: String
+}
+
+export interface IInquiryFormGroupData {
+  senderNote: string;
+  receiverNote: String;
+  sellerNote: String;
+  buyyerNote: String;
+  attachment: String;
+}
+
+export interface IInquiryFormCreateParams {
+  senderId: string;
+  receiverId: string;
+  sellerId: string;
+  rfqId: string;
+}
+
+export interface IInquiry extends IInquiryFormCreate, IQuotationFormCreateParams {
+  quotationId: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface IResInquiry {
+  status: string;
+  statusText: string;
+  message: string;
+  data: IInquiry[];
+}
+
+export interface IRFQFormCreate {
+  formGroupProduct: IRFQFormGroupProduct;
+  formGroupData: IRFQFormGroupData;
+}
+
+export interface IRFQFormGroupProduct {
+  productTitle: String;
+  productKeywords: String;
+  description: String;
+  category: String;
+  productQty: String;
+  productUnit: String;
+  productUnitPrice: String;
+  shippingLoc: String;
+  shippingMethods: String;
+  paymentMethods: String;
+  rfqScore: String
+}
+
+export interface IRFQFormGroupData {
+  expiryDate: String;
+  creditDay: String;
+  shippingDate: String;
+  senderNote: String;
+  receiverNote: String;
+  sellerNote: String;
+  buyerNote: String;
+  attachments: String;
+}
+
+export interface IRFQFormCreateParams {
+  senderId: string;
+  receiverId: string;
+  sellerId: string;
+}
+
+export interface IRFQ extends IRFQFormCreate, IRFQFormCreateParams {
+  quotationId: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface IResRFQ {
+  status: string;
+  statusText: string;
+  message: string;
+  data: IRFQ[];
+}
+
+export interface IPOFormCreate {
+  formGroupProducts: IProductRow[];
+  formGroupData: IPOFormGroupData;
+  formGroupDataAccounting: IPOFormGroupDataAccounting;
+}
+
+export interface IPOFormGroupData {
+  docNo: String;
+  docDate: String;
+  creditDay: String;
+  shippingDate: String;
+  remark: String;
+  termsCondition: String;
+  senderNote: String;
+  reciverNote: String;
+  sellerNote: String;
+  buyerNote: String;
+  attachments: String;
+}
+
+export interface IPOFormGroupDataAccounting {
+  subtotalAmount: String;
+  TotaldiscountAmount: String;
+  netAmount: String;
+  vat: String;
+  grandTotalAmount: String;
+}
+
+export interface IPOFormCreateParams {
+  senderId: string;
+  receiverId: string;
+  buyerId: string;
+  sellerId: string;
+  approverId: String;
+  rfqId: string;
+  quotationId: string;
+}
+
+export interface IPO extends IPOFormCreate, IPOFormCreateParams {
+  quotationId: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface IResPO {
+  status: string;
+  statusText: string;
+  message: string;
+  data: IPO[];
+}
