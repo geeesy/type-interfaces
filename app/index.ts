@@ -591,7 +591,7 @@ export namespace GeeesyApps {
    */
   export type RfqFormCreate = IRfqFormCreate
   export type RfqFormCreateParams = IRfqFormCreateParams
-  export type RfqFormSubmit = IRfqFormGroupProduct & IRfqFormGroupRequest & IRfqFormGroupSeller & IRfqFormGroupBuyer & IRfqFormCreateParams
+  export type RfqFormSubmit = IRfqFormCreate & IRfqFormCreateParams
   export type ResRfq = IResRfq | IRfq
   export type Rfq = IRfq
 
@@ -605,7 +605,7 @@ export namespace GeeesyApps {
    */
   export type RfiFormCreate = IRfiFormCreate
   export type RfiFormCreateParams = IRfiFormCreateParams
-  export type RfiFormSubmit = IRfiFormGroupBuyer & IRfiFormGroupProduct & IRfiFormGroupRequest & IRfiFormCreateParams
+  export type RfiFormSubmit = IRfiFormCreate & IRfiFormCreateParams
   export type ResRfi = IResRfi | IRfi
   export type Rfi = IRfi
 
