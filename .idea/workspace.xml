@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8a19b798-daac-433f-bb9b-6132570f93cd" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/app/type-apps.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/type-apps.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1jEH5z0gBzL5zZrdmqOayT3ybwJ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8a19b798-daac-433f-bb9b-6132570f93cd" name="Default Changelist" comment="" />
+      <created>1603362152106</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1603362152106</updated>
+      <workItem from="1603362153224" duration="593000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1884" height="261" key="GridCell.Tab.0.bottom" timestamp="1603362702170">
+      <screen x="0" y="22" width="1920" height="1001" />
+    </state>
+    <state width="1884" height="261" key="GridCell.Tab.0.bottom/0.22.1920.1001@0.22.1920.1001" timestamp="1603362702170" />
+    <state width="1884" height="261" key="GridCell.Tab.0.center" timestamp="1603362702169">
+      <screen x="0" y="22" width="1920" height="1001" />
+    </state>
+    <state width="1884" height="261" key="GridCell.Tab.0.center/0.22.1920.1001@0.22.1920.1001" timestamp="1603362702169" />
+    <state width="1884" height="261" key="GridCell.Tab.0.left" timestamp="1603362702169">
+      <screen x="0" y="22" width="1920" height="1001" />
+    </state>
+    <state width="1884" height="261" key="GridCell.Tab.0.left/0.22.1920.1001@0.22.1920.1001" timestamp="1603362702169" />
+    <state width="1884" height="261" key="GridCell.Tab.0.right" timestamp="1603362702170">
+      <screen x="0" y="22" width="1920" height="1001" />
+    </state>
+    <state width="1884" height="261" key="GridCell.Tab.0.right/0.22.1920.1001@0.22.1920.1001" timestamp="1603362702170" />
+  </component>
+</project>

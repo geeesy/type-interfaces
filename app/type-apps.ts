@@ -10,7 +10,7 @@ export interface IVideoList {
   supplierIds?: string;
   supplierIconsUrl?: string;
   supplierName?: string;
-  supplierCompanysEmail?: string;
+  supplierCompanyEmail?: string;
   supplierRating?: number;
   supplierLogosUrl?: string;
   badge?: {
@@ -38,7 +38,7 @@ export interface IOrderList {
 
 // === === === STUB: Version 2.x
 
-export interface IApprover {
+export interface IApprove {
   nameTitle: string;
   fullName: string;
   position: string;
@@ -112,7 +112,7 @@ export interface IQuotationFormCreate {
   formGroupProducts: IProductRow[];
   formGroupAccounting: IQuotationFormGroupAccounting;
   formGroupData: IQuotationFormGroupData;
-  formGroupApprover: IQuotationFormGroupApprover;
+  formGroupApprove: IQuotationFormGroupApprove;
 }
 
 export interface IQuotationFormGroupAccounting {
@@ -141,8 +141,8 @@ export interface IQuotationFormGroupData {
   attachmentsUrl: string[]
 }
 
-export interface IQuotationFormGroupApprover {
-  approver: IApprover[]
+export interface IQuotationFormGroupApprove {
+  approve: IApprove[]
   stampUrl: string
 }
 
@@ -324,13 +324,13 @@ export interface IResRfi {
 
 export interface IInquiryFormCreate {
   formGroupProduct: IInquiryFormGroupProduct;
-  formGoupData: IInquiryFormGroupData;
+  formGroupData: IInquiryFormGroupData;
 
 }
 
 export interface IInquiryFormGroupProduct {
   description: String;
-  productqty: String;
+  productQty: String;
   productUnit: String
 }
 
@@ -338,7 +338,7 @@ export interface IInquiryFormGroupData {
   senderNote: string;
   receiverNote: String;
   sellerNote: String;
-  buyyerNote: String;
+  buyerNote: String;
   attachment: String;
 }
 
@@ -398,7 +398,7 @@ export interface IRFQFormCreateParams {
   sellerId: string;
 }
 
-export interface IRFQ extends IRFQFormCreate, IRFQFormCreateParams {
+export interface IRfq extends IRFQFormCreate, IRFQFormCreateParams {
   quotationId: string;
   createdAt: string;
   updatedAt: string;
@@ -408,7 +408,7 @@ export interface IResRFQ {
   status: string;
   statusText: string;
   message: string;
-  data: IRFQ[];
+  data: IRfq[];
 }
 
 export interface IPOFormCreate {
@@ -425,7 +425,7 @@ export interface IPOFormGroupData {
   remark: String;
   termsCondition: String;
   senderNote: String;
-  reciverNote: String;
+  receiverNote: String;
   sellerNote: String;
   buyerNote: String;
   attachments: String;
@@ -433,7 +433,7 @@ export interface IPOFormGroupData {
 
 export interface IPOFormGroupDataAccounting {
   subtotalAmount: String;
-  TotaldiscountAmount: String;
+  TotalDiscountAmount: String;
   netAmount: String;
   vat: String;
   grandTotalAmount: String;
@@ -444,7 +444,7 @@ export interface IPOFormCreateParams {
   receiverId: string;
   buyerId: string;
   sellerId: string;
-  approverId: String;
+  approveId: String;
   rfqId: string;
   quotationId: string;
 }
