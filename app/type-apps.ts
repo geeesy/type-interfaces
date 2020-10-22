@@ -169,158 +169,9 @@ export interface IResQuotation {
 
 /* #endregion */
 
-/* #region  FIXME: RFQ */
-export interface IRfqFormCreate {
-  formGroupProduct: IRfqFormGroupProduct
-  formGroupRequest: IRfqFormGroupRequest
-  formGroupSeller: IRfqFormGroupSeller
-  formGroupBuyer: IRfqFormGroupBuyer
-}
 
-export interface IRfqFormGroupProduct {
-  productTitle: string;
-  productKeywords: string[];
-  productCategoryId: string;
-  productQty: string;
-  productUnit: string;
-  productUnitPrice: string;
-  productCurrency: string;
-  productDescription: string;
-  productImagesUrl: string;
-}
 
-export interface IRfqFormGroupRequest {
-  timeLateRfqToQuo: string;
-  shippingLoc: string[];
-  shippingMethods: string[];
-  shippingTimePeriod: string[];
-  creditTerm: string;
-  paymentMethods: string[];
-}
 
-export interface IRfqFormGroupSeller {
-  sellerSizes: string[];
-  sellerBusinessTypes: string[];
-  sellerAge: string;
-  sellerProvinces: string[];
-  sellerCertificate: boolean;
-  sellerVerifiedByGeeesy: boolean;
-}
-
-export interface IRfqFormGroupBuyer {
-  buyerFullName: string;
-  buyerEmail: string;
-  buyerMobile: string;
-  buyerCompany: string;
-  buyerCompanyPhone: string;
-  buyerCompanyAddress: string;
-}
-
-export interface IRfqFormCreateParams {
-  rfqScore: number;
-  senderId: string;
-}
-
-export interface IRfqList {
-  createdAt: string;
-  productImageUrl: string;
-  productTitle: string;
-  productQty: string;
-  productUnit: string;
-  buyerFullName: string;
-  buyerEmail: string;
-  buyerMobile: string;
-  buyerCompany: string;
-  buyerCompanyPhone: string;
-  buyerCompanyAddress: string;
-  rfqScore: number;
-  shippingTimePeriod: string;
-}
-
-export interface IRfq {
-  rfqId: string;
-  senderId: string;
-  productTitle: string;
-  productKeywords: string[];
-  productCategoryId: string;
-  productQty: string;
-  productUnit: string;
-  productUnitPrice: string;
-  productCurrency: string;
-  productDescription: string;
-  productImagesUrl: string[];
-  timeLateRfqToQuo: string;
-  shippingLoc: string[];
-  shippingMethods: string[];
-  shippingTimePeriod: string[];
-  creditTerm: string;
-  paymentMethods: string[];
-  sellerSizes: string[];
-  sellerBusinessTypes: string[];
-  sellerAge: string;
-  sellerProvinces: string[];
-  sellerCertificate: boolean;
-  sellerVerifiedByGeeesy: boolean;
-  buyerFullName: string;
-  buyerEmail: string;
-  buyerMobile: string;
-  buyerCompany: string;
-  buyerCompanyPhone: string;
-  buyerCompanyAddress: string;
-  rfqScore: number;
-}
-
-export interface IResRfq {
-  status: string;
-  statusText: string;
-  message: string;
-  data: IRfq[];
-}
-/* #endregion */
-
-/* #region  FIXME: INQUIRY (RFI) */
-export interface IRfiFormCreate {
-  formGroupProduct: IRfiFormGroupProduct
-  formGroupRequest: IRfiFormGroupRequest
-  formGroupBuyer: IRfiFormGroupBuyer
-}
-
-export interface IRfiFormGroupProduct {
-  productQty: string;
-  productUnit: string;
-}
-
-export interface IRfiFormGroupRequest {
-  rfiInfo: string;
-  rfiImagesUrl: string[];
-}
-
-export interface IRfiFormGroupBuyer {
-  buyerFullName: string;
-  buyerEmail: string;
-  buyerMobile: string;
-  buyerCompany: string;
-  buyerCompanyPhone: string;
-  buyerCompanyAddress: string;
-}
-
-export interface IRfiFormCreateParams {
-  senderId: string;
-  supplierId: string;
-  productId: string;
-}
-
-export interface IRfi extends IRfiFormGroupProduct, IRfiFormGroupRequest, IRfiFormGroupBuyer, IRfiFormCreateParams {
-  rfiId: string;
-}
-
-export interface IResRfi {
-  status: string;
-  statusText: string;
-  message: string;
-  data: IRfi[];
-}
-/* #endregion */
 
 export interface IInquiryFormCreate {
   formGroupProduct: IInquiryFormGroupProduct;
@@ -329,17 +180,17 @@ export interface IInquiryFormCreate {
 }
 
 export interface IInquiryFormGroupProduct {
-  description: String;
-  productQty: String;
-  productUnit: String
+  description: string;
+  productQty: string;
+  productUnit: string
 }
 
 export interface IInquiryFormGroupData {
   senderNote: string;
-  receiverNote: String;
-  sellerNote: String;
-  buyerNote: String;
-  attachment: String;
+  receiverNote: string;
+  sellerNote: string;
+  buyerNote: string;
+  attachment: string;
 }
 
 export interface IInquiryFormCreateParams {
@@ -368,28 +219,28 @@ export interface IRFQFormCreate {
 }
 
 export interface IRFQFormGroupProduct {
-  productTitle: String;
-  productKeywords: String;
-  description: String;
-  category: String;
-  productQty: String;
-  productUnit: String;
-  productUnitPrice: String;
-  shippingLoc: String;
-  shippingMethods: String;
-  paymentMethods: String;
-  rfqScore: String
+  productTitle: string;
+  productKeywords: string;
+  description: string;
+  category: string;
+  productQty: string;
+  productUnit: string;
+  productUnitPrice: string;
+  shippingLoc: string;
+  shippingMethods: string;
+  paymentMethods: string;
+  rfqScore: string
 }
 
 export interface IRFQFormGroupData {
-  expiryDate: String;
-  creditDay: String;
-  shippingDate: String;
-  senderNote: String;
-  receiverNote: String;
-  sellerNote: String;
-  buyerNote: String;
-  attachments: String;
+  expiryDate: string;
+  creditDay: string;
+  shippingDate: string;
+  senderNote: string;
+  receiverNote: string;
+  sellerNote: string;
+  buyerNote: string;
+  attachments: string;
 }
 
 export interface IRFQFormCreateParams {
@@ -398,7 +249,7 @@ export interface IRFQFormCreateParams {
   sellerId: string;
 }
 
-export interface IRfq extends IRFQFormCreate, IRFQFormCreateParams {
+export interface IRFQ extends IRFQFormCreate, IRFQFormCreateParams {
   quotationId: string;
   createdAt: string;
   updatedAt: string;
@@ -408,7 +259,7 @@ export interface IResRFQ {
   status: string;
   statusText: string;
   message: string;
-  data: IRfq[];
+  data: IRFQ[];
 }
 
 export interface IPOFormCreate {
@@ -418,25 +269,25 @@ export interface IPOFormCreate {
 }
 
 export interface IPOFormGroupData {
-  docNo: String;
-  docDate: String;
-  creditDay: String;
-  shippingDate: String;
-  remark: String;
-  termsCondition: String;
-  senderNote: String;
-  receiverNote: String;
-  sellerNote: String;
-  buyerNote: String;
-  attachments: String;
+  docNo: string;
+  docDate: string;
+  creditDay: string;
+  shippingDate: string;
+  remark: string;
+  termsCondition: string;
+  senderNote: string;
+  receiverNote: string;
+  sellerNote: string;
+  buyerNote: string;
+  attachments: string;
 }
 
 export interface IPOFormGroupDataAccounting {
-  subtotalAmount: String;
-  TotalDiscountAmount: String;
-  netAmount: String;
-  vat: String;
-  grandTotalAmount: String;
+  subtotalAmount: string;
+  TotalDiscountAmount: string;
+  netAmount: string;
+  vat: string;
+  grandTotalAmount: string;
 }
 
 export interface IPOFormCreateParams {
@@ -444,7 +295,7 @@ export interface IPOFormCreateParams {
   receiverId: string;
   buyerId: string;
   sellerId: string;
-  approveId: String;
+  approveId: string;
   rfqId: string;
   quotationId: string;
 }

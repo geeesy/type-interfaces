@@ -18,8 +18,8 @@ import {
   IMessageDetail,
   IMessageList,
   IOfficeHour,
-  IPaymentMethodTypeAttr,
   IPaymentMethods,
+  IPaymentMethodTypeAttr,
   IProduct,
   IProductDescription,
   IProductDetail,
@@ -66,7 +66,6 @@ import {
   IResSavedListSuppliers,
   IResSearchResultLocation,
   IResShippingMethod,
-  IResSupProductCat,
   IResSupplier,
   IResSupplierCersAndDocs,
   IResSupplierContact,
@@ -77,15 +76,16 @@ import {
   IResSupplierOverview,
   IResSupplierWebsite,
   IResSupplierWithSavedList,
+  IResSupProductCat,
   IResSurvey,
   IResTop20Products,
   IRfqList,
   IRfqScore,
+  IsavedList,
   ISavedListProducts,
   ISavedListSuppliers,
   ISearchResultLocation,
   IShippingMethod,
-  ISupProductCat,
   ISupplier,
   ISupplierCersAndDocs,
   ISupplierCertificates,
@@ -99,10 +99,10 @@ import {
   ISupplierOverview,
   ISupplierWebsite,
   ISupplierWithSavedList,
+  ISupProductCat,
   ISurvey,
   ITop20Products,
   IWholesale,
-  IsavedList,
   Requestors
 } from './type-marketplace'
 import {
@@ -138,31 +138,24 @@ import {
   IResManufacturerPrice,
   IResMarketPrice
 } from './type-inapp'
-import { ICheck, IConnect, IData } from './interfaces'
+import {ICheck, IConnect, IData} from './interfaces'
 /* eslint-disable no-unused-vars */
 import {
-  IOrderList,
+  IInquiry,
+  IInquiryFormCreate,
+  IInquiryFormCreateParams,
+  IOrderList, IPO, IPOFormCreate, IPOFormCreateParams,
   IQuotation,
   IQuotationFormCreate,
   IQuotationFormCreateParams,
-  IResOrderList,
+  IResInquiry,
+  IResOrderList, IResPO,
   IResQuotation,
-  IResRfi,
-  IResRfq,
+  IResRFQ,
   IResVideoList,
-  IRfi,
-  IRfiFormCreate,
-  IRfiFormCreateParams,
-  IRfiFormGroupBuyer,
-  IRfiFormGroupProduct,
-  IRfiFormGroupRequest,
-  IRfq,
-  IRfqFormCreate,
-  IRfqFormCreateParams,
-  IRfqFormGroupBuyer,
-  IRfqFormGroupProduct,
-  IRfqFormGroupRequest,
-  IRfqFormGroupSeller,
+  IRFQ,
+  IRFQFormCreate,
+  IRFQFormCreateParams,
   IVideoList
 } from './type-apps'
 
@@ -589,11 +582,11 @@ export namespace GeeesyApps {
    * @param
    * senderId
    */
-  export type RfqFormCreate = IRfqFormCreate
-  export type RfqFormCreateParams = IRfqFormCreateParams
-  export type RfqFormSubmit = IRfqFormCreate & IRfqFormCreateParams
-  export type ResRfq = IResRfq | IRfq
-  export type Rfq = IRfq
+  export type RfqFormCreate = IRFQFormCreate
+  export type RfqFormCreateParams = IRFQFormCreateParams
+  export type RfqFormSubmit = IRFQFormCreate & IRFQFormCreateParams
+  export type ResRfq = IResRFQ | IRFQ
+  export type Rfq = IRFQ
 
   /**
    * @description
@@ -603,11 +596,11 @@ export namespace GeeesyApps {
    * supplierId
    * productId
    */
-  export type RfiFormCreate = IRfiFormCreate
-  export type RfiFormCreateParams = IRfiFormCreateParams
-  export type RfiFormSubmit = IRfiFormCreate & IRfiFormCreateParams
-  export type ResRfi = IResRfi | IRfi
-  export type Rfi = IRfi
+  export type InquiryFormCreate = IInquiryFormCreate
+  export type InquiryFormCreateParams = IInquiryFormCreateParams
+  export type InquiryFormSubmit = IInquiryFormCreate & IInquiryFormCreateParams
+  export type ResInquiry = IResInquiry | IInquiry
+  export type Inquiry = IInquiry
 
   /**
    * @description
@@ -625,6 +618,20 @@ export namespace GeeesyApps {
   export type Quotation = IQuotation
 
 }
+
+
+/**
+ * @description
+ * FORM Interface for PO creation
+ * @param
+
+ */
+export type POFormCreate = IPOFormCreate
+export type POFormCreateParams = IPOFormCreateParams
+export type POFormSubmit = IPOFormCreate & IPOFormCreateParams
+export type ResPO = IResPO | IPO
+export type PO = IPO
+
 
 export * as IMarketplace from './type-marketplace'
 export * as IInapp from './type-inapp'
