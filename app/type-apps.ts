@@ -446,16 +446,16 @@ export interface IBillFormGroupData {
 }
 
 export interface IBillFormGroupDataAccounting {
-  subtotalAmount: string;
-  shippingCost: string;
-  charges: string;
-  totalDiscountAmount: string;
-  netAmount: string;
-  vat: string;
-  grandTotalAmount: string;
-  taxWithheldPercent: string;
-  withholdingTax: string;
-  totalPayAmount: string;
+  subtotalAmount: number;
+  shippingCost: number;
+  charges: number;
+  totalDiscountAmount: number;
+  netAmount: number;
+  vat: number;
+  grandTotalAmount: number;
+  taxWithheldPercent: number;
+  withholdingTax: number;
+  totalPayAmount: number;
 }
 
 export interface IBillFormCreateParams {
@@ -510,16 +510,16 @@ export interface IInvFormGroupData {
 }
 
 export interface IInvFormGroupDataAccounting {
-  subtotalAmount: string;
-  shippingCost: string;
-  charges: string;
-  totalDiscountAmount: string;
-  netAmount: string;
-  vat: string;
-  grandTotalAmount: string;
-  taxWithheldPercent: string;
-  withholdingTax: string;
-  totalPayAmount: string;
+  subtotalAmount: number;
+  shippingCost: number;
+  charges: number;
+  totalDiscountAmount: number;
+  netAmount: number;
+  vat: number;
+  grandTotalAmount: number;
+  taxWithheldPercent: number;
+  withholdingTax: number;
+  totalPayAmount: number;
 }
 
 export interface IInvFormCreateParams {
@@ -572,13 +572,13 @@ export interface ITaxFormGroupData {
 }
 
 export interface ITaxFormGroupDataAccounting {
-  subtotalAmount: string;
-  shippingCost: string;
-  charges: string;
-  totalDiscountAmount: string;
-  netAmount: string;
-  vat: string;
-  grandTotalAmount: string;
+  subtotalAmount: number;
+  shippingCost: number;
+  charges: number;
+  totalDiscountAmount: number;
+  netAmount: number;
+  vat: number;
+  grandTotalAmount: number;
 }
 
 export interface ITaxFormCreateParams {
