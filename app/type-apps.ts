@@ -261,7 +261,6 @@ export interface IRFQFormCreateParams {
 export interface IRFQ extends IRFQFormCreate, IRFQFormCreateParams {
   rfqId: string;
   createdAt: string;
-  updatedAt: string;
 }
 
 export interface IResRFQ {
@@ -293,12 +292,12 @@ export interface IPOFormGroupData {
   receiverNote: string;
   sellerNote: string;
   buyerNote: string;
-  attachments: string;
+  attachments: string[];
 }
 
 export interface IPOFormGroupDataAccounting {
   subtotalAmount: string;
-  TotalDiscountAmount: string;
+  totalDiscountAmount: string;
   netAmount: string;
   vat: string;
   grandTotalAmount: string;
@@ -343,28 +342,28 @@ export interface ISoFormCreate {
 }
 
 export interface ISoFormGroupData {
-  docno: string;
-  docdate: string;
-  creditday: string;
-  shippingdate: string;
+  docNo: string;
+  docDate: string;
+  creditDay: string;
+  shippingDate: string;
   remark: string;
-  termscondition: string;
-  sendernote: string;
-  receivernote: string;
-  sellernote: string;
-  buyernote: string;
-  attechment: string;
+  termsCondition: string;
+  senderNote: string;
+  receiverNote: string;
+  sellerNote: string;
+  buyerNote: string;
+  attechment: string[];
 }
 
 export interface ISoFormGroupAccounting {
-  subtotalamount: string;
-  shippingcost: string;
+  subtotalAmount: string;
+  shippingCost: string;
   charges: string;
-  depositamount: string;
-  totaldiscountamount: string;
-  netamount: string;
+  depositAmount: string;
+  totalDiscountAmount: string;
+  netAmount: string;
   vat: string;
-  grandtotalamount: string;
+  grandTotalAmount: string;
 }
 export interface ISoFormCreateParams {
   senderId: string;
@@ -406,33 +405,33 @@ export interface IBillFormCreate {
 }
 
 export interface IBillFormGroupData {
-  docno: string;
-  docdate: string;
-  creditdate: string;
-  paymentduedate: string;
-  paymentperiod: string;
-  totalpaymentperiod: string;
-  remainingamount: string;
-  bankinginfo: string;
+  docNo: string;
+  docDate: string;
+  creditDate: string;
+  paymentDueDate: string;
+  paymentPeriod: string;
+  totalPaymentPeriod: string;
+  remainingAmount: string;
+  bankingInfo: string;
   remark: string;
-  termscondition: string;
-  sendernote: string;
-  receivernote: string;
-  sellernote: string;
-  buyernote: string;
+  termsCondition: string;
+  senderNote: string;
+  receiverNote: string;
+  sellerNote: string;
+  buyerNote: string;
 }
 
 export interface IBillFormGroupAccounting {
-  subtotalamount: string;
-  shippingcost: string;
+  subtotalAmount: string;
+  shippingCost: string;
   charges: string;
-  totaldiscountamount: string;
-  netamount: string;
+  totalDiscountAmount: string;
+  netAmount: string;
   vat: string;
-  grandtotalamount: string;
-  taxwithheldpercent: string;
-  withholdingtax: string;
-  totalpayamount: string;
+  grandTotalAmount: string;
+  taxWithheldPercent: string;
+  withholdingTax: string;
+  totalPayAmount: string;
 }
 
 export interface IBillFormCreateParams {
@@ -442,7 +441,7 @@ export interface IBillFormCreateParams {
   sellerId: string;
   approveId: string;
   quotationId: string;
-  purchaesorderId: string;
+  purchaesOrderId: string;
 }
 
 export interface IBill extends IBillFormCreate, IBillFormCreateParams {
@@ -475,29 +474,29 @@ export interface IInvFormCreate {
 }
 
 export interface IInvFormGroupData {
-  docno: string;
-  docdate: string;
-  paymentduedate: string;
-  bankinginfo: string;
+  docNo: string;
+  docDate: string;
+  paymentDueDate: string;
+  bankingInfo: string;
   remark: string;
-  termscondition: string;
-  sendernote: string;
+  termsCondition: string;
+  senderNote: string;
   receivernote: string;
-  sellernote: string;
-  buyernote: string;
+  sellerNote: string;
+  buyerNote: string;
 }
 
 export interface IInvFormGroupAccounting {
-  subtotalamount: string;
-  shippingcost: string;
+  subtotalAmount: string;
+  shippingCost: string;
   charges: string;
-  totaldiscountamount: string;
-  netamount: string;
+  totalDiscountAmount: string;
+  netAmount: string;
   vat: string;
-  grandtotalamount: string;
-  taxwithheldpercent: string;
-  withholdingtax: string;
-  totalpayamount: string;
+  grandTotalAmount: string;
+  taxWithheldPercent: string;
+  withholdingTax: string;
+  totalPayAmount: string;
 }
 
 export interface IInvFormCreateParams {
@@ -507,7 +506,7 @@ export interface IInvFormCreateParams {
   sellerId: string;
   approveId: string;
   quotationId: string;
-  purchaesorderId: string;
+  purchaesOrderId: string;
 }
 
 export interface IInv extends IInvFormCreate, IInvFormCreateParams {
@@ -540,24 +539,24 @@ export interface ITaxFormCreate {
 }
 
 export interface ITaxFormGroupData {
-  docno: string;
-  docdate: string;
+  docNo: string;
+  docDate: string;
   remark: string;
-  termscondition: string;
-  sendernote: string;
-  receivernote: string;
-  sellernote: string;
-  buyernote: string;
+  termsCondition: string;
+  senderNote: string;
+  receiverNote: string;
+  sellerNote: string;
+  buyerNote: string;
 }
 
 export interface ITaxFormGroupAccounting {
-  subtotalamount: string;
-  shippingcost: string;
+  subtotalAmount: string;
+  shippingCost: string;
   charges: string;
-  totaldiscountamount: string;
-  netamount: string;
+  totalDiscountAmount: string;
+  netAmount: string;
   vat: string;
-  grandtotalamount: string;
+  grandTotalAmount: string;
 }
 
 export interface ITaxFormCreateParams {
@@ -573,7 +572,6 @@ export interface ITaxFormCreateParams {
 export interface ITax extends ITaxFormCreate, ITaxFormCreateParams {
   taxinvoiceId: string;
   createdAt: string;
-  updatedAt: string;
 }
 
 export interface IRestax {
