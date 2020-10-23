@@ -45,12 +45,11 @@ export interface IApprove {
   signatureUrl: string;
 }
 
-
-export  interface IshippingLoc{
-  lat:string;
-  lng:string;
-  state:string;
-  city:string;
+export interface IshippingLoc {
+  lat: string;
+  lng: string;
+  state: string;
+  city: string;
 }
 
 export interface ISOcial {
@@ -258,8 +257,6 @@ export interface IRfqFormGroupProduct {
   rfqScore: string;
 }
 
-
-
 export interface IRfqFormGroupData {
   expiryDate: string;
   creditDay: string;
@@ -417,18 +414,18 @@ export interface IResSO {
 
 /* #endregion */
 
-/*  interface Billing Note  */
+/* #region REVIEW: Billing Note */
 
-export interface IBillFormCreate {
+export interface IBillingNoteFormCreate {
   formGroupSender: ISenderContact;
   formGroupReceiver: IReceiverContact;
   formGroupProducts: IProductRow[];
-  formGroupData: IBillFormGroupData;
-  formGroupAccounting: IBillFormGroupDataAccounting;
-  formGroupApprove: IBillFormGroupApprove;
+  formGroupData: IBillingNoteFormGroupData;
+  formGroupAccounting: IBillingNoteFormGroupAccounting;
+  formGroupApprove: IBillingNoteFormGroupApprove;
 }
 
-export interface IBillFormGroupData {
+export interface IBillingNoteFormGroupData {
   docNo: string;
   docDate: string;
   creditDate: string;
@@ -445,20 +442,20 @@ export interface IBillFormGroupData {
   buyerNote: string;
 }
 
-export interface IBillFormGroupDataAccounting {
-  subtotalAmount: string;
-  shippingCost: string;
-  charges: string;
-  totalDiscountAmount: string;
-  netAmount: string;
-  vat: string;
-  grandTotalAmount: string;
-  taxWithheldPercent: string;
-  withholdingTax: string;
-  totalPayAmount: string;
+export interface IBillingNoteFormGroupAccounting {
+  subtotalAmount: number;
+  shippingCost: number;
+  charges: number;
+  totalDiscountAmount: number;
+  netAmount: number;
+  vat: number;
+  grandTotalAmount: number;
+  taxWithheldPercent: number;
+  withholdingTax: number;
+  totalPayAmount: number;
 }
 
-export interface IBillFormCreateParams {
+export interface IBillingNoteFormCreateParams {
   senderId: string;
   receiverId: string;
   buyerId: string;
@@ -467,36 +464,38 @@ export interface IBillFormCreateParams {
   purchaseOrderId: string;
 }
 
-export interface IBill extends IBillFormCreate, IBillFormCreateParams {
+export interface IBillingNote extends IBillingNoteFormCreate, IBillingNoteFormCreateParams {
   billingNoteId: string;
   createdAt: string;
   updatedAt: string;
 }
 
-export interface IResbill {
+export interface IResBillingNote {
   status: string;
   statusText: string;
   message: string;
-  data: IBill[];
+  data: IBillingNote[];
 }
 
-export interface IBillFormGroupApprove {
+export interface IBillingNoteFormGroupApprove {
   approve: IApprove[];
   stampUrl: string;
 }
 
-/* interface invoice */
+/* #endregion */
 
-export interface IInvFormCreate {
+/* #region  Invoice */
+
+export interface IInvoiceFormCreate {
   formGroupSender: ISenderContact;
   formGroupReceiver: IReceiverContact;
   formGroupProducts: IProductRow[];
-  formGroupData: IInvFormGroupData;
-  formGroupAccounting: IInvFormGroupDataAccounting;
-  formGroupApprove: IInvFormGroupApprove;
+  formGroupData: IInvoiceFormGroupData;
+  formGroupAccounting: IInvoiceFormGroupAccounting;
+  formGroupApprove: IInvoiceFormGroupApprove;
 }
 
-export interface IInvFormGroupData {
+export interface IInvoiceFormGroupData {
   docNo: string;
   docDate: string;
   paymentDueDate: string;
@@ -509,7 +508,7 @@ export interface IInvFormGroupData {
   buyerNote: string;
 }
 
-export interface IInvFormGroupDataAccounting {
+export interface IInvoiceFormGroupAccounting {
   subtotalAmount: string;
   shippingCost: string;
   charges: string;
@@ -522,7 +521,7 @@ export interface IInvFormGroupDataAccounting {
   totalPayAmount: string;
 }
 
-export interface IInvFormCreateParams {
+export interface IInvoiceFormCreateParams {
   senderId: string;
   receiverId: string;
   buyerId: string;
@@ -531,7 +530,7 @@ export interface IInvFormCreateParams {
   purchaseOrderId: string;
 }
 
-export interface IInv extends IInvFormCreate, IInvFormCreateParams {
+export interface IInvoice extends IInvoiceFormCreate, IInvoiceFormCreateParams {
   invoiceId: string;
   createdAt: string;
   updatedAt: string;
@@ -541,10 +540,10 @@ export interface IResinv {
   status: string;
   statusText: string;
   message: string;
-  data: IInv[];
+  data: IInvoice[];
 }
 
-export interface IInvFormGroupApprove {
+export interface IInvoiceFormGroupApprove {
   approve: IApprove[];
   stampUrl: string;
 }
