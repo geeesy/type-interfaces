@@ -159,13 +159,13 @@ import {
   IResQuotation,
   IResRFQ,
   IResVideoList,
-  IRFQ,
-  IRFQFormCreate,
-  IRFQFormCreateParams,
+  IRfq,
+  IRfqFormCreate,
+  IRfqFormCreateParams,
   IVideoList,
   ISO,
-  ISoFormCreate,
-  ISoFormCreateParams,
+  ISOFormCreate,
+  ISOFormCreateParams,
   IResSO,
   IBill,
   IBillFormCreate,
@@ -607,11 +607,11 @@ export namespace GeeesyApps {
    * @param
    * senderId
    */
-  export type RfqFormCreate = IRFQFormCreate;
-  export type RfqFormCreateParams = IRFQFormCreateParams;
-  export type RfqFormSubmit = IRFQFormCreate & IRFQFormCreateParams;
-  export type ResRfq = IResRFQ | IRFQ;
-  export type Rfq = IRFQ;
+  export type RfqFormCreate = IRfqFormCreate;
+  export type RfqFormCreateParams = IRfqFormCreateParams;
+  export type RfqFormSubmit = IRfqFormCreate & IRfqFormCreateParams;
+  export type ResRfq = IResRFQ | IRfq;
+  export type Rfq = IRfq;
 
   /**
    * @description
@@ -661,9 +661,9 @@ export namespace GeeesyApps {
    * @param
 
    */
-  export type SOFormCreate = ISoFormCreate;
-  export type SoFormCreateParams = ISoFormCreateParams;
-  export type SOFormSubmit = ISoFormCreate & ISoFormCreateParams;
+  export type SOFormCreate = ISOFormCreate;
+  export type SoFormCreateParams = ISOFormCreateParams;
+  export type SOFormSubmit = ISOFormCreate & ISOFormCreateParams;
   export type ResSO = IResSO | ISO;
   export type SO = ISO;
 

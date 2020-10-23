@@ -45,6 +45,14 @@ export interface IApprove {
   signatureUrl: string;
 }
 
+
+export  interface IshippingLoc{
+  lat:string;
+  lng:string;
+  state:string;
+  city:string;
+}
+
 export interface ISOcial {
   line: string;
   facebook: string;
@@ -244,11 +252,13 @@ export interface IRfqFormGroupProduct {
   productQty: string;
   productUnit: string;
   productUnitPrice: string;
-  shippingLoc: string;
+  shippingLoc: IshippingLoc;
   shippingMethods: string;
   paymentMethods: string;
   rfqScore: string;
 }
+
+
 
 export interface IRfqFormGroupData {
   expiryDate: string;
@@ -414,7 +424,7 @@ export interface IBillFormCreate {
   formGroupReceiver: IReceiverContact;
   formGroupProducts: IProductRow[];
   formGroupData: IBillFormGroupData;
-  formGroupAccounting: IBillFormGroupAccounting;
+  formGroupAccounting: IBillFormGroupDataAccounting;
   formGroupApprove: IBillFormGroupApprove;
 }
 
@@ -435,7 +445,7 @@ export interface IBillFormGroupData {
   buyerNote: string;
 }
 
-export interface IBillFormGroupAccounting {
+export interface IBillFormGroupDataAccounting {
   subtotalAmount: string;
   shippingCost: string;
   charges: string;
@@ -453,9 +463,8 @@ export interface IBillFormCreateParams {
   receiverId: string;
   buyerId: string;
   sellerId: string;
-  approveId: string;
   quotationId: string;
-  purchaesOrderId: string;
+  purchaseOrderId: string;
 }
 
 export interface IBill extends IBillFormCreate, IBillFormCreateParams {
@@ -483,7 +492,7 @@ export interface IInvFormCreate {
   formGroupReceiver: IReceiverContact;
   formGroupProducts: IProductRow[];
   formGroupData: IInvFormGroupData;
-  formGroupAccounting: IInvFormGroupAccounting;
+  formGroupAccounting: IInvFormGroupDataAccounting;
   formGroupApprove: IInvFormGroupApprove;
 }
 
@@ -495,12 +504,12 @@ export interface IInvFormGroupData {
   remark: string;
   termsCondition: string;
   senderNote: string;
-  receivernote: string;
+  receiverNote: string;
   sellerNote: string;
   buyerNote: string;
 }
 
-export interface IInvFormGroupAccounting {
+export interface IInvFormGroupDataAccounting {
   subtotalAmount: string;
   shippingCost: string;
   charges: string;
@@ -518,9 +527,8 @@ export interface IInvFormCreateParams {
   receiverId: string;
   buyerId: string;
   sellerId: string;
-  approveId: string;
   quotationId: string;
-  purchaesOrderId: string;
+  purchaseOrderId: string;
 }
 
 export interface IInv extends IInvFormCreate, IInvFormCreateParams {
@@ -548,7 +556,7 @@ export interface ITaxFormCreate {
   formGroupReceiver: IReceiverContact;
   formGroupProducts: IProductRow[];
   formGroupData: ITaxFormGroupData;
-  formGroupAccounting: ITaxFormGroupAccounting;
+  formGroupAccounting: ITaxFormGroupDataAccounting;
   formGroupApprove: ITaxFormGroupApprove;
 }
 
@@ -563,7 +571,7 @@ export interface ITaxFormGroupData {
   buyerNote: string;
 }
 
-export interface ITaxFormGroupAccounting {
+export interface ITaxFormGroupDataAccounting {
   subtotalAmount: string;
   shippingCost: string;
   charges: string;
@@ -578,13 +586,12 @@ export interface ITaxFormCreateParams {
   receiverId: string;
   buyerId: string;
   sellerId: string;
-  approveId: string;
   quotationId: string;
-  purchaesorderId: string;
+  purchaseOrderId: string;
 }
 
 export interface ITax extends ITaxFormCreate, ITaxFormCreateParams {
-  taxinvoiceId: string;
+  taxInvoiceId: string;
   createdAt: string;
 }
 
