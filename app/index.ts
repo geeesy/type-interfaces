@@ -18,8 +18,8 @@ import {
   IMessageDetail,
   IMessageList,
   IOfficeHour,
-  IPaymentMethods,
   IPaymentMethodTypeAttr,
+  IPaymentMethods,
   IProduct,
   IProductDescription,
   IProductDetail,
@@ -66,6 +66,7 @@ import {
   IResSavedListSuppliers,
   IResSearchResultLocation,
   IResShippingMethod,
+  IResSupProductCat,
   IResSupplier,
   IResSupplierCersAndDocs,
   IResSupplierContact,
@@ -76,17 +77,17 @@ import {
   IResSupplierOverview,
   IResSupplierWebsite,
   IResSupplierWithSavedList,
-  IResSupProductCat,
   IResSurvey,
   IResTop20Products,
   IRessavelistMarket,
   IRfqList,
   IRfqScore,
-  IsavedList,
   ISavedListProducts,
   ISavedListSuppliers,
+  ISavelistMarket,
   ISearchResultLocation,
   IShippingMethod,
+  ISupProductCat,
   ISupplier,
   ISupplierCersAndDocs,
   ISupplierCertificates,
@@ -100,13 +101,12 @@ import {
   ISupplierOverview,
   ISupplierWebsite,
   ISupplierWithSavedList,
-  ISupProductCat,
   ISurvey,
   ITop20Products,
   IWholesale,
-  Requestors,
-  ISavelistMarket,
-} from "./type-marketplace";
+  IsavedList,
+  Requestors
+} from './type-marketplace'
 import {
   IBannerConsole,
   ICategoryConsole,
@@ -129,23 +129,19 @@ import {
   IResShippingMethodConsole,
   IResSupplierConsole,
   IShippingMethodConsole,
-  ISupplierConsole,
-} from "./type-console";
-import {
-  ICal,
-  ICompareProduct,
-  IManufacturerPrice,
-  IMarketPrice,
-  IResCompareProduct,
-  IResManufacturerPrice,
-  IResMarketPrice,
-} from "./type-inapp";
-import { ICheck, IConnect, IData } from "./interfaces";
+  ISupplierConsole
+} from './type-console'
 /* eslint-disable no-unused-vars */
 import {
+  IBillingNote,
+  IBillingNoteFormCreate,
+  IBillingNoteFormCreateParams,
   IInquiry,
   IInquiryFormCreate,
   IInquiryFormCreateParams,
+  IInvoice,
+  IInvoiceFormCreate,
+  IInvoiceFormCreateParams,
   IOrderList,
   IPO,
   IPOFormCreate,
@@ -153,33 +149,37 @@ import {
   IQuotation,
   IQuotationFormCreate,
   IQuotationFormCreateParams,
+  IResBillingNote,
   IResInquiry,
+  IResInvoice,
   IResOrderList,
   IResPO,
   IResQuotation,
   IResRFQ,
+  IResSO,
+  IResTaxInvoice,
   IResVideoList,
   IRfq,
   IRfqFormCreate,
   IRfqFormCreateParams,
-  IVideoList,
   ISO,
   ISOFormCreate,
   ISOFormCreateParams,
-  IResSO,
-  IBill,
-  IBillFormCreate,
-  IBillFormCreateParams,
-  IResbill,
-  IInv,
-  IInvFormCreate,
-  IInvFormCreateParams,
-  IResinv,
-  ITax,
-  ITaxFormCreate,
-  ITaxFormCreateParams,
-  IRestax,
-} from "./type-apps";
+  ITaxInvoice,
+  ITaxInvoiceFormCreate,
+  ITaxInvoiceFormCreateParams,
+  IVideoList
+} from './type-apps'
+import {
+  ICal,
+  ICompareProduct,
+  IManufacturerPrice,
+  IMarketPrice,
+  IResCompareProduct,
+  IResManufacturerPrice,
+  IResMarketPrice
+} from './type-inapp'
+import { ICheck, IConnect, IData } from './interfaces'
 
 export namespace Geeesy {
   export type ResConnect = IConnect;
@@ -645,7 +645,7 @@ export namespace GeeesyApps {
 
   /**
    * @description
-   * FORM Interface for PO creation
+   * FORM Interface for Purchase Order (PO) creation
    * @param
 
    */
@@ -657,7 +657,7 @@ export namespace GeeesyApps {
 
   /**
    * @description
-   * FORM Interface for SO creation
+   * FORM Interface for Sales Order (SO) creation
    * @param
 
    */
@@ -669,15 +669,15 @@ export namespace GeeesyApps {
 
   /**
    * @description
-   * FORM Interface for Billing creation
+   * FORM Interface for Billing Note creation
    * @param
 
    */
-  export type BillFormCreate = IBillFormCreate;
-  export type BillFormCreateParams = IBillFormCreateParams;
-  export type BillFormSubmit = IBillFormCreate & IBillFormCreateParams;
-  export type ResBill = IResbill | IBill;
-  export type Bill = IBill;
+  export type BillingNoteFormCreate = IBillingNoteFormCreate;
+  export type BillingNoteFormCreateParams = IBillingNoteFormCreateParams;
+  export type BillingNoteFormSubmit = IBillingNoteFormCreate & IBillingNoteFormCreateParams;
+  export type ResBillingNote = IResBillingNote | IBillingNote;
+  export type BillingNote = IBillingNote;
 
   /**
    * @description
@@ -685,26 +685,26 @@ export namespace GeeesyApps {
    * @param
 
    */
-  export type InvFormCreate = IInvFormCreate;
-  export type InvFormCreateParams = IInvFormCreateParams;
-  export type InvFormSubmit = IInvFormCreate & IInvFormCreateParams;
-  export type ResInv = IResinv | IInv;
-  export type Inv = IInv;
+  export type InvoiceFormCreate = IInvoiceFormCreate;
+  export type InvoiceFormCreateParams = IInvoiceFormCreateParams;
+  export type InvoiceFormSubmit = IInvoiceFormCreate & IInvoiceFormCreateParams;
+  export type ResInvoice = IResInvoice | IInvoice;
+  export type Invoice = IInvoice;
 
   /**
    * @description
-   * FORM Interface for Tax creation
+   * FORM Interface for TAX Invoice creation
    * @param
 
    */
-  export type TaxFormCreate = ITaxFormCreate;
-  export type TaxFormCreateParams = ITaxFormCreateParams;
-  export type TaxFormSubmit = ITaxFormCreate & ITaxFormCreateParams;
-  export type Restax = IRestax | ITax;
-  export type Tax = ITax;
+  export type TaxInvoiceFormCreate = ITaxInvoiceFormCreate;
+  export type TaxInvoiceFormCreateParams = ITaxInvoiceFormCreateParams;
+  export type TaxInvoiceFormSubmit = ITaxInvoiceFormCreate & ITaxInvoiceFormCreateParams;
+  export type ResTaxInvoice = IResTaxInvoice | ITaxInvoice;
+  export type TaxInvoice = ITaxInvoice;
 }
 
-export * as IMarketplace from "./type-marketplace";
-export * as IInapp from "./type-inapp";
-export * as IConsole from "./type-console";
-export * as IApps from "./type-apps";
+export * as IMarketplace from './type-marketplace'
+export * as IInapp from './type-inapp'
+export * as IConsole from './type-console'
+export * as IApps from './type-apps'

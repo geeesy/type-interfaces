@@ -36,7 +36,7 @@ export interface IOrderList {
   poNetAmount: string;
 }
 
-// === === === STUB: Version 2.x
+/* #region STUB: Version 2.x */
 
 export interface IApprove {
   nameTitle: string;
@@ -45,14 +45,14 @@ export interface IApprove {
   signatureUrl: string;
 }
 
-export interface IshippingLoc {
+export interface IShippingLoc {
   lat: string;
   lng: string;
   state: string;
   city: string;
 }
 
-export interface ISOcial {
+export interface ISocial {
   line: string;
   facebook: string;
 }
@@ -76,7 +76,7 @@ export interface ICompanyContactInfo {
   companyFax: string[];
   companyWebsite: string[];
   companyEmail: string[];
-  companySocial: ISOcial;
+  companySocial: ISocial;
   contactAddress: string;
   billingAddress: string;
   shippingAddress: string;
@@ -88,7 +88,7 @@ export interface IPersonContactInfo {
   fullName: string;
   email: string[];
   mobile: string[];
-  social: ISOcial;
+  social: ISocial;
   address: string;
   note: string;
 }
@@ -114,6 +114,7 @@ export interface IProductRow {
   discountUnitPrice: string;
   productQty: string;
 }
+/* #endregion */
 
 /* #region  REVIEW: QUOTATION */
 export interface IQuotationFormCreate {
@@ -251,7 +252,7 @@ export interface IRfqFormGroupProduct {
   productQty: string;
   productUnit: string;
   productUnitPrice: string;
-  shippingLoc: IshippingLoc;
+  shippingLoc: IShippingLoc;
   shippingMethods: string;
   paymentMethods: string;
   rfqScore: string;
@@ -484,7 +485,7 @@ export interface IBillingNoteFormGroupApprove {
 
 /* #endregion */
 
-/* #region  Invoice */
+/* #region REVIEW: Invoice */
 
 export interface IInvoiceFormCreate {
   formGroupSender: ISenderContact;
@@ -509,16 +510,21 @@ export interface IInvoiceFormGroupData {
 }
 
 export interface IInvoiceFormGroupAccounting {
-  subtotalAmount: string;
-  shippingCost: string;
-  charges: string;
-  totalDiscountAmount: string;
-  netAmount: string;
-  vat: string;
-  grandTotalAmount: string;
-  taxWithheldPercent: string;
-  withholdingTax: string;
-  totalPayAmount: string;
+  subtotalAmount: number;
+  shippingCost: number;
+  charges: number;
+  totalDiscountAmount: number;
+  netAmount: number;
+  vat: number;
+  grandTotalAmount: number;
+  taxWithheldPercent: number;
+  withholdingTax: number;
+  totalPayAmount: number;
+}
+
+export interface IInvoiceFormGroupApprove {
+  approve: IApprove[];
+  stampUrl: string;
 }
 
 export interface IInvoiceFormCreateParams {
@@ -536,30 +542,26 @@ export interface IInvoice extends IInvoiceFormCreate, IInvoiceFormCreateParams {
   updatedAt: string;
 }
 
-export interface IResinv {
+export interface IResInvoice {
   status: string;
   statusText: string;
   message: string;
   data: IInvoice[];
 }
+/* #endregion */
 
-export interface IInvoiceFormGroupApprove {
-  approve: IApprove[];
-  stampUrl: string;
-}
+/* #region REVIEW: TAX Invoice */
 
-/*  interface Tax invoice   */
-
-export interface ITaxFormCreate {
+export interface ITaxInvoiceFormCreate {
   formGroupSender: ISenderContact;
   formGroupReceiver: IReceiverContact;
   formGroupProducts: IProductRow[];
-  formGroupData: ITaxFormGroupData;
-  formGroupAccounting: ITaxFormGroupDataAccounting;
-  formGroupApprove: ITaxFormGroupApprove;
+  formGroupData: ITaxInvoiceFormGroupData;
+  formGroupAccounting: ITaxInvoiceFormGroupAccounting;
+  formGroupApprove: ITaxInvoiceFormGroupApprove;
 }
 
-export interface ITaxFormGroupData {
+export interface ITaxInvoiceFormGroupData {
   docNo: string;
   docDate: string;
   remark: string;
@@ -570,7 +572,7 @@ export interface ITaxFormGroupData {
   buyerNote: string;
 }
 
-export interface ITaxFormGroupDataAccounting {
+export interface ITaxInvoiceFormGroupAccounting {
   subtotalAmount: number;
   shippingCost: number;
   charges: number;
@@ -580,7 +582,12 @@ export interface ITaxFormGroupDataAccounting {
   grandTotalAmount: number;
 }
 
-export interface ITaxFormCreateParams {
+export interface ITaxInvoiceFormGroupApprove {
+  approve: IApprove[];
+  stampUrl: string;
+}
+
+export interface ITaxInvoiceFormCreateParams {
   senderId: string;
   receiverId: string;
   buyerId: string;
@@ -589,19 +596,15 @@ export interface ITaxFormCreateParams {
   purchaseOrderId: string;
 }
 
-export interface ITax extends ITaxFormCreate, ITaxFormCreateParams {
+export interface ITaxInvoice extends ITaxInvoiceFormCreate, ITaxInvoiceFormCreateParams {
   taxInvoiceId: string;
   createdAt: string;
 }
 
-export interface IRestax {
+export interface IResTaxInvoice {
   status: string;
   statusText: string;
   message: string;
-  data: ITax[];
+  data: ITaxInvoice[];
 }
-
-export interface ITaxFormGroupApprove {
-  approve: IApprove[];
-  stampUrl: string;
-}
+/* #endregion */
