@@ -79,6 +79,7 @@ import {
   IResSupProductCat,
   IResSurvey,
   IResTop20Products,
+  IRessavelistmarket,
   IRfqList,
   IRfqScore,
   IsavedList,
@@ -103,8 +104,9 @@ import {
   ISurvey,
   ITop20Products,
   IWholesale,
-  Requestors
-} from './type-marketplace'
+  Requestors,
+  ISavelistmarket,
+} from "./type-marketplace";
 import {
   IBannerConsole,
   ICategoryConsole,
@@ -127,8 +129,8 @@ import {
   IResShippingMethodConsole,
   IResSupplierConsole,
   IShippingMethodConsole,
-  ISupplierConsole
-} from './type-console'
+  ISupplierConsole,
+} from "./type-console";
 import {
   ICal,
   ICompareProduct,
@@ -136,28 +138,32 @@ import {
   IMarketPrice,
   IResCompareProduct,
   IResManufacturerPrice,
-  IResMarketPrice
-} from './type-inapp'
-import {ICheck, IConnect, IData} from './interfaces'
+  IResMarketPrice,
+} from "./type-inapp";
+import { ICheck, IConnect, IData } from "./interfaces";
 /* eslint-disable no-unused-vars */
 import {
   IInquiry,
   IInquiryFormCreate,
   IInquiryFormCreateParams,
-  IOrderList, IPO, IPOFormCreate, IPOFormCreateParams,
+  IOrderList,
+  IPO,
+  IPOFormCreate,
+  IPOFormCreateParams,
   IQuotation,
   IQuotationFormCreate,
   IQuotationFormCreateParams,
   IResInquiry,
-  IResOrderList, IResPO,
+  IResOrderList,
+  IResPO,
   IResQuotation,
   IResRFQ,
   IResVideoList,
   IRFQ,
   IRFQFormCreate,
   IRFQFormCreateParams,
-  IVideoList
-} from './type-apps'
+  IVideoList,
+} from "./type-apps";
 
 export namespace Geeesy {
   export type ResConnect = IConnect;
@@ -318,6 +324,9 @@ export namespace GeeesyMarketplace {
 
   export type ResSurvey = IResSurvey | Survey;
   export type Survey = ISurvey;
+
+  export type Ressavelistmarket = IRessavelistmarket | Savelistmarket;
+  export type Savelistmarket = ISavelistmarket;
 
   export type ResSupProductCat = IResSupProductCat | SupProductCat;
   export type SupProductCat = ISupProductCat;
@@ -582,11 +591,11 @@ export namespace GeeesyApps {
    * @param
    * senderId
    */
-  export type RfqFormCreate = IRFQFormCreate
-  export type RfqFormCreateParams = IRFQFormCreateParams
-  export type RfqFormSubmit = IRFQFormCreate & IRFQFormCreateParams
-  export type ResRfq = IResRFQ | IRFQ
-  export type Rfq = IRFQ
+  export type RfqFormCreate = IRFQFormCreate;
+  export type RfqFormCreateParams = IRFQFormCreateParams;
+  export type RfqFormSubmit = IRFQFormCreate & IRFQFormCreateParams;
+  export type ResRfq = IResRFQ | IRFQ;
+  export type Rfq = IRFQ;
 
   /**
    * @description
@@ -596,11 +605,11 @@ export namespace GeeesyApps {
    * supplierId
    * productId
    */
-  export type InquiryFormCreate = IInquiryFormCreate
-  export type InquiryFormCreateParams = IInquiryFormCreateParams
-  export type InquiryFormSubmit = IInquiryFormCreate & IInquiryFormCreateParams
-  export type ResInquiry = IResInquiry | IInquiry
-  export type Inquiry = IInquiry
+  export type InquiryFormCreate = IInquiryFormCreate;
+  export type InquiryFormCreateParams = IInquiryFormCreateParams;
+  export type InquiryFormSubmit = IInquiryFormCreate & IInquiryFormCreateParams;
+  export type ResInquiry = IResInquiry | IInquiry;
+  export type Inquiry = IInquiry;
 
   /**
    * @description
@@ -611,12 +620,12 @@ export namespace GeeesyApps {
    * buyerId
    * sellerId
    */
-  export type QuotationFormCreate = IQuotationFormCreate
-  export type QuotationFormCreateParams = IQuotationFormCreateParams
-  export type QuotationFormSubmit = IQuotationFormCreate & IQuotationFormCreateParams
-  export type ResQuotation = IResQuotation | IQuotation
-  export type Quotation = IQuotation
-
+  export type QuotationFormCreate = IQuotationFormCreate;
+  export type QuotationFormCreateParams = IQuotationFormCreateParams;
+  export type QuotationFormSubmit = IQuotationFormCreate &
+    IQuotationFormCreateParams;
+  export type ResQuotation = IResQuotation | IQuotation;
+  export type Quotation = IQuotation;
 
   /**
    * @description
@@ -624,20 +633,14 @@ export namespace GeeesyApps {
    * @param
 
    */
-  export type POFormCreate = IPOFormCreate
-  export type POFormCreateParams = IPOFormCreateParams
-  export type POFormSubmit = IPOFormCreate & IPOFormCreateParams
-  export type ResPO = IResPO | IPO
-  export type PO = IPO
-
-
+  export type POFormCreate = IPOFormCreate;
+  export type POFormCreateParams = IPOFormCreateParams;
+  export type POFormSubmit = IPOFormCreate & IPOFormCreateParams;
+  export type ResPO = IResPO | IPO;
+  export type PO = IPO;
 }
 
-
-
-
-
-export * as IMarketplace from './type-marketplace'
-export * as IInapp from './type-inapp'
-export * as IConsole from './type-console'
-export * as IApps from './type-apps'
+export * as IMarketplace from "./type-marketplace";
+export * as IInapp from "./type-inapp";
+export * as IConsole from "./type-console";
+export * as IApps from "./type-apps";
