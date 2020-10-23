@@ -54,11 +54,13 @@ export interface ICompanyTaxInfo {
   regisNo: string;
   taxNo: string;
   isHq: boolean;
-  branch: {
-    id: string;
-    name: string;
-    address: string;
-  }
+  branch: ICompanyTaxBranch
+}
+
+export interface ICompanyTaxBranch {
+  id: string;
+  name: string;
+  address: string;
 }
 
 export interface ICompanyContactInfo {
@@ -79,7 +81,7 @@ export interface IPersonContactInfo {
   fullName: string;
   email: string[];
   mobile: string[];
-  social: ISocial[];
+  social: ISocial;
   address: string;
   note: string;
 }
@@ -168,10 +170,6 @@ export interface IResQuotation {
 }
 
 /* #endregion */
-
-
-
-
 
 export interface IInquiryFormCreate {
   formGroupProduct: IInquiryFormGroupProduct;
