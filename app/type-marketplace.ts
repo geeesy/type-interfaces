@@ -956,12 +956,12 @@ export interface ISurvey {
   impFactor: string;
 }
 
-export interface IRessavelistmarket {
+export interface IRessavelistMarket {
   message: string;
-  data: ISavelistmarket[];
+  data: ISavelistMarket[];
 }
 
-export interface ISavelistmarket {
+export interface ISavelistMarket {
   userId: string;
   savelist_name: string;
   savelist_type: string;

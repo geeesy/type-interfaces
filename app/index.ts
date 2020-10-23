@@ -79,7 +79,7 @@ import {
   IResSupProductCat,
   IResSurvey,
   IResTop20Products,
-  IRessavelistmarket,
+  IRessavelistMarket,
   IRfqList,
   IRfqScore,
   IsavedList,
@@ -105,7 +105,7 @@ import {
   ITop20Products,
   IWholesale,
   Requestors,
-  ISavelistmarket,
+  ISavelistMarket,
 } from "./type-marketplace";
 import {
   IBannerConsole,
@@ -325,8 +325,8 @@ export namespace GeeesyMarketplace {
   export type ResSurvey = IResSurvey | Survey;
   export type Survey = ISurvey;
 
-  export type Ressavelistmarket = IRessavelistmarket | Savelistmarket;
-  export type Savelistmarket = ISavelistmarket;
+  export type RessavelistMarket = IRessavelistMarket | SavelistMarket;
+  export type SavelistMarket = ISavelistMarket;
 
   export type ResSupProductCat = IResSupProductCat | SupProductCat;
   export type SupProductCat = ISupProductCat;
