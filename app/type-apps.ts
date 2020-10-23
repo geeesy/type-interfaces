@@ -571,13 +571,13 @@ export interface ITaxFormGroupData {
 }
 
 export interface ITaxFormGroupDataAccounting {
-  subtotalAmount: string;
-  shippingCost: string;
-  charges: string;
-  totalDiscountAmount: string;
-  netAmount: string;
-  vat: string;
-  grandTotalAmount: string;
+  subtotalAmount: number;
+  shippingCost: number;
+  charges: number;
+  totalDiscountAmount: number;
+  netAmount: number;
+  vat: number;
+  grandTotalAmount: number;
 }
 
 export interface ITaxFormCreateParams {
