@@ -163,6 +163,22 @@ import {
   IRFQFormCreate,
   IRFQFormCreateParams,
   IVideoList,
+  ISO,
+  ISoFormCreate,
+  ISoFormCreateParams,
+  IResSO,
+  IBill,
+  IBillFormCreate,
+  IBillFormCreateParams,
+  IResbill,
+  IInv,
+  IInvFormCreate,
+  IInvFormCreateParams,
+  IResinv,
+  ITax,
+  ITaxFormCreate,
+  ITaxFormCreateParams,
+  IRestax,
 } from "./type-apps";
 
 export namespace Geeesy {
@@ -638,6 +654,54 @@ export namespace GeeesyApps {
   export type POFormSubmit = IPOFormCreate & IPOFormCreateParams;
   export type ResPO = IResPO | IPO;
   export type PO = IPO;
+
+  /**
+   * @description
+   * FORM Interface for SO creation
+   * @param
+
+   */
+  export type SOFormCreate = ISoFormCreate;
+  export type SoFormCreateParams = ISoFormCreateParams;
+  export type SOFormSubmit = ISoFormCreate & ISoFormCreateParams;
+  export type ResSO = IResSO | ISO;
+  export type SO = ISO;
+
+  /**
+   * @description
+   * FORM Interface for Billing creation
+   * @param
+
+   */
+  export type BillFormCreate = IBillFormCreate;
+  export type BillFormCreateParams = IBillFormCreateParams;
+  export type BillFormSubmit = IBillFormCreate & IBillFormCreateParams;
+  export type ResBill = IResbill | IBill;
+  export type Bill = IBill;
+
+  /**
+   * @description
+   * FORM Interface for Invoice creation
+   * @param
+
+   */
+  export type InvFormCreate = IInvFormCreate;
+  export type InvFormCreateParams = IInvFormCreateParams;
+  export type InvFormSubmit = IInvFormCreate & IInvFormCreateParams;
+  export type ResInv = IResinv | IInv;
+  export type Inv = IInv;
+
+  /**
+   * @description
+   * FORM Interface for Tax creation
+   * @param
+
+   */
+  export type TaxFormCreate = ITaxFormCreate;
+  export type TaxFormCreateParams = ITaxFormCreateParams;
+  export type TaxFormSubmit = ITaxFormCreate & ITaxFormCreateParams;
+  export type Restax = IRestax | ITax;
+  export type Tax = ITax;
 }
 
 export * as IMarketplace from "./type-marketplace";
