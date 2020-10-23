@@ -4,7 +4,7 @@ export interface IResVideoList {
 }
 export interface IVideoList {
   videoUrls: string;
-  videoIFrame?: string
+  videoIFrame?: string;
   videoTitle: string;
   videoDescription: string;
   supplierIds?: string;
@@ -54,7 +54,7 @@ export interface ICompanyTaxInfo {
   regisNo: string;
   taxNo: string;
   isHq: boolean;
-  branch: ICompanyTaxBranch
+  branch: ICompanyTaxBranch;
 }
 
 export interface ICompanyTaxBranch {
@@ -74,7 +74,7 @@ export interface ICompanyContactInfo {
   billingAddress: string;
   shippingAddress: string;
   companyNote: string;
-  companyTaxInfo: ICompanyTaxInfo
+  companyTaxInfo: ICompanyTaxInfo;
 }
 
 export interface IPersonContactInfo {
@@ -102,6 +102,7 @@ export interface IProductRow {
   productCoverUrl: string;
   productSku: string;
   productUnitPrice: string;
+  itemsPriceRow: string;
   productUnit: string;
   discountUnitPrice: string;
   productQty: string;
@@ -118,12 +119,12 @@ export interface IQuotationFormCreate {
 }
 
 export interface IQuotationFormGroupAccounting {
-  subtotalAmount: number
-  totalDiscountAmount: number
-  netAmount: number
-  vat: number
-  grandTotalAmount: number
-  taxWithheldPercent: number
+  subtotalAmount: number;
+  totalDiscountAmount: number;
+  netAmount: number;
+  vat: number;
+  grandTotalAmount: number;
+  taxWithheldPercent: number;
   isVatInc: boolean;
 }
 
@@ -134,18 +135,18 @@ export interface IQuotationFormGroupData {
   expiryDate: string;
   creditDay: string;
   shippingDate: string;
-  remark: string
+  remark: string;
   termsCondition: string;
-  senderNote: string
-  receiverNote: string
-  sellerNote: string
-  buyerNote: string
-  attachmentsUrl: string[]
+  senderNote: string;
+  receiverNote: string;
+  sellerNote: string;
+  buyerNote: string;
+  attachmentsUrl: string[];
 }
 
 export interface IQuotationFormGroupApprove {
-  approve: IApprove[]
-  stampUrl: string
+  approve: IApprove[];
+  stampUrl: string;
 }
 
 export interface IQuotationFormCreateParams {
@@ -156,7 +157,9 @@ export interface IQuotationFormCreateParams {
   rfqId: string;
 }
 
-export interface IQuotation extends IQuotationFormCreate, IQuotationFormCreateParams {
+export interface IQuotation
+  extends IQuotationFormCreate,
+    IQuotationFormCreateParams {
   quotationId: string;
   createdAt: string;
   updatedAt: string;
@@ -171,16 +174,19 @@ export interface IResQuotation {
 
 /* #endregion */
 
+/*  interface inquiry  */
+
 export interface IInquiryFormCreate {
+  formGroupSender: ISenderContact;
+  formGroupReceiver: IReceiverContact;
   formGroupProduct: IInquiryFormGroupProduct;
   formGroupData: IInquiryFormGroupData;
-
 }
 
 export interface IInquiryFormGroupProduct {
   description: string;
   productQty: string;
-  productUnit: string
+  productUnit: string;
 }
 
 export interface IInquiryFormGroupData {
@@ -198,8 +204,10 @@ export interface IInquiryFormCreateParams {
   rfqId: string;
 }
 
-export interface IInquiry extends IInquiryFormCreate, IQuotationFormCreateParams {
-  quotationId: string;
+export interface IInquiry
+  extends IInquiryFormCreate,
+    IQuotationFormCreateParams {
+  inquiryId: string;
   createdAt: string;
   updatedAt: string;
 }
@@ -211,9 +219,12 @@ export interface IResInquiry {
   data: IInquiry[];
 }
 
+/*  interface RFQ  */
+
 export interface IRFQFormCreate {
   formGroupProduct: IRFQFormGroupProduct;
   formGroupData: IRFQFormGroupData;
+  formGroupSender: ISenderContact;
 }
 
 export interface IRFQFormGroupProduct {
@@ -227,7 +238,7 @@ export interface IRFQFormGroupProduct {
   shippingLoc: string;
   shippingMethods: string;
   paymentMethods: string;
-  rfqScore: string
+  rfqScore: string;
 }
 
 export interface IRFQFormGroupData {
@@ -248,7 +259,7 @@ export interface IRFQFormCreateParams {
 }
 
 export interface IRFQ extends IRFQFormCreate, IRFQFormCreateParams {
-  quotationId: string;
+  rfqId: string;
   createdAt: string;
   updatedAt: string;
 }
@@ -260,10 +271,15 @@ export interface IResRFQ {
   data: IRFQ[];
 }
 
+/*  interface PO  */
+
 export interface IPOFormCreate {
+  formGroupSender: ISenderContact;
+  formGroupReceiver: IReceiverContact;
   formGroupProducts: IProductRow[];
   formGroupData: IPOFormGroupData;
   formGroupDataAccounting: IPOFormGroupDataAccounting;
+  formGroupApprove: IPOFormGroupApprove;
 }
 
 export interface IPOFormGroupData {
@@ -288,18 +304,22 @@ export interface IPOFormGroupDataAccounting {
   grandTotalAmount: string;
 }
 
+export interface IPOFormGroupApprove {
+  approve: IApprove[];
+  stampUrl: string;
+}
+
 export interface IPOFormCreateParams {
   senderId: string;
   receiverId: string;
   buyerId: string;
   sellerId: string;
   approveId: string;
-  rfqId: string;
   quotationId: string;
 }
 
 export interface IPO extends IPOFormCreate, IPOFormCreateParams {
-  quotationId: string;
+  purchaseorderId: string;
   createdAt: string;
   updatedAt: string;
 }
@@ -309,4 +329,261 @@ export interface IResPO {
   statusText: string;
   message: string;
   data: IPO[];
+}
+
+/*  interface Sale order  */
+
+export interface ISoFormCreate {
+  formGroupSender: ISenderContact;
+  formGroupReceiver: IReceiverContact;
+  formGroupProducts: IProductRow[];
+  formGroupData: ISoFormGroupData;
+  formGroupAccounting: ISoFormGroupAccounting;
+  formGroupApprove: ISOFormGroupApprove;
+}
+
+export interface ISoFormGroupData {
+  docno: string;
+  docdate: string;
+  creditday: string;
+  shippingdate: string;
+  remark: string;
+  termscondition: string;
+  sendernote: string;
+  receivernote: string;
+  sellernote: string;
+  buyernote: string;
+  attechment: string;
+}
+
+export interface ISoFormGroupAccounting {
+  subtotalamount: string;
+  shippingcost: string;
+  charges: string;
+  depositamount: string;
+  totaldiscountamount: string;
+  netamount: string;
+  vat: string;
+  grandtotalamount: string;
+}
+export interface ISoFormCreateParams {
+  senderId: string;
+  receiverId: string;
+  buyerId: string;
+  sellerId: string;
+  approveId: string;
+  rfqId: string;
+  quotationId: string;
+}
+
+export interface ISO extends ISoFormCreate, ISoFormCreateParams {
+  quotationId: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface IResSO {
+  status: string;
+  statusText: string;
+  message: string;
+  data: ISO[];
+}
+
+export interface ISOFormGroupApprove {
+  approve: IApprove[];
+  stampUrl: string;
+}
+
+/*  interface Billing Note  */
+
+export interface IBillFormCreate {
+  formGroupSender: ISenderContact;
+  formGroupReceiver: IReceiverContact;
+  formGroupProducts: IProductRow[];
+  formGroupData: IBillFormGroupData;
+  formGroupAccounting: IBillFormGroupAccounting;
+  formGroupApprove: IBillFormGroupApprove;
+}
+
+export interface IBillFormGroupData {
+  docno: string;
+  docdate: string;
+  creditdate: string;
+  paymentduedate: string;
+  paymentperiod: string;
+  totalpaymentperiod: string;
+  remainingamount: string;
+  bankinginfo: string;
+  remark: string;
+  termscondition: string;
+  sendernote: string;
+  receivernote: string;
+  sellernote: string;
+  buyernote: string;
+}
+
+export interface IBillFormGroupAccounting {
+  subtotalamount: string;
+  shippingcost: string;
+  charges: string;
+  totaldiscountamount: string;
+  netamount: string;
+  vat: string;
+  grandtotalamount: string;
+  taxwithheldpercent: string;
+  withholdingtax: string;
+  totalpayamount: string;
+}
+
+export interface IBillFormCreateParams {
+  senderId: string;
+  receiverId: string;
+  buyerId: string;
+  sellerId: string;
+  approveId: string;
+  quotationId: string;
+  purchaesorderId: string;
+}
+
+export interface IBill extends IBillFormCreate, IBillFormCreateParams {
+  billingnoteId: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface IResbill {
+  status: string;
+  statusText: string;
+  message: string;
+  data: IBill[];
+}
+
+export interface IBillFormGroupApprove {
+  approve: IApprove[];
+  stampUrl: string;
+}
+
+/* interface invoice */
+
+export interface IInvFormCreate {
+  formGroupSender: ISenderContact;
+  formGroupReceiver: IReceiverContact;
+  formGroupProducts: IProductRow[];
+  formGroupData: IInvFormGroupData;
+  formGroupAccounting: IInvFormGroupAccounting;
+  formGroupApprove: IInvFormGroupApprove;
+}
+
+export interface IInvFormGroupData {
+  docno: string;
+  docdate: string;
+  paymentduedate: string;
+  bankinginfo: string;
+  remark: string;
+  termscondition: string;
+  sendernote: string;
+  receivernote: string;
+  sellernote: string;
+  buyernote: string;
+}
+
+export interface IInvFormGroupAccounting {
+  subtotalamount: string;
+  shippingcost: string;
+  charges: string;
+  totaldiscountamount: string;
+  netamount: string;
+  vat: string;
+  grandtotalamount: string;
+  taxwithheldpercent: string;
+  withholdingtax: string;
+  totalpayamount: string;
+}
+
+export interface IInvFormCreateParams {
+  senderId: string;
+  receiverId: string;
+  buyerId: string;
+  sellerId: string;
+  approveId: string;
+  quotationId: string;
+  purchaesorderId: string;
+}
+
+export interface IInv extends IInvFormCreate, IInvFormCreateParams {
+  invoiceId: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface IResinv {
+  status: string;
+  statusText: string;
+  message: string;
+  data: IInv[];
+}
+
+export interface IInvFormGroupApprove {
+  approve: IApprove[];
+  stampUrl: string;
+}
+
+/*  interface Tax invoice   */
+
+export interface ITaxFormCreate {
+  formGroupSender: ISenderContact;
+  formGroupReceiver: IReceiverContact;
+  formGroupProducts: IProductRow[];
+  formGroupData: ITaxFormGroupData;
+  formGroupAccounting: ITaxFormGroupAccounting;
+  formGroupApprove: ITaxFormGroupApprove;
+}
+
+export interface ITaxFormGroupData {
+  docno: string;
+  docdate: string;
+  remark: string;
+  termscondition: string;
+  sendernote: string;
+  receivernote: string;
+  sellernote: string;
+  buyernote: string;
+}
+
+export interface ITaxFormGroupAccounting {
+  subtotalamount: string;
+  shippingcost: string;
+  charges: string;
+  totaldiscountamount: string;
+  netamount: string;
+  vat: string;
+  grandtotalamount: string;
+}
+
+export interface ITaxFormCreateParams {
+  senderId: string;
+  receiverId: string;
+  buyerId: string;
+  sellerId: string;
+  approveId: string;
+  quotationId: string;
+  purchaesorderId: string;
+}
+
+export interface ITax extends ITaxFormCreate, ITaxFormCreateParams {
+  taxinvoiceId: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface IRestax {
+  status: string;
+  statusText: string;
+  message: string;
+  data: ITax[];
+}
+
+export interface ITaxFormGroupApprove {
+  approve: IApprove[];
+  stampUrl: string;
 }
