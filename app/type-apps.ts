@@ -246,7 +246,7 @@ export interface IRfqFormGroupApprove {
 
 export interface IRfqFormGroupProduct {
   productTitle: string;
-  productKeywords: string;
+  productKeywords: string[];
   description: string;
   category: string;
   productQty: string;
@@ -254,8 +254,8 @@ export interface IRfqFormGroupProduct {
   productCurrency: string;
   productUnitPrice: string;
   shippingLoc: IShippingLoc;
-  shippingMethods: string;
-  paymentMethods: string;
+  shippingMethods: string[];
+  paymentMethod: string;
   rfqScore: string;
 }
 
