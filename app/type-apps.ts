@@ -251,6 +251,7 @@ export interface IRfqFormGroupProduct {
   category: string;
   productQty: string;
   productUnit: string;
+  productCurrency: string;
   productUnitPrice: string;
   shippingLoc: IShippingLoc;
   shippingMethods: string;
