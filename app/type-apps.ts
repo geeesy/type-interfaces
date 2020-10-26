@@ -205,6 +205,8 @@ export interface IQuotation
   extends IQuotationFormCreate,
   IQuotationFormCreateParams {
   quotationId: string;
+  approveStatus: string;
+  flowStatus: string;
   createdAt: string;
   updatedAt: string;
 }
@@ -253,6 +255,7 @@ export interface IInquiry
   extends IInquiryFormCreate,
   IQuotationFormCreateParams {
   inquiryId: string;
+  flowStatus: string;
   createdAt: string;
   updatedAt: string;
 }
@@ -324,6 +327,8 @@ export interface IRfqFormCreateParams {
 
 export interface IRfq extends IRfqFormCreate, IRfqFormCreateParams {
   rfqId: string;
+  approveStatus: string;
+  flowStatus: string;
   createdAt: string;
 }
 
@@ -384,6 +389,8 @@ export interface IPOFormCreateParams {
 
 export interface IPO extends IPOFormCreate, IPOFormCreateParams {
   purchaseOrderId: string;
+  approveStatus: string;
+  flowStatus: string;
   createdAt: string;
   updatedAt: string;
 }
@@ -449,6 +456,8 @@ export interface ISOFormGroupApprove {
 
 export interface ISO extends ISOFormCreate, ISOFormCreateParams {
   salesOrderId: string;
+  approveStatus: string;
+  flowStatus: string;
   createdAt: string;
   updatedAt: string;
 }
@@ -514,6 +523,8 @@ export interface IBillingNoteFormCreateParams {
 
 export interface IBillingNote extends IBillingNoteFormCreate, IBillingNoteFormCreateParams {
   billingNoteId: string;
+  approveStatus: string;
+  flowStatus: string;
   createdAt: string;
   updatedAt: string;
 }
@@ -585,6 +596,8 @@ export interface IInvoiceFormCreateParams {
 
 export interface IInvoice extends IInvoiceFormCreate, IInvoiceFormCreateParams {
   invoiceId: string;
+  approveStatus: string;
+  flowStatus: string;
   createdAt: string;
   updatedAt: string;
 }
@@ -645,6 +658,8 @@ export interface ITaxInvoiceFormCreateParams {
 
 export interface ITaxInvoice extends ITaxInvoiceFormCreate, ITaxInvoiceFormCreateParams {
   taxInvoiceId: string;
+  approveStatus: string;
+  flowStatus: string;
   createdAt: string;
 }
 
