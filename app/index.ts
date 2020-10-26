@@ -107,6 +107,49 @@ import {
   IsavedList,
   Requestors
 } from './type-marketplace'
+/* eslint-disable no-unused-vars */
+import {
+  IApprover,
+  IApproverFormCreate,
+  IApproverFormCreateParams,
+  IBillingNote,
+  IBillingNoteFormCreate,
+  IBillingNoteFormCreateParams,
+  IInquiry,
+  IInquiryFormCreate,
+  IInquiryFormCreateParams,
+  IInvoice,
+  IInvoiceFormCreate,
+  IInvoiceFormCreateParams,
+  IOrderList,
+  IPO,
+  IPOFormCreate,
+  IPOFormCreateParams,
+  IQuotation,
+  IQuotationFormCreate,
+  IQuotationFormCreateParams,
+  IResApprover,
+  IResBillingNote,
+  IResInquiry,
+  IResInvoice,
+  IResOrderList,
+  IResPO,
+  IResQuotation,
+  IResRFQ,
+  IResSO,
+  IResTaxInvoice,
+  IResVideoList,
+  IRfq,
+  IRfqFormCreate,
+  IRfqFormCreateParams,
+  ISO,
+  ISOFormCreate,
+  ISOFormCreateParams,
+  ITaxInvoice,
+  ITaxInvoiceFormCreate,
+  ITaxInvoiceFormCreateParams,
+  IVideoList
+} from './type-apps'
 import {
   IBannerConsole,
   ICategoryConsole,
@@ -131,45 +174,6 @@ import {
   IShippingMethodConsole,
   ISupplierConsole
 } from './type-console'
-/* eslint-disable no-unused-vars */
-import {
-  IBillingNote,
-  IBillingNoteFormCreate,
-  IBillingNoteFormCreateParams,
-  IInquiry,
-  IInquiryFormCreate,
-  IInquiryFormCreateParams,
-  IInvoice,
-  IInvoiceFormCreate,
-  IInvoiceFormCreateParams,
-  IOrderList,
-  IPO,
-  IPOFormCreate,
-  IPOFormCreateParams,
-  IQuotation,
-  IQuotationFormCreate,
-  IQuotationFormCreateParams,
-  IResBillingNote,
-  IResInquiry,
-  IResInvoice,
-  IResOrderList,
-  IResPO,
-  IResQuotation,
-  IResRFQ,
-  IResSO,
-  IResTaxInvoice,
-  IResVideoList,
-  IRfq,
-  IRfqFormCreate,
-  IRfqFormCreateParams,
-  ISO,
-  ISOFormCreate,
-  ISOFormCreateParams,
-  ITaxInvoice,
-  ITaxInvoiceFormCreate,
-  ITaxInvoiceFormCreateParams,
-  IVideoList
-} from './type-apps'
 import {
   ICal,
   ICompareProduct,
@@ -702,6 +706,18 @@ export namespace GeeesyApps {
   export type TaxInvoiceFormSubmit = ITaxInvoiceFormCreate & ITaxInvoiceFormCreateParams;
   export type ResTaxInvoice = IResTaxInvoice | ITaxInvoice;
   export type TaxInvoice = ITaxInvoice;
+
+  /**
+   * @description
+   * FORM Interface for Approver Setting
+   * @param
+
+   */
+  export type ApproverFormCreate = IApproverFormCreate
+  export type ApproverFormCreateParams = IApproverFormCreateParams
+  export type ApproverFormSubmit = IApproverFormCreate & IApproverFormCreateParams
+  export type ResApprover = IResApprover | IApprover
+  export type Approver = IApprover
 }
 
 export * as IMarketplace from './type-marketplace'

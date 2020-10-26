@@ -45,6 +45,42 @@ export interface IApprove {
   signatureUrl: string;
 }
 
+export interface IApprovalRule {
+  rfqTypeR: boolean
+  quotationTypeM: boolean
+  quotationTypeR: boolean
+  quotationTypeD: boolean
+  poTypeR: boolean
+  poTypeS: boolean
+  poTypeD: boolean
+  soTypeR: boolean
+  soTypeS: boolean
+  soTypeD: boolean
+}
+
+export interface IApproverFormCreate extends IApprove {
+  formGroupPerson: IApprove
+  formGroupApprovalRule: IApprovalRule
+}
+
+export interface IApproverFormCreateParams {
+  sellerId: string
+  buyerId: string
+}
+
+export interface IApprover extends IApproverFormCreate, IApproverFormCreateParams {
+  approverId: string
+  createdAt: string
+  updatedAt: string
+}
+
+export interface IResApprover {
+  status: string;
+  statusText: string;
+  message: string;
+  data: IApprover[];
+}
+
 export interface IShippingLoc {
   lat: string;
   lng: string;
