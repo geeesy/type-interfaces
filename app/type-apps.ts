@@ -58,7 +58,7 @@ export interface IApprovalRule {
   soTypeD: boolean
 }
 
-export interface IApproverFormCreate extends IApprove {
+export interface IApproverFormCreate {
   formGroupPerson: IApprove
   formGroupApprovalRule: IApprovalRule
 }
