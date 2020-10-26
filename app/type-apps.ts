@@ -237,6 +237,16 @@ export interface IRfqFormCreate {
   formGroupSender: ISenderContact;
   formGroupReceiver: IReceiverContact;
   formGroupApprove: IRfqFormGroupApprove;
+  formGroupSupplier: IRfqFormGroupSupplier;
+}
+
+export interface IRfqFormGroupSupplier {
+  businessSizes: string[]
+  businessTypes: string[]
+  companyAge: string
+  haveCertificate: boolean
+  haveVerified: boolean
+  companyProvinces: string[]
 }
 
 export interface IRfqFormGroupApprove {
