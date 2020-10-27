@@ -12,6 +12,13 @@ Geeesy's API Interfaces for HTTP Client and Lambda Functions
 
 ## Usage
 
+#### Enum
+```typescript
+import { EnumStatus } from '@geeesy/type-interfaces'
+
+  status = Enum.StatusApprovalFlow.Approved
+```
+
 ### Marketplace
 
 #### Lambda Function
