@@ -184,10 +184,12 @@ export interface IInquiryFormCreateParams {
   rfqId: string;
 }
 
-export interface IInquiry
-  extends IInquiryFormCreate,
-  IQuotationFormCreateParams {
+export interface IInquiry extends IInquiryFormCreateParams {
   inquiryId: string;
+  sender: ISenderContact;
+  receiver: IReceiverContact;
+  product: IInquiryFormGroupProduct
+  data: IInquiryFormGroupData
   statusInquirySender: string;
   statusInquiryReceiver: string;
   createdAt: string;
@@ -253,8 +255,20 @@ export interface IRfqFormCreateParams {
   sellerId: string;
 }
 
-export interface IRfq extends IRfqFormCreate, IRfqFormCreateParams {
+/* export interface IRfq extends IRfqFormCreate, IRfqFormCreateParams {
   rfqId: string;
+  statusRfqSender: string;
+  statusRfqReceiver: string;
+  createdAt: string;
+} */
+
+export interface IRfq extends IRfqFormCreateParams {
+  rfqId: string;
+  product: IRfqFormGroupProduct;
+  data: IRfqFormGroupData;
+  sender: ISenderContact;
+  receiver: IReceiverContact;
+  funnelsData: IRfqFormGroupSupplier;
   statusRfqSender: string;
   statusRfqReceiver: string;
   createdAt: string;
@@ -318,10 +332,14 @@ export interface IQuotationFormCreateParams {
   rfqId: string;
 }
 
-export interface IQuotation
-  extends IQuotationFormCreate,
-  IQuotationFormCreateParams {
+export interface IQuotation extends IQuotationFormCreateParams {
   quotationId: string;
+  sender: ISenderContact;
+  receiver: IReceiverContact;
+  products: IProductRow[]
+  accounting: IQuotationFormGroupAccounting
+  data: IQuotationFormGroupData
+  approver: IQuotationFormGroupApprover
   statusQuotationSender: string;
   statusQuotationReceiver: string;
   statusApprovalFlow: string;
@@ -384,8 +402,14 @@ export interface IPOFormCreateParams {
   quotationId: string;
 }
 
-export interface IPO extends IPOFormCreate, IPOFormCreateParams {
+export interface IPO extends IPOFormCreateParams {
   purchaseOrderId: string;
+  sender: ISenderContact;
+  receiver: IReceiverContact;
+  products: IProductRow[]
+  data: IPOFormGroupData
+  accounting: IPOFormGroupAccounting
+  approver: IPOFormGroupApprover
   statusPOSender: string;
   statusPOReceiver: string;
   statusApprovalFlow: string;
