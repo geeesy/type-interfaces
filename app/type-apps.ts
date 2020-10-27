@@ -166,6 +166,7 @@ export interface IInquiryFormGroupProduct {
   description: string;
   productQty: string;
   productUnit: string;
+  productCurrency: string;
 }
 
 export interface IInquiryFormGroupData {
