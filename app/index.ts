@@ -599,6 +599,7 @@ export namespace GeeesyConsole {
 }
 
 export namespace GeeesyApps {
+
   export type ResVideoList = IResVideoList | VideoList;
   export type VideoList = IVideoList;
 
@@ -724,4 +725,4 @@ export * as IMarketplace from './type-marketplace'
 export * as IInapp from './type-inapp'
 export * as IConsole from './type-console'
 export * as IApps from './type-apps'
-export * as Enum from './enum'
+export * as EnumStatus from './enum-status'
