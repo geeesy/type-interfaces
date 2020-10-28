@@ -178,11 +178,11 @@ export interface IInquiryFormGroupData {
 }
 
 export interface IInquiryFormCreateParams {
+  productId: string;
   senderId: string;
   receiverId: string;
-  sellerId: string;
   buyerId: string;
-  rfqId: string;
+  sellerId: string;
 }
 
 export interface IInquiry extends IInquiryFormCreateParams {
@@ -253,6 +253,7 @@ export interface IRfqFormGroupData {
 export interface IRfqFormCreateParams {
   senderId: string;
   receiverId: string;
+  buyerId: string;
   sellerId: string;
 }
 
