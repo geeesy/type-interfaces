@@ -160,6 +160,7 @@ export interface IRfqProductRow {
   productQty: string
   productUnit: string;
   productUnitPrice: string;
+  productCurrency: string;
   description: string
 }
 /* #endregion */
