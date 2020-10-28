@@ -136,12 +136,16 @@ import {
   IResPO,
   IResQuotation,
   IResRFQ,
+  IResRFQMarket,
   IResSO,
   IResTaxInvoice,
   IResVideoList,
   IRfq,
   IRfqFormCreate,
   IRfqFormCreateParams,
+  IRfqMarket,
+  IRfqMarketFormCreate,
+  IRfqMarketFormCreateParams,
   ISO,
   ISOFormCreate,
   ISOFormCreateParams,
@@ -608,10 +612,22 @@ export namespace GeeesyApps {
 
   /**
    * @description
-   * FORM Interface for RFQ creation
+   * FORM Interface for RFQ Market
    * @param
    * senderId
    */
+  export type RfqMarketFormCreate = IRfqMarketFormCreate;
+  export type RfqMarketFormCreateParams = IRfqMarketFormCreateParams;
+  export type RfqMarketFormSubmit = IRfqMarketFormCreate & IRfqMarketFormCreateParams;
+  export type ResRfqMarket = IResRFQMarket | IRfqMarket;
+  export type RfqMarket = IRfqMarket;
+
+  /**
+ * @description
+ * FORM Interface for RFQ creation
+ * @param
+ * senderId
+ */
   export type RfqFormCreate = IRfqFormCreate;
   export type RfqFormCreateParams = IRfqFormCreateParams;
   export type RfqFormSubmit = IRfqFormCreate & IRfqFormCreateParams;

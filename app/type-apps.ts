@@ -151,6 +151,17 @@ export interface IProductRow {
   discountUnitPrice: string;
   productQty: string;
 }
+
+export interface IRfqProductRow {
+  rfqProductId: string;
+  productId?: string;
+  productTitle: string;
+  productImagesUrl: string[];
+  productQty: string
+  productUnit: string;
+  productUnitPrice: string;
+  description: string
+}
 /* #endregion */
 
 /* #region REVIEW: INQUIRY */
@@ -206,16 +217,16 @@ export interface IResInquiry {
 
 /* #endregion */
 
-/* #region REVIEW: RFQ */
-export interface IRfqFormCreate {
-  formGroupProduct: IRfqFormGroupProduct;
-  formGroupData: IRfqFormGroupData;
+/* #region ANCHOR: RFQ Market */
+
+export interface IRfqMarketFormCreate {
+  formGroupProduct: IRfqMarketFormGroupProduct;
+  formGroupData: IRfqMarketFormGroupData;
   formGroupSender: ISenderContact;
-  formGroupReceiver: IReceiverContact;
-  formGroupSupplier: IRfqFormGroupSupplier;
+  formGroupFunnel: IRfqMarketFormGroupFunnel;
 }
 
-export interface IRfqFormGroupSupplier {
+export interface IRfqMarketFormGroupFunnel {
   businessSizes: string[]
   businessTypes: string[]
   companyAge: string
@@ -224,7 +235,7 @@ export interface IRfqFormGroupSupplier {
   companyProvinces: string[]
 }
 
-export interface IRfqFormGroupProduct {
+export interface IRfqMarketFormGroupProduct {
   productTitle: string;
   productKeywords: string[];
   description: string;
@@ -239,15 +250,68 @@ export interface IRfqFormGroupProduct {
   rfqScore: string;
 }
 
-export interface IRfqFormGroupData {
+export interface IRfqMarketFormGroupData {
   expiryDate: string;
   creditDay: string;
+  shippingDate: string;
+  receiverNote: string;
+  sellerNote: string;
+  attachmentsUrl: string[];
+}
+
+export interface IRfqMarketFormCreateParams {
+  senderId: string;
+  receiverId: string;
+  sellerId: string;
+}
+
+export interface IRfqMarket extends IRfqMarketFormCreateParams {
+  rfqId: string;
+  product: IRfqMarketFormGroupProduct;
+  data: IRfqMarketFormGroupData;
+  sender: ISenderContact;
+  funnelsData: IRfqMarketFormGroupFunnel;
+  statusRfqSender: string;
+  statusRfqReceiver: string;
+  createdAt: string;
+}
+
+export interface IResRfqMarket {
+  status: string;
+  statusText: string;
+  message: string;
+  data: IRfqMarket[];
+}
+
+/* #endregion */
+
+/* #region REVIEW: RFQ */
+export interface IRfqFormCreate {
+  formGroupProducts: IRfqProductRow[];
+  formGroupData: IRfqFormGroupData;
+  formGroupSender: ISenderContact;
+  formGroupReceiver: IReceiverContact;
+  formGroupApprover: IRfqFormGroupApprover
+}
+
+export interface IRfqFormGroupApprover {
+  approve: IApprove[];
+  stampUrl: string;
+}
+
+export interface IRfqFormGroupData {
+  docNo: string;
+  docDate: string;
+  expiryDate: string;
   shippingDate: string;
   senderNote: string;
   receiverNote: string;
   sellerNote: string;
   buyerNote: string;
   attachmentsUrl: string[];
+  shippingLoc: IShippingLoc;
+  shippingMethods: string[];
+  paymentMethod: string;
 }
 
 export interface IRfqFormCreateParams {
@@ -257,22 +321,16 @@ export interface IRfqFormCreateParams {
   sellerId: string;
 }
 
-/* export interface IRfq extends IRfqFormCreate, IRfqFormCreateParams {
-  rfqId: string;
-  statusRfqSender: string;
-  statusRfqReceiver: string;
-  createdAt: string;
-} */
-
 export interface IRfq extends IRfqFormCreateParams {
   rfqId: string;
-  product: IRfqFormGroupProduct;
+  product: IRfqProductRow[];
   data: IRfqFormGroupData;
   sender: ISenderContact;
   receiver: IReceiverContact;
-  funnelsData: IRfqFormGroupSupplier;
+  approver: IRfqFormGroupApprover
   statusRfqSender: string;
   statusRfqReceiver: string;
+  statusApprovalFlow: string;
   createdAt: string;
 }
 
