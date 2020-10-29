@@ -153,7 +153,7 @@ export interface IProductRow {
 }
 
 export interface IRfqProductRow {
-  rfqProductId: string;
+  rfqProductRowIndex: number;
   productId?: string;
   productTitle: string;
   productImagesUrl: string[];
