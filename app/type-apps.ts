@@ -251,8 +251,6 @@ export interface IRfqMarketFormGroupData {
   expiryDate: string;
   creditDay: string;
   shippingDate: string;
-  receiverNote: string;
-  sellerNote: string;
   attachmentsUrl: string[];
   shippingLoc: IShippingLoc;
   shippingMethods: string[];
