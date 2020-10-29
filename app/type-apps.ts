@@ -305,6 +305,7 @@ export interface IRfqFormGroupData {
   docDate: string;
   expiryDate: string;
   shippingDate: string;
+  remark: string;
   senderNote: string;
   receiverNote: string;
   sellerNote: string;
