@@ -245,10 +245,6 @@ export interface IRfqMarketFormGroupProduct {
   productUnit: string;
   productCurrency: string;
   productUnitPrice: string;
-  shippingLoc: IShippingLoc;
-  shippingMethods: string[];
-  paymentMethod: string;
-  rfqScore: string;
 }
 
 export interface IRfqMarketFormGroupData {
@@ -258,6 +254,10 @@ export interface IRfqMarketFormGroupData {
   receiverNote: string;
   sellerNote: string;
   attachmentsUrl: string[];
+  shippingLoc: IShippingLoc;
+  shippingMethods: string[];
+  paymentMethod: string;
+  rfqScore: string;
 }
 
 export interface IRfqMarketFormCreateParams {
