@@ -313,6 +313,7 @@ export interface IRfqFormGroupData {
   shippingLoc: IShippingLoc;
   shippingMethods: string[];
   paymentMethod: string;
+  rfqScore: string
 }
 
 export interface IRfqFormCreateParams {
