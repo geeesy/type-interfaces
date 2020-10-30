@@ -118,6 +118,7 @@ import {
   IInquiry,
   IInquiryFormCreate,
   IInquiryFormCreateParams,
+  IInquiryList,
   IInvoice,
   IInvoiceFormCreate,
   IInvoiceFormCreateParams,
@@ -131,6 +132,7 @@ import {
   IResApprover,
   IResBillingNote,
   IResInquiry,
+  IResInquiryList,
   IResInvoice,
   IResOrderList,
   IResPO,
@@ -645,6 +647,8 @@ export namespace GeeesyApps {
   export type InquiryFormCreate = IInquiryFormCreate;
   export type InquiryFormCreateParams = IInquiryFormCreateParams;
   export type InquiryFormSubmit = IInquiryFormCreate & IInquiryFormCreateParams;
+  export type ResInquiryList = IResInquiryList | IInquiryList
+  export type InquiryList = IInquiryList
   export type ResInquiry = IResInquiry | IInquiry;
   export type Inquiry = IInquiry;
 

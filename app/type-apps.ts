@@ -140,6 +140,11 @@ export interface IReceiverContact {
   receiverCompanyContactInfo: ICompanyContactInfo;
 }
 
+export interface IProductShort {
+  productName: string;
+  productCoverUrl: string;
+}
+
 export interface IProductRow {
   productId: string;
   productName: string;
@@ -199,16 +204,27 @@ export interface IInquiryFormCreateParams {
   sellerId: string;
 }
 
-export interface IInquiry extends IInquiryFormCreateParams {
+export interface IInquiryList {
   inquiryId: string;
   sender: ISenderContact;
   receiver: IReceiverContact;
-  product: IInquiryFormGroupProduct
-  data: IInquiryFormGroupData
+  productShort: IProductShort;
   statusInquirySender: string;
   statusInquiryReceiver: string;
   createdAt: string;
   updatedAt: string;
+}
+
+export interface IInquiry extends IInquiryFormCreateParams, IInquiryList {
+  product: IInquiryFormGroupProduct
+  data: IInquiryFormGroupData
+}
+
+export interface IResInquiryList {
+  status: string;
+  statusText: string;
+  message: string;
+  data: IInquiryList[];
 }
 
 export interface IResInquiry {
@@ -217,7 +233,6 @@ export interface IResInquiry {
   message: string;
   data: IInquiry[];
 }
-
 /* #endregion */
 
 /* #region ANCHOR: RFQ Market */
