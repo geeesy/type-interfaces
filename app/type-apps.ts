@@ -231,7 +231,7 @@ export interface IResInquiry {
   status: string;
   statusText: string;
   message: string;
-  data: IInquiry[];
+  data: IInquiry;
 }
 /* #endregion */
 
