@@ -139,6 +139,7 @@ import {
   IResQuotation,
   IResRFQ,
   IResRfqMarket,
+  IResRfqMarketList,
   IResSO,
   IResTaxInvoice,
   IResVideoList,
@@ -148,6 +149,7 @@ import {
   IRfqMarket,
   IRfqMarketFormCreate,
   IRfqMarketFormCreateParams,
+  IRfqMarketList,
   ISO,
   ISOFormCreate,
   ISOFormCreateParams,
@@ -614,35 +616,8 @@ export namespace GeeesyApps {
 
   /**
    * @description
-   * FORM Interface for RFQ Market
+   * Interface for Inquiry
    * @param
-   * senderId
-   */
-  export type RfqMarketFormCreate = IRfqMarketFormCreate;
-  export type RfqMarketFormCreateParams = IRfqMarketFormCreateParams;
-  export type RfqMarketFormSubmit = IRfqMarketFormCreate & IRfqMarketFormCreateParams;
-  export type ResRfqMarket = IResRfqMarket | IRfqMarket;
-  export type RfqMarket = IRfqMarket;
-
-  /**
- * @description
- * FORM Interface for RFQ creation
- * @param
- * senderId
- */
-  export type RfqFormCreate = IRfqFormCreate;
-  export type RfqFormCreateParams = IRfqFormCreateParams;
-  export type RfqFormSubmit = IRfqFormCreate & IRfqFormCreateParams;
-  export type ResRfq = IResRFQ | IRfq;
-  export type Rfq = IRfq;
-
-  /**
-   * @description
-   * FORM Interface for RFI/Inquiry creation
-   * @param
-   * senderId
-   * supplierId
-   * productId
    */
   export type InquiryFormCreate = IInquiryFormCreate;
   export type InquiryFormCreateParams = IInquiryFormCreateParams;
@@ -651,6 +626,32 @@ export namespace GeeesyApps {
   export type InquiryList = IInquiryList
   export type ResInquiry = IResInquiry | IInquiry;
   export type Inquiry = IInquiry;
+
+  /**
+   * @description
+   * Interface for RFQ Market
+   * @param
+   */
+  export type RfqMarketFormCreate = IRfqMarketFormCreate;
+  export type RfqMarketFormCreateParams = IRfqMarketFormCreateParams;
+  export type RfqMarketFormSubmit = IRfqMarketFormCreate & IRfqMarketFormCreateParams;
+  export type ResRfqMarketList = IResRfqMarketList | IRfqMarketList
+  export type RfqMarketList = IRfqMarketList
+  export type ResRfqMarket = IResRfqMarket | IRfqMarket;
+  export type RfqMarket = IRfqMarket;
+
+  /**
+ * @description
+ * Interface for RFQ creation
+ * @param
+ */
+  export type RfqFormCreate = IRfqFormCreate;
+  export type RfqFormCreateParams = IRfqFormCreateParams;
+  export type RfqFormSubmit = IRfqFormCreate & IRfqFormCreateParams;
+  export type ResRfqList = IResRfqList | IRfqList
+  export type RfqList = IRfqList
+  export type ResRfq = IResRFQ | IRfq;
+  export type Rfq = IRfq;
 
   /**
    * @description

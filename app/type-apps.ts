@@ -37,7 +37,7 @@ export interface IOrderList {
   poNetAmount: string;
 }
 
-/* #region STUB: Version 2.x */
+/* #region STUB: Version 3.x */
 
 export interface IApprove {
   nameTitle: string;
@@ -150,11 +150,11 @@ export interface IProductRow {
   productName: string;
   productCoverUrl: string;
   productSku: string;
-  productUnitPrice: string;
-  itemsPriceRow: string;
+  productUnitPrice: number;
+  itemsPriceRow: number;
   productUnit: string;
-  discountUnitPrice: string;
-  productQty: string;
+  discountUnitPrice: number;
+  productQty: number;
 }
 
 export interface IRfqProductRow {
@@ -162,9 +162,9 @@ export interface IRfqProductRow {
   productId?: string;
   productTitle: string;
   productImagesUrl: string[];
-  productQty: string
+  productQty: number
   productUnit: string;
-  productUnitPrice: string;
+  productUnitPrice: number;
   description: string
 }
 /* #endregion */
@@ -180,7 +180,7 @@ export interface IInquiryFormCreate {
 
 export interface IInquiryFormGroupProduct {
   description: string;
-  productQty: string;
+  productQty: number;
   productUnit: string;
   productCurrency: string;
   productName: string;
@@ -257,15 +257,15 @@ export interface IRfqMarketFormGroupProduct {
   productKeywords: string[];
   description: string;
   category: string;
-  productQty: string;
+  productQty: number;
   productUnit: string;
   productCurrency: string;
-  productUnitPrice: string;
+  productUnitPrice: number;
 }
 
 export interface IRfqMarketFormGroupData {
   expiryDate: string;
-  creditDay: string;
+  creditDay: number;
   shippingDate: string;
   attachmentsUrl: string[];
   shippingLoc: IShippingLoc;
@@ -284,11 +284,11 @@ export interface IRfqMarketList {
   expiryDate: string;
   shippingDate: string;
   productTitle: string;
-  productQty: string;
+  productQty: number;
   productUnit: string;
   productCurrency: string;
-  productUnitPrice: string;
-  rfqScore: string;
+  productUnitPrice: number;
+  rfqScore: number;
   statusRfqSender: string;
   statusRfqReceiver: string;
   createdAt: string
@@ -334,7 +334,7 @@ export interface IRfqFormGroupData {
   docNo: string;
   docDate: string;
   expiryDate: string;
-  creditDay: string;
+  creditDay: number;
   shippingDate: string;
   remark: string;
   senderNote: string;
@@ -399,7 +399,7 @@ export interface IResRfq {
 
 /* #endregion */
 
-/* #region  REVIEW: QUOTATION */
+/* #region FIXME: QUOTATION */
 export interface IQuotationFormCreate {
   formGroupSender: ISenderContact;
   formGroupReceiver: IReceiverContact;
@@ -472,7 +472,7 @@ export interface IResQuotation {
 
 /* #endregion */
 
-/* #region REVIEW: PO */
+/* #region FIXME: PO */
 export interface IPOFormCreate {
   formGroupSender: ISenderContact;
   formGroupReceiver: IReceiverContact;
@@ -542,7 +542,7 @@ export interface IResPO {
 
 /* #endregion */
 
-/* #region REVIEW: SO */
+/* #region FIXME: SO */
 
 export interface ISOFormCreate {
   formGroupSender: ISenderContact;
@@ -610,7 +610,7 @@ export interface IResSO {
 
 /* #endregion */
 
-/* #region REVIEW: Billing Note */
+/* #region FIXME: Billing Note */
 
 export interface IBillingNoteFormCreate {
   formGroupSender: ISenderContact;
@@ -682,7 +682,7 @@ export interface IBillingNoteFormGroupApprover {
 
 /* #endregion */
 
-/* #region REVIEW: Invoice */
+/* #region FIXME: Invoice */
 
 export interface IInvoiceFormCreate {
   formGroupSender: ISenderContact;
@@ -749,7 +749,7 @@ export interface IResInvoice {
 }
 /* #endregion */
 
-/* #region REVIEW: TAX Invoice */
+/* #region FIXME: TAX Invoice */
 
 export interface ITaxInvoiceFormCreate {
   formGroupSender: ISenderContact;
