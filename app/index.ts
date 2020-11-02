@@ -137,7 +137,7 @@ import {
   IResOrderList,
   IResPO,
   IResQuotation,
-  IResRFQ,
+  IResRfq,
   IResRfqMarket,
   IResRfqMarketList,
   IResSO,
@@ -650,7 +650,7 @@ export namespace GeeesyApps {
   export type RfqFormSubmit = IRfqFormCreate & IRfqFormCreateParams;
   export type ResRfqList = IResRfqList | IRfqList
   export type RfqList = IRfqList
-  export type ResRfq = IResRFQ | IRfq;
+  export type ResRfq = IResRfq | IRfq;
   export type Rfq = IRfq;
 
   /**
