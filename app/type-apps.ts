@@ -165,7 +165,6 @@ export interface IRfqProductRow {
   productQty: string
   productUnit: string;
   productUnitPrice: string;
-  productCurrency: string;
   description: string
 }
 /* #endregion */
@@ -235,7 +234,7 @@ export interface IResInquiry {
 }
 /* #endregion */
 
-/* #region ANCHOR: RFQ Market */
+/* #region REVIEW: RFQ Market */
 
 export interface IRfqMarketFormCreate {
   formGroupProduct: IRfqMarketFormGroupProduct;
@@ -272,31 +271,47 @@ export interface IRfqMarketFormGroupData {
   shippingLoc: IShippingLoc;
   shippingMethods: string[];
   paymentMethod: string;
-  rfqScore: string;
+  rfqScore: number;
 }
 
 export interface IRfqMarketFormCreateParams {
   senderId: string;
-  receiverId: string;
-  sellerId: string;
 }
 
-export interface IRfqMarket extends IRfqMarketFormCreateParams {
-  rfqId: string;
-  product: IRfqMarketFormGroupProduct;
-  data: IRfqMarketFormGroupData;
-  sender: ISenderContact;
-  funnelsData: IRfqMarketFormGroupFunnel;
+export interface IRfqMarketList {
+  rfqId: string
+  sender: ISenderContact
+  expiryDate: string;
+  shippingDate: string;
+  productTitle: string;
+  productQty: string;
+  productUnit: string;
+  productCurrency: string;
+  productUnitPrice: string;
+  rfqScore: string;
   statusRfqSender: string;
   statusRfqReceiver: string;
-  createdAt: string;
+  createdAt: string
+  updatedAt: string
+}
+
+export interface IRfqMarket extends IRfqMarketFormCreateParams, IRfqMarketList {
+  product: IRfqMarketFormGroupProduct;
+  data: IRfqMarketFormGroupData;
+}
+
+export interface IResRfqMarketList {
+  status: string;
+  statusText: string;
+  message: string;
+  data: IRfqMarketList[];
 }
 
 export interface IResRfqMarket {
   status: string;
   statusText: string;
   message: string;
-  data: IRfqMarket[];
+  data: IRfqMarket;
 }
 
 /* #endregion */
@@ -319,6 +334,7 @@ export interface IRfqFormGroupData {
   docNo: string;
   docDate: string;
   expiryDate: string;
+  creditDay: string;
   shippingDate: string;
   remark: string;
   senderNote: string;
@@ -329,7 +345,9 @@ export interface IRfqFormGroupData {
   shippingLoc: IShippingLoc;
   shippingMethods: string[];
   paymentMethod: string;
-  rfqScore: string
+  productCurrency: string;
+  totalRfqAmount: number;
+  rfqScore?: number;
 }
 
 export interface IRfqFormCreateParams {
@@ -339,24 +357,44 @@ export interface IRfqFormCreateParams {
   sellerId: string;
 }
 
-export interface IRfq extends IRfqFormCreateParams {
+export interface IRfqList {
   rfqId: string;
-  product: IRfqProductRow[];
-  data: IRfqFormGroupData;
   sender: ISenderContact;
   receiver: IReceiverContact;
-  approver: IRfqFormGroupApprover
+  docNo: string;
+  docDate: string;
+  expiryDate: string;
+  shippingDate: string;
+  totalRfqAmount: number;
+  productTitleFirst: string;
+  productImageFirstUrl: string;
   statusRfqSender: string;
   statusRfqReceiver: string;
   statusApprovalFlow: string;
+  statusReviewerAction: string;
+  statusApproverAction: string;
   createdAt: string;
+  updatedAt: string
 }
 
-export interface IResRFQ {
+export interface IRfq extends IRfqFormCreateParams, IRfqList {
+  product: IRfqProductRow[];
+  data: IRfqFormGroupData;
+  approver: IRfqFormGroupApprover
+}
+
+export interface IResRfqList {
   status: string;
   statusText: string;
   message: string;
-  data: IRfq[];
+  data: IRfqList[];
+}
+
+export interface IResRfq {
+  status: string;
+  statusText: string;
+  message: string;
+  data: IRfq;
 }
 
 /* #endregion */
