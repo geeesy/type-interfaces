@@ -95,7 +95,6 @@ export interface ISocial {
 }
 
 export interface ICompanyTaxInfo {
-  regisNo: string;
   taxNo: string;
   isHq: boolean;
   branch: ICompanyTaxBranch;
@@ -110,24 +109,25 @@ export interface ICompanyTaxBranch {
 export interface ICompanyContactInfo {
   companyName: string;
   companyPhone: string[];
-  companyFax: string[];
-  companyWebsite: string[];
+  companyFax?: string[];
+  companyWebsite?: string[];
   companyEmail: string[];
-  companySocial: ISocial;
+  companySocial?: ISocial;
   contactAddress: string;
-  billingAddress: string;
-  shippingAddress: string;
-  companyNote: string;
-  companyTaxInfo: ICompanyTaxInfo;
+  billingAddress?: string;
+  shippingAddress?: string;
+  companyNote?: string;
+  companyRegisNo: string;
+  companyTaxInfo?: ICompanyTaxInfo;
 }
 
 export interface IPersonContactInfo {
   fullName: string;
   email: string[];
   mobile: string[];
-  social: ISocial;
-  address: string;
-  note: string;
+  social?: ISocial;
+  address?: string;
+  note?: string;
 }
 
 export interface ISenderContact {
