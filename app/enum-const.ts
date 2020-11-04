@@ -4,3 +4,11 @@ export enum CurrencyCode {
   USA = 'USD',
   CHINA = 'CNY',
 }
+
+export enum UnitTH {
+  pcs = 'ชิ้น'
+}
+
+export enum UnitEN {
+  pcs = 'pcs'
+}
