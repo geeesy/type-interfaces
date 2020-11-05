@@ -347,7 +347,7 @@ export interface IRfqFormGroupData {
   paymentMethod: string;
   productCurrency: string;
   totalRfqAmount: number;
-  rfqScore?: number;
+  rfqScore: number;
 }
 
 export interface IRfqFormCreateParams {
