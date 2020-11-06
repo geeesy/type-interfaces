@@ -290,6 +290,10 @@ export interface IRfqMarketFormCreateParams {
   senderId: string;
 }
 
+export interface IRfqMarketFunnelParams extends IRfqMarketFormCreateParams {
+  sellerId: string
+}
+
 export interface IRfqMarketList {
   rfqId: string
   sender: ISenderContact
