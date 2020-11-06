@@ -94,6 +94,13 @@ export interface ISocial {
   facebook: string;
 }
 
+export interface ICompanyBankingInfo {
+  accountType: string
+  bankName: string
+  bankBranch: string
+  accountNumber: string
+}
+
 export interface ICompanyTaxInfo {
   taxNo: string;
   isHq: boolean;
@@ -146,10 +153,10 @@ export interface IProductShort {
 }
 
 export interface IProductRow {
-  productId: string;
+  productId?: string;
   productName: string;
   productCoverUrl: string;
-  productSku: string;
+  productSku?: string;
   productUnitPrice: number;
   itemsPriceRow: number;
   productUnit: string;
@@ -166,6 +173,11 @@ export interface IRfqProductRow {
   productUnit: string;
   productUnitPrice: number;
   description: string
+}
+
+export interface IPaymentTerm {
+  percent: number;
+  description: string;
 }
 /* #endregion */
 
@@ -411,6 +423,7 @@ export interface IQuotationFormCreate {
 
 export interface IQuotationFormGroupAccounting {
   subtotalAmount: number;
+  discount: number;
   totalDiscountAmount: number;
   netAmount: number;
   vat: number;
@@ -425,6 +438,8 @@ export interface IQuotationFormGroupData {
   validUntilDate: string;
   expiryDate: string;
   creditDay: string;
+  paymentTerm: IPaymentTerm[]
+  bankingInfo: ICompanyBankingInfo[]
   shippingDate: string;
   remark: string;
   termsCondition: string;
@@ -433,6 +448,9 @@ export interface IQuotationFormGroupData {
   sellerNote: string;
   buyerNote: string;
   attachmentsUrl: string[];
+  productCurrency: string;
+  shippingMethods: string[]
+  paymentMethods: string[]
 }
 
 export interface IQuotationFormGroupApprover {
@@ -448,26 +466,44 @@ export interface IQuotationFormCreateParams {
   rfqId: string;
 }
 
-export interface IQuotation extends IQuotationFormCreateParams {
+export interface IQuotationList {
   quotationId: string;
   sender: ISenderContact;
   receiver: IReceiverContact;
+  docNo: string;
+  docDate: string;
+  productTitleFirst: string;
+  productImageFirstUrl: string;
+  grandTotalAmount: number;
+  productCurrency: string
+  statusQuotationSender: string;
+  statusQuotationReceiver: string;
+  statusApprovalFlow: string;
+  statusReviewerAction: string;
+  statusApproverAction: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface IQuotation extends IQuotationFormCreateParams, IQuotationList {
   products: IProductRow[]
   accounting: IQuotationFormGroupAccounting
   data: IQuotationFormGroupData
   approver: IQuotationFormGroupApprover
-  statusQuotationSender: string;
-  statusQuotationReceiver: string;
-  statusApprovalFlow: string;
-  createdAt: string;
-  updatedAt: string;
+}
+
+export interface IResQuotationList {
+  status: string;
+  statusText: string;
+  message: string;
+  data: IQuotationList[];
 }
 
 export interface IResQuotation {
   status: string;
   statusText: string;
   message: string;
-  data: IQuotation[];
+  data: IQuotation;
 }
 
 /* #endregion */
