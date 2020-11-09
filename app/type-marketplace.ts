@@ -987,6 +987,7 @@ export interface ISearchFilter {
   sectionName: string
   sectionHelper: string
   sectionFilters: IFilter[]
+  sectionIconUrl: string
   sortIndex: number
 }
 
