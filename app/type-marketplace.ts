@@ -836,6 +836,7 @@ export interface ISavedList {
   savedListId: string
   savedListName: string;
   savedListType: string;
+  savedListItemsId?: string[];
   createdAt: string;
   updatedAt: string
 }
