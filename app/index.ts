@@ -62,6 +62,7 @@ import {
   IResReplyRfqList,
   IResRfqList,
   IResRfqScore,
+  IResSavedListMarket,
   IResSavedListProducts,
   IResSavedListSuppliers,
   IResSearchFilter,
@@ -80,12 +81,11 @@ import {
   IResSupplierWithSavedList,
   IResSurvey,
   IResTop20Products,
-  IRessavelistMarket,
   IRfqList,
   IRfqScore,
+  ISavedListMarket,
   ISavedListProducts,
   ISavedListSuppliers,
-  ISavelistMarket,
   ISearchFilter,
   ISearchResultLocation,
   IShippingMethod,
@@ -362,8 +362,8 @@ export namespace GeeesyMarketplace {
   export type ResSurvey = IResSurvey | Survey;
   export type Survey = ISurvey;
 
-  export type RessavelistMarket = IRessavelistMarket | SavelistMarket;
-  export type SavelistMarket = ISavelistMarket;
+  export type ResSavedListMarket = IResSavedListMarket | SavedListMarket;
+  export type SavedListMarket = ISavedListMarket;
 
   export type ResSupProductCat = IResSupProductCat | SupProductCat;
   export type SupProductCat = ISupProductCat;
