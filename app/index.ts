@@ -64,6 +64,7 @@ import {
   IResRfqScore,
   IResSavedListProducts,
   IResSavedListSuppliers,
+  IResSearchFilter,
   IResSearchResultLocation,
   IResShippingMethod,
   IResSupProductCat,
@@ -85,6 +86,7 @@ import {
   ISavedListProducts,
   ISavedListSuppliers,
   ISavelistMarket,
+  ISearchFilter,
   ISearchResultLocation,
   IShippingMethod,
   ISupProductCat,
@@ -205,7 +207,8 @@ export namespace Geeesy {
 /* #region FIXME: Marketplace */
 export namespace GeeesyMarketplace {
 
-  export type Filter
+  export type ResSearchFilter = IResSearchFilter
+  export type SearchFilter = ISearchFilter
 
   export type ResMainCategory = IResMainCategory | MainCategory;
   export type MainCategory = IMainCategory;
