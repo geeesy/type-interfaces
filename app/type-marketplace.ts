@@ -735,22 +735,7 @@ export interface ISupplierCustomPage {
   title: string;
   content: string;
 }
-export interface IResRfqScore {
-  message: string;
-  data: IRfqScore[];
-}
-export interface IRfqScore {
-  rfqScore: number;
-  rfqSectionName: string;
-}
-export interface IResQuotaRfq {
-  message: string;
-  data: IQuotaRfq[];
-}
-export interface IQuotaRfq {
-  quotaRfq: number;
-  usedQuotaRfq: number;
-}
+
 export interface IResShippingMethod {
   messages: string;
   data: IShippingMethod[];
@@ -769,88 +754,7 @@ export interface IPaymentMethods {
   paymentMethodType: string;
   paymentMethodTypeAttr: IPaymentMethodTypeAttr[];
 }
-export interface ICreateRfq {
-  userIds: string;
-  rfqRequestDates: Date;
-  rfqScores: number;
-  requestors: Requestors[];
-  products: {
-    productNames: string;
-    productKeywords: string[];
-    productCategoryIds: string;
-  };
-  productInfo: {
-    productQty: number;
-    productUnits: string;
-    productCurrencyCode: string;
-  };
-  shippingLocation: {
-    addrFull: string;
-    addrNumber: string;
-    addrProvince: string;
-    addrAmphoe: string;
-    addrTambon: string;
-    addrPostcode: string;
-    shippingMethodId: string[];
-  };
-  processingTime: {
-    rfqExpiryDate: Date;
-    requestReceiveDate: Date;
-  };
-  paymentMethod: {
-    creditTerm: number;
-    paymentMethodId: string[];
-  };
-  moreDetail: {
-    imageUrl: string[];
-    note: string;
-  };
-}
-export interface IResRfqList {
-  message: string;
-  data: IRfqList[];
-}
-export interface IRfqList {
-  productNames: string;
-  productCategoryNames: string[];
-  rfqExpiryDate: Date;
-  seenRfqSupplierCount: number;
-  replyRfqQuotationCount: number;
-  rfqId: string;
-  rfqList: RfqList[];
-}
-interface RfqList {
-  id: string;
-  supplierNames: string;
-  supplierRatingCount: number;
-  productPrice: number;
-  supplierRating: number;
-  supplierRecommend: boolean;
-  supplierVerified: boolean;
-  minOrderQty: number;
-  packSizeLabel: string;
-  packSizeQty: number;
-}
-export interface IResReplyRfqList {
-  message: string;
-  data: IReplyRfqList[];
-}
-export interface IReplyRfqList {
-  supplierNames: string;
-  supplierVerified: boolean;
-  supplierRating: string;
-  supplierRatingAmount: number;
-  pricePerUnit: number;
-  minOrderQty: number;
-}
-export interface IResQuotaInquiry {
-  messages: string;
-  data: IQuotaInquiry[];
-}
-export interface IQuotaInquiry {
-  quotaInquiry: number;
-  usedQuotaInquiry: number;
-}
+
 export interface IResSupplier {
   messages: string;
   data: ISupplier[];
@@ -871,43 +775,7 @@ export interface ISupplier {
   supplierKeyword: string[];
   savedLists: IsavedList[];
 }
-export interface ICreateInquiry {
-  userIds: string;
-  supplierIds: string;
-  productIds: string;
-  requestors: Requestors[];
-  inquiryMessage: string;
-  inquiryCoverUrl: string[];
-}
-export interface Requestors {
-  name: string;
-  email: string;
-}
-export interface IResInquiryProductList {
-  message: string;
-  data: IInquiryProductList[];
-}
-export interface IInquiryProductList {
-  productIds: string;
-  productNames: string;
-  productCoverUrl: string;
-  productPrice: number;
-  productUnit: string;
-  productCurrencyCode: string;
-  packSizeLabel: string;
-  packSizeQty: number;
-  impFactor: number;
-  productGroup: IProductGroup;
-  supplierIds: string;
-  supplierName: string;
-  supplierCompanyEmail: string;
-  supplierKeywords: string[];
-  supplierVerified: boolean;
-  supplierRating: number;
-  address: IAddress;
-  savedLists: IsavedList[];
-  unread: false;
-}
+
 export interface IResSearchResultSupplier extends IResSearchResultLocation { } // Like a IFilterResultSupplier
 export interface IResSearchResultProduct extends IResSearchResultLocation { } // Like a IFilterResultProduct
 export interface IResSearchResultLocation {
@@ -956,39 +824,43 @@ export interface ISurvey {
   impFactor: string;
 }
 
-export interface IResSavedListMarket {
-  message: string;
-  data: ISavedListMarket[];
-}
-
-export interface ISavedListMarket {
-  userId: string;
-  savedListName: string;
-  savedListType: string;
-  createdTime: string;
-}
-
 /* #region  STUB: Version 3.x */
-
 export interface IResAPI {
   status: string
   statusText: string
   message: string
 }
 
+export interface ISavedList {
+  userId: string;
+  savedListId: string
+  savedListName: string;
+  savedListType: string;
+  createdAt: string;
+  updatedAt: string
+}
+
+export interface IResSavedList extends IResAPI {
+  data: ISavedList[];
+}
+
 export interface IFilter {
   filterName: string
   filterIconUrl: string
   filterHelper: string
+  filterQuery: string
   sortIndex: number
 }
 
 export interface ISearchFilter {
+  searchPage: string
   sectionName: string
   sectionHelper: string
   sectionFilters: IFilter[]
   sectionIconUrl: string
   sortIndex: number
+  createdAt: string
+  updatedAt: string
 }
 
 export interface IResSearchFilter extends IResAPI {
