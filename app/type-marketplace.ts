@@ -980,11 +980,13 @@ export interface IFilter {
   filterName: string
   filterIconUrl: string
   filterHelper: string
+  sortIndex: number
 }
 
 export interface ISearchFilter {
   sectionName: string
   sectionFilters: IFilter[]
+  sortIndex: number
 }
 
 export interface IResSearchFilter extends IResAPI {
