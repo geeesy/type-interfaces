@@ -309,6 +309,7 @@ export interface IRfqMarketList {
   statusRfqReceiver: string;
   createdAt: string
   updatedAt: string
+  senderId: string
 }
 
 export interface IRfqMarket extends IRfqMarketFormCreateParams, IRfqMarketList {
@@ -391,6 +392,8 @@ export interface IRfqList {
   statusApproverAction: string;
   createdAt: string;
   updatedAt: string
+  buyerId: string
+  senderId: string
 }
 
 export interface IRfq extends IRfqFormCreateParams, IRfqList {
@@ -487,6 +490,8 @@ export interface IQuotationList {
   statusApproverAction: string;
   createdAt: string;
   updatedAt: string;
+  senderId: string;
+  sellerId: string
 }
 
 export interface IQuotation extends IQuotationFormCreateParams, IQuotationList {

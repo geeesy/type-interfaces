@@ -202,7 +202,11 @@ export namespace Geeesy {
   export type Data = IData;
 }
 
+/* #region FIXME: Marketplace */
 export namespace GeeesyMarketplace {
+
+  export type Filter
+
   export type ResMainCategory = IResMainCategory | MainCategory;
   export type MainCategory = IMainCategory;
 
@@ -382,6 +386,7 @@ export namespace GeeesyMarketplace {
   export type SupplierCertificates = ISupplierCertificates;
   export type equestors = Requestors;
 }
+/* #endregion */
 
 export namespace GeeesyInApp {
   export type ResMainCategory = IResMainCategory | MainCategory;
