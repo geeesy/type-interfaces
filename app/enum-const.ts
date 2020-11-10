@@ -29,3 +29,11 @@ export const SearchPageArr = [
   SearchPage.Supplier,
   SearchPage.Location
 ]
+
+export enum CreditTerm {
+  None = 'none',
+  Cash = 'cash',
+  D30 = '30',
+  D60 = '60',
+  D90 = '90'
+}
