@@ -395,6 +395,7 @@ export interface IRfqList {
   buyerId: string
   senderId: string
   totalRfqRow: number
+  productCurrency: string
 }
 
 export interface IRfq extends IRfqFormCreateParams, IRfqList {
