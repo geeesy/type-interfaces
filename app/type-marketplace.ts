@@ -862,6 +862,7 @@ export interface ISearchFilter {
   sortIndex: number
   createdAt: string
   updatedAt: string
+  sectionId: string
 }
 
 export interface IResSearchFilter extends IResAPI {
