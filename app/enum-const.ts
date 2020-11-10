@@ -30,17 +30,10 @@ export const SearchPageArr = [
   SearchPage.Location
 ]
 
-export enum CreditTerm {
-  None = 'none',
-  Cash = 'cash',
-  D30 = '30',
-  D60 = '60',
-  D90 = '90'
-}
+export const RfqCreditTerm = ['none', 'cash', '30', '60', '90']
 
-export enum PaymentMethod {
-  Deposit = 'deposit',
-  Cheque = 'cheque',
-  CreditCard = 'creditCard',
-  OnDelivery = 'onDelivery'
-}
+export const RfqPaymentMethod = ['deposit', 'cheque', 'creditCard', 'onDelivery']
+
+export const FunnelBusinessSizes = ['micro', 'small', 'medium', 'large']
+
+export const FunnelBusinessTypes = ['manufacturer', 'wholesaler', 'retailer']
