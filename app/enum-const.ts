@@ -37,3 +37,10 @@ export enum CreditTerm {
   D60 = '60',
   D90 = '90'
 }
+
+export enum PaymentMethod {
+  Deposit = 'deposit',
+  Cheque = 'cheque',
+  CreditCard = 'creditCard',
+  OnDelivery = 'onDelivery'
+}

@@ -394,6 +394,7 @@ export interface IRfqList {
   updatedAt: string
   buyerId: string
   senderId: string
+  totalRfqRow: number
 }
 
 export interface IRfq extends IRfqFormCreateParams, IRfqList {
