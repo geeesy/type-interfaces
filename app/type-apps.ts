@@ -494,6 +494,8 @@ export interface IQuotationList {
   updatedAt: string;
   senderId: string;
   sellerId: string
+  creditDay: string;
+  shippingDate: string;
 }
 
 export interface IQuotation extends IQuotationFormCreateParams, IQuotationList {
