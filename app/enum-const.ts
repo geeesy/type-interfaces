@@ -18,4 +18,14 @@ export enum SavedListType {
   Supplier = 'supplier'
 }
 
-export const SearchPage = ['product', 'supplier', 'location']
+export enum SearchPage {
+  Product = 'product',
+  Supplier = 'supplier',
+  Location = 'location'
+}
+
+export const SearchPageArr = [
+  SearchPage.Product,
+  SearchPage.Supplier,
+  SearchPage.Location
+]
