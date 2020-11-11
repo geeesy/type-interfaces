@@ -412,7 +412,7 @@ export interface IQuotationFormGroupData {
   docDate: string;
   validUntilDate: string;
   expiryDate: string;
-  creditDay: string;
+  creditDay: number;
   paymentTerm: IPaymentTerm[]
   bankingInfo: ICompanyBankingInfo[]
   shippingDate: string;
@@ -460,7 +460,7 @@ export interface IQuotationList {
   updatedAt: string;
   senderId: string;
   sellerId: string
-  creditDay: string;
+  creditDay: number;
   shippingDate: string;
 }
 
@@ -500,7 +500,7 @@ export interface IPOFormCreate {
 export interface IPOFormGroupData {
   docNo: string;
   docDate: string;
-  creditDay: string;
+  creditDay: number;
   shippingDate: string;
   remark: string;
   termsCondition: string;
@@ -571,7 +571,7 @@ export interface ISOFormCreate {
 export interface ISOFormGroupData {
   docNo: string;
   docDate: string;
-  creditDay: string;
+  creditDay: number;
   shippingDate: string;
   remark: string;
   termsCondition: string;

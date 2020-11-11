@@ -37,3 +37,7 @@ export const RfqPaymentMethod = ['deposit', 'cheque', 'creditCard', 'onDelivery'
 export const FunnelBusinessSizes = ['micro', 'small', 'medium', 'large']
 
 export const FunnelBusinessTypes = ['manufacturer', 'wholesaler', 'retailer']
+
+export const ValidUntilDate = [7, 15, 30, 60, 90]
+
+export const CreditDay = [30, 60, 90]
