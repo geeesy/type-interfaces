@@ -97,8 +97,8 @@ export interface IShippingParty {
 
 export interface IShippingZone {
   shippingZoneId: string
-  zoneNames: string;
-  zoneProvinces: string[];
+  zoneName: string;
+  zoneStates: string[];
   zonePostcodes: string[];
   zoneMethods: IShippingMethod[];
   zoneParties: IShippingParty[]

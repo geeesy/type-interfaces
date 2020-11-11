@@ -45,10 +45,10 @@ export interface ICompanyTaxInfo {
 }
 
 interface IMapLocation {
-  pinImageUrl: string;
+  pinIconUrl: string;
   lat: string;
   lng: string;
-  locations: string[];
+  location: string;
 }
 
 export interface ICompanyContactInfo {
@@ -71,15 +71,15 @@ export interface ICompanyBoard {
   fullName: string;
   emails: string[];
   mobiles: string[];
-  position: string;
+  positions: string[];
 }
 
 export interface IContactPerson {
-  name: string;
+  fullName: string;
   emails: string[];
   mobiles: string[];
   positions: string[];
-  isKeyPerson: boolean;
+  isKeyContact: boolean;
 }
 
 export interface ICompanyMetric {
@@ -93,54 +93,57 @@ export interface ICompanyMetric {
 }
 
 export interface ICompanyBadge {
-  warranty: boolean;
+  haveWarranty: boolean;
   haveSample: boolean;
-  country: string;
+  countryCode: string;
 }
 
 export interface ICompanyAsset {
   companyVideosUrl: string[];
-  companyLogosUrl: string;
-  companyColors: string;
+  companyLogoUrl: string;
+  companyPrimaryColor: string;
+  companySecondaryColor: string
   companyBannersUrl: string[];
 }
 
 export interface ICompanySetting {
   paymentsMethod: IPaymentMethod[];
   shippingsZone: IShippingZone[];
-  creditsTerm: string[];
+  creditTerms: string[];
 }
 
 export interface IDocument {
   url: string;
   type: string;
   title: string;
-  expire: string;
-  private: boolean;
-  verified: boolean;
-}
-
-interface ImageAttr {
-  url: string;
-  captions: string;
+  expiryDate: string;
+  isPrivate: boolean;
+  isVerified: boolean;
 }
 
 export interface IImage {
+  url: string;
+  title: string;
+  caption: string;
+  isVerified: boolean;
+}
+
+export interface IImageGroup {
   type: string;
   title: string;
-  images: ImageAttr[];
-  verified: boolean;
+  images: IImage[];
 }
 
 export interface ICertificate {
   url: string;
   type: string;
   title: string;
-  expire: string;
-  private: boolean;
-  issued: string;
+  expiryDate: string;
+  issuedDate: string;
   issuer: string;
-  cerNames: string;
+  certificateName: string;
+  isPrivate: boolean;
+  isVerified: boolean
 }
 
 export interface IFactory {
@@ -165,6 +168,7 @@ export interface ICompanyIndex {
 }
 
 export interface ICompany {
+  companyId: string
   companyName: string;
   companyCode: string;
   companyContact: ICompanyContactInfo
@@ -179,7 +183,7 @@ export interface ICompany {
   companyAsset: ICompanyAsset
   companySetting: ICompanySetting
   companyDocument: IDocument
-  companyImage: IImage
+  companyImage: IImageGroup
   companyCertificate: ICertificate
   companyRegisterDate: string
   factory: IFactory
@@ -191,6 +195,6 @@ export interface IPage {
   content: string;
 }
 
-export interface ICompPortfolio {
+export interface IPortfolio {
   customPages: IPage[]
 }

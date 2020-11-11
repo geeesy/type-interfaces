@@ -52,6 +52,7 @@ export interface IProductIndex {
   isRecommend: boolean
   isHighLight: boolean
   isNewArrival: boolean
+  impFactor: number
 }
 
 export interface IProductDisplay {
@@ -90,13 +91,14 @@ export interface IProductSpec {
 
 export interface IProductEntity {
   productImagesUrl: string[];
+  productCode: string
   productSku: string;
   productBarcode: string;
   productUnit: string;
   productShortDescription: string
   productPrice: IProductPrice
   productWholesales: IProductWholesale[];
-  minOrderQty: number
+  minQty: number
   minWholesaleQty: number
   toFreeShip: IQtyPrice
   productPackage: IProductPackage
@@ -131,7 +133,7 @@ export interface IProduct extends IProductEntity {
 export interface IProductPack {
   packTitle: string
   packSizeLabel: string
-  packSizeCountQty: number
+  smallestUnitQty: number
 }
 
 export interface IProductVariant {
