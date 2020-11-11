@@ -52,8 +52,8 @@ export interface IProduct {
   supplierIds: string;
   supplierNames: string;
   supplierVerified: boolean;
-  savedLists: IsavedList[];
-  productCategorys: ISupProductCat;
+  savedLists: ISavedList[];
+  productCategory: ISupProductCat;
 }
 export interface IResSupProductCat {
   message: string;
@@ -80,7 +80,7 @@ export interface ITop20Products {
   productNames: string;
   productCoverUrl: string;
   productGroups: IProductGroup;
-  savedLists: IsavedList[];
+  savedLists: ISavedList[];
 }
 export interface IResCategoryWithChild {
   messages: string;
@@ -132,11 +132,11 @@ export interface IAllCategoryInSearchTool {
   categoryMainNames: string;
   impFactor: string;
 }
-export interface IResSupplierHilight {
+export interface IResSupplierHighlight {
   messages: string;
-  data: ISupplierHilight[];
+  data: ISupplierHighlight[];
 }
-export interface ISupplierHilight {
+export interface ISupplierHighlight {
   supplierIds: string;
   supplierNames: string;
   supplierLogosUrl: string;
@@ -159,7 +159,7 @@ export interface ICreateLatestVisitProducts {
   supplierIds: string;
   supplierNames: string;
   supplierVerified: boolean;
-  savedLists: IsavedList[];
+  savedLists: ISavedList[];
 } // Like a IProduct + userId
 export interface IResLatestVisitProducts extends IResProduct { } // Like a Products
 export interface ICreateMessage {
@@ -184,7 +184,7 @@ export interface IMessageList {
   msgNames: string;
   supplierIds: string;
   supplierNames: string;
-  msgDate: Date;
+  msgDate: string;
   unread: boolean;
 }
 export interface IResMessageDetail {
@@ -193,7 +193,7 @@ export interface IResMessageDetail {
 }
 export interface IMessageDetail {
   msg: string;
-  msgDate: Date;
+  msgDate: string;
   msgFilesUrl: string;
   msgIsReplied: boolean;
 }
@@ -237,13 +237,10 @@ export interface ISavedListProducts {
   impFactor: number;
   address: IAddress;
   products: IProductWithOutSupplier[];
-  savedLists: IsavedList[];
+  savedLists: ISavedList[];
   supplierLogoUrl: string;
 }
-export interface IsavedList {
-  savedListIds: string;
-  savedListNames: string;
-}
+
 export interface ICreateSavedListSupplier {
   userIds: string;
   savedListNames: string;
@@ -286,7 +283,7 @@ interface ISuppliers {
   products: IProductWithOutSupplier[];
   supplierLogosUrl: string;
   supplierRatingAmount: number;
-  savedLists: IsavedList[];
+  savedLists: ISavedList[];
 }
 export interface IProductWithOutSupplier {
   productIds: string;
@@ -300,7 +297,7 @@ export interface IProductWithOutSupplier {
   impFactor: number;
   minOrderQty: number;
   productGroup: IProductGroup;
-  savedLists: IsavedList[];
+  savedLists: ISavedList[];
 }
 interface IShippingZone {
   zoneNames: string;
@@ -342,7 +339,7 @@ export interface IFilterResultProduct {
   impFactor: number;
   address: IAddress;
   products: IProductWithOutSupplier[];
-  savedLists: IsavedList[];
+  savedLists: ISavedList[];
   supplierCount: number;
   productCount: number;
   supplierLogosUrl: string;
@@ -367,14 +364,14 @@ export interface IProductGroupDetail {
   productKeywords: string[];
   productCategorySpec: IProductCategorySpec[];
   productVideosCoverUrl: string;
-  savedLists: IsavedList[];
+  savedLists: ISavedList[];
   products: [
     {
       productNames: string;
       costPrices: number;
       productBuyPrice: number;
       productPrice: number;
-      productSkus: string;
+      productSku: string;
       productUnits: string;
       productWholesales: IProductWholeSale[];
       productBarcode: string;
@@ -419,8 +416,8 @@ export interface IPaymentMethodTypeAttr {
   paymentMethodNames: string;
 }
 export interface IProductCategorySpec {
-  attriNames: string;
-  attriValues: string;
+  attributeNames: string;
+  attributeValues: string;
 }
 export interface IProductPackage {
   weight: number;
@@ -568,7 +565,7 @@ export interface IFilterResultSupplier {
   address: IAddress;
   shippingZone: IShippingZone[];
   products: IProductWithOutSupplier[];
-  savedLists: IsavedList[];
+  savedLists: ISavedList[];
   supplierCount: number;
   productCount: number;
   supplierLogoUrl: string;
@@ -587,7 +584,7 @@ export interface ISupplierWithSavedList {
   supplierRating: number;
   impFactor: number;
   address: IAddress;
-  savedLists: IsavedList[];
+  savedLists: ISavedList[];
 }
 export interface IResSupplierMayLike extends IResSupplierWithSavedList { } // ISupplierWithSavedList
 export interface IResLatestVisitSupplier extends IResSupplierWithSavedList { } // ISupplierWithSavedList
@@ -698,7 +695,7 @@ export interface ISupplierDocs {
   url: string;
   types: string;
   titles: string;
-  expire: Date;
+  expire: string;
 }
 export interface ISupplierImage {
   type: string;
@@ -713,9 +710,9 @@ export interface ISupplierCertificates {
   url: string;
   type: string;
   title: string;
-  expire: Date;
+  expire: string;
   private: boolean;
-  issued: Date;
+  issued: string;
   issuer: string;
   cerName: string;
 }
@@ -773,7 +770,7 @@ export interface ISupplier {
   address: IAddress;
   supplierCompanyWebsite: string;
   supplierKeyword: string[];
-  savedLists: IsavedList[];
+  savedLists: ISavedList[];
 }
 
 export interface IResSearchResultSupplier extends IResSearchResultLocation { } // Like a IFilterResultSupplier

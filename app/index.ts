@@ -64,7 +64,7 @@ import {
   IResSupplierContact,
   IResSupplierCustomPage,
   IResSupplierFactory,
-  IResSupplierHilight,
+  IResSupplierHighlight,
   IResSupplierImgAndVerifiedImg,
   IResSupplierOverview,
   IResSupplierWebsite,
@@ -85,7 +85,7 @@ import {
   ISupplierCustomPage,
   ISupplierDocs,
   ISupplierFactory,
-  ISupplierHilight,
+  ISupplierHighlight,
   ISupplierImage,
   ISupplierImgAndVerifiedImg,
   ISupplierOverview,
@@ -93,8 +93,7 @@ import {
   ISupplierWithSavedList,
   ISurvey,
   ITop20Products,
-  IWholesale,
-  IsavedList
+  IWholesale
 } from './type-marketplace'
 import {
   IApprover,
@@ -110,7 +109,6 @@ import {
   IInvoice,
   IInvoiceFormCreate,
   IInvoiceFormCreateParams,
-  IOrderList,
   IPO,
   IPOFormCreate,
   IPOFormCreateParams,
@@ -123,7 +121,6 @@ import {
   IResInquiry,
   IResInquiryList,
   IResInvoice,
-  IResOrderList,
   IResPO,
   IResQuotation,
   IResQuotationList,
@@ -133,7 +130,6 @@ import {
   IResRfqMarketList,
   IResSO,
   IResTaxInvoice,
-  IResVideoList,
   IRfq,
   IRfqFormCreate,
   IRfqFormCreateParams,
@@ -147,41 +143,19 @@ import {
   ISOFormCreateParams,
   ITaxInvoice,
   ITaxInvoiceFormCreate,
-  ITaxInvoiceFormCreateParams,
-  IVideoList
+  ITaxInvoiceFormCreateParams
 } from './type-apps'
 import {
-  IBannerConsole,
   ICategoryConsole,
   ICreateCategoryLevel,
   ICreateMainCategory,
-  IDistributor,
   IMainCategoryConsole,
   IPaymentMethod,
   IProductCategory,
   IProductCategorySpec,
-  IProductMainCategory,
-  IResBannerConsole,
-  IResCategoryConsole,
-  IResDistributor,
-  IResMainCategoryConsole,
-  IResPaymentMethodConsole,
-  IResProductCategory,
-  IResProductCategorySpec,
-  IResProductMainCategory,
-  IResShippingMethodConsole,
-  IResSupplierConsole,
-  IShippingMethodConsole,
-  ISupplierConsole
+  IProductMainCategory
 } from './type-console'
 import { ICheck, IConnect, IData } from './interfaces'
-
-export namespace Geeesy {
-  export type ResConnect = IConnect;
-  // export type ResCheck = ICheck & IData;
-  export type ResCheck = ICheck | Data;
-  export type Data = IData;
-}
 
 /* #region FIXME: Marketplace */
 export namespace GeeesyMarketplace {
@@ -225,8 +199,8 @@ export namespace GeeesyMarketplace {
     | AllCategoryInSearchTool;
   export type AllCategoryInSearchTool = IAllCategoryInSearchTool;
 
-  export type ResSupplierHilight = IResSupplierHilight | SupplierHilight;
-  export type SupplierHilight = ISupplierHilight;
+  export type ResSupplierHighlight = IResSupplierHighlight | SupplierHighlight;
+  export type SupplierHighlight = ISupplierHighlight;
 
   export type ResMessageList = IResMessageList | MessageList;
   export type MessageList = IMessageList;
@@ -351,52 +325,10 @@ export namespace GeeesyMarketplace {
 /* #endregion */
 
 export namespace GeeesyConsole {
-  export type ResPaymentMethod = IResPaymentMethodConsole | PaymentMethod;
-  export type PaymentMethod = IPaymentMethod;
 
-  export type ResBanner = IResBannerConsole | Banner;
-  export type Banner = IBannerConsole;
-
-  export type ResCategory = IResCategoryConsole | Category;
-  export type Category = ICategoryConsole;
-
-  export type ResDistributor = IResDistributor | Distributor;
-  export type Distributor = IDistributor;
-
-  export type ResMainCategory = IResMainCategoryConsole | MainCategory;
-  export type MainCategory = IMainCategoryConsole;
-
-  // CREATE CATEGORY
-  export type CreateMainCategory = ICreateMainCategory;
-  export type CreateCategoryLevel = ICreateCategoryLevel;
-
-  export type ResProductCategory = IResProductCategory | ProductCategory;
-  export type ProductCategory = IProductCategory;
-
-  export type ResProductCategorySpec =
-    | IResProductCategorySpec
-    | ProductCategorySpec;
-  export type ProductCategorySpec = IProductCategorySpec;
-
-  export type ResProductMainCategory =
-    | IResProductMainCategory
-    | ProductMainCategory;
-  export type ProductMainCategory = IProductMainCategory;
-
-  export type ResShippingMethod = IResShippingMethodConsole | ShippingMethod;
-  export type ShippingMethod = IShippingMethodConsole;
-
-  export type ResSupplier = IResSupplierConsole | Supplier;
-  export type Supplier = ISupplierConsole;
 }
 
 export namespace GeeesyApps {
-
-  export type ResVideoList = IResVideoList | VideoList;
-  export type VideoList = IVideoList;
-
-  export type ResOrderList = IResOrderList | OrderList;
-  export type OrderList = IOrderList;
 
   /**
    * @description
@@ -531,5 +463,9 @@ export namespace GeeesyApps {
 export * as IMarketplace from './type-marketplace'
 export * as IConsole from './type-console'
 export * as IApps from './type-apps'
+
+export * as ICompany from './type-company'
+export * as ICatalog from './type-catalog'
+
 export * as STATUS from './enum-status'
 export * as CONST from './enum-const'

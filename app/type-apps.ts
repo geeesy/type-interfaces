@@ -1,42 +1,3 @@
-/* eslint-disable no-unused-vars */
-export interface IResVideoList {
-  message: string;
-  data: IVideoList[];
-}
-export interface IVideoList {
-  videoUrls: string;
-  videoIFrame?: string;
-  videoTitle: string;
-  videoDescription: string;
-  supplierIds?: string;
-  supplierIconsUrl?: string;
-  supplierName?: string;
-  supplierCompanyEmail?: string;
-  supplierRating?: number;
-  supplierLogosUrl?: string;
-  badge?: {
-    supplierWarranty?: boolean;
-    supplierSample?: boolean;
-    supplierCountry?: string;
-  };
-}
-
-export interface IResOrderList {
-  message: string;
-  data: IOrderList[];
-}
-export interface IOrderList {
-  poIds: string;
-  channelsUrl: string;
-  client: string;
-  images: string;
-  status: string;
-  shipping: string;
-  payments: string;
-  orderDate: string;
-  poNetAmount: string;
-}
-
 /* #region STUB: Version 3.x */
 
 export interface IApprove {
@@ -89,11 +50,13 @@ export interface IShippingLoc {
   city: string;
 }
 
+// TODO: cloned to type-company
 export interface ISocial {
   line: string;
   facebook: string;
 }
 
+// TODO: cloned to type-company
 export interface ICompanyBankingInfo {
   accountType: string
   bankName: string
@@ -101,18 +64,21 @@ export interface ICompanyBankingInfo {
   accountNumber: string
 }
 
+// TODO: cloned to type-company
 export interface ICompanyTaxInfo {
   taxNo: string;
   isHq: boolean;
   branch: ICompanyTaxBranch;
 }
 
+// TODO: cloned to type-company
 export interface ICompanyTaxBranch {
   id: string;
   name: string;
   address: string;
 }
 
+// TODO: cloned to type-company
 export interface ICompanyContactInfo {
   companyName: string;
   companyPhone: string[];
