@@ -107,7 +107,7 @@ export interface ICompanyAsset {
 
 export interface ICompanySetting {
   paymentsMethod: IPaymentMethod[];
-  shippingsZone: ShippingZone[];
+  shippingsZone: IShippingZone[];
   creditsTerm: string[];
 }
 
