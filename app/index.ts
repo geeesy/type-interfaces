@@ -149,11 +149,11 @@ import {
   ICategoryConsole,
   ICreateCategoryLevel,
   ICreateMainCategory,
-  IMainCategoryConsole,
   IPaymentMethod,
   IProductCategory,
   IProductCategorySpec,
-  IProductMainCategory
+  IProductMainCategory,
+  IResCategoryConsole
 } from './type-console'
 import { ICheck, IConnect, IData } from './interfaces'
 
@@ -325,7 +325,8 @@ export namespace GeeesyMarketplace {
 /* #endregion */
 
 export namespace GeeesyConsole {
-
+  export type ResCategory = IResCategoryConsole | ICategoryConsole;
+  export type Category = ICategoryConsole
 }
 
 export namespace GeeesyApps {

@@ -1,5 +1,7 @@
+import { IResAPI } from './interfaces'
+
 // REVIEW: READ CATEGORY
-export interface IMainCategoryConsole {
+export interface ICategoryConsole {
   categoryId: string;
   categoryName: string;
   categoryIconUrl: string;
@@ -8,12 +10,8 @@ export interface IMainCategoryConsole {
   categoryBannersUrl: string[];
 }
 
-export interface ICategoryConsole {
-  categoryId: string;
-  categoryName: string;
-  categoryIconUrl: string;
-  categoryImageUrl: string;
-  impFactor: number;
+export interface IResCategoryConsole extends IResAPI {
+  data: ICategoryConsole[]
 }
 
 // REVIEW: CREATE CATEGORY

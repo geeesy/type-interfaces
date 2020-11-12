@@ -1,3 +1,5 @@
+import { IResAPI } from './interfaces'
+
 export interface IResMainCategory {
   messages: string;
   data: IMainCategory[];
@@ -822,12 +824,6 @@ export interface ISurvey {
 }
 
 /* #region  STUB: Version 3.x */
-export interface IResAPI {
-  status: string
-  statusText: string
-  message: string
-}
-
 export interface ISavedList {
   userId: string;
   savedListId: string
