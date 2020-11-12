@@ -234,7 +234,8 @@ export interface IRfqMarketFormGroupProduct {
   productTitle: string;
   productKeywords: string[];
   description: string;
-  category: string;
+  categoryId: string;
+  categoryName: string
   productQty: number;
   productUnit: string;
   productCurrency: string;
