@@ -1,84 +1,20 @@
-import { IResAPI } from './interfaces'
+import { IMainCategory } from './type-marketplace'
+import { ISubCategory } from './type-catalog'
 
-// REVIEW: READ CATEGORY
-export interface ICategoryConsole {
-  categoryId: string;
-  categoryName: string;
-  categoryIconUrl: string;
-  categoryImageUrl: string;
-  impFactor: number;
-  categoryBannersUrl: string[];
+/**
+ * STUB: Version 4.x
+ */
+
+export interface ICreateMainCategory extends IMainCategory { }
+
+export interface ICreateSubCategory extends ISubCategory { }
+
+export interface ICreateProductCategorySpec {
+  specGroupName: string;
+  specAttribute: string[];
 }
 
-export interface IResCategoryConsole extends IResAPI {
-  data: ICategoryConsole[]
-}
-
-// REVIEW: CREATE CATEGORY
-export interface ICreateMainCategory {
-  categoryName: string;
-  categoryImageUrl: string;
-  categoryRecommend: boolean;
-  categoryIconUrl: string;
-  impFactor: number;
-  categoryDescription: string;
-  categoryBannersUrl: string[];
-  isMainCat: boolean;
-  parentCatId?: string;
-}
-
-export interface ICreateCategoryLevel {
-  parentCatId: string;
-  categoryName: string;
-  categoryImageUrl: string;
-  categoryRecommend: boolean;
-  categoryIconUrl: string;
-  impFactor: number;
-  categoryDescription: string;
-}
-
-// === === === === ===
-
-export interface IProductCategorySpec {
-  attributeNames: string;
-  attributeValues: string[];
-}
-
-export interface IProductCategory {
-  productCategoryIds: string;
-  productCategoryNames: string;
-  productCategoryIconsUrl: string;
-}
-
-export interface IProductMainCategory {
-  productMCategoryIds: string;
-  productMCategoryNames: string;
-  productMCategoryIconsUrl: string;
-}
-
-interface ProductCategorySpec {
-  attributeName: string;
-  attributeValue: string;
-}
-
-interface ICreateProductCategory {
-  productCategoryNames: string;
-  productCategoryImagesUrl: string;
-  productCategoryRecommend: boolean;
-  productCategoryIconsUrl: string;
-  productCategorySpec: ProductCategorySpec[];
-}
-
-interface ICreateProductCategoryLevel {
-  productCategoryIds: string;
-  productCategoryNames: string;
-  productCategoryImagesUrl: string;
-  productCategoryRecommend: boolean;
-  productCategoryIconsUrl: string;
-  productCategorySpec: ProductCategorySpec[];
-}
-
-// STUB: Setting > Shipping on CORE
+// TODO: Setting > Shipping on CORE ===> USE CLIENT SIDE
 
 export interface IShippingMethod {
   shippingMethodId: string
@@ -102,7 +38,7 @@ export interface IShippingZone {
   zoneParties: IShippingParty[]
 }
 
-// STUB: Setting > Payment on CORE
+// TODO: Setting > Payment on CORE ===> USE CLIENT SIDE
 
 export interface IPaymentParty {
   title: string
@@ -114,5 +50,3 @@ export interface IPaymentMethod {
   paymentMethodType: string;
   paymentParties: IPaymentParty[];
 }
-
-// === === ===
