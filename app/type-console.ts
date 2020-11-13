@@ -4,7 +4,9 @@ import { ICategory, IMainCategory, ISubCategory } from './type-catalog'
  * STUB: Version 4.x
  */
 
-export interface ICreateCategory extends ICategory {}
+export interface ICreateCategory extends ICategory {
+  parentCatId: string
+}
 
 export interface ICreateMainCategory extends IMainCategory { }
 
