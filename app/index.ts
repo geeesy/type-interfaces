@@ -146,16 +146,11 @@ import {
   ITaxInvoiceFormCreateParams
 } from './type-apps'
 import {
-  ICategoryConsole,
-  ICreateCategoryLevel,
   ICreateMainCategory,
-  IPaymentMethod,
-  IProductCategory,
-  IProductCategorySpec,
-  IProductMainCategory,
-  IResCategoryConsole
+  ICreateSubCategory,
+  IPaymentMethod
 } from './type-console'
-import { ICheck, IConnect, IData } from './interfaces'
+import { IResSubCategory, ISubCategory } from './type-catalog'
 
 /* #region FIXME: Marketplace */
 export namespace GeeesyMarketplace {
@@ -309,7 +304,7 @@ export namespace GeeesyMarketplace {
   export type Address = IAddress;
   export type PaymentMethod = IPaymentMethod;
   export type PaymentMethodTypeAttr = IPaymentMethodTypeAttr;
-  export type ProductCategorySpec = IProductCategorySpec;
+
   export type ProductPackage = IProductPackage;
   export type Wholesale = IWholesale;
   export type LeadTime = ILeadTime;
@@ -325,8 +320,15 @@ export namespace GeeesyMarketplace {
 /* #endregion */
 
 export namespace GeeesyConsole {
-  export type ResCategory = IResCategoryConsole | ICategoryConsole;
-  export type Category = ICategoryConsole
+  export type CreateMainCategory = ICreateMainCategory
+  export type CreateSubCategory = ICreateSubCategory
+}
+
+export namespace GeeesyCatalog {
+  export type ResMainCategory = IResMainCategory | IMainCategory
+  export type MainCategory = IMainCategory
+  export type ResSubCategory = IResSubCategory | ISubCategory
+  export type SubCategory = ISubCategory
 }
 
 export namespace GeeesyApps {

@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/geeesy/type-interfaces#readme",
   "dependencies": {
+    "banks-logo": "^1.0.8",
     "typescript": "^3.9.7"
   },
   "devDependencies": {
