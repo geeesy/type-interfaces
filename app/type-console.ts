@@ -1,8 +1,10 @@
-import { IMainCategory, ISubCategory } from './type-catalog'
+import { ICategory, IMainCategory, ISubCategory } from './type-catalog'
 
 /**
  * STUB: Version 4.x
  */
+
+export interface ICreateCategory extends ICategory {}
 
 export interface ICreateMainCategory extends IMainCategory { }
 
