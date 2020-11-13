@@ -1,5 +1,4 @@
-import { IMainCategory } from './type-marketplace'
-import { ISubCategory } from './type-catalog'
+import { IMainCategory, ISubCategory } from './type-catalog'
 
 /**
  * STUB: Version 4.x
