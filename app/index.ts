@@ -4,7 +4,6 @@ import {
   IAddressSupplier,
   IAllCategoryInSearchTool,
   IBanner,
-  ICategory,
   ICategoryWithChild,
   IChildCategory,
   IFactoryAddress,
@@ -13,7 +12,6 @@ import {
   IImages,
   IInterest,
   ILeadTime,
-  IMainCategory,
   IMessageDetail,
   IMessageList,
   IOfficeHour,
@@ -30,16 +28,13 @@ import {
   IProductWithCount,
   IProductWithOutSupplier,
   IRecommendCategory,
-  IRecommendMainCategory,
   IRecommendSupplier,
   IResAllCategoryInSearchTool,
   IResBanner,
-  IResCategory,
   IResCategoryWithChild,
   IResFilterResultProduct,
   IResFilterResultSupplier,
   IResInterest,
-  IResMainCategory,
   IResMessageDetail,
   IResMessageList,
   IResPaymentMethod,
@@ -50,7 +45,6 @@ import {
   IResProductWithAddr,
   IResProductWithCount,
   IResRecommendCategory,
-  IResRecommendMainCategory,
   IResRecommendSupplier,
   IResSavedList,
   IResSavedListProducts,
@@ -150,7 +144,7 @@ import {
   ICreateSubCategory,
   IPaymentMethod
 } from './type-console'
-import { IResSubCategory, ISubCategory } from './type-catalog'
+import { IMainCategory, IResMainCategory, IResSubCategory, ISubCategory } from './type-catalog'
 
 /* #region FIXME: Marketplace */
 export namespace GeeesyMarketplace {
@@ -163,14 +157,6 @@ export namespace GeeesyMarketplace {
 
   // TODO: Refactor
 
-  export type ResMainCategory = IResMainCategory | MainCategory;
-  export type MainCategory = IMainCategory;
-
-  export type ResRecommendMainCategory =
-    | IResRecommendMainCategory
-    | RecommendMainCategory;
-  export type RecommendMainCategory = IRecommendMainCategory;
-
   export type ResBanner = IResBanner | Banner;
   export type Banner = IBanner;
 
@@ -182,9 +168,6 @@ export namespace GeeesyMarketplace {
 
   export type ResCategoryWithChild = IResCategoryWithChild | CategoryWithChild;
   export type CategoryWithChild = ICategoryWithChild;
-
-  export type ResCategory = IResCategory | Category;
-  export type Category = ICategory;
 
   export type ResRecommendCategory = IResRecommendCategory | RecommendCategory;
   export type RecommendCategory = IRecommendCategory;

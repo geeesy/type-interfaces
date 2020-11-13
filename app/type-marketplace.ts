@@ -1,30 +1,5 @@
 import { IResAPI } from './interfaces'
 
-export interface IResMainCategory {
-  messages: string;
-  data: IMainCategory[];
-}
-export interface IMainCategory {
-  categoryMainIds: string;
-  categoryMainNames: string;
-  categoryMainIconsUrl: string;
-  categoryMainCoverUrl: string;
-  impFactors: string;
-  categoryBanners: string[];
-  categoryRecommend: boolean;
-}
-export interface IResRecommendMainCategory {
-  messages: string;
-  data: IRecommendMainCategory[];
-}
-export interface IRecommendMainCategory {
-  categoryIds: string;
-  categoryNames: string;
-  categoryCoverUrl: string;
-  impFactors: number;
-  supplierCount: number;
-  productCount: number;
-}
 export interface IResBanner {
   messages: string;
   data: IBanner[];
@@ -95,17 +70,7 @@ export interface ICategoryWithChild {
   impFactor: number;
   childCategories: IChildCategory[];
 }
-export interface IResCategory {
-  messages: string;
-  data: ICategory[];
-}
-export interface ICategory {
-  categoryIds: string;
-  categoryNames: string;
-  categoryIconsUrl: string;
-  categoryCoverUrl: string;
-  impFactor: number;
-}
+
 export interface IResRecommendCategory {
   messages: string;
   data: IRecommendCategory[];
