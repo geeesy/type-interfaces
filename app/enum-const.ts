@@ -102,14 +102,13 @@ export const FunnelBusinessTypeArr = [
   }
 ]
 
-export const data = {
+export const BankList = {
   bbl: {
     code: '002',
     color: '#1e4598',
     official_name: 'BANGKOK BANK PUBLIC COMPANY LTD.',
     official_name_thai: 'ธนาคารกรุงเทพ',
-    nice_name: 'Bangkok Bank',
-    icon: './../assets/banklogo/bbl.svg'
+    nice_name: 'Bangkok Bank'
   },
   kbank: {
     code: '004',
@@ -203,3 +202,62 @@ export const data = {
     nice_name: 'Land and Houses Bank'
   }
 }
+
+export const BankListArr = [
+  {
+    text: BankList.bbl.official_name_thai,
+    value: BankList.bbl.official_name_thai
+  },
+  {
+    text: BankList.kbank.official_name_thai,
+    value: BankList.kbank.official_name_thai
+  },
+  {
+    text: BankList.ktb.official_name_thai,
+    value: BankList.ktb.official_name_thai
+  },
+  {
+    text: BankList.tmb.official_name_thai,
+    value: BankList.tmb.official_name_thai
+  },
+  {
+    text: BankList.scb.official_name_thai,
+    value: BankList.scb.official_name_thai
+  },
+  {
+    text: BankList.cimb.official_name_thai,
+    value: BankList.cimb.official_name_thai
+  },
+  {
+    text: BankList.uob.official_name_thai,
+    value: BankList.uob.official_name_thai
+  },
+  {
+    text: BankList.bay.official_name_thai,
+    value: BankList.bay.official_name_thai
+  },
+  {
+    text: BankList.gsb.official_name_thai,
+    value: BankList.gsb.official_name_thai
+  },
+  {
+    text: BankList.baac.official_name_thai,
+    value: BankList.baac.official_name_thai
+  },
+  {
+    text: BankList.tbank.official_name_thai,
+    value: BankList.tbank.official_name_thai
+  },
+  {
+    text: BankList.kk.official_name_thai,
+    value: BankList.kk.official_name_thai
+  },
+  {
+    text: BankList.icbc.official_name_thai,
+    value: BankList.icbc.official_name_thai
+  },
+  {
+    text: BankList.lhb.official_name_thai,
+    value: BankList.lhb.official_name_thai
+  }
+]

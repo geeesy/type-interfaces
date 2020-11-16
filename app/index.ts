@@ -110,6 +110,8 @@ import {
   IQuotationFormCreate,
   IQuotationFormCreateParams,
   IQuotationList,
+  IQuotationRfq,
+  IQuotationRfqFormCreate,
   IResApprover,
   IResBillingNote,
   IResInquiry,
@@ -118,6 +120,7 @@ import {
   IResPO,
   IResQuotation,
   IResQuotationList,
+  IResQuotationRfq,
   IResRfq,
   IResRfqList,
   IResRfqMarket,
@@ -365,13 +368,23 @@ export namespace GeeesyApps {
    * sellerId
    */
   export type QuotationFormCreate = IQuotationFormCreate;
+  export type QuotationRfqFormCreate = IQuotationRfqFormCreate
+
   export type QuotationFormCreateParams = IQuotationFormCreateParams;
+  export type QuotationRfqFormCreateParams = IQuotationFormCreateParams;
+
   export type QuotationFormSubmit = IQuotationFormCreate &
     IQuotationFormCreateParams;
+    export type QuotationRfqFormSubmit = IQuotationRfqFormCreate &
+    IQuotationFormCreateParams;
+
   export type ResQuotationList = IResQuotationList | IQuotationList
   export type QuotationList = IQuotationList
+
   export type ResQuotation = IResQuotation | IQuotation;
   export type Quotation = IQuotation;
+  export type ResQuotationRfq = IResQuotationRfq | IQuotationRfq
+  export type QuotationRfq = IQuotationRfq
 
   /**
    * @description

@@ -118,27 +118,30 @@ export interface IProductShort {
   productCoverUrl: string;
 }
 
-export interface IProductRow {
-  productId?: string;
-  productName: string;
-  productCoverUrl: string;
-  productSku?: string;
+export interface IProductRowEntity {
+  productRowIndex: number
+  productId?: string
+  productTitle: string
   productUnitPrice: number;
-  itemsPriceRow: number;
   productUnit: string;
-  discountUnitPrice: number;
   productQty: number;
 }
 
-export interface IRfqProductRow {
-  rfqProductRowIndex: number;
-  productId?: string;
-  productTitle: string;
+export interface IProductRow extends IProductRowEntity {
+  productCoverUrl: string;
+  productSku?: string;
+  discountUnitPrice: number;
+  itemsPriceRow: number;
+}
+
+export interface IRfqProductRow extends IProductRowEntity {
+  rfqProductRowIndex: number
   productImagesUrl: string[];
-  productQty: number
-  productUnit: string;
-  productUnitPrice: number;
   description: string
+}
+
+export interface IRfqQuoProductRow extends IProductRow {
+  rfqProductRowIndex: number
 }
 
 export interface IPaymentTerm {
@@ -366,7 +369,7 @@ export interface IRfqList {
 }
 
 export interface IRfq extends IRfqFormCreateParams, IRfqList {
-  product: IRfqProductRow[];
+  products: IRfqProductRow[];
   data: IRfqFormGroupData;
   approver: IRfqFormGroupApprover
 }
@@ -392,6 +395,16 @@ export interface IQuotationFormCreate {
   formGroupSender: ISenderContact;
   formGroupReceiver: IReceiverContact;
   formGroupProducts: IProductRow[];
+  formGroupAccounting: IQuotationFormGroupAccounting;
+  formGroupData: IQuotationFormGroupData;
+  formGroupApprover: IQuotationFormGroupApprover;
+}
+
+export interface IQuotationRfqFormCreate {
+  formGroupSender: ISenderContact;
+  formGroupReceiver: IReceiverContact;
+  formGroupProductsRfq: IRfqProductRow[] // from RFQ
+  formGroupProductsRfqQuo: IRfqQuoProductRow[] // Quotation from RFQ
   formGroupAccounting: IQuotationFormGroupAccounting;
   formGroupData: IQuotationFormGroupData;
   formGroupApprover: IQuotationFormGroupApprover;
@@ -446,8 +459,8 @@ export interface IQuotationList {
   quotationId: string;
   sender: ISenderContact;
   receiver: IReceiverContact;
-  docNo: string;
-  docDate: string;
+  docNo?: string;
+  docDate?: string;
   productTitleFirst: string;
   productImageFirstUrl: string;
   grandTotalAmount: number;
@@ -461,12 +474,20 @@ export interface IQuotationList {
   updatedAt: string;
   senderId: string;
   sellerId: string
-  creditDay: number;
-  shippingDate: string;
+  creditDay?: number;
+  shippingDate?: string;
 }
 
 export interface IQuotation extends IQuotationFormCreateParams, IQuotationList {
   products: IProductRow[]
+  accounting: IQuotationFormGroupAccounting
+  data: IQuotationFormGroupData
+  approver: IQuotationFormGroupApprover
+}
+
+export interface IQuotationRfq extends IQuotationFormCreateParams, IQuotationList {
+  products: IRfqQuoProductRow[]
+  productsRfq: IRfqProductRow[]
   accounting: IQuotationFormGroupAccounting
   data: IQuotationFormGroupData
   approver: IQuotationFormGroupApprover
@@ -484,6 +505,20 @@ export interface IResQuotation {
   statusText: string;
   message: string;
   data: IQuotation;
+}
+
+/* export interface IResQuotationRfqList {
+  status: string;
+  statusText: string;
+  message: string;
+  data: IQuotationList[];
+} */
+
+export interface IResQuotationRfq {
+  status: string;
+  statusText: string;
+  message: string;
+  data: IQuotationRfq;
 }
 
 /* #endregion */
