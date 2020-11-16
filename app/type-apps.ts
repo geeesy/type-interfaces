@@ -369,7 +369,7 @@ export interface IRfqList {
 }
 
 export interface IRfq extends IRfqFormCreateParams, IRfqList {
-  product: IRfqProductRow[];
+  products: IRfqProductRow[];
   data: IRfqFormGroupData;
   approver: IRfqFormGroupApprover
 }
@@ -395,8 +395,16 @@ export interface IQuotationFormCreate {
   formGroupSender: ISenderContact;
   formGroupReceiver: IReceiverContact;
   formGroupProducts: IProductRow[];
-  formGroupProductsRfq?: IRfqProductRow[] // from RFQ
-  formGroupProductsRfqQuo?: IRfqQuoProductRow[] // Quotation from RFQ
+  formGroupAccounting: IQuotationFormGroupAccounting;
+  formGroupData: IQuotationFormGroupData;
+  formGroupApprover: IQuotationFormGroupApprover;
+}
+
+export interface IQuotationRfqFormCreate {
+  formGroupSender: ISenderContact;
+  formGroupReceiver: IReceiverContact;
+  formGroupProductsRfq: IRfqProductRow[] // from RFQ
+  formGroupProductsRfqQuo: IRfqQuoProductRow[] // Quotation from RFQ
   formGroupAccounting: IQuotationFormGroupAccounting;
   formGroupData: IQuotationFormGroupData;
   formGroupApprover: IQuotationFormGroupApprover;
@@ -477,6 +485,14 @@ export interface IQuotation extends IQuotationFormCreateParams, IQuotationList {
   approver: IQuotationFormGroupApprover
 }
 
+export interface IQuotationRfq extends IQuotationFormCreateParams, IQuotationList {
+  products: IRfqQuoProductRow[]
+  productsRfq: IRfqProductRow[]
+  accounting: IQuotationFormGroupAccounting
+  data: IQuotationFormGroupData
+  approver: IQuotationFormGroupApprover
+}
+
 export interface IResQuotationList {
   status: string;
   statusText: string;
@@ -489,6 +505,20 @@ export interface IResQuotation {
   statusText: string;
   message: string;
   data: IQuotation;
+}
+
+/* export interface IResQuotationRfqList {
+  status: string;
+  statusText: string;
+  message: string;
+  data: IQuotationList[];
+} */
+
+export interface IResQuotationRfq {
+  status: string;
+  statusText: string;
+  message: string;
+  data: IQuotationRfq;
 }
 
 /* #endregion */
