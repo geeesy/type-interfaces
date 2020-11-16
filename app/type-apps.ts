@@ -459,8 +459,8 @@ export interface IQuotationList {
   quotationId: string;
   sender: ISenderContact;
   receiver: IReceiverContact;
-  docNo: string;
-  docDate: string;
+  docNo?: string;
+  docDate?: string;
   productTitleFirst: string;
   productImageFirstUrl: string;
   grandTotalAmount: number;
@@ -474,8 +474,8 @@ export interface IQuotationList {
   updatedAt: string;
   senderId: string;
   sellerId: string
-  creditDay: number;
-  shippingDate: string;
+  creditDay?: number;
+  shippingDate?: string;
 }
 
 export interface IQuotation extends IQuotationFormCreateParams, IQuotationList {
