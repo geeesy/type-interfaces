@@ -118,27 +118,30 @@ export interface IProductShort {
   productCoverUrl: string;
 }
 
-export interface IProductRow {
-  productId?: string;
-  productName: string;
-  productCoverUrl: string;
-  productSku?: string;
+export interface IProductRowEntity {
+  productRowIndex: number
+  productId?: string
+  productTitle: string
   productUnitPrice: number;
-  itemsPriceRow: number;
   productUnit: string;
-  discountUnitPrice: number;
   productQty: number;
 }
 
-export interface IRfqProductRow {
-  rfqProductRowIndex: number;
-  productId?: string;
-  productTitle: string;
+export interface IProductRow extends IProductRowEntity {
+  productCoverUrl: string;
+  productSku?: string;
+  discountUnitPrice: number;
+  itemsPriceRow: number;
+}
+
+export interface IRfqProductRow extends IProductRowEntity {
+  rfqProductRowIndex: number
   productImagesUrl: string[];
-  productQty: number
-  productUnit: string;
-  productUnitPrice: number;
   description: string
+}
+
+export interface IRfqQuoProductRow extends IProductRow {
+  rfqProductRowIndex: number
 }
 
 export interface IPaymentTerm {
@@ -392,6 +395,8 @@ export interface IQuotationFormCreate {
   formGroupSender: ISenderContact;
   formGroupReceiver: IReceiverContact;
   formGroupProducts: IProductRow[];
+  formGroupProductsRfq?: IRfqProductRow[] // from RFQ
+  formGroupProductsRfqQuo?: IRfqQuoProductRow[] // Quotation from RFQ
   formGroupAccounting: IQuotationFormGroupAccounting;
   formGroupData: IQuotationFormGroupData;
   formGroupApprover: IQuotationFormGroupApprover;
