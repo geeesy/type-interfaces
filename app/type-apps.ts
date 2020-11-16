@@ -125,6 +125,8 @@ export interface IProductRowEntity {
   productUnitPrice: number;
   productUnit: string;
   productQty: number;
+  productInfo?: string
+  isOption: boolean
 }
 
 export interface IProductRow extends IProductRowEntity {
@@ -137,7 +139,6 @@ export interface IProductRow extends IProductRowEntity {
 export interface IRfqProductRow extends IProductRowEntity {
   rfqProductRowIndex: number
   productImagesUrl: string[];
-  description: string
 }
 
 export interface IRfqQuoProductRow extends IProductRow {
@@ -430,6 +431,8 @@ export interface IQuotationFormGroupData {
   paymentTerm: IPaymentTerm[]
   bankingInfo: ICompanyBankingInfo[]
   shippingDate: string;
+  shippingMethods: string[]
+  shippingInfo: string
   remark: string;
   termsCondition: string;
   senderNote: string;
@@ -438,7 +441,6 @@ export interface IQuotationFormGroupData {
   buyerNote: string;
   attachmentsUrl: string[];
   productCurrency: string;
-  shippingMethods: string[]
   paymentMethods: string[]
 }
 
@@ -522,6 +524,37 @@ export interface IResQuotationRfq {
 }
 
 /* #endregion */
+
+// STUB: Quotation Compare List
+export interface IWeightScoreRow {
+  comment: string
+  weight: number
+  score: number
+}
+
+export interface IQuotationScore {
+  price: IWeightScoreRow
+  option: IWeightScoreRow
+  vendorHistory: IWeightScoreRow
+  companyCapital: IWeightScoreRow
+  creditTerm: IWeightScoreRow
+  totalScore: number
+}
+
+export interface IQuotationCompareColumn {
+  sender: ISenderContact
+  products: IProductRowEntity[]
+  totalProductPrice: number
+  options: IProductRowEntity[]
+  totalOptionPrice: number
+  paymentTerm: IPaymentTerm[]
+  creditDay: number
+  shippingDate: string
+  shippingMethods: string[]
+  shippingInfo: string
+  weightedScore: IQuotationScore
+  note: string
+}
 
 /* #region FIXME: PO */
 export interface IPOFormCreate {
