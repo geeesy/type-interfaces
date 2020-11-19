@@ -44,7 +44,7 @@ export interface ICompanyTaxInfo {
   branch: ICompanyTaxBranch;
 }
 
-interface IMapLocation {
+export interface IMapLocation {
   pinIconUrl: string;
   lat: string;
   lng: string;
