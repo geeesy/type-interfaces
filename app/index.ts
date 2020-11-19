@@ -131,6 +131,8 @@ import {
   IRfqFormCreate,
   IRfqFormCreateParams,
   IRfqList,
+  IRfqManyFormCreate,
+  IRfqManyFormCreateParams,
   IRfqMarket,
   IRfqMarketFormCreate,
   IRfqMarketFormCreateParams,
@@ -351,8 +353,14 @@ export namespace GeeesyApps {
  * @param
  */
   export type RfqFormCreate = IRfqFormCreate;
+  export type RfqManyFormCreate = IRfqManyFormCreate
+
   export type RfqFormCreateParams = IRfqFormCreateParams;
+  export type RfqManyFormCreateParams = IRfqManyFormCreateParams
+
   export type RfqFormSubmit = IRfqFormCreate & IRfqFormCreateParams;
+  export type RfqManyFormSubmit = IRfqManyFormCreate & IRfqManyFormCreateParams
+
   export type ResRfqList = IResRfqList | IRfqList
   export type RfqList = IRfqList
   export type ResRfq = IResRfq | IRfq;
@@ -375,7 +383,7 @@ export namespace GeeesyApps {
 
   export type QuotationFormSubmit = IQuotationFormCreate &
     IQuotationFormCreateParams;
-    export type QuotationRfqFormSubmit = IQuotationRfqFormCreate &
+  export type QuotationRfqFormSubmit = IQuotationRfqFormCreate &
     IQuotationFormCreateParams;
 
   export type ResQuotationList = IResQuotationList | IQuotationList

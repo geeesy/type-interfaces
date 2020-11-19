@@ -113,6 +113,11 @@ export interface IReceiverContact {
   receiverCompanyContactInfo: ICompanyContactInfo;
 }
 
+export interface IReceiverManyContact extends IReceiverContact {
+  receiverId: string
+  sellerId: string
+}
+
 export interface IProductShort {
   productName: string;
   productCoverUrl: string;
@@ -313,6 +318,14 @@ export interface IRfqFormCreate {
   formGroupApprover: IRfqFormGroupApprover
 }
 
+export interface IRfqManyFormCreate {
+  formGroupProducts: IRfqProductRow[];
+  formGroupData: IRfqFormGroupData;
+  formGroupSender: ISenderContact;
+  formGroupApprover: IRfqFormGroupApprover
+  formGroupReceivers: IReceiverManyContact[]
+}
+
 export interface IRfqFormGroupApprover {
   approve: IApprove[];
   stampUrl: string;
@@ -343,6 +356,12 @@ export interface IRfqFormCreateParams {
   receiverId: string;
   buyerId: string;
   sellerId: string;
+}
+
+export interface IRfqManyFormCreateParams {
+  senderId: string;
+  buyerId: string
+  rfqCount: number
 }
 
 export interface IRfqList {
