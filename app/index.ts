@@ -365,6 +365,7 @@ export namespace GeeesyApps {
   export type RfqList = IRfqList
   export type ResRfq = IResRfq | IRfq;
   export type Rfq = IRfq;
+  export type RfqMany = Partial<IRfq>
 
   /**
    * @description
