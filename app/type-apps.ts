@@ -393,6 +393,7 @@ export interface IRfq extends IRfqFormCreateParams, IRfqList {
   products: IRfqProductRow[];
   data: IRfqFormGroupData;
   approver: IRfqFormGroupApprover
+  receivers: IReceiverManyContact[]
 }
 
 export interface IResRfqList {
