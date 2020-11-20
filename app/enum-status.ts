@@ -98,3 +98,7 @@ export enum StatusDocSender {
   InApproval = 'in approval'
 }
 /* #endregion */
+
+export enum TextMenu {
+  createRfq = ''
+}

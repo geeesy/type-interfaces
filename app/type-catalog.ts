@@ -18,6 +18,8 @@ export interface ICategory {
 
 export interface IMainCategory extends ICategory {
   onHomepage: boolean
+  themeColor: string
+  color: string
 }
 
 export interface ISubCategory extends ICategory {
