@@ -386,6 +386,7 @@ export interface IRfqList {
   senderId: string
   totalRfqRow: number
   productCurrency: string
+  isMany?: boolean
 }
 
 export interface IRfq extends IRfqFormCreateParams, IRfqList {
