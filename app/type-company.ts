@@ -168,26 +168,51 @@ export interface ICompanyIndex {
 }
 
 export interface ICompany {
+  // Conpany Information
   companyId: string
   companyName: string;
   companyCode: string;
-  companyContact: ICompanyContactInfo
-  companyContactPerson: IContactPerson
   companyOverview: string;
   companyDescription: string;
-  mainProducts: string[];
-  companyLocation: IMapLocation
-  companyBoard: ICompanyBoard
-  companyMetric: ICompanyMetric
-  companyBadge: ICompanyBadge
-  companyAsset: ICompanyAsset
-  companySetting: ICompanySetting
-  companyDocument: IDocument
-  companyImage: IImageGroup
-  companyCertificate: ICertificate
   companyRegisterDate: string
+
+  // Contact
+  companyContact: ICompanyContactInfo
+
+  // Contact Person
+  companyContactPerson: IContactPerson
+ 
+  // Main Products
+  mainProducts: string[];
+
+  // Location
+  companyLocation: IMapLocation
+
+  // Company Board
+  companyBoard: ICompanyBoard
+
+  // Factory
   factory: IFactory
+
+  // Metric
+  companyMetric: ICompanyMetric
+
+  // Badge
+  companyBadge: ICompanyBadge
+
+  // Index
   index: ICompanyIndex
+
+  // Setting
+  companySetting: ICompanySetting
+
+  // Image
+  companyAsset: ICompanyAsset
+  companyImage: IImageGroup
+
+  // Document
+  companyDocument: IDocument
+  companyCertificate: ICertificate
 }
 
 export interface IPage {
