@@ -1,4 +1,4 @@
-import { IPaymentMethod, IShippingZone } from './type-console'
+import { IPaymentMethod, IShippingZone } from "./type-console";
 
 /**
  * STUB: Version 4.x
@@ -42,7 +42,7 @@ export interface ICompanyTaxBranch {
 export interface ICompanyTaxInfo {
   taxNo: string;
   isHq: boolean;
-  branch: ICompanyTaxBranch;
+  branch: ICompanyTaxBranch[];
 }
 
 export interface IMapLocation {
@@ -65,7 +65,7 @@ export interface ICompanyContactInfo {
   companyNote?: string;
   companyRegisNo: string;
   companyTaxInfo?: ICompanyTaxInfo;
-  categoryId: string
+  categoryId: string;
 }
 
 export interface ICompanyBoard {
@@ -89,8 +89,8 @@ export interface ICompanyMetric {
   shippingDuration: string[];
   employee: string[];
   capital: number;
-  businessSize: string[]
-  businessType: string[]
+  businessSize: string[];
+  businessType: string[];
 }
 
 export interface ICompanyBadge {
@@ -103,7 +103,7 @@ export interface ICompanyAsset {
   companyVideosUrl: string[];
   companyLogoUrl: string;
   companyPrimaryColor: string;
-  companySecondaryColor: string
+  companySecondaryColor: string;
   companyBannersUrl: string[];
 }
 
@@ -147,7 +147,7 @@ export interface ICertificate {
   issuer: string;
   certificateName: string;
   isPrivate: boolean;
-  isVerified: boolean
+  isVerified: boolean;
 }
 
 export interface IFactory {
@@ -160,15 +160,15 @@ export interface IFactory {
 }
 
 export interface ICompanyIndex {
-  tags: string[]
-  keywords: string[]
-  isVerified: boolean
-  rating: number
-  score: number
-  isActive: boolean
-  isRecommend: boolean
-  isHighlight: boolean
-  impFactor: number
+  tags: string[];
+  keywords: string[];
+  isVerified: boolean;
+  rating: number;
+  score: number;
+  isActive: boolean;
+  isRecommend: boolean;
+  isHighlight: boolean;
+  impFactor: number;
 }
 
 /**
@@ -181,46 +181,46 @@ export interface ICompany {
   code: string;
   overview: string;
   description: string;
-  registerDate: string
+  registerDate: string;
 
   // Contact
-  contact: ICompanyContactInfo
+  contact: ICompanyContactInfo;
 
   // Contact Person
-  contactPerson: IContactPerson
+  contactPerson: IContactPerson;
 
   // Main Products
   mainProducts: string[];
 
   // Location
-  location: IMapLocation
+  location: IMapLocation;
 
   // Company Board
-  board: ICompanyBoard
+  board: ICompanyBoard;
 
   // Factory
-  factory: IFactory
+  factory: IFactory;
 
   // Setting
-  setting: ICompanySetting
+  setting: ICompanySetting;
 
   // Metric
-  companyMetric: ICompanyMetric
+  companyMetric: ICompanyMetric;
 
   // Badge
-  companyBadge: ICompanyBadge
+  companyBadge: ICompanyBadge;
 
   // Index
-  companyIndex: ICompanyIndex
+  companyIndex: ICompanyIndex;
 
-  companyAsset: ICompanyAsset
+  companyAsset: ICompanyAsset;
 
   // Image
-  companyImage: IImageGroup
+  companyImage: IImageGroup;
 
   // Document
-  companyDocument: IDocument
-  companyCertificate: ICertificate
+  companyDocument: IDocument;
+  companyCertificate: ICertificate;
 }
 
 export interface IPage {
@@ -229,5 +229,5 @@ export interface IPage {
 }
 
 export interface IPortfolio {
-  customPages: IPage[]
+  customPages: IPage[];
 }
