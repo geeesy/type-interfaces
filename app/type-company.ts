@@ -36,6 +36,7 @@ export interface ICompanyTaxBranch {
   id: string;
   name: string;
   address: string;
+  taxNo: string;
 }
 
 export interface ICompanyTaxInfo {
@@ -53,10 +54,10 @@ export interface IMapLocation {
 
 export interface ICompanyContactInfo {
   companyName: string;
-  companyPhone: string[];
-  companyFax?: string[];
-  companyWebsite?: string[];
-  companyEmail: string[];
+  companyPhones: string[];
+  companyFaxes?: string[];
+  companyWebsites?: string[];
+  companyEmails: string[];
   companySocial?: ISocial;
   contactAddress: IAddress;
   billingAddress?: IAddress;
@@ -107,6 +108,9 @@ export interface ICompanyAsset {
 }
 
 export interface ICompanySetting {
+  /**
+   * Choose from CORE SETTING
+   */
   paymentMethods: IPaymentMethod[];
   shippingZones: IShippingZone[];
   creditTerms: string[];

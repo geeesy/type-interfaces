@@ -19,12 +19,18 @@ export interface ICreateProductCategorySpec {
 
 // TODO: Setting > Shipping on CORE ===> USE CLIENT SIDE
 
+/**
+ * CORE SETTING - Shipping Method
+ */
 export interface IShippingMethod {
   shippingMethodId: string
   shippingMethodName: string
   shippingMethodIconUrl: string
 }
 
+/**
+ * CORE SETTING - Shipping Party
+ */
 export interface IShippingParty {
   shippingPartyId: string
   title: string;
@@ -48,6 +54,9 @@ export interface IPaymentParty {
   iconUrl: string
 }
 
+/**
+ * CORE SETTING - Payment Method
+ */
 export interface IPaymentMethod {
   paymentMethodId: string
   paymentMethodType: string;

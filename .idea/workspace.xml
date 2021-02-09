@@ -22,6 +22,7 @@
     <list default="true" id="8a19b798-daac-433f-bb9b-6132570f93cd" name="Default Changelist" comment="update and resolve conflict">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/type-company.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/type-company.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/type-console.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/type-console.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +64,8 @@
       <workItem from="1603458409995" duration="2853000" />
       <workItem from="1605176236390" duration="154000" />
       <workItem from="1612688627794" duration="4263000" />
+      <workItem from="1612849375151" duration="2321000" />
+      <workItem from="1612865046659" duration="63000" />
     </task>
     <task id="LOCAL-00001" summary="update and resolve conflict">
       <created>1612688719981</created>
