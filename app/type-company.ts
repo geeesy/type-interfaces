@@ -10,7 +10,7 @@ export interface OfficeHour {
 }
 
 export interface IAddress {
-  addrNames: string;
+  addrName: string;
   addrFull: string;
   addrNumber: string;
   province: string;
@@ -19,12 +19,12 @@ export interface IAddress {
   postcode: string;
   phones: string[];
   mobiles: string[];
-  fax: string[];
-  email: string;
+  faxes: string[];
+  emails: string[];
   country: string;
   lat: string;
   lng: string;
-  officeHour: OfficeHour[];
+  officeHours: OfficeHour[];
 }
 
 export interface ISocial {
@@ -83,13 +83,13 @@ export interface IContactPerson {
 }
 
 export interface ICompanyMetric {
-  companyAge: number;
+  age: number;
   leadTime: string[];
   shippingDuration: string[];
   employee: string[];
-  companyCapital: number;
-  businessSizes: string[]
-  businessTypes: string[]
+  capital: number;
+  businessSize: string[]
+  businessType: string[]
 }
 
 export interface ICompanyBadge {
@@ -107,8 +107,8 @@ export interface ICompanyAsset {
 }
 
 export interface ICompanySetting {
-  paymentsMethod: IPaymentMethod[];
-  shippingsZone: IShippingZone[];
+  paymentMethods: IPaymentMethod[];
+  shippingZones: IShippingZone[];
   creditTerms: string[];
 }
 
@@ -147,12 +147,12 @@ export interface ICertificate {
 }
 
 export interface IFactory {
-  factoryAddress: IAddress;
-  factoryAreaUnit: string;
-  factoryArea: string;
-  factoryImagesUrl: string[];
-  factoryCapacity: string;
-  factoryCapacityUnit: string;
+  address: IAddress;
+  areaUnit: string;
+  area: string;
+  imagesUrl: string[];
+  capacity: string;
+  capacityUnit: string;
 }
 
 export interface ICompanyIndex {
@@ -167,32 +167,38 @@ export interface ICompanyIndex {
   impFactor: number
 }
 
+/**
+ * COMPANY
+ */
 export interface ICompany {
-  // Conpany Information
-  companyId: string
-  companyName: string;
-  companyCode: string;
-  companyOverview: string;
-  companyDescription: string;
-  companyRegisterDate: string
+  // Company Information
+  compId: string; // use in Gapp-bc
+  name: string;
+  code: string;
+  overview: string;
+  description: string;
+  registerDate: string
 
   // Contact
-  companyContact: ICompanyContactInfo
+  contact: ICompanyContactInfo
 
   // Contact Person
-  companyContactPerson: IContactPerson
- 
+  contactPerson: IContactPerson
+
   // Main Products
   mainProducts: string[];
 
   // Location
-  companyLocation: IMapLocation
+  location: IMapLocation
 
   // Company Board
-  companyBoard: ICompanyBoard
+  board: ICompanyBoard
 
   // Factory
   factory: IFactory
+
+  // Setting
+  setting: ICompanySetting
 
   // Metric
   companyMetric: ICompanyMetric
@@ -201,13 +207,11 @@ export interface ICompany {
   companyBadge: ICompanyBadge
 
   // Index
-  index: ICompanyIndex
+  companyIndex: ICompanyIndex
 
-  // Setting
-  companySetting: ICompanySetting
+  companyAsset: ICompanyAsset
 
   // Image
-  companyAsset: ICompanyAsset
   companyImage: IImageGroup
 
   // Document
