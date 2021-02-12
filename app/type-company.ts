@@ -174,17 +174,24 @@ export interface ICompanyIndex {
 /**
  * COMPANY
  */
-export interface ICompany {
-  // Company Information
+ export interface ICompanyEntity {
+  // * === bc -> Create Company 
   compId: string; // use in Gapp-bc
   companyName: string;
   companyCode: string;
-  overview: string;
-  description: string;
-  registerDate: string;
 
   // Contact
   contact: ICompanyContactInfo;
+
+  // CI
+  companyAsset: ICompanyAsset;
+ }
+
+export interface ICompany extends ICompanyEntity {
+  // * === g-biz -> Company Info
+  overview: string;
+  description: string;
+  registerDate: string;
 
   // Contact Person
   contactPerson: IContactPerson;
@@ -212,9 +219,10 @@ export interface ICompany {
 
   // Index
   companyIndex: ICompanyIndex;
+}
 
-  companyAsset: ICompanyAsset;
-
+export interface ICompanyPortfolio extends ICompany {
+  // * === g-biz -> Portfolio
   // Image
   companyImage: IImageGroup;
 

@@ -150,6 +150,7 @@ import {
   IPaymentMethod
 } from './type-console'
 import { IMainCategory, IResMainCategory, IResSubCategory, ISubCategory } from './type-catalog'
+import { ICompany, ICompanyEntity, ICompanyPortfolio } from './type-company'
 
 /* #region FIXME: Marketplace */
 export namespace GeeesyMarketplace {
@@ -468,11 +469,17 @@ export namespace GeeesyApps {
   export type Approver = IApprover
 }
 
+export namespace GappBusiness {
+  export type CompanyEntity = ICompanyEntity
+  export type CompanyInfo = ICompany
+  export type CompanyPort = ICompanyPortfolio
+}
+
 export * as IMarketplace from './type-marketplace'
 export * as IConsole from './type-console'
 export * as IApps from './type-apps'
 
-export * as ICompany from './type-company'
+// export * as ICompany from './type-company'
 export * as ICatalog from './type-catalog'
 
 export * as STATUS from './enum-status'
