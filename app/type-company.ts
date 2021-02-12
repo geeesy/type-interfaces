@@ -177,8 +177,8 @@ export interface ICompanyIndex {
 export interface ICompany {
   // Company Information
   compId: string; // use in Gapp-bc
-  name: string;
-  code: string;
+  companyName: string;
+  companyCode: string;
   overview: string;
   description: string;
   registerDate: string;
