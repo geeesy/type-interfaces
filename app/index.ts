@@ -151,6 +151,7 @@ import {
 } from './type-console'
 import { IMainCategory, IResMainCategory, IResSubCategory, ISubCategory } from './type-catalog'
 import { ICompany, ICompanyCreate, ICompanyEntity, ICompanyPortfolio } from './type-company'
+import { IBusiness, IBusinessCreate } from './type-business'
 
 /* #region FIXME: Marketplace */
 export namespace GeeesyMarketplace {
@@ -474,6 +475,8 @@ export namespace GappBusiness {
   export type CompanyInfo = ICompany
   export type CompanyPort = ICompanyPortfolio
   export type CreateCompany = ICompanyCreate
+  export type BusinessInfo = IBusiness
+  export type CreateBusiness = IBusinessCreate
 }
 
 export * as IMarketplace from './type-marketplace'
