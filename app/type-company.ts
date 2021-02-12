@@ -231,11 +231,11 @@ export interface ICompany extends ICompanyEntity {
 // STUB === g-market -> Supplier Detail
 export interface ICompanyPortfolio extends ICompany {
   // Image
-  companyImage: IImageGroup;
+  companyImages: IImageGroup[];
 
   // Document
-  companyDocument: IDocument;
-  companyCertificate: ICertificate;
+  companyDocuments: IDocument[];
+  companyCertificates: ICertificate[];
 }
 
 export interface IPage {
