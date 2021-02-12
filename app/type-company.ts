@@ -162,13 +162,14 @@ export interface IFactory {
 export interface ICompanyIndex {
   tags: string[];
   keywords: string[];
-  isVerified: boolean;
-  rating: number;
-  score: number;
-  isActive: boolean;
-  isRecommend: boolean;
-  isHighlight: boolean;
-  impFactor: number;
+  havePortfolio: boolean; // * to check port init
+  isVerified: boolean; // ! core
+  rating: number; // ! core
+  score: number; // ! core
+  isActive: boolean; // ! core
+  isRecommend: boolean; // ! core
+  isHighlight: boolean; // ! core
+  impFactor: number; // ! core
 }
 
 /**
@@ -176,7 +177,7 @@ export interface ICompanyIndex {
  */
 export interface ICompanyEntity {
   companyName: string;
-  companyCode: string;
+  companyCode: string; // ! immu
 
   // Contact
   contact: ICompanyContactInfo;
@@ -185,14 +186,15 @@ export interface ICompanyEntity {
   companyAsset: ICompanyAsset;
 }
 
+// STUB: === bc -> Create Company 
 export interface ICompanyCreate extends ICompanyEntity {
-  // * === bc -> Create Company 
   compId: string;
   tenantId: string
 }
 
+// STUB: === g-biz -> Company Info
 export interface ICompany extends ICompanyEntity {
-  // * === g-biz -> Company Info
+
   overview: string;
   description: string;
   registerDate: string;
@@ -225,8 +227,9 @@ export interface ICompany extends ICompanyEntity {
   companyIndex: ICompanyIndex;
 }
 
+// STUB === g-biz -> Portfolio
+// STUB === g-market -> Supplier Detail
 export interface ICompanyPortfolio extends ICompany {
-  // * === g-biz -> Portfolio
   // Image
   companyImage: IImageGroup;
 
