@@ -150,7 +150,7 @@ import {
   IPaymentMethod
 } from './type-console'
 import { IMainCategory, IResMainCategory, IResSubCategory, ISubCategory } from './type-catalog'
-import { ICompany, ICompanyEntity, ICompanyPortfolio } from './type-company'
+import { ICompany, ICompanyCreate, ICompanyEntity, ICompanyPortfolio } from './type-company'
 
 /* #region FIXME: Marketplace */
 export namespace GeeesyMarketplace {
@@ -473,6 +473,7 @@ export namespace GappBusiness {
   export type CompanyEntity = ICompanyEntity
   export type CompanyInfo = ICompany
   export type CompanyPort = ICompanyPortfolio
+  export type CreateCompany = ICompanyCreate
 }
 
 export * as IMarketplace from './type-marketplace'

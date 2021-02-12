@@ -174,9 +174,7 @@ export interface ICompanyIndex {
 /**
  * COMPANY
  */
- export interface ICompanyEntity {
-  // * === bc -> Create Company 
-  compId: string; // use in Gapp-bc
+export interface ICompanyEntity {
   companyName: string;
   companyCode: string;
 
@@ -185,7 +183,13 @@ export interface ICompanyIndex {
 
   // CI
   companyAsset: ICompanyAsset;
- }
+}
+
+export interface ICompanyCreate extends ICompanyEntity {
+  // * === bc -> Create Company 
+  compId: string;
+  tenantId: string
+}
 
 export interface ICompany extends ICompanyEntity {
   // * === g-biz -> Company Info
