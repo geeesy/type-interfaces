@@ -1,8 +1,8 @@
 export interface IBusiness {
   businessName: string
   businessCategory: string
-  businessType: string
-  businessSize: string
+  businessType: string // same as Company
+  businessSize: string // same as Company
   website: string
   ownerName: string
   userRole: string

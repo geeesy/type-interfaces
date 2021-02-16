@@ -178,6 +178,7 @@ export interface ICompanyIndex {
 export interface ICompanyEntity {
   companyName: string;
   companyCode: string; // ! immu
+  companyCategory?: string;
 
   // Contact
   contact: ICompanyContactInfo;

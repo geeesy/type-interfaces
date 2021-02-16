@@ -5,12 +5,19 @@ import { ICategory, IMainCategory, ISubCategory } from './type-catalog'
  */
 
 export interface ICreateCategory extends ICategory {
-  parentCatId: string
+  isMainCat: boolean
+  marketCode: string
 }
 
-export interface ICreateMainCategory extends IMainCategory { }
+export interface ICreateMainCategory extends IMainCategory {
+  isMainCat: boolean
+  marketCode: string
+}
 
-export interface ICreateSubCategory extends ISubCategory { }
+export interface ICreateSubCategory extends ISubCategory { 
+  isMainCat: boolean
+  marketCode: string
+}
 
 export interface ICreateProductCategorySpec {
   specGroupName: string;

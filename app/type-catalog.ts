@@ -10,10 +10,9 @@ export interface ICategory {
   categoryIconUrl: string;
   categoryBannersUrl: string[];
   isRecommend: boolean;
-  isMainCat: boolean
   impFactor: number;
-  createdAt: string
-  updatedAt: string
+  createdAt?: string
+  updatedAt?: string
 }
 
 export interface IMainCategory extends ICategory {
