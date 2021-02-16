@@ -7,6 +7,7 @@ import { ICategory, IMainCategory, ISubCategory } from './type-catalog'
 export interface ICreateCategory extends ICategory {
   isMainCat: boolean
   marketCode: string
+  parentCatId?: string
 }
 
 export interface ICreateMainCategory extends IMainCategory {
