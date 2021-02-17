@@ -1,29 +1,16 @@
-import { ICreateProductCategorySpec } from './type-console'
+import { ICategoryCreateMain, ICategoryCreateSub, ICreateProductCategorySpec } from './type-console'
 import { IResAPI } from './interfaces'
 
-export interface ICategory {
+export interface ICategory extends ICategoryCreateMain, ICategoryCreateSub {
   categoryId: string
-  categoryName: string;
-  categoryCaption: string
-  categoryDescription: string;
-  categoryImageUrl: string;
-  categoryIconUrl: string;
-  categoryBannersUrl: string[];
-  isRecommend: boolean;
-  impFactor: number;
-  createdAt?: string
+  createdAt: string
   updatedAt?: string
 }
 
-export interface IMainCategory extends ICategory {
-  onHomepage: boolean
-  themeColor: string
-  color: string
+export interface IMainCategory extends ICategoryCreateMain, ICategory {
 }
 
-export interface ISubCategory extends ICategory {
-  parentCatId: string;
-  onParentCatCard: boolean
+export interface ISubCategory extends ICategoryCreateSub, ICategory {
 }
 
 export interface IProductCategory extends ICategory {

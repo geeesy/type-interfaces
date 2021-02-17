@@ -1,23 +1,29 @@
-import { ICategory, IMainCategory, ISubCategory } from './type-catalog'
-
 /**
  * STUB: Version 4.x
  */
 
-export interface ICreateCategory extends ICategory {
-  isMainCat: boolean
-  marketCode: string
-  parentCatId?: string
+export interface ICategoryCreate {
+  isMainCat: boolean // -> check condition
+  marketCode: string // -> check condition
+  parentCatId?: string // only sub-cat
+  categoryName: string;
+  categoryCaption: string
+  categoryDescription: string;
+  categoryImageUrl: string;
+  categoryIconUrl: string;
+  categoryBannersUrl: string[];
+  isRecommend: boolean;
+  impFactor: number;
 }
 
-export interface ICreateMainCategory extends IMainCategory {
-  isMainCat: boolean
-  marketCode: string
+export interface ICategoryCreateMain extends ICategoryCreate {
+  onHomepage: boolean
+  themeColor: string
+  color: string
 }
 
-export interface ICreateSubCategory extends ISubCategory { 
-  isMainCat: boolean
-  marketCode: string
+export interface ICategoryCreateSub extends ICategoryCreate {
+  onParentCatCard: boolean
 }
 
 export interface ICreateProductCategorySpec {
