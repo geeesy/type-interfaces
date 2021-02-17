@@ -145,8 +145,8 @@ import {
   ITaxInvoiceFormCreateParams
 } from './type-apps'
 import {
-  ICreateMainCategory,
-  ICreateSubCategory,
+  ICategoryCreateMain,
+  ICategoryCreateSub,
   IPaymentMethod
 } from './type-console'
 import { IMainCategory, IResMainCategory, IResSubCategory, ISubCategory } from './type-catalog'
@@ -310,8 +310,8 @@ export namespace GeeesyMarketplace {
 /* #endregion */
 
 export namespace GeeesyConsole {
-  export type CreateMainCategory = ICreateMainCategory
-  export type CreateSubCategory = ICreateSubCategory
+  export type CreateMainCategory = ICategoryCreateMain
+  export type CreateSubCategory = ICategoryCreateSub
 }
 
 export namespace GeeesyCatalog {
