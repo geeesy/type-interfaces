@@ -1,21 +1,23 @@
 import { ICategoryCreateMain, ICategoryCreateSub, ICreateProductCategorySpec } from './type-console'
 import { IResAPI } from './interfaces'
 
+// * Category
 export interface ICategory extends ICategoryCreateMain, ICategoryCreateSub {
   categoryId: string
   createdAt: string
   updatedAt?: string
 }
 
-export interface IMainCategory extends ICategoryCreateMain, ICategory {
+export interface IMainCategory extends ICategoryCreateMain {
+  categoryId: string
+  createdAt: string
+  updatedAt?: string
 }
 
-export interface ISubCategory extends ICategoryCreateSub, ICategory {
-}
-
-export interface IProductCategory extends ICategory {
-  productUnits: string[]
-  productSpec: ICreateProductCategorySpec[]
+export interface ISubCategory extends ICategoryCreateSub {
+  categoryId: string
+  createdAt: string
+  updatedAt?: string
 }
 
 export interface IResMainCategory extends IResAPI {
@@ -24,6 +26,12 @@ export interface IResMainCategory extends IResAPI {
 
 export interface IResSubCategory extends IResAPI {
   data: ISubCategory[]
+}
+
+// * Product
+export interface IProductCategory extends ICategory {
+  productUnits: string[]
+  productSpec: ICreateProductCategorySpec[]
 }
 
 export interface IPriceList {

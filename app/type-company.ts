@@ -177,24 +177,24 @@ export interface ICompanyIndex {
  */
 export interface ICompanyEntity {
   companyName: string;
-  companyCode: string; // ! immu
+  companyCode: string; // ! immu used as alias
   companyCategory?: string;
 
   // Contact
   contact: ICompanyContactInfo;
 
-  // CI
+  // *CI
   companyAsset: ICompanyAsset;
 }
 
 // STUB: === bc -> Create Company 
 export interface ICompanyCreate extends ICompanyEntity {
-  compId: string;
-  tenantId: string
+  compId: string; // * gen on client
+  businessId: string // === tenantId
 }
 
 // STUB: === g-biz -> Company Info
-export interface ICompany extends ICompanyEntity {
+export interface ICompany extends ICompanyCreate {
 
   overview: string;
   description: string;
@@ -209,7 +209,7 @@ export interface ICompany extends ICompanyEntity {
   // Location
   location: IMapLocation;
 
-  // Company Board
+  // *Company Board
   board: ICompanyBoard;
 
   // Factory
@@ -218,23 +218,22 @@ export interface ICompany extends ICompanyEntity {
   // Setting
   setting: ICompanySetting;
 
-  // Metric
+  //* Metric
   companyMetric: ICompanyMetric;
 
-  // Badge
+  //* Badge
   companyBadge: ICompanyBadge;
 
-  // Index
+  //* Index
   companyIndex: ICompanyIndex;
 }
 
 // STUB === g-biz -> Portfolio
-// STUB === g-market -> Supplier Detail
 export interface ICompanyPortfolio extends ICompany {
-  // Image
+  //* Image
   companyImages: IImageGroup[];
 
-  // Document
+  //* Document
   companyDocuments: IDocument[];
   companyCertificates: ICertificate[];
 }

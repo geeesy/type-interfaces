@@ -1,6 +1,9 @@
 /**
  * STUB: Version 4.x
  */
+export interface ISupplierCreate {
+  
+}
 
 export interface ICategoryCreate {
   isMainCat: boolean // -> check condition
