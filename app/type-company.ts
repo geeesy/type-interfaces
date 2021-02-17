@@ -226,10 +226,14 @@ export interface ICompany extends ICompanyCreate {
 
   //* Index
   companyIndex: ICompanyIndex;
+
+  onMarket: boolean;
+  supplierId?: string;
 }
 
 // STUB === g-biz -> Portfolio
 export interface ICompanyPortfolio extends ICompany {
+
   //* Image
   companyImages: IImageGroup[];
 

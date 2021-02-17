@@ -251,6 +251,10 @@ interface ISuppliers {
   supplierLogosUrl: string;
   supplierRatingAmount: number;
   savedLists: ISavedList[];
+  createdAt: string
+  updatedAt: string
+  onMatketAt: string
+
 }
 export interface IProductWithOutSupplier {
   productIds: string;
