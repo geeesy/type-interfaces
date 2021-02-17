@@ -1,19 +1,21 @@
-import { ICategoryCreateMain, ICategoryCreateSub, ICreateProductCategorySpec } from './type-console'
+import { ICategory, ICategoryCreateMain, ICategoryCreateSub, ICreateProductCategorySpec } from './type-console'
 import { IResAPI } from './interfaces'
 
-// * Category
-export interface ICategory extends ICategoryCreateMain, ICategoryCreateSub {
-  categoryId: string
-  createdAt: string
-  updatedAt?: string
-}
-
+/**
+ * STUB: Version 5.x
+ */
+ 
+/**
+ * CATEGORY
+ * <VIEW>
+ */
+ // ANCHOR: CATEGORY | View Main
 export interface IMainCategory extends ICategoryCreateMain {
   categoryId: string
   createdAt: string
   updatedAt?: string
 }
-
+ // ANCHOR: CATEGORY | View Sub
 export interface ISubCategory extends ICategoryCreateSub {
   categoryId: string
   createdAt: string

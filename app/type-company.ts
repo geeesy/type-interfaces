@@ -1,9 +1,9 @@
 import { IPaymentMethod, IShippingZone } from "./type-console";
 
 /**
- * STUB: Version 4.x
+ * STUB: Version 5.x
  */
-
+/* #region COMPANY */
 export interface OfficeHour {
   day: string;
   times: string[];
@@ -171,30 +171,22 @@ export interface ICompanyIndex {
   isHighlight: boolean; // ! core
   impFactor: number; // ! core
 }
+/* #endregion */
 
 /**
  * COMPANY
  */
+// ANCHOR: COMPANY | Entity
 export interface ICompanyEntity {
   companyName: string;
-  companyCode: string; // ! immu used as alias
-  companyCategory?: string;
+
+  companyCategoryId?: string;
 
   // Contact
   contact: ICompanyContactInfo;
 
-  // *CI
+  // CI
   companyAsset: ICompanyAsset;
-}
-
-// STUB: === bc -> Create Company 
-export interface ICompanyCreate extends ICompanyEntity {
-  compId: string; // * gen on client
-  businessId: string // === tenantId
-}
-
-// STUB: === g-biz -> Company Info
-export interface ICompany extends ICompanyCreate {
 
   overview: string;
   description: string;
@@ -209,7 +201,7 @@ export interface ICompany extends ICompanyCreate {
   // Location
   location: IMapLocation;
 
-  // *Company Board
+  // Company Board
   board: ICompanyBoard;
 
   // Factory
@@ -218,28 +210,44 @@ export interface ICompany extends ICompanyCreate {
   // Setting
   setting: ICompanySetting;
 
-  //* Metric
+  // Metric
   companyMetric: ICompanyMetric;
 
-  //* Badge
+  // Badge
   companyBadge: ICompanyBadge;
 
-  //* Index
+  // Index
   companyIndex: ICompanyIndex;
 
-  onMarket: boolean;
-  supplierId?: string;
 }
 
-// STUB === g-biz -> Portfolio
-export interface ICompanyPortfolio extends ICompany {
+// ANCHOR: COMPANY | Create
+// NOTE: === bc -> Create Company 
+export interface ICompanyCreate extends ICompanyEntity {
+  compId: string; // * gen on client
+  businessId: string // * <== tenantId
+  companyCode: string; // ! immu & use on Cognito with tenantId
+}
 
-  //* Image
+// REVIEW: COMPANY
+// NOTE: === g-biz -> Company Info (Update)
+export interface ICompany extends ICompanyCreate {
+  onMarket: boolean;
+  supplierId?: string;
+  createdAt: string
+  updatedAt?: string
+}
+
+// REVIEW: SUPPLIER
+// NOTE === g-biz -> Portfolio (Create)
+export interface ICompanyPortfolio extends ICompany {
+  // Image
   companyImages: IImageGroup[];
 
-  //* Document
+  // Document
   companyDocuments: IDocument[];
   companyCertificates: ICertificate[];
+
 }
 
 export interface IPage {

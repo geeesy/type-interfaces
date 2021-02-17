@@ -1,4 +1,5 @@
 import { IResAPI } from './interfaces'
+import { ICompanyPortfolio } from './type-company';
 
 export interface IResBanner {
   messages: string;
@@ -232,30 +233,19 @@ export interface IResSavedListSuppliers {
 export interface ISavedListSuppliers {
   savedListIds: string;
   savedListNames: string;
-  suppliers: ISuppliers[];
+  suppliers: ISupplier[];
   supplierCount: number;
   productCount: number;
 }
-interface ISuppliers {
-  supplierIds: string;
-  supplierNames: string;
-  supplierCompanyEmails: string;
-  supplierKeywords: string[];
-  supplierVerified: boolean;
-  supplierRating: number;
-  supplierCompanyWebsite: string;
-  impFactor: number;
-  address: IAddress;
-  shippingZone: IShippingZone[];
-  products: IProductWithOutSupplier[];
-  supplierLogosUrl: string;
-  supplierRatingAmount: number;
-  savedLists: ISavedList[];
-  createdAt: string
-  updatedAt: string
-  onMatketAt: string
 
+// REVIEW: SUPPLIER
+export interface ISupplier extends ICompanyPortfolio {
+
+  products: IProductWithOutSupplier[];
+  onMarketAt: string
 }
+
+
 export interface IProductWithOutSupplier {
   productIds: string;
   productNames: string;

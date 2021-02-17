@@ -1,18 +1,32 @@
-export interface IBusiness {
+
+/**
+ * STUB: Version 5.x
+ */
+
+/**
+ * BUSINESS
+ */
+// REVIEW: BUSINESS | Entity
+export interface IBusinessEntity {
   businessName: string
   businessCategory: string
-  businessType: string // same as Company
-  businessSize: string // same as Company
+  businessType: string // *same as Company
+  businessSize: string // *same as Company
   website: string
   ownerName: string
-  userRole: string
   phone: string
   email: string
   interests: string[]
 }
 
-export interface IBusinessCreate extends IBusiness {
+// REVIEW: BUSINESS | Create
+// NOTE: === bd -> Open account
+export interface IBusinessCreate extends IBusinessEntity {
   tenantId: string
-  identityId: string
-  username: string
+}
+
+// REVIEW: BUSINESS
+export interface IBusiness extends IBusinessCreate {
+  createdAt: string
+  updatedAt?: string
 }

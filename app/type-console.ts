@@ -1,14 +1,35 @@
+import { ICompanyEntity } from "./type-company";
+
 /**
- * STUB: Version 4.x
+ * STUB: Version 5.x
  */
-export interface ISupplierCreate {
-  
+
+/**
+  * SUPPLIER
+  */
+// ANCHOR: SUPPLIER | Create
+// NOTE: === console -> Create Supplier
+export interface ISupplierCreate extends ICompanyEntity {
+  categoryId: string
 }
 
+// REVIEW: SUPPLIER
+// NOTE: === console ==> market
+export interface ISupplier extends ISupplierCreate {
+  supplierId: string;
+  createdAt: string
+  updatedAt?: string
+}
+
+/**
+ * CATEGORY
+ */
+// ANCHOR: CATEGORY | Create
+// NOTE: === console -> Create Category
 export interface ICategoryCreate {
-  isMainCat: boolean // -> check condition
-  marketCode: string // -> check condition
-  parentCatId?: string // only sub-cat
+  isMainCat: boolean // * -> check condition
+  marketCode: string // * -> check condition
+  parentCatId?: string // * only sub-cat
   categoryName: string;
   categoryCaption: string
   categoryDescription: string;
@@ -19,14 +40,23 @@ export interface ICategoryCreate {
   impFactor: number;
 }
 
+// ANCHOR: CATEGORY | Create Main Category
 export interface ICategoryCreateMain extends ICategoryCreate {
   onHomepage: boolean
   themeColor: string
   color: string
 }
 
+// ANCHOR CATEGORY | Create Sub Category
 export interface ICategoryCreateSub extends ICategoryCreate {
   onParentCatCard: boolean
+}
+
+// REVIEW: CATEGORY
+export interface ICategory extends ICategoryCreateMain, ICategoryCreateSub {
+  categoryId: string;
+  createdAt: string
+  updatedAt?: string
 }
 
 export interface ICreateProductCategorySpec {
