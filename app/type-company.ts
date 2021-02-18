@@ -162,7 +162,6 @@ export interface IFactory {
 export interface ICompanyIndex {
   tags: string[];
   keywords: string[];
-  havePortfolio: boolean; // * to check port init
   isVerified: boolean; // ! core
   rating: number; // ! core
   score: number; // ! core
@@ -232,6 +231,7 @@ export interface ICompanyCreate extends ICompanyEntity {
 // REVIEW: COMPANY
 // NOTE: === g-biz -> Company Info (Update)
 export interface ICompany extends ICompanyCreate {
+  havePortfolio: boolean; // * to check port init
   onMarket: boolean;
   supplierId?: string;
   createdAt: string
