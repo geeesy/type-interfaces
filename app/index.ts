@@ -471,7 +471,6 @@ export namespace GeeesyApps {
 }
 
 export namespace GappBusiness {
-  export type CompanyEntity = ICompanyEntity
   export type CompanyInfo = ICompany
   export type CompanyPort = ICompanyPortfolio
   export type CreateCompany = ICompanyCreate
@@ -482,9 +481,8 @@ export namespace GappBusiness {
 export * as IMarketplace from './type-marketplace'
 export * as IConsole from './type-console'
 export * as IApps from './type-apps'
-
-// export * as ICompany from './type-company'
 export * as ICatalog from './type-catalog'
+export * as ICompany from './type-company'
 
 export * as STATUS from './enum-status'
 export * as CONST from './enum-const'

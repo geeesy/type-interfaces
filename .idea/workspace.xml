@@ -19,10 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a19b798-daac-433f-bb9b-6132570f93cd" name="Default Changelist" comment="update and resolve conflict">
+    <list default="true" id="8a19b798-daac-433f-bb9b-6132570f93cd" name="Default Changelist" comment="update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/type-company.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/type-company.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/type-console.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/type-console.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +65,8 @@
       <workItem from="1605176236390" duration="154000" />
       <workItem from="1612688627794" duration="4263000" />
       <workItem from="1612849375151" duration="2321000" />
-      <workItem from="1612865046659" duration="63000" />
+      <workItem from="1612865046659" duration="180000" />
+      <workItem from="1613636199468" duration="791000" />
     </task>
     <task id="LOCAL-00001" summary="update and resolve conflict">
       <created>1612688719981</created>
@@ -74,7 +75,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612688719981</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="update">
+      <created>1612865120381</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1612865120381</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -104,6 +112,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update and resolve conflict" />
-    <option name="LAST_COMMIT_MESSAGE" value="update and resolve conflict" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
 </project>

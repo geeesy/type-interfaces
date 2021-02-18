@@ -1,4 +1,4 @@
-import { IPaymentMethod, IShippingZone } from "./type-console";
+import { IPaymentMethod, IShippingZone } from './type-console';
 
 /**
  * STUB: Version 5.x
@@ -222,7 +222,7 @@ export interface ICompanyEntity {
 }
 
 // ANCHOR: COMPANY | Create
-// NOTE: === bc -> Create Company 
+// NOTE: === bc -> Create Company
 export interface ICompanyCreate extends ICompanyEntity {
   compId: string; // * gen on client
   businessId: string // * <== tenantId
