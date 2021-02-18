@@ -240,7 +240,7 @@ export interface ISavedListSuppliers {
 
 // REVIEW: SUPPLIER
 // NOTE: === g-biz -> Publish to Market
-export interface ISupplier extends ICompanyPortfolio {
+export interface ISupplierPort extends ICompanyPortfolio {
 
   products?: IProductWithOutSupplier[];
   onMarketAt: string

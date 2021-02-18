@@ -87,7 +87,8 @@ import {
   ISupplierWithSavedList,
   ISurvey,
   ITop20Products,
-  IWholesale
+  IWholesale,
+  ISupplierPort
 } from './type-marketplace'
 import {
   IApprover,
@@ -479,7 +480,7 @@ export namespace GappBusiness {
 }
 
 export namespace GappMarket {
-  export type SupplierInfo = ISupplier
+  export type SupplierInfo = ISupplierPort
 }
 
 export * as IMarketplace from './type-marketplace'
