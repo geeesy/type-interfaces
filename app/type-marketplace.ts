@@ -239,9 +239,10 @@ export interface ISavedListSuppliers {
 }
 
 // REVIEW: SUPPLIER
+// NOTE: === g-biz -> Publish to Market
 export interface ISupplier extends ICompanyPortfolio {
 
-  products: IProductWithOutSupplier[];
+  products?: IProductWithOutSupplier[];
   onMarketAt: string
 }
 

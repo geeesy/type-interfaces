@@ -478,6 +478,10 @@ export namespace GappBusiness {
   export type CreateBusiness = IBusinessCreate
 }
 
+export namespace GappMarket {
+  export type SupplierInfo = ISupplier
+}
+
 export * as IMarketplace from './type-marketplace'
 export * as IConsole from './type-console'
 export * as IApps from './type-apps'
