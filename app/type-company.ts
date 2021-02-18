@@ -162,13 +162,13 @@ export interface IFactory {
 export interface ICompanyIndex {
   tags: string[];
   keywords: string[];
-  // isVerified: boolean; // ! core
-  // rating: number; // ! core
-  // score: number; // ! core
-  // isActive: boolean; // ! core
-  // isRecommend: boolean; // ! core
-  // isHighlight: boolean; // ! core
-  // impFactor: number; // ! core
+  isVerified: boolean; // ! core
+  rating: number; // ! core
+  score: number; // ! core
+  isActive: boolean; // ! core
+  isRecommend: boolean; // ! core
+  isHighlight: boolean; // ! core
+  impFactor: number; // ! core
 }
 /* #endregion */
 
