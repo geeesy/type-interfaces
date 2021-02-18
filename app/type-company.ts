@@ -216,13 +216,13 @@ export interface ICompanyEntity {
   companyBadge: ICompanyBadge;
 
   // Index
-  companyIndex: ICompanyIndex;
+  // companyIndex: ICompanyIndex;
 
 }
 
 // ANCHOR: COMPANY | Create
 // NOTE: === bc -> Create Company
-export interface ICompanyCreate extends ICompanyEntity {
+export interface ICompanyCreate extends ICompanyEntity, ICompanyIndex {
   compId: string; // * gen on client
   businessId: string // * <== tenantId
   companyCode: string; // ! immu & use on Cognito with tenantId
