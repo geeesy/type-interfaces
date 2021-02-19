@@ -23,13 +23,13 @@ export interface IBusinessEntity {
 // NOTE: === bc -> Open account
 export interface IBusinessCreate extends IBusinessEntity {
   tenantId: string
-  ownerIdentity?: string // ! user on server
-  authUserId?: string // ! on Cognito on server
+  ownerIdentity?: string // ! user -> create on server
+  authUserId?: string // ! on Cognito -> create on server
 
 }
 
 // REVIEW: BUSINESS
-export interface IBusiness {
+export interface IBusiness extends IBusinessEntity {
   businessId: string // * === tenantId
   createdAt: string
   updatedAt?: string
