@@ -159,18 +159,6 @@ export interface IFactory {
   capacityUnit: string;
 }
 
-export interface ICompanyIndex {
-  tags: string[];
-  keywords: string[];
-  isVerified: boolean; // ! core
-  rating: number; // ! core
-  score: number; // ! core
-  isActive: boolean; // ! core
-  isRecommend: boolean; // ! core
-  isHighlight: boolean; // ! core
-  impFactor: number; // ! core
-  haveCompletedInfo: boolean //* === false on Create
-}
 /* #endregion */
 
 /**
@@ -185,11 +173,23 @@ export interface ICompanyEntity {
   // CI
   companyAsset: ICompanyAsset;
   createdAt?: string // * on server
+
+  // INDEX
+  tags: string[];
+  keywords: string[];
+  isVerified: boolean; // ! core
+  rating: number; // ! core
+  score: number; // ! core
+  isActive: boolean; // ! core
+  isRecommend: boolean; // ! core
+  isHighlight: boolean; // ! core
+  impFactor: number; // ! core
+  haveCompletedInfo: boolean //* === false on Create
 }
 
 // ANCHOR: COMPANY | Create
 // NOTE: === bc -> Create Company
-export interface ICompanyCreate extends ICompanyEntity, ICompanyIndex {
+export interface ICompanyCreate extends ICompanyEntity {
   compId: string; // * gen on client
   businessId: string // * <== tenantId
   companyCode: string; // ! immu & use on Cognito with tenantId
