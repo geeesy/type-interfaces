@@ -169,6 +169,7 @@ export interface ICompanyIndex {
   isRecommend: boolean; // ! core
   isHighlight: boolean; // ! core
   impFactor: number; // ! core
+  haveCompletedInfo: boolean //* === false on Create
 }
 /* #endregion */
 
@@ -181,11 +182,23 @@ export interface ICompanyEntity {
 
   companyCategoryId?: string;
 
-  // Contact
-  contact: ICompanyContactInfo;
-
   // CI
   companyAsset: ICompanyAsset;
+}
+
+// ANCHOR: COMPANY | Create
+// NOTE: === bc -> Create Company
+export interface ICompanyCreate extends ICompanyEntity, ICompanyIndex {
+  compId: string; // * gen on client
+  businessId: string // * <== tenantId
+  companyCode: string; // ! immu & use on Cognito with tenantId
+}
+
+// REVIEW: COMPANY
+// NOTE: === g-biz -> Company Info (Update)
+export interface ICompany extends ICompanyCreate {
+  // Contact
+  contact: ICompanyContactInfo;
 
   overview: string;
   description: string;
@@ -215,22 +228,6 @@ export interface ICompanyEntity {
   // Badge
   companyBadge: ICompanyBadge;
 
-  // Index
-  // companyIndex: ICompanyIndex;
-
-}
-
-// ANCHOR: COMPANY | Create
-// NOTE: === bc -> Create Company
-export interface ICompanyCreate extends ICompanyEntity, ICompanyIndex {
-  compId: string; // * gen on client
-  businessId: string // * <== tenantId
-  companyCode: string; // ! immu & use on Cognito with tenantId
-}
-
-// REVIEW: COMPANY
-// NOTE: === g-biz -> Company Info (Update)
-export interface ICompany extends ICompanyCreate {
   havePortfolio: boolean; // * to check port init
   onMarket: boolean;
   supplierId?: string;

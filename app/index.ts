@@ -472,6 +472,7 @@ export namespace GeeesyApps {
 }
 
 export namespace GappBusiness {
+  export type CompanyEntity = ICompanyEntity
   export type CompanyInfo = ICompany
   export type CompanyPort = ICompanyPortfolio
   export type CreateCompany = ICompanyCreate
