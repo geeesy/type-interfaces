@@ -167,6 +167,7 @@ export interface IFactory {
 // ANCHOR: COMPANY | Entity
 export interface ICompanyEntity {
   companyName: string;
+  companyCode: string; // ! immu & use on Cognito with tenantId
 
   companyCategoryId?: string;
 
@@ -192,7 +193,7 @@ export interface ICompanyEntity {
 export interface ICompanyCreate extends ICompanyEntity {
   compId: string; // * gen on client
   businessId: string // * <== tenantId
-  companyCode: string; // ! immu & use on Cognito with tenantId
+
 }
 
 // REVIEW: COMPANY
