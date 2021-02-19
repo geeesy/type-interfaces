@@ -191,8 +191,8 @@ export interface ICompanyEntity {
   description: string;
   registerDate: string;
 
-  // Contact Person
-  contactPerson: IContactPerson;
+  // Contact Persons
+  contactPerson: IContactPerson[];
 
   // Main Products
   mainProducts: string[];
@@ -201,7 +201,7 @@ export interface ICompanyEntity {
   location: IMapLocation;
 
   // Company Board
-  board: ICompanyBoard;
+  board: ICompanyBoard[];
 
   // Factory
   factory: IFactory;
