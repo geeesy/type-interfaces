@@ -105,6 +105,7 @@ export interface ICompanyAsset {
   companyPrimaryColor: string;
   companySecondaryColor: string;
   companyBannersUrl: string[];
+  companyCoverUrl: string;
 }
 
 export interface ICompanySetting {
