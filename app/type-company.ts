@@ -184,6 +184,7 @@ export interface ICompanyEntity {
 
   // CI
   companyAsset: ICompanyAsset;
+  createdAt?: string // * on server
 }
 
 // ANCHOR: COMPANY | Create
@@ -231,7 +232,6 @@ export interface ICompany extends ICompanyCreate {
   havePortfolio: boolean; // * to check port init
   onMarket: boolean;
   supplierId?: string;
-  createdAt: string
   updatedAt?: string
 }
 
