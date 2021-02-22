@@ -5,18 +5,18 @@ import { StringLiteralLike } from 'typescript'
 /**
  * STUB: Version 5.x
  */
- 
+
 /**
  * CATEGORY
  * <VIEW>
  */
- // ANCHOR: CATEGORY | View Main
+// ANCHOR: CATEGORY | View Main
 export interface IMainCategory extends ICategoryCreateMain {
   categoryId: string
   createdAt: string
   updatedAt?: string
 }
- // ANCHOR: CATEGORY | View Sub
+// ANCHOR: CATEGORY | View Sub
 export interface ISubCategory extends ICategoryCreateSub {
   categoryId: string
   createdAt: string
@@ -131,8 +131,8 @@ export interface IProductCreate extends IProductEntity {
   compId: string;
   supplierId?: string;
   productNames: string;
-  productCategoryIds: string;
-  productCategoryCustomName: string;
+  productCategoryId: string;
+  productCategoryCustomName?: string;
   productVideoCoverUrl: string;
   productDescription: string
   productBrand: string
