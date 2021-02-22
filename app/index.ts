@@ -17,7 +17,7 @@ import {
   IOfficeHour,
   IPaymentMethodTypeAttr,
   IPaymentMethods,
-  IProduct,
+  ISupplierProduct,
   IProductDescription,
   IProductDetail,
   IProductGroup,
@@ -150,7 +150,7 @@ import {
   ICategoryCreateSub,
   IPaymentMethod
 } from './type-console'
-import { IMainCategory, IResMainCategory, IResSubCategory, ISubCategory } from './type-catalog'
+import { IMainCategory, IProduct, IProductCreate, IProductEntity, IResMainCategory, IResSubCategory, ISubCategory } from './type-catalog'
 import { ICompany, ICompanyCreate, ICompanyEntity, ICompanyPortfolio } from './type-company'
 import { IBusiness, IBusinessCreate } from './type-business'
 
@@ -169,7 +169,7 @@ export namespace GeeesyMarketplace {
   export type Banner = IBanner;
 
   export type ResProduct = IResProduct | Product;
-  export type Product = IProduct;
+  export type Product = ISupplierProduct;
 
   export type ResTop20Products = IResTop20Products | Top20Products;
   export type Top20Products = ITop20Products;
@@ -482,6 +482,12 @@ export namespace GappBusiness {
 
 export namespace GappMarket {
   export type SupplierInfo = ISupplierPort
+}
+
+export namespace GappInventory {
+  export type ProductEntity = IProductEntity
+  export type CreateProduct = IProductCreate
+  export type Product = IProduct
 }
 
 export * as IMarketplace from './type-marketplace'

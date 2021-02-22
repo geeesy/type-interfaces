@@ -1,5 +1,6 @@
 import { ICategory, ICategoryCreateMain, ICategoryCreateSub, ICreateProductCategorySpec } from './type-console'
 import { IResAPI } from './interfaces'
+import { StringLiteralLike } from 'typescript'
 
 /**
  * STUB: Version 5.x
@@ -124,13 +125,11 @@ export interface IProductEntity {
   stock: IProductStock
   preparingTime: number;
   leadTimes: ILeadTime[]
-  createdAt: string
-  updatedAt: string
 }
 
-export interface IProduct extends IProductEntity {
-  productId: string
-  companyId: string
+export interface IProductCreate extends IProductEntity {
+  compId: string;
+  supplierId?: string;
   productNames: string;
   productCategoryIds: string;
   productCategoryCustomName: string;
@@ -146,6 +145,13 @@ export interface IProduct extends IProductEntity {
   haveVariantsInPack?: IProductVariantInPack[]
   havePacksInVariant?: IProductPackInVariant[]
 }
+
+export interface IProduct extends IProductCreate {
+  productId: string
+  createdAt: string
+  updatedAt: string
+}
+
 
 export interface IProductPack {
   packTitle: string

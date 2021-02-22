@@ -13,9 +13,9 @@ export interface IBanner {
 }
 export interface IResProduct {
   messages: string;
-  data: IProduct[];
+  data: ISupplierProduct[];
 }
-export interface IProduct {
+export interface ISupplierProduct {
   productIds: string;
   productNames: string;
   productCoverUrl: string;
@@ -475,7 +475,7 @@ export interface IResProductWithAddr {
   message: string;
   data: IProductWithAddr[];
 }
-export interface IProductWithAddr extends IProduct {
+export interface IProductWithAddr extends ISupplierProduct {
   supplierCompanyEmail: string;
   supplierKeyword: string[];
   supplierRating: number;
@@ -488,7 +488,7 @@ export interface IResProductWithCount {
   message: string;
   data: IProductWithCount[];
 }
-export interface IProductWithCount extends IProduct {
+export interface IProductWithCount extends ISupplierProduct {
   productCount: number;
   supplierCount: number;
 }
