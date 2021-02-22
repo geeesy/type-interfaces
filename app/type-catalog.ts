@@ -63,16 +63,6 @@ export interface IProductWholesale {
   retailPrice: number;
 }
 
-export interface IProductIndex {
-  tags: string[]
-  keywords: string[]
-  isActive: boolean
-  isRecommend: boolean
-  isHighLight: boolean
-  isNewArrival: boolean
-  impFactor: number
-}
-
 export interface IProductDisplay {
   onCompanyCard: boolean
   onMarketplace: boolean
@@ -120,7 +110,6 @@ export interface IProductEntity {
   minWholesaleQty: number
   toFreeShip: IQtyPrice
   productPackage: IProductPackage
-  index: IProductIndex
   display: IProductDisplay
   stock: IProductStock
   preparingTime: number;
@@ -128,6 +117,15 @@ export interface IProductEntity {
 }
 
 export interface IProductCreate extends IProductEntity {
+  // index
+  tags: string[]
+  keywords: string[]
+  isActive: boolean
+  isRecommend: boolean
+  isHighLight: boolean
+  isNewArrival: boolean
+  impFactor: number
+
   compId: string;
   supplierId?: string;
   productNames: string;
