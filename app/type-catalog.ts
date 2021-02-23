@@ -111,7 +111,7 @@ export interface IRefProductList {
   impFactor: number
 
   productThumbnailUrl: string;
-  productNames: string;
+  productName: string;
   productType: string;
 
   // -> Available
