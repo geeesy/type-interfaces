@@ -150,7 +150,7 @@ import {
   ICategoryCreateSub,
   IPaymentMethod
 } from './type-console'
-import { IMainCategory, IProduct, IProductCreate, IProductEntity, IResMainCategory, IResSubCategory, ISubCategory } from './type-catalog'
+import { IMainCategory, IProduct, IProductCreate, IProductEntity, IProductList, IResMainCategory, IResSubCategory, ISubCategory } from './type-catalog'
 import { ICompany, ICompanyCreate, ICompanyEntity, ICompanyPortfolio } from './type-company'
 import { IBusiness, IBusinessCreate } from './type-business'
 
@@ -488,6 +488,7 @@ export namespace GappInventory {
   export type ProductEntity = IProductEntity
   export type CreateProduct = IProductCreate
   export type Product = IProduct
+  export type ListProduct = IProductList
 }
 
 export * as IMarketplace from './type-marketplace'
