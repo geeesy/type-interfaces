@@ -159,7 +159,7 @@ export interface IProductCreate extends IProductEntity, IRefProductList {
   supplierId?: string;
   productCoverUrl: string;
   productCategoryId: string;
-  productCategoryCustomName?: string;
+  productCategoryCustomName?: string; // * id = OTHER000
   productVideoCoverUrl: string;
   productDescription: string
   productBrand: string

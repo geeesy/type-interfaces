@@ -171,7 +171,7 @@ export interface ICompanyEntity {
   companyCode: string; // ! immu & use on Cognito with tenantId
 
   companyCategoryId?: string;
-  companyCategoryCustomName?: string;
+  companyCategoryCustomName?: string; // * id = OTHER000
 
   // CI
   companyAsset: ICompanyAsset;
