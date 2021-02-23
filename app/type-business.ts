@@ -9,7 +9,7 @@
 // REVIEW: BUSINESS | Entity
 export interface IBusinessEntity {
   businessName: string
-  businessCategory: string
+  businessCategory: string // * <-- include other
   businessType: string // *same as Company
   businessSize: string // *same as Company
   website: string
