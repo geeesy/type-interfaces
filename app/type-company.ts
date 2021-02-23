@@ -193,7 +193,7 @@ export interface ICompanyEntity {
 // NOTE: === bc -> Create Company
 export interface ICompanyCreate extends ICompanyEntity {
   compId: string; // * gen on client
-  businessId: string // * <== tenantId
+  businessId: string // * <== tenantId (Cognito)
 
 }
 

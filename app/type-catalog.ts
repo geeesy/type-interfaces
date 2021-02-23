@@ -97,7 +97,40 @@ export interface IProductSpec {
   attributeValue: string
 }
 
+/**
+ * PRODUCT
+ */
+// ANCHOR: PRODUCT | List
+// NOTE === g-biz -> list all products
+export interface IRefProductList {
+  // index
+  isActive: boolean
+  isRecommend: boolean
+  isHighLight: boolean
+  isNewArrival: boolean
+  impFactor: number
+
+  productThumbnailUrl: string;
+  productNames: string;
+  productType: string;
+
+  // -> Available
+  countVariants: number
+  countPacks: number
+  countVariantsInPack: number
+  countPacksInVariant: number
+}
+export interface IProductList extends IRefProductList {
+  productId: string
+  createdAt: string
+  updatedAt: string
+}
+
+// ANCHOR: PRODUCT | Entity
+// NOTE === attributes on each SKU
 export interface IProductEntity {
+
+
   productImagesUrl: string[];
   productCode: string
   productSku: string;
@@ -116,19 +149,15 @@ export interface IProductEntity {
   leadTimes: ILeadTime[]
 }
 
-export interface IProductCreate extends IProductEntity {
+// ANCHOR: PRODUCT | Create
+export interface IProductCreate extends IProductEntity, IRefProductList {
   // index
   tags: string[]
   keywords: string[]
-  isActive: boolean
-  isRecommend: boolean
-  isHighLight: boolean
-  isNewArrival: boolean
-  impFactor: number
 
   compId: string;
   supplierId?: string;
-  productNames: string;
+  productCoverUrl: string;
   productCategoryId: string;
   productCategoryCustomName?: string;
   productVideoCoverUrl: string;
