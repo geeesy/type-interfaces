@@ -110,9 +110,9 @@ export interface IRefProductList {
   isNewArrival: boolean
   impFactor: number
 
-  productThumbnailUrl: string;
+  productThumbnailUrl?: string;
   productName: string;
-  productType: string;
+  productType?: string;
 
   // -> Available
   countVariants: number
