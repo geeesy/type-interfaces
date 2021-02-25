@@ -1,38 +1,52 @@
 import { IResAPI } from './interfaces'
-import { ICompanyPortfolio } from './type-company';
+import { IProduct, IProductEntity, IProductList } from './type-catalog';
+import { ICompanyContactInfo, ICompanyEntity, ICompanyPortfolio } from './type-company';
 
-export interface IResBanner {
-  messages: string;
-  data: IBanner[];
+
+export interface IResProduct extends IResAPI {
+  data: ISupplierWithProductCard[];
 }
-export interface IBanner {
-  bannerTitle: string;
-  bannerLinksUrl: string;
-  bannerCoverUrl: string;
-  bannerSortIndex: number;
+
+export interface IProductInSupplierCard
+  extends IProductList, IProductEntity {
+
 }
-export interface IResProduct {
-  messages: string;
-  data: ISupplierProduct[];
+
+export interface ISupplierCard extends ICompanyEntity {
+  contact: ICompanyContactInfo
 }
-export interface ISupplierProduct {
-  productIds: string;
-  productNames: string;
-  productCoverUrl: string;
-  productPrices: number;
-  productUnit: string;
-  productCurrencyCode: string;
-  packSizeLabel: string;
-  packSizeQty: number;
-  impFactor: number;
-  minOrderQty: number;
-  productGroups: IProductGroup;
-  supplierIds: string;
-  supplierNames: string;
-  supplierVerified: boolean;
-  savedLists: ISavedList[];
-  productCategory: ISupProductCat;
+
+export interface ISupplierWithProductCard {
+  supplier: ISupplierCard
+  product?: IProductInSupplierCard
 }
+
+export interface IProductWithSupplierCard {
+  product: IProductInSupplierCard
+  supplier: ISupplierCard
+}
+
+// ANCHOR: PRODUCT | Detail with SUPPLIER
+export interface IProductWithSupplier {
+  product: IProduct
+  supplier: ISupplierCard
+
+
+  // productCurrencyCode?: string; // ?
+  // packSizeLabel: string;
+  // packSizeQty: number;
+
+
+  // productGroups: IProductGroup;
+
+  // supplierNames: string;
+  // supplierVerified: boolean;
+  // savedLists: ISavedList[];
+  // productCategory: ISupProductCat;
+}
+
+// ANCHOR: 
+
 export interface IResSupProductCat {
   message: string;
   data: ISupProductCat[];
@@ -242,7 +256,7 @@ export interface ISavedListSuppliers {
 // NOTE: === g-biz -> Publish to Market
 export interface ISupplierPort extends ICompanyPortfolio {
 
-  products?: IProductWithOutSupplier[];
+  products?: IProductInSupplierCard[];
   onMarketAt: string
 }
 
@@ -475,7 +489,7 @@ export interface IResProductWithAddr {
   message: string;
   data: IProductWithAddr[];
 }
-export interface IProductWithAddr extends ISupplierProduct {
+export interface IProductWithAddr extends IProductWithSupplierCard {
   supplierCompanyEmail: string;
   supplierKeyword: string[];
   supplierRating: number;
@@ -488,7 +502,7 @@ export interface IResProductWithCount {
   message: string;
   data: IProductWithCount[];
 }
-export interface IProductWithCount extends ISupplierProduct {
+export interface IProductWithCount extends IProductWithSupplierCard {
   productCount: number;
   supplierCount: number;
 }
@@ -823,3 +837,16 @@ export interface IResSearchFilter extends IResAPI {
 }
 
 /* #endregion */
+
+
+
+export interface IResBanner {
+  messages: string;
+  data: IBanner[];
+}
+export interface IBanner {
+  bannerTitle: string;
+  bannerLinksUrl: string;
+  bannerCoverUrl: string;
+  bannerSortIndex: number;
+}

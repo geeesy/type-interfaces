@@ -129,8 +129,6 @@ export interface IProductList extends IRefProductList {
 // ANCHOR: PRODUCT | Entity
 // NOTE === attributes on each SKU
 export interface IProductEntity {
-
-
   productImagesUrl: string[];
   productCode: string
   productSku: string;

@@ -17,7 +17,6 @@ import {
   IOfficeHour,
   IPaymentMethodTypeAttr,
   IPaymentMethods,
-  ISupplierProduct,
   IProductDescription,
   IProductDetail,
   IProductGroup,
@@ -88,7 +87,10 @@ import {
   ISurvey,
   ITop20Products,
   IWholesale,
-  ISupplierPort
+  ISupplierPort,
+  IProductWithSupplier,
+  IProductWithSupplierCard,
+  ISupplierWithProductCard
 } from './type-marketplace'
 import {
   IApprover,
@@ -169,7 +171,7 @@ export namespace GeeesyMarketplace {
   export type Banner = IBanner;
 
   export type ResProduct = IResProduct | Product;
-  export type Product = ISupplierProduct;
+  export type Product = IProductWithSupplier;
 
   export type ResTop20Products = IResTop20Products | Top20Products;
   export type Top20Products = ITop20Products;
@@ -481,7 +483,10 @@ export namespace GappBusiness {
 }
 
 export namespace GappMarket {
-  export type SupplierInfo = ISupplierPort
+  export type Supplier = ISupplierPort
+  export type ListProductWithSupplier = IProductWithSupplierCard
+  export type ListSupplierWithProduct = ISupplierWithProductCard
+  export type Product = IProductWithSupplier
 }
 
 export namespace GappInventory {
