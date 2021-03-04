@@ -577,6 +577,56 @@ export interface IQuotationCompareColumn {
   note: string
 }
 
+// STUB: Pooled Procurement Form
+export interface IPoolProduct {
+  productTitle: string
+  productImageUrl: string
+  productQty: number
+  minQty: number
+  stepQty: number
+  productUnitPrice: number
+  productUnit: string
+  productId?: string
+}
+
+export interface IPoolShipping {
+  shippingMethod: string
+  shippingCost: number
+}
+
+export interface IPoolData {
+  expiryDate: string
+  shippingMethods: IPoolShipping[]
+  contact: ISenderContact
+  leadTimeDay: number
+  note: string
+  remark: string
+  supplierId?: string
+  compId?: string
+  marketCode: string
+}
+
+export interface IPoolFormCreate {
+  formGroupProducts: IPoolProduct[]
+  formGroupData: IPoolData
+}
+
+export interface IPoolList {
+  poolId: string
+  productTitleFirst: string
+  productImageFirstUrl: string
+  poolQty: number // == productQty
+  remainPoolQty: number
+  createdAt: string
+  updatedAt: string
+  expiryDate: string
+}
+
+export interface IPool extends IPoolList {
+  products: IPoolProduct[]
+  data: IPoolData
+}
+
 /* #region FIXME: PO */
 export interface IPOFormCreate {
   formGroupSender: ISenderContact;

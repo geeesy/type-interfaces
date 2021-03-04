@@ -109,6 +109,9 @@ import {
   IPO,
   IPOFormCreate,
   IPOFormCreateParams,
+  IPool,
+  IPoolFormCreate,
+  IPoolList,
   IQuotation,
   IQuotationFormCreate,
   IQuotationFormCreateParams,
@@ -399,6 +402,11 @@ export namespace GeeesyApps {
   export type Quotation = IQuotation;
   export type ResQuotationRfq = IResQuotationRfq | IQuotationRfq
   export type QuotationRfq = IQuotationRfq
+
+  export type PoolFormCreate = IPoolFormCreate
+  export type PoolList = IPoolList;
+  export type Pool = IPool;
+
 
   /**
    * @description
