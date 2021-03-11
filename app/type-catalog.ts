@@ -90,11 +90,15 @@ export interface IPeriodTime {
   day: number;
 }
 
-export interface IProductSpec {
-  specGroupName: string
+export interface IProductSpecAttribute {
   attributeName: string
   attributeDataType: string
   attributeValue: string
+}
+
+export interface IProductSpec {
+  specGroupName: string
+  attribute: IProductSpecAttribute[]
 }
 
 export interface IProductImage {
@@ -170,7 +174,7 @@ export interface IProductCreate extends IProductEntity, IRefProductList {
   productSource: string;
   productOrigin: string;
   productChannels: string[];
-  productSpec: IProductSpec
+  productSpec: IProductSpec[]
   haveVariants?: IProductVariantOnly[]
   havePacks?: IProductPackOnly[]
   haveVariantsInPack?: IProductVariantInPack[]
