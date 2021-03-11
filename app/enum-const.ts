@@ -60,6 +60,43 @@ export const RfqCreditTermArr = [
   }
 ]
 
+export const PackageUnitArr = [
+  {
+    text: 'มิลลิเมตร', value: 'mm'
+  },
+  {
+    text: 'เซนติเมตร', value: 'cm'
+  },
+  {
+    text: 'เมตร', value: 'm'
+  },
+  {
+    text: 'นิ้ว', value: 'inch'
+  },
+  {
+    text: 'ฟุต', value: 'ft'
+  }
+]
+
+export const PackageWeightUnitArr = [
+  {
+    text: 'กรัม', value: 'mm'
+  },
+  {
+    text: 'กิโลกรัม', value: 'cm'
+  },
+  {
+    text: 'ออนซ์', value: 'oz'
+  },
+  {
+    text: 'ปอนด์', value: 'lb'
+  },
+  {
+    text: 'ตัน', value: 'ton'
+  }
+
+]
+
 export const RfqPaymentMethodArr = [
   {
     text: 'โอนเงิน', value: 'deposit'
