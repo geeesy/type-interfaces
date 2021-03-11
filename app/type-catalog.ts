@@ -97,6 +97,12 @@ export interface IProductSpec {
   attributeValue: string
 }
 
+export interface IProductImage {
+  url: string;
+  title: string;
+  caption: string;
+}
+
 /**
  * PRODUCT
  */
@@ -129,7 +135,7 @@ export interface IProductList extends IRefProductList {
 // ANCHOR: PRODUCT | Entity
 // NOTE === attributes on each SKU
 export interface IProductEntity {
-  productImagesUrl: string[];
+  productImagesUrl: IProductImage[];
   productCode: string
   productSku: string;
   productBarcode: string;
@@ -192,19 +198,27 @@ export interface IProductVariant {
 // Packs Only
 export interface IProductPackOnly extends IProductEntity, IProductPack {
   productPackId: string
+  createdAt: string
+  updatedAt: string
 }
 
 // Variants Only
 export interface IProductVariantOnly extends IProductEntity, IProductVariant {
   productVariantId: string
+  createdAt: string
+  updatedAt: string
 }
 
 // Variant -> Pack A / Pack B
 export interface IProductPackInVariant extends IProductEntity, IProductVariant, IProductPack {
   productVariantPackId: string
+  createdAt: string
+  updatedAt: string
 }
 
 // Pack -> Variant A / Variant B
 export interface IProductVariantInPack extends IProductEntity, IProductPack, IProductVariant {
   productPackVariantId: string
+  createdAt: string
+  updatedAt: string
 }
