@@ -121,7 +121,7 @@ export interface IDocument {
   url: string;
   type: string;
   title: string;
-  expiryDate: string;
+  expiryDate: number;
   isPrivate: boolean;
   isVerified: boolean;
 }
@@ -143,8 +143,8 @@ export interface ICertificate {
   url: string;
   type: string;
   title: string;
-  expiryDate: string;
-  issuedDate: string;
+  expiryDate: number;
+  issuedDate: number;
   issuer: string;
   certificateName: string;
   isPrivate: boolean;
