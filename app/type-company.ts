@@ -73,6 +73,7 @@ export interface ICompanyBoard {
   emails: string[];
   mobiles: string[];
   positions: string[];
+  avatarImageUrl: string
 }
 
 export interface IContactPerson {
