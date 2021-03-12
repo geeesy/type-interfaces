@@ -6,7 +6,7 @@ import { IPaymentMethod, IShippingZone } from './type-console';
 /* #region COMPANY */
 export interface OfficeHour {
   day: string;
-  times: string[];
+  times: [string, string];
 }
 
 export interface IAddress {
@@ -83,10 +83,14 @@ export interface IContactPerson {
   isKeyContact: boolean;
 }
 
+export interface IPeriodTime {
+  day: [number, number]
+}
+
 export interface ICompanyMetric {
   age: number;
-  leadTime: string[];
-  shippingDuration: string[];
+  leadTime: IPeriodTime;
+  shippingDuration: IPeriodTime;
   employee: string[];
   capital: number;
   businessSize: string[];

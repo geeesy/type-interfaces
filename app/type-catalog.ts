@@ -85,9 +85,9 @@ export interface IProductPackage {
   lengthUnit: string;
 };
 
-export interface IPeriodTime {
-  qty: string[];
-  day: number;
+export interface IPeriodTimeByQty {
+  qty: [number, number];
+  day: [number, number];
 }
 
 export interface IProductSpecAttribute {
@@ -153,8 +153,8 @@ export interface IProductEntity {
   productPackage: IProductPackage
   display: IProductDisplay
   stock: IProductStock
-  preparingTime: IPeriodTime[];
-  leadTimes: IPeriodTime[]
+  preparingTime: IPeriodTimeByQty[];
+  leadTimes: IPeriodTimeByQty[]
 }
 
 // ANCHOR: PRODUCT | Create
