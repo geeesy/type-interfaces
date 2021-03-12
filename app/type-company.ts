@@ -82,6 +82,7 @@ export interface IContactPerson {
   mobiles: string[];
   positions: string[];
   isKeyContact: boolean;
+  avatarImageUrl: string
 }
 
 export interface IPeriodTime {
