@@ -601,6 +601,7 @@ export interface IPoolData {
   leadTimeDay: number
   note: string
   remark: string
+  senderId: string
   supplierId?: string
   compId?: string
   marketCode: string
@@ -609,6 +610,15 @@ export interface IPoolData {
 export interface IPoolFormCreate {
   formGroupProducts: IPoolProduct[]
   formGroupData: IPoolData
+}
+
+export interface IPoolJoin {
+  poolId: string;
+  senderId: string
+  contact: ISenderContact
+  joinPoolQty: number
+  supplierId?: string
+  compId?: string
 }
 
 export interface IPoolList {

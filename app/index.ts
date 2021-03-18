@@ -111,6 +111,7 @@ import {
   IPOFormCreateParams,
   IPool,
   IPoolFormCreate,
+  IPoolJoin,
   IPoolList,
   IQuotation,
   IQuotationFormCreate,
@@ -403,9 +404,13 @@ export namespace GeeesyApps {
   export type ResQuotationRfq = IResQuotationRfq | IQuotationRfq
   export type QuotationRfq = IQuotationRfq
 
+  /**
+  * Pooled Procurement
+  */
   export type PoolFormCreate = IPoolFormCreate
   export type PoolList = IPoolList;
   export type Pool = IPool;
+  export type PoolJoin = IPoolJoin;
 
 
   /**
