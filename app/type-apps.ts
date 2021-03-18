@@ -581,7 +581,7 @@ export interface IQuotationCompareColumn {
 export interface IPoolProduct {
   productTitle: string
   productImageUrl: string
-  productQty: number
+  poolQty: number
   minQty: number
   stepQty: number
   productUnitPrice: number
@@ -608,7 +608,7 @@ export interface IPoolData {
 }
 
 export interface IPoolFormCreate {
-  formGroupProducts: IPoolProduct[]
+  formGroupProduct: IPoolProduct
   formGroupData: IPoolData
 }
 
@@ -625,7 +625,7 @@ export interface IPoolList {
   poolId: string
   productTitleFirst: string
   productImageFirstUrl: string
-  poolQty: number // == productQty
+  poolQty: number
   remainPoolQty: number
   createdAt: string
   updatedAt: string
@@ -633,7 +633,7 @@ export interface IPoolList {
 }
 
 export interface IPool extends IPoolList {
-  products: IPoolProduct[]
+  product: IPoolProduct
   data: IPoolData
 }
 
