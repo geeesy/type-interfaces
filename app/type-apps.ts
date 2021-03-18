@@ -615,6 +615,7 @@ export interface IPoolFormCreate {
 export interface IPoolJoin {
   poolId: string;
   senderId: string
+  subSenderId: string
   contact: ISenderContact
   joinPoolQty: number
   supplierId?: string
@@ -623,13 +624,14 @@ export interface IPoolJoin {
 
 export interface IPoolList {
   poolId: string
-  productTitleFirst: string
-  productImageFirstUrl: string
+  productTitle: string
+  productImageUrl: string
   poolQty: number
   remainPoolQty: number
   createdAt: string
   updatedAt: string
   expiryDate: string
+  senderId: string
 }
 
 export interface IPool extends IPoolList {
