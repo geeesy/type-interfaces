@@ -112,6 +112,7 @@ import {
   IPool,
   IPoolFormCreate,
   IPoolJoin,
+  IPoolJoiner,
   IPoolList,
   IQuotation,
   IQuotationFormCreate,
@@ -411,7 +412,7 @@ export namespace GeeesyApps {
   export type PoolList = IPoolList;
   export type Pool = IPool;
   export type PoolJoin = IPoolJoin;
-
+  export type PoolJoiner = IPoolJoiner;
 
   /**
    * @description

@@ -639,6 +639,12 @@ export interface IPool extends IPoolList {
   data: IPoolData
 }
 
+export interface IPoolJoiner extends IPoolJoin {
+  joinedAt: string
+  statusApproved: boolean
+  statusUpdatedAt: string
+}
+
 /* #region FIXME: PO */
 export interface IPOFormCreate {
   formGroupSender: ISenderContact;
