@@ -595,7 +595,7 @@ export interface IPoolShipping {
 }
 
 export interface IPoolData {
-  expiryDate: string //timestamp
+  expiryTimestamp: number //timestamp
   shippingMethods: IPoolShipping[]
   contact: ISenderContact
   leadTimeDay: number
