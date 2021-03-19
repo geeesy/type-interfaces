@@ -595,7 +595,7 @@ export interface IPoolShipping {
 }
 
 export interface IPoolData {
-  expiryDate: Date
+  expiryDate: string //timestamp
   shippingMethods: IPoolShipping[]
   contact: ISenderContact
   leadTimeDay: number
@@ -627,7 +627,7 @@ export interface IPoolList {
   productTitle: string
   productImageUrl: string
   poolQty: number
-  remainPoolQty: number
+  remainPoolQty: number // * TO UPDATE
   createdAt: string
   updatedAt: string
   expiryDate: string
