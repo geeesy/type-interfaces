@@ -634,6 +634,7 @@ export interface IPoolList {
   senderId: string
   joinersCount: number // * TO UPDATE
   subBuyersCount: number // * TO UPDATE
+  isClosed: boolean // * TO UPDATE (on QTY === POOL)
 }
 
 export interface IPool extends IPoolList {
