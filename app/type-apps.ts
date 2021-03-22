@@ -633,6 +633,7 @@ export interface IPoolList {
   expiryDate: string
   senderId: string
   joinersCount: number // * TO UPDATE
+  subBuyersCount: number // * TO UPDATE
 }
 
 export interface IPool extends IPoolList {
