@@ -154,6 +154,7 @@ import {
 } from './type-apps'
 import {
   ICategoryCreateMain,
+  ICategoryCreateParams,
   ICategoryCreateSub,
   IConsoleCategoryList,
   IConsoleMainCategory,
@@ -321,8 +322,8 @@ export namespace GeeesyMarketplace {
 /* #endregion */
 
 export namespace GeeesyConsole {
-  export type CreateMainCategory = ICategoryCreateMain
-  export type CreateSubCategory = ICategoryCreateSub
+  export type CreateMainCategory = ICategoryCreateMain & ICategoryCreateParams
+  export type CreateSubCategory = ICategoryCreateSub & ICategoryCreateParams
   export type MainCategory = IConsoleMainCategory
   export type SubCategory = IConsoleSubCategory
   export type CategoryList = IConsoleCategoryList

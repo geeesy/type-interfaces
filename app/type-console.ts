@@ -34,8 +34,6 @@ export interface IRefCategoryList {
   isNewArrival: boolean
   impFactor: number;
   categoryCaption: string
-  isMainCat: boolean // * -> check condition
-  marketCode: string // * -> check condition
   parentCatId: string // have or empty string
 }
 
@@ -48,6 +46,11 @@ export interface ICategoryEntity {
 
 export interface IConsoleCategoryList extends IRefCategoryList {
   categoryId: string;
+}
+
+export interface ICategoryCreateParams {
+  isMainCat: boolean // * -> check condition
+  marketCode: string // * -> check condition
 }
 
 // ANCHOR: CATEGORY | Create Main Category
