@@ -155,9 +155,12 @@ import {
 import {
   ICategoryCreateMain,
   ICategoryCreateSub,
+  IConsoleCategoryList,
+  IConsoleMainCategory,
+  IConsoleSubCategory,
   IPaymentMethod
 } from './type-console'
-import { IMainCategory, IProduct, IProductCreate, IProductEntity, IProductList, IProductPackInVariant, IProductPackOnly, IProductVariantInPack, IProductVariantOnly, IResMainCategory, IResSubCategory, ISubCategory } from './type-catalog'
+import { ICategoryList, IMainCategory, IProduct, IProductCreate, IProductEntity, IProductList, IProductPackInVariant, IProductPackOnly, IProductVariantInPack, IProductVariantOnly, IResMainCategory, IResSubCategory, ISubCategory } from './type-catalog'
 import { ICompany, ICompanyCreate, ICompanyEntity, ICompanyPortfolio } from './type-company'
 import { IBusiness, IBusinessCreate } from './type-business'
 
@@ -320,6 +323,9 @@ export namespace GeeesyMarketplace {
 export namespace GeeesyConsole {
   export type CreateMainCategory = ICategoryCreateMain
   export type CreateSubCategory = ICategoryCreateSub
+  export type MainCategory = IConsoleMainCategory
+  export type SubCategory = IConsoleSubCategory
+  export type CategoryList = IConsoleCategoryList
 }
 
 export namespace GeeesyCatalog {
@@ -327,6 +333,7 @@ export namespace GeeesyCatalog {
   export type MainCategory = IMainCategory
   export type ResSubCategory = IResSubCategory | ISubCategory
   export type SubCategory = ISubCategory
+  export type CategoryList = ICategoryList
 }
 
 export namespace GeeesyApps {

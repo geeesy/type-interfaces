@@ -24,40 +24,61 @@ export interface ISupplier extends ISupplierCreate {
 /**
  * CATEGORY
  */
-// ANCHOR: CATEGORY | Create
-// NOTE: === console -> Create Category
-export interface ICategoryCreate {
-  isMainCat: boolean // * -> check condition
-  marketCode: string // * -> check condition
-  parentCatId?: string // * only sub-cat
-  categoryName: string;
-  categoryCaption: string
-  categoryDescription: string;
+// ANCHOR: CATEGORY | List
+export interface IRefCategoryList {
+  categoryName: string
   categoryImageUrl: string;
   categoryIconUrl: string;
-  categoryBannersUrl: string[];
   isRecommend: boolean;
+  isHighLight: boolean
+  isNewArrival: boolean
   impFactor: number;
+  parentCatId?: string
+}
+
+// ANCHOR: CATEGORY | Create
+// NOTE: === console -> Create Category
+export interface ICategoryEntity {
+  isMainCat: boolean // * -> check condition
+  marketCode: string // * -> check condition
+  categoryCaption: string
+  categoryDescription: string;
+  categoryBannersUrl: string[];
+}
+
+export interface IConsoleCategoryList extends IRefCategoryList {
+  categoryId: string;
+  createdAt: string
+  updatedAt: string
 }
 
 // ANCHOR: CATEGORY | Create Main Category
-export interface ICategoryCreateMain extends ICategoryCreate {
+// NOTE: === console -> Create Category
+export interface ICategoryCreateMain extends ICategoryEntity, IRefCategoryList {
   onHomepage: boolean
   themeColor: string
   color: string
 }
 
 // ANCHOR CATEGORY | Create Sub Category
-export interface ICategoryCreateSub extends ICategoryCreate {
+// NOTE: === console -> Create Category
+export interface ICategoryCreateSub extends ICategoryEntity, IRefCategoryList {
   onParentCatCard: boolean
+
 }
 
-// REVIEW: CATEGORY
-export interface ICategory extends ICategoryCreateMain, ICategoryCreateSub {
+export interface IConsoleMainCategory extends ICategoryCreateMain {
   categoryId: string;
   createdAt: string
-  updatedAt?: string
+  updatedAt: string
 }
+
+export interface IConsoleSubCategory extends ICategoryCreateSub {
+  categoryId: string;
+  createdAt: string
+  updatedAt: string
+}
+
 
 export interface ICreateProductCategorySpec {
   specGroupName: string;

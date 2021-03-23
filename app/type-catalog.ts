@@ -1,6 +1,5 @@
-import { ICategory, ICategoryCreateMain, ICategoryCreateSub, ICreateProductCategorySpec } from './type-console'
+import { ICategoryCreateMain, ICategoryCreateSub, IConsoleCategoryList, ICreateProductCategorySpec } from './type-console'
 import { IResAPI } from './interfaces'
-import { StringLiteralLike } from 'typescript'
 
 /**
  * STUB: Version 5.x
@@ -11,16 +10,22 @@ import { StringLiteralLike } from 'typescript'
  * <VIEW>
  */
 // ANCHOR: CATEGORY | View Main
+// NOTE: === <-- console - Category
 export interface IMainCategory extends ICategoryCreateMain {
   categoryId: string
   createdAt: string
-  updatedAt?: string
+  updatedAt: string
 }
 // ANCHOR: CATEGORY | View Sub
+// NOTE: === <-- console - Category
 export interface ISubCategory extends ICategoryCreateSub {
   categoryId: string
   createdAt: string
-  updatedAt?: string
+  updatedAt: string
+}
+
+export interface ICategoryList extends IConsoleCategoryList {
+
 }
 
 export interface IResMainCategory extends IResAPI {
@@ -32,7 +37,7 @@ export interface IResSubCategory extends IResAPI {
 }
 
 // * Product
-export interface IProductCategory extends ICategory {
+export interface IProductCategory extends ISubCategory {
   productUnits: string[]
   productSpec: ICreateProductCategorySpec[]
 }
