@@ -48,8 +48,6 @@ export interface ICategoryEntity {
 
 export interface IConsoleCategoryList extends IRefCategoryList {
   categoryId: string;
-  createdAt: string
-  updatedAt: string
 }
 
 // ANCHOR: CATEGORY | Create Main Category
