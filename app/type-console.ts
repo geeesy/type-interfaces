@@ -33,15 +33,15 @@ export interface IRefCategoryList {
   isHighLight: boolean
   isNewArrival: boolean
   impFactor: number;
-  parentCatId?: string
+  categoryCaption: string
+  isMainCat: boolean // * -> check condition
+  marketCode: string // * -> check condition
+  parentCatId: string // have or empty string
 }
 
 // ANCHOR: CATEGORY | Create
 // NOTE: === console -> Create Category
 export interface ICategoryEntity {
-  isMainCat: boolean // * -> check condition
-  marketCode: string // * -> check condition
-  categoryCaption: string
   categoryDescription: string;
   categoryBannersUrl: string[];
 }
