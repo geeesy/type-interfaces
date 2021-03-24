@@ -9,13 +9,13 @@ import { ICompanyEntity } from "./type-company";
   */
 // ANCHOR: SUPPLIER | Create
 // NOTE: === console -> Create Supplier
-export interface ISupplierCreate extends ICompanyEntity {
+export interface IConsoleSupplierCreate extends ICompanyEntity {
   categoryId: string
 }
 
 // REVIEW: SUPPLIER
 // NOTE: === console ==> market
-export interface ISupplier extends ISupplierCreate {
+export interface IConsoleSupplier extends IConsoleSupplierCreate {
   supplierId: string;
   createdAt: string
   updatedAt?: string

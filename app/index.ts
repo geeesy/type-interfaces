@@ -159,7 +159,9 @@ import {
   IConsoleCategoryList,
   IConsoleMainCategory,
   IConsoleSubCategory,
-  IPaymentMethod
+  IConsoleSupplier,
+  IConsoleSupplierCreate,
+  IPaymentMethod,
 } from './type-console'
 import { ICategoryList, IMainCategory, IProduct, IProductCreate, IProductEntity, IProductList, IProductPackInVariant, IProductPackOnly, IProductVariantInPack, IProductVariantOnly, IResMainCategory, IResSubCategory, ISubCategory } from './type-catalog'
 import { ICompany, ICompanyCreate, ICompanyEntity, ICompanyPortfolio } from './type-company'
@@ -321,13 +323,7 @@ export namespace GeeesyMarketplace {
 }
 /* #endregion */
 
-export namespace GeeesyConsole {
-  export type CreateMainCategory = ICategoryCreateMain & ICategoryCreateParams
-  export type CreateSubCategory = ICategoryCreateSub & ICategoryCreateParams
-  export type MainCategory = IConsoleMainCategory
-  export type SubCategory = IConsoleSubCategory
-  export type CategoryList = IConsoleCategoryList
-}
+
 
 export namespace GeeesyCatalog {
   export type ResMainCategory = IResMainCategory | IMainCategory
@@ -493,6 +489,16 @@ export namespace GeeesyApps {
   export type ApproverFormSubmit = IApproverFormCreate & IApproverFormCreateParams
   export type ResApprover = IResApprover | IApprover
   export type Approver = IApprover
+}
+
+export namespace GeeesyConsole {
+  export type CreateMainCategory = ICategoryCreateMain & ICategoryCreateParams
+  export type CreateSubCategory = ICategoryCreateSub & ICategoryCreateParams
+  export type MainCategory = IConsoleMainCategory
+  export type SubCategory = IConsoleSubCategory
+  export type CategoryList = IConsoleCategoryList
+  export type CreateSupplier = IConsoleSupplierCreate
+  export type Supplier = IConsoleSupplier
 }
 
 export namespace GappBusiness {
