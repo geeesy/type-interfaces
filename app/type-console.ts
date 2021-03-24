@@ -20,6 +20,12 @@ export interface IConsoleSupplier extends IConsoleSupplierCreate {
   updatedAt?: string
 }
 
+export interface IConsoleSupplierList {
+  companyName: string
+  companyCategoryId: string
+  supplierId: string
+}
+
 /**
  * CATEGORY
  */

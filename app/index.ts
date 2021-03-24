@@ -161,6 +161,7 @@ import {
   IConsoleSubCategory,
   IConsoleSupplier,
   IConsoleSupplierCreate,
+  IConsoleSupplierList,
   IPaymentMethod,
 } from './type-console'
 import { ICategoryList, IMainCategory, IProduct, IProductCreate, IProductEntity, IProductList, IProductPackInVariant, IProductPackOnly, IProductVariantInPack, IProductVariantOnly, IResMainCategory, IResSubCategory, ISubCategory } from './type-catalog'
@@ -499,6 +500,7 @@ export namespace GeeesyConsole {
   export type CategoryList = IConsoleCategoryList
   export type CreateSupplier = IConsoleSupplierCreate
   export type Supplier = IConsoleSupplier
+  export type SupplierList = IConsoleSupplierList
 }
 
 export namespace GappBusiness {
