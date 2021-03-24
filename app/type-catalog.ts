@@ -1,4 +1,4 @@
-import { ICategoryCreateMain, ICategoryCreateSub, IConsoleCategoryList, ICreateProductCategorySpec } from './type-console'
+import { IConsoleCategoryList, IConsoleMainCategory, IConsoleSubCategory, ICreateProductCategorySpec } from './type-console'
 import { IResAPI } from './interfaces'
 
 /**
@@ -11,17 +11,13 @@ import { IResAPI } from './interfaces'
  */
 // ANCHOR: CATEGORY | View Main
 // NOTE: === <-- console - Category
-export interface IMainCategory extends ICategoryCreateMain {
-  categoryId: string
-  createdAt: string
-  updatedAt: string
+export interface IMainCategory extends IConsoleMainCategory {
+
 }
 // ANCHOR: CATEGORY | View Sub
 // NOTE: === <-- console - Category
-export interface ISubCategory extends ICategoryCreateSub {
-  categoryId: string
-  createdAt: string
-  updatedAt: string
+export interface ISubCategory extends IConsoleSubCategory {
+
 }
 
 export interface ICategoryList extends IConsoleCategoryList {

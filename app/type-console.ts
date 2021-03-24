@@ -46,6 +46,8 @@ export interface ICategoryEntity {
 
 export interface IConsoleCategoryList extends IRefCategoryList {
   categoryId: string;
+  countSuppliers: number
+  countProducts: number
 }
 
 export interface ICategoryCreateParams {
@@ -70,12 +72,16 @@ export interface ICategoryCreateSub extends ICategoryEntity, IRefCategoryList {
 
 export interface IConsoleMainCategory extends ICategoryCreateMain {
   categoryId: string;
+  countSuppliers: number
+  countProducts: number
   createdAt: string
   updatedAt: string
 }
 
 export interface IConsoleSubCategory extends ICategoryCreateSub {
   categoryId: string;
+  countSuppliers: number
+  countProducts: number
   createdAt: string
   updatedAt: string
 }
