@@ -10,7 +10,6 @@ import { ICompanyEntity } from "./type-company";
 // ANCHOR: SUPPLIER | Create
 // NOTE: === console -> Create Supplier
 export interface IConsoleSupplierCreate extends ICompanyEntity {
-  categoryId: string
 }
 
 // REVIEW: SUPPLIER
