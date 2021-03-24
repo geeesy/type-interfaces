@@ -17,7 +17,7 @@ export interface IConsoleSupplierCreate extends ICompanyEntity {
 export interface IConsoleSupplier extends IConsoleSupplierCreate {
   supplierId: string;
   createdAt: string
-  updatedAt?: string
+  updatedAt: string
 }
 
 export interface IConsoleSupplierList {
