@@ -411,15 +411,6 @@ export namespace GeeesyApps {
   export type QuotationRfq = IQuotationRfq
 
   /**
-  * Pooled Procurement
-  */
-  export type PoolFormCreate = IPoolFormCreate
-  export type PoolList = IPoolList;
-  export type Pool = IPool;
-  export type PoolJoin = IPoolJoin;
-  export type PoolJoiner = IPoolJoiner;
-
-  /**
    * @description
    * FORM Interface for Purchase Order (PO) creation
    * @param
@@ -491,6 +482,15 @@ export namespace GeeesyApps {
   export type ResApprover = IResApprover | IApprover
   export type Approver = IApprover
 }
+
+/**
+* Pooled Procurement
+*/
+export type PoolFormCreate = IPoolFormCreate
+export type PoolList = IPoolList;
+export type Pool = IPool;
+export type PoolJoin = IPoolJoin;
+export type PoolJoiner = IPoolJoiner;
 
 export namespace GeeesyConsole {
   export type CreateMainCategory = ICategoryCreateMain & ICategoryCreateParams

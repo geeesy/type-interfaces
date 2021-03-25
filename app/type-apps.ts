@@ -622,11 +622,8 @@ export interface IPoolJoin {
   compId?: string
 }
 
-export interface IPoolList {
+export interface IPoolList extends IPoolProduct {
   poolId: string
-  productTitle: string
-  productImageUrl: string
-  poolQty: number
   remainPoolQty: number // * TO UPDATE
   createdAt: string
   updatedAt: string
