@@ -106,6 +106,7 @@ import {
   IInvoice,
   IInvoiceFormCreate,
   IInvoiceFormCreateParams,
+  IJoinerPoolList,
   IPO,
   IPOFormCreate,
   IPOFormCreateParams,
@@ -491,6 +492,7 @@ export namespace GeeesyApps {
   export type Pool = IPool;
   export type PoolJoin = IPoolJoin;
   export type PoolJoiner = IPoolJoiner;
+  export type PoolJoinerListPool = IJoinerPoolList
 }
 
 export namespace GeeesyConsole {

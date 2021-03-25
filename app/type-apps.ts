@@ -622,6 +622,13 @@ export interface IPoolJoin {
   compId?: string
 }
 
+export interface IJoinerPoolList extends IPoolList {
+  joinedAt: string
+  statusApproved: boolean
+  statusUpdatedAt: string
+}
+
+
 export interface IPoolList extends IPoolProduct {
   poolId: string
   remainPoolQty: number // * TO UPDATE
