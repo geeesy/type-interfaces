@@ -336,6 +336,7 @@ export namespace GeeesyCatalog {
 
 export namespace GeeesyApps {
 
+
   /**
    * @description
    * Interface for Inquiry
@@ -481,16 +482,16 @@ export namespace GeeesyApps {
   export type ApproverFormSubmit = IApproverFormCreate & IApproverFormCreateParams
   export type ResApprover = IResApprover | IApprover
   export type Approver = IApprover
-}
 
-/**
+  /**
 * Pooled Procurement
 */
-export type PoolFormCreate = IPoolFormCreate
-export type PoolList = IPoolList;
-export type Pool = IPool;
-export type PoolJoin = IPoolJoin;
-export type PoolJoiner = IPoolJoiner;
+  export type PoolFormCreate = IPoolFormCreate
+  export type PoolList = IPoolList;
+  export type Pool = IPool;
+  export type PoolJoin = IPoolJoin;
+  export type PoolJoiner = IPoolJoiner;
+}
 
 export namespace GeeesyConsole {
   export type CreateMainCategory = ICategoryCreateMain & ICategoryCreateParams
