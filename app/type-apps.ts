@@ -612,7 +612,7 @@ export interface IPoolFormCreate {
   formGroupData: IPoolData
 }
 
-export interface IPoolJoin {
+export interface IPoolJoin extends IPoolProduct {
   poolId: string;
   senderId: string
   subSenderId: string
@@ -621,13 +621,6 @@ export interface IPoolJoin {
   supplierId?: string
   compId?: string
 }
-
-export interface IJoinerPoolList extends IPoolList {
-  joinedAt: string
-  statusApproved: boolean
-  statusUpdatedAt: string
-}
-
 
 export interface IPoolList extends IPoolProduct {
   poolId: string
@@ -639,6 +632,12 @@ export interface IPoolList extends IPoolProduct {
   joinersCount: number // * TO UPDATE
   subBuyersCount: number // * TO UPDATE
   isClosed: boolean // * TO UPDATE (on QTY === POOL)
+}
+
+export interface IJoinerPoolList extends IPoolList {
+  joinedAt: string
+  statusApproved: boolean
+  statusUpdatedAt: string
 }
 
 export interface IPool extends IPoolList {
