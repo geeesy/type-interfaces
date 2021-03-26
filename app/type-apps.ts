@@ -634,7 +634,13 @@ export interface IPoolList extends IPoolProduct {
   isClosed: boolean // * TO UPDATE (on QTY === POOL)
 }
 
-export interface IJoinerPoolList extends IPoolJoin {
+export interface IJoinerPoolStatus {
+  poolQty: number
+  remainPoolQty: number
+  isClosed: boolean
+}
+
+export interface IJoinerPoolList extends IPoolJoin, IJoinerPoolStatus {
   joinedAt: string
   statusApproved: boolean
   statusUpdatedAt: string
