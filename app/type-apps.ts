@@ -647,6 +647,14 @@ export interface IJoinerPoolList extends IPoolJoin {
   statusUpdatedAt: string
 }
 
+export interface IPoolAcceptJoiner {
+  poolId: string
+  senderId: string
+  subSenderId: string
+  joinedAt: string
+  joinPoolQty: number
+}
+
 export interface IPool extends IPoolList {
   product: IPoolProduct
   data: IPoolData

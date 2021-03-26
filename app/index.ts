@@ -111,6 +111,7 @@ import {
   IPOFormCreate,
   IPOFormCreateParams,
   IPool,
+  IPoolAcceptJoiner,
   IPoolFormCreate,
   IPoolJoin,
   IPoolJoiner,
@@ -493,6 +494,7 @@ export namespace GeeesyApps {
   export type PoolJoin = IPoolJoin;
   export type PoolJoiner = IPoolJoiner;
   export type PoolJoinerListPool = IJoinerPoolList
+  export type PoolAcceptJoiner = IPoolAcceptJoiner
 }
 
 export namespace GeeesyConsole {
