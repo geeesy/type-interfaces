@@ -640,7 +640,7 @@ export interface IJoinerPoolStatus {
   isClosed: boolean
 }
 
-export interface IJoinerPoolList extends IPoolJoin, IJoinerPoolStatus {
+export interface IJoinerPoolList extends IPoolJoin {
   joinedAt: string
   statusApproved: boolean
   statusUpdatedAt: string
