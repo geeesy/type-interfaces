@@ -629,6 +629,7 @@ export interface IPoolList extends IPoolProduct {
   updatedAt: string
   expiryDate: string
   senderId: string
+  joinsCount: number // * TO UPDATE
   joinersCount: number // * TO UPDATE
   subBuyersCount: number // * TO UPDATE
   isClosed: boolean // * TO UPDATE (on QTY === POOL)
