@@ -106,15 +106,15 @@ import {
   IInvoice,
   IInvoiceFormCreate,
   IInvoiceFormCreateParams,
-  IJoinerPoolList,
+  IJoinerJoinPool,
+  IJoinerListJoiningPools,
+  IJoinerListPools,
   IPO,
   IPOFormCreate,
   IPOFormCreateParams,
   IPool,
-  IPoolAcceptJoiner,
+  IPoolAcceptJoining,
   IPoolFormCreate,
-  IPoolJoin,
-  IPoolJoiner,
   IPoolList,
   IQuotation,
   IQuotationFormCreate,
@@ -489,12 +489,12 @@ export namespace GeeesyApps {
 * Pooled Procurement
 */
   export type PoolFormCreate = IPoolFormCreate
-  export type PoolList = IPoolList;
   export type Pool = IPool;
-  export type PoolJoin = IPoolJoin;
-  export type PoolJoiner = IPoolJoiner;
-  export type PoolJoinerListPool = IJoinerPoolList
-  export type PoolAcceptJoiner = IPoolAcceptJoiner
+  export type PoolList = IPoolList
+  export type PoolJoinerJoinPool = IJoinerJoinPool;
+  export type PoolJoinerListPools = IJoinerListPools;
+  export type PoolJoinerListJoiningPools = IJoinerListJoiningPools
+  export type PoolAcceptJoining = IPoolAcceptJoining
 }
 
 export namespace GeeesyConsole {

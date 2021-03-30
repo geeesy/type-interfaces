@@ -580,7 +580,7 @@ export interface IQuotationCompareColumn {
 // STUB: Pooled Procurement Form
 export interface IPoolProduct {
   productTitle: string
-  productImageUrl: string
+  productImageUrls: string[]
   poolQty: number
   minQty: number
   stepQty: number
@@ -608,20 +608,10 @@ export interface IPoolData {
   isOverPool: boolean
 }
 
+// ANCHOR: POOL | MAIN-BUYER --> CREATE POOL
 export interface IPoolFormCreate {
   formGroupProduct: IPoolProduct
   formGroupData: IPoolData
-}
-
-// ANCHOR: POOL | JOINER JOIN POOL
-export interface IPoolJoin extends IPoolProduct {
-  poolId: string;
-  senderId: string
-  subSenderId: string
-  contact: ISenderContact
-  joinPoolQty: number
-  supplierId?: string
-  compId?: string
 }
 
 // ANCHOR: POOL | MAIN-BUYER --> LIST POOLS
@@ -639,37 +629,58 @@ export interface IPoolList extends IPoolProduct {
   isOverPool: boolean
 }
 
-export interface IJoinerPoolStatus {
-  poolQty: number
-  remainPoolQty: number
-  isClosed: boolean
-}
-
-// ANCHOR: POOL | JOINER --> LIST POOLS
-export interface IJoinerPoolList extends IPoolJoin {
-  joinedAt: string
-  // acceptedJoinPoolQty: number // * TO UPDATE ON ACCEPTED
-  statusApproved: boolean
-  statusUpdatedAt: string
-}
-
-export interface IPoolAcceptJoiner {
-  poolId: string
-  senderId: string
-  subSenderId: string
-  joinedAt: string
-  joinPoolQty: number
-}
-
+// REVIEW: POOL ENTITY
 export interface IPool extends IPoolList {
   product: IPoolProduct
   data: IPoolData
 }
 
-export interface IPoolJoiner extends IPoolJoin {
+// ANCHOR: POOL | JOINER --> JOIN POOL
+export interface IJoinerJoinPool extends IPoolProduct {
+  poolId: string;
+  senderId: string
+  subSenderId: string
+  contact: ISenderContact
+  joinPoolQty: number
+  supplierId?: string
+  compId?: string
+}
+
+// ANCHOR: POOL | JOINER --> LIST JOINING POOLS
+export interface IJoinerListJoiningPools extends IJoinerJoinPool {
   joinedAt: string
   statusApproved: boolean
   statusUpdatedAt: string
+}
+
+// STUB: POOL | DB | JOINER x POOL ENTITY
+export interface IJoinerListPools extends IPoolProduct {
+  poolId: string;
+  senderId: string
+  subSenderId: string
+  contact: ISenderContact
+  supplierId?: string
+  compId?: string
+  firstJoinedAt: string
+  latestStatusUpdatedAt: string
+  totalJoinPoolQty: number
+  totalAcceptedJoinPoolQty: number
+}
+
+// ANCHOR: POOL | JOINER --> LIST POOLS
+export interface IRefJoinerListPools extends IJoinerListPools {
+  poolQty: number
+  remainPoolQty: number
+  isClosed: boolean
+}
+
+// ANCHOR: POOL | MAIN-BUYER --> ACCEPT JOINING
+export interface IPoolAcceptJoining {
+  poolId: string
+  senderId: string
+  subSenderId: string
+  joinedAt: string
+  joinPoolQty: number
 }
 
 /* #region FIXME: PO */
