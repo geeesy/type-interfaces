@@ -605,6 +605,7 @@ export interface IPoolData {
   supplierId?: string
   compId?: string
   marketCode: string
+  isOverPool: boolean
 }
 
 export interface IPoolFormCreate {
@@ -612,6 +613,7 @@ export interface IPoolFormCreate {
   formGroupData: IPoolData
 }
 
+// ANCHOR: POOL | JOINER JOIN POOL
 export interface IPoolJoin extends IPoolProduct {
   poolId: string;
   senderId: string
@@ -622,6 +624,7 @@ export interface IPoolJoin extends IPoolProduct {
   compId?: string
 }
 
+// ANCHOR: POOL | MAIN-BUYER --> LIST POOLS
 export interface IPoolList extends IPoolProduct {
   poolId: string
   remainPoolQty: number // * TO UPDATE
@@ -633,6 +636,7 @@ export interface IPoolList extends IPoolProduct {
   joinersCount: number // * TO UPDATE
   subBuyersCount: number // * TO UPDATE
   isClosed: boolean // * TO UPDATE (on QTY === POOL)
+  isOverPool: boolean
 }
 
 export interface IJoinerPoolStatus {
@@ -641,8 +645,10 @@ export interface IJoinerPoolStatus {
   isClosed: boolean
 }
 
+// ANCHOR: POOL | JOINER --> LIST POOLS
 export interface IJoinerPoolList extends IPoolJoin {
   joinedAt: string
+  acceptedJoinPoolQty: number // * TO UPDATE ON ACCEPTED
   statusApproved: boolean
   statusUpdatedAt: string
 }
