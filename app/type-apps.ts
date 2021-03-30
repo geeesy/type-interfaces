@@ -648,7 +648,7 @@ export interface IJoinerPoolStatus {
 // ANCHOR: POOL | JOINER --> LIST POOLS
 export interface IJoinerPoolList extends IPoolJoin {
   joinedAt: string
-  acceptedJoinPoolQty: number // * TO UPDATE ON ACCEPTED
+  // acceptedJoinPoolQty: number // * TO UPDATE ON ACCEPTED
   statusApproved: boolean
   statusUpdatedAt: string
 }
