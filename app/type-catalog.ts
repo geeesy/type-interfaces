@@ -132,6 +132,8 @@ export interface IRefProductList {
   countPacksInVariant: number
 }
 export interface IProductList extends IRefProductList {
+  productCode: string
+  productSku: string;
   productId: string
   createdAt: string
   updatedAt: string
