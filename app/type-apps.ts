@@ -653,6 +653,11 @@ export interface IJoinerListJoiningPools extends IJoinerJoinPool {
   statusUpdatedAt: string
 }
 
+// STUB: POOL | JOINING
+export interface IJoining extends IJoinerListJoiningPools {
+
+}
+
 // STUB: POOL | DB | JOINER x POOL ENTITY
 export interface IJoinerListPools extends IPoolProduct {
   poolId: string;
