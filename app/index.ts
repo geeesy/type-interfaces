@@ -117,6 +117,7 @@ import {
   IPoolAcceptJoining,
   IPoolFormCreate,
   IPoolList,
+  IPoolStatus,
   IQuotation,
   IQuotationFormCreate,
   IQuotationFormCreateParams,
@@ -491,6 +492,7 @@ export namespace GeeesyApps {
 */
   export type PoolFormCreate = IPoolFormCreate
   export type Pool = IPool;
+  export type PoolStatus = IPoolStatus
   export type PoolList = IPoolList
   export type PoolJoining = IJoining
   export type PoolJoinerJoinPool = IJoinerJoinPool;

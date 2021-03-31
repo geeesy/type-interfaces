@@ -672,11 +672,14 @@ export interface IJoinerListPools extends IPoolProduct {
   totalAcceptedJoinPoolQty: number
 }
 
-// ANCHOR: POOL | JOINER --> LIST POOLS
-export interface IRefJoinerListPools extends IJoinerListPools {
+export interface IPoolStatus {
   poolQty: number
   remainPoolQty: number
   isClosed: boolean
+}
+
+// ANCHOR: POOL | JOINER --> LIST POOLS
+export interface IRefJoinerListPools extends IJoinerListPools, IPoolStatus {
 }
 
 // ANCHOR: POOL | MAIN-BUYER --> ACCEPT JOINING
