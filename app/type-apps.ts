@@ -668,8 +668,8 @@ export interface IJoinerListPools extends IPoolProduct {
   compId?: string
   firstJoinedAt: string
   latestStatusUpdatedAt: string
-  totalJoinPoolQty: number // * TO UPDATE
-  totalAcceptedJoinPoolQty: number
+  totalJoinPoolQty: number // * TO UPDATE ON JOIN
+  totalAcceptedJoinPoolQty: number // * TO UPDATE ON ACCEPT
 }
 
 export interface IPoolStatus {
