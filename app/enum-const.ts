@@ -30,6 +30,29 @@ export const SearchPageArr = [
   SearchPage.Location
 ]
 
+export enum StatusPoolJoining {
+  'joined',
+  'cancel',
+  'request-cancel',
+  'accept-cancel'
+}
+
+export enum StatusPoolShippingMainBuyer {
+  'to purchase',
+  'prepare',
+  'shipped',
+  'received',
+  'complete'
+}
+
+export enum StatusPoolShippingSubBuyer {
+  'waiting',
+  'purchasing',
+  'packing',
+  'shipping',
+  'complete'
+}
+
 // export const RfqCreditTerm = ['none', 'cash', '30', '60', '90']
 
 // export const RfqPaymentMethod = ['deposit', 'cheque', 'creditCard', 'onDelivery']

@@ -1,5 +1,7 @@
 /* #region STUB: Version 3.x */
 
+import { StatusPoolJoining, StatusPoolShippingMainBuyer, StatusPoolShippingSubBuyer } from "./enum-const";
+
 export interface IApprove {
   nameTitle: string;
   fullName: string;
@@ -651,6 +653,7 @@ export interface IJoinerListJoiningPools extends IJoinerJoinPool {
   joinedAt: string
   statusApproved: boolean
   statusUpdatedAt: string
+  statusJoining: StatusPoolJoining
 }
 
 // STUB: POOL | JOINING
@@ -670,6 +673,8 @@ export interface IJoinerListPools extends IPoolProduct {
   latestStatusUpdatedAt: string
   totalJoinPoolQty: number // * TO UPDATE ON JOIN
   totalAcceptedJoinPoolQty: number // * TO UPDATE ON ACCEPT
+  statusShippingMainBuyer: StatusPoolShippingMainBuyer
+  statusShippingSubBuyer: StatusPoolShippingSubBuyer
 }
 
 export interface IPoolStatus {
