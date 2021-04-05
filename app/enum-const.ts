@@ -38,7 +38,7 @@ export enum StatusPoolJoining {
 }
 
 export enum StatusPoolShippingMainBuyer {
-  'n/a',
+  'none',
   'to_purchase',
   'prepare',
   'shipped',
@@ -47,7 +47,7 @@ export enum StatusPoolShippingMainBuyer {
 }
 
 export enum StatusPoolShippingSubBuyer {
-  'n/a',
+  'none',
   'waiting',
   'purchasing',
   'packing',
