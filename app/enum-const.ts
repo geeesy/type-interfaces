@@ -31,10 +31,10 @@ export const SearchPageArr = [
 ]
 
 export enum StatusPoolJoining {
-  'joined',
-  'cancel',
-  'request-cancel',
-  'accept-cancel'
+  Joined = 'joined',
+  Cancel = 'cancel',
+  RequestCancel = 'request-cancel',
+  AcceptedCancel = 'accepted-cancel'
 }
 
 export enum StatusPoolShippingMainBuyer {
