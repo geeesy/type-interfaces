@@ -157,7 +157,8 @@ import {
   ITaxInvoiceFormCreate,
   ITaxInvoiceFormCreateParams,
   IVendor,
-  IVendorCreate
+  IVendorCreate,
+  IVendorCreateParams
 } from './type-apps'
 import {
   ICategoryCreateMain,
@@ -507,6 +508,7 @@ export namespace GeeesyApps {
   * Vendor
   */
   export type VendorCreate = IVendorCreate
+  export type VendorCreateParams = IVendorCreateParams
   export type Vendor = IVendor
   export type VendorList = IRefVendorList
 }
