@@ -126,12 +126,15 @@ export interface IRefVendorList {
   companyPhone: string[];
   companyEmail: string[];
   companyNote?: string;
+  vendorId: string
 }
 
 export interface IVendor extends IVendorCreate {
   createdAt: string
   updatedAt: string
   createdBy: string
+  vendorId: string
+  relCompId: string
 }
 
 export interface ISenderContact {
