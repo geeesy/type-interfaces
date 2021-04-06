@@ -124,6 +124,7 @@ import {
   IQuotationList,
   IQuotationRfq,
   IQuotationRfqFormCreate,
+  IRefVendorList,
   IResApprover,
   IResBillingNote,
   IResInquiry,
@@ -154,7 +155,9 @@ import {
   ISOFormCreateParams,
   ITaxInvoice,
   ITaxInvoiceFormCreate,
-  ITaxInvoiceFormCreateParams
+  ITaxInvoiceFormCreateParams,
+  IVendor,
+  IVendorCreate
 } from './type-apps'
 import {
   ICategoryCreateMain,
@@ -499,6 +502,13 @@ export namespace GeeesyApps {
   export type PoolJoinerListPools = IJoinerListPools;
   export type PoolJoinerListJoiningPools = IJoinerListJoiningPools
   export type PoolAcceptJoining = IPoolAcceptJoining
+
+  /**
+  * Vendor
+  */
+  export type VendorCreate = IVendorCreate
+  export type Vendor = IVendor
+  export type VendorList = IRefVendorList
 }
 
 export namespace GeeesyConsole {
