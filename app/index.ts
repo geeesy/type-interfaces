@@ -507,8 +507,7 @@ export namespace GeeesyApps {
   /**
   * Vendor
   */
-  export type VendorCreate = IVendorCreate
-  export type VendorCreateParams = IVendorCreateParams
+  export type VendorCreate = IVendorCreate & IVendorCreateParams
   export type Vendor = IVendor
   export type VendorList = IRefVendorList
 }

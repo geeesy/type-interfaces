@@ -110,7 +110,7 @@ export interface IVendorCreateParams {
   identityId: string
 }
 
-export interface IVendorCreate extends IVendorCreateParams, ICompanyContactInfo {
+export interface IVendorCreate extends ICompanyContactInfo {
   companyLogoUrl: string
   contactPersons: IPersonContactInfo[]
   remark: string
