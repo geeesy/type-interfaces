@@ -105,6 +105,11 @@ export interface IPersonContactInfo {
   note?: string;
 }
 
+export interface IVendorCreateParams {
+  compId: string
+  identityId: string
+}
+
 export interface IVendorCreate extends ICompanyContactInfo {
   companyLogoUrl: string
   contactPersons: IPersonContactInfo[]
@@ -126,6 +131,7 @@ export interface IRefVendorList {
 export interface IVendor extends IVendorCreate {
   createdAt: string
   updatedAt: string
+  createdBy: string
 }
 
 export interface ISenderContact {
