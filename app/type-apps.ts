@@ -207,6 +207,7 @@ export interface IInquiryFormGroupProduct {
   productCurrency: string;
   productName: string;
   productCoverUrl: string;
+  productImagesUrl: string[]
 }
 
 export interface IInquiryFormGroupData {
