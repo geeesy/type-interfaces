@@ -113,6 +113,7 @@ export interface IVendorCreateParams {
 export interface IVendorCreate extends ICompanyContactInfo {
   companyLogoUrl: string
   contactPersons: IPersonContactInfo[]
+  vendorType: 'seller' | 'buyer' | 'both'
   remark: string
   note: string
 }
