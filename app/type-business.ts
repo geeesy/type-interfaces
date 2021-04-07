@@ -46,5 +46,7 @@ export interface IฺBusinessUserIdentity {
   businessId: string
   businessName: string
   isActive: boolean
-  companiesId: string[]
+  companies: string[]
+  historyCountOnCompany?: number // * ADMIN
+  historyCountOnAdmin?: number // * STAFF
 }
