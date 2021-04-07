@@ -1,3 +1,5 @@
+import { IPersonContactInfo } from './type-apps';
+import { IฺBusinessUserIdentity } from './type-business';
 import { IPaymentMethod, IShippingZone } from './type-console';
 
 /**
@@ -76,10 +78,7 @@ export interface ICompanyBoard {
   avatarImageUrl: string
 }
 
-export interface IContactPerson {
-  fullName: string;
-  emails: string[];
-  mobiles: string[];
+export interface IContactPerson extends IPersonContactInfo {
   positions: string[];
   isKeyContact: boolean;
   avatarImageUrl: string
@@ -171,6 +170,12 @@ export interface IFactory {
 /**
  * COMPANY
  */
+// REVIEW: USER
+export interface ICompanyUserIdentity extends IฺBusinessUserIdentity {
+  contact: IContactPerson
+}
+
+
 // ANCHOR: COMPANY | Entity
 export interface ICompanyEntity {
   companyName: string;

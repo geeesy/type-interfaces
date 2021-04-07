@@ -98,8 +98,8 @@ export interface ICompanyContactInfo {
 
 export interface IPersonContactInfo {
   fullName: string;
-  email: string[];
-  mobile: string[];
+  emails: string[];
+  mobiles: string[];
   social?: ISocial;
   address?: string;
   note?: string;

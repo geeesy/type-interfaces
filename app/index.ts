@@ -90,7 +90,8 @@ import {
   ISupplierPort,
   IProductWithSupplier,
   IProductWithSupplierCard,
-  ISupplierWithProductCard
+  ISupplierWithProductCard,
+  IMarkerUserIdentity
 } from './type-marketplace'
 import {
   IApprover,
@@ -173,8 +174,8 @@ import {
   IPaymentMethod,
 } from './type-console'
 import { ICategoryList, IMainCategory, IProduct, IProductCreate, IProductEntity, IProductList, IProductPackInVariant, IProductPackOnly, IProductVariantInPack, IProductVariantOnly, IResMainCategory, IResSubCategory, ISubCategory } from './type-catalog'
-import { ICompany, ICompanyCreate, ICompanyEntity, ICompanyPortfolio } from './type-company'
-import { IBusiness, IBusinessCreate } from './type-business'
+import { ICompany, ICompanyCreate, ICompanyEntity, ICompanyPortfolio, ICompanyUserIdentity } from './type-company'
+import { IBusiness, IBusinessCreate, IฺBusinessUserIdentity } from './type-business'
 
 /* #region FIXME: Marketplace */
 export namespace GeeesyMarketplace {
@@ -342,6 +343,7 @@ export namespace GeeesyCatalog {
   export type CategoryList = ICategoryList
 }
 
+// REVIEW: G-BIZ
 export namespace GeeesyApps {
 
 
@@ -510,8 +512,14 @@ export namespace GeeesyApps {
   export type VendorCreate = IVendorCreate & IVendorCreateParams
   export type Vendor = IVendor
   export type VendorList = IRefVendorList
+
+  /**
+  * User
+   */
+  export type User = ICompanyUserIdentity
 }
 
+// REVIEW: CONSOLE
 export namespace GeeesyConsole {
   export type CreateMainCategory = ICategoryCreateMain & ICategoryCreateParams
   export type CreateSubCategory = ICategoryCreateSub & ICategoryCreateParams
@@ -523,6 +531,7 @@ export namespace GeeesyConsole {
   export type SupplierList = IConsoleSupplierList
 }
 
+// REVIEW: BC
 export namespace GappBusiness {
   export type CompanyEntity = ICompanyEntity
   export type CompanyInfo = ICompany
@@ -530,15 +539,19 @@ export namespace GappBusiness {
   export type CreateCompany = ICompanyCreate
   export type BusinessInfo = IBusiness
   export type CreateBusiness = IBusinessCreate
+  export type User = IฺBusinessUserIdentity
 }
 
+// REVIEW: G-MARKET
 export namespace GappMarket {
   export type Supplier = ISupplierPort
   export type ListProductWithSupplier = IProductWithSupplierCard
   export type ListSupplierWithProduct = ISupplierWithProductCard
   export type Product = IProductWithSupplier
+  export type User = IMarkerUserIdentity
 }
 
+// REVIEW: G-BIZ | PRODUCT
 export namespace GappInventory {
   export type ProductEntity = IProductEntity
   export type CreateProduct = IProductCreate

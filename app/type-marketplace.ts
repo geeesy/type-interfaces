@@ -1,7 +1,11 @@
 import { IResAPI } from './interfaces'
 import { IProduct, IProductEntity, IProductList } from './type-catalog';
-import { ICompanyContactInfo, ICompanyEntity, ICompanyPortfolio } from './type-company';
+import { ICompanyContactInfo, ICompanyEntity, ICompanyPortfolio, ICompanyUserIdentity } from './type-company';
 
+// REVIEW: USER
+export interface IMarkerUserIdentity extends ICompanyUserIdentity {
+
+}
 
 export interface IResProduct extends IResAPI {
   data: ISupplierWithProductCard[];
