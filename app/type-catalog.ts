@@ -126,8 +126,8 @@ export interface IRefProductList {
   productType?: string;
 
   // -> Available
-  countVariants: number
-  countPacks: number
+  countVariants: number // * UPDATED ON [C-U-D] VARIANT
+  countPacks: number // * UPDATED ON [C-U-D] PACK
   countVariantsInPack: number
   countPacksInVariant: number
 }
@@ -178,16 +178,29 @@ export interface IProductCreate extends IProductEntity, IRefProductList {
   productOrigin: string;
   productChannels: string[];
   productSpec: IProductSpec[]
+  variantSelectors?: IProductVariantSelector[]
   haveVariants?: IProductVariantOnly[]
   havePacks?: IProductPackOnly[]
   haveVariantsInPack?: IProductVariantInPack[]
   havePacksInVariant?: IProductPackInVariant[]
 }
 
+export interface IProductVariantSelector {
+  variantGroupName: string
+  selectors: string[]
+}
+
+export interface IProductVariantMatchId {
+  variantHierarchy: string[]
+  productVariantId: string
+}
+
+
 export interface IProduct extends IProductCreate {
   productId: string
   createdAt: string
   updatedAt: string
+  variantMatchId?: IProductVariantMatchId[]
 }
 
 
