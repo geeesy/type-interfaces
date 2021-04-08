@@ -7,6 +7,7 @@ export interface IMarketUserIdentity extends ICompanyUserIdentity {
   fbId: string
   googleId: string
   marketUserId: string
+  relCompId: string
 }
 
 export interface IResProduct extends IResAPI {
