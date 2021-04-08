@@ -91,7 +91,7 @@ import {
   IProductWithSupplier,
   IProductWithSupplierCard,
   ISupplierWithProductCard,
-  IMarkerUserIdentity
+  IMarketUserIdentity
 } from './type-marketplace'
 import {
   IApprover,
@@ -548,7 +548,7 @@ export namespace GappMarket {
   export type ListProductWithSupplier = IProductWithSupplierCard
   export type ListSupplierWithProduct = ISupplierWithProductCard
   export type Product = IProductWithSupplier
-  export type User = IMarkerUserIdentity
+  export type User = IMarketUserIdentity
 }
 
 // REVIEW: G-BIZ | PRODUCT

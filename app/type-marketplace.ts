@@ -3,8 +3,10 @@ import { IProduct, IProductEntity, IProductList } from './type-catalog';
 import { ICompanyContactInfo, ICompanyEntity, ICompanyPortfolio, ICompanyUserIdentity } from './type-company';
 
 // REVIEW: USER
-export interface IMarkerUserIdentity extends ICompanyUserIdentity {
-
+export interface IMarketUserIdentity extends ICompanyUserIdentity {
+  fbId: string
+  googleId: string
+  marketUserId: string
 }
 
 export interface IResProduct extends IResAPI {
