@@ -208,6 +208,7 @@ export interface IVendorRequestAccept {
     compId: string
   }
   requestId: string
+  vendorType: TVendorType
   vendorTypeOnAccept: TVendorType
 }
 
