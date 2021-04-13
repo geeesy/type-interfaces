@@ -106,6 +106,10 @@ export interface IPersonContactInfo {
   note?: string;
 }
 
+
+// STUB: VENDOR
+export type TVendorType = 'seller' | 'buyer' | 'both'
+
 export interface IVendorCreateParams {
   compId: string
   identityId: string
@@ -114,7 +118,7 @@ export interface IVendorCreateParams {
 export interface IVendorCreate extends ICompanyContactInfo {
   companyLogoUrl: string
   contactPersons: IPersonContactInfo[]
-  vendorType: 'seller' | 'buyer' | 'both'
+  vendorType: TVendorType
   remark: string
   note: string
 }
@@ -162,7 +166,7 @@ export interface IVendorRequestList extends ICompanyOnList {
   createdAt: string
   updatedAt: string
   requestId: string
-  vendorType: 'seller' | 'buyer' | 'both'
+  vendorType: TVendorType
 }
 
 export interface ICompRequestVendor {
@@ -177,7 +181,7 @@ export interface ICompRequestVendor {
     compId: string
     receiverId: string
   }
-  vendorType: 'seller' | 'buyer' | 'both'
+  vendorType: TVendorType
 }
 
 export interface IVendorRequest {
@@ -188,7 +192,7 @@ export interface IVendorRequest {
   requestId: string
   senderId: string
   receiverId: string
-  vendorType: 'seller' | 'buyer' | 'both'
+  vendorType: TVendorType
   acceptedAt?: string
 }
 
@@ -196,8 +200,8 @@ export interface IVendorRequestAccept {
   compId: string
   vendorId: string // * compId
   requestId: string
-  vendorType: 'seller' | 'buyer' | 'both'
-  vendorTypeOnAccept: 'seller' | 'buyer' | 'both'
+  vendorType: TVendorType
+  vendorTypeOnAccept: TVendorType
 }
 
 export interface ISenderContact {
