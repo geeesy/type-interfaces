@@ -1,7 +1,7 @@
 /* #region STUB: Version 3.x */
 
 import { StatusPoolJoining, StatusPoolShippingMainBuyer, StatusPoolShippingSubBuyer } from "./enum-const";
-import { IAddress } from "./type-company";
+import { IAddress, ICompanyContactInfo } from "./type-company";
 
 export interface IApprove {
   nameTitle: string;
@@ -79,22 +79,6 @@ export interface ICompanyTaxBranch {
   id: string;
   name: string;
   address: string;
-}
-
-// TODO: cloned to type-company
-export interface ICompanyContactInfo {
-  companyName: string;
-  companyPhone: string[];
-  companyFax?: string[];
-  companyWebsite?: string[];
-  companyEmail: string[];
-  companySocial?: ISocial;
-  contactAddress: string;
-  billingAddress?: string;
-  shippingAddress?: string;
-  companyNote?: string;
-  companyRegisNo: string;
-  companyTaxInfo?: ICompanyTaxInfo;
 }
 
 export interface IPersonContactInfo {

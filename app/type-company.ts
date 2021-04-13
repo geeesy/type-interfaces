@@ -67,7 +67,6 @@ export interface ICompanyContactInfo {
   companyNote?: string;
   companyRegisNo: string;
   companyTaxInfo?: ICompanyTaxInfo;
-  categoryId: string;
 }
 
 export interface ICompanyBoard {
