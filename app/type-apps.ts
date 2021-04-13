@@ -140,13 +140,14 @@ export interface IVendor extends IVendorCreate {
 }
 
 export interface ICompanyOnList {
-  compId: string
+  compId: string // * Company have, BUT Vendor maybe
   companyLogoUrl: string
   companyName: string
   contactAddress: IAddress;
   companyPhones: string[];
   companyEmails: string[];
   companySocials?: ISocial
+  supplierId: string // * Vendor have, BUT Company maybe
   //! INDEX on CORE
   isVerified: boolean;
   rating: number;
@@ -177,12 +178,14 @@ export interface ICompRequestVendor {
   }
 }
 
-export interface IVendorRequest extends ICompRequestVendor {
+export interface IVendorRequest {
   createdAt: string
   updatedAt: string
   companyInfo: ICompanyOnList
   vendorInfo: ICompanyOnList
   requestId: string
+  senderId: string
+  receiverId: string
 }
 
 export interface ISenderContact {
