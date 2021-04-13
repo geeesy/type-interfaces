@@ -1,6 +1,7 @@
 /* #region STUB: Version 3.x */
 
 import { StatusPoolJoining, StatusPoolShippingMainBuyer, StatusPoolShippingSubBuyer } from "./enum-const";
+import { IAddress } from "./type-company";
 
 export interface IApprove {
   nameTitle: string;
@@ -142,10 +143,10 @@ export interface ICompanyOnList {
   compId: string
   companyLogoUrl: string
   companyName: string
-  contactAddress: string;
+  contactAddress: IAddress;
   companyPhones: string[];
   companyEmails: string[];
-  companySocials: string
+  companySocials: ISocial
   //! INDEX on CORE
   isVerified: boolean;
   rating: number;
