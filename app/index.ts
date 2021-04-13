@@ -100,6 +100,7 @@ import {
   IBillingNote,
   IBillingNoteFormCreate,
   IBillingNoteFormCreateParams,
+  ICompanyOnList,
   ICompRequestVendor,
   IInquiry,
   IInquiryFormCreate,
@@ -518,6 +519,7 @@ export namespace GeeesyApps {
   export type VendorRequestCreate = ICompRequestVendor
   export type VendorRequest = IVendorRequest
   export type VendorRequestList = IVendorRequestList
+  export type CompanyOnList = ICompanyOnList
 
   /**
   * User
