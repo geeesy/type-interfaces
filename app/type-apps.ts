@@ -163,13 +163,13 @@ export interface IVendorRequestList extends ICompanyOnList {
 }
 
 export interface ICompRequestVendor {
-  companyInfo: {
+  companyParams: {
     compId: string
     companyCode: string
     businessId: string
     senderId: string
   }
-  vendorInfo: {
+  vendorParams: {
     supplierId: string
     compId: string
     receiverId: string
@@ -179,6 +179,8 @@ export interface ICompRequestVendor {
 export interface IVendorRequest extends ICompRequestVendor {
   createdAt: string
   updatedAt: string
+  companyInfo: ICompanyOnList
+  vendorInfo: ICompanyOnList
 }
 
 export interface ISenderContact {
