@@ -146,7 +146,7 @@ export interface ICompanyOnList {
   contactAddress: IAddress;
   companyPhones: string[];
   companyEmails: string[];
-  companySocials: ISocial
+  companySocials?: ISocial
   //! INDEX on CORE
   isVerified: boolean;
   rating: number;
