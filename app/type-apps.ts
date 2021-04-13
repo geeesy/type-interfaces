@@ -162,6 +162,7 @@ export interface IVendorRequestList extends ICompanyOnList {
   createdAt: string
   updatedAt: string
   requestId: string
+  vendorType: 'seller' | 'buyer' | 'both'
 }
 
 export interface ICompRequestVendor {
@@ -192,7 +193,7 @@ export interface IVendorRequest {
 
 export interface IVendorRequestAccept {
   compId: string
-  vendorId: string
+  vendorId: string // * compId
   requestId: string
   vendorTypeOnAccept: 'seller' | 'buyer' | 'both'
 }
