@@ -174,7 +174,8 @@ export interface ICredentialCompany {
   businessId: string
 }
 
-export interface IVendorRequest {
+// ! ONLY ON DB
+export interface IDBVendorRequest {
   createdAt: string
   updatedAt: string
   companyInfo: ICompanyOnList
