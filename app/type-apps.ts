@@ -197,10 +197,17 @@ export interface IVendorRequest {
 }
 
 export interface IVendorRequestAccept {
-  compId: string
-  vendorId: string // * compId
+  vendorParams: {
+    compId: string
+    supplierId: string
+    companyCode: string
+    businessId: string
+    acceptorId: string
+  }
+  companyParams: {
+    compId: string
+  }
   requestId: string
-  vendorType: TVendorType
   vendorTypeOnAccept: TVendorType
 }
 
