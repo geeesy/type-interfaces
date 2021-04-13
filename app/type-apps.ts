@@ -189,6 +189,7 @@ export interface IVendorRequest {
   senderId: string
   receiverId: string
   vendorType: 'seller' | 'buyer' | 'both'
+  acceptedAt?: string
 }
 
 export interface IVendorRequestAccept {
