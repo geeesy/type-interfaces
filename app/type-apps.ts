@@ -196,6 +196,7 @@ export interface IVendorRequestAccept {
   compId: string
   vendorId: string // * compId
   requestId: string
+  vendorType: 'seller' | 'buyer' | 'both'
   vendorTypeOnAccept: 'seller' | 'buyer' | 'both'
 }
 
