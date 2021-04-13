@@ -168,6 +168,12 @@ export interface ICompRequestVendor {
   vendorType: TVendorType
 }
 
+export interface ICredentialCompany {
+  compId: string
+  companyCode: string
+  businessId: string
+}
+
 export interface IVendorRequest {
   createdAt: string
   updatedAt: string
@@ -178,6 +184,8 @@ export interface IVendorRequest {
   receiverId: string
   vendorType: TVendorType
   acceptedAt?: string
+  idOnCompany: ICredentialCompany
+  idOnVendor: ICredentialCompany
 }
 
 export interface IVendorRequestAccept {
