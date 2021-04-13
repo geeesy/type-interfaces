@@ -138,6 +138,41 @@ export interface IVendor extends IVendorCreate {
   relCompId: string
 }
 
+export interface ICompanyOnList {
+  compId: string
+  companyLogoUrl: string
+  companyName: string
+  contactAddress: string;
+  companyPhones: string[];
+  companyEmails: string[];
+  companySocials: string
+  //! INDEX on CORE
+  isVerified: boolean;
+  rating: number;
+  score: number;
+  isActive: boolean;
+  isRecommend: boolean;
+  isHighlight: boolean;
+  impFactor: number;
+}
+
+export interface IVendorRequestList extends ICompanyOnList {
+  createdAt: string
+  updatedAt: string
+}
+
+export interface ICompRequestVendor {
+  compId: string
+  vendorId: string
+  senderId: string
+  receiverId: string
+}
+
+export interface IVendorRequest extends ICompRequestVendor {
+  createdAt: string
+  updatedAt: string
+}
+
 export interface ISenderContact {
   senderContactInfo: IPersonContactInfo;
   senderCompanyContactInfo: ICompanyContactInfo;

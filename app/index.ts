@@ -100,6 +100,7 @@ import {
   IBillingNote,
   IBillingNoteFormCreate,
   IBillingNoteFormCreateParams,
+  ICompRequestVendor,
   IInquiry,
   IInquiryFormCreate,
   IInquiryFormCreateParams,
@@ -159,7 +160,9 @@ import {
   ITaxInvoiceFormCreateParams,
   IVendor,
   IVendorCreate,
-  IVendorCreateParams
+  IVendorCreateParams,
+  IVendorRequest,
+  IVendorRequestList
 } from './type-apps'
 import {
   ICategoryCreateMain,
@@ -512,6 +515,9 @@ export namespace GeeesyApps {
   export type VendorCreate = IVendorCreate & IVendorCreateParams
   export type Vendor = IVendor
   export type VendorList = IRefVendorList
+  export type VendorRequestCreate = ICompRequestVendor
+  export type VendorRequest = IVendorRequest
+  export type VendorRequestList = IVendorRequestList
 
   /**
   * User
