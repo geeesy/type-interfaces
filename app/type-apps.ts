@@ -176,6 +176,7 @@ export interface ICompRequestVendor {
     compId: string
     receiverId: string
   }
+  vendorType: 'seller' | 'buyer' | 'both'
 }
 
 export interface IVendorRequest {
@@ -186,6 +187,14 @@ export interface IVendorRequest {
   requestId: string
   senderId: string
   receiverId: string
+  vendorType: 'seller' | 'buyer' | 'both'
+}
+
+export interface IVendorRequestAccept {
+  compId: string
+  vendorId: string
+  requestId: string
+  vendorTypeOnAccept: 'seller' | 'buyer' | 'both'
 }
 
 export interface ISenderContact {

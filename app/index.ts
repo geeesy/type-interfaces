@@ -163,6 +163,7 @@ import {
   IVendorCreate,
   IVendorCreateParams,
   IVendorRequest,
+  IVendorRequestAccept,
   IVendorRequestList
 } from './type-apps'
 import {
@@ -519,6 +520,7 @@ export namespace GeeesyApps {
   export type VendorRequestCreate = ICompRequestVendor
   export type VendorRequest = IVendorRequest
   export type VendorRequestList = IVendorRequestList
+  export type VendorRequestAccept = IVendorRequestAccept
   export type CompanyOnList = ICompanyOnList
 
   /**
