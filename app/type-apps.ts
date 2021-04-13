@@ -160,6 +160,7 @@ export interface ICompanyOnList {
 export interface IVendorRequestList extends ICompanyOnList {
   createdAt: string
   updatedAt: string
+  requestId: string
 }
 
 export interface ICompRequestVendor {
@@ -181,6 +182,7 @@ export interface IVendorRequest extends ICompRequestVendor {
   updatedAt: string
   companyInfo: ICompanyOnList
   vendorInfo: ICompanyOnList
+  requestId: string
 }
 
 export interface ISenderContact {
