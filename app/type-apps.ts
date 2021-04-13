@@ -162,10 +162,17 @@ export interface IVendorRequestList extends ICompanyOnList {
 }
 
 export interface ICompRequestVendor {
-  compId: string
-  vendorId: string
-  senderId: string
-  receiverId: string
+  companyInfo: {
+    compId: string
+    companyCode: string
+    businessId: string
+    senderId: string
+  }
+  vendorInfo: {
+    supplierId: string
+    compId: string
+    receiverId: string
+  }
 }
 
 export interface IVendorRequest extends ICompRequestVendor {
