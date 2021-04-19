@@ -21,12 +21,12 @@ export interface IAddress {
   postcode: string;
   phones: string[];
   mobiles: string[];
-  faxes: string[];
+  faxes?: string[];
   emails: string[];
   country: string;
-  lat: string;
-  lng: string;
-  officeHours: OfficeHour[];
+  lat?: string;
+  lng?: string;
+  officeHours?: OfficeHour[];
 }
 
 export interface ISocial {
