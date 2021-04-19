@@ -112,9 +112,9 @@ export interface IRefVendorList {
   updatedAt: string
   companyLogoUrl: string
   companyName: string
-  contactAddress: string;
-  companyPhone: string[];
-  companyEmail: string[];
+  contactAddress: IAddress;
+  companyPhones: string[];
+  companyEmails: string[];
   companyNote?: string;
   vendorId: string
 }
