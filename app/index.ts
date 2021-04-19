@@ -561,6 +561,7 @@ export namespace GappMarket {
   export type User = IMarketUserIdentity
 }
 
+
 // REVIEW: G-BIZ | PRODUCT
 export namespace GappInventory {
   export type ProductEntity = IProductEntity

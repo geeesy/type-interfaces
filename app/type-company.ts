@@ -164,6 +164,11 @@ export interface IFactory {
   capacityUnit: string;
 }
 
+export interface ICustomPage {
+  title: string;
+  content: string;
+}
+
 /* #endregion */
 
 /**
@@ -258,13 +263,7 @@ export interface ICompanyPortfolio extends ICompany {
   companyDocuments: IDocument[];
   companyCertificates: ICertificate[];
 
-}
+  // Pages
+  customPages: ICustomPage[];
 
-export interface IPage {
-  title: string;
-  content: string;
-}
-
-export interface IPortfolio {
-  customPages: IPage[];
 }
