@@ -41,7 +41,7 @@ export interface IฺBusinessUserIdentity {
   fullName: string // dup
   email: string
   mobile: string
-  username: string
+  username: string // = userId
   penName: string
   businessId: string
   businessName: string

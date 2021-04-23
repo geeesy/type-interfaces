@@ -129,12 +129,8 @@ export interface IVendor extends IVendorCreate {
 
 export interface ICompanyOnList {
   compId: string // * Company have, BUT Vendor maybe
+  contact: ICompanyContactInfo
   companyLogoUrl: string
-  companyName: string
-  contactAddress: IAddress;
-  companyPhones: string[];
-  companyEmails: string[];
-  companySocials?: ISocial
   supplierId: string // * Vendor have, BUT Company maybe
   //! INDEX on CORE
   isVerified: boolean;
