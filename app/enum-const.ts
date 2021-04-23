@@ -105,10 +105,10 @@ export const PackageUnitArr = [
 
 export const PackageWeightUnitArr = [
   {
-    text: 'กรัม', value: 'mm'
+    text: 'กรัม', value: 'g'
   },
   {
-    text: 'กิโลกรัม', value: 'cm'
+    text: 'กิโลกรัม', value: 'kg'
   },
   {
     text: 'ออนซ์', value: 'oz'
