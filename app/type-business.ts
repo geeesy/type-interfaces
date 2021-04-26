@@ -46,6 +46,7 @@ export interface IฺBusinessUserIdentity {
   businessId: string
   businessName: string
   isActive: boolean
+  isDefaultReceiver: boolean // * 1 Company 1 User
   companies: string[]
   historyCountOnCompany?: number // * ADMIN
   historyCountOnAdmin?: number // * STAFF
