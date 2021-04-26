@@ -55,9 +55,12 @@ export interface IBusinessCreateUser {
 // REVIEW: USER
 export interface IฺBusinessUserIdentity extends IBusinessCreateUser {
   isActive: boolean
+  createdAt: string
+  updatedAt: string
+}
+
+export interface IDBBusinessUserIdentity {
   companies: string[]
   historyCountOnCompany?: number // * ADMIN
   historyCountOnAdmin?: number // * STAFF
-  createdAt: string
-  updatedAt: string
 }
