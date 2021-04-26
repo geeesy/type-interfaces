@@ -55,4 +55,6 @@ export interface IฺBusinessUserIdentity extends IBusinessCreateUser {
   companies: string[]
   historyCountOnCompany?: number // * ADMIN
   historyCountOnAdmin?: number // * STAFF
+  createdAt: string
+  updatedAt: string
 }
