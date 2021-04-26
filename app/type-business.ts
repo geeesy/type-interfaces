@@ -2,6 +2,7 @@
 /**
  * STUB: Version 5.x
  */
+export type TUserRole = 'owner' | 'admin' | 'staff' | 'user'
 
 /**
  * BUSINESS
@@ -34,19 +35,22 @@ export interface IBusiness extends IBusinessEntity {
   updatedAt?: string
 }
 
-// REVIEW: USER
-export interface IฺBusinessUserIdentity {
-  userRole: string
-  identityId: string
-  fullName: string // dup
-  email: string
-  mobile: string
-  username: string // = userId
-  penName: string
+export interface IBusinessCreateUser {
   businessId: string
-  businessName: string
-  isActive: boolean
+  businessName: string // FIXME
+  email: string
+  fullName: string // dup
+  identityId: string
+  mobile: string
+  penName: string
+  userRole: TUserRole
+  username: string // = userId
   isDefaultReceiver: boolean // * 1 Company 1 User
+}
+
+// REVIEW: USER
+export interface IฺBusinessUserIdentity extends IBusinessCreateUser {
+  isActive: boolean
   companies: string[]
   historyCountOnCompany?: number // * ADMIN
   historyCountOnAdmin?: number // * STAFF
