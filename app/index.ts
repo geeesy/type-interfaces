@@ -180,7 +180,7 @@ import {
 } from './type-console'
 import { ICategoryList, IMainCategory, IProduct, IProductCreate, IProductEntity, IProductList, IProductPackInVariant, IProductPackOnly, IProductVariantInPack, IProductVariantOnly, IResMainCategory, IResSubCategory, ISubCategory } from './type-catalog'
 import { ICompany, ICompanyCreate, ICompanyEntity, ICompanyPortfolio, ICompanyUserIdentity } from './type-company'
-import { IBusiness, IBusinessCreate, IBusinessCreateCompanyUser, IBusinessCreateUser, IDBBusinessUserIdentity, IฺBusinessUserIdentity } from './type-business'
+import { IBusiness, IBusinessCreate, IBusinessCreateCompanyUser, IBusinessCreateUser, IBusinessUserIdentity, IDBBusinessUserIdentity } from './type-business'
 
 /* #region FIXME: Marketplace */
 export namespace GeeesyMarketplace {
@@ -550,8 +550,8 @@ export namespace GappBusiness {
   export type BusinessInfo = IBusiness
   export type CreateBusiness = IBusinessCreate
   export type CreateUser = IBusinessCreateUser & IBusinessCreateCompanyUser
-  export type BeforeUser = IฺBusinessUserIdentity
-  export type User = IฺBusinessUserIdentity & IDBBusinessUserIdentity
+  export type BeforeUser = IBusinessUserIdentity
+  export type User = IBusinessUserIdentity & IDBBusinessUserIdentity
 }
 
 // REVIEW: G-MARKET

@@ -53,7 +53,7 @@ export interface IBusinessCreateUser {
 }
 
 // REVIEW: USER
-export interface IฺBusinessUserIdentity extends IBusinessCreateUser {
+export interface IBusinessUserIdentity extends IBusinessCreateUser {
   isActive: boolean
   createdAt: string
   updatedAt: string
