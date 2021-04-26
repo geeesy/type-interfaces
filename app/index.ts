@@ -550,7 +550,7 @@ export namespace GappBusiness {
   export type BusinessInfo = IBusiness
   export type CreateBusiness = IBusinessCreate
   export type CreateUser = IBusinessCreateUser & IBusinessCreateCompanyUser
-  export type BeforeUser = IDBBusinessUserIdentity
+  export type BeforeUser = IฺBusinessUserIdentity
   export type User = IฺBusinessUserIdentity & IDBBusinessUserIdentity
 }
 
