@@ -38,6 +38,7 @@ export interface IBusiness extends IBusinessEntity {
 export interface IBusinessCreateUser {
   businessId: string
   businessName: string // FIXME
+  companyCode: string
   email: string
   fullName: string // dup
   identityId: string
