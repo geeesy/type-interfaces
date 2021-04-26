@@ -38,6 +38,7 @@ export interface IBusiness extends IBusinessEntity {
 export interface IBusinessCreateCompanyUser {
   companyCode: string
   isDefaultReceiver: boolean // * 1 Company 1 User
+  adminUsername?: string // * on STAFF create
 }
 
 export interface IBusinessCreateUser {
