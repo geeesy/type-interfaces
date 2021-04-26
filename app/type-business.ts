@@ -35,10 +35,14 @@ export interface IBusiness extends IBusinessEntity {
   updatedAt?: string
 }
 
+export interface IBusinessCreateCompanyUser {
+  companyCode: string
+  isDefaultReceiver: boolean // * 1 Company 1 User
+}
+
 export interface IBusinessCreateUser {
   businessId: string
   businessName: string // FIXME
-  companyCode: string
   email: string
   fullName: string // dup
   identityId: string
@@ -46,7 +50,6 @@ export interface IBusinessCreateUser {
   penName: string
   userRole: TUserRole
   username: string // = userId
-  isDefaultReceiver: boolean // * 1 Company 1 User
 }
 
 // REVIEW: USER
