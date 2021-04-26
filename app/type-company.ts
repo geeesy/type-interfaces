@@ -1,5 +1,5 @@
 import { IPersonContactInfo } from './type-apps';
-import { IBusinessUserIdentity } from './type-business';
+import { IBusinessCreateCompanyUser, IBusinessUserIdentity } from './type-business';
 import { IPaymentMethod, IShippingZone } from './type-console';
 
 /**
@@ -174,8 +174,8 @@ export interface ICustomPage {
 /**
  * COMPANY
  */
-// REVIEW: USER
-export interface ICompanyUserIdentity extends IBusinessUserIdentity {
+// REVIEW: USER (COMPANY)
+export interface ICompanyUserIdentity extends IBusinessUserIdentity, IBusinessCreateCompanyUser {
   contact: IContactPerson
 }
 
