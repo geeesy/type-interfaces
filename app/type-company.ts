@@ -203,6 +203,7 @@ export interface ICompanyEntity {
   isHighlight: boolean; // ! core
   impFactor: number; // ! core
   haveCompletedInfo: boolean //* === false on Create
+  useApprovalWorkflow: boolean
 }
 
 // ANCHOR: COMPANY | Create

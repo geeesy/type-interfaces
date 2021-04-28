@@ -50,7 +50,7 @@ export interface IBusinessCreateUser {
   mobile: string
   penName: string
   userRole: TUserRole
-  username: string // = userId
+  username: string // ! !== userId ~ cognitoUserId
 }
 
 // REVIEW: USER (BUSINESS) - 1
