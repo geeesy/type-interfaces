@@ -546,7 +546,7 @@ export namespace GappBusiness {
   export type CompanyEntity = ICompanyEntity & ICompanyPrivateEntity
   export type CompanyInfo = ICompany
   export type CompanyPort = ICompanyPortfolio
-  export type CreateCompany = ICompanyCreate
+  export type CreateCompany = ICompanyCreate & ICompanyPrivateEntity
   export type BusinessInfo = IBusiness
   export type CreateBusiness = IBusinessCreate
   export type CreateUser = IBusinessCreateUser & IBusinessCreateCompanyUser

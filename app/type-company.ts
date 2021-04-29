@@ -1,5 +1,5 @@
 import { IPersonContactInfo } from './type-apps';
-import { IBusinessCreateCompanyUser, IBusinessUserIdentity } from './type-business';
+import { IBusinessCreateCompanyUser, IBusinessUserIdentity, TBusinessSize, TBusinessType } from './type-business';
 import { IPaymentMethod, IShippingZone } from './type-console';
 
 /**
@@ -184,6 +184,9 @@ export interface ICompanyUserIdentity extends IBusinessUserIdentity, IBusinessCr
 // ANCHOR: COMPANY | Private Entity
 export interface ICompanyPrivateEntity {
   companyStampUrl: string
+  companyType: TBusinessType[]
+  companySize: TBusinessSize
+  companyInterests: string[]
 }
 
 

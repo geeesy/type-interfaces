@@ -5,6 +5,8 @@ import { IApprovalRule } from "./type-apps"
  */
 export type TUserRole = 'owner' | 'admin' | 'staff' | 'user'
 export type TApproverRole = 'reviewer' | 'approver' | 'none'
+export type TBusinessSize = 'micro' | 'small' | 'medium' | 'large'
+export type TBusinessType = 'manufacturer' | 'wholesaler' | 'retailer'
 /**
  * BUSINESS
  */
@@ -12,8 +14,8 @@ export type TApproverRole = 'reviewer' | 'approver' | 'none'
 export interface IBusinessEntity {
   businessName: string
   businessCategory: string // * <-- include other
-  businessType: string // *same as Company
-  businessSize: string // *same as Company
+  businessType: TBusinessType[]
+  businessSize: TBusinessSize
   website: string
   ownerName: string
   phone: string
