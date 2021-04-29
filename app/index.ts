@@ -179,7 +179,7 @@ import {
   IPaymentMethod,
 } from './type-console'
 import { ICategoryList, IMainCategory, IProduct, IProductCreate, IProductEntity, IProductList, IProductPackInVariant, IProductPackOnly, IProductVariantInPack, IProductVariantOnly, IResMainCategory, IResSubCategory, ISubCategory } from './type-catalog'
-import { ICompany, ICompanyCreate, ICompanyEntity, ICompanyPortfolio, ICompanyPrivateEntity, ICompanyUserIdentity } from './type-company'
+import { ICompany, ICompanyCreate, ICompanyCreateSalesRep, ICompanyEntity, ICompanyPortfolio, ICompanyPrivateEntity, ICompanySalesRep, ICompanyUserIdentity } from './type-company'
 import { IBusiness, IBusinessCreate, IBusinessCreateCompanyUser, IBusinessCreateUser, IBusinessOwnerCreate, IBusinessOwnerIdentity, IBusinessUserIdentity, IDBBusinessUserIdentity } from './type-business'
 
 /* #region FIXME: Marketplace */
@@ -527,6 +527,12 @@ export namespace GeeesyApps {
   * User
    */
   export type User = ICompanyUserIdentity
+
+  /**
+  Sales Rep
+   */
+  export type CreateSalesRep = ICompanyCreateSalesRep
+  export type SalesRep = ICompanySalesRep
 }
 
 // REVIEW: CONSOLE

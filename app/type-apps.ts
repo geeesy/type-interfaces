@@ -86,7 +86,7 @@ export interface IPersonContactInfo {
   emails: string[];
   mobiles: string[];
   social?: ISocial;
-  address?: string;
+  address?: IAddress;
   note?: string;
 }
 

@@ -279,3 +279,20 @@ export interface ICompanyPortfolio extends ICompany {
   customPages: ICustomPage[];
 
 }
+
+// REVIEW: SALES REP
+export interface ICompanyCreateSalesRep extends IPersonContactInfo {
+  salesRepCode: string
+  positions: string[]
+  isKeySalesRep: boolean
+  avatarImageUrl: string
+  salesRepAka: string
+  adminPersonalCode: string // * filter on each Admin View
+}
+
+
+export interface ICompanySalesRep {
+  salesRepId: string
+  createdAt: string
+  updatedAt: string
+}

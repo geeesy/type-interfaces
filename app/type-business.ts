@@ -62,6 +62,7 @@ export interface IBusinessCreateCompanyUser {
   approvalFlowRules: IApprovalRule
   accessFeatures: IAccessScope
   adminUsername?: string // * on STAFF create
+  personalCode: string
 }
 
 export interface IBusinessCreateUser {
