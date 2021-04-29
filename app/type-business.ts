@@ -27,6 +27,7 @@ export interface IBusinessCreate extends IBusinessEntity {
 }
 
 export interface IBusinessOwnerCreate {
+  identityId: string
   ownerName: string
   phone: string
   email: string
@@ -41,7 +42,6 @@ export interface IBusiness extends IBusinessEntity {
 
 // REVIEW: BUSINESS | OWNER 
 export interface IBusinessOwnerIdentity extends IBusinessOwnerCreate {
-  ownerIdentity: string
   createdAt: string
   updatedAt: string
 }
