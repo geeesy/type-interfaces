@@ -145,6 +145,7 @@ export interface IProductEntity {
   productImagesUrl: IProductImage[];
   productCode: string
   productSku: string;
+  productModel: string
   productBarcode: string;
   productUnit: string;
   productShortDescription: string

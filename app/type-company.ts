@@ -49,6 +49,7 @@ export interface ICompanyTaxInfo {
 
 export interface IMapLocation {
   pinIconUrl: string;
+  mapImageUrl: string
   lat: string;
   lng: string;
   location: string;
