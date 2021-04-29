@@ -17,9 +17,6 @@ export interface IBusinessEntity {
   businessType: TBusinessType[]
   businessSize: TBusinessSize
   website: string
-  ownerName: string
-  phone: string
-  email: string
   interests: string[]
 }
 
@@ -27,15 +24,26 @@ export interface IBusinessEntity {
 // NOTE: === bc -> Open account
 export interface IBusinessCreate extends IBusinessEntity {
   tenantId: string
-  ownerIdentity?: string // ! user -> create on server
-  authUserId?: string // ! on Cognito -> create on server
+}
+
+export interface IBusinessOwnerCreate {
+  ownerName: string
+  phone: string
+  email: string
 }
 
 // REVIEW: BUSINESS
 export interface IBusiness extends IBusinessEntity {
   businessId: string // * === tenantId
   createdAt: string
-  updatedAt?: string
+  updatedAt: string
+}
+
+// REVIEW: BUSINESS | OWNER 
+export interface IBusinessOwnerIdentity extends IBusinessOwnerCreate {
+  ownerIdentity: string
+  createdAt: string
+  updatedAt: string
 }
 
 export interface IAccessScope {
