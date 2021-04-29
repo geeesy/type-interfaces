@@ -177,6 +177,13 @@ export interface ICustomPage {
 // REVIEW: USER (COMPANY)
 export interface ICompanyUserIdentity extends IBusinessUserIdentity, IBusinessCreateCompanyUser {
   contact: IContactPerson
+  signatureUrl: string
+
+}
+
+// ANCHOR: COMPANY | Private Entity
+export interface ICompanyPrivateEntity {
+  companyStampUrl: string
 }
 
 

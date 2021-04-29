@@ -1,9 +1,10 @@
+import { IApprovalRule } from "./type-apps"
 
 /**
  * STUB: Version 5.x
  */
 export type TUserRole = 'owner' | 'admin' | 'staff' | 'user'
-
+export type TApproverRole = 'reviewer' | 'approver' | 'none'
 /**
  * BUSINESS
  */
@@ -35,9 +36,21 @@ export interface IBusiness extends IBusinessEntity {
   updatedAt?: string
 }
 
+export interface IAccessScope {
+  rfi: boolean
+  rfq: boolean
+  sales: boolean
+  purchases: boolean
+  finance: boolean
+  products: boolean
+}
+
 export interface IBusinessCreateCompanyUser {
   companyCode: string
   isDefaultReceiver: boolean // * 1 Company 1 User
+  approverRole: TApproverRole // * Reviewer || Approver
+  approvalFlowRules: IApprovalRule
+  accessFeatures: IAccessScope
   adminUsername?: string // * on STAFF create
 }
 
@@ -51,6 +64,8 @@ export interface IBusinessCreateUser {
   penName: string
   userRole: TUserRole
   username: string // ! !== userId ~ cognitoUserId
+  businessPosition: string
+
 }
 
 // REVIEW: USER (BUSINESS) - 1

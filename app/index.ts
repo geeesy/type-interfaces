@@ -179,7 +179,7 @@ import {
   IPaymentMethod,
 } from './type-console'
 import { ICategoryList, IMainCategory, IProduct, IProductCreate, IProductEntity, IProductList, IProductPackInVariant, IProductPackOnly, IProductVariantInPack, IProductVariantOnly, IResMainCategory, IResSubCategory, ISubCategory } from './type-catalog'
-import { ICompany, ICompanyCreate, ICompanyEntity, ICompanyPortfolio, ICompanyUserIdentity } from './type-company'
+import { ICompany, ICompanyCreate, ICompanyEntity, ICompanyPortfolio, ICompanyPrivateEntity, ICompanyUserIdentity } from './type-company'
 import { IBusiness, IBusinessCreate, IBusinessCreateCompanyUser, IBusinessCreateUser, IBusinessUserIdentity, IDBBusinessUserIdentity } from './type-business'
 
 /* #region FIXME: Marketplace */
@@ -543,7 +543,7 @@ export namespace GeeesyConsole {
 
 // REVIEW: BC
 export namespace GappBusiness {
-  export type CompanyEntity = ICompanyEntity
+  export type CompanyEntity = ICompanyEntity & ICompanyPrivateEntity
   export type CompanyInfo = ICompany
   export type CompanyPort = ICompanyPortfolio
   export type CreateCompany = ICompanyCreate
