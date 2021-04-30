@@ -283,6 +283,7 @@ export interface ICompanyPortfolio extends ICompany {
 // REVIEW: SALES REP
 export interface ICompanyCreateSalesRep extends IPersonContactInfo {
   salesRepPersonalCode: string
+  compId: string
   positions: string[]
   isKeySalesRep: boolean
   avatarImageUrl: string
