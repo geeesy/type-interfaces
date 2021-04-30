@@ -292,7 +292,7 @@ export interface ICompanyCreateSalesRep extends IPersonContactInfo {
 }
 
 
-export interface ICompanySalesRep {
+export interface ICompanySalesRep extends ICompanyCreateSalesRep {
   salesRepId: string
   createdAt: string
   updatedAt: string
