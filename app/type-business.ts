@@ -46,13 +46,27 @@ export interface IBusinessOwnerIdentity extends IBusinessOwnerCreate {
   updatedAt: string
 }
 
+export type TAccessStatementAction = 'rfi' | 'rfq' | 'sales' | 'purchases' | 'finance' | 'products'
+
+export interface IAccessStatement {
+  action: TAccessStatementAction
+  permission: IPermission
+}
+
+export interface IPermission {
+  create: boolean
+  read: boolean
+  update: boolean
+  delete: boolean
+}
+
 export interface IAccessScope {
-  rfi: boolean
-  rfq: boolean
-  sales: boolean
-  purchases: boolean
-  finance: boolean
-  products: boolean
+  rfi: IAccessStatement[]
+  rfq: IAccessStatement[]
+  sales: IAccessStatement[]
+  purchases: IAccessStatement[]
+  finance: IAccessStatement[]
+  products: IAccessStatement[]
 }
 
 export interface IBusinessCreateCompanyUser {
