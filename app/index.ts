@@ -179,7 +179,7 @@ import {
   IPaymentMethod,
 } from './type-console'
 import { ICategoryList, IMainCategory, IProduct, IProductCreate, IProductEntity, IProductList, IProductPackInVariant, IProductPackOnly, IProductVariantInPack, IProductVariantOnly, IResMainCategory, IResSubCategory, ISubCategory } from './type-catalog'
-import { ICompany, ICompanyCreate, ICompanyCreateSalesRep, ICompanyEntity, ICompanyPortfolio, ICompanyPrivateEntity, ICompanySalesRep, ICompanyUserIdentity } from './type-company'
+import { ICompany, ICompanyCreate, ICompanyCreateSalesRep, ICompanyEntity, ICompanyPortfolio, ICompanyPrivateEntity, ICompanySalesRep, ICompanyUserIdentity, ISettingCreatePriceGroup, ISettingCreatePriceList, ISettingPriceGroup, ISettingPriceList } from './type-company'
 import { IBusiness, IBusinessCreate, IBusinessCreateCompanyUser, IBusinessCreateUser, IBusinessOwnerCreate, IBusinessOwnerIdentity, IBusinessUserIdentity, IDBBusinessUserIdentity } from './type-business'
 
 /* #region FIXME: Marketplace */
@@ -581,6 +581,14 @@ export namespace GappInventory {
   export type ProductVariantOnly = IProductVariantOnly
   export type ProductPackInVariant = IProductPackInVariant
   export type ProductVariantInPack = IProductVariantInPack
+}
+
+// REVIEW: G-BIZ | SETTING
+export namespace GappSetting {
+  export type CreatePriceGroup = ISettingCreatePriceGroup
+  export type PriceGroup = ISettingPriceGroup
+  export type CreatePriceList = ISettingCreatePriceList
+  export type PriceList = ISettingPriceList
 }
 
 export * as IMarketplace from './type-marketplace'

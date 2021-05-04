@@ -39,7 +39,7 @@ export interface IProductCategory extends ISubCategory {
 }
 
 export interface IPriceList {
-  title: string
+  priceListId: string
   price: number
 }
 
@@ -49,7 +49,8 @@ export interface IProductPrice {
   sellPrice: number
   wholesalePrice: number
   retailPrice: number
-  priceList: IPriceList[]
+  priceList: IPriceList[] // * <== SETTING
+  priceGroupIds: string[] // * ==> SETTING
   currency: string
 }
 

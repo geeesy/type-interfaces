@@ -298,3 +298,19 @@ export interface ICompanySalesRep extends ICompanyCreateSalesRep {
   createdAt: string
   updatedAt: string
 }
+
+// STUB: SETTING | PRODUCT
+export interface ISettingCreatePriceGroup {
+  title: string
+  discountPercent: number
+  discountAmount: number
+}
+export interface ISettingPriceGroup extends ISettingCreatePriceGroup {
+  priceGroupId: string
+}
+export interface ISettingCreatePriceList {
+  title: string
+}
+export interface ISettingPriceList extends ISettingCreatePriceList {
+  priceListId: string
+}
