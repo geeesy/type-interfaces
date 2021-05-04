@@ -47,6 +47,7 @@ export interface IBusinessOwnerIdentity extends IBusinessOwnerCreate {
 }
 
 export type TAccessStatementAction = 'rfi' | 'rfq' | 'sales' | 'purchases' | 'finance' | 'products'
+export type TAccessScope = 'rfi' | 'rfq' | 'sales' | 'purchases' | 'finance' | 'products'
 
 export interface IAccessStatement {
   action: TAccessStatementAction
@@ -61,12 +62,8 @@ export interface IPermission {
 }
 
 export interface IAccessScope {
-  rfi: IAccessStatement[]
-  rfq: IAccessStatement[]
-  sales: IAccessStatement[]
-  purchases: IAccessStatement[]
-  finance: IAccessStatement[]
-  products: IAccessStatement[]
+  scope: TAccessScope
+  statement: IAccessStatement[]
 }
 
 export interface IBusinessCreateCompanyUser {
@@ -74,7 +71,7 @@ export interface IBusinessCreateCompanyUser {
   isDefaultReceiver: boolean // * 1 Company 1 User
   approverRole: TApproverRole // * Reviewer || Approver
   approvalFlowRules: IApprovalRule
-  accessFeatures: IAccessScope
+  accessPolicy: IAccessScope[]
   adminUsername?: string // * on STAFF create
   personalCode: string
 }
