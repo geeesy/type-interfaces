@@ -6,6 +6,13 @@ import { IPaymentMethod, IShippingZone } from './type-console';
  * STUB: Version 5.x
  */
 /* #region COMPANY */
+export interface IApiCompanyParams {
+  businessId: string
+  compId: string
+  identityId: string
+}
+
+
 export interface OfficeHour {
   day: string;
   times: [string, string];
