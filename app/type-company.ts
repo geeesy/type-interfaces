@@ -12,6 +12,12 @@ export interface IApiCompanyParams {
   identityId: string
 }
 
+export interface IDBCompanyActivityLog {
+  createdAt: string
+  updatedAt: string
+  createdBy: string
+  updatedBy: string
+}
 
 export interface OfficeHour {
   day: string;
@@ -312,12 +318,12 @@ export interface ISettingCreatePriceGroup {
   discountPercent: number
   discountAmount: number
 }
-export interface ISettingPriceGroup extends ISettingCreatePriceGroup {
+export interface ISettingPriceGroup extends ISettingCreatePriceGroup, IDBCompanyActivityLog {
   priceGroupId: string
 }
 export interface ISettingCreatePriceList {
   title: string
 }
-export interface ISettingPriceList extends ISettingCreatePriceList {
+export interface ISettingPriceList extends ISettingCreatePriceList, IDBCompanyActivityLog {
   priceListId: string
 }
