@@ -344,7 +344,7 @@ export interface ISettingDocAttributes {
   header: string
   color: string
 }
-export interface ISettingDoc {
+export interface ISettingDoc extends IDBCompanyActivityLog {
   inquiry: ISettingDocAttributes
   rfq: ISettingDocAttributes
   quotation: ISettingDocAttributes

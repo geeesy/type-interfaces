@@ -589,7 +589,7 @@ export namespace GappSetting {
   export type PriceGroup = ISettingPriceGroup
   export type CreatePriceList = ISettingCreatePriceList & IApiCompanyParams
   export type PriceList = ISettingPriceList
-  export type Document = ISettingDoc & IApiCompanyParams
+  export type Document = ISettingDoc
 }
 
 export * as IMarketplace from './type-marketplace'
