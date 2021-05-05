@@ -414,7 +414,7 @@ export namespace GeeesyApps {
   export type QuotationRfqFormCreateParams = IQuotationFormCreateParams;
 
   export type QuotationFormSubmit = IQuotationFormCreate &
-    IQuotationFormCreateParams;
+    IQuotationFormCreateParams & IApiCompanyParams; // REVIEW: Quotation Type D | Create
   export type QuotationRfqFormSubmit = IQuotationRfqFormCreate &
     IQuotationFormCreateParams;
 
