@@ -5,6 +5,7 @@ import { IApprovalRule } from "./type-apps"
  */
 export type TUserRole = 'owner' | 'admin' | 'staff' | 'user'
 export type TApproverRole = 'reviewer' | 'approver' | 'none'
+export type TApproverFlow = 'reviewer' | 'approver' | 'none'
 export type TBusinessSize = 'micro' | 'small' | 'medium' | 'large'
 export type TBusinessType = 'manufacturer' | 'wholesaler' | 'retailer'
 /**

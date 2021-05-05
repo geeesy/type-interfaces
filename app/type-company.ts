@@ -1,5 +1,5 @@
 import { IPersonContactInfo } from './type-apps';
-import { IBusinessCreateCompanyUser, IBusinessUserIdentity, TBusinessSize, TBusinessType } from './type-business';
+import { IBusinessCreateCompanyUser, IBusinessUserIdentity, TApproverFlow, TApproverRole, TBusinessSize, TBusinessType } from './type-business';
 import { IPaymentMethod, IShippingZone } from './type-console';
 
 /**
@@ -227,7 +227,7 @@ export interface ICompanyEntity {
   isHighlight: boolean; // ! core
   impFactor: number; // ! core
   haveCompletedInfo: boolean //* === false on Create
-  useApprovalWorkflow: boolean
+  useApprovalWorkflow: TApproverFlow
 }
 
 // ANCHOR: COMPANY | Create
