@@ -327,3 +327,26 @@ export interface ISettingCreatePriceList {
 export interface ISettingPriceList extends ISettingCreatePriceList, IDBCompanyActivityLog {
   priceListId: string
 }
+
+// STUB: SETTING | DOC
+// NOTE: Initial with default value set on server when create company
+// ! initialize on server
+export type TYearFormat = 'YYYY-MM' | 'YYYY' | 'none'
+export type TSeparator = '/' | '-' | 'none'
+export interface IDocSeqNoFormat {
+  prefix: string // -> init === enum DocPrefixFormat
+  suffix: string // -> init === ''
+  yearFormat: TYearFormat // -> init === 'none'
+  separator: TSeparator // -> init === 'none'
+}
+export interface ISettingDocSeqNo {
+  inquiry: IDocSeqNoFormat // INQ
+  rfq: IDocSeqNoFormat // RFQ
+  quotation: IDocSeqNoFormat // QUO
+  po: IDocSeqNoFormat // PO
+  so: IDocSeqNoFormat // SO
+  billingNote: IDocSeqNoFormat // BN
+  receipt: IDocSeqNoFormat // RE
+  invoice: IDocSeqNoFormat // INV
+  taxInvoice: IDocSeqNoFormat // TIV
+}

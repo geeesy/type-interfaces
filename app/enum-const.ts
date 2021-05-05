@@ -1,4 +1,15 @@
 /* eslint-disable no-unused-vars */
+export enum DocPrefixFormat {
+  inquiry = 'INQ',
+  rfq = 'RFQ',
+  quotation = 'QUO',
+  po = 'PO',
+  so = 'SO',
+  billingNote = 'BN',
+  receipt = 'RE',
+  invoice = 'INV',
+  taxInvoice = 'TIV'
+}
 export enum CurrencyCode {
   THAI = 'THB',
   USA = 'USD',

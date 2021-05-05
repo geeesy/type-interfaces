@@ -179,7 +179,7 @@ import {
   IPaymentMethod,
 } from './type-console'
 import { ICategoryList, IMainCategory, IProduct, IProductCreate, IProductEntity, IProductList, IProductPackInVariant, IProductPackOnly, IProductVariantInPack, IProductVariantOnly, IResMainCategory, IResSubCategory, ISubCategory } from './type-catalog'
-import { IApiCompanyParams, ICompany, ICompanyCreate, ICompanyCreateSalesRep, ICompanyEntity, ICompanyPortfolio, ICompanyPrivateEntity, ICompanySalesRep, ICompanyUserIdentity, ISettingCreatePriceGroup, ISettingCreatePriceList, ISettingPriceGroup, ISettingPriceList } from './type-company'
+import { IApiCompanyParams, ICompany, ICompanyCreate, ICompanyCreateSalesRep, ICompanyEntity, ICompanyPortfolio, ICompanyPrivateEntity, ICompanySalesRep, ICompanyUserIdentity, ISettingCreatePriceGroup, ISettingCreatePriceList, ISettingDocSeqNo, ISettingPriceGroup, ISettingPriceList } from './type-company'
 import { IBusiness, IBusinessCreate, IBusinessCreateCompanyUser, IBusinessCreateUser, IBusinessOwnerCreate, IBusinessOwnerIdentity, IBusinessUserIdentity, IDBBusinessUserIdentity } from './type-business'
 
 /* #region FIXME: Marketplace */
@@ -589,6 +589,7 @@ export namespace GappSetting {
   export type PriceGroup = ISettingPriceGroup
   export type CreatePriceList = ISettingCreatePriceList & IApiCompanyParams
   export type PriceList = ISettingPriceList
+  export type Document = ISettingDocSeqNo
 }
 
 export * as IMarketplace from './type-marketplace'
