@@ -339,14 +339,19 @@ export interface IDocSeqNoFormat {
   yearFormat: TYearFormat // -> init === 'none'
   separator: TSeparator // -> init === 'none'
 }
-export interface ISettingDocSeqNo {
-  inquiry: IDocSeqNoFormat // INQ
-  rfq: IDocSeqNoFormat // RFQ
-  quotation: IDocSeqNoFormat // QUO
-  po: IDocSeqNoFormat // PO
-  so: IDocSeqNoFormat // SO
-  billingNote: IDocSeqNoFormat // BN
-  receipt: IDocSeqNoFormat // RE
-  invoice: IDocSeqNoFormat // INV
-  taxInvoice: IDocSeqNoFormat // TIV
+export interface ISettingDocAttributes {
+  seqNoFormat: IDocSeqNoFormat
+  header: string
+  color: string
+}
+export interface ISettingDoc {
+  inquiry: ISettingDocAttributes
+  rfq: ISettingDocAttributes
+  quotation: ISettingDocAttributes
+  po: ISettingDocAttributes
+  so: ISettingDocAttributes
+  billingNote: ISettingDocAttributes
+  receipt: ISettingDocAttributes
+  invoice: ISettingDocAttributes
+  taxInvoice: ISettingDocAttributes
 }
