@@ -18,6 +18,7 @@ export interface IBusinessEntity {
   businessCategory: string // * <-- include other
   businessType: TBusinessType[]
   businessSize: TBusinessSize
+  useAsCompany: boolean // ? default = false
   website: string
   interests: string[]
 }

@@ -333,7 +333,7 @@ export interface ISettingPriceList extends ISettingCreatePriceList, IDBCompanyAc
 // ! initialize on server
 export type TYearFormat = 'YYYY-MM' | 'YYYY' | 'none'
 export type TSeparator = '/' | '-' | 'none'
-export interface IDocSeqNoFormat {
+export interface IDocSeqNoFormat { //! only 4 digit on seqNo
   prefix: string // -> init === enum DocPrefixFormat
   suffix: string // -> init === ''
   yearFormat: TYearFormat // -> init === 'none'
