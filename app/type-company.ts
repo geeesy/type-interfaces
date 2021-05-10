@@ -201,6 +201,7 @@ export interface ICompanyPrivateEntity {
   companyType: TBusinessType[]
   companySize: TBusinessSize
   companyInterests: string[]
+  useApprovalWorkflow: TApproverFlow
 }
 
 
@@ -227,7 +228,7 @@ export interface ICompanyEntity {
   isHighlight: boolean; // ! core
   impFactor: number; // ! core
   haveCompletedInfo: boolean //* === false on Create
-  useApprovalWorkflow: TApproverFlow
+
 }
 
 // ANCHOR: COMPANY | Create
