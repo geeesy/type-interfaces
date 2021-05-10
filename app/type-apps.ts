@@ -865,19 +865,12 @@ export interface IPOList {
   shippingDate: string;
 }
 
-export interface IPO extends IPOFormCreateParams {
-  purchaseOrderId: string;
-  sender: ISenderContact;
-  receiver: IReceiverContact;
+export interface IPO extends IPOFormCreateParams, IPOList {
   products: IProductRow[]
   data: IPOFormGroupData
   accounting: IPOFormGroupAccounting
   approver: IPOFormGroupApprover
-  statusPOSender: string;
-  statusPOReceiver: string;
-  statusApprovalFlow: string;
-  createdAt: string;
-  updatedAt: string;
+
 }
 
 export interface IResPOList {

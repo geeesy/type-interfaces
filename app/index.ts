@@ -436,7 +436,7 @@ export namespace GeeesyApps {
    */
   export type POFormCreate = IPOFormCreate;
   export type POFormCreateParams = IPOFormCreateParams;
-  export type POFormSubmit = IPOFormCreate & IPOFormCreateParams;
+  export type POFormSubmit = IPOFormCreate & IPOFormCreateParams & IApiCompanyParams;
   export type ResPOList = IResPOList | IPOList
   export type POList = IPOList
   export type ResPO = IResPO | IPO;
