@@ -676,6 +676,7 @@ export interface IQuotationCompareColumn {
   note: string
 }
 
+/* #region Pooled Procurement */
 // STUB: Pooled Procurement Form
 export interface IPoolProduct {
   productTitle: string
@@ -792,6 +793,7 @@ export interface IPoolAcceptJoining {
   joinedAt: string
   joinPoolQty: number
 }
+/* #endregion */
 
 /* #region FIXME: PO */
 export interface IPOFormCreate {
@@ -839,6 +841,30 @@ export interface IPOFormCreateParams {
   quotationId: string;
 }
 
+
+export interface IPOList {
+  purchaseOrderId: string;
+  sender: ISenderContact;
+  receiver: IReceiverContact;
+  docNo: string;
+  docDate: string;
+  productTitleFirst: string;
+  productImageFirstUrl: string;
+  grandTotalAmount: number;
+  productCurrency: string
+  statusPOSender: string;
+  statusPOReceiver: string;
+  statusApprovalFlow: string;
+  statusReviewerAction: string;
+  statusApproverAction: string;
+  createdAt: string;
+  updatedAt: string;
+  senderId: string;
+  sellerId: string
+  creditDay: number;
+  shippingDate: string;
+}
+
 export interface IPO extends IPOFormCreateParams {
   purchaseOrderId: string;
   sender: ISenderContact;
@@ -854,11 +880,18 @@ export interface IPO extends IPOFormCreateParams {
   updatedAt: string;
 }
 
+export interface IResPOList {
+  status: string;
+  statusText: string;
+  message: string;
+  data: IPOList[];
+}
+
 export interface IResPO {
   status: string;
   statusText: string;
   message: string;
-  data: IPO[];
+  data: IPO;
 }
 
 /* #endregion */

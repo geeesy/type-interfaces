@@ -117,6 +117,7 @@ import {
   IPO,
   IPOFormCreate,
   IPOFormCreateParams,
+  IPOList,
   IPool,
   IPoolAcceptJoining,
   IPoolFormCreate,
@@ -135,6 +136,7 @@ import {
   IResInquiryList,
   IResInvoice,
   IResPO,
+  IResPOList,
   IResQuotation,
   IResQuotationList,
   IResQuotationRfq,
@@ -435,6 +437,8 @@ export namespace GeeesyApps {
   export type POFormCreate = IPOFormCreate;
   export type POFormCreateParams = IPOFormCreateParams;
   export type POFormSubmit = IPOFormCreate & IPOFormCreateParams;
+  export type ResPOList = IResPOList | IPOList
+  export type POList = IPOList
   export type ResPO = IResPO | IPO;
   export type PO = IPO;
 
