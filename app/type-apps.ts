@@ -817,6 +817,7 @@ export interface IPOFormGroupData {
   sellerNote: string;
   buyerNote: string;
   attachmentsUrl: string[];
+  productCurrency: string;
 }
 
 export interface IPOFormGroupAccounting {
