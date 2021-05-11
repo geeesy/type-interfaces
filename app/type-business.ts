@@ -18,9 +18,10 @@ export interface IBusinessEntity {
   businessCategory: string // * <-- include other
   businessType: TBusinessType[]
   businessSize: TBusinessSize
-  useAsCompany: boolean // ? default = false
   website: string
   interests: string[]
+  // ! immutable
+  useAsCompany: boolean // ? default = false
 }
 
 // ANCHOR: BUSINESS | Create
