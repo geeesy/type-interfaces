@@ -100,6 +100,7 @@ import {
   IBillingNote,
   IBillingNoteFormCreate,
   IBillingNoteFormCreateParams,
+  IBillingNoteList,
   ICompanyOnList,
   ICompRequestVendor,
   IDBVendorRequest,
@@ -110,6 +111,7 @@ import {
   IInvoice,
   IInvoiceFormCreate,
   IInvoiceFormCreateParams,
+  IInvoiceList,
   IJoinerJoinPool,
   IJoinerListJoiningPools,
   IJoinerListPools,
@@ -132,9 +134,11 @@ import {
   IRefVendorList,
   IResApprover,
   IResBillingNote,
+  IResBillingNoteList,
   IResInquiry,
   IResInquiryList,
   IResInvoice,
+  IResInvoiceList,
   IResPO,
   IResPOList,
   IResQuotation,
@@ -450,7 +454,7 @@ export namespace GeeesyApps {
    */
   export type SOFormCreate = ISOFormCreate;
   export type SoFormCreateParams = ISOFormCreateParams;
-  export type SOFormSubmit = ISOFormCreate & ISOFormCreateParams;
+  export type SOFormSubmit = ISOFormCreate & ISOFormCreateParams & IApiCompanyParams;
   export type ResSO = IResSO | ISO;
   export type SO = ISO;
 
@@ -462,7 +466,9 @@ export namespace GeeesyApps {
    */
   export type BillingNoteFormCreate = IBillingNoteFormCreate;
   export type BillingNoteFormCreateParams = IBillingNoteFormCreateParams;
-  export type BillingNoteFormSubmit = IBillingNoteFormCreate & IBillingNoteFormCreateParams;
+  export type BillingNoteFormSubmit = IBillingNoteFormCreate & IBillingNoteFormCreateParams & IApiCompanyParams;
+  export type ResBillingNoteList = IResBillingNoteList | IBillingNoteList
+  export type BillingNoteList = IBillingNoteList
   export type ResBillingNote = IResBillingNote | IBillingNote;
   export type BillingNote = IBillingNote;
 
@@ -474,7 +480,9 @@ export namespace GeeesyApps {
    */
   export type InvoiceFormCreate = IInvoiceFormCreate;
   export type InvoiceFormCreateParams = IInvoiceFormCreateParams;
-  export type InvoiceFormSubmit = IInvoiceFormCreate & IInvoiceFormCreateParams;
+  export type InvoiceFormSubmit = IInvoiceFormCreate & IInvoiceFormCreateParams & IApiCompanyParams;
+  export type ResInvoiceList = IResInvoiceList | IInvoiceList
+  export type InvoiceList = IInvoiceList
   export type ResInvoice = IResInvoice | IInvoice;
   export type Invoice = IInvoice;
 
@@ -486,7 +494,7 @@ export namespace GeeesyApps {
    */
   export type TaxInvoiceFormCreate = ITaxInvoiceFormCreate;
   export type TaxInvoiceFormCreateParams = ITaxInvoiceFormCreateParams;
-  export type TaxInvoiceFormSubmit = ITaxInvoiceFormCreate & ITaxInvoiceFormCreateParams;
+  export type TaxInvoiceFormSubmit = ITaxInvoiceFormCreate & ITaxInvoiceFormCreateParams & IApiCompanyParams;
   export type ResTaxInvoice = IResTaxInvoice | ITaxInvoice;
   export type TaxInvoice = ITaxInvoice;
 

@@ -999,6 +999,11 @@ export interface IBillingNoteFormGroupAccounting {
   totalPayAmount: number;
 }
 
+export interface IBillingNoteFormGroupApprover {
+  approve: IApprove[];
+  stampUrl: string;
+}
+
 export interface IBillingNoteFormCreateParams {
   senderId: string;
   receiverId: string;
@@ -1008,7 +1013,7 @@ export interface IBillingNoteFormCreateParams {
   purchaseOrderId: string;
 }
 
-export interface IBillingNote extends IBillingNoteFormCreate, IBillingNoteFormCreateParams {
+export interface IBillingNoteList {
   billingNoteId: string;
   statusDocSender: string;
   statusApprovalFlow: string;
@@ -1016,17 +1021,27 @@ export interface IBillingNote extends IBillingNoteFormCreate, IBillingNoteFormCr
   updatedAt: string;
 }
 
+export interface IBillingNote extends IBillingNoteFormCreateParams, IBillingNoteList {
+  products: IProductRow[]
+  data: IBillingNoteFormGroupData
+  accounting: IBillingNoteFormGroupAccounting
+}
+
+export interface IResBillingNoteList {
+  status: string;
+  statusText: string;
+  message: string;
+  data: IBillingNoteList[];
+}
+
 export interface IResBillingNote {
   status: string;
   statusText: string;
   message: string;
-  data: IBillingNote[];
+  data: IBillingNote;
 }
 
-export interface IBillingNoteFormGroupApprover {
-  approve: IApprove[];
-  stampUrl: string;
-}
+
 
 /* #endregion */
 
@@ -1081,7 +1096,7 @@ export interface IInvoiceFormCreateParams {
   purchaseOrderId: string;
 }
 
-export interface IInvoice extends IInvoiceFormCreate, IInvoiceFormCreateParams {
+export interface IInvoiceList {
   invoiceId: string;
   statusDocSender: string;
   statusApprovalFlow: string;
@@ -1089,11 +1104,24 @@ export interface IInvoice extends IInvoiceFormCreate, IInvoiceFormCreateParams {
   updatedAt: string;
 }
 
+export interface IInvoice extends IInvoiceFormCreateParams, IInvoiceList {
+  products: IProductRow[]
+  data: IInvoiceFormGroupData
+  accounting: IInvoiceFormGroupAccounting
+}
+
+export interface IResInvoiceList {
+  status: string;
+  statusText: string;
+  message: string;
+  data: IInvoiceList[];
+}
+
 export interface IResInvoice {
   status: string;
   statusText: string;
   message: string;
-  data: IInvoice[];
+  data: IInvoice;
 }
 /* #endregion */
 
