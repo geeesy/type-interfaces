@@ -10,6 +10,20 @@ export enum DocPrefixFormat {
   invoice = 'INV',
   taxInvoice = 'TIV'
 }
+
+export enum DocSeqIdCount {
+  inquiry = 'CountInquiry',
+  rfq = 'CountRfq',
+  quotation = 'CountQuotation',
+  po = 'CountPO',
+  so = 'CountSO',
+  billingNote = 'CountBillingNote',
+  receipt = 'CountReceipt',
+  invoice = 'CountInvoice',
+  taxInvoice = 'CountTaxInvoice'
+}
+
+
 export enum CurrencyCode {
   THAI = 'THB',
   USA = 'USD',
