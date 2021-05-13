@@ -73,7 +73,7 @@ export interface IAccessScope {
 export interface IBusinessCreateCompanyUser {
   companyCode: string
   isDefaultReceiver: boolean // * 1 Company 1 User
-  approverRole: TApproverRole // * Reviewer || Approver
+  approverRole: TApproverRole // * Reviewer || Approver || NONE
   approvalFlowRules: IApprovalRule
   accessPolicy: IAccessScope[]
   adminUsername?: string // * on STAFF create
@@ -87,6 +87,7 @@ export interface IBusinessCreateUser {
   mobile: string
   penName: string
   userRole: TUserRole
+  userIdentityId: string
   username: string // ! !== userId ~ cognitoUserId
   businessPosition: string
 }
