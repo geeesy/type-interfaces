@@ -12,6 +12,13 @@ export interface IApiCompanyParams {
   identityId: string
 }
 
+export interface IApiCompanyCreateUserParams {
+  businessId: string
+  compId: string
+  identityId: string
+  createdUserIdentityId?: string
+}
+
 export interface IDBCompanyActivityLog {
   createdAt: string
   updatedAt: string

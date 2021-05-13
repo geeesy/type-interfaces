@@ -185,7 +185,7 @@ import {
   IPaymentMethod,
 } from './type-console'
 import { ICategoryList, IMainCategory, IProduct, IProductCreate, IProductEntity, IProductList, IProductPackInVariant, IProductPackOnly, IProductVariantInPack, IProductVariantOnly, IResMainCategory, IResSubCategory, ISubCategory } from './type-catalog'
-import { IApiCompanyParams, ICompany, ICompanyCreate, ICompanyCreateSalesRep, ICompanyEntity, ICompanyPortfolio, ICompanyPrivateEntity, ICompanySalesRep, ICompanyUserIdentity, ISettingCreatePriceGroup, ISettingCreatePriceList, ISettingDoc, ISettingPriceGroup, ISettingPriceList } from './type-company'
+import { IApiCompanyCreateUserParams, IApiCompanyParams, ICompany, ICompanyCreate, ICompanyCreateSalesRep, ICompanyEntity, ICompanyPortfolio, ICompanyPrivateEntity, ICompanySalesRep, ICompanyUserIdentity, ISettingCreatePriceGroup, ISettingCreatePriceList, ISettingDoc, ISettingPriceGroup, ISettingPriceList } from './type-company'
 import { IBusiness, IBusinessCreate, IBusinessCreateCompanyUser, IBusinessCreateUser, IBusinessOwnerCreate, IBusinessOwnerIdentity, IBusinessUserIdentity, IDBBusinessUserIdentity } from './type-business'
 
 /* #region FIXME: Marketplace */
@@ -568,7 +568,7 @@ export namespace GappBusiness {
   export type BusinessInfo = IBusiness
   export type Owner = IBusinessOwnerIdentity
   export type CreateBusiness = IBusinessCreate & IBusinessOwnerCreate
-  export type CreateCompanyUser = IBusinessCreateUser & IBusinessCreateCompanyUser & IApiCompanyParams
+  export type CreateCompanyUser = IBusinessCreateUser & IBusinessCreateCompanyUser & IApiCompanyCreateUserParams
   export type BeforeUser = IBusinessUserIdentity
   export type User = IBusinessUserIdentity & IDBBusinessUserIdentity
 }

@@ -87,7 +87,7 @@ export interface IBusinessCreateUser {
   mobile: string
   penName: string
   userRole: TUserRole
-  userIdentityId: string
+  identityId: string
   username: string // ! !== userId ~ cognitoUserId
   businessPosition: string
 }
