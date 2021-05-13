@@ -100,6 +100,7 @@ export interface IBusinessUserIdentity extends IBusinessCreateUser {
 
 // REVIEW: USER (BUSINESS) - 2
 export interface IDBBusinessUserIdentity {
+  businessId: string
   companies: string[]
   historyCountOnCompany?: number // * ADMIN
   historyCountOnAdmin?: number // * STAFF
