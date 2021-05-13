@@ -15,10 +15,25 @@ export enum StatusReviewerAction {
   WaitForApproval = 'wait for approval'
 }
 
+export enum StatusReviewerIdx {
+  ToCheck = 'TO_CHECK',
+  Revised = 'REVISED', // TODO How to list with to check
+  WaitForRevision = 'W_REVISION',
+  WaitForApproval = 'W_APPROVAL',
+  Rejected = 'REJECTED',
+  Approved = 'APPROVED'
+}
+
 export enum StatusApproverAction {
   ToApprove = 'to approve',
   Rejected = 'rejected',
   Approved = 'approved'
+}
+
+export enum StatusApproverIdx {
+  ToApprove = 'TO_APPROVE',
+  Rejected = 'REJECTED',
+  Approved = 'APPROVED'
 }
 
 export enum StatusInquirySender {
