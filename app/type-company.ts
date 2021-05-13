@@ -217,6 +217,7 @@ export interface ICompanyEntity {
   companyName: string;
   companyCode: string; // ! immu & use on Cognito with tenantId
   compId: string; // * gen on client
+  businessId: string // * <== tenantId (Cognito)
 
   companyCategoryId: string;
   companyCategoryCustomName?: string; // * id = OTHER000
@@ -242,7 +243,7 @@ export interface ICompanyEntity {
 // ANCHOR: COMPANY | Create
 // NOTE: === bc -> Create Company
 export interface ICompanyCreate extends ICompanyEntity {
-  businessId: string // * <== tenantId (Cognito)
+
 }
 
 // REVIEW: COMPANY
