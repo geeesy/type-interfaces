@@ -568,7 +568,7 @@ export namespace GappBusiness {
   export type BusinessInfo = IBusiness
   export type Owner = IBusinessOwnerIdentity
   export type CreateBusiness = IBusinessCreate & IBusinessOwnerCreate
-  export type CreateUser = IBusinessCreateUser & IBusinessCreateCompanyUser & IApiCompanyParams
+  export type CreateCompanyUser = IBusinessCreateUser & IBusinessCreateCompanyUser & IApiCompanyParams
   export type BeforeUser = IBusinessUserIdentity
   export type User = IBusinessUserIdentity & IDBBusinessUserIdentity
 }
