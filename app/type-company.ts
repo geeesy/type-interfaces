@@ -16,7 +16,7 @@ export interface IApiCompanyCreateUserParams {
   businessId: string
   compId: string
   identityId: string
-  createdUserIdentityId?: string
+  createdUserIdentityId: string
 }
 
 export interface IDBCompanyActivityLog {
