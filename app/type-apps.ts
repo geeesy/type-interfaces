@@ -676,125 +676,6 @@ export interface IQuotationCompareColumn {
   note: string
 }
 
-/* #region Pooled Procurement */
-// STUB: Pooled Procurement Form
-export interface IPoolProduct {
-  productTitle: string
-  productImageUrls: string[]
-  poolQty: number
-  minQty: number
-  stepQty: number
-  productUnitPrice: number
-  productUnit: string
-  productId?: string
-}
-
-export interface IPoolShipping {
-  shippingMethod: string
-  shippingCost: number
-}
-
-export interface IPoolData {
-  expiryTimestamp: number //timestamp
-  shippingMethods: IPoolShipping[]
-  contact: ISenderContact
-  leadTimeDay: number
-  note: string
-  remark: string
-  senderId: string
-  supplierId?: string
-  compId?: string
-  marketCode: string
-  isOverPool: boolean
-}
-
-// ANCHOR: POOL | MAIN-BUYER --> CREATE POOL
-export interface IPoolFormCreate {
-  formGroupProduct: IPoolProduct
-  formGroupData: IPoolData
-}
-
-// ANCHOR: POOL | MAIN-BUYER --> LIST POOLS
-export interface IPoolList extends IPoolProduct {
-  poolId: string
-  remainPoolQty: number // * TO UPDATE
-  createdAt: string
-  updatedAt: string
-  expiryDate: string
-  senderId: string
-  joinsCount: number // * TO UPDATE
-  joinersCount: number // * TO UPDATE
-  subBuyersCount: number // * TO UPDATE
-  isClosed: boolean // * TO UPDATE (on QTY === POOL)
-  isOverPool: boolean
-}
-
-// REVIEW: POOL ENTITY
-export interface IPool extends IPoolList {
-  product: IPoolProduct
-  data: IPoolData
-}
-
-// ANCHOR: POOL | JOINER --> JOIN POOL
-export interface IJoinerJoinPool extends IPoolProduct {
-  poolId: string;
-  senderId: string
-  subSenderId: string
-  contact: ISenderContact
-  joinPoolQty: number
-  supplierId?: string
-  compId?: string
-}
-
-// ANCHOR: POOL | JOINER --> LIST JOINING POOLS
-export interface IJoinerListJoiningPools extends IJoinerJoinPool {
-  joinedAt: string
-  statusApproved: boolean
-  statusUpdatedAt: string
-  statusJoining: StatusPoolJoining
-}
-
-// STUB: POOL | JOINING
-export interface IJoining extends IJoinerListJoiningPools {
-
-}
-
-// STUB: POOL | DB | JOINER x POOL ENTITY
-export interface IJoinerListPools extends IPoolProduct {
-  poolId: string;
-  senderId: string
-  subSenderId: string
-  contact: ISenderContact
-  supplierId?: string
-  compId?: string
-  firstJoinedAt: string
-  latestStatusUpdatedAt: string
-  totalJoinPoolQty: number // * TO UPDATE ON JOIN
-  totalAcceptedJoinPoolQty: number // * TO UPDATE ON ACCEPT
-  statusShippingMainBuyer: StatusPoolShippingMainBuyer
-  statusShippingSubBuyer: StatusPoolShippingSubBuyer
-}
-
-export interface IPoolStatus {
-  poolQty: number
-  remainPoolQty: number
-  isClosed: boolean
-}
-
-// ANCHOR: POOL | JOINER --> LIST POOLS
-export interface IRefJoinerListPools extends IJoinerListPools, IPoolStatus {
-}
-
-// ANCHOR: POOL | MAIN-BUYER --> ACCEPT JOINING
-export interface IPoolAcceptJoining {
-  poolId: string
-  senderId: string
-  subSenderId: string
-  joinedAt: string
-  joinPoolQty: number
-}
-/* #endregion */
-
 /* #region FIXME: PO */
 export interface IPOFormCreate {
   formGroupSender: ISenderContact;
@@ -1183,5 +1064,125 @@ export interface IResTaxInvoice {
   statusText: string;
   message: string;
   data: ITaxInvoice[];
+}
+/* #endregion */
+
+
+/* #region Pooled Procurement */
+// STUB: Pooled Procurement Form
+export interface IPoolProduct {
+  productTitle: string
+  productImageUrls: string[]
+  poolQty: number
+  minQty: number
+  stepQty: number
+  productUnitPrice: number
+  productUnit: string
+  productId?: string
+}
+
+export interface IPoolShipping {
+  shippingMethod: string
+  shippingCost: number
+}
+
+export interface IPoolData {
+  expiryTimestamp: number //timestamp
+  shippingMethods: IPoolShipping[]
+  contact: ISenderContact
+  leadTimeDay: number
+  note: string
+  remark: string
+  senderId: string
+  supplierId?: string
+  compId?: string
+  marketCode: string
+  isOverPool: boolean
+}
+
+// ANCHOR: POOL | MAIN-BUYER --> CREATE POOL
+export interface IPoolFormCreate {
+  formGroupProduct: IPoolProduct
+  formGroupData: IPoolData
+}
+
+// ANCHOR: POOL | MAIN-BUYER --> LIST POOLS
+export interface IPoolList extends IPoolProduct {
+  poolId: string
+  remainPoolQty: number // * TO UPDATE
+  createdAt: string
+  updatedAt: string
+  expiryDate: string
+  senderId: string
+  joinsCount: number // * TO UPDATE
+  joinersCount: number // * TO UPDATE
+  subBuyersCount: number // * TO UPDATE
+  isClosed: boolean // * TO UPDATE (on QTY === POOL)
+  isOverPool: boolean
+}
+
+// REVIEW: POOL ENTITY
+export interface IPool extends IPoolList {
+  product: IPoolProduct
+  data: IPoolData
+}
+
+// ANCHOR: POOL | JOINER --> JOIN POOL
+export interface IJoinerJoinPool extends IPoolProduct {
+  poolId: string;
+  senderId: string
+  subSenderId: string
+  contact: ISenderContact
+  joinPoolQty: number
+  supplierId?: string
+  compId?: string
+}
+
+// ANCHOR: POOL | JOINER --> LIST JOINING POOLS
+export interface IJoinerListJoiningPools extends IJoinerJoinPool {
+  joinedAt: string
+  statusApproved: boolean
+  statusUpdatedAt: string
+  statusJoining: StatusPoolJoining
+}
+
+// STUB: POOL | JOINING
+export interface IJoining extends IJoinerListJoiningPools {
+
+}
+
+// STUB: POOL | DB | JOINER x POOL ENTITY
+export interface IJoinerListPools extends IPoolProduct {
+  poolId: string;
+  senderId: string
+  subSenderId: string
+  contact: ISenderContact
+  supplierId?: string
+  compId?: string
+  firstJoinedAt: string
+  latestStatusUpdatedAt: string
+  totalJoinPoolQty: number // * TO UPDATE ON JOIN
+  totalAcceptedJoinPoolQty: number // * TO UPDATE ON ACCEPT
+  statusShippingMainBuyer: StatusPoolShippingMainBuyer
+  statusShippingSubBuyer: StatusPoolShippingSubBuyer
+}
+
+export interface IPoolStatus {
+  poolQty: number
+  remainPoolQty: number
+  isClosed: boolean
+}
+
+// ANCHOR: POOL | JOINER --> LIST POOLS
+export interface IRefJoinerListPools extends IJoinerListPools, IPoolStatus {
+}
+
+// ANCHOR: POOL | MAIN-BUYER --> ACCEPT JOINING
+export interface IPoolAcceptJoining {
+  poolId: string
+  senderId: string
+  subSenderId: string
+  joinedAt: string
+  joinPoolQty: number
 }
 /* #endregion */

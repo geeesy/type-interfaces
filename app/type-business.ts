@@ -81,17 +81,14 @@ export interface IBusinessCreateCompanyUser {
 }
 
 export interface IBusinessCreateUser {
-  businessId: string
   businessName: string // FIXME
   email: string
   fullName: string // dup
-  identityId: string
   mobile: string
   penName: string
   userRole: TUserRole
   username: string // ! !== userId ~ cognitoUserId
   businessPosition: string
-
 }
 
 // REVIEW: USER (BUSINESS) - 1
