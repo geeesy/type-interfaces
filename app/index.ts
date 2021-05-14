@@ -563,7 +563,7 @@ export namespace GeeesyConsole {
 export namespace GappBusiness {
   export type CompanyEntity = ICompanyEntity & ICompanyPrivateEntity & IDBCompanyEntity
   export type ListCompany = IBusinessListCompany
-  export type CompanyInfo = ICompany
+  export type CompanyInfo = ICompany & IDBCompanyEntity
   export type CompanyPort = ICompanyPortfolio
   export type CreateCompany = ICompanyCreate & ICompanyPrivateEntity
   export type BusinessInfo = IBusiness
