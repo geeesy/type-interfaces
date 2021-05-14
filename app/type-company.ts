@@ -237,7 +237,7 @@ export interface ICompanyEntity {
   isHighlight: boolean; // ! core
   impFactor: number; // ! core
   haveCompletedInfo: boolean //* === false on Create
-
+  haveDefaultReceiver: boolean
 }
 
 // ANCHOR: COMPANY | Create
