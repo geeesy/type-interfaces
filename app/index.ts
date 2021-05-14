@@ -185,7 +185,7 @@ import {
   IPaymentMethod,
 } from './type-console'
 import { ICategoryList, IMainCategory, IProduct, IProductCreate, IProductEntity, IProductList, IProductPackInVariant, IProductPackOnly, IProductVariantInPack, IProductVariantOnly, IResMainCategory, IResSubCategory, ISubCategory } from './type-catalog'
-import { IApiCompanyCreateUserParams, IApiCompanyParams, ICompany, ICompanyCreate, ICompanyCreateSalesRep, ICompanyEntity, ICompanyPortfolio, ICompanyPrivateEntity, ICompanySalesRep, ICompanyUserIdentity, ISettingCreatePriceGroup, ISettingCreatePriceList, ISettingDoc, ISettingPriceGroup, ISettingPriceList } from './type-company'
+import { IApiCompanyCreateUserParams, IApiCompanyParams, ICompany, ICompanyCreate, ICompanyCreateSalesRep, ICompanyEntity, ICompanyPortfolio, ICompanyPrivateEntity, ICompanySalesRep, ICompanyUserIdentity, IDBCompanyEntity, ISettingCreatePriceGroup, ISettingCreatePriceList, ISettingDoc, ISettingPriceGroup, ISettingPriceList } from './type-company'
 import { IBusiness, IBusinessCreate, IBusinessCreateCompanyUser, IBusinessCreateUser, IBusinessListCompany, IBusinessOwnerCreate, IBusinessOwnerIdentity, IBusinessUserIdentity, IDBBusinessUserIdentity } from './type-business'
 
 /* #region FIXME: Marketplace */
@@ -561,7 +561,7 @@ export namespace GeeesyConsole {
 
 // REVIEW: BC
 export namespace GappBusiness {
-  export type CompanyEntity = ICompanyEntity & ICompanyPrivateEntity
+  export type CompanyEntity = ICompanyEntity & ICompanyPrivateEntity & IDBCompanyEntity
   export type ListCompany = IBusinessListCompany
   export type CompanyInfo = ICompany
   export type CompanyPort = ICompanyPortfolio

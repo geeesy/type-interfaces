@@ -236,8 +236,11 @@ export interface ICompanyEntity {
   isRecommend: boolean; // ! core
   isHighlight: boolean; // ! core
   impFactor: number; // ! core
+}
+
+export interface IDBCompanyEntity {
   haveCompletedInfo: boolean //* === false on Create
-  haveDefaultReceiver: boolean
+  haveDefaultReceiver: boolean //* === false on Create
 }
 
 // ANCHOR: COMPANY | Create
