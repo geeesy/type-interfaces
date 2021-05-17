@@ -186,7 +186,7 @@ import {
 } from './type-console'
 import { ICategoryList, IMainCategory, IProduct, IProductCreate, IProductEntity, IProductList, IProductPackInVariant, IProductPackOnly, IProductVariantInPack, IProductVariantOnly, IResMainCategory, IResSubCategory, ISubCategory } from './type-catalog'
 import { IApiCompanyCreateUserParams, IApiCompanyParams, ICompany, ICompanyByGapp, ICompanyCreateSalesRep, ICompanyEntity, ICompanyPortfolio, ICompanyPrivateEntity, ICompanySalesRep, ICompanyUserIdentity, IDBCompanyEntity, ISettingCreatePriceGroup, ISettingCreatePriceList, ISettingDoc, ISettingPriceGroup, ISettingPriceList } from './type-company'
-import { IBusiness, IBusinessCreate, IBusinessCreateCompanyUser, IBusinessCreateUser, IBusinessListCompany, IBusinessOwnerCreate, IBusinessOwnerIdentity, IBusinessUserIdentity, IDBBusinessUserIdentity } from './type-business'
+import { IBusinessCreateCompanyUser, IBusinessCreateUser, IBusinessEntity, IBusinessListCompany, IBusinessOwnerCreate, IBusinessOwnerIdentity, IBusinessUserIdentity, IDBBusinessUserIdentity } from './type-business'
 
 /* #region FIXME: Marketplace */
 export namespace GeeesyMarketplace {
@@ -565,11 +565,9 @@ export namespace GappBusiness {
   export type CompanyEntity = ICompanyEntity & ICompanyPrivateEntity & IDBCompanyEntity & ICompanyByGapp
   export type DBUpdateCompanyEntity = ICompanyEntity & ICompanyPrivateEntity & IDBCompanyEntity
   export type ListCompany = IBusinessListCompany
-  // export type CompanyInfo = ICompany & IDBCompanyEntity
-  // export type CompanyPort = ICompanyPortfolio
-  export type BusinessInfo = IBusiness
+  export type Business = IBusinessEntity
   export type Owner = IBusinessOwnerIdentity
-  export type CreateBusiness = IBusinessCreate & IBusinessOwnerCreate
+  export type CreateBusiness = IBusinessEntity & IBusinessOwnerCreate
   export type CreateCompanyUser = IBusinessCreateUser & IBusinessCreateCompanyUser & IApiCompanyCreateUserParams
   export type BeforeUser = IBusinessUserIdentity
   export type User = IBusinessUserIdentity & IDBBusinessUserIdentity

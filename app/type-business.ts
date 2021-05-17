@@ -15,20 +15,17 @@ export type TBusinessType = 'manufacturer' | 'wholesaler' | 'retailer'
  */
 // ANCHOR: BUSINESS | Entity
 export interface IBusinessEntity {
+  businessId: string // * === tenantId
   businessName: string
   businessCategory: string // * <-- include other
   businessType: TBusinessType[]
   businessSize: TBusinessSize
   website: string
   interests: string[]
+  createdAt: string
+  updatedAt: string
   // ! immutable
   useAsCompany: boolean // ? default = false
-}
-
-// ANCHOR: BUSINESS | Create
-// NOTE: === bc -> Open account
-export interface IBusinessCreate extends IBusinessEntity {
-  tenantId: string
 }
 
 export interface IBusinessOwnerCreate {
@@ -36,13 +33,6 @@ export interface IBusinessOwnerCreate {
   ownerName: string
   phone: string
   email: string
-}
-
-// REVIEW: BUSINESS
-export interface IBusiness extends IBusinessEntity {
-  businessId: string // * === tenantId
-  createdAt: string
-  updatedAt: string
 }
 
 // REVIEW: BUSINESS | OWNER 
