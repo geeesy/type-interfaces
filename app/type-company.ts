@@ -241,10 +241,11 @@ export interface ICompanyEntity {
 
   companyCategoryId: string;
   companyCategoryCustomName?: string; // * id = OTHER000
+  createdAt: string
+  updatedAt: string
 
   // CI
   companyAsset: ICompanyAsset;
-  createdAt?: string // * on server
 
   // INDEX
   tags: string[];
@@ -287,7 +288,7 @@ export interface ICompany extends ICompanyEntity {
   companyBadge: ICompanyBadge;
 
   supplierId: string;
-  updatedAt: string
+
 }
 
 // REVIEW: SUPPLIER
