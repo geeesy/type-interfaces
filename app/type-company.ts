@@ -211,6 +211,18 @@ export interface ICompanyPrivateEntity {
   useApprovalWorkflow: TApproverFlow
 }
 
+// ANCHOR: COMPANY | GAPP
+// NOTE: Init on company create (Update by GAPP only)
+export interface ICompanyByGapp {
+  isVerified: boolean;
+  rating: number;
+  score: number;
+  isActive: boolean;
+  isRecommend: boolean;
+  isHighlight: boolean;
+  impFactor: number;
+}
+
 // ANCHOR: COMPANY | Entity
 // NOTE: Init on company create
 export interface IDBCompanyEntity {
@@ -237,13 +249,6 @@ export interface ICompanyEntity {
   // INDEX
   tags: string[];
   keywords: string[];
-  isVerified: boolean; // ! core
-  rating: number; // ! core
-  score: number; // ! core
-  isActive: boolean; // ! core
-  isRecommend: boolean; // ! core
-  isHighlight: boolean; // ! core
-  impFactor: number; // ! core
 }
 
 
