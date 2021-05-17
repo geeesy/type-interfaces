@@ -1,5 +1,5 @@
 import { IApprovalRule } from "./type-apps"
-import { ICompanyEntity, IDBCompanyEntity } from "./type-company"
+import { ICompanyByGapp, ICompanyEntity, IDBCompanyEntity } from "./type-company"
 
 /**
  * STUB: Version 5.x
@@ -108,6 +108,6 @@ export interface IDBBusinessUserIdentity {
   historyCountOnAdmin?: number // * STAFF
 }
 
-export interface IBusinessListCompany extends ICompanyEntity, IDBCompanyEntity {
+export interface IBusinessListCompany extends ICompanyEntity, IDBCompanyEntity, ICompanyByGapp {
   useApprovalWorkflow: TApproverFlow
 }
