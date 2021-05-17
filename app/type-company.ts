@@ -199,10 +199,10 @@ export interface ICustomPage {
 export interface ICompanyUserIdentity extends IBusinessUserIdentity, IBusinessCreateCompanyUser {
   contact: IContactPerson
   signatureUrl: string
-
 }
 
 // ANCHOR: COMPANY | Private Entity
+// NOTE: Not show on public
 export interface ICompanyPrivateEntity {
   companyStampUrl: string
   companyType: TBusinessType[]
@@ -211,6 +211,14 @@ export interface ICompanyPrivateEntity {
   useApprovalWorkflow: TApproverFlow
 }
 
+// ANCHOR: COMPANY | Entity
+// NOTE: Init on company create
+export interface IDBCompanyEntity {
+  haveCompletedInfo: boolean //* === false on Create
+  haveDefaultReceiver: boolean //* === false on Create
+  havePortfolio: boolean; // * to check port init
+  onMarket: boolean;
+}
 
 // ANCHOR: COMPANY | Entity
 export interface ICompanyEntity {
@@ -238,20 +246,10 @@ export interface ICompanyEntity {
   impFactor: number; // ! core
 }
 
-export interface IDBCompanyEntity {
-  haveCompletedInfo: boolean //* === false on Create
-  haveDefaultReceiver: boolean //* === false on Create
-}
-
-// ANCHOR: COMPANY | Create
-// NOTE: === bc -> Create Company
-export interface ICompanyCreate extends ICompanyEntity {
-
-}
 
 // REVIEW: COMPANY
 // NOTE: === g-biz -> Company Info (Update)
-export interface ICompany extends ICompanyCreate {
+export interface ICompany extends ICompanyEntity {
   // Contact
   contact: ICompanyContactInfo;
 
@@ -283,10 +281,8 @@ export interface ICompany extends ICompanyCreate {
   // Badge
   companyBadge: ICompanyBadge;
 
-  havePortfolio: boolean; // * to check port init
-  onMarket: boolean;
-  supplierId?: string;
-  updatedAt?: string
+  supplierId: string;
+  updatedAt: string
 }
 
 // REVIEW: SUPPLIER
