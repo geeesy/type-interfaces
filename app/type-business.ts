@@ -1,5 +1,5 @@
 import { IApprovalRule } from "./type-apps"
-import { ICompanyByGapp, ICompanyEntity, IDBCompanyEntity } from "./type-company"
+import { ICompanyByGapp, ICompanyEntity, ICompanyEntityImmu, IDBCompanyEntity } from "./type-company"
 
 /**
  * STUB: Version 5.x
@@ -10,36 +10,44 @@ export type TApproverFlow = 'reviewer' | 'approver' | 'none'
 export type TBusinessSize = 'micro' | 'small' | 'medium' | 'large'
 export type TBusinessType = 'manufacturer' | 'wholesaler' | 'retailer'
 
+export interface IDBLogTime {
+  createdAt: string
+  updatedAt: string
+}
+
+export interface IDBUpdateTime {
+  updatedAt: string
+}
+
 /**
  * BUSINESS
  */
-// ANCHOR: BUSINESS | Entity
-export interface IBusinessEntity {
+// REVIEW: BUSINESS | Entity (1/2)
+export interface IBusinessEntityImmu {
   businessId: string // * === tenantId
+  useAsCompany: boolean // ? default = false
+}
+// REVIEW: BUSINESS | Entity (2/2)
+export interface IBusinessEntity {
   businessName: string
   businessCategory: string // * <-- include other
-  businessType: TBusinessType[]
+  businessTypes: TBusinessType[]
   businessSize: TBusinessSize
   website: string
   interests: string[]
-  createdAt: string
-  updatedAt: string
-  // ! immutable
-  useAsCompany: boolean // ? default = false
 }
-
-export interface IBusinessOwnerCreate {
+// REVIEW: BUSINESS | OWNER (1/2)
+export interface IBusinessOwnerIdentityImmu {
   identityId: string
-  ownerName: string
   phone: string
-  email: string
+  email: string // TODO: check cognito cred
 }
 
-// REVIEW: BUSINESS | OWNER 
-export interface IBusinessOwnerIdentity extends IBusinessOwnerCreate {
-  createdAt: string
-  updatedAt: string
+// REVIEW: BUSINESS | OWNER (2/2)
+export interface IBusinessOwnerIdentity {
+  ownerName: string
 }
+
 
 export type TAccessStatementAction = 'rfi' | 'rfq' | 'sales' | 'purchases' | 'finance' | 'products'
 export type TAccessScope = 'rfi' | 'rfq' | 'sales' | 'purchases' | 'finance' | 'products'
@@ -61,43 +69,48 @@ export interface IAccessScope {
   statement: IAccessStatement[]
 }
 
-export interface IBusinessCreateCompanyUser {
+// ANCHOR: COMPANY | USER (1/2)
+export interface IBusinessCompanyUserIdentityImmu {
   companyCode: string
+  compId: string
+  identityId: string // * same as Business User
+}
+// ANCHOR: COMPANY | USER (2/2)
+export interface IBusinessCompanyUserIdentity {
+  fullName: string
   isDefaultReceiver: boolean // * 1 Company 1 User
   approverRole: TApproverRole // * Reviewer || Approver || NONE
   approvalFlowRules: IApprovalRule
   accessPolicy: IAccessScope[]
-  adminUsername?: string // * on STAFF create
+  adminUsername?: string // * on STAFF create, update on changed admin
   personalCode: string
 }
 
-export interface IBusinessCreateUser {
-  businessName: string // FIXME
-  email: string
-  fullName: string // dup
+// REVIEW: BUSINESS | USER (1/3)
+export interface IBusinessUserIdentityImmu {
+  email: string // TODO: check cognito cred
   mobile: string
-  penName: string
   userRole: TUserRole
   identityId: string
-  username: string // ! !== userId ~ cognitoUserId
+  businessId: string
+  username: string // * for check with cognitoIdentityId on REQ
+}
+
+// REVIEW: BUSINESS | USER (2/3)
+export interface IBusinessUserIdentity {
+  fullName: string
+  penName: string // TODO: check cognito
   businessPosition: string
 }
 
-// REVIEW: USER (BUSINESS) - 1
-export interface IBusinessUserIdentity extends IBusinessCreateUser {
-  businessId: string
-  isActive: boolean
-  createdAt: string
-  updatedAt: string
-}
-
-// REVIEW: USER (BUSINESS) - 2
+// REVIEW: BUSINESS | USER (3/3)
 export interface IDBBusinessUserIdentity {
+  isActive: boolean
   companies: string[]
   historyCountOnCompany?: number // * ADMIN
   historyCountOnAdmin?: number // * STAFF
 }
 
-export interface IBusinessListCompany extends ICompanyEntity, IDBCompanyEntity, ICompanyByGapp {
+export interface IBusinessListCompany extends ICompanyEntityImmu, ICompanyEntity, IDBCompanyEntity, ICompanyByGapp {
   useApprovalWorkflow: TApproverFlow
 }

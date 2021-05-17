@@ -1,5 +1,5 @@
 import { IPersonContactInfo } from './type-apps';
-import { IBusinessCreateCompanyUser, IBusinessUserIdentity, TApproverFlow, TApproverRole, TBusinessSize, TBusinessType } from './type-business';
+import { IBusinessCompanyUserIdentity, IBusinessCompanyUserIdentityImmu, IBusinessUserIdentity, TApproverFlow, TApproverRole, TBusinessSize, TBusinessType } from './type-business';
 import { IPaymentMethod, IShippingZone } from './type-console';
 
 /**
@@ -196,7 +196,7 @@ export interface ICustomPage {
  * COMPANY
  */
 // REVIEW: USER (COMPANY)
-export interface ICompanyUserIdentity extends IBusinessUserIdentity, IBusinessCreateCompanyUser {
+export interface ICompanyUserIdentity extends IBusinessCompanyUserIdentityImmu, IBusinessCompanyUserIdentity {
   contact: IContactPerson
   signatureUrl: string
 }
@@ -223,8 +223,8 @@ export interface ICompanyByGapp {
   impFactor: number;
 }
 
-// ANCHOR: COMPANY | Entity
-// NOTE: Init on company create
+// ANCHOR: COMPANY | Entity (1/3)
+// NOTE: Init on company create, updated in G-BIZ
 export interface IDBCompanyEntity {
   haveCompletedInfo: boolean //* === false on Create
   haveDefaultReceiver: boolean //* === false on Create
@@ -232,17 +232,19 @@ export interface IDBCompanyEntity {
   onMarket: boolean;
 }
 
-// ANCHOR: COMPANY | Entity
-export interface ICompanyEntity {
-  companyName: string;
-  companyCode: string; // ! immu & use on Cognito with tenantId
+// ANCHOR: COMPANY | Entity (2/3)
+export interface ICompanyEntityImmu {
+  companyCode: string; // ! use on Cognito with tenantId
   compId: string; // * gen on client
   businessId: string // * <== tenantId (Cognito)
+}
+
+// ANCHOR: COMPANY | Entity (3/3)
+export interface ICompanyEntity {
+  companyName: string;
 
   companyCategoryId: string;
   companyCategoryCustomName?: string; // * id = OTHER000
-  createdAt: string
-  updatedAt: string
 
   // CI
   companyAsset: ICompanyAsset;

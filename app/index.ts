@@ -185,8 +185,8 @@ import {
   IPaymentMethod,
 } from './type-console'
 import { ICategoryList, IMainCategory, IProduct, IProductCreate, IProductEntity, IProductList, IProductPackInVariant, IProductPackOnly, IProductVariantInPack, IProductVariantOnly, IResMainCategory, IResSubCategory, ISubCategory } from './type-catalog'
-import { IApiCompanyCreateUserParams, IApiCompanyParams, ICompany, ICompanyByGapp, ICompanyCreateSalesRep, ICompanyEntity, ICompanyPortfolio, ICompanyPrivateEntity, ICompanySalesRep, ICompanyUserIdentity, IDBCompanyEntity, ISettingCreatePriceGroup, ISettingCreatePriceList, ISettingDoc, ISettingPriceGroup, ISettingPriceList } from './type-company'
-import { IBusinessCreateCompanyUser, IBusinessCreateUser, IBusinessEntity, IBusinessListCompany, IBusinessOwnerCreate, IBusinessOwnerIdentity, IBusinessUserIdentity, IDBBusinessUserIdentity } from './type-business'
+import { IApiCompanyCreateUserParams, IApiCompanyParams, ICompany, ICompanyByGapp, ICompanyCreateSalesRep, ICompanyEntity, ICompanyEntityImmu, ICompanyPortfolio, ICompanyPrivateEntity, ICompanySalesRep, ICompanyUserIdentity, IDBCompanyEntity, ISettingCreatePriceGroup, ISettingCreatePriceList, ISettingDoc, ISettingPriceGroup, ISettingPriceList } from './type-company'
+import { IBusinessCompanyUserIdentity, IBusinessCompanyUserIdentityImmu, IBusinessEntity, IBusinessEntityImmu, IBusinessListCompany, IBusinessOwnerIdentity, IBusinessOwnerIdentityImmu, IBusinessUserIdentity, IBusinessUserIdentityImmu, IDBBusinessUserIdentity, IDBLogTime, IDBUpdateTime } from './type-business'
 
 /* #region FIXME: Marketplace */
 export namespace GeeesyMarketplace {
@@ -561,17 +561,23 @@ export namespace GeeesyConsole {
 
 // REVIEW: BC
 export namespace GappBusiness {
-  export type CreateCompany = ICompanyEntity & ICompanyPrivateEntity
-  export type CompanyEntity = ICompanyEntity & ICompanyPrivateEntity & IDBCompanyEntity & ICompanyByGapp
-  export type DBUpdateCompanyEntity = ICompanyEntity & ICompanyPrivateEntity & IDBCompanyEntity
+  // * BUSINESS
+  export type CreateBusiness = IBusinessEntityImmu & IBusinessEntity & IBusinessOwnerIdentity & IBusinessOwnerIdentityImmu
+  export type Business = IBusinessEntityImmu & IBusinessEntity & IDBLogTime
+  export type DBUpdateBusiness = IBusinessEntity & IDBUpdateTime
+  export type Owner = IBusinessOwnerIdentity & IBusinessOwnerIdentityImmu & IDBLogTime
+  export type DBUpdateOwner = IBusinessOwnerIdentity & IDBUpdateTime
+  // * COMPANY
+  export type CreateCompany = ICompanyEntity & ICompanyEntityImmu & ICompanyPrivateEntity
+  export type Company = ICompanyEntity & ICompanyEntityImmu & ICompanyPrivateEntity & IDBCompanyEntity & ICompanyByGapp & IDBLogTime
+  export type DBUpdateCompany = ICompanyEntity & ICompanyPrivateEntity & IDBUpdateTime
   export type ListCompany = IBusinessListCompany
-  export type Business = IBusinessEntity
-  export type Owner = IBusinessOwnerIdentity
-  export type CreateBusiness = IBusinessEntity & IBusinessOwnerCreate
-  export type CreateBusinessUser = IBusinessCreateUser
-  export type CreateCompanyUser = IBusinessCreateUser & IBusinessCreateCompanyUser & IApiCompanyCreateUserParams
-  export type BeforeUser = IBusinessUserIdentity
-  export type User = IBusinessUserIdentity & IDBBusinessUserIdentity
+  // * USER
+  export type CreateBusinessUser = IBusinessUserIdentityImmu & IBusinessUserIdentity
+  export type User = IBusinessUserIdentityImmu & IBusinessUserIdentity & IDBBusinessUserIdentity & IDBLogTime
+  export type DBUpdateUser = IBusinessUserIdentity & IDBBusinessUserIdentity & IDBUpdateTime
+  export type CreateCompanyUser = IBusinessUserIdentityImmu & IBusinessUserIdentity & IBusinessCompanyUserIdentityImmu & IBusinessCompanyUserIdentity
+  export type DBUpdateCompanyUser = IBusinessCompanyUserIdentity & IDBUpdateTime
 }
 
 // REVIEW: G-MARKET
