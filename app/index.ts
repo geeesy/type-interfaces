@@ -576,7 +576,7 @@ export namespace GappBusiness {
   export type CreateBusinessUser = IBusinessUserIdentityImmu & IBusinessUserIdentity
   export type DBCreateUser = IBusinessUserIdentityImmu & IBusinessUserIdentity & IDBBusinessUserIdentityStatus & IDBLogTime
   export type User = IBusinessUserIdentityImmu & IBusinessUserIdentity & IDBBusinessUserIdentityStatus & IDBBusinessUserIdentity & IDBLogTime
-  export type DBUpdateUser = IBusinessUserIdentity & IDBBusinessUserIdentity & IDBBusinessUserIdentityStatus & IDBUpdateTime
+  export type DBUpdateUser = IBusinessUserIdentity & IDBBusinessUserIdentityStatus & IDBUpdateTime
   export type CreateCompanyUser = IBusinessUserIdentityImmu & IBusinessUserIdentity & IBusinessCompanyUserIdentityImmu & IBusinessCompanyUserIdentity & IDBBusinessCompanyUserIdentity
   export type DBUpdateCompanyUser = IBusinessCompanyUserIdentity & IDBUpdateTime
   export type ListCompanyUser = IBusinessCompanyUserIdentityImmu & IBusinessCompanyUserIdentity
