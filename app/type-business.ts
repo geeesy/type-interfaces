@@ -88,6 +88,7 @@ export interface IBusinessCompanyUserIdentity {
 // ANCHOR: COMPANY | USER (3/3)
 export interface IDBBusinessCompanyUserIdentity {
   userRole: TUserRole
+  username: string
 }
 
 // REVIEW: BUSINESS | USER (1/4)
