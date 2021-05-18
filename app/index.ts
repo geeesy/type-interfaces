@@ -579,6 +579,7 @@ export namespace GappBusiness {
   export type DBUpdateUser = IBusinessUserIdentity & IDBBusinessUserIdentity & IDBBusinessUserIdentityStatus & IDBUpdateTime
   export type CreateCompanyUser = IBusinessUserIdentityImmu & IBusinessUserIdentity & IBusinessCompanyUserIdentityImmu & IBusinessCompanyUserIdentity
   export type DBUpdateCompanyUser = IBusinessCompanyUserIdentity & IDBUpdateTime
+  export type ListCompanyUser = IBusinessCompanyUserIdentityImmu & IBusinessCompanyUserIdentity
 }
 
 // REVIEW: G-MARKET
