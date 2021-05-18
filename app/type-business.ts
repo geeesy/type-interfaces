@@ -89,6 +89,7 @@ export interface IBusinessCompanyUserIdentity {
 export interface IDBBusinessCompanyUserIdentity {
   userRole: TUserRole
   username: string
+  businessId: string
 }
 
 // REVIEW: BUSINESS | USER (1/4)
