@@ -1,5 +1,5 @@
 import { IPersonContactInfo } from './type-apps';
-import { IBusinessCompanyUserIdentity, IBusinessCompanyUserIdentityImmu, IBusinessUserIdentity, TApproverFlow, TApproverRole, TBusinessSize, TBusinessType } from './type-business';
+import { IBusinessCompanyUserIdentity, IBusinessCompanyUserIdentityImmu, IBusinessUserIdentity, IDBBusinessCompanyUserIdentity, TApproverFlow, TApproverRole, TBusinessSize, TBusinessType } from './type-business';
 import { IPaymentMethod, IShippingZone } from './type-console';
 
 /**
@@ -196,7 +196,7 @@ export interface ICustomPage {
  * COMPANY
  */
 // REVIEW: USER (COMPANY)
-export interface ICompanyUserIdentity extends IBusinessCompanyUserIdentityImmu, IBusinessCompanyUserIdentity {
+export interface ICompanyUserIdentity extends IBusinessCompanyUserIdentityImmu, IBusinessCompanyUserIdentity, IDBBusinessCompanyUserIdentity {
   contact: IContactPerson
   signatureUrl: string
 }

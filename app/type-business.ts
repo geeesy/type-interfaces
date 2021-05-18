@@ -69,13 +69,13 @@ export interface IAccessScope {
   statement: IAccessStatement[]
 }
 
-// ANCHOR: COMPANY | USER (1/2)
+// ANCHOR: COMPANY | USER (1/3)
 export interface IBusinessCompanyUserIdentityImmu {
   companyCode: string
   compId: string
   identityId: string // * same as Business User
 }
-// ANCHOR: COMPANY | USER (2/2)
+// ANCHOR: COMPANY | USER (2/3)
 export interface IBusinessCompanyUserIdentity {
   fullName: string
   isDefaultReceiver: boolean // * 1 Company 1 User
@@ -84,6 +84,10 @@ export interface IBusinessCompanyUserIdentity {
   accessPolicy: IAccessScope[]
   adminUsername?: string // * on STAFF create, update on changed admin
   personalCode: string
+}
+// ANCHOR: COMPANY | USER (3/3)
+export interface IDBBusinessCompanyUserIdentity {
+  userRole: TUserRole
 }
 
 // REVIEW: BUSINESS | USER (1/4)
