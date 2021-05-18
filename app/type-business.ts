@@ -86,7 +86,7 @@ export interface IBusinessCompanyUserIdentity {
   personalCode: string
 }
 
-// REVIEW: BUSINESS | USER (1/3)
+// REVIEW: BUSINESS | USER (1/4)
 export interface IBusinessUserIdentityImmu {
   email: string // TODO: check cognito cred
   mobile: string
@@ -96,19 +96,23 @@ export interface IBusinessUserIdentityImmu {
   username: string // * for check with cognitoIdentityId on REQ
 }
 
-// REVIEW: BUSINESS | USER (2/3)
+// REVIEW: BUSINESS | USER (2/4)
 export interface IBusinessUserIdentity {
   fullName: string
   penName: string // TODO: check cognito
   businessPosition: string
 }
 
-// REVIEW: BUSINESS | USER (3/3)
-export interface IDBBusinessUserIdentity {
+// REVIEW: BUSINESS | USER (3/4)
+export interface IDBBusinessUserIdentityStatus {
   isActive: boolean
-  companies: string[]
-  historyCountOnCompany?: number // * ADMIN
-  historyCountOnAdmin?: number // * STAFF
+}
+
+// REVIEW: BUSINESS | USER (4/4)
+export interface IDBBusinessUserIdentity {
+  companies: string[] // * as Set on DB
+  historyCountOnCompany?: number // * -> DB on ADMIN
+  historyCountOnAdmin?: number // * -> DB on STAFF
 }
 
 export interface IBusinessListCompany extends ICompanyEntityImmu, ICompanyEntity, IDBCompanyEntity, ICompanyByGapp {
