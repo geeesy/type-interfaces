@@ -422,7 +422,7 @@ export namespace GeeesyApps {
   export type QuotationFormSubmit = IQuotationFormCreate &
     IQuotationFormCreateParams & IApiCompanyParams; // REVIEW: Quotation Type D | Create
   export type QuotationRfqFormSubmit = IQuotationRfqFormCreate &
-    IQuotationFormCreateParams;
+    IQuotationFormCreateParams & IApiCompanyParams; //FIXME
 
   export type ResQuotationList = IResQuotationList | IQuotationList
   export type QuotationList = IQuotationList
