@@ -395,8 +395,8 @@ export namespace GeeesyApps {
   export type RfqFormCreateParams = IRfqFormCreateParams;
   export type RfqManyFormCreateParams = IRfqManyFormCreateParams
 
-  export type RfqFormSubmit = IRfqFormCreate & IRfqFormCreateParams;
-  export type RfqManyFormSubmit = IRfqManyFormCreate & IRfqManyFormCreateParams
+  export type RfqFormSubmit = IRfqFormCreate & IRfqFormCreateParams & IApiCompanyParams;
+  export type RfqManyFormSubmit = IRfqManyFormCreate & IRfqManyFormCreateParams & IApiCompanyParams
 
   export type ResRfqList = IResRfqList | IRfqList
   export type RfqList = IRfqList
