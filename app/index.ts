@@ -365,7 +365,7 @@ export namespace GeeesyApps {
    */
   export type InquiryFormCreate = IInquiryFormCreate;
   export type InquiryFormCreateParams = IInquiryFormCreateParams;
-  export type InquiryFormSubmit = IInquiryFormCreate & IInquiryFormCreateParams;
+  export type InquiryFormSubmit = IInquiryFormCreate & IInquiryFormCreateParams & IApiCompanyParams;
   export type ResInquiryList = IResInquiryList | IInquiryList
   export type InquiryList = IInquiryList
   export type ResInquiry = IResInquiry | IInquiry;
