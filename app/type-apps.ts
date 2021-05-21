@@ -292,6 +292,7 @@ export interface IInquiryFormCreateParams {
 }
 
 export interface IInquiryList {
+  senderId: string;
   inquiryId: string;
   sender: ISenderContact;
   receiver: IReceiverContact;
