@@ -746,6 +746,7 @@ export interface IPOList {
   updatedAt: string;
   senderId: string;
   sellerId: string
+  buyerId: string
   creditDay: number;
   shippingDate: string;
 }
