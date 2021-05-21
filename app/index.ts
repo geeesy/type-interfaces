@@ -614,7 +614,7 @@ export namespace GappSetting {
   export type CompanyInfo = ICompany & IDBCompanyEntity & ICompanyByGapp & ICompanyEntityImmu
   export type DBUpdateCompanyInfo = ICompany & IDBCompanyEntity
   export type CreateCompanyPort = ICompanyPortfolio
-  export type CompanyPort = ICompanyPortfolio & IDBCompanyEntity & ICompanyByGapp
+  export type CompanyPort = ICompanyPortfolio & IDBCompanyEntity & ICompanyByGapp & ICompanyEntityImmu
   export type DBUpdateCompanyPort = ICompanyPortfolio & IDBCompanyEntity
   export type ListAdminStaff = IBusinessCompanyUserIdentityImmu & IBusinessCompanyUserIdentity & IDBBusinessCompanyUserIdentity
   export type CreateAdminStaff = IBusinessUserIdentityImmu & IBusinessUserIdentity & IBusinessCompanyUserIdentityImmu & IBusinessCompanyUserIdentity & IDBBusinessCompanyUserIdentity
