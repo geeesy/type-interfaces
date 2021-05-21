@@ -584,7 +584,7 @@ export namespace GappBusiness {
 
 // REVIEW: G-MARKET
 export namespace GappMarket {
-  export type Supplier = ISupplierPort
+  export type Supplier = ISupplierPort & ICompanyByGapp
   export type ListProductWithSupplier = IProductWithSupplierCard
   export type ListSupplierWithProduct = ISupplierWithProductCard
   export type Product = IProductWithSupplier
