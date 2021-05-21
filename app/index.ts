@@ -611,7 +611,7 @@ export namespace GappSetting {
   export type CreatePriceList = ISettingCreatePriceList & IApiCompanyParams
   export type PriceList = ISettingPriceList
   export type Document = ISettingDoc
-  export type CompanyInfo = ICompany & IDBCompanyEntity & ICompanyByGapp
+  export type CompanyInfo = ICompany & IDBCompanyEntity & ICompanyByGapp & ICompanyEntityImmu
   export type DBUpdateCompanyInfo = ICompany & IDBCompanyEntity
   export type CreateCompanyPort = ICompanyPortfolio
   export type CompanyPort = ICompanyPortfolio & IDBCompanyEntity & ICompanyByGapp
