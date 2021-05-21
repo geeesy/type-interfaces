@@ -274,6 +274,8 @@ export interface IInquiryFormGroupProduct {
 }
 
 export interface IInquiryFormGroupData {
+  docNo: string;
+  docDate: string;
   senderNote: string;
   receiverNote: string;
   sellerNote: string;
