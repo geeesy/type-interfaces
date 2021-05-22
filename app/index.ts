@@ -582,9 +582,13 @@ export namespace GappBusiness {
   export type ListCompanyUser = IBusinessCompanyUserIdentityImmu & IBusinessCompanyUserIdentity & IDBBusinessCompanyUserIdentity
 }
 
+export namespace GappBiz {
+  export type Supplier = ISupplierPort & ICompanyByGapp & IDBCompanyEntity & ICompanyEntityImmu & IDBLogTime // FIXME
+}
+
 // REVIEW: G-MARKET
 export namespace GappMarket {
-  export type Supplier = ISupplierPort & ICompanyByGapp & IDBCompanyEntity & ICompanyEntityImmu & IDBLogTime // FIXME
+  export type Supplier = ISupplierPort & ICompanyByGapp & ICompanyEntityImmu & IDBLogTime // FIXME
   export type ListProductWithSupplier = IProductWithSupplierCard
   export type ListSupplierWithProduct = ISupplierWithProductCard
   export type Product = IProductWithSupplier
