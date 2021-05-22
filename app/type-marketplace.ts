@@ -22,6 +22,8 @@ export interface IProductInSupplierCard
 
 export interface ISupplierCard extends ICompanyEntity, ICompanyByGapp {
   contact: ICompanyContactInfo
+  supplierId: string
+  compId?: string
 }
 
 export interface ISupplierWithProductCard {
