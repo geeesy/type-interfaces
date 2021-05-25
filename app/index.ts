@@ -103,6 +103,7 @@ import {
   IBillingNoteList,
   ICompanyOnList,
   ICompRequestVendor,
+  IDBCompanyDocHeader,
   IDBVendorRequest,
   IInquiry,
   IInquiryFormCreate,
@@ -369,7 +370,7 @@ export namespace GeeesyApps {
   export type ResInquiryList = IResInquiryList | IInquiryList
   export type InquiryList = IInquiryList
   export type ResInquiry = IResInquiry | IInquiry;
-  export type Inquiry = IInquiry;
+  export type Inquiry = IInquiry & IDBCompanyDocHeader;
 
   /**
    * @description
@@ -401,8 +402,8 @@ export namespace GeeesyApps {
   export type ResRfqList = IResRfqList | IRfqList
   export type RfqList = IRfqList
   export type ResRfq = IResRfq | IRfq;
-  export type Rfq = IRfq;
-  export type RfqMany = Partial<IRfq>
+  export type Rfq = IRfq & IDBCompanyDocHeader;
+  export type RfqMany = Partial<IRfq> & IDBCompanyDocHeader
 
   /**
    * @description
@@ -428,7 +429,7 @@ export namespace GeeesyApps {
   export type QuotationList = IQuotationList
 
   export type ResQuotation = IResQuotation | IQuotation;
-  export type Quotation = IQuotation;
+  export type Quotation = IQuotation & IDBCompanyDocHeader;
   export type ResQuotationRfq = IResQuotationRfq | IQuotationRfq
   export type QuotationRfq = IQuotationRfq
 
@@ -444,7 +445,7 @@ export namespace GeeesyApps {
   export type ResPOList = IResPOList | IPOList
   export type POList = IPOList
   export type ResPO = IResPO | IPO;
-  export type PO = IPO;
+  export type PO = IPO & IDBCompanyDocHeader;
 
   /**
    * @description
@@ -456,7 +457,7 @@ export namespace GeeesyApps {
   export type SoFormCreateParams = ISOFormCreateParams;
   export type SOFormSubmit = ISOFormCreate & ISOFormCreateParams & IApiCompanyParams;
   export type ResSO = IResSO | ISO;
-  export type SO = ISO;
+  export type SO = ISO & IDBCompanyDocHeader;
 
   /**
    * @description
@@ -470,7 +471,7 @@ export namespace GeeesyApps {
   export type ResBillingNoteList = IResBillingNoteList | IBillingNoteList
   export type BillingNoteList = IBillingNoteList
   export type ResBillingNote = IResBillingNote | IBillingNote;
-  export type BillingNote = IBillingNote;
+  export type BillingNote = IBillingNote & IDBCompanyDocHeader;
 
   /**
    * @description
@@ -484,7 +485,7 @@ export namespace GeeesyApps {
   export type ResInvoiceList = IResInvoiceList | IInvoiceList
   export type InvoiceList = IInvoiceList
   export type ResInvoice = IResInvoice | IInvoice;
-  export type Invoice = IInvoice;
+  export type Invoice = IInvoice & IDBCompanyDocHeader;
 
   /**
    * @description
@@ -496,7 +497,7 @@ export namespace GeeesyApps {
   export type TaxInvoiceFormCreateParams = ITaxInvoiceFormCreateParams;
   export type TaxInvoiceFormSubmit = ITaxInvoiceFormCreate & ITaxInvoiceFormCreateParams & IApiCompanyParams;
   export type ResTaxInvoice = IResTaxInvoice | ITaxInvoice;
-  export type TaxInvoice = ITaxInvoice;
+  export type TaxInvoice = ITaxInvoice & IDBCompanyDocHeader;
 
   /**
    * @description
