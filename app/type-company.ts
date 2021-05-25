@@ -126,7 +126,7 @@ export interface ICompanyBadge {
 
 export interface ICompanyAsset {
   companyVideosUrl: string[];
-  companyLogoUrl: string;
+  // companyLogoUrl: string;
   companyPrimaryColor: string;
   companySecondaryColor: string;
   companyBannersUrl: string[];
@@ -248,6 +248,7 @@ export interface ICompanyEntity {
 
   // CI
   companyAsset: ICompanyAsset;
+  companyLogoUrl: string;
 
   // INDEX
   tags: string[];
