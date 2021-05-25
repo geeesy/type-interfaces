@@ -431,7 +431,7 @@ export namespace GeeesyApps {
   export type ResQuotation = IResQuotation | IQuotation;
   export type Quotation = IQuotation & IDBCompanyDocHeader;
   export type ResQuotationRfq = IResQuotationRfq | IQuotationRfq
-  export type QuotationRfq = IQuotationRfq
+  export type QuotationRfq = IQuotationRfq & IDBCompanyDocHeader
 
   /**
    * @description
