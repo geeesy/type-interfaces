@@ -135,6 +135,8 @@ export interface IRefProductList {
 export interface IProductList extends IRefProductList {
   productCode: string
   productSku: string;
+  productUnit: string;
+  productPrice: IProductPrice
   productId: string
   createdAt: string
   updatedAt: string

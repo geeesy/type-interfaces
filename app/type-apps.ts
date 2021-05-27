@@ -3,6 +3,11 @@
 import { StatusPoolJoining, StatusPoolShippingMainBuyer, StatusPoolShippingSubBuyer } from "./enum-const";
 import { IAddress, ICompanyContactInfo } from "./type-company";
 
+export interface IDBCompanyDocHeader {
+  receiverCompLogo: string
+  senderCompLogo: string
+}
+
 export interface IApprove {
   nameTitle: string;
   fullName: string;

@@ -103,6 +103,7 @@ import {
   IBillingNoteList,
   ICompanyOnList,
   ICompRequestVendor,
+  IDBCompanyDocHeader,
   IDBVendorRequest,
   IInquiry,
   IInquiryFormCreate,
@@ -365,11 +366,11 @@ export namespace GeeesyApps {
    */
   export type InquiryFormCreate = IInquiryFormCreate;
   export type InquiryFormCreateParams = IInquiryFormCreateParams;
-  export type InquiryFormSubmit = IInquiryFormCreate & IInquiryFormCreateParams & IApiCompanyParams;
+  export type InquiryFormSubmit = IInquiryFormCreate & IInquiryFormCreateParams & IApiCompanyParams & IDBCompanyDocHeader;
   export type ResInquiryList = IResInquiryList | IInquiryList
   export type InquiryList = IInquiryList
   export type ResInquiry = IResInquiry | IInquiry;
-  export type Inquiry = IInquiry;
+  export type Inquiry = IInquiry & IDBCompanyDocHeader;
 
   /**
    * @description
@@ -389,20 +390,20 @@ export namespace GeeesyApps {
  * Interface for RFQ creation
  * @param
  */
-  export type RfqFormCreate = IRfqFormCreate;
+  export type RfqFormCreate = IRfqFormCreate
   export type RfqManyFormCreate = IRfqManyFormCreate
 
   export type RfqFormCreateParams = IRfqFormCreateParams;
   export type RfqManyFormCreateParams = IRfqManyFormCreateParams
 
-  export type RfqFormSubmit = IRfqFormCreate & IRfqFormCreateParams & IApiCompanyParams;
-  export type RfqManyFormSubmit = IRfqManyFormCreate & IRfqManyFormCreateParams & IApiCompanyParams
+  export type RfqFormSubmit = IRfqFormCreate & IRfqFormCreateParams & IApiCompanyParams & IDBCompanyDocHeader;
+  export type RfqManyFormSubmit = IRfqManyFormCreate & IRfqManyFormCreateParams & IApiCompanyParams & IDBCompanyDocHeader
 
   export type ResRfqList = IResRfqList | IRfqList
   export type RfqList = IRfqList
   export type ResRfq = IResRfq | IRfq;
-  export type Rfq = IRfq;
-  export type RfqMany = Partial<IRfq>
+  export type Rfq = IRfq & IDBCompanyDocHeader;
+  export type RfqMany = Partial<IRfq> & IDBCompanyDocHeader
 
   /**
    * @description
@@ -420,17 +421,17 @@ export namespace GeeesyApps {
   export type QuotationRfqFormCreateParams = IQuotationFormCreateParams;
 
   export type QuotationFormSubmit = IQuotationFormCreate &
-    IQuotationFormCreateParams & IApiCompanyParams; // REVIEW: Quotation Type D | Create
+    IQuotationFormCreateParams & IApiCompanyParams & IDBCompanyDocHeader; // REVIEW: Quotation Type D | Create
   export type QuotationRfqFormSubmit = IQuotationRfqFormCreate &
-    IQuotationFormCreateParams & IApiCompanyParams; //FIXME
+    IQuotationFormCreateParams & IApiCompanyParams & IDBCompanyDocHeader; //FIXME
 
   export type ResQuotationList = IResQuotationList | IQuotationList
   export type QuotationList = IQuotationList
 
   export type ResQuotation = IResQuotation | IQuotation;
-  export type Quotation = IQuotation;
+  export type Quotation = IQuotation & IDBCompanyDocHeader;
   export type ResQuotationRfq = IResQuotationRfq | IQuotationRfq
-  export type QuotationRfq = IQuotationRfq
+  export type QuotationRfq = IQuotationRfq & IDBCompanyDocHeader
 
   /**
    * @description
@@ -440,11 +441,11 @@ export namespace GeeesyApps {
    */
   export type POFormCreate = IPOFormCreate;
   export type POFormCreateParams = IPOFormCreateParams;
-  export type POFormSubmit = IPOFormCreate & IPOFormCreateParams & IApiCompanyParams;
+  export type POFormSubmit = IPOFormCreate & IPOFormCreateParams & IApiCompanyParams & IDBCompanyDocHeader;
   export type ResPOList = IResPOList | IPOList
   export type POList = IPOList
   export type ResPO = IResPO | IPO;
-  export type PO = IPO;
+  export type PO = IPO & IDBCompanyDocHeader;
 
   /**
    * @description
@@ -454,9 +455,9 @@ export namespace GeeesyApps {
    */
   export type SOFormCreate = ISOFormCreate;
   export type SoFormCreateParams = ISOFormCreateParams;
-  export type SOFormSubmit = ISOFormCreate & ISOFormCreateParams & IApiCompanyParams;
+  export type SOFormSubmit = ISOFormCreate & ISOFormCreateParams & IApiCompanyParams & IDBCompanyDocHeader;
   export type ResSO = IResSO | ISO;
-  export type SO = ISO;
+  export type SO = ISO & IDBCompanyDocHeader;
 
   /**
    * @description
@@ -466,11 +467,11 @@ export namespace GeeesyApps {
    */
   export type BillingNoteFormCreate = IBillingNoteFormCreate;
   export type BillingNoteFormCreateParams = IBillingNoteFormCreateParams;
-  export type BillingNoteFormSubmit = IBillingNoteFormCreate & IBillingNoteFormCreateParams & IApiCompanyParams;
+  export type BillingNoteFormSubmit = IBillingNoteFormCreate & IBillingNoteFormCreateParams & IApiCompanyParams & IDBCompanyDocHeader;
   export type ResBillingNoteList = IResBillingNoteList | IBillingNoteList
   export type BillingNoteList = IBillingNoteList
   export type ResBillingNote = IResBillingNote | IBillingNote;
-  export type BillingNote = IBillingNote;
+  export type BillingNote = IBillingNote & IDBCompanyDocHeader;
 
   /**
    * @description
@@ -480,11 +481,11 @@ export namespace GeeesyApps {
    */
   export type InvoiceFormCreate = IInvoiceFormCreate;
   export type InvoiceFormCreateParams = IInvoiceFormCreateParams;
-  export type InvoiceFormSubmit = IInvoiceFormCreate & IInvoiceFormCreateParams & IApiCompanyParams;
+  export type InvoiceFormSubmit = IInvoiceFormCreate & IInvoiceFormCreateParams & IApiCompanyParams & IDBCompanyDocHeader;
   export type ResInvoiceList = IResInvoiceList | IInvoiceList
   export type InvoiceList = IInvoiceList
   export type ResInvoice = IResInvoice | IInvoice;
-  export type Invoice = IInvoice;
+  export type Invoice = IInvoice & IDBCompanyDocHeader;
 
   /**
    * @description
@@ -494,9 +495,9 @@ export namespace GeeesyApps {
    */
   export type TaxInvoiceFormCreate = ITaxInvoiceFormCreate;
   export type TaxInvoiceFormCreateParams = ITaxInvoiceFormCreateParams;
-  export type TaxInvoiceFormSubmit = ITaxInvoiceFormCreate & ITaxInvoiceFormCreateParams & IApiCompanyParams;
+  export type TaxInvoiceFormSubmit = ITaxInvoiceFormCreate & ITaxInvoiceFormCreateParams & IApiCompanyParams & IDBCompanyDocHeader;
   export type ResTaxInvoice = IResTaxInvoice | ITaxInvoice;
-  export type TaxInvoice = ITaxInvoice;
+  export type TaxInvoice = ITaxInvoice & IDBCompanyDocHeader;
 
   /**
    * @description
