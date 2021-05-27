@@ -223,23 +223,27 @@ export interface ICompanyByGapp {
   impFactor: number;
 }
 
-// ANCHOR: COMPANY | Entity (1/3)
+// ANCHOR: COMPANY | Entity (1/4)
 // NOTE: Init on company create, updated in G-BIZ
 export interface IDBCompanyEntity {
   haveCompletedInfo: boolean //* === false on Create
   haveDefaultReceiver: boolean //* === false on Create
+}
+
+// ANCHOR: COMPANY | Entity (2/4)
+export interface IDBCompanyPortEntity {
   havePortfolio: boolean; // * to check port init
   onMarket: boolean;
 }
 
-// ANCHOR: COMPANY | Entity (2/3)
+// ANCHOR: COMPANY | Entity (3/4)
 export interface ICompanyEntityImmu {
   companyCode: string; // ! use on Cognito with tenantId
   compId: string; // * gen on client
   businessId: string // * <== tenantId (Cognito)
 }
 
-// ANCHOR: COMPANY | Entity (3/3)
+// ANCHOR: COMPANY | Entity (4/4)
 export interface ICompanyEntity {
   companyName: string;
 
