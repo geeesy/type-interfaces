@@ -17,7 +17,7 @@ export interface IResProduct extends IResAPI {
 
 export interface IProductInSupplierCard
   extends IProductList, IProductEntity {
-
+  supplierId: string
 }
 
 export interface ISupplierCard extends ICompanyEntity, ICompanyByGapp {
