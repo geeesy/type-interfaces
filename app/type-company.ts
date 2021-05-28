@@ -240,8 +240,8 @@ export interface IDBCompanyEntity {
 
 // ANCHOR: COMPANY | Entity (2/4)
 export interface IDBCompanyPortEntity {
-  havePortfolio: boolean; // * to check port init
-  onMarket: boolean;
+  havePortfolio: boolean; // * to check port init , false on Create
+  onMarket: boolean; // * false on Create
 }
 
 // ANCHOR: COMPANY | Entity (3/4)
