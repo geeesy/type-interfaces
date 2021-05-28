@@ -195,9 +195,17 @@ export interface ICustomPage {
 /**
  * COMPANY
  */
-// REVIEW: USER (COMPANY)
+// REVIEW: USER (COMPANY) // TODO: Remove
 export interface ICompanyUserIdentity extends IBusinessCompanyUserIdentityImmu, IBusinessCompanyUserIdentity, IDBBusinessCompanyUserIdentity {
   contact: IContactPerson
+  signatureUrl: string
+}
+// TODO: Use below
+export interface ICompanyUserData {
+  contact: IContactPerson
+}
+
+export interface ICompanyUserPrivateData {
   signatureUrl: string
 }
 
