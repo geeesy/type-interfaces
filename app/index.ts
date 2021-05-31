@@ -105,6 +105,8 @@ import {
   ICompRequestVendor,
   IDBCompanyDocHeader,
   IDBVendorRequest,
+  IDocFinanceCount,
+  IDocWorkCount,
   IInquiry,
   IInquiryFormCreate,
   IInquiryFormCreateParams,
@@ -624,6 +626,7 @@ export namespace GappSetting {
   export type DBUpdateCompanyPort = ICompanyPortfolio & IDBCompanyPortEntity & IDBUpdateTime
   export type ListAdminStaff = IBusinessCompanyUserIdentityImmu & IBusinessCompanyUserIdentity & IDBBusinessCompanyUserIdentity
   export type CreateAdminStaff = IBusinessUserIdentityImmu & IBusinessUserIdentity & IBusinessCompanyUserIdentityImmu & IBusinessCompanyUserIdentity & IDBBusinessCompanyUserIdentity & ICompanyUserData
+  export type CountDocument = IDocWorkCount & IDocFinanceCount
 }
 
 export * as IMarketplace from './type-marketplace'
