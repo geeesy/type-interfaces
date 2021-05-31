@@ -203,6 +203,7 @@ export interface ICompanyUserIdentity extends IBusinessCompanyUserIdentityImmu, 
 // TODO: Use below
 export interface ICompanyUserData {
   contact: IContactPerson
+  avatarThumbUrl: string // --> lambda trigger
 }
 
 export interface ICompanyUserPrivateData {
