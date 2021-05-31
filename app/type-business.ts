@@ -69,14 +69,14 @@ export interface IAccessScope {
   statement: IAccessStatement[]
 }
 
-// ANCHOR: COMPANY | USER (1/3)
+// ANCHOR: COMPANY | USER (1/4)
 export interface IBusinessCompanyUserIdentityImmu {
   companyCode: string
   compId: string
   identityId: string // * same as Business User
   tempPassword?: string // * on STAFF create
 }
-// ANCHOR: COMPANY | USER (2/3)
+// ANCHOR: COMPANY | USER (2/4)
 export interface IBusinessCompanyUserIdentity {
   fullName: string
   isDefaultReceiver: boolean // * 1 Company 1 User
@@ -86,11 +86,15 @@ export interface IBusinessCompanyUserIdentity {
   adminUsername?: string // * on STAFF create, update on changed admin
   personalCode: string
 }
-// ANCHOR: COMPANY | USER (3/3)
+// ANCHOR: COMPANY | USER (3/4)
 export interface IDBBusinessCompanyUserIdentity {
   userRole: TUserRole
   username: string
   businessId: string
+}
+// ANCHOR: COMPANY | USER (4/4)
+export interface IDBBusinessCompanyUserData {
+  avatarThumbUrl: string
 }
 
 // REVIEW: BUSINESS | USER (1/4)
