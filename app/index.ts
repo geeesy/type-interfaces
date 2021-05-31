@@ -624,7 +624,7 @@ export namespace GappSetting {
   export type CreateCompanyPort = ICompanyPortfolio & ICompanyEntityImmu // FIXME: IApiCompanyParam
   export type CompanyPort = ICompanyPortfolio & IDBCompanyPortEntity & ICompanyByGapp & ICompanyEntityImmu & IDBLogTime
   export type DBUpdateCompanyPort = ICompanyPortfolio & IDBCompanyPortEntity & IDBUpdateTime
-  export type ListAdminStaff = IBusinessCompanyUserIdentityImmu & IBusinessCompanyUserIdentity & IDBBusinessCompanyUserIdentity
+  export type ListAdminStaff = IBusinessCompanyUserIdentityImmu & IBusinessCompanyUserIdentity & IDBBusinessCompanyUserIdentity & IDBCompanyUserData
   export type CreateAdminStaff = IBusinessUserIdentityImmu & IBusinessUserIdentity & IBusinessCompanyUserIdentityImmu & IBusinessCompanyUserIdentity & IDBBusinessCompanyUserIdentity & ICompanyUserData
   export type CountDocument = IDocWorkCount & IDocFinanceCount
 }
