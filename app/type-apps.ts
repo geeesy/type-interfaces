@@ -361,6 +361,10 @@ export interface IRfqMarketFormGroupFunnel {
   companyProvinces: string[]
 }
 
+export interface IRfqMarketFunnel {
+  funnel: IRfqMarketFormGroupFunnel
+}
+
 export interface IRfqMarketFormGroupProduct {
   productTitle: string;
   productKeywords: string[];

@@ -163,6 +163,7 @@ import {
   IRfqMarketFormCreate,
   IRfqMarketFormCreateParams,
   IRfqMarketFormGroupFunnel,
+  IRfqMarketFunnel,
   IRfqMarketList,
   ISO,
   ISOFormCreate,
@@ -387,8 +388,7 @@ export namespace GeeesyApps {
   export type RfqMarketList = IRfqMarketList
   export type ResRfqMarket = IResRfqMarket | IRfqMarket;
   export type RfqMarket = IRfqMarket;
-  export type DBRfqMarket = IRfqMarket & IRfqMarketFormGroupFunnel
-
+  export type DBRfqMarket = IRfqMarket & IRfqMarketFunnel
   /**
  * @description
  * Interface for RFQ creation
