@@ -134,6 +134,7 @@ import {
   IQuotationList,
   IQuotationRfq,
   IQuotationRfqFormCreate,
+  IQuotationRfqList,
   IRefVendorList,
   IResApprover,
   IResBillingNote,
@@ -431,6 +432,7 @@ export namespace GeeesyApps {
 
   export type ResQuotationList = IResQuotationList | IQuotationList
   export type QuotationList = IQuotationList
+  export type QuotationRfqList = IQuotationRfqList
 
   export type ResQuotation = IResQuotation | IQuotation;
   export type Quotation = IQuotation & IDBCompanyDocHeader;

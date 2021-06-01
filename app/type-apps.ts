@@ -627,6 +627,10 @@ export interface IQuotationList {
   shippingDate?: string;
 }
 
+export interface IQuotationRfqList extends IQuotationList {
+  rfqId: string
+}
+
 export interface IQuotation extends IQuotationFormCreateParams, IQuotationList {
   products: IProductRow[]
   accounting: IQuotationFormGroupAccounting
