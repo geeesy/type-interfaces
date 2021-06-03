@@ -592,6 +592,8 @@ export namespace GappBusiness {
 export namespace GappBiz {
   export type Supplier = ISupplierPort & ICompanyByGapp & IDBCompanyPortEntity & ICompanyEntityImmu & IDBLogTime // FIXME
   export type Company = ICompany & IDBCompanyEntity & ICompanyByGapp & ICompanyEntityImmu
+  export type CreatePortfolio = ICompanyPortfolio & IApiCompanyParams
+  export type Portfolio = ICompanyPortfolio & IDBCompanyPortEntity & ICompanyByGapp & ICompanyEntityImmu & IDBLogTime
 }
 
 // REVIEW: G-MARKET
