@@ -324,6 +324,11 @@ export interface ICompanyPortfolio extends ICompany {
   // Pages
   customPages: ICustomPage[];
 
+
+}
+
+export interface ICompanyPortfolioImmu {
+  portId: string
 }
 
 // REVIEW: SALES REP
