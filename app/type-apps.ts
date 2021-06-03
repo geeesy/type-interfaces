@@ -1,11 +1,26 @@
 /* #region STUB: Version 3.x */
 
-import { StatusPoolJoining, StatusPoolShippingMainBuyer, StatusPoolShippingSubBuyer } from "./enum-const";
+import { DocFinanceSeqIdCount, DocWorkSeqIdCount, StatusPoolJoining, StatusPoolShippingMainBuyer, StatusPoolShippingSubBuyer } from "./enum-const";
 import { IAddress, ICompanyContactInfo } from "./type-company";
 
 export interface IDBCompanyDocHeader {
   receiverCompLogo: string
   senderCompLogo: string
+}
+
+export interface IDocWorkCount {
+  [DocWorkSeqIdCount.inquiry]: number
+  [DocWorkSeqIdCount.rfq]: number
+  [DocWorkSeqIdCount.quotation]: number
+  [DocWorkSeqIdCount.po]: number
+  [DocWorkSeqIdCount.so]: number
+  [DocWorkSeqIdCount.billingNote]: number
+  [DocWorkSeqIdCount.invoice]: number
+}
+
+export interface IDocFinanceCount {
+  [DocFinanceSeqIdCount.receipt]: number
+  [DocFinanceSeqIdCount.taxInvoice]: number
 }
 
 export interface IApprove {
@@ -346,6 +361,10 @@ export interface IRfqMarketFormGroupFunnel {
   companyProvinces: string[]
 }
 
+export interface IRfqMarketFunnel {
+  funnel: IRfqMarketFormGroupFunnel
+}
+
 export interface IRfqMarketFormGroupProduct {
   productTitle: string;
   productKeywords: string[];
@@ -606,6 +625,10 @@ export interface IQuotationList {
   sellerId: string
   creditDay?: number;
   shippingDate?: string;
+}
+
+export interface IQuotationRfqList extends IQuotationList {
+  rfqId: string
 }
 
 export interface IQuotation extends IQuotationFormCreateParams, IQuotationList {

@@ -11,15 +11,18 @@ export enum DocPrefixFormat {
   taxInvoice = 'TIV'
 }
 
-export enum DocSeqIdCount {
+export enum DocWorkSeqIdCount {
   inquiry = 'CountInquiry',
   rfq = 'CountRfq',
   quotation = 'CountQuotation',
   po = 'CountPO',
   so = 'CountSO',
   billingNote = 'CountBillingNote',
-  receipt = 'CountReceipt',
   invoice = 'CountInvoice',
+}
+
+export enum DocFinanceSeqIdCount {
+  receipt = 'CountReceipt',
   taxInvoice = 'CountTaxInvoice'
 }
 

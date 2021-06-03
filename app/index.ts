@@ -105,6 +105,8 @@ import {
   ICompRequestVendor,
   IDBCompanyDocHeader,
   IDBVendorRequest,
+  IDocFinanceCount,
+  IDocWorkCount,
   IInquiry,
   IInquiryFormCreate,
   IInquiryFormCreateParams,
@@ -132,6 +134,7 @@ import {
   IQuotationList,
   IQuotationRfq,
   IQuotationRfqFormCreate,
+  IQuotationRfqList,
   IRefVendorList,
   IResApprover,
   IResBillingNote,
@@ -160,6 +163,8 @@ import {
   IRfqMarket,
   IRfqMarketFormCreate,
   IRfqMarketFormCreateParams,
+  IRfqMarketFormGroupFunnel,
+  IRfqMarketFunnel,
   IRfqMarketList,
   ISO,
   ISOFormCreate,
@@ -186,7 +191,7 @@ import {
   IPaymentMethod,
 } from './type-console'
 import { ICategoryList, IMainCategory, IProduct, IProductCreate, IProductEntity, IProductList, IProductPackInVariant, IProductPackOnly, IProductVariantInPack, IProductVariantOnly, IResMainCategory, IResSubCategory, ISubCategory } from './type-catalog'
-import { IApiCompanyCreateUserParams, IApiCompanyParams, ICompany, ICompanyByGapp, ICompanyCreateSalesRep, ICompanyEntity, ICompanyEntityImmu, ICompanyPortfolio, ICompanyPrivateEntity, ICompanySalesRep, ICompanyUserData, ICompanyUserIdentity, ICompanyUserPrivateData, IDBCompanyEntity, IDBCompanyPortEntity, ISettingCreatePriceGroup, ISettingCreatePriceList, ISettingDoc, ISettingPriceGroup, ISettingPriceList } from './type-company'
+import { IApiCompanyCreateUserParams, IApiCompanyParams, ICompany, ICompanyByGapp, ICompanyCreateSalesRep, ICompanyEntity, ICompanyEntityImmu, ICompanyPortfolio, ICompanyPrivateEntity, ICompanySalesRep, ICompanyUserData, ICompanyUserIdentity, ICompanyUserPrivateData, IDBCompanyEntity, IDBCompanyPortEntity, IDBCompanyUserData, ISettingCreatePriceGroup, ISettingCreatePriceList, ISettingDoc, ISettingPriceGroup, ISettingPriceList } from './type-company'
 import { IBusinessCompanyUserIdentity, IBusinessCompanyUserIdentityImmu, IBusinessEntity, IBusinessEntityImmu, IBusinessListCompany, IBusinessOwnerIdentity, IBusinessOwnerIdentityImmu, IBusinessUserIdentity, IBusinessUserIdentityImmu, IDBBusinessCompanyUserIdentity, IDBBusinessUserIdentity, IDBBusinessUserIdentityStatus, IDBLogTime, IDBUpdateTime } from './type-business'
 
 /* #region FIXME: Marketplace */
@@ -384,7 +389,7 @@ export namespace GeeesyApps {
   export type RfqMarketList = IRfqMarketList
   export type ResRfqMarket = IResRfqMarket | IRfqMarket;
   export type RfqMarket = IRfqMarket;
-
+  export type DBRfqMarket = IRfqMarket & IRfqMarketFunnel
   /**
  * @description
  * Interface for RFQ creation
@@ -427,6 +432,7 @@ export namespace GeeesyApps {
 
   export type ResQuotationList = IResQuotationList | IQuotationList
   export type QuotationList = IQuotationList
+  export type QuotationRfqList = IQuotationRfqList
 
   export type ResQuotation = IResQuotation | IQuotation;
   export type Quotation = IQuotation & IDBCompanyDocHeader;
@@ -539,7 +545,7 @@ export namespace GeeesyApps {
   /**
   * User
    */
-  export type User = ICompanyUserData & ICompanyUserPrivateData & IBusinessCompanyUserIdentityImmu & IBusinessCompanyUserIdentity & IDBBusinessCompanyUserIdentity
+  export type User = ICompanyUserData & IDBCompanyUserData & ICompanyUserPrivateData & IBusinessCompanyUserIdentityImmu & IBusinessCompanyUserIdentity & IDBBusinessCompanyUserIdentity
 
   /**
   Sales Rep
@@ -580,7 +586,7 @@ export namespace GappBusiness {
   export type DBUpdateUser = IBusinessUserIdentity & IDBBusinessUserIdentityStatus & IDBUpdateTime
   export type CreateCompanyUser = IBusinessUserIdentityImmu & IBusinessUserIdentity & IBusinessCompanyUserIdentityImmu & IBusinessCompanyUserIdentity & IDBBusinessCompanyUserIdentity & ICompanyUserData
   export type DBUpdateCompanyUser = IBusinessCompanyUserIdentity & ICompanyUserData & IDBUpdateTime
-  export type ListCompanyUser = IBusinessCompanyUserIdentityImmu & IBusinessCompanyUserIdentity & IDBBusinessCompanyUserIdentity & ICompanyUserData
+  export type ListCompanyUser = IBusinessCompanyUserIdentityImmu & IBusinessCompanyUserIdentity & IDBBusinessCompanyUserIdentity & IDBCompanyUserData
 }
 
 export namespace GappBiz {
@@ -622,8 +628,9 @@ export namespace GappSetting {
   export type CreateCompanyPort = ICompanyPortfolio & ICompanyEntityImmu // FIXME: IApiCompanyParam
   export type CompanyPort = ICompanyPortfolio & IDBCompanyPortEntity & ICompanyByGapp & ICompanyEntityImmu & IDBLogTime
   export type DBUpdateCompanyPort = ICompanyPortfolio & IDBCompanyPortEntity & IDBUpdateTime
-  export type ListAdminStaff = IBusinessCompanyUserIdentityImmu & IBusinessCompanyUserIdentity & IDBBusinessCompanyUserIdentity
-  export type CreateAdminStaff = IBusinessUserIdentityImmu & IBusinessUserIdentity & IBusinessCompanyUserIdentityImmu & IBusinessCompanyUserIdentity & IDBBusinessCompanyUserIdentity
+  export type ListAdminStaff = IBusinessCompanyUserIdentityImmu & IBusinessCompanyUserIdentity & IDBBusinessCompanyUserIdentity & IDBCompanyUserData
+  export type CreateAdminStaff = IBusinessUserIdentityImmu & IBusinessUserIdentity & IBusinessCompanyUserIdentityImmu & IBusinessCompanyUserIdentity & IDBBusinessCompanyUserIdentity & ICompanyUserData
+  export type CountDocument = IDocWorkCount & IDocFinanceCount
 }
 
 export * as IMarketplace from './type-marketplace'

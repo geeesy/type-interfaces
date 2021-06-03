@@ -126,7 +126,7 @@ export interface ICompanyBadge {
 
 export interface ICompanyAsset {
   companyVideosUrl: string[];
-  // companyLogoUrl: string;
+  companyFullLogoUrl: string;
   companyPrimaryColor: string;
   companySecondaryColor: string;
   companyBannersUrl: string[];
@@ -203,6 +203,10 @@ export interface ICompanyUserIdentity extends IBusinessCompanyUserIdentityImmu, 
 // TODO: Use below
 export interface ICompanyUserData {
   contact: IContactPerson
+
+}
+export interface IDBCompanyUserData {
+  avatarThumbUrl: string // --> lambda trigger
 }
 
 export interface ICompanyUserPrivateData {
@@ -260,7 +264,7 @@ export interface ICompanyEntity {
 
   // CI
   companyAsset: ICompanyAsset;
-  companyLogoUrl: string;
+  companyLogoUrl: string; // * Scale down {companyFullLogoUrl}
 
   // INDEX
   tags: string[];
