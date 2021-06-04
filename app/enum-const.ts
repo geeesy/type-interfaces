@@ -26,6 +26,12 @@ export enum DocFinanceSeqIdCount {
   taxInvoice = 'CountTaxInvoice'
 }
 
+export enum CurrencyTranslateTH {
+  THB = 'บาท',
+  USD = 'ดอลลาร์สหรัฐ',
+  CHY = 'หยวน'
+}
+
 
 export enum CurrencyCode {
   THAI = 'THB',
