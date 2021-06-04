@@ -144,7 +144,8 @@ export interface ICompanySetting {
 }
 
 export interface IDocument {
-  url: string;
+  filesUrl: string[];
+  imagesUrl: string[]
   type: string;
   title: string;
   expiryDate: number;
@@ -166,7 +167,8 @@ export interface IImageGroup {
 }
 
 export interface ICertificate {
-  url: string;
+  filesUrl: string[];
+  imagesUrl: string[]
   type: string;
   title: string;
   expiryDate: number;

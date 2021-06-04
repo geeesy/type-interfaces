@@ -120,7 +120,7 @@ export interface IVendorCreateParams {
 }
 
 export interface IVendorCreate extends ICompanyContactInfo {
-  companyLogoUrl: string
+  companyLogoUrl: string // * Scale down on init
   contactPersons: IPersonContactInfo[]
   vendorType: TVendorType
   remark: string
