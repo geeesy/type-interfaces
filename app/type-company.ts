@@ -143,16 +143,6 @@ export interface ICompanySetting {
   creditTerms: string[];
 }
 
-export interface IDocument {
-  filesUrl: string[];
-  imagesUrl: string[]
-  type: string;
-  title: string;
-  expiryDate: number;
-  isPrivate: boolean;
-  isVerified: boolean;
-}
-
 export interface IImage {
   url: string;
   title: string;
@@ -166,10 +156,23 @@ export interface IImageGroup {
   images: IImage[];
 }
 
+export type TDocumentType = 'ใบทะเบียนภาษีมูลค่าเพิ่ม' | 'ใบจดทะเบียนบริษัท' | 'อื่นๆ'
+export type TCertificateType = 'ใบรับรองการผลิด' | 'ใบรับรองคุณภาพ' | 'อื่นๆ'
+
+export interface IDocument {
+  filesUrl: string[];
+  imagesUrl: string[]
+  type: TDocumentType;
+  title: string;
+  expiryDate: number;
+  isPrivate: boolean;
+  isVerified: boolean;
+}
+
 export interface ICertificate {
   filesUrl: string[];
   imagesUrl: string[]
-  type: string;
+  type: TCertificateType;
   title: string;
   expiryDate: number;
   issuedDate: number;
