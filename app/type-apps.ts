@@ -897,6 +897,7 @@ export interface IBillingNoteFormGroupData {
   receiverNote: string;
   sellerNote: string;
   buyerNote: string;
+  productCurrency: string;
 }
 
 export interface IBillingNoteFormGroupAccounting {
@@ -928,6 +929,14 @@ export interface IBillingNoteFormCreateParams {
 
 export interface IBillingNoteList {
   billingNoteId: string;
+  sender: ISenderContact
+  receiver: IReceiverContact
+  senderId: string;
+  sellerId: string
+  docNo: string;
+  docDate: string;
+  grandTotalAmount: number;
+  productCurrency: string;
   statusDocSender: string;
   statusApprovalFlow: string;
   createdAt: string;
@@ -980,6 +989,7 @@ export interface IInvoiceFormGroupData {
   receiverNote: string;
   sellerNote: string;
   buyerNote: string;
+  productCurrency: string;
 }
 
 export interface IInvoiceFormGroupAccounting {
@@ -1011,6 +1021,14 @@ export interface IInvoiceFormCreateParams {
 
 export interface IInvoiceList {
   invoiceId: string;
+  sender: ISenderContact
+  receiver: IReceiverContact
+  senderId: string;
+  sellerId: string
+  docNo: string;
+  docDate: string;
+  grandTotalAmount: number;
+  productCurrency: string;
   statusDocSender: string;
   statusApprovalFlow: string;
   createdAt: string;
