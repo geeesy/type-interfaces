@@ -135,6 +135,9 @@ import {
   IQuotationRfq,
   IQuotationRfqFormCreate,
   IQuotationRfqList,
+  IReceipt,
+  IReceiptFormCreate,
+  IReceiptFormCreateParams,
   IRefVendorList,
   IResApprover,
   IResBillingNote,
@@ -148,6 +151,7 @@ import {
   IResQuotation,
   IResQuotationList,
   IResQuotationRfq,
+  IResReceipt,
   IResRfq,
   IResRfqList,
   IResRfqMarket,
@@ -492,6 +496,18 @@ export namespace GeeesyApps {
   export type InvoiceList = IInvoiceList
   export type ResInvoice = IResInvoice | IInvoice;
   export type Invoice = IInvoice & IDBCompanyDocHeader;
+
+  /**
+   * @description
+   * FORM Interface for RECEIPT creation
+   * @param
+
+   */
+  export type ReceiptFormCreate = IReceiptFormCreate;
+  export type ReceiptFormCreateParams = IReceiptFormCreateParams;
+  export type ReceiptFormSubmit = IReceiptFormCreate & IReceiptFormCreateParams & IApiCompanyParams & IDBCompanyDocHeader;
+  export type ResReceipt = IResReceipt | IReceipt;
+  export type Receipt = IReceipt & IDBCompanyDocHeader;
 
   /**
    * @description

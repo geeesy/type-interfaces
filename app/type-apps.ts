@@ -1056,6 +1056,68 @@ export interface IResInvoice {
 }
 /* #endregion */
 
+/* #region FIXME: Receipt */
+
+export interface IReceiptFormCreate {
+  formGroupSender: ISenderContact;
+  formGroupReceiver: IReceiverContact;
+  formGroupProducts: IProductRow[];
+  formGroupData: IReceiptFormGroupData;
+  formGroupAccounting: IReceiptFormGroupAccounting;
+  formGroupApprover: IReceiptFormGroupApprover;
+}
+
+export interface IReceiptFormGroupData {
+  docNo: string;
+  docDate: string;
+  remark: string;
+  termsCondition: string;
+  senderNote: string;
+  receiverNote: string;
+  sellerNote: string;
+  buyerNote: string;
+}
+
+export interface IReceiptFormGroupAccounting {
+  subtotalAmount: number;
+  shippingCost: number;
+  charges: number;
+  totalDiscountAmount: number;
+  netAmount: number;
+  grandTotalAmount: number;
+}
+
+export interface IReceiptFormGroupApprover {
+  approve: IApprove[];
+  stampUrl: string;
+}
+
+export interface IReceiptFormCreateParams {
+  senderId: string;
+  receiverId: string;
+  buyerId: string;
+  sellerId: string;
+  quotationId: string;
+  purchaseOrderId: string;
+}
+
+export interface IReceipt extends IReceiptFormCreate, IReceiptFormCreateParams {
+  receiptId: string;
+  statusDocSender: string;
+  statusApprovalFlow: string;
+  createdAt: string;
+}
+
+export interface IResReceipt {
+  status: string;
+  statusText: string;
+  message: string;
+  data: IReceipt[];
+}
+/* #endregion */
+
+
+
 /* #region FIXME: TAX Invoice */
 
 export interface ITaxInvoiceFormCreate {
