@@ -138,6 +138,7 @@ import {
   IReceipt,
   IReceiptFormCreate,
   IReceiptFormCreateParams,
+  IReceiptList,
   IRefVendorList,
   IResApprover,
   IResBillingNote,
@@ -152,6 +153,7 @@ import {
   IResQuotationList,
   IResQuotationRfq,
   IResReceipt,
+  IResReceiptList,
   IResRfq,
   IResRfqList,
   IResRfqMarket,
@@ -176,6 +178,7 @@ import {
   ITaxInvoice,
   ITaxInvoiceFormCreate,
   ITaxInvoiceFormCreateParams,
+  ITaxInvoiceList,
   IVendor,
   IVendorCreate,
   IVendorCreateParams,
@@ -506,6 +509,8 @@ export namespace GeeesyApps {
   export type ReceiptFormCreate = IReceiptFormCreate;
   export type ReceiptFormCreateParams = IReceiptFormCreateParams;
   export type ReceiptFormSubmit = IReceiptFormCreate & IReceiptFormCreateParams & IApiCompanyParams & IDBCompanyDocHeader;
+  export type ResReceiptList = IResReceiptList | IReceiptList
+  export type ReceiptList = IReceiptList
   export type ResReceipt = IResReceipt | IReceipt;
   export type Receipt = IReceipt & IDBCompanyDocHeader;
 
@@ -518,6 +523,7 @@ export namespace GeeesyApps {
   export type TaxInvoiceFormCreate = ITaxInvoiceFormCreate;
   export type TaxInvoiceFormCreateParams = ITaxInvoiceFormCreateParams;
   export type TaxInvoiceFormSubmit = ITaxInvoiceFormCreate & ITaxInvoiceFormCreateParams & IApiCompanyParams & IDBCompanyDocHeader;
+  export type TaxInvoiceList = ITaxInvoiceList
   export type ResTaxInvoice = IResTaxInvoice | ITaxInvoice;
   export type TaxInvoice = ITaxInvoice & IDBCompanyDocHeader;
 

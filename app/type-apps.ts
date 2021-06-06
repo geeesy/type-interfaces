@@ -1076,6 +1076,7 @@ export interface IReceiptFormGroupData {
   receiverNote: string;
   sellerNote: string;
   buyerNote: string;
+  productCurrency: string;
 }
 
 export interface IReceiptFormGroupAccounting {
@@ -1101,19 +1102,43 @@ export interface IReceiptFormCreateParams {
   purchaseOrderId: string;
 }
 
-export interface IReceipt extends IReceiptFormCreate, IReceiptFormCreateParams {
-  receiptId: string;
+export interface IReceiptList {
+  receiptId: string
+  sender: ISenderContact
+  receiver: IReceiverContact
+  senderId: string;
+  sellerId: string
+  docNo: string;
+  docDate: string;
+  grandTotalAmount: number;
+  productCurrency: string;
   statusDocSender: string;
   statusApprovalFlow: string;
   createdAt: string;
+  updatedAt: string;
+}
+
+export interface IReceipt extends IReceiptFormCreateParams, IReceiptList {
+  products: IProductRow[]
+  data: IReceiptFormGroupData
+  accounting: IReceiptFormGroupAccounting
+}
+
+export interface IResReceiptList {
+  status: string;
+  statusText: string;
+  message: string;
+  data: IReceiptList[];
 }
 
 export interface IResReceipt {
   status: string;
   statusText: string;
   message: string;
-  data: IReceipt[];
+  data: IReceipt
 }
+
+
 /* #endregion */
 
 
@@ -1138,6 +1163,7 @@ export interface ITaxInvoiceFormGroupData {
   receiverNote: string;
   sellerNote: string;
   buyerNote: string;
+  productCurrency: string;
 }
 
 export interface ITaxInvoiceFormGroupAccounting {
@@ -1164,18 +1190,40 @@ export interface ITaxInvoiceFormCreateParams {
   purchaseOrderId: string;
 }
 
-export interface ITaxInvoice extends ITaxInvoiceFormCreate, ITaxInvoiceFormCreateParams {
-  taxInvoiceId: string;
+export interface ITaxInvoiceList {
+  taxInvoiceId: string
+  sender: ISenderContact
+  receiver: IReceiverContact
+  senderId: string;
+  sellerId: string
+  docNo: string;
+  docDate: string;
+  grandTotalAmount: number;
+  productCurrency: string;
   statusDocSender: string;
   statusApprovalFlow: string;
   createdAt: string;
+  updatedAt: string;
+}
+
+export interface ITaxInvoice extends ITaxInvoiceFormCreateParams, ITaxInvoiceList {
+  products: IProductRow[]
+  data: ITaxInvoiceFormGroupData
+  accounting: ITaxInvoiceFormGroupAccounting
+}
+
+export interface IResTaxInvoiceList {
+  status: string;
+  statusText: string;
+  message: string;
+  data: ITaxInvoiceList[]
 }
 
 export interface IResTaxInvoice {
   status: string;
   statusText: string;
   message: string;
-  data: ITaxInvoice[];
+  data: ITaxInvoice;
 }
 /* #endregion */
 
