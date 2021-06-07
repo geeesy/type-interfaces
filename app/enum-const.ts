@@ -29,7 +29,7 @@ export enum DocFinanceSeqIdCount {
 export enum CurrencyTranslateTH {
   THB = 'บาท',
   USD = 'ดอลลาร์สหรัฐ',
-  CHY = 'หยวน'
+  CNY = 'หยวน'
 }
 
 
