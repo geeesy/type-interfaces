@@ -649,7 +649,7 @@ export namespace GappSetting {
   export type PriceList = ISettingPriceList
   export type Document = ISettingDoc
   export type CompanyInfo = ICompanyEntity & IDBCompanyEntity & IDBCompanyPortEntity & ICompanyByGapp & ICompanyEntityImmu
-  export type DBUpdateCompanyInfo = ICompanyEntity & IDBCompanyEntity
+  export type DBUpdateCompanyInfo = ICompanyEntity & IDBCompanyEntity & IDBUpdateTime
   export type CreateCompanyPort = ICompanyPortfolio & ICompanyEntityImmu // FIXME: IApiCompanyParam
   export type CompanyPort = ICompanyPortfolio & IDBCompanyPortEntity & ICompanyByGapp & ICompanyEntityImmu & IDBLogTime
   export type DBUpdateCompanyPort = ICompanyPortfolio & IDBCompanyPortEntity & IDBUpdateTime
