@@ -198,7 +198,7 @@ import {
   IPaymentMethod,
 } from './type-console'
 import { ICategoryList, IMainCategory, IProduct, IProductCreate, IProductEntity, IProductList, IProductPackInVariant, IProductPackOnly, IProductVariantInPack, IProductVariantOnly, IResMainCategory, IResSubCategory, ISubCategory } from './type-catalog'
-import { IApiCompanyCreateUserParams, IApiCompanyParams, ICompanyByGapp, ICompanyCreateSalesRep, ICompanyEntity, ICompanyEntityImmu, ICompanyPortfolio, ICompanyPortfolioImmu, ICompanyPrivateEntity, ICompanySalesRep, ICompanyUserData, ICompanyUserIdentity, ICompanyUserPrivateData, IDBCompanyEntity, IDBCompanyPortEntity, IDBCompanyUserData, ISettingCreatePriceGroup, ISettingCreatePriceList, ISettingDoc, ISettingPriceGroup, ISettingPriceList } from './type-company'
+import { IApiCompanyCreateUserParams, IApiCompanyParams, ICompanyByGapp, ICompanyCreateSalesRep, ICompanyEntity, ICompanyEntityImmu, ICompanyPortfolio, ICompanyPortfolioImmu, ICompanyPrivateEntity, ICompanySalesRep, ICompanyUserData, ICompanyUserIdentity, ICompanyUserPrivateData, IDBCompanyEntity, IDBCompanyPortEntity, IDBCompanyUserData, IPublishParams, ISettingCreatePriceGroup, ISettingCreatePriceList, ISettingDoc, ISettingPriceGroup, ISettingPriceList } from './type-company'
 import { IBusinessCompanyUserIdentity, IBusinessCompanyUserIdentityImmu, IBusinessEntity, IBusinessEntityImmu, IBusinessListCompany, IBusinessOwnerIdentity, IBusinessOwnerIdentityImmu, IBusinessUserIdentity, IBusinessUserIdentityImmu, IDBBusinessCompanyUserIdentity, IDBBusinessUserIdentity, IDBBusinessUserIdentityStatus, IDBLogTime, IDBUpdateTime } from './type-business'
 
 /* #region FIXME: Marketplace */
@@ -614,6 +614,8 @@ export namespace GappBusiness {
 export namespace GappBiz {
   export type Supplier = ISupplierPort & ICompanyByGapp & IDBCompanyPortEntity & ICompanyEntityImmu & IDBLogTime // FIXME
   export type DBUpdateSupplier = ICompanyPortfolio & IDBUpdateTime
+  export type PublishOnMarket = IPublishParams
+  export type PublishOnHub = IPublishParams
   export type Company = ICompanyEntity & IDBCompanyEntity & ICompanyByGapp & ICompanyEntityImmu
   export type CreatePortfolio = ICompanyPortfolio & IApiCompanyParams
   export type DBUpdatePortfolio = ICompanyPortfolio & IDBUpdateTime

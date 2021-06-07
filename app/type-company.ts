@@ -13,6 +13,15 @@ export interface IApiCompanyParams {
   companyCode?: string //? on port create
 }
 
+export interface IPublishParams {
+  businessId: string
+  compId: string
+  companyCode: string
+  categoryId: string
+  supplierId: string
+  identityId: string
+}
+
 export interface IApiCompanyCreateUserParams {
   businessId: string
   compId: string
