@@ -68,6 +68,7 @@ export interface IProductWholesale {
 export interface IProductDisplay {
   onCompanyCard: boolean
   onMarketplace: boolean
+  onVendorProductList: boolean
   isPriceShowed: boolean
 }
 
@@ -116,7 +117,7 @@ export interface IProductImage {
 // NOTE === g-biz -> list all products
 export interface IRefProductList {
   // index
-  isActive: boolean
+  isActive: boolean // ! not show all
   isRecommend: boolean
   isHighLight: boolean
   isNewArrival: boolean
