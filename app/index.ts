@@ -613,6 +613,7 @@ export namespace GappBusiness {
 
 export namespace GappBiz {
   export type Supplier = ISupplierPort & ICompanyByGapp & IDBCompanyPortEntity & ICompanyEntityImmu & IDBLogTime // FIXME
+  export type DBUpdateSupplier = ICompanyPortfolio & IDBUpdateTime
   export type Company = ICompanyEntity & IDBCompanyEntity & ICompanyByGapp & ICompanyEntityImmu
   export type CreatePortfolio = ICompanyPortfolio & IApiCompanyParams
   export type DBUpdatePortfolio = ICompanyPortfolio & IDBUpdateTime
