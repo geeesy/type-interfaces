@@ -244,7 +244,7 @@ export interface ICompanyByGapp {
 // ANCHOR: COMPANY | Entity (1/4)
 // NOTE: Init on company create, updated in G-BIZ
 export interface IDBCompanyEntity {
-  haveCompletedInfo: boolean //* === false on Create
+  haveCompletedInfo: boolean //* === false on Create (changed only once)
   haveDefaultReceiver: boolean //* === false on Create
 }
 
@@ -259,6 +259,7 @@ export interface ICompanyEntityImmu {
   companyCode: string; // ! use on Cognito with tenantId
   compId: string; // * gen on client
   businessId: string // * <== tenantId (Cognito)
+  supplierId: string // * init on company creation
 }
 
 // ANCHOR: COMPANY | Entity (4/4)
@@ -272,17 +273,20 @@ export interface ICompanyEntity {
   companyAsset: ICompanyAsset;
   companyLogoUrl: string; // * Scale down {companyFullLogoUrl}
 
-  // INDEX
-  tags: string[];
-  keywords: string[];
+  // Contact
+  contact: ICompanyContactInfo;
+
+  // Setting
+  setting: ICompanySetting;
+
 }
 
 
-// REVIEW: COMPANY
+// REVIEW: SUPPLIER
 // NOTE: === g-biz -> Company Info (Update)
-export interface ICompany extends ICompanyEntity {
-  // Contact
-  contact: ICompanyContactInfo;
+// NOTE === g-biz -> Portfolio (Create)
+export interface ICompanyPortfolio extends ICompanyEntity {
+
 
   overview: string;
   description: string;
@@ -303,22 +307,18 @@ export interface ICompany extends ICompanyEntity {
   // Factory
   factory: IFactory;
 
-  // Setting
-  setting: ICompanySetting;
-
   // Metric
   companyMetric: ICompanyMetric;
 
   // Badge
   companyBadge: ICompanyBadge;
 
-  supplierId: string;
+  // INDEX
+  tags: string[];
+  keywords: string[];
 
-}
+  //----------------------------
 
-// REVIEW: SUPPLIER
-// NOTE === g-biz -> Portfolio (Create)
-export interface ICompanyPortfolio extends ICompany {
   // Image
   companyImages: IImageGroup[];
 

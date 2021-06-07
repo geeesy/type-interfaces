@@ -266,8 +266,8 @@ export interface ISavedListSuppliers {
 // NOTE: === g-biz -> Publish to Market
 export interface ISupplierPort extends ICompanyPortfolio {
   onMarket: boolean
-  products?: IProductInSupplierCard[];
   onMarketAt: string
+  products?: IProductInSupplierCard[];
 }
 
 
