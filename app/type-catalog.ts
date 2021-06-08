@@ -201,28 +201,25 @@ export interface IProductAttributes {
   havePacksInVariant?: IProductPackInVariant[]
 }
 
-// ANCHOR: PRODUCT | Create
-export interface IProductCreate extends IProductRootEntity, IProductEntity, IRefProductList {
-  // index
-  tags: string[]
-  keywords: string[]
-
-  productCoverUrl: string;
-  productCategoryId: string;
-  productCategoryCustomName?: string; // * id = OTHER000
-  productVideoCoverUrl: string;
-  productDescription: string
-  productBrand: string
-  productSource: string;
-  productOrigin: string;
-  productChannels: string[];
-  productSpec: IProductSpec[]
-  variantSelectors?: IProductVariantSelector[]
-  haveVariants?: IProductVariantOnly[]
-  havePacks?: IProductPackOnly[]
-  haveVariantsInPack?: IProductVariantInPack[]
-  havePacksInVariant?: IProductPackInVariant[]
+export interface IProductVariant {
+  variantTitle: string
+  variantHierarchy: string[]
 }
+
+// Variants Only
+export interface IProductVariantOnly extends IProductRootEntity, IProductEntity, IProductVariant {
+
+}
+
+export interface IDBProductVariantOnly {
+  productVariantId: string
+}
+
+export interface IProductVariantAttributes {
+  variantSelectors: IProductVariantSelector[]
+  variants: IProductVariantOnly[]
+}
+
 
 export interface IProductVariantSelector {
   variantGroupName: string
@@ -250,10 +247,7 @@ export interface IProductPack {
   smallestUnitQty: number
 }
 
-export interface IProductVariant {
-  variantTitle: string
-  variantHierarchy: string[]
-}
+
 
 // Packs Only
 export interface IProductPackOnly extends IProductRootEntity, IProductEntity, IProductPack {
@@ -262,12 +256,7 @@ export interface IProductPackOnly extends IProductRootEntity, IProductEntity, IP
   updatedAt: string
 }
 
-// Variants Only
-export interface IProductVariantOnly extends IProductRootEntity, IProductEntity, IProductVariant {
-  productVariantId: string
-  createdAt: string
-  updatedAt: string
-}
+
 
 // Variant -> Pack A / Pack B
 export interface IProductPackInVariant extends IProductRootEntity, IProductEntity, IProductVariant, IProductPack {

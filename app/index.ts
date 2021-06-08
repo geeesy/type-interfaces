@@ -197,7 +197,7 @@ import {
   IConsoleSupplierList,
   IPaymentMethod,
 } from './type-console'
-import { ICategoryList, IDBProduct, IMainCategory, IProductAttributes, IProductCreate, IProductEntity, IProductList, IProductPackInVariant, IProductPackOnly, IProductRootEntity, IProductVariantInPack, IProductVariantOnly, IResMainCategory, IResSubCategory, ISubCategory } from './type-catalog'
+import { ICategoryList, IDBProduct, IMainCategory, IProductAttributes, IProductEntity, IProductList, IProductPackInVariant, IProductPackOnly, IProductRootEntity, IProductVariantAttributes, IProductVariantInPack, IProductVariantOnly, IResMainCategory, IResSubCategory, ISubCategory } from './type-catalog'
 import { IApiCompanyCreateUserParams, IApiCompanyParams, IApiSupplierParams, ICompanyByGapp, ICompanyCreateSalesRep, ICompanyEntity, ICompanyEntityImmu, ICompanyPortfolio, ICompanyPortfolioImmu, ICompanyPrivateEntity, ICompanySalesRep, ICompanyUserData, ICompanyUserIdentity, ICompanyUserPrivateData, IDBCompanyEntity, IDBCompanyPortEntity, IDBCompanyUserData, IPublishParams, ISettingCreatePriceGroup, ISettingCreatePriceList, ISettingDoc, ISettingPriceGroup, ISettingPriceList } from './type-company'
 import { IBusinessCompanyUserIdentity, IBusinessCompanyUserIdentityImmu, IBusinessEntity, IBusinessEntityImmu, IBusinessListCompany, IBusinessOwnerIdentity, IBusinessOwnerIdentityImmu, IBusinessUserIdentity, IBusinessUserIdentityImmu, IDBBusinessCompanyUserIdentity, IDBBusinessUserIdentity, IDBBusinessUserIdentityStatus, IDBLogTime, IDBUpdateTime } from './type-business'
 
@@ -638,6 +638,7 @@ export namespace GappInventory {
   export type ProductEntity = IProductEntity
   export type ProductAttributes = IProductAttributes
   export type CreateProduct = IProductRootEntity & IProductEntity & IProductAttributes & IApiSupplierParams
+  export type CreateProductWithVariant = IProductAttributes & IProductVariantAttributes & IApiSupplierParams
   export type Product = IProductRootEntity & IProductEntity & IProductAttributes & IDBProduct & IDBLogTime
   export type ListProduct = IProductList
   export type ProductPackOnly = IProductPackOnly
