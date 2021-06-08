@@ -56,6 +56,7 @@ export interface IAddress {
   amphoe: string;
   tambon: string;
   postcode: string;
+  phonesExt?: string[]
   phones: string[];
   mobiles: string[];
   faxes?: string[];
