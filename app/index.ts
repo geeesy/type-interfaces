@@ -636,6 +636,7 @@ export namespace GappMarket {
 export namespace GappInventory {
   export type ProductRootEntity = IProductRootEntity
   export type ProductEntity = IProductEntity
+  export type ProductAttributes = IProductAttributes
   export type CreateProduct = IProductRootEntity & IProductEntity & IProductAttributes & IApiSupplierParams
   export type Product = IProductRootEntity & IProductEntity & IProductAttributes & IDBProduct & IDBLogTime
   export type ListProduct = IProductList
