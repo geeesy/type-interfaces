@@ -213,7 +213,8 @@ export interface ICertificateImmu {
 }
 
 export interface IDBCertificate extends ICertificate, ICertificateImmu {
-
+  createdAt: string
+  updatedAt: string
 }
 
 export interface IFactory {
