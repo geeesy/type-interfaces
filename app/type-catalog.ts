@@ -143,15 +143,22 @@ export interface IProductList extends IRefProductList {
   updatedAt: string
 }
 
-// ANCHOR: PRODUCT | Entity
+// ANCHOR: PRODUCT | Entity (1/2)
+// NOTE === attributes on each SKU (variant and pack creation)
+export interface IProductRootEntity {
+  productShowedImageUrl: string
+  productSku: string;
+  productUnit: string;
+  productUnitPrice: number
+}
+
+// ANCHOR: PRODUCT | Entity (2/2)
 // NOTE === attributes on each SKU
 export interface IProductEntity {
   productImagesUrl: IProductImage[];
   productCode: string
-  productSku: string;
   productModel: string
   productBarcode: string;
-  productUnit: string;
   productShortDescription: string
   productPrice: IProductPrice
   productWholesales: IProductWholesale[];
@@ -165,14 +172,41 @@ export interface IProductEntity {
   leadTimes: IPeriodTimeByQty[]
 }
 
+// ANCHOR: PRODUCT 
+export interface IProductAttributes {
+  isActive: boolean // ! not show all
+  isRecommend: boolean
+  isHighLight: boolean
+  isNewArrival: boolean
+
+  productName: string;
+  productType?: string;
+  // index
+  tags: string[]
+  keywords: string[]
+  productCoverUrl: string;
+  productCategoryId: string;
+  productCategoryCustomName?: string; // * id = OTHER000
+  productVideoCoverUrl: string;
+  productDescription: string
+  productBrand: string
+  productSource: string;
+  productOrigin: string;
+  productChannels: string[];
+  productSpec: IProductSpec[]
+  variantSelectors?: IProductVariantSelector[]
+  haveVariants?: IProductVariantOnly[]
+  havePacks?: IProductPackOnly[]
+  haveVariantsInPack?: IProductVariantInPack[]
+  havePacksInVariant?: IProductPackInVariant[]
+}
+
 // ANCHOR: PRODUCT | Create
-export interface IProductCreate extends IProductEntity, IRefProductList {
+export interface IProductCreate extends IProductRootEntity, IProductEntity, IRefProductList {
   // index
   tags: string[]
   keywords: string[]
 
-  compId: string;
-  supplierId?: string;
   productCoverUrl: string;
   productCategoryId: string;
   productCategoryCustomName?: string; // * id = OTHER000
@@ -201,10 +235,11 @@ export interface IProductVariantMatchId {
 }
 
 
-export interface IProduct extends IProductCreate {
+export interface IDBProduct {
   productId: string
-  createdAt: string
-  updatedAt: string
+  compId: string;
+  businessId: string
+  supplierId: string;
   variantMatchId?: IProductVariantMatchId[]
 }
 
@@ -221,28 +256,28 @@ export interface IProductVariant {
 }
 
 // Packs Only
-export interface IProductPackOnly extends IProductEntity, IProductPack {
+export interface IProductPackOnly extends IProductRootEntity, IProductEntity, IProductPack {
   productPackId: string
   createdAt: string
   updatedAt: string
 }
 
 // Variants Only
-export interface IProductVariantOnly extends IProductEntity, IProductVariant {
+export interface IProductVariantOnly extends IProductRootEntity, IProductEntity, IProductVariant {
   productVariantId: string
   createdAt: string
   updatedAt: string
 }
 
 // Variant -> Pack A / Pack B
-export interface IProductPackInVariant extends IProductEntity, IProductVariant, IProductPack {
+export interface IProductPackInVariant extends IProductRootEntity, IProductEntity, IProductVariant, IProductPack {
   productVariantPackId: string
   createdAt: string
   updatedAt: string
 }
 
 // Pack -> Variant A / Variant B
-export interface IProductVariantInPack extends IProductEntity, IProductPack, IProductVariant {
+export interface IProductVariantInPack extends IProductRootEntity, IProductEntity, IProductPack, IProductVariant {
   productPackVariantId: string
   createdAt: string
   updatedAt: string

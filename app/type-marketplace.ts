@@ -1,5 +1,5 @@
 import { IResAPI } from './interfaces'
-import { IProduct, IProductEntity, IProductList } from './type-catalog';
+import { IDBProduct, IProductAttributes, IProductEntity, IProductList, IProductRootEntity } from './type-catalog';
 import { ICompanyByGapp, ICompanyContactInfo, ICompanyEntity, ICompanyPortfolio, ICompanyUserIdentity } from './type-company';
 
 // REVIEW: USER
@@ -16,7 +16,7 @@ export interface IResProduct extends IResAPI {
 }
 
 export interface IProductInSupplierCard
-  extends IProductList, IProductEntity {
+  extends IProductList, IProductRootEntity, IProductEntity {
   supplierId: string
 }
 
@@ -38,7 +38,7 @@ export interface IProductWithSupplierCard {
 
 // ANCHOR: PRODUCT | Detail with SUPPLIER
 export interface IProductWithSupplier {
-  product: IProduct
+  product: IDBProduct & IProductRootEntity & IProductEntity & IProductAttributes
   supplier: ISupplierCard
 
 

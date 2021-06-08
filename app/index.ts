@@ -197,8 +197,8 @@ import {
   IConsoleSupplierList,
   IPaymentMethod,
 } from './type-console'
-import { ICategoryList, IMainCategory, IProduct, IProductCreate, IProductEntity, IProductList, IProductPackInVariant, IProductPackOnly, IProductVariantInPack, IProductVariantOnly, IResMainCategory, IResSubCategory, ISubCategory } from './type-catalog'
-import { IApiCompanyCreateUserParams, IApiCompanyParams, ICompanyByGapp, ICompanyCreateSalesRep, ICompanyEntity, ICompanyEntityImmu, ICompanyPortfolio, ICompanyPortfolioImmu, ICompanyPrivateEntity, ICompanySalesRep, ICompanyUserData, ICompanyUserIdentity, ICompanyUserPrivateData, IDBCompanyEntity, IDBCompanyPortEntity, IDBCompanyUserData, IPublishParams, ISettingCreatePriceGroup, ISettingCreatePriceList, ISettingDoc, ISettingPriceGroup, ISettingPriceList } from './type-company'
+import { ICategoryList, IDBProduct, IMainCategory, IProductAttributes, IProductCreate, IProductEntity, IProductList, IProductPackInVariant, IProductPackOnly, IProductRootEntity, IProductVariantInPack, IProductVariantOnly, IResMainCategory, IResSubCategory, ISubCategory } from './type-catalog'
+import { IApiCompanyCreateUserParams, IApiCompanyParams, IApiSupplierParams, ICompanyByGapp, ICompanyCreateSalesRep, ICompanyEntity, ICompanyEntityImmu, ICompanyPortfolio, ICompanyPortfolioImmu, ICompanyPrivateEntity, ICompanySalesRep, ICompanyUserData, ICompanyUserIdentity, ICompanyUserPrivateData, IDBCompanyEntity, IDBCompanyPortEntity, IDBCompanyUserData, IPublishParams, ISettingCreatePriceGroup, ISettingCreatePriceList, ISettingDoc, ISettingPriceGroup, ISettingPriceList } from './type-company'
 import { IBusinessCompanyUserIdentity, IBusinessCompanyUserIdentityImmu, IBusinessEntity, IBusinessEntityImmu, IBusinessListCompany, IBusinessOwnerIdentity, IBusinessOwnerIdentityImmu, IBusinessUserIdentity, IBusinessUserIdentityImmu, IDBBusinessCompanyUserIdentity, IDBBusinessUserIdentity, IDBBusinessUserIdentityStatus, IDBLogTime, IDBUpdateTime } from './type-business'
 
 /* #region FIXME: Marketplace */
@@ -634,9 +634,10 @@ export namespace GappMarket {
 
 // REVIEW: G-BIZ | PRODUCT
 export namespace GappInventory {
+  export type ProductRootEntity = IProductRootEntity
   export type ProductEntity = IProductEntity
-  export type CreateProduct = IProductCreate
-  export type Product = IProduct
+  export type CreateProduct = IProductRootEntity & IProductEntity & IProductAttributes & IApiSupplierParams
+  export type Product = IProductRootEntity & IProductEntity & IProductAttributes & IDBProduct & IDBLogTime
   export type ListProduct = IProductList
   export type ProductPackOnly = IProductPackOnly
   export type ProductVariantOnly = IProductVariantOnly
