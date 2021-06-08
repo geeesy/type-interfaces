@@ -185,6 +185,15 @@ export interface IDocument {
   isVerified: boolean;
 }
 
+export interface IDocumentImmu {
+  documentId: string
+}
+
+export interface IDBDocument extends IDocument, IDocumentImmu {
+  createdAt: string
+  updatedAt: string
+}
+
 export interface ICertificate {
   filesUrl: string[];
   imagesUrl: string[]
@@ -196,6 +205,14 @@ export interface ICertificate {
   certificateName: string;
   isPrivate: boolean;
   isVerified: boolean;
+}
+
+export interface ICertificateImmu {
+  certificateId: string
+}
+
+export interface IDBCertificate extends ICertificate, ICertificateImmu {
+
 }
 
 export interface IFactory {
@@ -339,8 +356,8 @@ export interface ICompanyPortfolio extends ICompanyEntity {
   companyImages: IImageGroup[];
 
   // Document
-  companyDocuments: IDocument[];
-  companyCertificates: ICertificate[];
+  companyDocuments: IDBDocument[];
+  companyCertificates: IDBCertificate[];
 
   // Pages
   customPages: ICustomPage[];
