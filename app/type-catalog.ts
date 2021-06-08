@@ -169,11 +169,11 @@ export interface IProductEntity {
   stock: IProductStock
   preparingTime: IPeriodTimeByQty[];
   leadTimes: IPeriodTimeByQty[]
+  display: IProductDisplay
 }
 
 // ANCHOR: PRODUCT 
 export interface IProductAttributes {
-  display: IProductDisplay
   isActive: boolean // ! not show all
   isRecommend: boolean
   isHighLight: boolean
