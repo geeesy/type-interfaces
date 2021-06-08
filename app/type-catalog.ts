@@ -123,7 +123,7 @@ export interface IRefProductList {
   isNewArrival: boolean
   impFactor: number
 
-  productThumbnailUrl?: string;
+  productThumbnailUrl: string;
   productName: string;
   productType?: string;
 
@@ -191,6 +191,7 @@ export interface IProductAttributes {
   productSource: string;
   productOrigin: string;
   productChannels: string[];
+  productThumbnailUrl: string;
   productSpec?: IProductSpec[]
   variantSelectors?: IProductVariantSelector[]
   haveVariants?: IProductVariantOnly[]
