@@ -178,10 +178,8 @@ export interface IProductAttributes {
   isRecommend: boolean
   isHighLight: boolean
   isNewArrival: boolean
-
   productName: string;
   productType?: string;
-  // index
   tags: string[]
   keywords: string[]
   productCoverUrl: string;
@@ -193,7 +191,7 @@ export interface IProductAttributes {
   productSource: string;
   productOrigin: string;
   productChannels: string[];
-  productSpec: IProductSpec[]
+  productSpec?: IProductSpec[]
   variantSelectors?: IProductVariantSelector[]
   haveVariants?: IProductVariantOnly[]
   havePacks?: IProductPackOnly[]
