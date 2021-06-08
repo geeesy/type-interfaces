@@ -166,7 +166,6 @@ export interface IProductEntity {
   minWholesaleQty: number
   toFreeShip: IQtyPrice
   productPackage: IProductPackage
-  display: IProductDisplay
   stock: IProductStock
   preparingTime: IPeriodTimeByQty[];
   leadTimes: IPeriodTimeByQty[]
@@ -174,6 +173,7 @@ export interface IProductEntity {
 
 // ANCHOR: PRODUCT 
 export interface IProductAttributes {
+  display: IProductDisplay
   isActive: boolean // ! not show all
   isRecommend: boolean
   isHighLight: boolean
