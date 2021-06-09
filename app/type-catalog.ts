@@ -194,7 +194,6 @@ export interface IProductAttributes {
   productChannels: string[];
   productThumbnailUrl: string;
   productSpec?: IProductSpec[]
-  variantSelectors?: IProductVariantSelector[]
   haveVariants?: IProductVariantOnly[]
   havePacks?: IProductPackOnly[]
   haveVariantsInPack?: IProductVariantInPack[]
@@ -209,6 +208,7 @@ export interface IDBProduct {
   countVariantsInPack: number
   countPacksInVariant: number
   variantMatchId?: IProductVariantMatchId[]
+  variantSelectors?: IProductVariantSelector[]
 }
 
 // ANCHOR: PRODUCT | Entity (5/5)
