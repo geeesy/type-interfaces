@@ -197,7 +197,7 @@ import {
   IConsoleSupplierList,
   IPaymentMethod,
 } from './type-console'
-import { ICategoryList, IDBProduct, IMainCategory, IProductAttributes, IProductEntity, IProductList, IProductPackInVariant, IProductPackOnly, IProductRootEntity, IProductVariantAttributes, IProductVariantInPack, IProductVariantOnly, IResMainCategory, IResSubCategory, ISubCategory } from './type-catalog'
+import { ICategoryList, IDBProduct, IDBProductImmu, IDBProductVariantOnlyImmu, IMainCategory, IProductAttributes, IProductEntity, IProductList, IProductPackInVariant, IProductPackOnly, IProductRootEntity, IProductVariantAttributes, IProductVariantEntity, IProductVariantInPack, IProductVariantOnly, IResMainCategory, IResSubCategory, ISubCategory } from './type-catalog'
 import { IApiCompanyCreateUserParams, IApiCompanyParams, IApiSupplierParams, ICertificate, ICompanyByGapp, ICompanyCreateSalesRep, ICompanyEntity, ICompanyEntityImmu, ICompanyPortfolio, ICompanyPortfolioImmu, ICompanyPrivateEntity, ICompanySalesRep, ICompanyUserData, ICompanyUserIdentity, ICompanyUserPrivateData, IDBCertificate, IDBCompanyEntity, IDBCompanyPortEntity, IDBCompanyUserData, IDBDocument, IDocument, IDocumentImmu, IPublishParams, ISettingCreatePriceGroup, ISettingCreatePriceList, ISettingDoc, ISettingPriceGroup, ISettingPriceList } from './type-company'
 import { IBusinessCompanyUserIdentity, IBusinessCompanyUserIdentityImmu, IBusinessEntity, IBusinessEntityImmu, IBusinessListCompany, IBusinessOwnerIdentity, IBusinessOwnerIdentityImmu, IBusinessUserIdentity, IBusinessUserIdentityImmu, IDBBusinessCompanyUserIdentity, IDBBusinessUserIdentity, IDBBusinessUserIdentityStatus, IDBLogTime, IDBUpdateTime } from './type-business'
 
@@ -645,10 +645,10 @@ export namespace GappInventory {
   export type ProductAttributes = IProductAttributes
   export type CreateProduct = IProductRootEntity & IProductEntity & IProductAttributes & IApiSupplierParams
   export type CreateProductWithVariant = IProductAttributes & IProductVariantAttributes & IApiSupplierParams
-  export type Product = IProductRootEntity & IProductEntity & IProductAttributes & IDBProduct & IDBLogTime
+  export type Product = IProductRootEntity & IProductEntity & IProductAttributes & IDBProduct & IDBProductImmu & IDBLogTime
   export type ListProduct = IProductList
   export type ProductPackOnly = IProductPackOnly
-  export type ProductVariantOnly = IProductVariantOnly
+  export type ProductVariantOnly = IProductRootEntity & IProductEntity & IProductVariantEntity & IDBProductVariantOnlyImmu & IDBLogTime
   export type ProductPackInVariant = IProductPackInVariant
   export type ProductVariantInPack = IProductVariantInPack
 }

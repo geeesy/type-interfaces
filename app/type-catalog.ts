@@ -125,7 +125,7 @@ export interface IRefProductList {
 
   productThumbnailUrl: string;
   productName: string;
-  productType?: string;
+  productType: string;
 
   // -> Available
   countVariants: number // * UPDATED ON [C-U-D] VARIANT
@@ -143,7 +143,7 @@ export interface IProductList extends IRefProductList {
   updatedAt: string
 }
 
-// ANCHOR: PRODUCT | Entity (1/2)
+// ANCHOR: PRODUCT | Entity (1/5)
 // NOTE === attributes on each SKU (variant and pack creation)
 export interface IProductRootEntity {
   productShowedImageUrl: string
@@ -152,7 +152,7 @@ export interface IProductRootEntity {
   productUnitPrice: number
 }
 
-// ANCHOR: PRODUCT | Entity (2/2)
+// ANCHOR: PRODUCT | Entity (2/5)
 // NOTE === attributes on each SKU
 export interface IProductEntity {
   productImagesUrl: IProductImage[];
@@ -172,7 +172,7 @@ export interface IProductEntity {
   displaySku: IProductDisplay
 }
 
-// ANCHOR: PRODUCT 
+// ANCHOR: PRODUCT | Entity (3/5)
 export interface IProductAttributes {
   display: IProductDisplay
   isActive: boolean // ! not show all
@@ -180,7 +180,7 @@ export interface IProductAttributes {
   isHighLight: boolean
   isNewArrival: boolean
   productName: string;
-  productType?: string;
+  productType: string;
   tags: string[]
   keywords: string[]
   productCoverUrl: string;
@@ -201,17 +201,36 @@ export interface IProductAttributes {
   havePacksInVariant?: IProductPackInVariant[]
 }
 
-export interface IProductVariant {
+// ANCHOR: PRODUCT | Entity (4/5)
+export interface IDBProduct {
+  impFactor: number
+  countVariants: number // * UPDATED ON [C-U-D] VARIANT
+  countPacks: number // * UPDATED ON [C-U-D] PACK
+  countVariantsInPack: number
+  countPacksInVariant: number
+  variantMatchId?: IProductVariantMatchId[]
+}
+
+// ANCHOR: PRODUCT | Entity (5/5)
+export interface IDBProductImmu {
+  productId: string
+  compId: string;
+  businessId: string
+  supplierId: string;
+}
+
+// ANCHOR: VARIANT | Entity
+export interface IProductVariantEntity {
   variantTitle: string
   variantHierarchy: string[]
 }
 
 // Variants Only
-export interface IProductVariantOnly extends IProductRootEntity, IProductEntity, IProductVariant {
+export interface IProductVariantOnly extends IProductRootEntity, IProductEntity, IProductVariantEntity {
 
 }
 
-export interface IDBProductVariantOnly {
+export interface IDBProductVariantOnlyImmu {
   productVariantId: string
 }
 
@@ -232,18 +251,7 @@ export interface IProductVariantMatchId {
 }
 
 
-export interface IDBProduct {
-  productId: string
-  compId: string;
-  businessId: string
-  supplierId: string;
-  impFactor: number
-  countVariants: number // * UPDATED ON [C-U-D] VARIANT
-  countPacks: number // * UPDATED ON [C-U-D] PACK
-  countVariantsInPack: number
-  countPacksInVariant: number
-  variantMatchId?: IProductVariantMatchId[]
-}
+
 
 
 export interface IProductPack {
@@ -264,14 +272,14 @@ export interface IProductPackOnly extends IProductRootEntity, IProductEntity, IP
 
 
 // Variant -> Pack A / Pack B
-export interface IProductPackInVariant extends IProductRootEntity, IProductEntity, IProductVariant, IProductPack {
+export interface IProductPackInVariant extends IProductRootEntity, IProductEntity, IProductVariantEntity, IProductPack {
   productVariantPackId: string
   createdAt: string
   updatedAt: string
 }
 
 // Pack -> Variant A / Variant B
-export interface IProductVariantInPack extends IProductRootEntity, IProductEntity, IProductPack, IProductVariant {
+export interface IProductVariantInPack extends IProductRootEntity, IProductEntity, IProductPack, IProductVariantEntity {
   productPackVariantId: string
   createdAt: string
   updatedAt: string
