@@ -188,6 +188,7 @@ export interface ICredentialCompany {
   compId: string
   companyCode: string
   businessId: string
+  supplierId: string
 }
 
 // ! ONLY ON DB
