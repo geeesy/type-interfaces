@@ -232,6 +232,7 @@ export interface IProductVariantOnly extends IProductRootEntity, IProductEntity,
 
 export interface IDBProductVariantOnlyImmu {
   productVariantId: string
+  productId: string
 }
 
 export interface IProductVariantAttributes {

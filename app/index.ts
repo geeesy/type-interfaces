@@ -648,6 +648,8 @@ export namespace GappInventory {
   export type Product = IProductRootEntity & IProductEntity & IProductAttributes & IDBProduct & IDBProductImmu & IDBLogTime
   export type ListProduct = IProductList
   export type ProductPackOnly = IProductPackOnly
+  export type CreateManyVariantOnly = IProductVariantAttributes & IApiSupplierParams
+  export type CreateOneVariantOnly = IProductRootEntity & IProductEntity & IProductVariantEntity & IApiSupplierParams
   export type ProductVariantOnly = IProductRootEntity & IProductEntity & IProductVariantEntity & IDBProductVariantOnlyImmu & IDBLogTime
   export type ProductPackInVariant = IProductPackInVariant
   export type ProductVariantInPack = IProductVariantInPack
