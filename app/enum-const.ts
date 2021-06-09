@@ -99,7 +99,7 @@ export enum StatusPoolShippingSubBuyer {
 
 export const ValidUntilDate = [7, 15, 30, 60, 90]
 
-export const CreditDay = [30, 60, 90]
+export const CreditDay = [30, 45, 60, 90]
 
 export const RfqCreditTermArr = [
   {
@@ -110,6 +110,9 @@ export const RfqCreditTermArr = [
   },
   {
     text: '30 วัน', value: '30'
+  },
+  {
+    text: '45 วัน', value: '45'
   },
   {
     text: '60 วัน', value: '60'
