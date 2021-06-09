@@ -237,6 +237,10 @@ export interface IDBProduct {
   compId: string;
   businessId: string
   supplierId: string;
+  countVariants: number // * UPDATED ON [C-U-D] VARIANT
+  countPacks: number // * UPDATED ON [C-U-D] PACK
+  countVariantsInPack: number
+  countPacksInVariant: number
   variantMatchId?: IProductVariantMatchId[]
 }
 
