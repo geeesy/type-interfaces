@@ -134,6 +134,7 @@ export interface IRefProductList {
   countPacksInVariant: number
 }
 export interface IProductList extends IRefProductList {
+  display: IProductDisplay
   productCode: string
   productSku: string;
   productUnit: string;
