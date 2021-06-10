@@ -16,7 +16,7 @@ export interface IResProduct extends IResAPI {
 }
 
 export interface IProductInSupplierCard
-  extends IProductList, IProductRootEntity, IProductEntity, IProductAttributes {
+  extends IProductList, IProductRootEntity, IProductEntity {
   supplierId: string
 }
 
