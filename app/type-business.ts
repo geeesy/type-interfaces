@@ -1,9 +1,6 @@
 import { IApprovalRule } from "./type-apps"
 import { ICompanyByGapp, ICompanyEntity, ICompanyEntityImmu, IDBCompanyEntity, IDBCompanyPortEntity } from "./type-company"
 
-/**
- * STUB: Version 5.x
- */
 export type TUserRole = 'owner' | 'admin' | 'staff' | 'user'
 export type TApproverRole = 'reviewer' | 'approver' | 'none'
 export type TApproverFlow = 'reviewer' | 'approver' | 'none'
@@ -25,27 +22,31 @@ export interface IDBUpdateTime {
 // REVIEW: BUSINESS | Entity (1/2)
 export interface IBusinessEntityImmu {
   businessId: string // * === tenantId
-  useAsCompany: boolean // ? default = false
+  useAsCompany: boolean // ? default = false // TODO: immu?
 }
 // REVIEW: BUSINESS | Entity (2/2)
 export interface IBusinessEntity {
   businessName: string
-  businessCategory: string // * <-- include other
+  businessCategoryId: string // * <-- include other id = OTHER000
+  businessCategoryCustomName?: string
+  businessLogoUrl: string // * replaced with Scale down (empty on create) 
   businessTypes: TBusinessType[]
   businessSize: TBusinessSize
   website: string
   interests: string[]
 }
-// REVIEW: BUSINESS | OWNER (1/2)
+// REVIEW: BUSINESS | OWNER Entity (1/2)
 export interface IBusinessOwnerIdentityImmu {
   identityId: string
-  phone: string
+  // phone: string
   email: string // TODO: check cognito cred
 }
 
-// REVIEW: BUSINESS | OWNER (2/2)
+// REVIEW: BUSINESS | OWNER Entity (2/2)
 export interface IBusinessOwnerIdentity {
+  phone: string
   ownerName: string
+  avatarThumbUrl: string
 }
 
 
@@ -97,7 +98,7 @@ export interface IDBBusinessCompanyUserData {
   avatarThumbUrl: string
 }
 
-// REVIEW: BUSINESS | USER (1/4)
+// ANCHOR: BUSINESS | USER (1/4)
 export interface IBusinessUserIdentityImmu {
   email: string // TODO: check cognito cred
   mobile: string
@@ -107,19 +108,19 @@ export interface IBusinessUserIdentityImmu {
   username: string // * for check with cognitoIdentityId on REQ
 }
 
-// REVIEW: BUSINESS | USER (2/4)
+// ANCHOR: BUSINESS | USER (2/4)
 export interface IBusinessUserIdentity {
   fullName: string
   penName: string // TODO: check cognito
   businessPosition: string
 }
 
-// REVIEW: BUSINESS | USER (3/4)
+// ANCHOR: BUSINESS | USER (3/4)
 export interface IDBBusinessUserIdentityStatus {
   isActive: boolean
 }
 
-// REVIEW: BUSINESS | USER (4/4)
+// ANCHOR: BUSINESS | USER (4/4)
 export interface IDBBusinessUserIdentity {
   companies: string[] // * as Set on DB
   historyCountOnCompany?: number // * -> DB on ADMIN

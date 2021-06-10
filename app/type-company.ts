@@ -2,9 +2,6 @@ import { IPersonContactInfo } from './type-apps';
 import { IBusinessCompanyUserIdentity, IBusinessCompanyUserIdentityImmu, IBusinessUserIdentity, IDBBusinessCompanyUserIdentity, TApproverFlow, TApproverRole, TBusinessSize, TBusinessType } from './type-business';
 import { IPaymentMethod, IShippingZone } from './type-console';
 
-/**
- * STUB: Version 5.x
- */
 /* #region COMPANY */
 export interface IApiCompanyParams {
   businessId: string
@@ -94,12 +91,10 @@ export interface IMapLocation {
 }
 
 export interface ICompanyContactInfo {
-  companyName: string;
   companyPhones: string[];
-  companyFaxes?: string[];
-  companyWebsites?: string[];
+  companyWebsite: string;
   companyEmails: string[];
-  companySocial?: ISocial;
+  companySocial: ISocial;
   contactAddress: IAddress;
   billingAddress?: IAddress;
   shippingAddress?: IAddress;
@@ -132,8 +127,8 @@ export interface ICompanyMetric {
   shippingDuration: IPeriodTime;
   employee: string[];
   capital: number;
-  businessSize: string[];
-  businessType: string[];
+  businessSize: TBusinessSize;
+  businessTypes: TBusinessType[];
 }
 
 export interface ICompanyBadge {
@@ -236,7 +231,7 @@ export interface ICustomPage {
 /**
  * COMPANY
  */
-// REVIEW: USER (COMPANY) // TODO: Remove
+// ANCHOR: USER (COMPANY) // TODO: Remove
 export interface ICompanyUserIdentity extends IBusinessCompanyUserIdentityImmu, IBusinessCompanyUserIdentity, IDBBusinessCompanyUserIdentity {
   contact: IContactPerson
   signatureUrl: string
@@ -254,42 +249,37 @@ export interface ICompanyUserPrivateData {
   signatureUrl: string
 }
 
-// ANCHOR: COMPANY | Private Entity
-// NOTE: Not show on public
-export interface ICompanyPrivateEntity {
-  companyStampUrl: string
-  companyType: TBusinessType[]
-  companySize: TBusinessSize
-  companyInterests: string[]
-  useApprovalWorkflow: TApproverFlow
-}
 
-// ANCHOR: COMPANY | GAPP
+
+// REVIEW: COMPANY | GAPP
 // NOTE: Init on company create (Update by GAPP only)
 export interface ICompanyByGapp {
   isVerified: boolean;
   rating: number;
   score: number;
+  coins: number
+  points: number
   isActive: boolean;
   isRecommend: boolean;
   isHighlight: boolean;
   impFactor: number;
 }
 
-// ANCHOR: COMPANY | Entity (1/4)
+// REVIEW: COMPANY | Entity (1/4)
 // NOTE: Init on company create, updated in G-BIZ
 export interface IDBCompanyEntity {
   haveCompletedInfo: boolean //* === false on Create (changed only once)
   haveDefaultReceiver: boolean //* === false on Create
 }
 
-// ANCHOR: COMPANY | Entity (2/4)
-export interface IDBCompanyPortEntity {
-  havePortfolio: boolean; // * to check port init , false on Create
+// REVIEW: COMPANY | Entity (2/4)
+export interface IDBCompanySupplierEntity {
+  havePortfolio: boolean; // * to check port init , false on Create (changed only once)
   onMarket: boolean; // * false on Create
+  onHub: boolean; // * false on Create
 }
 
-// ANCHOR: COMPANY | Entity (3/4)
+// REVIEW: COMPANY | Entity (3/4)
 export interface ICompanyEntityImmu {
   companyCode: string; // ! use on Cognito with tenantId
   compId: string; // * gen on client
@@ -297,9 +287,9 @@ export interface ICompanyEntityImmu {
   supplierId: string // * init on company creation
 }
 
-// ANCHOR: COMPANY | Entity (4/4)
+// REVIEW: COMPANY | Entity (4/4)
 export interface ICompanyEntity {
-  companyName: string;
+  companyName: string; // TODO: update on cognito?
 
   companyCategoryId: string;
   companyCategoryCustomName?: string; // * id = OTHER000
@@ -316,8 +306,18 @@ export interface ICompanyEntity {
 
 }
 
+// REVIEW: COMPANY | Private Entity
+// NOTE: Not show on public
+export interface ICompanyPrivateEntity {
+  companyStampUrl: string
+  companyTypes: TBusinessType[]
+  companySize: TBusinessSize
+  companyInterests: string[]
+  useApprovalWorkflow: TApproverFlow
+}
 
-// REVIEW: SUPPLIER
+
+// ANCHOR: SUPPLIER
 // NOTE: === g-biz -> Company Info (Update)
 // NOTE === g-biz -> Portfolio (Create)
 export interface ICompanyPortfolio extends ICompanyEntity {
@@ -371,7 +371,7 @@ export interface ICompanyPortfolioImmu {
   portId: string
 }
 
-// REVIEW: SALES REP
+// ANCHOR: SALES REP
 export interface ICompanyCreateSalesRep extends IPersonContactInfo {
   salesRepPersonalCode: string
   compId: string
