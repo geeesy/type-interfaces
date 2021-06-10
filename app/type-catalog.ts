@@ -251,17 +251,11 @@ export interface IProductVariantMatchId {
   productVariantId: string
 }
 
-
-
-
-
 export interface IProductPack {
   packTitle: string
   packSizeLabel: string
   smallestUnitQty: number
 }
-
-
 
 // Packs Only
 export interface IProductPackOnly extends IProductRootEntity, IProductEntity, IProductPack {
@@ -269,8 +263,6 @@ export interface IProductPackOnly extends IProductRootEntity, IProductEntity, IP
   createdAt: string
   updatedAt: string
 }
-
-
 
 // Variant -> Pack A / Pack B
 export interface IProductPackInVariant extends IProductRootEntity, IProductEntity, IProductVariantEntity, IProductPack {
