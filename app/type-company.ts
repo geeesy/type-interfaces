@@ -1,13 +1,13 @@
-import { IPersonContactInfo } from './type-apps';
-import { ICompanyUserData, TApproverFlow, TBusinessSize, TBusinessTypes } from './type-business';
-import { IPaymentMethod, IShippingZone } from './type-console';
+import { IPersonContactInfo } from './type-apps'
+import { ICompanyUserData, TApproverFlow, TBusinessSize, TBusinessTypes } from './type-business'
+import { IPaymentMethod, IShippingZone } from './type-console'
 
 /* #region COMPANY */
 export interface IApiCompanyParams {
   businessId: string
   compId: string
   identityId: string
-  companyCode?: string //? on port create
+  companyCode?: string // ? on port create
 }
 
 export interface IApiSupplierParams {
@@ -110,7 +110,6 @@ export interface ICompanyBoard {
   positions: string[];
   avatarImageUrl: string
 }
-
 
 export interface IPeriodTime {
   day: [number, number]
@@ -223,18 +222,11 @@ export interface ICustomPage {
 
 /* #endregion */
 
-
 // REVIEW: COMPANY | GAPP
 // NOTE: Init on company create (Update by GAPP only)
 export interface ICompanyByGapp {
-  isVerified: boolean;
-  rating: number;
-  score: number;
   coins: number
   points: number
-  isActive: boolean;
-  isRecommend: boolean;
-  isHighlight: boolean;
   impFactor: number;
 }
 
@@ -289,12 +281,19 @@ export interface ICompanyPrivateEntity {
   useApprovalWorkflow: TApproverFlow
 }
 
+export interface ISupplierByGapp {
+  isVerified: boolean;
+  rating: number;
+  score: number;
+  isRecommend: boolean;
+  isHighlight: boolean;
+  impFactor: number;
+}
 
 // ANCHOR: SUPPLIER
 // NOTE: === g-biz -> Company Info (Update)
 // NOTE === g-biz -> Portfolio (Create)
 export interface ICompanyPortfolio extends ICompanyEntity {
-
 
   overview: string;
   description: string;
@@ -325,7 +324,7 @@ export interface ICompanyPortfolio extends ICompanyEntity {
   tags: string[];
   keywords: string[];
 
-  //----------------------------
+  // ----------------------------
 
   // Image
   companyImages: IImageGroup[];
@@ -336,7 +335,6 @@ export interface ICompanyPortfolio extends ICompanyEntity {
 
   // Pages
   customPages: ICustomPage[];
-
 
 }
 
@@ -355,7 +353,6 @@ export interface ICompanyCreateSalesRep extends IPersonContactInfo {
   adminPersonalCode: string // * filter on each Admin View
   staffPersonalCode: string // * filter on each Staff View
 }
-
 
 export interface ICompanySalesRep extends ICompanyCreateSalesRep {
   salesRepId: string
