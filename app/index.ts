@@ -603,7 +603,7 @@ export namespace GappBusiness {
 }
 
 export namespace GappBiz {
-  export type User = ICompanyUserData & IDBBusinessCompanyUserData & ICompanyUserPrivateData & IBusinessCompanyUserIdentityImmu & IBusinessCompanyUserIdentity & IDBBusinessCompanyUserIdentity
+  export type User = IBusinessCompanyUserIdentityImmu & IBusinessCompanyUserIdentity & IDBBusinessCompanyUserIdentity & IDBBusinessCompanyUserData & ICompanyUserData & ICompanyUserPrivateData & IDBLogTime
   export type Supplier = ISupplierPort & ICompanyByGapp & IDBCompanySupplierEntity & ICompanyEntityImmu & IDBLogTime // FIXME
   export type DBUpdateSupplier = ICompanyPortfolio & IDBUpdateTime
   export type CreateSupplierDocument = IDocument & IApiCompanyParams
