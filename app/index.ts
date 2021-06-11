@@ -197,7 +197,7 @@ import {
   IPaymentMethod
 } from './type-console'
 import { ICategoryList, IDBProduct, IDBProductImmu, IDBProductVariantOnlyImmu, IMainCategory, IProductAttributes, IProductEntity, IProductList, IProductPackInVariant, IProductPackOnly, IProductRootEntity, IProductVariantAttributes, IProductVariantEntity, IProductVariantInPack, IResMainCategory, IResSubCategory, ISubCategory } from './type-catalog'
-import { IApiCompanyParams, IApiSupplierParams, ICertificate, ICompanyByGapp, ICompanyCreateSalesRep, ICompanyEntity, ICompanyEntityImmu, ICompanyPortfolio, ICompanyPortfolioImmu, ICompanyPrivateEntity, ICompanySalesRep, IDBCertificate, IDBCompanyEntity, IDBCompanySupplierEntity, IDBDocument, IDocument, IPublishParams, ISettingCreatePriceGroup, ISettingCreatePriceList, ISettingDoc, ISettingPriceGroup, ISettingPriceList } from './type-company'
+import { IApiCompanyParams, IApiSupplierParams, ICertificate, ICompanyByGapp, ICompanyCreateSalesRep, ICompanyEntity, ICompanyEntityImmu, ICompanyPortfolio, ICompanyPortfolioImmu, ICompanyPrivateEntity, ICompanySalesRep, IDBCertificate, IDBCompanyEntity, IDBCompanySupplierEntity, IDBDocument, IDocument, IPublishParams, ISettingCreatePriceGroup, ISettingCreatePriceList, ISettingDoc, ISettingPriceGroup, ISettingPriceList, ISupplierByGapp } from './type-company'
 import { IBusinessCompanyUserIdentity, IBusinessCompanyUserIdentityImmu, IBusinessEntity, IBusinessEntityImmu, IBusinessListCompany, IBusinessOwnerIdentity, IBusinessOwnerIdentityImmu, IBusinessUserIdentity, IBusinessUserIdentityImmu, ICompanyUserData, ICompanyUserPrivateData, IDBBusinessCompanyUserData, IDBBusinessCompanyUserIdentity, IDBBusinessUserIdentity, IDBBusinessUserIdentityStatus, IDBLogTime, IDBUpdateTime } from './type-business'
 
 /* #region FIXME: Marketplace */
@@ -604,7 +604,7 @@ export namespace GappBusiness {
 
 export namespace GappBiz {
   export type User = IBusinessCompanyUserIdentityImmu & IBusinessCompanyUserIdentity & IDBBusinessCompanyUserIdentity & IDBBusinessCompanyUserData & ICompanyUserData & ICompanyUserPrivateData & IDBLogTime
-  export type Supplier = ISupplierPort & ICompanyByGapp & IDBCompanySupplierEntity & ICompanyEntityImmu & IDBLogTime // FIXME
+  export type Supplier = ISupplierPort & ISupplierByGapp & IDBCompanySupplierEntity & ICompanyEntityImmu & IDBLogTime // FIXME
   export type DBUpdateSupplier = ICompanyPortfolio & IDBUpdateTime
   export type CreateSupplierDocument = IDocument & IApiCompanyParams
   export type CreateSupplierCertificate = ICertificate & IApiCompanyParams
@@ -622,7 +622,7 @@ export namespace GappBiz {
 
 // REVIEW: G-MARKET
 export namespace GappMarket {
-  export type Supplier = ISupplierPort & ICompanyByGapp & IDBCompanySupplierEntity & ICompanyEntityImmu & IDBLogTime // FIXME
+  export type Supplier = ISupplierPort & ISupplierByGapp & IDBCompanySupplierEntity & ICompanyEntityImmu & IDBLogTime // FIXME
   export type ListProductWithSupplier = IProductWithSupplierCard
   export type ListSupplierWithProduct = ISupplierWithProductCard
   export type Product = IProductWithSupplier
@@ -656,7 +656,7 @@ export namespace GappSetting {
   export type CompanyInfo = ICompanyEntity & IDBCompanyEntity & IDBCompanySupplierEntity & ICompanyByGapp & ICompanyEntityImmu
   export type DBUpdateCompanyInfo = ICompanyEntity & IDBCompanyEntity & IDBUpdateTime
   export type CreateCompanyPort = ICompanyPortfolio & ICompanyEntityImmu // FIXME: IApiCompanyParam
-  export type CompanyPort = ICompanyPortfolio & IDBCompanySupplierEntity & ICompanyByGapp & ICompanyEntityImmu & IDBLogTime
+  export type CompanyPort = ICompanyPortfolio & IDBCompanySupplierEntity & ISupplierByGapp & ICompanyEntityImmu & IDBLogTime
   export type DBUpdateCompanyPort = ICompanyPortfolio & IDBCompanySupplierEntity & IDBUpdateTime
   export type ListAdminStaff = IBusinessCompanyUserIdentityImmu & IBusinessCompanyUserIdentity & IDBBusinessCompanyUserIdentity & IDBBusinessCompanyUserData
   export type CreateAdminStaff = IBusinessUserIdentityImmu & IBusinessUserIdentity & IBusinessCompanyUserIdentityImmu & IBusinessCompanyUserIdentity & IDBBusinessCompanyUserIdentity & ICompanyUserData
