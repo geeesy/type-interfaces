@@ -134,7 +134,6 @@ export interface ICompanyBadge {
 
 export interface ICompanyAsset {
   companyVideosUrl: string[];
-  companyFullLogoUrl: string;
   companyPrimaryColor: string;
   companySecondaryColor: string;
   companyBannersUrl: string[];
@@ -238,7 +237,7 @@ export interface IDBCompanyEntity {
   haveDefaultReceiver: boolean //* === false on Create
 }
 
-// REVIEW: COMPANY | Entity (2/5)
+// REVIEW: COMPANY | Entity (2/5) --> SUPPLIER
 export interface IDBCompanySupplierEntity {
   havePortfolio: boolean; // * to check port init , false on Create (changed only once)
   onMarket: boolean; // * false on Create
@@ -252,12 +251,14 @@ export interface ICompanyEntityImmu {
 }
 
 // REVIEW: COMPANY | Entity (4/5)
+// NOTE: Can not update on SUPPLIER
 export interface ICompanyPublicEntityImmu {
   compId: string; // * gen on client
   supplierId: string // * init on company creation
 }
 
 // REVIEW: COMPANY | Entity (5/5)
+// NOTE: Can not update on SUPPLIER
 export interface ICompanyPublicEntity {
   companyName: string; // TODO: update on cognito?
 
@@ -265,7 +266,7 @@ export interface ICompanyPublicEntity {
   companyCategoryCustomName?: string; // * id = OTHER000
 
   // CI
-  companyAsset: ICompanyAsset;
+  companyFullLogoUrl: string
   companyLogoUrl: string; // * Scale down {companyFullLogoUrl}
 
   // Contact
@@ -299,6 +300,8 @@ export interface ISupplierByGapp {
 // REVIEW: SUPPLIER | Detail
 // NOTE: Init on company creation
 export interface IPortfolio {
+
+  companyAsset: ICompanyAsset;
 
   overview: string;
   description: string;
