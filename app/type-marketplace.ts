@@ -1,9 +1,9 @@
 import { IResAPI } from './interfaces'
 import { IDBProduct, IProductAttributes, IProductEntity, IProductList, IProductRootEntity } from './type-catalog';
-import { ICompanyByGapp, ICompanyContactInfo, ICompanyEntity, ICompanyPortfolio, ICompanyUserIdentity } from './type-company';
+import { ICompanyByGapp, ICompanyContactInfo, ICompanyEntity, ICompanyPortfolio } from './type-company';
 
 // REVIEW: USER
-export interface IMarketUserIdentity extends ICompanyUserIdentity {
+export interface IMarketUserIdentity {
   fbId: string
   googleId: string
   marketUserId: string

@@ -1,5 +1,5 @@
 import { IPersonContactInfo } from './type-apps';
-import { IBusinessCompanyUserIdentity, IBusinessCompanyUserIdentityImmu, IBusinessUserIdentity, IDBBusinessCompanyUserIdentity, TApproverFlow, TApproverRole, TBusinessSize, TBusinessType } from './type-business';
+import { ICompanyUserData, TApproverFlow, TBusinessSize, TBusinessType } from './type-business';
 import { IPaymentMethod, IShippingZone } from './type-console';
 
 /* #region COMPANY */
@@ -111,11 +111,6 @@ export interface ICompanyBoard {
   avatarImageUrl: string
 }
 
-export interface IContactPerson extends IPersonContactInfo {
-  positions: string[];
-  isKeyContact: boolean;
-  avatarImageUrl: string
-}
 
 export interface IPeriodTime {
   day: [number, number]
@@ -228,28 +223,6 @@ export interface ICustomPage {
 
 /* #endregion */
 
-/**
- * COMPANY
- */
-// ANCHOR: USER (COMPANY) // TODO: Remove
-export interface ICompanyUserIdentity extends IBusinessCompanyUserIdentityImmu, IBusinessCompanyUserIdentity, IDBBusinessCompanyUserIdentity {
-  contact: IContactPerson
-  signatureUrl: string
-}
-// TODO: Use below
-export interface ICompanyUserData {
-  contact: IContactPerson
-
-}
-export interface IDBCompanyUserData {
-  avatarThumbUrl: string // --> lambda trigger
-}
-
-export interface ICompanyUserPrivateData {
-  signatureUrl: string
-}
-
-
 
 // REVIEW: COMPANY | GAPP
 // NOTE: Init on company create (Update by GAPP only)
@@ -328,7 +301,7 @@ export interface ICompanyPortfolio extends ICompanyEntity {
   registerDate: string;
 
   // Contact Persons
-  contactPerson: IContactPerson[];
+  contactPerson: ICompanyUserData[];
 
   // Main Products
   mainProducts: string[];

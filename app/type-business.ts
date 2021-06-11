@@ -1,11 +1,12 @@
-import { IApprovalRule } from "./type-apps"
-import { ICompanyByGapp, ICompanyEntity, ICompanyEntityImmu, IDBCompanyEntity, IDBCompanyPortEntity } from "./type-company"
+import { IApprovalRule, IPersonContactInfo } from "./type-apps"
+import { ICompanyByGapp, ICompanyEntity, ICompanyEntityImmu, IDBCompanyEntity, IDBCompanySupplierEntity } from "./type-company"
 
 export type TUserRole = 'owner' | 'admin' | 'staff' | 'user'
 export type TApproverRole = 'reviewer' | 'approver' | 'none'
 export type TApproverFlow = 'reviewer' | 'approver' | 'none'
 export type TBusinessSize = 'micro' | 'small' | 'medium' | 'large'
 export type TBusinessType = 'manufacturer' | 'wholesaler' | 'retailer'
+export type TGender = 'male' | 'female' | 'neutral'
 
 export interface IDBLogTime {
   createdAt: string
@@ -70,14 +71,46 @@ export interface IAccessScope {
   statement: IAccessStatement[]
 }
 
-// ANCHOR: COMPANY | USER (1/4)
+// REVIEW: BUSINESS | USER (1/4)
+export interface IBusinessUserIdentityImmu {
+  email: string // TODO: check cognito cred
+  mobile: string
+  userRole: TUserRole
+  identityId: string // * from cognito
+  businessId: string
+  username: string // * for check with cognitoIdentityId on REQ
+}
+
+// REVIEW: BUSINESS | USER (2/4)
+export interface IBusinessUserIdentity {
+  fullName: string
+  penName: string // TODO: check cognito
+  businessDept: string
+  businessPosition: string
+}
+
+// REVIEW: BUSINESS | USER (3/4)
+export interface IDBBusinessUserIdentityStatus {
+  isActive: boolean
+}
+
+// REVIEW: BUSINESS | USER (4/4)
+export interface IDBBusinessUserIdentity {
+  companies: string[] // * as Set on DB
+  historyCountOnCompany?: number // * -> DB on ADMIN
+  historyCountOnAdmin?: number // * -> DB on STAFF
+}
+
+// REVIEW: COMPANY | USER (1/6)
 export interface IBusinessCompanyUserIdentityImmu {
+  businessId: string
   companyCode: string
   compId: string
+  username: string
   identityId: string // * same as Business User
   tempPassword?: string // * on STAFF create
 }
-// ANCHOR: COMPANY | USER (2/4)
+// REVIEW: COMPANY | USER (2/6)
 export interface IBusinessCompanyUserIdentity {
   fullName: string
   isDefaultReceiver: boolean // * 1 Company 1 User
@@ -87,46 +120,35 @@ export interface IBusinessCompanyUserIdentity {
   adminUsername?: string // * on STAFF create, update on changed admin
   personalCode: string
 }
-// ANCHOR: COMPANY | USER (3/4)
+// REVIEW: COMPANY | USER (3/6)
 export interface IDBBusinessCompanyUserIdentity {
   userRole: TUserRole
-  username: string
-  businessId: string
+
 }
-// ANCHOR: COMPANY | USER (4/4)
+// REVIEW: COMPANY | USER (4/6)
 export interface IDBBusinessCompanyUserData {
   avatarThumbUrl: string
 }
 
-// ANCHOR: BUSINESS | USER (1/4)
-export interface IBusinessUserIdentityImmu {
-  email: string // TODO: check cognito cred
-  mobile: string
-  userRole: TUserRole
-  identityId: string
-  businessId: string
-  username: string // * for check with cognitoIdentityId on REQ
+// REVIEW: COMPANY | USER (5/6)
+export interface ICompanyUserData {
+  contact: IPersonContactInfo
+  companyDept: string
+  companyPosition: string
+  isKeyContact?: boolean;
+  avatarImageUrl: string // --> avatarThumbUrl
+  nickname: string
+  gender: TGender // default = neutral
+  birthDate: string
 }
 
-// ANCHOR: BUSINESS | USER (2/4)
-export interface IBusinessUserIdentity {
-  fullName: string
-  penName: string // TODO: check cognito
-  businessPosition: string
+// REVIEW: COMPANY | USER (6/6)
+export interface ICompanyUserPrivateData {
+  signatureUrl: string
 }
 
-// ANCHOR: BUSINESS | USER (3/4)
-export interface IDBBusinessUserIdentityStatus {
-  isActive: boolean
-}
 
-// ANCHOR: BUSINESS | USER (4/4)
-export interface IDBBusinessUserIdentity {
-  companies: string[] // * as Set on DB
-  historyCountOnCompany?: number // * -> DB on ADMIN
-  historyCountOnAdmin?: number // * -> DB on STAFF
-}
 
-export interface IBusinessListCompany extends ICompanyEntityImmu, ICompanyEntity, IDBCompanyEntity, IDBCompanyPortEntity, ICompanyByGapp {
+export interface IBusinessListCompany extends ICompanyEntityImmu, ICompanyEntity, IDBCompanyEntity, IDBCompanySupplierEntity, ICompanyByGapp {
   useApprovalWorkflow: TApproverFlow
 }
