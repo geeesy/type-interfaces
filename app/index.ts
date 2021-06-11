@@ -625,7 +625,7 @@ export namespace GappMarket {
   export type ListProductWithSupplier = IProductWithSupplierCard
   export type ListSupplierWithProduct = ISupplierWithProductCard
   export type Product = IProductWithSupplier
-  export type User = IMarketUserIdentity & ICompanyUserData & IDBBusinessCompanyUserIdentity & IDBBusinessCompanyUserData
+  export type User = IMarketUserIdentity & IBusinessCompanyUserIdentityImmu & IDBBusinessCompanyUserIdentity & IDBBusinessCompanyUserData & ICompanyUserData
 }
 
 // REVIEW: G-BIZ | PRODUCT
