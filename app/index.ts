@@ -588,7 +588,7 @@ export namespace GappBusiness {
   export type Owner = IBusinessOwnerIdentity & IBusinessOwnerIdentityImmu & IDBLogTime
   export type DBUpdateOwner = IBusinessOwnerIdentity & IDBUpdateTime
   // * COMPANY
-  export type CreateCompany = ICompanyPublicEntity & ICompanyEntityImmu & ICompanyPrivateEntity
+  export type CreateCompany = ICompanyPublicEntity & ICompanyPrivateEntity & IApiCompanyParams
   export type Company = IDBCompanyEntity & IDBCompanySupplierEntity & ICompanyEntityImmu & ICompanyPublicEntityImmu & ICompanyPublicEntity & ICompanyByGapp & ICompanyPrivateEntity & IDBLogTime
   export type DBUpdateCompany = ICompanyPublicEntity & ICompanyPrivateEntity & IDBUpdateTime
   export type ListCompany = IBusinessListCompany

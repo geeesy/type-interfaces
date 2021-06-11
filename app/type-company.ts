@@ -7,7 +7,7 @@ export interface IApiCompanyParams {
   businessId: string
   compId: string
   identityId: string
-  companyCode?: string // ? on port create
+  companyCode: string
 }
 
 export interface IApiSupplierParams {
