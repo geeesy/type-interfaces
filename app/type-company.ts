@@ -1,5 +1,5 @@
 import { IPersonContactInfo } from './type-apps';
-import { ICompanyUserData, TApproverFlow, TBusinessSize, TBusinessType } from './type-business';
+import { ICompanyUserData, TApproverFlow, TBusinessSize, TBusinessTypes } from './type-business';
 import { IPaymentMethod, IShippingZone } from './type-console';
 
 /* #region COMPANY */
@@ -123,7 +123,7 @@ export interface ICompanyMetric {
   employee: string[];
   capital: number;
   businessSize: TBusinessSize;
-  businessTypes: TBusinessType[];
+  businessTypes: TBusinessTypes[];
 }
 
 export interface ICompanyBadge {
@@ -283,7 +283,7 @@ export interface ICompanyEntity {
 // NOTE: Not show on public
 export interface ICompanyPrivateEntity {
   companyStampUrl: string
-  companyTypes: TBusinessType[]
+  companyTypes: TBusinessTypes[]
   companySize: TBusinessSize
   companyInterests: string[]
   useApprovalWorkflow: TApproverFlow

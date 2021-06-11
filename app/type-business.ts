@@ -5,7 +5,7 @@ export type TUserRole = 'owner' | 'admin' | 'staff' | 'user'
 export type TApproverRole = 'reviewer' | 'approver' | 'none'
 export type TApproverFlow = 'reviewer' | 'approver' | 'none'
 export type TBusinessSize = 'micro' | 'small' | 'medium' | 'large' | 'none'
-export type TBusinessType = 'manufacturer' | 'wholesaler' | 'retailer' | 'none'
+export type TBusinessTypes = 'manufacturer' | 'wholesaler' | 'retailer'
 export type TGender = 'male' | 'female' | 'neutral'
 
 export interface IDBLogTime {
@@ -31,7 +31,7 @@ export interface IBusinessEntity {
   businessCategoryId: string // * <-- include other id = OTHER000
   businessCategoryCustomName?: string
   businessLogoUrl: string // * replaced with Scale down (empty on create) 
-  businessTypes: TBusinessType[]
+  businessTypes: TBusinessTypes[]
   businessSize: TBusinessSize
   website: string
   interests: string[]
