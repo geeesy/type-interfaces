@@ -616,7 +616,7 @@ export namespace GappBiz {
   export type Certificate = IDBCertificate
   export type PublishOnMarket = IPublishParams
   export type PublishOnHub = IPublishParams
-  export type Company = ICompanyPublicEntity & IDBCompanyEntity & ICompanyByGapp & ICompanyEntityImmu
+  export type Company = ICompanyPublicEntity & IDBCompanyEntity & ICompanyByGapp & ICompanyEntityImmu & ICompanyPublicEntityImmu
   export type CreatePortfolio = IPortfolio & IApiCompanyParams
   export type DBUpdatePortfolio = IPortfolio & IDBUpdateTime
   export type Portfolio = IPortfolio & ICompanyEntityImmu & IDBLogTime & IPortfolioImmu
@@ -655,7 +655,7 @@ export namespace GappSetting {
   export type CreatePriceList = ISettingCreatePriceList & IApiCompanyParams
   export type PriceList = ISettingPriceList
   export type Document = ISettingDoc
-  export type CompanyInfo = ICompanyPublicEntity & IDBCompanyEntity & IDBCompanySupplierEntity & ICompanyByGapp & ICompanyEntityImmu
+  export type CompanyInfo = ICompanyPublicEntity & IDBCompanyEntity & IDBCompanySupplierEntity & ICompanyByGapp & ICompanyEntityImmu & ICompanyPublicEntityImmu
   export type DBUpdateCompanyInfo = ICompanyPublicEntity & IDBCompanyEntity & IDBUpdateTime
   export type CreateCompanyPort = IPortfolio & ICompanyEntityImmu // FIXME: IApiCompanyParam
   export type CompanyPort = IPortfolio & IDBCompanySupplierEntity & ISupplierByGapp & ICompanyEntityImmu & IDBLogTime
