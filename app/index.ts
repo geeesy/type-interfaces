@@ -194,7 +194,7 @@ import {
   IConsoleSupplier,
   IConsoleSupplierCreate,
   IConsoleSupplierList,
-  IPaymentMethod,
+  IPaymentMethod
 } from './type-console'
 import { ICategoryList, IDBProduct, IDBProductImmu, IDBProductVariantOnlyImmu, IMainCategory, IProductAttributes, IProductEntity, IProductList, IProductPackInVariant, IProductPackOnly, IProductRootEntity, IProductVariantAttributes, IProductVariantEntity, IProductVariantInPack, IResMainCategory, IResSubCategory, ISubCategory } from './type-catalog'
 import { IApiCompanyParams, IApiSupplierParams, ICertificate, ICompanyByGapp, ICompanyCreateSalesRep, ICompanyEntity, ICompanyEntityImmu, ICompanyPortfolio, ICompanyPortfolioImmu, ICompanyPrivateEntity, ICompanySalesRep, IDBCertificate, IDBCompanyEntity, IDBCompanySupplierEntity, IDBDocument, IDocument, IPublishParams, ISettingCreatePriceGroup, ISettingCreatePriceList, ISettingDoc, ISettingPriceGroup, ISettingPriceList } from './type-company'
@@ -356,8 +356,6 @@ export namespace GeeesyMarketplace {
 }
 /* #endregion */
 
-
-
 export namespace GeeesyCatalog {
   export type ResMainCategory = IResMainCategory | IMainCategory
   export type MainCategory = IMainCategory
@@ -368,7 +366,6 @@ export namespace GeeesyCatalog {
 
 // REVIEW: G-BIZ
 export namespace GeeesyApps {
-
 
   /**
    * @description
@@ -434,7 +431,7 @@ export namespace GeeesyApps {
   export type QuotationFormSubmit = IQuotationFormCreate &
     IQuotationFormCreateParams & IApiCompanyParams & IDBCompanyDocHeader; // REVIEW: Quotation Type D | Create
   export type QuotationRfqFormSubmit = IQuotationRfqFormCreate &
-    IQuotationFormCreateParams & IApiCompanyParams & IDBCompanyDocHeader; //FIXME
+    IQuotationFormCreateParams & IApiCompanyParams & IDBCompanyDocHeader; // FIXME
 
   export type ResQuotationList = IResQuotationList | IQuotationList
   export type QuotationList = IQuotationList
@@ -633,9 +630,8 @@ export namespace GappMarket {
   export type ListProductWithSupplier = IProductWithSupplierCard
   export type ListSupplierWithProduct = ISupplierWithProductCard
   export type Product = IProductWithSupplier
-  export type User = IMarketUserIdentity
+  export type User = IMarketUserIdentity & ICompanyUserData & IDBBusinessCompanyUserIdentity & IDBBusinessCompanyUserData
 }
-
 
 // REVIEW: G-BIZ | PRODUCT
 export namespace GappInventory {
