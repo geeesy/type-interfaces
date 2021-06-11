@@ -1,5 +1,5 @@
 import { IApprovalRule, IPersonContactInfo } from './type-apps'
-import { ICompanyByGapp, ICompanyEntityImmu, ICompanyPublicEntity, IDBCompanyEntity, IDBCompanySupplierEntity } from './type-company'
+import { ICompanyByGapp, ICompanyEntityImmu, ICompanyPublicEntity, ICompanyPublicEntityImmu, IDBCompanyEntity, IDBCompanySupplierEntity } from './type-company'
 
 export type TUserRole = 'owner' | 'admin' | 'staff' | 'user'
 export type TApproverRole = 'reviewer' | 'approver' | 'none'
@@ -146,6 +146,6 @@ export interface ICompanyUserPrivateData {
   signatureUrl: string
 }
 
-export interface IBusinessListCompany extends ICompanyEntityImmu, ICompanyPublicEntity, IDBCompanyEntity, IDBCompanySupplierEntity, ICompanyByGapp {
+export interface IBusinessListCompany extends ICompanyEntityImmu, ICompanyPublicEntity, ICompanyPublicEntityImmu, IDBCompanyEntity, IDBCompanySupplierEntity, ICompanyByGapp {
   useApprovalWorkflow: TApproverFlow
 }
