@@ -585,18 +585,21 @@ export namespace GappBusiness {
   export type CreateBusiness = IBusinessEntityImmu & IBusinessEntity & IBusinessOwnerIdentity & IBusinessOwnerIdentityImmu
   export type Business = IBusinessEntityImmu & IBusinessEntity & IDBLogTime
   export type DBUpdateBusiness = IBusinessEntity & IDBUpdateTime
+  // * BUSINESS OWNER
   export type Owner = IBusinessOwnerIdentity & IBusinessOwnerIdentityImmu & IDBLogTime
   export type DBUpdateOwner = IBusinessOwnerIdentity & IDBUpdateTime
+  // * BUSINESS USER
+  export type CreateBusinessUser = IBusinessUserIdentityImmu & IBusinessUserIdentity
+  export type DBCreateUser = IBusinessUserIdentityImmu & IBusinessUserIdentity & IDBBusinessUserIdentityStatus & IDBLogTime
+  export type User = IBusinessUserIdentityImmu & IBusinessUserIdentity & IDBBusinessUserIdentityStatus & IDBBusinessUserIdentity & IDBLogTime
+  export type DBUpdateUser = IBusinessUserIdentity & IDBBusinessUserIdentityStatus & IDBUpdateTime
   // * COMPANY
   export type CreateCompany = ICompanyPublicEntity & ICompanyPrivateEntity & IApiCompanyParams
   export type Company = IDBCompanyEntity & IDBCompanySupplierEntity & ICompanyEntityImmu & ICompanyPublicEntityImmu & ICompanyPublicEntity & ICompanyByGapp & ICompanyPrivateEntity & IDBLogTime
   export type DBUpdateCompany = ICompanyPublicEntity & ICompanyPrivateEntity & IDBUpdateTime
   export type ListCompany = IBusinessListCompany
-  // * USER
-  export type CreateBusinessUser = IBusinessUserIdentityImmu & IBusinessUserIdentity
-  export type DBCreateUser = IBusinessUserIdentityImmu & IBusinessUserIdentity & IDBBusinessUserIdentityStatus & IDBLogTime
-  export type User = IBusinessUserIdentityImmu & IBusinessUserIdentity & IDBBusinessUserIdentityStatus & IDBBusinessUserIdentity & IDBLogTime
-  export type DBUpdateUser = IBusinessUserIdentity & IDBBusinessUserIdentityStatus & IDBUpdateTime
+
+  // * COMPANY USER
   export type CreateCompanyUser = IBusinessUserIdentityImmu & IBusinessUserIdentity & IBusinessCompanyUserIdentityImmu & IBusinessCompanyUserIdentity & IDBBusinessCompanyUserIdentity & ICompanyUserData
   export type DBUpdateCompanyUser = IBusinessCompanyUserIdentity & ICompanyUserData & IDBUpdateTime
   export type ListCompanyUser = IBusinessCompanyUserIdentityImmu & IBusinessCompanyUserIdentity & IDBBusinessCompanyUserIdentity & IDBBusinessCompanyUserData

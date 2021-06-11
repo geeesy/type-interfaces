@@ -91,6 +91,7 @@ export interface IMapLocation {
 }
 
 export interface ICompanyContactInfo {
+  companyName: string
   companyPhones: string[];
   companyWebsite: string;
   companyEmails: string[];
