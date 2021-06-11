@@ -197,7 +197,7 @@ import {
   IPaymentMethod
 } from './type-console'
 import { ICategoryList, IDBProduct, IDBProductImmu, IDBProductVariantOnlyImmu, IMainCategory, IProductAttributes, IProductEntity, IProductList, IProductPackInVariant, IProductPackOnly, IProductRootEntity, IProductVariantAttributes, IProductVariantEntity, IProductVariantInPack, IResMainCategory, IResSubCategory, ISubCategory } from './type-catalog'
-import { IApiCompanyParams, IApiSupplierParams, ICertificate, ICompanyByGapp, ICompanyCreateSalesRep, ICompanyEntityImmu, ICompanyPortfolioImmu, ICompanyPrivateEntity, ICompanyPublicEntity, ICompanyPublicEntityImmu, ICompanySalesRep, IDBCertificate, IDBCompanyEntity, IDBCompanySupplierEntity, IDBDocument, IDocument, IPortfolio, IPublishParams, ISettingCreatePriceGroup, ISettingCreatePriceList, ISettingDoc, ISettingPriceGroup, ISettingPriceList, ISupplierByGapp } from './type-company'
+import { IApiCompanyParams, IApiSupplierParams, ICertificate, ICompanyByGapp, ICompanyCreateSalesRep, ICompanyEntityImmu, ICompanyPrivateEntity, ICompanyPublicEntity, ICompanyPublicEntityImmu, ICompanySalesRep, IDBCertificate, IDBCompanyEntity, IDBCompanySupplierEntity, IDBDocument, IDocument, IPortfolio, IPortfolioImmu, IPublishParams, ISettingCreatePriceGroup, ISettingCreatePriceList, ISettingDoc, ISettingPriceGroup, ISettingPriceList, ISupplierByGapp } from './type-company'
 import { IBusinessCompanyUserIdentity, IBusinessCompanyUserIdentityImmu, IBusinessEntity, IBusinessEntityImmu, IBusinessListCompany, IBusinessOwnerIdentity, IBusinessOwnerIdentityImmu, IBusinessUserIdentity, IBusinessUserIdentityImmu, ICompanyUserData, ICompanyUserPrivateData, IDBBusinessCompanyUserData, IDBBusinessCompanyUserIdentity, IDBBusinessUserIdentity, IDBBusinessUserIdentityStatus, IDBLogTime, IDBUpdateTime } from './type-business'
 
 /* #region FIXME: Marketplace */
@@ -616,7 +616,7 @@ export namespace GappBiz {
   export type Company = ICompanyPublicEntity & IDBCompanyEntity & ICompanyByGapp & ICompanyEntityImmu
   export type CreatePortfolio = IPortfolio & IApiCompanyParams
   export type DBUpdatePortfolio = IPortfolio & IDBUpdateTime
-  export type Portfolio = IPortfolio & ICompanyEntityImmu & IDBLogTime & ICompanyPortfolioImmu
+  export type Portfolio = IPortfolio & ICompanyEntityImmu & IDBLogTime & IPortfolioImmu
 }
 
 // REVIEW: G-MARKET

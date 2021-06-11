@@ -340,9 +340,19 @@ export interface IPortfolio {
   // Pages
   customPages: ICustomPage[];
 
+  // Display
+  display: ISupplierDisplay
+
 }
 
-export interface ICompanyPortfolioImmu {
+export interface ISupplierDisplay {
+  showFactory: boolean
+  showDocuments: boolean
+  showCertificates: boolean
+
+}
+
+export interface IPortfolioImmu {
   portId: string
 }
 
