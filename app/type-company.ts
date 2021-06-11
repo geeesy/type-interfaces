@@ -230,30 +230,34 @@ export interface ICompanyByGapp {
   impFactor: number;
 }
 
-// REVIEW: COMPANY | Entity (1/4)
+// REVIEW: COMPANY | Entity (1/5)
 // NOTE: Init on company create, updated in G-BIZ
 export interface IDBCompanyEntity {
   haveCompletedInfo: boolean //* === false on Create (changed only once)
   haveDefaultReceiver: boolean //* === false on Create
 }
 
-// REVIEW: COMPANY | Entity (2/4)
+// REVIEW: COMPANY | Entity (2/5)
 export interface IDBCompanySupplierEntity {
   havePortfolio: boolean; // * to check port init , false on Create (changed only once)
   onMarket: boolean; // * false on Create
   onHub: boolean; // * false on Create
 }
 
-// REVIEW: COMPANY | Entity (3/4)
+// REVIEW: COMPANY | Entity (3/5)
 export interface ICompanyEntityImmu {
   companyCode: string; // ! use on Cognito with tenantId
-  compId: string; // * gen on client
   businessId: string // * <== tenantId (Cognito)
+}
+
+// REVIEW: COMPANY | Entity (4/5)
+export interface ICompanyPublicEntityImmu {
+  compId: string; // * gen on client
   supplierId: string // * init on company creation
 }
 
-// REVIEW: COMPANY | Entity (4/4)
-export interface ICompanyEntity {
+// REVIEW: COMPANY | Entity (5/5)
+export interface ICompanyPublicEntity {
   companyName: string; // TODO: update on cognito?
 
   companyCategoryId: string;
@@ -281,6 +285,7 @@ export interface ICompanyPrivateEntity {
   useApprovalWorkflow: TApproverFlow
 }
 
+// REVIEW: SUPPLIER | GAPP
 export interface ISupplierByGapp {
   isVerified: boolean;
   rating: number;
@@ -290,10 +295,9 @@ export interface ISupplierByGapp {
   impFactor: number;
 }
 
-// ANCHOR: SUPPLIER
-// NOTE: === g-biz -> Company Info (Update)
-// NOTE === g-biz -> Portfolio (Create)
-export interface ICompanyPortfolio extends ICompanyEntity {
+// REVIEW: SUPPLIER | Detail
+// NOTE: Init on company creation
+export interface IPortfolio {
 
   overview: string;
   description: string;

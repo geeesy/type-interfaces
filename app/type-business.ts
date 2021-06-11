@@ -1,5 +1,5 @@
-import { IApprovalRule, IPersonContactInfo } from "./type-apps"
-import { ICompanyByGapp, ICompanyEntity, ICompanyEntityImmu, IDBCompanyEntity, IDBCompanySupplierEntity } from "./type-company"
+import { IApprovalRule, IPersonContactInfo } from './type-apps'
+import { ICompanyByGapp, ICompanyEntityImmu, ICompanyPublicEntity, IDBCompanyEntity, IDBCompanySupplierEntity } from './type-company'
 
 export type TUserRole = 'owner' | 'admin' | 'staff' | 'user'
 export type TApproverRole = 'reviewer' | 'approver' | 'none'
@@ -30,7 +30,7 @@ export interface IBusinessEntity {
   businessName: string
   businessCategoryId: string // * <-- include other id = OTHER000
   businessCategoryCustomName?: string
-  businessLogoUrl: string // * replaced with Scale down (empty on create) 
+  businessLogoUrl: string // * replaced with Scale down (empty on create)
   businessTypes: TBusinessTypes[]
   businessSize: TBusinessSize
   website: string
@@ -49,7 +49,6 @@ export interface IBusinessOwnerIdentity {
   ownerName: string
   avatarThumbUrl: string
 }
-
 
 export type TAccessStatementAction = 'rfi' | 'rfq' | 'sales' | 'purchases' | 'finance' | 'products'
 export type TAccessScope = 'rfi' | 'rfq' | 'sales' | 'purchases' | 'finance' | 'products'
@@ -147,8 +146,6 @@ export interface ICompanyUserPrivateData {
   signatureUrl: string
 }
 
-
-
-export interface IBusinessListCompany extends ICompanyEntityImmu, ICompanyEntity, IDBCompanyEntity, IDBCompanySupplierEntity, ICompanyByGapp {
+export interface IBusinessListCompany extends ICompanyEntityImmu, ICompanyPublicEntity, IDBCompanyEntity, IDBCompanySupplierEntity, ICompanyByGapp {
   useApprovalWorkflow: TApproverFlow
 }

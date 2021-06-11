@@ -1,4 +1,4 @@
-import { ICompanyEntity } from "./type-company";
+import { ICompanyPublicEntity } from './type-company'
 
 /**
  * STUB: Version 5.x
@@ -9,7 +9,7 @@ import { ICompanyEntity } from "./type-company";
   */
 // ANCHOR: SUPPLIER | Create
 // NOTE: === console -> Create Supplier
-export interface IConsoleSupplierCreate extends ICompanyEntity {
+export interface IConsoleSupplierCreate extends ICompanyPublicEntity {
 }
 
 // REVIEW: SUPPLIER
@@ -90,7 +90,6 @@ export interface IConsoleSubCategory extends ICategoryCreateSub {
   createdAt: string
   updatedAt: string
 }
-
 
 export interface ICreateProductCategorySpec {
   specGroupName: string;

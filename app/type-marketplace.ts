@@ -1,6 +1,6 @@
 import { IResAPI } from './interfaces'
-import { IDBProduct, IProductAttributes, IProductEntity, IProductList, IProductRootEntity } from './type-catalog';
-import { ICompanyByGapp, ICompanyContactInfo, ICompanyEntity, ICompanyPortfolio } from './type-company';
+import { IDBProduct, IProductAttributes, IProductEntity, IProductList, IProductRootEntity } from './type-catalog'
+import { ICompanyByGapp, ICompanyContactInfo, ICompanyPublicEntity } from './type-company'
 
 // REVIEW: USER
 export interface IMarketUserIdentity {
@@ -20,7 +20,7 @@ export interface IProductInSupplierCard
   supplierId: string
 }
 
-export interface ISupplierCard extends ICompanyEntity, ICompanyByGapp {
+export interface ISupplierCard extends ICompanyPublicEntity, ICompanyByGapp {
   contact: ICompanyContactInfo
   supplierId: string
   compId?: string
@@ -41,11 +41,9 @@ export interface IProductWithSupplier {
   product: IDBProduct & IProductRootEntity & IProductEntity & IProductAttributes
   supplier: ISupplierCard
 
-
   // productCurrencyCode?: string; // ?
   // packSizeLabel: string;
   // packSizeQty: number;
-
 
   // productGroups: IProductGroup;
 
@@ -55,7 +53,7 @@ export interface IProductWithSupplier {
   // productCategory: ISupProductCat;
 }
 
-// ANCHOR: 
+// ANCHOR:
 
 export interface IResSupProductCat {
   message: string;
@@ -264,12 +262,9 @@ export interface ISavedListSuppliers {
 
 // REVIEW: SUPPLIER
 // NOTE: === g-biz -> Publish to Market
-export interface ISupplierPort extends ICompanyPortfolio {
-  onMarket: boolean
+export interface ISupplierData {
   onMarketAt: string
-  products?: IProductInSupplierCard[];
 }
-
 
 export interface IProductWithOutSupplier {
   productIds: string;
@@ -847,8 +842,6 @@ export interface IResSearchFilter extends IResAPI {
 }
 
 /* #endregion */
-
-
 
 export interface IResBanner {
   messages: string;

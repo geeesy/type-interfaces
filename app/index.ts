@@ -87,11 +87,11 @@ import {
   ISurvey,
   ITop20Products,
   IWholesale,
-  ISupplierPort,
   IProductWithSupplier,
   IProductWithSupplierCard,
   ISupplierWithProductCard,
-  IMarketUserIdentity
+  IMarketUserIdentity,
+  ISupplierData
 } from './type-marketplace'
 import {
   IApprover,
@@ -197,7 +197,7 @@ import {
   IPaymentMethod
 } from './type-console'
 import { ICategoryList, IDBProduct, IDBProductImmu, IDBProductVariantOnlyImmu, IMainCategory, IProductAttributes, IProductEntity, IProductList, IProductPackInVariant, IProductPackOnly, IProductRootEntity, IProductVariantAttributes, IProductVariantEntity, IProductVariantInPack, IResMainCategory, IResSubCategory, ISubCategory } from './type-catalog'
-import { IApiCompanyParams, IApiSupplierParams, ICertificate, ICompanyByGapp, ICompanyCreateSalesRep, ICompanyEntity, ICompanyEntityImmu, ICompanyPortfolio, ICompanyPortfolioImmu, ICompanyPrivateEntity, ICompanySalesRep, IDBCertificate, IDBCompanyEntity, IDBCompanySupplierEntity, IDBDocument, IDocument, IPublishParams, ISettingCreatePriceGroup, ISettingCreatePriceList, ISettingDoc, ISettingPriceGroup, ISettingPriceList, ISupplierByGapp } from './type-company'
+import { IApiCompanyParams, IApiSupplierParams, ICertificate, ICompanyByGapp, ICompanyCreateSalesRep, ICompanyEntityImmu, ICompanyPortfolioImmu, ICompanyPrivateEntity, ICompanyPublicEntity, ICompanyPublicEntityImmu, ICompanySalesRep, IDBCertificate, IDBCompanyEntity, IDBCompanySupplierEntity, IDBDocument, IDocument, IPortfolio, IPublishParams, ISettingCreatePriceGroup, ISettingCreatePriceList, ISettingDoc, ISettingPriceGroup, ISettingPriceList, ISupplierByGapp } from './type-company'
 import { IBusinessCompanyUserIdentity, IBusinessCompanyUserIdentityImmu, IBusinessEntity, IBusinessEntityImmu, IBusinessListCompany, IBusinessOwnerIdentity, IBusinessOwnerIdentityImmu, IBusinessUserIdentity, IBusinessUserIdentityImmu, ICompanyUserData, ICompanyUserPrivateData, IDBBusinessCompanyUserData, IDBBusinessCompanyUserIdentity, IDBBusinessUserIdentity, IDBBusinessUserIdentityStatus, IDBLogTime, IDBUpdateTime } from './type-business'
 
 /* #region FIXME: Marketplace */
@@ -588,9 +588,9 @@ export namespace GappBusiness {
   export type Owner = IBusinessOwnerIdentity & IBusinessOwnerIdentityImmu & IDBLogTime
   export type DBUpdateOwner = IBusinessOwnerIdentity & IDBUpdateTime
   // * COMPANY
-  export type CreateCompany = ICompanyEntity & ICompanyEntityImmu & ICompanyPrivateEntity
-  export type Company = ICompanyEntity & ICompanyEntityImmu & ICompanyPrivateEntity & IDBCompanyEntity & IDBCompanySupplierEntity & ICompanyByGapp & IDBLogTime
-  export type DBUpdateCompany = ICompanyEntity & ICompanyPrivateEntity & IDBUpdateTime
+  export type CreateCompany = ICompanyPublicEntity & ICompanyEntityImmu & ICompanyPrivateEntity
+  export type Company = IDBCompanyEntity & IDBCompanySupplierEntity & ICompanyEntityImmu & ICompanyPublicEntityImmu & ICompanyPublicEntity & ICompanyByGapp & ICompanyPrivateEntity & IDBLogTime
+  export type DBUpdateCompany = ICompanyPublicEntity & ICompanyPrivateEntity & IDBUpdateTime
   export type ListCompany = IBusinessListCompany
   // * USER
   export type CreateBusinessUser = IBusinessUserIdentityImmu & IBusinessUserIdentity
@@ -604,8 +604,7 @@ export namespace GappBusiness {
 
 export namespace GappBiz {
   export type User = IBusinessCompanyUserIdentityImmu & IBusinessCompanyUserIdentity & IDBBusinessCompanyUserIdentity & IDBBusinessCompanyUserData & ICompanyUserData & ICompanyUserPrivateData & IDBLogTime
-  export type Supplier = ISupplierPort & ISupplierByGapp & IDBCompanySupplierEntity & ICompanyEntityImmu & IDBLogTime // FIXME
-  export type DBUpdateSupplier = ICompanyPortfolio & IDBUpdateTime
+  export type DBUpdateSupplier = IPortfolio & IDBUpdateTime
   export type CreateSupplierDocument = IDocument & IApiCompanyParams
   export type CreateSupplierCertificate = ICertificate & IApiCompanyParams
   export type DBUpdateSupplierDocument = IDocument & IDBUpdateTime
@@ -614,15 +613,15 @@ export namespace GappBiz {
   export type Certificate = IDBCertificate
   export type PublishOnMarket = IPublishParams
   export type PublishOnHub = IPublishParams
-  export type Company = ICompanyEntity & IDBCompanyEntity & ICompanyByGapp & ICompanyEntityImmu
-  export type CreatePortfolio = ICompanyPortfolio & IApiCompanyParams
-  export type DBUpdatePortfolio = ICompanyPortfolio & IDBUpdateTime
-  export type Portfolio = ICompanyPortfolio & ICompanyEntityImmu & IDBLogTime & ICompanyPortfolioImmu
+  export type Company = ICompanyPublicEntity & IDBCompanyEntity & ICompanyByGapp & ICompanyEntityImmu
+  export type CreatePortfolio = IPortfolio & IApiCompanyParams
+  export type DBUpdatePortfolio = IPortfolio & IDBUpdateTime
+  export type Portfolio = IPortfolio & ICompanyEntityImmu & IDBLogTime & ICompanyPortfolioImmu
 }
 
 // REVIEW: G-MARKET
 export namespace GappMarket {
-  export type Supplier = ISupplierPort & ISupplierByGapp & IDBCompanySupplierEntity & ICompanyEntityImmu & IDBLogTime // FIXME
+  export type Supplier = ISupplierData & IPortfolio & ISupplierByGapp & IDBCompanySupplierEntity & ICompanyPublicEntityImmu & ICompanyPublicEntity & IDBLogTime
   export type ListProductWithSupplier = IProductWithSupplierCard
   export type ListSupplierWithProduct = ISupplierWithProductCard
   export type Product = IProductWithSupplier
@@ -653,11 +652,11 @@ export namespace GappSetting {
   export type CreatePriceList = ISettingCreatePriceList & IApiCompanyParams
   export type PriceList = ISettingPriceList
   export type Document = ISettingDoc
-  export type CompanyInfo = ICompanyEntity & IDBCompanyEntity & IDBCompanySupplierEntity & ICompanyByGapp & ICompanyEntityImmu
-  export type DBUpdateCompanyInfo = ICompanyEntity & IDBCompanyEntity & IDBUpdateTime
-  export type CreateCompanyPort = ICompanyPortfolio & ICompanyEntityImmu // FIXME: IApiCompanyParam
-  export type CompanyPort = ICompanyPortfolio & IDBCompanySupplierEntity & ISupplierByGapp & ICompanyEntityImmu & IDBLogTime
-  export type DBUpdateCompanyPort = ICompanyPortfolio & IDBCompanySupplierEntity & IDBUpdateTime
+  export type CompanyInfo = ICompanyPublicEntity & IDBCompanyEntity & IDBCompanySupplierEntity & ICompanyByGapp & ICompanyEntityImmu
+  export type DBUpdateCompanyInfo = ICompanyPublicEntity & IDBCompanyEntity & IDBUpdateTime
+  export type CreateCompanyPort = IPortfolio & ICompanyEntityImmu // FIXME: IApiCompanyParam
+  export type CompanyPort = IPortfolio & IDBCompanySupplierEntity & ISupplierByGapp & ICompanyEntityImmu & IDBLogTime
+  export type DBUpdateCompanyPort = IPortfolio & IDBCompanySupplierEntity & IDBUpdateTime
   export type ListAdminStaff = IBusinessCompanyUserIdentityImmu & IBusinessCompanyUserIdentity & IDBBusinessCompanyUserIdentity & IDBBusinessCompanyUserData
   export type CreateAdminStaff = IBusinessUserIdentityImmu & IBusinessUserIdentity & IBusinessCompanyUserIdentityImmu & IBusinessCompanyUserIdentity & IDBBusinessCompanyUserIdentity & ICompanyUserData
   export type CountDocument = IDocWorkCount & IDocFinanceCount
