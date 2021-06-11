@@ -4,8 +4,8 @@ import { ICompanyByGapp, ICompanyEntity, ICompanyEntityImmu, IDBCompanyEntity, I
 export type TUserRole = 'owner' | 'admin' | 'staff' | 'user'
 export type TApproverRole = 'reviewer' | 'approver' | 'none'
 export type TApproverFlow = 'reviewer' | 'approver' | 'none'
-export type TBusinessSize = 'micro' | 'small' | 'medium' | 'large'
-export type TBusinessType = 'manufacturer' | 'wholesaler' | 'retailer'
+export type TBusinessSize = 'micro' | 'small' | 'medium' | 'large' | 'none'
+export type TBusinessType = 'manufacturer' | 'wholesaler' | 'retailer' | 'none'
 export type TGender = 'male' | 'female' | 'neutral'
 
 export interface IDBLogTime {
