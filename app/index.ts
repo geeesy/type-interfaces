@@ -613,8 +613,8 @@ export namespace GappBiz {
   export type DBUpdateSupplierCertificate = ICertificate & IDBUpdateTime
   export type Document = IDBDocument
   export type Certificate = IDBCertificate
-  export type PublishOnMarket = IPublishParams
-  export type PublishOnHub = IPublishParams
+  export type PublishOnMarket = IPublishParams & IDBCompanySupplierEntity
+  export type PublishOnHub = IPublishParams & IDBCompanySupplierEntity
   export type Company = GappBusiness.Company // * COMPANY
   export type CreatePortfolio = IPortfolio & IApiCompanyParams
   export type DBUpdatePortfolio = IPortfolio & IDBUpdateTime
@@ -623,7 +623,7 @@ export namespace GappBiz {
 
 // REVIEW: G-MARKET
 export namespace GappMarket {
-  export type Supplier = ISupplierData & IPortfolio & ISupplierByGapp & IDBCompanySupplierEntity & ICompanyPublicEntityImmu & ICompanyPublicEntity & IDBLogTime
+  export type Supplier = ISupplierData & IPortfolio & ISupplierByGapp & IDBCompanySupplierEntity & ICompanyPublicEntityImmu & ICompanyPublicEntity & IDBLogTime // * SUPPLIER
   export type ListProductWithSupplier = IProductWithSupplierCard
   export type ListSupplierWithProduct = ISupplierWithProductCard
   export type Product = IProductWithSupplier
