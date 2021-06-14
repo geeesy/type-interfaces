@@ -615,7 +615,7 @@ export namespace GappBiz {
   export type Certificate = IDBCertificate
   export type PublishOnMarket = IPublishParams
   export type PublishOnHub = IPublishParams
-  export type Company = ICompanyPublicEntity & IDBCompanyEntity & ICompanyByGapp & ICompanyEntityImmu & ICompanyPublicEntityImmu
+  export type Company = GappBusiness.Company
   export type CreatePortfolio = IPortfolio & IApiCompanyParams
   export type DBUpdatePortfolio = IPortfolio & IDBUpdateTime
   export type Portfolio = IPortfolio & ICompanyEntityImmu & IDBLogTime & IPortfolioImmu
