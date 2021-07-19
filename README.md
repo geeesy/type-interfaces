@@ -53,7 +53,3 @@ export class AnyService {
 ```
 ...
 
-update dev and pr to master
-update master
-update master again
-update by ddotdev
