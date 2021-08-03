@@ -574,7 +574,7 @@ export namespace GappConsole {
   export type Category = ICategoryByGapp & IDBCategoryImmu & IDBCategory & ICategoryEntity & IDBLogTime
   export type ListCategory = IDBCategoryImmu & ICategoryEntity
   // * SUPPLIER
-  export type CreateSupplier = ISupplierByGapp & ISupplierData & IPortfolio
+  export type CreateSupplier = ISupplierByGapp & ISupplierData & IPortfolio & ICompanyPublicEntity
   export type Supplier = GappMarket.Supplier
   export type ListSupplier = ICompanyPublicEntityImmu & ICompanyPublicEntity
   // * PRODUCT SPECIFICATION
