@@ -1,43 +1,3 @@
-import { IConsoleCategoryList, IConsoleMainCategory, IConsoleSubCategory, ICreateProductCategorySpec } from './type-console'
-import { IResAPI } from './interfaces'
-
-/**
- * STUB: Version 5.x
- */
-
-/**
- * CATEGORY
- * <VIEW>
- */
-// ANCHOR: CATEGORY | View Main
-// NOTE: === <-- console - Category
-export interface IMainCategory extends IConsoleMainCategory {
-
-}
-// ANCHOR: CATEGORY | View Sub
-// NOTE: === <-- console - Category
-export interface ISubCategory extends IConsoleSubCategory {
-
-}
-
-export interface ICategoryList extends IConsoleCategoryList {
-
-}
-
-export interface IResMainCategory extends IResAPI {
-  data: IMainCategory[]
-}
-
-export interface IResSubCategory extends IResAPI {
-  data: ISubCategory[]
-}
-
-// * Product
-export interface IProductCategory extends ISubCategory {
-  productUnits: string[]
-  productSpec: ICreateProductCategorySpec[]
-}
-
 export interface IPriceList {
   priceListId: string
   price: number
@@ -240,7 +200,6 @@ export interface IProductVariantAttributes {
   variantSelectors: IProductVariantSelector[]
   variants: IProductVariantOnly[]
 }
-
 
 export interface IProductVariantSelector {
   variantGroupName: string

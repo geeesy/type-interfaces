@@ -1,10 +1,6 @@
 import { ICompanyPublicEntity } from './type-company'
 
 /**
- * STUB: Version 5.x
- */
-
-/**
   * SUPPLIER
   */
 // ANCHOR: SUPPLIER | Create
@@ -29,71 +25,67 @@ export interface IConsoleSupplierList {
 /**
  * CATEGORY
  */
-// ANCHOR: CATEGORY | List
-export interface IRefCategoryList {
-  categoryName: string
-  categoryImageUrl: string;
-  categoryIconUrl: string;
+
+// ANCHOR: CATEGORY | Entity (1/4)
+export interface ICategoryByGapp {
   isRecommend: boolean;
   isHighLight: boolean
   isNewArrival: boolean
   impFactor: number;
-  categoryCaption: string
-  parentCatId: string // have or empty string
 }
 
-// ANCHOR: CATEGORY | Create
-// NOTE: === console -> Create Category
+// ANCHOR: CATEGORY | Entity (2/4)
+export interface IDBCategoryImmu {
+  categoryId: string;
+}
+
+// ANCHOR: CATEGORY | Entity (3/4)
+export interface IDBCategory {
+  countSuppliers: number
+  countProducts: number
+}
+
+// ANCHOR: CATEGORY | Entity (4/4)
 export interface ICategoryEntity {
+  categoryName: string
+  categoryImageUrl: string;
+  categoryIconUrl: string;
   categoryDescription: string;
   categoryBannersUrl: string[];
+  categoryCaption: string
+  parentCatId: string // have or empty string
+  isMainCategory: boolean
+  onHomepage?: boolean // main
+  themeColor?: string // main
+  color?: string // main
+  onParentCatCard?: boolean // sub
 }
 
-export interface IConsoleCategoryList extends IRefCategoryList {
-  categoryId: string;
-  countSuppliers: number
-  countProducts: number
+export interface IApiCategoryParams {
+  isMainCat: boolean
+  marketCode: string
 }
 
-export interface ICategoryCreateParams {
-  isMainCat: boolean // * -> check condition
-  marketCode: string // * -> check condition
+// ANCHOR: CATEGORY | PRODUCT SPECIFICATION
+
+// ANCHOR: CATEGORY | PRODUCT SPEC > GROUP > ATTRIBUTE GROUP
+export interface ICategoryProductSpecAttributeGroup {
+  specAttributeGroupName: string
+  attributeNames: string[]
 }
 
-// ANCHOR: CATEGORY | Create Main Category
-// NOTE: === console -> Create Category
-export interface ICategoryCreateMain extends ICategoryEntity, IRefCategoryList {
-  onHomepage: boolean
-  themeColor: string
-  color: string
+export interface IDBCategoryProductSpecAttributeGroup {
+  specAttributeGroupId: string
 }
 
-// ANCHOR CATEGORY | Create Sub Category
-// NOTE: === console -> Create Category
-export interface ICategoryCreateSub extends ICategoryEntity, IRefCategoryList {
-  onParentCatCard: boolean
-
-}
-
-export interface IConsoleMainCategory extends ICategoryCreateMain {
-  categoryId: string;
-  countSuppliers: number
-  countProducts: number
-  createdAt: string
-  updatedAt: string
-}
-
-export interface IConsoleSubCategory extends ICategoryCreateSub {
-  categoryId: string;
-  countSuppliers: number
-  countProducts: number
-  createdAt: string
-  updatedAt: string
-}
-
-export interface ICreateProductCategorySpec {
+// ANCHOR: CATEGORY | PRODUCT SPEC > GROUP
+export interface ICategoryProductSpecGroup {
   specGroupName: string;
-  specAttribute: string[];
+  specAttributeGroup: ICategoryProductSpecAttributeGroup[]
+}
+
+export interface IDBCategoryProductSpecGroup {
+  specGroupId: string
 }
 
 // TODO: Setting > Shipping on CORE ===> USE CLIENT SIDE

@@ -185,18 +185,18 @@ import {
   IVendorRequestList
 } from './type-apps'
 import {
-  ICategoryCreateMain,
-  ICategoryCreateParams,
-  ICategoryCreateSub,
-  IConsoleCategoryList,
-  IConsoleMainCategory,
-  IConsoleSubCategory,
-  IConsoleSupplier,
-  IConsoleSupplierCreate,
-  IConsoleSupplierList,
+  IApiCategoryParams,
+  ICategoryByGapp,
+  ICategoryEntity,
+  ICategoryProductSpecAttributeGroup,
+  ICategoryProductSpecGroup,
+  IDBCategory,
+  IDBCategoryImmu,
+  IDBCategoryProductSpecAttributeGroup,
+  IDBCategoryProductSpecGroup,
   IPaymentMethod
 } from './type-console'
-import { ICategoryList, IDBProduct, IDBProductImmu, IDBProductVariantOnlyImmu, IMainCategory, IProductAttributes, IProductEntity, IProductList, IProductPackInVariant, IProductPackOnly, IProductRootEntity, IProductVariantAttributes, IProductVariantEntity, IProductVariantInPack, IResMainCategory, IResSubCategory, ISubCategory } from './type-catalog'
+import { IDBProduct, IDBProductImmu, IDBProductVariantOnlyImmu, IProductAttributes, IProductEntity, IProductList, IProductPackInVariant, IProductPackOnly, IProductRootEntity, IProductVariantAttributes, IProductVariantEntity, IProductVariantInPack } from './type-catalog'
 import { IApiCompanyParams, IApiSupplierParams, ICertificate, ICompanyByGapp, ICompanyCreateSalesRep, ICompanyEntityImmu, ICompanyPrivateEntity, ICompanyPublicEntity, ICompanyPublicEntityImmu, ICompanySalesRep, IDBCertificate, IDBCompanyEntity, IDBCompanySupplierEntity, IDBDocument, IDocument, IPortfolio, IPortfolioImmu, IPublishParams, ISettingCreatePriceGroup, ISettingCreatePriceList, ISettingDoc, ISettingPriceGroup, ISettingPriceList, ISupplierByGapp } from './type-company'
 import { IBusinessCompanyUserIdentity, IBusinessCompanyUserIdentityImmu, IBusinessEntity, IBusinessEntityImmu, IBusinessListCompany, IBusinessOwnerIdentity, IBusinessOwnerIdentityImmu, IBusinessUserIdentity, IBusinessUserIdentityImmu, ICompanyUserData, ICompanyUserPrivateData, IDBBusinessCompanyUserData, IDBBusinessCompanyUserIdentity, IDBBusinessUserIdentity, IDBBusinessUserIdentityStatus, IDBLogTime, IDBUpdateTime } from './type-business'
 
@@ -356,13 +356,13 @@ export namespace GeeesyMarketplace {
 }
 /* #endregion */
 
-export namespace GeeesyCatalog {
+/* export namespace GeeesyCatalog {
   export type ResMainCategory = IResMainCategory | IMainCategory
   export type MainCategory = IMainCategory
   export type ResSubCategory = IResSubCategory | ISubCategory
   export type SubCategory = ISubCategory
   export type CategoryList = ICategoryList
-}
+} */
 
 // REVIEW: G-BIZ
 export namespace GeeesyApps {
@@ -568,15 +568,22 @@ export namespace GeeesyApps {
 }
 
 // REVIEW: CONSOLE
-export namespace GeeesyConsole {
-  export type CreateMainCategory = ICategoryCreateMain & ICategoryCreateParams
-  export type CreateSubCategory = ICategoryCreateSub & ICategoryCreateParams
-  export type MainCategory = IConsoleMainCategory
-  export type SubCategory = IConsoleSubCategory
-  export type CategoryList = IConsoleCategoryList
-  export type CreateSupplier = IConsoleSupplierCreate
-  export type Supplier = IConsoleSupplier
-  export type SupplierList = IConsoleSupplierList
+export namespace GappConsole {
+  // * CATEGORY
+  export type CreateCategory = ICategoryEntity & IApiCategoryParams
+  export type Category = ICategoryByGapp & IDBCategoryImmu & IDBCategory & ICategoryEntity & IDBLogTime
+  export type ListCategory = IDBCategoryImmu & ICategoryEntity
+  // * SUPPLIER
+  export type CreateSupplier = ISupplierByGapp & ISupplierData & IPortfolio
+  export type Supplier = GappMarket.Supplier
+  export type ListSupplier = ICompanyPublicEntityImmu & ICompanyPublicEntity
+  // * PRODUCT SPECIFICATION
+  export type CreateSpecGroup = ICategoryProductSpecGroup
+  export type SpecGroup = IDBCategoryProductSpecGroup & ICategoryProductSpecGroup & IDBLogTime
+  export type ListSpecGroup = SpecGroup[]
+  export type CreateSpecAttributeGroup = ICategoryProductSpecAttributeGroup
+  export type SpecAttributeGroup = IDBCategoryProductSpecAttributeGroup & ICategoryProductSpecAttributeGroup & IDBLogTime
+  export type ListSpecAttributeGroup = SpecAttributeGroup[]
 }
 
 // REVIEW: BC
@@ -623,6 +630,8 @@ export namespace GappBiz {
 
 // REVIEW: G-MARKET
 export namespace GappMarket {
+  export type Category = GappConsole.Category
+  export type ListCategory = GappConsole.ListCategory
   export type Supplier = ISupplierData & IPortfolio & ISupplierByGapp & IDBCompanySupplierEntity & ICompanyPublicEntityImmu & ICompanyPublicEntity & IDBLogTime // * SUPPLIER
   export type ListProductWithSupplier = IProductWithSupplierCard
   export type ListSupplierWithProduct = ISupplierWithProductCard
