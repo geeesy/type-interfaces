@@ -1,3 +1,20 @@
+import { IDBLogTime } from "./type-business";
+
+export interface IProductData {
+  product: IProductRootEntity &
+    IProductEntity &
+    IProductAttributes &
+    IDBProduct &
+    IDBProductImmu &
+    IDBLogTime;
+  productMarket: IProductRootEntity &
+    IProductEntity &
+    IProductAttributes &
+    IDBProduct &
+    IDBProductImmu &
+    IDBLogTime;
+}
+
 export interface IPriceList {
   priceListId: string;
   price: number;
