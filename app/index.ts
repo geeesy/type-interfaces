@@ -197,6 +197,7 @@ import {
   IPaymentMethod,
 } from "./type-console";
 import {
+  ICreateProductData,
   IDBProduct,
   IDBProductImmu,
   IDBProductVariantOnlyImmu,
@@ -802,6 +803,7 @@ export namespace GappInventory {
     IProductEntity &
     IProductAttributes &
     IApiSupplierParams;
+  type CreateProductData = ICreateProductData;
   export type CreateProductWithVariant = IProductAttributes &
     IProductVariantAttributes &
     IApiSupplierParams;

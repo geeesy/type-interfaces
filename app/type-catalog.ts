@@ -1,4 +1,5 @@
 import { IDBLogTime } from "./type-business";
+import { IApiSupplierParams } from "./type-company";
 
 export interface IProductData {
   product: IProductRootEntity &
@@ -13,6 +14,17 @@ export interface IProductData {
     IDBProduct &
     IDBProductImmu &
     IDBLogTime;
+}
+
+export interface ICreateProductData {
+  product: IProductRootEntity &
+    IProductEntity &
+    IProductAttributes &
+    IApiSupplierParams;
+  productMarket: IProductRootEntity &
+    IProductEntity &
+    IProductAttributes &
+    IApiSupplierParams;
 }
 
 export interface IPriceList {
