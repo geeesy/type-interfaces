@@ -803,7 +803,7 @@ export namespace GappInventory {
     IProductEntity &
     IProductAttributes &
     IApiSupplierParams;
-  type CreateProductData = ICreateProductData;
+  export type CreateProductData = ICreateProductData;
   export type CreateProductWithVariant = IProductAttributes &
     IProductVariantAttributes &
     IApiSupplierParams;
