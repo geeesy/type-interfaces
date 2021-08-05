@@ -205,6 +205,7 @@ import {
   IProductData,
   IProductEntity,
   IProductList,
+  IProductListData,
   IProductPackInVariant,
   IProductPackOnly,
   IProductRootEntity,
@@ -815,6 +816,7 @@ export namespace GappInventory {
     IDBLogTime;
   export type ProductData = IProductData;
   export type ListProduct = IProductList;
+  export type ListProductData = IProductListData;
   export type ProductPackOnly = IProductPackOnly;
   export type CreateManyVariantOnly = IProductVariantAttributes &
     IApiSupplierParams;

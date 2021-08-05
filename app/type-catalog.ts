@@ -1,6 +1,11 @@
 import { IDBLogTime } from "./type-business";
 import { IApiSupplierParams } from "./type-company";
 
+export interface IProductListData {
+  product: IProductList;
+  productMarket: IProductList;
+}
+
 export interface IProductData {
   product: IProductRootEntity &
     IProductEntity &
@@ -41,6 +46,8 @@ export interface IProductPrice {
   priceList: IPriceList[]; // * <== SETTING
   priceGroupIds: string[]; // * ==> SETTING
   currency: string;
+  maxQty: number;
+  minQty: number;
 }
 
 export interface IQtyPrice {
@@ -170,11 +177,13 @@ export interface IProductAttributes {
   isRecommend: boolean;
   isHighLight: boolean;
   isNewArrival: boolean;
+  isCanBuy: boolean;
   productName: string;
   productType: string;
   tags: string[];
   keywords: string[];
   productCoverUrl: string;
+  productCategoryInternal: string;
   productCategoryId: string;
   productCategoryCustomName?: string; // * id = OTHER000
   productVideoCoverUrl: string;
