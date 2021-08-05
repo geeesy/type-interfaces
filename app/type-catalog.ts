@@ -177,7 +177,7 @@ export interface IProductAttributes {
   isRecommend: boolean;
   isHighLight: boolean;
   isNewArrival: boolean;
-  isCanBuy: boolean;
+  isCanBuy: string;
   productName: string;
   productType: string;
   tags: string[];
