@@ -1,36 +1,5 @@
-import { IDBLogTime } from "./type-business";
-import { IApiSupplierParams } from "./type-company";
-
-export interface IProductListData {
-  product: IProductList;
-  productMarket: IProductList;
-}
-
-export interface IProductData {
-  product: IProductRootEntity &
-    IProductEntity &
-    IProductAttributes &
-    IDBProduct &
-    IDBProductImmu &
-    IDBLogTime;
-  productMarket: IProductRootEntity &
-    IProductEntity &
-    IProductAttributes &
-    IDBProduct &
-    IDBProductImmu &
-    IDBLogTime;
-}
-
-export interface ICreateProductData {
-  product: IProductRootEntity &
-    IProductEntity &
-    IProductAttributes &
-    IApiSupplierParams;
-  productMarket: IProductRootEntity &
-    IProductEntity &
-    IProductAttributes &
-    IApiSupplierParams;
-}
+import { IDBLogTime } from './type-business'
+import { IApiSupplierParams } from './type-company'
 
 export interface IPriceList {
   priceListId: string;
@@ -230,8 +199,8 @@ export interface IProductVariantEntity {
 // Variants Only
 export interface IProductVariantOnly
   extends IProductRootEntity,
-    IProductEntity,
-    IProductVariantEntity {}
+  IProductEntity,
+  IProductVariantEntity { }
 
 export interface IDBProductVariantOnlyImmu {
   productVariantId: string;
@@ -262,8 +231,8 @@ export interface IProductPack {
 // Packs Only
 export interface IProductPackOnly
   extends IProductRootEntity,
-    IProductEntity,
-    IProductPack {
+  IProductEntity,
+  IProductPack {
   productPackId: string;
   createdAt: string;
   updatedAt: string;
@@ -272,9 +241,9 @@ export interface IProductPackOnly
 // Variant -> Pack A / Pack B
 export interface IProductPackInVariant
   extends IProductRootEntity,
-    IProductEntity,
-    IProductVariantEntity,
-    IProductPack {
+  IProductEntity,
+  IProductVariantEntity,
+  IProductPack {
   productVariantPackId: string;
   createdAt: string;
   updatedAt: string;
@@ -283,9 +252,9 @@ export interface IProductPackInVariant
 // Pack -> Variant A / Variant B
 export interface IProductVariantInPack
   extends IProductRootEntity,
-    IProductEntity,
-    IProductPack,
-    IProductVariantEntity {
+  IProductEntity,
+  IProductPack,
+  IProductVariantEntity {
   productPackVariantId: string;
   createdAt: string;
   updatedAt: string;

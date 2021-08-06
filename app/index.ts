@@ -91,8 +91,8 @@ import {
   IProductWithSupplierCard,
   ISupplierWithProductCard,
   IMarketUserIdentity,
-  ISupplierData,
-} from "./type-marketplace";
+  ISupplierData
+} from './type-marketplace'
 import {
   IApprover,
   IApproverFormCreate,
@@ -182,8 +182,8 @@ import {
   IVendorCreate,
   IVendorCreateParams,
   IVendorRequestAccept,
-  IVendorRequestList,
-} from "./type-apps";
+  IVendorRequestList
+} from './type-apps'
 import {
   IApiCategoryParams,
   ICategoryByGapp,
@@ -194,25 +194,22 @@ import {
   IDBCategoryImmu,
   IDBCategoryProductSpecAttributeGroup,
   IDBCategoryProductSpecGroup,
-  IPaymentMethod,
-} from "./type-console";
+  IPaymentMethod
+} from './type-console'
 import {
-  ICreateProductData,
   IDBProduct,
   IDBProductImmu,
   IDBProductVariantOnlyImmu,
   IProductAttributes,
-  IProductData,
   IProductEntity,
   IProductList,
-  IProductListData,
   IProductPackInVariant,
   IProductPackOnly,
   IProductRootEntity,
   IProductVariantAttributes,
   IProductVariantEntity,
-  IProductVariantInPack,
-} from "./type-catalog";
+  IProductVariantInPack
+} from './type-catalog'
 import {
   IApiCompanyParams,
   IApiSupplierParams,
@@ -237,8 +234,8 @@ import {
   ISettingDoc,
   ISettingPriceGroup,
   ISettingPriceList,
-  ISupplierByGapp,
-} from "./type-company";
+  ISupplierByGapp
+} from './type-company'
 import {
   IBusinessCompanyUserIdentity,
   IBusinessCompanyUserIdentityImmu,
@@ -256,8 +253,8 @@ import {
   IDBBusinessUserIdentity,
   IDBBusinessUserIdentityStatus,
   IDBLogTime,
-  IDBUpdateTime,
-} from "./type-business";
+  IDBUpdateTime
+} from './type-business'
 
 /* #region FIXME: Marketplace */
 export namespace GeeesyMarketplace {
@@ -660,7 +657,7 @@ export namespace GeeesyApps {
 // REVIEW: CONSOLE
 export namespace GappConsole {
   // * CATEGORY
-  export type CreateCategory = ICategoryEntity & IApiCategoryParams;
+  export type CreateCategory = ICategoryEntity & IApiCategoryParams & ICategoryByGapp;
   export type Category = ICategoryByGapp &
     IDBCategoryImmu &
     IDBCategory &
@@ -804,7 +801,6 @@ export namespace GappInventory {
     IProductEntity &
     IProductAttributes &
     IApiSupplierParams;
-  export type CreateProductData = ICreateProductData;
   export type CreateProductWithVariant = IProductAttributes &
     IProductVariantAttributes &
     IApiSupplierParams;
@@ -814,9 +810,7 @@ export namespace GappInventory {
     IDBProduct &
     IDBProductImmu &
     IDBLogTime;
-  export type ProductData = IProductData;
   export type ListProduct = IProductList;
-  export type ListProductData = IProductListData;
   export type ProductPackOnly = IProductPackOnly;
   export type CreateManyVariantOnly = IProductVariantAttributes &
     IApiSupplierParams;
@@ -873,11 +867,11 @@ export namespace GappSetting {
   export type CountDocument = IDocWorkCount & IDocFinanceCount;
 }
 
-export * as IMarketplace from "./type-marketplace";
-export * as IConsole from "./type-console";
-export * as IApps from "./type-apps";
-export * as ICatalog from "./type-catalog";
-export * as ICompany from "./type-company";
+export * as IMarketplace from './type-marketplace'
+export * as IConsole from './type-console'
+export * as IApps from './type-apps'
+export * as ICatalog from './type-catalog'
+export * as ICompany from './type-company'
 
-export * as STATUS from "./enum-status";
-export * as CONST from "./enum-const";
+export * as STATUS from './enum-status'
+export * as CONST from './enum-const'
