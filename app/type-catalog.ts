@@ -154,6 +154,7 @@ export interface IProductRootEntity {
 // NOTE === attributes on each SKU
 export interface IProductEntity {
   productImagesUrl: IProductImage[];
+
   productCode: string;
   productModel: string;
   productBarcode: string;
@@ -168,6 +169,7 @@ export interface IProductEntity {
   preparingTime: IPeriodTimeByQty[];
   leadTimes: IPeriodTimeByQty[];
   displaySku: IProductDisplay;
+  productImagesGroups: []; // new
 }
 
 // ANCHOR: PRODUCT | Entity (3/5)
