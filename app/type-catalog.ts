@@ -11,12 +11,16 @@ export interface IProductPrice {
   buyPrice: number;
   sellPrice: number;
   wholesalePrice: number;
+  'wholesalePrice_market': number;
   retailPrice: number;
+  'retailPrice_market': number;
   priceList: IPriceList[]; // * <== SETTING
   priceGroupIds: string[]; // * ==> SETTING
   currency: string;
   maxQty: number;
+  'maxQty_market': number;
   minQty: number;
+  'minQty_market': number;
 }
 
 export interface IQtyPrice {
@@ -26,9 +30,13 @@ export interface IQtyPrice {
 
 export interface IProductWholesale {
   minQty: number;
+  'minQty_market': number;
   maxQty: number;
+  'maxQty_market': number;
   wholesalePrice: number;
+  'wholesalePrice_market': number;
   retailPrice: number;
+  'retailPrice_market': number;
 }
 
 export interface IProductDisplay {
@@ -104,6 +112,7 @@ export interface IProductList extends IRefProductList {
   productCode: string;
   productSku: string;
   productUnit: string;
+  'productUnit_market': string;
   productPrice: IProductPrice;
   productId: string;
   createdAt: string;
@@ -116,6 +125,7 @@ export interface IProductRootEntity {
   productShowedImageUrl: string;
   productSku: string;
   productUnit: string;
+  'productUnit_market': string;
   productUnitPrice: number;
 }
 
@@ -123,11 +133,11 @@ export interface IProductRootEntity {
 // NOTE === attributes on each SKU
 export interface IProductEntity {
   productImagesUrl: IProductImage[];
-
   productCode: string;
   productModel: string;
   productBarcode: string;
   productShortDescription: string;
+  'productShortDescription_market': string;
   productPrice: IProductPrice;
   productWholesales: IProductWholesale[];
   minQty: number;
@@ -138,7 +148,8 @@ export interface IProductEntity {
   preparingTime: IPeriodTimeByQty[];
   leadTimes: IPeriodTimeByQty[];
   displaySku: IProductDisplay;
-  productImagesGroups: []; // new
+  productImagesGroups: [];
+  'productImagesGroups_market': [];
 }
 
 // ANCHOR: PRODUCT | Entity (3/5)
@@ -149,16 +160,22 @@ export interface IProductAttributes {
   isHighLight: boolean;
   isNewArrival: boolean;
   isCanBuy: string;
+  'isCanBuy_market': string;
   productName: string;
+  'productName_market': string;
   productType: string;
   tags: string[];
+  'tags_market': string[];
   keywords: string[];
   productCoverUrl: string;
+  'productCoverUrl_market': string;
   productCategoryInternal: string;
   productCategoryId: string;
   productCategoryCustomName?: string; // * id = OTHER000
   productVideoCoverUrl: string;
+  'productVideoCoverUrl_market': string;
   productDescription: string;
+  'productDescription_market': string;
   productBrand: string;
   productSource: string;
   productOrigin: string;
