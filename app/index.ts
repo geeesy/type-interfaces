@@ -197,15 +197,12 @@ import {
   IPaymentMethod
 } from './type-console'
 import {
-  ICreateProductData,
   IDBProduct,
   IDBProductImmu,
   IDBProductVariantOnlyImmu,
   IProductAttributes,
-  IProductData,
   IProductEntity,
   IProductList,
-  IProductListData,
   IProductPackInVariant,
   IProductPackOnly,
   IProductRootEntity,
@@ -804,7 +801,6 @@ export namespace GappInventory {
     IProductEntity &
     IProductAttributes &
     IApiSupplierParams;
-  export type CreateProductData = ICreateProductData;
   export type CreateProductWithVariant = IProductAttributes &
     IProductVariantAttributes &
     IApiSupplierParams;
@@ -814,9 +810,7 @@ export namespace GappInventory {
     IDBProduct &
     IDBProductImmu &
     IDBLogTime;
-  export type ProductData = IProductData;
   export type ListProduct = IProductList;
-  export type ListProductData = IProductListData;
   export type ProductPackOnly = IProductPackOnly;
   export type CreateManyVariantOnly = IProductVariantAttributes &
     IApiSupplierParams;
