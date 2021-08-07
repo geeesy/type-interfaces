@@ -1,5 +1,5 @@
-import { IDBLogTime } from './type-business'
 import { IApiSupplierParams } from './type-company'
+import { IDBLogTime } from './type-business'
 
 export interface IPriceList {
   priceListId: string;
@@ -148,8 +148,6 @@ export interface IProductEntity {
   preparingTime: IPeriodTimeByQty[];
   leadTimes: IPeriodTimeByQty[];
   displaySku: IProductDisplay;
-  productImagesGroups: [];
-  'productImagesGroups_market': [];
 }
 
 // ANCHOR: PRODUCT | Entity (3/5)
