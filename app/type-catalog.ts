@@ -133,6 +133,7 @@ export interface IProductRootEntity {
 // NOTE === attributes on each SKU
 export interface IProductEntity {
   productImagesUrl: IProductImage[];
+  'productImagesUrl_market': IProductImage[];
   productCode: string;
   productModel: string;
   productBarcode: string;
