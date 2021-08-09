@@ -32,7 +32,6 @@ export enum CurrencyTranslateTH {
   CNY = 'หยวน'
 }
 
-
 export enum CurrencyCode {
   THAI = 'THB',
   USA = 'USD',
@@ -69,6 +68,14 @@ export enum StatusPoolJoining {
   Cancel = 'cancel',
   RequestCancel = 'request-cancel',
   AcceptedCancel = 'accepted-cancel'
+}
+
+export enum StatusProductApproveOnMarket {
+  Approved = 'approved',
+  PreApproved = 'pre-approved',
+  WaitForCheck = 'wait check',
+  Hold = 'hold',
+  None = 'none'
 }
 
 export enum StatusPoolShippingMainBuyer {

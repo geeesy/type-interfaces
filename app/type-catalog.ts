@@ -1,5 +1,6 @@
 import { IApiSupplierParams } from './type-company'
 import { IDBLogTime } from './type-business'
+import { StatusProductApproveOnMarket } from './enum-const'
 
 export interface IPriceList {
   priceListId: string;
@@ -197,6 +198,8 @@ export interface IDBProduct {
   countPacksInVariant: number;
   variantMatchId?: IProductVariantMatchId[];
   variantSelectors?: IProductVariantSelector[];
+  statusProductApproveOnMarket: StatusProductApproveOnMarket
+
 }
 
 // ANCHOR: PRODUCT | Entity (5/5)
