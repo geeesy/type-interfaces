@@ -28,6 +28,79 @@ export interface IQtyPrice {
   qty: number;
 }
 
+export interface IProductShippingMethod {
+    shippingId: string,
+    shippingIconUrl: string,
+    shippingName: string,
+    typeCalPrice: string,
+    typeDelivery: string,
+    shippingStatus: boolean
+    deliveryTime: {
+      start: number,
+      end:number,
+    },
+    note: string,
+    compId: string,
+    createdAt: string,
+    updatedAt: string,
+    fixedDelivery: {
+      fixedPrice: number,
+      freeshippingPrice:number,
+    }
+    calnumberProductsPiece: {
+      fitstpiecePrice: number,
+      nextpiecePrice: number,
+      freeshippingPrice:number,
+    }
+    calnumberProducts: {
+      notexceedPiece: [
+        {
+          numberofPiece: number,
+          amount: number,
+          freeshipping: boolean
+        }
+      ],
+      exceedPiece: {
+        numberofPiece: number,
+        amount: number,
+        freeshipping: boolean
+      },
+      freeshippingPrice:number,
+    },
+    calnumberProductsWeight: {
+      notexceedKg: [
+        {
+          numberofWeight: number,
+          unitWeight: string,
+          amount: number,
+          freeshipping: boolean
+        }
+      ],
+      exceedKg: {
+        numberofWeight: 0,
+        unitWeight: string,
+        amount: 0,
+        freeshipping: boolean
+      },
+      freeshippingPrice: 0
+    },
+    calnumberProductsDiscount: {
+      notexceedPrice: [
+       {
+          numberofAmount: number,
+          amount: number,
+          freeshipping: boolean
+        }
+      ],
+      exceedPrice: {
+        numberofAmount: number,
+        amount: number,
+        freeshipping: boolean
+      }
+    }
+
+}
+
 export interface IProductWholesale {
   minQty: number;
   'minQty_market': number;
@@ -150,6 +223,7 @@ export interface IProductEntity {
   preparingTime: IPeriodTimeByQty[];
   leadTimes: IPeriodTimeByQty[];
   displaySku: IProductDisplay;
+  shippingMethod: IProductShippingMethod;
 }
 
 // ANCHOR: PRODUCT | Entity (3/5)
