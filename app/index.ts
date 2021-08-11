@@ -742,7 +742,8 @@ export namespace GappBusiness {
   export type ListCompanyUser = IBusinessCompanyUserIdentityImmu &
     IBusinessCompanyUserIdentity &
     IDBBusinessCompanyUserIdentity &
-    IDBBusinessCompanyUserData;
+    IDBBusinessCompanyUserData &
+    ICompanyUserData
 }
 
 export namespace GappBiz {
@@ -857,7 +858,8 @@ export namespace GappSetting {
   export type ListAdminStaff = IBusinessCompanyUserIdentityImmu &
     IBusinessCompanyUserIdentity &
     IDBBusinessCompanyUserIdentity &
-    IDBBusinessCompanyUserData;
+    IDBBusinessCompanyUserData &
+    ICompanyUserData
   export type CreateAdminStaff = IBusinessUserIdentityImmu &
     IBusinessUserIdentity &
     IBusinessCompanyUserIdentityImmu &

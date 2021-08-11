@@ -32,6 +32,7 @@ export interface ICategoryByGapp {
   isHighLight: boolean
   isNewArrival: boolean
   impFactor: number;
+  isProductMustApproved: boolean
 }
 
 // ANCHOR: CATEGORY | Entity (2/4)
