@@ -47,12 +47,12 @@ export interface IProductShippingMethod {
     fixedDelivery: {
       fixedPrice: number,
       freeshippingPrice:number,
-    }
+    },
     calnumberProductsPiece: {
       fitstpiecePrice: number,
       nextpiecePrice: number,
       freeshippingPrice:number,
-    }
+    },
     calnumberProducts: {
       notexceedPiece: [
         {
@@ -78,12 +78,12 @@ export interface IProductShippingMethod {
         }
       ],
       exceedKg: {
-        numberofWeight: 0,
+        numberofWeight: number,
         unitWeight: string,
-        amount: 0,
+        amount: number
         freeshipping: boolean
       },
-      freeshippingPrice: 0
+      freeshippingPrice: number
     },
     calnumberProductsDiscount: {
       notexceedPrice: [
