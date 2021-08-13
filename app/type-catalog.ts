@@ -107,8 +107,11 @@ export interface ILogProduct {
   action: string;
   createdAt: string;
   updatedAt: string;
-  oldValue: string;
-  newValue: string;
+  oldValue: ILogProductValue;
+  newValue: ILogProductValue;
+}
+
+export interface ILogProductValue {
   productName: string;
   productType: string;
   productSku: string;
