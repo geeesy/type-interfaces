@@ -109,6 +109,12 @@ export interface ILogProduct {
   updatedAt: string;
   oldValue: string;
   newValue: string;
+  productName: string;
+  productType: string;
+  productSku: string;
+  productShipping: IProductShippingMethod;
+  productPrice: IProductPrice;
+  productWhoelsale: IProductWholesale;
 }
 
 export interface IProductWholesale {
@@ -233,7 +239,7 @@ export interface IProductEntity {
   preparingTime: IPeriodTimeByQty[];
   leadTimes: IPeriodTimeByQty[];
   displaySku: IProductDisplay;
-  shippingMethod: IProductShippingMethod;
+  shippingMethod: IProductShippingMethod[];
 }
 
 // ANCHOR: PRODUCT | Entity (3/5)
