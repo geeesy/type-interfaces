@@ -102,6 +102,15 @@ export interface IProductShippingMethod {
 
 }
 
+export interface ILogProduct {
+  updatedBy: string;
+  action: string;
+  createdAt: string;
+  updatedAt: string;
+  oldValue: string;
+  newValue: string;
+}
+
 export interface IProductWholesale {
   minQty: number;
   'minQty_market': number;

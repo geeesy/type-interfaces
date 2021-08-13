@@ -12,6 +12,7 @@ import {
   IImages,
   IInterest,
   ILeadTime,
+  IMarketUserIdentity,
   IMessageDetail,
   IMessageList,
   IOfficeHour,
@@ -26,6 +27,8 @@ import {
   IProductWithAddr,
   IProductWithCount,
   IProductWithOutSupplier,
+  IProductWithSupplier,
+  IProductWithSupplierCard,
   IRecommendCategory,
   IRecommendSupplier,
   IResAllCategoryInSearchTool,
@@ -76,6 +79,7 @@ import {
   ISupplierCertificates,
   ISupplierContact,
   ISupplierCustomPage,
+  ISupplierData,
   ISupplierDocs,
   ISupplierFactory,
   ISupplierHighlight,
@@ -83,16 +87,50 @@ import {
   ISupplierImgAndVerifiedImg,
   ISupplierOverview,
   ISupplierWebsite,
+  ISupplierWithProductCard,
   ISupplierWithSavedList,
   ISurvey,
   ITop20Products,
-  IWholesale,
-  IProductWithSupplier,
-  IProductWithSupplierCard,
-  ISupplierWithProductCard,
-  IMarketUserIdentity,
-  ISupplierData
+  IWholesale
 } from './type-marketplace'
+import {
+  IApiCategoryParams,
+  ICategoryByGapp,
+  ICategoryEntity,
+  ICategoryProductSpecAttributeGroup,
+  ICategoryProductSpecGroup,
+  IDBCategory,
+  IDBCategoryImmu,
+  IDBCategoryProductSpecAttributeGroup,
+  IDBCategoryProductSpecGroup,
+  IPaymentMethod
+} from './type-console'
+import {
+  IApiCompanyParams,
+  IApiSupplierParams,
+  ICertificate,
+  ICompanyByGapp,
+  ICompanyCreateSalesRep,
+  ICompanyEntityImmu,
+  ICompanyPrivateEntity,
+  ICompanyPublicEntity,
+  ICompanyPublicEntityImmu,
+  ICompanySalesRep,
+  IDBCertificate,
+  IDBCompanyEntity,
+  IDBCompanySupplierEntity,
+  IDBDocument,
+  IDocument,
+  IPortfolio,
+  IPortfolioImmu,
+  IPublishParams,
+  ISettingCreatePriceGroup,
+  ISettingCreatePriceList,
+  ISettingDoc,
+  ISettingPriceGroup,
+  ISettingPriceList,
+  ISupplierByGapp
+} from './type-company'
 import {
   IApprover,
   IApproverFormCreate,
@@ -101,8 +139,8 @@ import {
   IBillingNoteFormCreate,
   IBillingNoteFormCreateParams,
   IBillingNoteList,
-  ICompanyOnList,
   ICompRequestVendor,
+  ICompanyOnList,
   IDBCompanyDocHeader,
   IDBVendorRequest,
   IDocFinanceCount,
@@ -185,58 +223,6 @@ import {
   IVendorRequestList
 } from './type-apps'
 import {
-  IApiCategoryParams,
-  ICategoryByGapp,
-  ICategoryEntity,
-  ICategoryProductSpecAttributeGroup,
-  ICategoryProductSpecGroup,
-  IDBCategory,
-  IDBCategoryImmu,
-  IDBCategoryProductSpecAttributeGroup,
-  IDBCategoryProductSpecGroup,
-  IPaymentMethod
-} from './type-console'
-import {
-  IDBProduct,
-  IDBProductImmu,
-  IDBProductVariantOnlyImmu,
-  IProductAttributes,
-  IProductEntity,
-  IProductList,
-  IProductPackInVariant,
-  IProductPackOnly,
-  IProductRootEntity,
-  IProductVariantAttributes,
-  IProductVariantEntity,
-  IProductVariantInPack
-} from './type-catalog'
-import {
-  IApiCompanyParams,
-  IApiSupplierParams,
-  ICertificate,
-  ICompanyByGapp,
-  ICompanyCreateSalesRep,
-  ICompanyEntityImmu,
-  ICompanyPrivateEntity,
-  ICompanyPublicEntity,
-  ICompanyPublicEntityImmu,
-  ICompanySalesRep,
-  IDBCertificate,
-  IDBCompanyEntity,
-  IDBCompanySupplierEntity,
-  IDBDocument,
-  IDocument,
-  IPortfolio,
-  IPortfolioImmu,
-  IPublishParams,
-  ISettingCreatePriceGroup,
-  ISettingCreatePriceList,
-  ISettingDoc,
-  ISettingPriceGroup,
-  ISettingPriceList,
-  ISupplierByGapp
-} from './type-company'
-import {
   IBusinessCompanyUserIdentity,
   IBusinessCompanyUserIdentityImmu,
   IBusinessEntity,
@@ -255,6 +241,21 @@ import {
   IDBLogTime,
   IDBUpdateTime
 } from './type-business'
+import {
+  IDBProduct,
+  IDBProductImmu,
+  IDBProductVariantOnlyImmu,
+  ILogProduct,
+  IProductAttributes,
+  IProductEntity,
+  IProductList,
+  IProductPackInVariant,
+  IProductPackOnly,
+  IProductRootEntity,
+  IProductVariantAttributes,
+  IProductVariantEntity,
+  IProductVariantInPack
+} from './type-catalog'
 
 /* #region FIXME: Marketplace */
 export namespace GeeesyMarketplace {
@@ -830,6 +831,7 @@ export namespace GappInventory {
     IDBUpdateTime;
   export type ProductPackInVariant = IProductPackInVariant;
   export type ProductVariantInPack = IProductVariantInPack;
+  export type LogProduct = ILogProduct
 }
 
 // REVIEW: G-BIZ | SETTING
