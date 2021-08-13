@@ -46,57 +46,57 @@ export interface IProductShippingMethod {
     updatedAt: string,
     fixedDelivery: {
       fixedPrice: number,
-      freeshippingPrice:number,
+      freeShippingPrice:number,
     },
-    calnumberProductsPiece: {
-      fitstpiecePrice: number,
-      nextpiecePrice: number,
-      freeshippingPrice:number,
+    calNumberProductsPiece: {
+      firstPiecePrice: number,
+      nextPiecePrice: number,
+      freeShippingPrice:number,
     },
-    calnumberProducts: {
-      notexceedPiece: [
+    calNumberProducts: {
+      notExceedPiece: [
         {
-          numberofPiece: number,
+          numberOfPiece: number,
           amount: number,
-          freeshipping: boolean
+          freeShipping: boolean
         }
       ],
       exceedPiece: {
-        numberofPiece: number,
+        numberOfPiece: number,
         amount: number,
-        freeshipping: boolean
+        freeShipping: boolean
       },
-      freeshippingPrice:number,
+      freeShippingPrice:number,
     },
-    calnumberProductsWeight: {
-      notexceedKg: [
+    calNumberProductsWeight: {
+      notExceedKg: [
         {
-          numberofWeight: number,
+          numberOfWeight: number,
           unitWeight: string,
           amount: number,
-          freeshipping: boolean
+          freeShipping: boolean
         }
       ],
       exceedKg: {
-        numberofWeight: number,
+        numberOfWeight: number,
         unitWeight: string,
         amount: number
-        freeshipping: boolean
+        freeShipping: boolean
       },
-      freeshippingPrice: number
+      freeShippingPrice: number
     },
-    calnumberProductsDiscount: {
-      notexceedPrice: [
+    calNumberProductsDiscount: {
+      notExceedPrice: [
        {
-          numberofAmount: number,
+          numberOfAmount: number,
           amount: number,
-          freeshipping: boolean
+          freeShipping: boolean
         }
       ],
       exceedPrice: {
-        numberofAmount: number,
+        numberOfAmount: number,
         amount: number,
-        freeshipping: boolean
+        freeShipping: boolean
       }
     }
 
@@ -112,9 +112,9 @@ export interface ILogProduct {
   productName: string;
   productType: string;
   productSku: string;
-  productShipping: IProductShippingMethod;
+  shippingMethod: IProductShippingMethod[];
   productPrice: IProductPrice;
-  productWhoelsale: IProductWholesale;
+  productWholesales: IProductWholesale;
 }
 
 export interface IProductWholesale {
