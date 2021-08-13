@@ -115,9 +115,9 @@ export interface ILogProductValue {
   productName: string;
   productType: string;
   productSku: string;
-  shippingMethod: IProductShippingMethod[];
+  shippingMethod?: IProductShippingMethod[] | null;
   productPrice: IProductPrice;
-  productWholesales: IProductWholesale[];
+  productWholesales?: IProductWholesale[] | null;
 }
 
 export interface IProductWholesale {
