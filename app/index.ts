@@ -243,6 +243,7 @@ import {
 } from './type-business'
 import {
   IDBProduct,
+  IDBProductByGapp,
   IDBProductImmu,
   IDBProductVariantOnlyImmu,
   ILogProduct,
@@ -683,6 +684,9 @@ export namespace GappConsole {
     ICategoryProductSpecAttributeGroup &
     IDBLogTime;
   export type ListSpecAttributeGroup = SpecAttributeGroup[];
+  // * PRODUCTS
+  export type ListProduct = IProductList & IDBProductImmu & IDBProductByGapp
+  export type Product = GappInventory.Product
 }
 
 // REVIEW: BC
@@ -811,6 +815,7 @@ export namespace GappInventory {
     IProductAttributes &
     IDBProduct &
     IDBProductImmu &
+    IDBProductByGapp &
     IDBLogTime;
   export type ListProduct = IProductList;
   export type ProductPackOnly = IProductPackOnly;

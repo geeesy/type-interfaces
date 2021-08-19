@@ -1,38 +1,60 @@
 import { ICompanyPublicEntity } from './type-company'
 
+// STUB: CRUD PARAMS
+export interface IApiCategoryParams {
+  identityId: string
+  isMainCat: boolean
+  marketCode: string
+}
+
+export interface IApiConsoleParams {
+  identityId: string
+  username?: string
+}
+
 /**
   * SUPPLIER
   */
-// ANCHOR: SUPPLIER | Create
-// NOTE: === console -> Create Supplier
+// SUPPLIER | Create
+// ? === console -> Create Supplier
 export interface IConsoleSupplierCreate extends ICompanyPublicEntity {
 }
 
-// REVIEW: SUPPLIER
-// NOTE: === console ==> market
+// SUPPLIER
+// ? === console ==> market
 export interface IConsoleSupplier extends IConsoleSupplierCreate {
   supplierId: string;
   createdAt: string
   updatedAt: string
 }
 
-export interface IConsoleSupplierList {
+export interface IListSupplier {
   companyName: string
   companyCategoryId: string
   supplierId: string
 }
 
+export interface IListBusiness {
+  businessId: string
+}
+
+export interface IListCompany {
+  compId: string
+}
+
 /**
  * CATEGORY
  */
-
+// --------------------------------
+// REVIEW: CATEGORY
+// --------------------------------
 // ANCHOR: CATEGORY | Entity (1/4)
 export interface ICategoryByGapp {
   isRecommend: boolean;
   isHighLight: boolean
   isNewArrival: boolean
   impFactor: number;
-  isProductMustApproved: boolean
+  hasProductMustApproved: boolean
 }
 
 // ANCHOR: CATEGORY | Entity (2/4)
@@ -57,18 +79,14 @@ export interface ICategoryEntity {
   parentCatId: string // have or empty string
   isMainCategory: boolean
   onHomepage?: boolean // main
-  themeColor?: string // main
-  color?: string // main
+  colorPrimary?: string // main
+  colorSecondary?: string // main
   onParentCatCard?: boolean // sub
 }
 
-export interface IApiCategoryParams {
-  isMainCat: boolean
-  marketCode: string
-}
-
-// ANCHOR: CATEGORY | PRODUCT SPECIFICATION
-
+// --------------------------------
+// REVIEW: CATEGORY | PRODUCT SPECIFICATION
+// --------------------------------
 // ANCHOR: CATEGORY | PRODUCT SPEC > GROUP > ATTRIBUTE GROUP
 export interface ICategoryProductSpecAttributeGroup {
   specAttributeGroupName: string

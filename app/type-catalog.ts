@@ -30,75 +30,75 @@ export interface IQtyPrice {
 }
 
 export interface IProductShippingMethod {
-    shippingId: string,
-    shippingIconUrl: string,
-    shippingName: string,
-    typeCalPrice: string,
-    typeDelivery: string,
-    shippingStatus: boolean
-    deliveryTime: {
-      start: number,
-      end:number,
-    },
-    note: string,
-    compId: string,
-    createdAt: string,
-    updatedAt: string,
-    fixedDelivery: {
-      fixedPrice: number,
-      freeShippingPrice:number,
-    },
-    calNumberProductsPiece: {
-      firstPiecePrice: number,
-      nextPiecePrice: number,
-      freeShippingPrice:number,
-    },
-    calNumberProducts: {
-      notExceedPiece: [
-        {
-          numberOfPiece: number,
-          amount: number,
-          freeShipping: boolean
-        }
-      ],
-      exceedPiece: {
+  shippingId: string,
+  shippingIconUrl: string,
+  shippingName: string,
+  typeCalPrice: string,
+  typeDelivery: string,
+  shippingStatus: boolean
+  deliveryTime: {
+    start: number,
+    end: number,
+  },
+  note: string,
+  compId: string,
+  createdAt: string,
+  updatedAt: string,
+  fixedDelivery: {
+    fixedPrice: number,
+    freeShippingPrice: number,
+  },
+  calNumberProductsPiece: {
+    firstPiecePrice: number,
+    nextPiecePrice: number,
+    freeShippingPrice: number,
+  },
+  calNumberProducts: {
+    notExceedPiece: [
+      {
         numberOfPiece: number,
         amount: number,
         freeShipping: boolean
-      },
-      freeShippingPrice:number,
+      }
+    ],
+    exceedPiece: {
+      numberOfPiece: number,
+      amount: number,
+      freeShipping: boolean
     },
-    calNumberProductsWeight: {
-      notExceedKg: [
-        {
-          numberOfWeight: number,
-          unitWeight: string,
-          amount: number,
-          freeShipping: boolean
-        }
-      ],
-      exceedKg: {
+    freeShippingPrice: number,
+  },
+  calNumberProductsWeight: {
+    notExceedKg: [
+      {
         numberOfWeight: number,
         unitWeight: string,
-        amount: number
+        amount: number,
         freeShipping: boolean
-      },
-      freeShippingPrice: number
+      }
+    ],
+    exceedKg: {
+      numberOfWeight: number,
+      unitWeight: string,
+      amount: number
+      freeShipping: boolean
     },
-    calNumberProductsDiscount: {
-      notExceedPrice: [
-       {
-          numberOfAmount: number,
-          amount: number,
-          freeShipping: boolean
-        }
-      ],
-      exceedPrice: {
+    freeShippingPrice: number
+  },
+  calNumberProductsDiscount: {
+    notExceedPrice: [
+      {
         numberOfAmount: number,
         amount: number,
         freeShipping: boolean
       }
+    ],
+    exceedPrice: {
+      numberOfAmount: number,
+      amount: number,
+      freeShipping: boolean
     }
+  }
 
 }
 
@@ -192,6 +192,7 @@ export interface IRefProductList {
   productThumbnailUrl: string;
   productName: string;
   productType: string;
+  productCategoryId: string;
 
   // -> Available
   countVariants: number; // * UPDATED ON [C-U-D] VARIANT
@@ -209,9 +210,11 @@ export interface IProductList extends IRefProductList {
   productId: string;
   createdAt: string;
   updatedAt: string;
+  updatedBy: string
+  createdBy: string
 }
 
-// ANCHOR: PRODUCT | Entity (1/5)
+// ANCHOR: PRODUCT | Entity (1/6)
 // NOTE === attributes on each SKU (variant and pack creation)
 export interface IProductRootEntity {
   productShowedImageUrl: string;
@@ -221,7 +224,7 @@ export interface IProductRootEntity {
   productUnitPrice: number;
 }
 
-// ANCHOR: PRODUCT | Entity (2/5)
+// ANCHOR: PRODUCT | Entity (2/6)
 // NOTE === attributes on each SKU
 export interface IProductEntity {
   productImagesUrl: IProductImage[];
@@ -245,7 +248,7 @@ export interface IProductEntity {
   shippingMethod: IProductShippingMethod[];
 }
 
-// ANCHOR: PRODUCT | Entity (3/5)
+// ANCHOR: PRODUCT | Entity (3/6)
 export interface IProductAttributes {
   display: IProductDisplay;
   isActive: boolean; // ! not show all
@@ -281,7 +284,7 @@ export interface IProductAttributes {
   havePacksInVariant?: IProductPackInVariant[];
 }
 
-// ANCHOR: PRODUCT | Entity (4/5)
+// ANCHOR: PRODUCT | Entity (4/6)
 export interface IDBProduct {
   impFactor: number;
   countVariants: number; // * UPDATED ON [C-U-D] VARIANT
@@ -290,16 +293,23 @@ export interface IDBProduct {
   countPacksInVariant: number;
   variantMatchId?: IProductVariantMatchId[];
   variantSelectors?: IProductVariantSelector[];
-  statusProductApproveOnMarket: StatusProductApproveOnMarket
-
+  updatedBy: string
 }
 
-// ANCHOR: PRODUCT | Entity (5/5)
+// ANCHOR: PRODUCT | Entity (5/6)
+export interface IDBProductByGapp {
+  statusProductApproveOnMarket: StatusProductApproveOnMarket
+  supportNote: string
+  supportBadge: string
+}
+
+// ANCHOR: PRODUCT | Entity (6/6)
 export interface IDBProductImmu {
   productId: string;
   compId: string;
   businessId: string;
   supplierId: string;
+  createdBy: string
 }
 
 // ANCHOR: VARIANT | Entity
