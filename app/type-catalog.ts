@@ -214,6 +214,12 @@ export interface IProductList extends IRefProductList {
   createdBy: string
 }
 
+export interface IProductMarketList extends IProductList {
+  'isCanBuy_market': string;
+  'productName_market': string;
+  'productCoverUrl_market': string;
+}
+
 // ANCHOR: PRODUCT | Entity (1/6)
 // NOTE === attributes on each SKU (variant and pack creation)
 export interface IProductRootEntity {

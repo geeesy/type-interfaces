@@ -250,6 +250,7 @@ import {
   IProductAttributes,
   IProductEntity,
   IProductList,
+  IProductMarketList,
   IProductPackInVariant,
   IProductPackOnly,
   IProductRootEntity,
@@ -685,7 +686,7 @@ export namespace GappConsole {
     IDBLogTime;
   export type ListSpecAttributeGroup = SpecAttributeGroup[];
   // * PRODUCTS
-  export type ListProduct = IProductList & IDBProductImmu & IDBProductByGapp
+  export type ListProduct = IProductMarketList & IDBProductImmu & IDBProductByGapp
   export type Product = GappInventory.Product
 }
 
