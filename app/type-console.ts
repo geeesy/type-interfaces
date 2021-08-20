@@ -3,7 +3,6 @@ import { ICompanyPublicEntity } from './type-company'
 // STUB: CRUD PARAMS
 export interface IApiCategoryParams {
   identityId: string
-  isMainCat: boolean
   marketCode: string
 }
 
