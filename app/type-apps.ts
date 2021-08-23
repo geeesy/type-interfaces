@@ -112,7 +112,7 @@ export interface IPersonContactInfo {
 
 
 // STUB: VENDOR
-export type TVendorType = 'seller' | 'buyer' | 'multi'
+export type TVendorType = 'seller' | 'buyer' | 'multi' | 'other'
 
 export interface IVendorCreateParams {
   compId: string
