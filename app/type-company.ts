@@ -263,7 +263,7 @@ export interface ICompanyPublicEntityImmu {
 // NOTE: Can not update on SUPPLIER
 export interface ICompanyPublicEntity {
   companyName: string; // TODO: update on cognito?
-
+  companyMarketName: string
   companyCategoryId: string;
   companyCategoryCustomName?: string; // * id = OTHER000
 
