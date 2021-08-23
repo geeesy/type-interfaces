@@ -1,6 +1,7 @@
-import { IPersonContactInfo } from './type-apps'
 import { ICompanyUserData, TApproverFlow, TBusinessSize, TBusinessTypes } from './type-business'
 import { IPaymentMethod, IShippingZone } from './type-console'
+
+import { IPersonContactInfo } from './type-apps'
 
 /* #region COMPANY */
 export interface IApiCompanyParams {
@@ -91,6 +92,7 @@ export interface IMapLocation {
 }
 
 export interface ICompanyContactInfo {
+  companyMarketName: string
   companyName: string
   companyPhones: string[];
   companyWebsite: string;
