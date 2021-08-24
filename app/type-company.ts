@@ -100,7 +100,7 @@ export interface ICompanyContactInfo {
   companySocial: ISocial;
   contactAddress: IAddress;
   billingAddress?: IAddress;
-  shippingAddress?: IAddress;
+  shippingAddress?: IAddress[];
   companyNote?: string;
   companyRegisNo: string;
   companyTaxInfo?: ICompanyTaxInfo;
