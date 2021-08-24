@@ -95,6 +95,7 @@ import {
 } from './type-marketplace'
 import {
   IApiCategoryParams,
+  IApiConsoleParams,
   ICategoryByGapp,
   ICategoryEntity,
   ICategoryProductSpecAttributeGroup,
@@ -674,13 +675,13 @@ export namespace GappConsole {
     ICompanyPublicEntity;
   export type Supplier = GappMarket.Supplier;
   export type ListSupplier = ICompanyPublicEntityImmu & ICompanyPublicEntity;
-  // * PRODUCT SPECIFICATION
-  export type CreateSpecGroup = ICategoryProductSpecGroup;
+  // * PRODUCT SPECIFICATION BY CATEGORY
+  export type CreateSpecGroup = ICategoryProductSpecGroup & IApiConsoleParams;
   export type SpecGroup = IDBCategoryProductSpecGroup &
     ICategoryProductSpecGroup &
     IDBLogTime;
   export type ListSpecGroup = SpecGroup[];
-  export type CreateSpecAttributeGroup = ICategoryProductSpecAttributeGroup;
+  export type CreateSpecAttributeGroup = ICategoryProductSpecAttributeGroup & IApiConsoleParams;
   export type SpecAttributeGroup = IDBCategoryProductSpecAttributeGroup &
     ICategoryProductSpecAttributeGroup &
     IDBLogTime;

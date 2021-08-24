@@ -85,11 +85,26 @@ export interface ICategoryEntity {
 
 // --------------------------------
 // REVIEW: CATEGORY | PRODUCT SPECIFICATION
+// CATEGORY AA
+//      /--- SPEC GROUP A
+//                    /--- SPEC ATTRIBUTE GROUP 1
+//                                /--- SPEC ATTRIBUTE
+//                                /--- SPEC ATTRIBUTE
+//                    /--- SPEC ATTRIBUTE GROUP 2
+//      /--- SPEC GROUP B
+//                    /--- SPEC ATTRIBUTE GROUP 1
+//                                /--- SPEC ATTRIBUTE
 // --------------------------------
+
+export interface ISpecAttributes {
+  name: string
+  valueType: string
+  required: boolean
+}
 // ANCHOR: CATEGORY | PRODUCT SPEC > GROUP > ATTRIBUTE GROUP
 export interface ICategoryProductSpecAttributeGroup {
   specAttributeGroupName: string
-  attributeNames: string[]
+  attribute: ISpecAttributes[]
 }
 
 export interface IDBCategoryProductSpecAttributeGroup {
