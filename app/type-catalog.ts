@@ -247,7 +247,9 @@ export interface IProductEntity {
   toFreeShip: IQtyPrice;
   productPackage: IProductPackage;
   stock: IProductStock;
-  stockLevel: number
+  stockLevel: number;
+  stockOrder: number;
+  stockReadyToSell: number;
   preparingTime: IPeriodTimeByQty[];
   leadTimes: IPeriodTimeByQty[];
   displaySku: IProductDisplay;
