@@ -137,6 +137,8 @@ export interface IRefVendorList {
   companyEmails: string[];
   companyNote?: string;
   vendorId: string
+  vendorType: TVendorType
+  isCompanyVendor: boolean
 }
 
 export interface IVendor extends IVendorCreate {
@@ -145,6 +147,7 @@ export interface IVendor extends IVendorCreate {
   createdBy: string
   vendorId: string
   relCompId: string
+  isCompanyVendor: boolean
 }
 
 export interface ICompanyOnList {

@@ -194,6 +194,10 @@ export interface IRefProductList {
   productType: string;
   productCategoryId: string;
 
+  stockLevel: number;
+  stockOrder:number;
+  stockReadyToSell: number;
+
   // -> Available
   countVariants: number; // * UPDATED ON [C-U-D] VARIANT
   countPacks: number; // * UPDATED ON [C-U-D] PACK
@@ -247,7 +251,9 @@ export interface IProductEntity {
   toFreeShip: IQtyPrice;
   productPackage: IProductPackage;
   stock: IProductStock;
-  stockLevel: number
+  stockLevel: number;
+  stockOrder: number;
+  stockReadyToSell: number;
   preparingTime: IPeriodTimeByQty[];
   leadTimes: IPeriodTimeByQty[];
   displaySku: IProductDisplay;
