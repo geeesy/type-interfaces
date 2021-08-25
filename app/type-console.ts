@@ -121,6 +121,10 @@ export interface IDBCategoryProductSpecGroup {
   specGroupId: string
 }
 
+export interface ICategorySpecGroup {
+  categoryProductSpecGroup: ICategoryProductSpecGroup[]
+}
+
 // TODO: Setting > Shipping on CORE ===> USE CLIENT SIDE
 
 /**
