@@ -677,7 +677,7 @@ export namespace GappConsole {
   export type Supplier = GappMarket.Supplier;
   export type ListSupplier = ICompanyPublicEntityImmu & ICompanyPublicEntity;
   // * PRODUCT SPECIFICATION BY CATEGORY
-  export type CreateSpecGroup = ICategorySpecGroup & IApiConsoleParams;
+  export type CreateCategoryProductSpec = ICategorySpecGroup & IApiConsoleParams;
   export type SpecGroup = IDBCategoryProductSpecGroup &
     ICategoryProductSpecGroup &
     IDBLogTime;
