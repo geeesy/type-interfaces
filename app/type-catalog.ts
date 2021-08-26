@@ -117,7 +117,6 @@ export interface ILogProductValue {
   productSku: string;
   stockLevel: number;
   stockOrder: number;
-  stockReadyToSell: number;
   shippingMethod?: IProductShippingMethod[] | null;
   productPrice: IProductPrice;
   productWholesales?: IProductWholesale[] | null;
