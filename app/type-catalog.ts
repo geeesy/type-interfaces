@@ -1,5 +1,3 @@
-import { IApiSupplierParams } from './type-company'
-import { IDBLogTime } from './type-business'
 import { StatusProductApproveOnMarket } from './enum-const'
 
 export interface IPriceList {
@@ -197,7 +195,7 @@ export interface IRefProductList {
   productCategoryId: string;
 
   stockLevel: number;
-  stockOrder:number;
+  stockOrder: number;
   stockReadyToSell: number;
 
   // -> Available
@@ -253,16 +251,18 @@ export interface IProductEntity {
   toFreeShip: IQtyPrice;
   productPackage: IProductPackage;
   stock: IProductStock;
-  stockLevel: number;
-  stockOrder: number;
-  stockReadyToSell: number;
   preparingTime: IPeriodTimeByQty[];
   leadTimes: IPeriodTimeByQty[];
   displaySku: IProductDisplay;
   shippingMethod: IProductShippingMethod[];
 }
 
-// ANCHOR: PRODUCT | Entity (3/6)
+// ANCHOR: PRODUCT | Entity (3/7)
+export interface IProductStockProtected {
+  stockLevel: number; // = init with initialStock
+}
+
+// ANCHOR: PRODUCT | Entity (4/7)
 export interface IProductAttributes {
   display: IProductDisplay;
   isActive: boolean; // ! not show all
@@ -298,7 +298,7 @@ export interface IProductAttributes {
   havePacksInVariant?: IProductPackInVariant[];
 }
 
-// ANCHOR: PRODUCT | Entity (4/6)
+// ANCHOR: PRODUCT | Entity (5/7)
 export interface IDBProduct {
   impFactor: number;
   countVariants: number; // * UPDATED ON [C-U-D] VARIANT
@@ -307,17 +307,18 @@ export interface IDBProduct {
   countPacksInVariant: number;
   variantMatchId?: IProductVariantMatchId[];
   variantSelectors?: IProductVariantSelector[];
+  stockOrder: number; // * UPDATED ON CREATED ORDER
   updatedBy: string
 }
 
-// ANCHOR: PRODUCT | Entity (5/6)
+// ANCHOR: PRODUCT | Entity (6/7)
 export interface IDBProductByGapp {
   statusProductApproveOnMarket: StatusProductApproveOnMarket
   supportNote: string
   supportBadge: string
 }
 
-// ANCHOR: PRODUCT | Entity (6/6)
+// ANCHOR: PRODUCT | Entity (7/7)
 export interface IDBProductImmu {
   productId: string;
   compId: string;

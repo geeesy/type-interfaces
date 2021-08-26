@@ -256,6 +256,7 @@ import {
   IProductPackInVariant,
   IProductPackOnly,
   IProductRootEntity,
+  IProductStockProtected,
   IProductVariantAttributes,
   IProductVariantEntity,
   IProductVariantInPack
@@ -813,6 +814,7 @@ export namespace GappInventory {
     IApiSupplierParams;
   export type Product = IProductRootEntity &
     IProductEntity &
+    IProductStockProtected &
     IProductAttributes &
     IDBProduct &
     IDBProductImmu &
@@ -828,6 +830,7 @@ export namespace GappInventory {
     IApiSupplierParams;
   export type ProductVariantOnly = IProductRootEntity &
     IProductEntity &
+    IProductStockProtected &
     IProductVariantEntity &
     IDBProductVariantOnlyImmu &
     IDBLogTime;
