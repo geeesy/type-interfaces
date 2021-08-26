@@ -247,6 +247,7 @@ import {
   IDBProduct,
   IDBProductByGapp,
   IDBProductImmu,
+  IDBProductStock,
   IDBProductVariantOnlyImmu,
   ILogProduct,
   IProductAttributes,
@@ -814,7 +815,7 @@ export namespace GappInventory {
     IApiSupplierParams;
   export type Product = IProductRootEntity &
     IProductEntity &
-    IProductStockProtected &
+    IDBProductStock &
     IProductAttributes &
     IDBProduct &
     IDBProductImmu &
@@ -830,7 +831,7 @@ export namespace GappInventory {
     IApiSupplierParams;
   export type ProductVariantOnly = IProductRootEntity &
     IProductEntity &
-    IProductStockProtected &
+    IDBProductStock &
     IProductVariantEntity &
     IDBProductVariantOnlyImmu &
     IDBLogTime;

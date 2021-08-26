@@ -258,8 +258,9 @@ export interface IProductEntity {
 }
 
 // ANCHOR: PRODUCT | Entity (3/7)
-export interface IProductStockProtected {
+export interface IDBProductStock {
   stockLevel: number; // = init with initialStock
+  stockOrder: number; // * UPDATED ON CREATED ORDER
 }
 
 // ANCHOR: PRODUCT | Entity (4/7)
@@ -307,7 +308,6 @@ export interface IDBProduct {
   countPacksInVariant: number;
   variantMatchId?: IProductVariantMatchId[];
   variantSelectors?: IProductVariantSelector[];
-  stockOrder: number; // * UPDATED ON CREATED ORDER
   updatedBy: string
 }
 
