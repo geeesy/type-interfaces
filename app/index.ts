@@ -257,7 +257,6 @@ import {
   IProductPackInVariant,
   IProductPackOnly,
   IProductRootEntity,
-  IProductStockProtected,
   IProductVariantAttributes,
   IProductVariantEntity,
   IProductVariantInPack
