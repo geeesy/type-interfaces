@@ -196,7 +196,7 @@ export interface IRefProductList {
 
   stockLevel: number;
   stockOrder: number;
-  stockReadyToSell: number;
+  stockReadyToSell?: number;
 
   // -> Available
   countVariants: number; // * UPDATED ON [C-U-D] VARIANT
