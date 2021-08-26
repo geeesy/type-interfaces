@@ -108,8 +108,8 @@ export interface IPersonContactInfo {
   social?: ISocial;
   address?: IAddress;
   note?: string;
+  ShippingAddress?: IAddress[];
 }
-
 
 // STUB: VENDOR
 export type TVendorType = 'seller' | 'buyer' | 'multi' | 'other'

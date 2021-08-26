@@ -1,5 +1,7 @@
 import { ICompanyPublicEntity } from './type-company'
 
+export type TSpecAttributeValueType = 'text' | 'number'
+
 // STUB: CRUD PARAMS
 export interface IApiCategoryParams {
   identityId: string
@@ -98,7 +100,7 @@ export interface ICategoryEntity {
 
 export interface ISpecAttributes {
   name: string
-  valueType: string
+  valueType: TSpecAttributeValueType
   required: boolean
 }
 // ANCHOR: CATEGORY | PRODUCT SPEC > GROUP > ATTRIBUTE GROUP
@@ -119,6 +121,10 @@ export interface ICategoryProductSpecGroup {
 
 export interface IDBCategoryProductSpecGroup {
   specGroupId: string
+}
+
+export interface ICategorySpecGroup {
+  categoryProductSpecGroup: ICategoryProductSpecGroup[]
 }
 
 // TODO: Setting > Shipping on CORE ===> USE CLIENT SIDE
