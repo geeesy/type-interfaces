@@ -681,12 +681,10 @@ export namespace GappConsole {
   export type SpecGroup = IDBCategoryProductSpecGroup &
     ICategoryProductSpecGroup &
     IDBLogTime;
-  export type ListSpecGroup = SpecGroup[];
   export type CreateSpecAttributeGroup = ICategoryProductSpecAttributeGroup & IApiConsoleParams;
   export type SpecAttributeGroup = IDBCategoryProductSpecAttributeGroup &
     ICategoryProductSpecAttributeGroup &
     IDBLogTime;
-  export type ListSpecAttributeGroup = SpecAttributeGroup[];
   // * PRODUCTS
   export type ListProduct = IProductMarketList & IDBProductImmu & IDBProductByGapp
   export type Product = GappInventory.Product
