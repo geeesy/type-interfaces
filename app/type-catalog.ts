@@ -1,4 +1,4 @@
-import { StatusProductApproveOnMarket } from './enum-const'
+import { StatusProductApproveOnMarket, TPackageUnit, TPackageWeightUnit } from './enum-const'
 
 export interface IPriceList {
   priceListId: string;
@@ -145,13 +145,14 @@ export interface IProductStock {
 
 export interface IProductPackage {
   weight: number;
-  weightUnit: string;
+  weightUnit: TPackageWeightUnit;
+  weightGram: number // * Cal on DB
   height: number;
-  heightUnit: string;
+  heightUnit: TPackageUnit
   width: number;
-  widthUnit: string;
+  widthUnit: TPackageUnit
   length: number;
-  lengthUnit: string;
+  lengthUnit: TPackageUnit
 }
 
 export interface IPeriodTimeByQty {

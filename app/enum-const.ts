@@ -129,6 +129,8 @@ export const RfqCreditTermArr = [
   }
 ]
 
+export type TPackageUnit = 'mm' | 'cm' | 'm' | 'inch' | 'ft'
+
 export const PackageUnitArr = [
   {
     text: 'มิลลิเมตร', value: 'mm'
@@ -146,6 +148,8 @@ export const PackageUnitArr = [
     text: 'ฟุต', value: 'ft'
   }
 ]
+
+export type TPackageWeightUnit = 'g' | 'kg' | 'oz' | 'lb' | 'ton'
 
 export const PackageWeightUnitArr = [
   {
