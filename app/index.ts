@@ -802,6 +802,8 @@ export namespace GappMarket {
     IDBBusinessCompanyUserData &
     IDBMarketUserIdentityImmu &
     ICompanyUserData & IDBLogTime
+  export type DbUpdateUser = IMarketUserIdentity &
+    IMarketUserData & IDBBusinessCompanyUserData & ICompanyUserData & IDBUpdateTime
 }
 
 // REVIEW: G-BIZ | PRODUCT
