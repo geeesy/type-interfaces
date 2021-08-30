@@ -91,7 +91,8 @@ import {
   ISupplierWithSavedList,
   ISurvey,
   ITop20Products,
-  IWholesale
+  IWholesale,
+  IMarketUserData
 } from './type-marketplace'
 import {
   IApiCategoryParams,
@@ -793,11 +794,12 @@ export namespace GappMarket {
   export type ListProductWithSupplier = IProductWithSupplierCard;
   export type ListSupplierWithProduct = ISupplierWithProductCard;
   export type Product = IProductWithSupplier;
+  export type CreateUser = IMarketUserData & ICompanyUserData
   export type User = IMarketUserIdentity &
     IBusinessCompanyUserIdentityImmu &
     IDBBusinessCompanyUserIdentity &
     IDBBusinessCompanyUserData &
-    ICompanyUserData;
+    ICompanyUserData & IDBLogTime
 }
 
 // REVIEW: G-BIZ | PRODUCT

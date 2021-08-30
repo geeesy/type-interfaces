@@ -1,14 +1,20 @@
 import { IResAPI } from './interfaces'
+import { IPersonContactInfo } from './type-apps'
 import { IDBProduct, IProductAttributes, IProductEntity, IProductList, IProductRootEntity } from './type-catalog'
 import { ICompanyByGapp, ICompanyContactInfo, ICompanyPublicEntity } from './type-company'
 
-// REVIEW: USER
+// REVIEW: USER (Market 1/2)
 export interface IMarketUserIdentity {
   fbId: string
   googleId: string
   marketUserId: string
   relCompId: string
   relCompanyCode: string
+}
+
+// REVIEW: USER (Market 2/2)
+export interface IMarketUserData {
+  marketUserContact: IPersonContactInfo
 }
 
 export interface IResProduct extends IResAPI {
