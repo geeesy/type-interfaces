@@ -92,7 +92,8 @@ import {
   ISurvey,
   ITop20Products,
   IWholesale,
-  IMarketUserData
+  IMarketUserData,
+  IDBMarketUserIdentityImmu
 } from './type-marketplace'
 import {
   IApiCategoryParams,
@@ -799,6 +800,7 @@ export namespace GappMarket {
     IBusinessCompanyUserIdentityImmu &
     IDBBusinessCompanyUserIdentity &
     IDBBusinessCompanyUserData &
+    IDBMarketUserIdentityImmu &
     ICompanyUserData & IDBLogTime
 }
 

@@ -3,7 +3,7 @@ import { IPersonContactInfo } from './type-apps'
 import { IDBProduct, IProductAttributes, IProductEntity, IProductList, IProductRootEntity } from './type-catalog'
 import { ICompanyByGapp, ICompanyContactInfo, ICompanyPublicEntity } from './type-company'
 
-// REVIEW: USER (Market 1/2)
+// REVIEW: USER (Market 1/3)
 export interface IMarketUserIdentity {
   fbId: string
   googleId: string
@@ -12,7 +12,12 @@ export interface IMarketUserIdentity {
   relCompanyCode: string
 }
 
-// REVIEW: USER (Market 2/2)
+// REVIEW: USER (Market 2/3)
+export interface IDBMarketUserIdentityImmu {
+  iamUserId: string
+}
+
+// REVIEW: USER (Market 3/3)
 export interface IMarketUserData {
   marketUserContact: IPersonContactInfo
 }
