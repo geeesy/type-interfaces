@@ -794,7 +794,7 @@ export namespace GappMarket {
   export type ListProductWithSupplier = IProductWithSupplierCard;
   export type ListSupplierWithProduct = ISupplierWithProductCard;
   export type Product = IProductWithSupplier;
-  export type CreateUser = IMarketUserData & ICompanyUserData
+  export type CreateUser = IMarketUserIdentity & IMarketUserData & ICompanyUserData
   export type User = IMarketUserIdentity & IMarketUserData &
     IBusinessCompanyUserIdentityImmu &
     IDBBusinessCompanyUserIdentity &
