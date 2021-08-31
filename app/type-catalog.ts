@@ -197,7 +197,7 @@ export interface IRefProductList {
   productCategoryId: string;
 
   stockLevel: number;
-  stockOrder:number;
+  stockOrder: number;
 
   // -> Available
   countVariants: number; // * UPDATED ON [C-U-D] VARIANT
@@ -254,7 +254,6 @@ export interface IProductEntity {
   stock: IProductStock;
   stockLevel: number;
   stockOrder: number;
-  stockReadyToSell: number;
   preparingTime: IPeriodTimeByQty[];
   leadTimes: IPeriodTimeByQty[];
   displaySku: IProductDisplay;
