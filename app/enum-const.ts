@@ -70,14 +70,6 @@ export enum StatusPoolJoining {
   AcceptedCancel = 'accepted-cancel'
 }
 
-export enum StatusProductApproveOnMarket {
-  Approved = 'approved',
-  PreApproved = 'pre-approved',
-  WaitForCheck = 'wait check',
-  Hold = 'hold',
-  None = 'none'
-}
-
 export enum StatusPoolShippingMainBuyer {
   'none',
   'to_purchase',

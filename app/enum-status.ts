@@ -1,6 +1,14 @@
 /* eslint-disable no-unused-vars */
 /* #region REVIEW: APPROVAL WORKFLOW */
 
+export enum StatusProductApproveOnMarket {
+  Approved = 'approved',
+  PreApproved = 'pre-approved',
+  WaitForCheck = 'wait check',
+  Hold = 'hold',
+  None = 'none'
+}
+
 export enum StatusApprovalFlow {
   WaitForCheck = 'wait for check',
   WaitForApproval = 'wait for approval',

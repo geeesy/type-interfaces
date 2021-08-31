@@ -1,6 +1,4 @@
-import { IApiSupplierParams } from './type-company'
-import { IDBLogTime } from './type-business'
-import { StatusProductApproveOnMarket } from './enum-const'
+import { StatusProductApproveOnMarket } from './enum-status'
 
 export interface IPriceList {
   priceListId: string;
