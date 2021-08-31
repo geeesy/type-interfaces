@@ -1,4 +1,6 @@
-import { StatusProductApproveOnMarket, TPackageUnit, TPackageWeightUnit } from './enum-const'
+import { IApiSupplierParams } from './type-company'
+import { IDBLogTime } from './type-business'
+import { StatusProductApproveOnMarket } from './enum-const'
 
 export interface IPriceList {
   priceListId: string;
@@ -145,14 +147,13 @@ export interface IProductStock {
 
 export interface IProductPackage {
   weight: number;
-  weightUnit: TPackageWeightUnit;
-  weightGram: number // * Cal on DB
+  weightUnit: string;
   height: number;
-  heightUnit: TPackageUnit
+  heightUnit: string;
   width: number;
-  widthUnit: TPackageUnit
+  widthUnit: string;
   length: number;
-  lengthUnit: TPackageUnit
+  lengthUnit: string;
 }
 
 export interface IPeriodTimeByQty {
@@ -196,8 +197,8 @@ export interface IRefProductList {
   productCategoryId: string;
 
   stockLevel: number;
-  stockOrder: number;
-  stockReadyToSell?: number;
+  stockOrder:number;
+  stockReadyToSell: number;
 
   // -> Available
   countVariants: number; // * UPDATED ON [C-U-D] VARIANT
@@ -252,25 +253,23 @@ export interface IProductEntity {
   toFreeShip: IQtyPrice;
   productPackage: IProductPackage;
   stock: IProductStock;
+  stockLevel: number;
+  stockOrder: number;
+  stockReadyToSell: number;
   preparingTime: IPeriodTimeByQty[];
   leadTimes: IPeriodTimeByQty[];
   displaySku: IProductDisplay;
   shippingMethod: IProductShippingMethod[];
 }
 
-// ANCHOR: PRODUCT | Entity (3/7)
-export interface IDBProductStock {
-  stockLevel: number; // = init with initialStock
-  stockOrder: number; // * UPDATED ON CREATED ORDER
-}
-
-// ANCHOR: PRODUCT | Entity (4/7)
+// ANCHOR: PRODUCT | Entity (3/6)
 export interface IProductAttributes {
   display: IProductDisplay;
   isActive: boolean; // ! not show all
   isRecommend: boolean;
   isHighLight: boolean;
   isNewArrival: boolean;
+  isLastCategory: boolean;
   isCanBuy: string;
   'isCanBuy_market': string;
   productName: string;
@@ -300,7 +299,7 @@ export interface IProductAttributes {
   havePacksInVariant?: IProductPackInVariant[];
 }
 
-// ANCHOR: PRODUCT | Entity (5/7)
+// ANCHOR: PRODUCT | Entity (4/6)
 export interface IDBProduct {
   impFactor: number;
   countVariants: number; // * UPDATED ON [C-U-D] VARIANT
@@ -312,14 +311,14 @@ export interface IDBProduct {
   updatedBy: string
 }
 
-// ANCHOR: PRODUCT | Entity (6/7)
+// ANCHOR: PRODUCT | Entity (5/6)
 export interface IDBProductByGapp {
   statusProductApproveOnMarket: StatusProductApproveOnMarket
   supportNote: string
   supportBadge: string
 }
 
-// ANCHOR: PRODUCT | Entity (7/7)
+// ANCHOR: PRODUCT | Entity (6/6)
 export interface IDBProductImmu {
   productId: string;
   compId: string;
