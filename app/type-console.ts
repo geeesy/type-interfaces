@@ -79,6 +79,7 @@ export interface ICategoryEntity {
   categoryCaption: string
   parentCatId: string // have or empty string
   isMainCategory: boolean
+  isLastCategory: boolean
   onHomepage?: boolean // main
   colorPrimary?: string // main
   colorSecondary?: string // main

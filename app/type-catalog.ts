@@ -198,7 +198,6 @@ export interface IRefProductList {
 
   stockLevel: number;
   stockOrder:number;
-  stockReadyToSell: number;
 
   // -> Available
   countVariants: number; // * UPDATED ON [C-U-D] VARIANT
@@ -269,7 +268,7 @@ export interface IProductAttributes {
   isRecommend: boolean;
   isHighLight: boolean;
   isNewArrival: boolean;
-  isLastCategory: boolean;
+
   isCanBuy: string;
   'isCanBuy_market': string;
   productName: string;
