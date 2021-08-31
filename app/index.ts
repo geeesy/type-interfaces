@@ -6,12 +6,14 @@ import {
   IBanner,
   ICategoryWithChild,
   IChildCategory,
+  IDBMarketUserIdentityImmu,
   IFactoryAddress,
   IFilterResultProduct,
   IFilterResultSupplier,
   IImages,
   IInterest,
   ILeadTime,
+  IMarketUserData,
   IMarketUserIdentity,
   IMessageDetail,
   IMessageList,
@@ -91,9 +93,7 @@ import {
   ISupplierWithSavedList,
   ISurvey,
   ITop20Products,
-  IWholesale,
-  IMarketUserData,
-  IDBMarketUserIdentityImmu
+  IWholesale
 } from './type-marketplace'
 import {
   IApiCategoryParams,
@@ -249,7 +249,6 @@ import {
   IDBProduct,
   IDBProductByGapp,
   IDBProductImmu,
-  IDBProductStock,
   IDBProductVariantOnlyImmu,
   ILogProduct,
   IProductAttributes,
@@ -820,7 +819,6 @@ export namespace GappInventory {
     IApiSupplierParams;
   export type Product = IProductRootEntity &
     IProductEntity &
-    IDBProductStock &
     IProductAttributes &
     IDBProduct &
     IDBProductImmu &
@@ -836,7 +834,6 @@ export namespace GappInventory {
     IApiSupplierParams;
   export type ProductVariantOnly = IProductRootEntity &
     IProductEntity &
-    IDBProductStock &
     IProductVariantEntity &
     IDBProductVariantOnlyImmu &
     IDBLogTime;
