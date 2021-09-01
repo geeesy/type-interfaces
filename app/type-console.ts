@@ -67,6 +67,7 @@ export interface IDBCategoryImmu {
 export interface IDBCategory {
   countSuppliers: number
   countProducts: number
+  isActive: boolean // * on delete = false
 }
 
 // ANCHOR: CATEGORY | Entity (4/4)
