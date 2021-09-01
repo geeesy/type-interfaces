@@ -1,4 +1,5 @@
 import { StatusProductApproveOnMarket } from './enum-status'
+import { ICategoryProductSpecGroup, IDBCategoryProductSpecGroup, ISpecAttributes } from './type-console'
 
 export interface IPriceList {
   priceListId: string;
@@ -159,15 +160,7 @@ export interface IPeriodTimeByQty {
   day: [number, number];
 }
 
-export interface IProductSpecAttribute {
-  attributeName: string;
-  attributeDataType: string;
-  attributeValue: string;
-}
-
-export interface IProductSpec {
-  specGroupName: string;
-  attribute: IProductSpecAttribute[];
+export interface IProductSpec extends ICategoryProductSpecGroup, IDBCategoryProductSpecGroup {
 }
 
 export interface IProductImage {

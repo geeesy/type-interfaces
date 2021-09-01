@@ -103,6 +103,7 @@ export interface ISpecAttributes {
   name: string
   valueType: TSpecAttributeValueType
   required: boolean
+  productAttributeValue?: TSpecAttributeValueType // ! only for product
 }
 // ANCHOR: CATEGORY | PRODUCT SPEC > GROUP > ATTRIBUTE GROUP
 export interface ICategoryProductSpecAttributeGroup {
