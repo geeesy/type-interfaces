@@ -68,6 +68,7 @@ export interface IDBCategory {
   countSuppliers: number
   countProducts: number
   isActive: boolean // * on delete = false
+  wasArchived: boolean // * on delete = true
 }
 
 // ANCHOR: CATEGORY | Entity (4/4)
