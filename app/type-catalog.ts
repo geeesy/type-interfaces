@@ -269,8 +269,8 @@ export interface IProductAttributes {
   keywords: string[];
   productCoverUrl: string;
   'productCoverUrl_market': string;
-  productCategoryInternal: string;
   productCategoryId: string;
+  productGroupIds: string;
   productCategoryCustomName?: string; // * id = OTHER000
   productVideoCoverUrl: string;
   'productVideoCoverUrl_market': string;
@@ -384,4 +384,15 @@ export interface IProductVariantInPack
   productPackVariantId: string;
   createdAt: string;
   updatedAt: string;
+}
+
+// PRODUCT GROUP
+export interface IProductGroup {
+  productGroupName: string;
+  productGroupInfo: string;
+  productGroupIconUrl: string;
+}
+
+export interface DBIProductGroupImmu {
+  productGroupId: string;
 }

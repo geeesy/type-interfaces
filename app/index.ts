@@ -246,6 +246,7 @@ import {
   IDBUpdateTime
 } from './type-business'
 import {
+  DBIProductGroupImmu,
   IDBProduct,
   IDBProductByGapp,
   IDBProductImmu,
@@ -848,6 +849,8 @@ export namespace GappInventory {
   export type ProductPackInVariant = IProductPackInVariant;
   export type ProductVariantInPack = IProductVariantInPack;
   export type LogProduct = ILogProduct
+  export type CreateProductGroup = IProductGroup
+  export type ProductGroup = IProductGroup & DBIProductGroupImmu & IDBLogTime
 }
 
 // REVIEW: G-BIZ | SETTING
