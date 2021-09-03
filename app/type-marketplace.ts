@@ -333,68 +333,7 @@ export interface IFilterResultProduct {
   supplierLogosUrl: string;
 }
 export interface IResProductMayLike extends IResProduct { } // Like a IProduct
-export interface IResProductGroupDetail {
-  message: string;
-  data: IProductGroupDetail[];
-}
-export interface IProductGroupDetail {
-  productGroupIds: string;
-  productGroupImagesUrl: string;
-  productGroupNames: string;
-  productSource: string;
-  productCategoryIds: string;
-  productCategoryCustomName: string;
-  productCurrencyCode: string;
-  productOrigin: string;
-  productChannel: string[];
-  warehouseIds: string;
-  productBrands: string;
-  productKeywords: string[];
-  productCategorySpec: IProductCategorySpec[];
-  productVideosCoverUrl: string;
-  savedLists: ISavedList[];
-  products: [
-    {
-      productNames: string;
-      costPrices: number;
-      productBuyPrice: number;
-      productPrice: number;
-      productSku: string;
-      productUnits: string;
-      productWholesales: IProductWholeSale[];
-      productBarcode: string;
-      productImagesUrl: string[];
-      initialStock: number;
-      productPackage: IProductPackage;
-      stockAlert: number;
-      maximumOnlineStock: number;
-      minOrderQty: number;
-      minimumWholesaleQty: number;
-      wholesalePrice: number;
-      retailPrice: number;
-      packSizeLabel: string;
-      packSizeQty: number;
-      preparingTime: number;
-      freeShipPrice: number;
-      freeShipQuantity: number;
-      wholesale: IWholesale;
-    }
-  ];
-  leadTime: ILeadTime[];
-  suppliers: {
-    supplierIds: string;
-    supplierNames: string;
-    supplierCompanyEmails: string;
-    supplierKeywords: string[];
-    supplierVerified: boolean;
-    supplierRating: number;
-    impFactor: number;
-    address: IAddress;
-    shippingZone: IShippingZone[];
-    paymentMethod: IPaymentMethod[];
-    supplierLogosUrl: string;
-  };
-}
+
 export interface IPaymentMethod {
   paymentMethodType: string;
   paymentMethodTypeAttr: IPaymentMethodTypeAttr[];

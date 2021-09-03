@@ -22,7 +22,6 @@ import {
   IPaymentMethods,
   IProductDescription,
   IProductDetail,
-  IProductGroupDetail,
   IProductPackage,
   IProductWholeSale,
   IProductWithAddr,
@@ -44,7 +43,6 @@ import {
   IResProduct,
   IResProductDescription,
   IResProductDetail,
-  IResProductGroupDetail,
   IResProductWithAddr,
   IResProductWithCount,
   IResRecommendCategory,
@@ -316,11 +314,6 @@ export namespace GeeesyMarketplace {
     | FilterResultProduct;
   export type FilterResultProduct = IFilterResultProduct;
 
-  export type ResProductGroupDetail =
-    | IResProductGroupDetail
-    | ProductGroupDetail;
-  export type ProductGroupDetail = IProductGroupDetail;
-
   export type ResProductDescription =
     | IResProductDescription
     | ProductDescription;
@@ -398,7 +391,6 @@ export namespace GeeesyMarketplace {
   export type ResSupProductCat = IResSupProductCat | SupProductCat;
   export type SupProductCat = ISupProductCat;
 
-  export type ProductGroup = IProductGroup;
   export type ChildCategory = IChildCategory;
   export type ProductWithOutSupplier = IProductWithOutSupplier;
   export type Address = IAddress;
