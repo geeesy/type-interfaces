@@ -75,11 +75,7 @@ export interface ISupProductCat {
   productCategoryNames: string;
   productCategoryIcons: string;
 }
-export interface IProductGroup {
-  productGroupIds: string;
-  productGroupNames: string;
-  productGroupCoverUrl: string;
-}
+
 export interface IResRecommendProduct extends IResProduct { } // Like a IProduct
 export interface IResTop20ProductsByCategory extends IResProduct { } // Like a IProduct
 export interface IResTop20Products {
@@ -90,7 +86,7 @@ export interface ITop20Products {
   productIds: string;
   productNames: string;
   productCoverUrl: string;
-  productGroups: IProductGroup;
+  // productGroups: IProductGroup;
   savedLists: ISavedList[];
 }
 export interface IResCategoryWithChild {
@@ -156,7 +152,7 @@ export interface ICreateLatestVisitProducts {
   packSizeQty: number;
   impFactor: number;
   minOrderQty: number;
-  productGroups: IProductGroup;
+  // productGroups: IProductGroup;
   supplierIds: string;
   supplierNames: string;
   supplierVerified: boolean;
@@ -210,7 +206,7 @@ export interface ICreateSavedListProduct {
   packSizeLabel: string;
   packSizeQty: number;
   impFactor: number;
-  productGroups: IProductGroup;
+  // productGroups: IProductGroup;
   supplierIds: string;
   supplierNames: string;
   supplierCompanyEmails: string;
@@ -288,7 +284,7 @@ export interface IProductWithOutSupplier {
   packSizeQty: number;
   impFactor: number;
   minOrderQty: number;
-  productGroup: IProductGroup;
+  // productGroup: IProductGroup;
   savedLists: ISavedList[];
 }
 interface IShippingZone {
