@@ -391,6 +391,7 @@ export interface IProductGroup {
   productGroupName: string;
   productGroupInfo: string;
   productGroupIconUrl: string;
+  compId: string
 }
 
 export interface DBIProductGroupImmu {
