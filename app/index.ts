@@ -759,7 +759,7 @@ export namespace GappBiz {
     IDBBusinessCompanyUserData &
     ICompanyUserData &
     IDBUpdateTime
-  export type DBUpdateSupplier = IPortfolio & IDBUpdateTime;
+  export type DBUpdateSupplier = IPortfolio & ICompanyPublicEntity & IDBUpdateTime;
   export type CreateSupplierDocument = IDocument & IApiCompanyParams;
   export type CreateSupplierCertificate = ICertificate & IApiCompanyParams;
   export type DBUpdateSupplierDocument = IDocument & IDBUpdateTime;
