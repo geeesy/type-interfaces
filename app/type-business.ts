@@ -8,24 +8,18 @@ export type TBusinessSize = 'micro' | 'small' | 'medium' | 'large' | 'none'
 export type TBusinessTypes = 'manufacturer' | 'wholesaler' | 'retailer'
 export type TGender = 'male' | 'female' | 'neutral'
 
-export interface IDBLogTime {
-  createdAt: string
-  updatedAt: string
-}
-
-export interface IDBUpdateTime {
-  updatedAt: string
-}
-
 /**
  * BUSINESS
  */
-// REVIEW: BUSINESS | Entity (1/2)
+// --------------------------------
+// REVIEW: BUSINESS
+// --------------------------------
+// ANCHOR: BUSINESS | Entity (1/2)
 export interface IBusinessEntityImmu {
   businessId: string // * === tenantId
   useAsCompany: boolean // ? default = false // TODO: immu?
 }
-// REVIEW: BUSINESS | Entity (2/2)
+// ANCHOR: BUSINESS | Entity (2/2)
 export interface IBusinessEntity {
   businessName: string
   businessCategoryId: string // * <-- include other id = OTHER000
@@ -36,19 +30,26 @@ export interface IBusinessEntity {
   website: string
   interests: string[]
 }
-// REVIEW: BUSINESS | OWNER Entity (1/2)
+
+// --------------------------------
+// REVIEW: BUSINESS OWNER
+// --------------------------------
+// ANCHOR: BUSINESS | OWNER Entity (1/2)
 export interface IBusinessOwnerIdentityImmu {
   identityId: string
-  // phone: string
   email: string // TODO: check cognito cred
 }
 
-// REVIEW: BUSINESS | OWNER Entity (2/2)
+// ANCHOR: BUSINESS | OWNER Entity (2/2)
 export interface IBusinessOwnerIdentity {
   phone: string
   ownerName: string
   avatarThumbUrl: string
 }
+
+// --------------------------------
+//
+// --------------------------------
 
 export type TAccessStatementAction = 'rfi' | 'rfq' | 'sales' | 'purchases' | 'finance' | 'products'
 export type TAccessScope = 'rfi' | 'rfq' | 'sales' | 'purchases' | 'finance' | 'products'
@@ -70,7 +71,10 @@ export interface IAccessScope {
   statement: IAccessStatement[]
 }
 
-// REVIEW: BUSINESS | USER (1/4)
+// --------------------------------
+// REVIEW: BUSINESS USER
+// --------------------------------
+// ANCHOR: BUSINESS | USER (1/4)
 export interface IBusinessUserIdentityImmu {
   email: string // TODO: check cognito cred
   mobile: string
@@ -80,7 +84,7 @@ export interface IBusinessUserIdentityImmu {
   username: string // * for check with cognitoIdentityId on REQ
 }
 
-// REVIEW: BUSINESS | USER (2/4)
+// ANCHOR: BUSINESS | USER (2/4)
 export interface IBusinessUserIdentity {
   fullName: string
   penName: string // TODO: check cognito
@@ -88,19 +92,22 @@ export interface IBusinessUserIdentity {
   businessPosition: string
 }
 
-// REVIEW: BUSINESS | USER (3/4)
+// ANCHOR: BUSINESS | USER (3/4)
 export interface IDBBusinessUserIdentityStatus {
   isActive: boolean
 }
 
-// REVIEW: BUSINESS | USER (4/4)
+// ANCHOR: BUSINESS | USER (4/4)
 export interface IDBBusinessUserIdentity {
   companies: string[] // * as Set on DB
   historyCountOnCompany?: number // * -> DB on ADMIN
   historyCountOnAdmin?: number // * -> DB on STAFF
 }
 
-// REVIEW: COMPANY | USER (1/6)
+// --------------------------------
+// REVIEW: COMPANY USER
+// --------------------------------
+// ANCHOR: COMPANY | USER (1/6)
 export interface IBusinessCompanyUserIdentityImmu {
   businessId: string
   companyCode: string
@@ -109,7 +116,7 @@ export interface IBusinessCompanyUserIdentityImmu {
   identityId: string // * same as Business User
   tempPassword?: string // * on STAFF create
 }
-// REVIEW: COMPANY | USER (2/6)
+// ANCHOR: COMPANY | USER (2/6)
 export interface IBusinessCompanyUserIdentity {
   fullName: string
   isDefaultReceiver: boolean // * 1 Company 1 User
@@ -119,18 +126,20 @@ export interface IBusinessCompanyUserIdentity {
   adminUsername?: string // * on STAFF create, update on changed admin
   personalCode: string
 }
-// REVIEW: COMPANY | USER (3/6)
+// ANCHOR: COMPANY | USER (3/6)
 export interface IDBBusinessCompanyUserIdentity {
   userRole: TUserRole
 
 }
-// REVIEW: COMPANY | USER (4/6)
+// ANCHOR: COMPANY | USER (4/6)
 export interface IDBBusinessCompanyUserData {
   avatarThumbUrl: string
 }
 
-// REVIEW: COMPANY | USER (5/6)
+// ANCHOR: COMPANY | USER (5/6)
 export interface ICompanyUserData {
+  firstName: string
+  lastName: string
   contact: IPersonContactInfo
   companyDept: string
   companyPosition: string
@@ -141,7 +150,7 @@ export interface ICompanyUserData {
   birthDate: string
 }
 
-// REVIEW: COMPANY | USER (6/6)
+// ANCHOR: COMPANY | USER (6/6)
 export interface ICompanyUserPrivateData {
   signatureUrl: string
 }

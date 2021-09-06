@@ -224,43 +224,49 @@ export interface ICustomPage {
 
 /* #endregion */
 
-// REVIEW: COMPANY | GAPP
-// NOTE: Init on company create (Update by GAPP only)
+/**
+ * COMPANY
+ */
+// --------------------------------
+// REVIEW: COMPANY
+// --------------------------------
+// ANCHOR: COMPANY | Entity (1/7) -> GAPP
+// === Init on company create (Update by GAPP only)
 export interface ICompanyByGapp {
   coins: number
   points: number
   impFactor: number;
 }
 
-// REVIEW: COMPANY | Entity (1/5)
-// NOTE: Init on company create, updated in G-BIZ
+// ANCHOR: COMPANY | Entity (2/7)
+// === Init on company create, updated in G-BIZ
 export interface IDBCompanyEntity {
   haveCompletedInfo: boolean //* === false on Create (changed only once)
   haveDefaultReceiver: boolean //* === false on Create
 }
 
-// REVIEW: COMPANY | Entity (2/5) --> SUPPLIER
+// ANCHOR: COMPANY | Entity (3/7) --> SUPPLIER
 export interface IDBCompanySupplierEntity {
   havePortfolio: boolean; // * to check port init , false on Create (changed only once)
   onMarket: boolean; // * false on Create
   onHub: boolean; // * false on Create
 }
 
-// REVIEW: COMPANY | Entity (3/5)
+// ANCHOR: COMPANY | Entity (4/7)
 export interface ICompanyEntityImmu {
   companyCode: string; // ! use on Cognito with tenantId
   businessId: string // * <== tenantId (Cognito)
 }
 
-// REVIEW: COMPANY | Entity (4/5)
-// NOTE: Can not update on SUPPLIER
+// ANCHOR: COMPANY | Entity (5/7)
+// === Can not update on SUPPLIER
 export interface ICompanyPublicEntityImmu {
   compId: string; // * gen on client
   supplierId: string // * init on company creation
 }
 
-// REVIEW: COMPANY | Entity (5/5)
-// NOTE: Can not update on SUPPLIER
+// ANCHOR: COMPANY | Entity (6/7)
+// === Can not update on SUPPLIER // TODO: ????
 export interface ICompanyPublicEntity {
   companyName: string; // TODO: update on cognito?
   companyMarketName: string
@@ -279,8 +285,8 @@ export interface ICompanyPublicEntity {
 
 }
 
-// REVIEW: COMPANY | Private Entity
-// NOTE: Not show on public
+// ANCHOR: COMPANY | Entity (7/7)
+// === Not show on public as Private Entity
 export interface ICompanyPrivateEntity {
   companyStampUrl: string
   companyTypes: TBusinessTypes[]
@@ -288,6 +294,10 @@ export interface ICompanyPrivateEntity {
   companyInterests: string[]
   useApprovalWorkflow: TApproverFlow
 }
+
+// --------------------------------
+//
+// --------------------------------
 
 // REVIEW: SUPPLIER | GAPP
 export interface ISupplierByGapp {

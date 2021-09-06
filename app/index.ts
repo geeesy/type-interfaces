@@ -238,9 +238,7 @@ import {
   IDBBusinessCompanyUserData,
   IDBBusinessCompanyUserIdentity,
   IDBBusinessUserIdentity,
-  IDBBusinessUserIdentityStatus,
-  IDBLogTime,
-  IDBUpdateTime
+  IDBBusinessUserIdentityStatus
 } from './type-business'
 import {
   DBIProductGroupImmu,
@@ -261,6 +259,7 @@ import {
   IProductVariantEntity,
   IProductVariantInPack
 } from './type-catalog'
+import { IDBLogTime, IDBUpdateTime } from './type-api'
 
 /* #region FIXME: Marketplace */
 export namespace GeeesyMarketplace {
@@ -654,7 +653,9 @@ export namespace GeeesyApps {
   export type SalesRep = ICompanySalesRep;
 }
 
+// --------------------------------
 // REVIEW: CONSOLE
+// --------------------------------
 export namespace GappConsole {
   // * CATEGORY
   export type CreateCategory = ICategoryEntity & IApiCategoryParams & ICategoryByGapp;
@@ -685,7 +686,9 @@ export namespace GappConsole {
   export type Product = GappInventory.Product
 }
 
-// REVIEW: BC
+// --------------------------------
+// REVIEW: BUSINESS CENTER
+// --------------------------------
 export namespace GappBusiness {
   // * BUSINESS
   export type CreateBusiness = IBusinessEntityImmu &
