@@ -10,6 +10,7 @@ export interface IMarketUserIdentity {
   marketUserId: string
   relCompId: string
   relCompanyCode: string
+  email: string // ! immutable?
 }
 
 // REVIEW: USER (Market 2/3)
