@@ -5,18 +5,17 @@ import { ICompanyByGapp, ICompanyContactInfo, ICompanyPublicEntity } from './typ
 
 // REVIEW: USER (Market 1/3)
 export interface IMarketUserIdentity {
-  fbId: string
-  googleId: string
-  marketUserId: string
   relCompId: string
   relCompanyCode: string
-  email: string // ! immutable?
   mobile: string
 }
 
 // REVIEW: USER (Market 2/3)
 export interface IDBMarketUserIdentityImmu {
+  fbId: string
+  googleId: string
   iamUserId: string
+  email: string
 }
 
 // REVIEW: USER (Market 3/3)
