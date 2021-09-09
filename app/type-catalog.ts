@@ -1,5 +1,6 @@
-import { StatusProductApproveOnMarket } from './enum-status'
 import { ICategoryProductSpecGroup, IDBCategoryProductSpecGroup, ISpecAttributes } from './type-console'
+
+import { StatusProductApproveOnMarket } from './enum-status'
 
 export interface IPriceList {
   priceListId: string;
@@ -186,6 +187,8 @@ export interface IRefProductList {
   productName: string;
   productType: string;
   productCategoryId: string;
+
+  productPackage: IProductPackage;
 
   stockLevel: number;
   stockOrder: number;
