@@ -1,3 +1,22 @@
+import {
+  DBIProductGroupImmu,
+  IDBProduct,
+  IDBProductByGapp,
+  IDBProductImmu,
+  IDBProductVariantOnlyImmu,
+  ILogProduct,
+  IProductAttributes,
+  IProductEntity,
+  IProductGroup,
+  IProductList,
+  IProductMarketList,
+  IProductPackInVariant,
+  IProductPackOnly,
+  IProductRootEntity,
+  IProductVariantAttributes,
+  IProductVariantEntity,
+  IProductVariantInPack
+} from './type-catalog'
 /* eslint-disable no-unused-vars */
 import {
   IAddress,
@@ -240,25 +259,6 @@ import {
   IDBBusinessUserIdentity,
   IDBBusinessUserIdentityStatus
 } from './type-business'
-import {
-  DBIProductGroupImmu,
-  IDBProduct,
-  IDBProductByGapp,
-  IDBProductImmu,
-  IDBProductVariantOnlyImmu,
-  ILogProduct,
-  IProductAttributes,
-  IProductEntity,
-  IProductGroup,
-  IProductList,
-  IProductMarketList,
-  IProductPackInVariant,
-  IProductPackOnly,
-  IProductRootEntity,
-  IProductVariantAttributes,
-  IProductVariantEntity,
-  IProductVariantInPack
-} from './type-catalog'
 import { IDBLogTime, IDBUpdateTime } from './type-api'
 
 /* #region FIXME: Marketplace */

@@ -175,6 +175,7 @@ export interface IDocument {
   expiryDate: number;
   isPrivate: boolean;
   isVerified: boolean;
+  description: string;
 }
 
 export interface IDocumentImmu {
@@ -276,6 +277,7 @@ export interface ICompanyPublicEntity {
   // CI
   companyFullLogoUrl: string
   companyLogoUrl: string; // * Scale down {companyFullLogoUrl}
+  companyMarketLogoUrl: string;
 
   // Contact
   contact: ICompanyContactInfo;
