@@ -824,6 +824,11 @@ export namespace GappInventory {
     IDBProductImmu &
     IDBProductByGapp &
     IDBLogTime;
+  export type DBUpdateProduct = IProductRootEntity &
+    IProductEntity &
+    IProductAttributes &
+    IDBProduct &
+    IDBUpdateTime;
   export type ListProduct = IProductList;
   export type ProductPackOnly = IProductPackOnly;
   export type CreateManyVariantOnly = IProductVariantAttributes &
