@@ -132,6 +132,24 @@ export interface ICategorySpecGroup {
   categoryProductSpecGroup: ICategoryProductSpecGroup[]
 }
 
+// ANCHOR: BANNER
+export interface IBanner {
+  bannerTitle: string
+  bannerSubtitle: string
+  bannerAlt: string
+  bannerLink: string;
+  bannerImageUrl: string;
+  bannerButtonText: string
+  sortIndex: number;
+}
+export interface IDBBannerGroup {
+  bannerGroupId: string
+}
+export interface IBannerGroup {
+  bannerGroupName: string
+  bannerItems: IBanner[]
+}
+
 // TODO: Setting > Shipping on CORE ===> USE CLIENT SIDE
 
 /**
