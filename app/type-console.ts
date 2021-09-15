@@ -101,16 +101,17 @@ export interface ICategoryEntity {
 //                                /--- SPEC ATTRIBUTE
 // --------------------------------
 
-export interface ISpecAttributes {
+export interface ISpecAttribute {
   name: string
   valueType: TSpecAttributeValueType
   required: boolean
-  productAttributeValue?: TSpecAttributeValueType // ! only for product
+  productAttributeValue: string | number // * init with on field
 }
+
 // ANCHOR: CATEGORY | PRODUCT SPEC > GROUP > ATTRIBUTE GROUP
 export interface ICategoryProductSpecAttributeGroup {
   specAttributeGroupName: string
-  attribute: ISpecAttributes[]
+  attribute: ISpecAttribute[]
 }
 
 export interface IDBCategoryProductSpecAttributeGroup {

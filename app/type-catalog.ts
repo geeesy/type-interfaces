@@ -1,4 +1,4 @@
-import { ICategoryProductSpecGroup, IDBCategoryProductSpecGroup, ISpecAttributes } from './type-console'
+import { ICategoryProductSpecGroup, IDBCategoryProductSpecGroup, ISpecAttribute } from './type-console'
 
 import { StatusProductApproveOnMarket } from './enum-status'
 
