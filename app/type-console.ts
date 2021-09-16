@@ -133,6 +133,9 @@ export interface ICategorySpecGroup {
 }
 
 // ANCHOR: BANNER
+export interface IDBBannerImmu {
+  bannerId: string
+}
 export interface IBanner {
   bannerTitle: string
   bannerSubtitle: string
@@ -142,7 +145,7 @@ export interface IBanner {
   bannerButtonText: string
   sortIndex: number;
 }
-export interface IDBBannerGroup {
+export interface IDBBannerGroupImmu {
   bannerGroupId: string
 }
 export interface IBannerGroup {

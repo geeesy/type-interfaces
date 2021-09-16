@@ -119,7 +119,8 @@ import {
   ICategoryProductSpecAttributeGroup,
   ICategoryProductSpecGroup,
   ICategorySpecGroup,
-  IDBBannerGroup,
+  IDBBannerGroupImmu,
+  IDBBannerImmu,
   IDBCategory,
   IDBCategoryImmu,
   IDBCategoryProductSpecAttributeGroup,
@@ -684,8 +685,9 @@ export namespace GappConsole {
   export type Product = GappInventory.Product
   // * BANNER
   export type CreateBannerGroup = IBannerGroup & IApiConsoleParams
-  export type BannerGroup = IDBBannerGroup & IBannerGroup & IDBLogTime
+  export type BannerGroup = IDBBannerGroupImmu & IBannerGroup & IDBLogTime
   export type CreateBanner = IBanner & IApiConsoleParams
+  export type Banner = IDBBannerImmu & IBanner & IDBLogTime
 }
 
 // --------------------------------
