@@ -80,6 +80,7 @@ export interface ICompanyTaxBranch {
 export interface ICompanyTaxInfo {
   taxNo: string;
   isHq: boolean;
+  isVatNo: boolean;
   branch: ICompanyTaxBranch[];
 }
 
