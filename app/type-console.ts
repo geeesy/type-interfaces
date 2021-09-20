@@ -144,6 +144,8 @@ export interface IBanner {
   bannerImageUrl: string;
   bannerButtonText: string
   sortIndex: number;
+  isShowedOnDesktop: boolean
+  isShowedOnMobile: boolean
 }
 export interface IDBBannerGroupImmu {
   bannerGroupId: string
