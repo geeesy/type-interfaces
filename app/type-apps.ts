@@ -108,7 +108,7 @@ export interface IPersonContactInfo {
   social?: ISocial;
   address?: IAddress;
   note?: string;
-  ShippingAddress?: IAddress[];
+  shippingAddress?: IAddress[];
 }
 
 // STUB: VENDOR
