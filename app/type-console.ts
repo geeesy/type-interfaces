@@ -101,16 +101,17 @@ export interface ICategoryEntity {
 //                                /--- SPEC ATTRIBUTE
 // --------------------------------
 
-export interface ISpecAttributes {
+export interface ISpecAttribute {
   name: string
   valueType: TSpecAttributeValueType
   required: boolean
-  productAttributeValue?: TSpecAttributeValueType // ! only for product
+  productAttributeValue: string | number // * init with on field
 }
+
 // ANCHOR: CATEGORY | PRODUCT SPEC > GROUP > ATTRIBUTE GROUP
 export interface ICategoryProductSpecAttributeGroup {
   specAttributeGroupName: string
-  attribute: ISpecAttributes[]
+  attribute: ISpecAttribute[]
 }
 
 export interface IDBCategoryProductSpecAttributeGroup {
@@ -129,6 +130,29 @@ export interface IDBCategoryProductSpecGroup {
 
 export interface ICategorySpecGroup {
   categoryProductSpecGroup: ICategoryProductSpecGroup[]
+}
+
+// ANCHOR: BANNER
+export interface IDBBannerImmu {
+  bannerId: string
+}
+export interface IBanner {
+  bannerTitle: string
+  bannerSubtitle: string
+  bannerAlt: string
+  bannerLink: string;
+  bannerImageUrl: string;
+  bannerButtonText: string
+  sortIndex: number;
+  isShowedOnDesktop: boolean
+  isShowedOnMobile: boolean
+}
+export interface IDBBannerGroupImmu {
+  bannerGroupId: string
+}
+export interface IBannerGroup {
+  bannerGroupName: string
+  bannerItems: IBanner[]
 }
 
 // TODO: Setting > Shipping on CORE ===> USE CLIENT SIDE

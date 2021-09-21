@@ -787,16 +787,3 @@ export interface ISearchFilter {
 export interface IResSearchFilter extends IResAPI {
   data: ISearchFilter[]
 }
-
-/* #endregion */
-
-export interface IResBanner {
-  messages: string;
-  data: IBanner[];
-}
-export interface IBanner {
-  bannerTitle: string;
-  bannerLinksUrl: string;
-  bannerCoverUrl: string;
-  bannerSortIndex: number;
-}

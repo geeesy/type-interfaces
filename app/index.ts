@@ -22,7 +22,6 @@ import {
   IAddress,
   IAddressSupplier,
   IAllCategoryInSearchTool,
-  IBanner,
   ICategoryWithChild,
   IChildCategory,
   IDBMarketUserIdentityImmu,
@@ -51,7 +50,6 @@ import {
   IRecommendCategory,
   IRecommendSupplier,
   IResAllCategoryInSearchTool,
-  IResBanner,
   IResCategoryWithChild,
   IResFilterResultProduct,
   IResFilterResultSupplier,
@@ -114,11 +112,15 @@ import {
 import {
   IApiCategoryParams,
   IApiConsoleParams,
+  IBanner,
+  IBannerGroup,
   ICategoryByGapp,
   ICategoryEntity,
   ICategoryProductSpecAttributeGroup,
   ICategoryProductSpecGroup,
   ICategorySpecGroup,
+  IDBBannerGroupImmu,
+  IDBBannerImmu,
   IDBCategory,
   IDBCategoryImmu,
   IDBCategoryProductSpecAttributeGroup,
@@ -270,9 +272,6 @@ export namespace GeeesyMarketplace {
   export type SavedList = ISavedList;
 
   // TODO: Refactor
-
-  export type ResBanner = IResBanner | Banner;
-  export type Banner = IBanner;
 
   export type ResProduct = IResProduct | Product;
   export type Product = IProductWithSupplier;
@@ -684,6 +683,11 @@ export namespace GappConsole {
   // * PRODUCTS
   export type ListProduct = IProductMarketList & IDBProductImmu & IDBProductByGapp
   export type Product = GappInventory.Product
+  // * BANNER
+  export type CreateBannerGroup = IBannerGroup & IApiConsoleParams
+  export type BannerGroup = IDBBannerGroupImmu & IBannerGroup & IDBLogTime
+  export type CreateBanner = IBanner & IApiConsoleParams
+  export type Banner = IDBBannerImmu & IBanner & IDBLogTime
 }
 
 // --------------------------------

@@ -38,6 +38,7 @@ export interface IBusinessEntity {
 export interface IBusinessOwnerIdentityImmu {
   identityId: string
   email: string // TODO: check cognito cred
+  cognitoUsername: string
 }
 
 // ANCHOR: BUSINESS | OWNER Entity (2/2)
@@ -114,7 +115,7 @@ export interface IBusinessCompanyUserIdentityImmu {
   compId: string
   username: string
   identityId: string // * same as Business User
-  tempPassword?: string // * on STAFF create
+  // tempPassword?: string // * on STAFF create
 }
 // ANCHOR: COMPANY | USER (2/6)
 export interface IBusinessCompanyUserIdentity {
