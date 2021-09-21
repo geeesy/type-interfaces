@@ -63,6 +63,7 @@ export interface IAddress {
   lat?: string;
   lng?: string;
   officeHours?: OfficeHour[];
+  isPrimary?: boolean
 }
 
 export interface ISocial {
