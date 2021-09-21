@@ -967,8 +967,6 @@ export interface IResBillingNote {
   data: IBillingNote;
 }
 
-
-
 /* #endregion */
 
 /* #region FIXME: Invoice */

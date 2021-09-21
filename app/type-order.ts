@@ -1,3 +1,7 @@
+import { IPersonContactInfo } from "./type-apps";
+import { ICompanyContactInfo } from "./type-company";
+import { IPaymentMethod, IShippingMethod } from "./type-console";
+
 /* eslint-disable no-unused-vars */
 export enum StatusOrderSeller {
   None = 'none', // TODO: ignore?
@@ -22,6 +26,8 @@ export enum StatusOrderCustomer {
   AwaitingAccepted = 'awaiting accepted',
   Completed = 'completed'
 }
+
+export type TOrderChannel = 'facebook' | 'line' | 'other'
 
 /**
  * ORDER
@@ -52,6 +58,44 @@ export interface IOrderCustomerDataImmu {
   customerId: string
 }
 
+export interface IDBOrderData {
+  totalOrderAmount: number;
+}
+
+export interface IOrderAccounting {
+  subtotalAmount: number;
+  shippingCost: number;
+  charges: number;
+  discount: number;
+  totalDiscountAmount: number;
+  netAmount: number;
+  vat: number;
+  grandTotalAmount: number;
+  taxWithheldPercent: number;
+  withholdingTax: number
+  totalPayAmount: number
+  isVatInc: boolean;
+}
+
+export interface IShippingData extends IShippingMethod {
+}
+
+export interface IPaymentData extends IPaymentMethod {
+
+}
+
 export interface IOrderData {
-  product: IOrderProduct[]
+  sellerNote: string;
+  customerNote: string;
+  products: IOrderProduct[]
+  accountingData: IOrderAccounting
+  sellerContactInfo: IPersonContactInfo
+  sellerCompanyContactInfo: ICompanyContactInfo
+  customerContactInfo: IPersonContactInfo
+  customerCompanyContactInfo: ICompanyContactInfo
+  channel: TOrderChannel
+  shippingsAvailable: string[] // * USE ID ON CREATE
+  shippingData: IShippingData // * CREATE ON SUBMIT ORDER
+  paymentAvailable: string[]
+  paymentData: IPaymentData
 }
