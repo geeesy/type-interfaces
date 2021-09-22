@@ -18,7 +18,7 @@ export enum DocWorkSeqIdCount {
   po = 'CountPO',
   so = 'CountSO',
   billingNote = 'CountBillingNote',
-  invoice = 'CountInvoice',
+  invoice = 'CountInvoice'
 }
 
 export enum DocFinanceSeqIdCount {
@@ -35,7 +35,7 @@ export enum CurrencyTranslateTH {
 export enum CurrencyCode {
   THAI = 'THB',
   USA = 'USD',
-  CHINA = 'CNY',
+  CHINA = 'CNY'
 }
 
 export enum UnitTH {
@@ -61,7 +61,7 @@ export const SearchPageArr = [
   SearchPage.Product,
   SearchPage.Supplier,
   SearchPage.Location
-]
+];
 
 export enum StatusPoolJoining {
   Joined = 'joined',
@@ -96,113 +96,139 @@ export enum StatusPoolShippingSubBuyer {
 
 // export const FunnelBusinessTypes = ['manufacturer', 'wholesaler', 'retailer']
 
-export const ValidUntilDate = [7, 15, 30, 60, 90]
+export const ValidUntilDate = [7, 15, 30, 60, 90];
 
-export const CreditDay = [30, 45, 60, 90]
+export const CreditDay = [30, 45, 60, 90];
 
 export const RfqCreditTermArr = [
   {
-    text: 'ไม่ระบุ', value: 'none'
+    text: 'ไม่ระบุ',
+    value: 'none'
   },
   {
-    text: 'เงินสด', value: 'cash'
+    text: 'เงินสด',
+    value: 'cash'
   },
   {
-    text: '30 วัน', value: '30'
+    text: '30 วัน',
+    value: '30'
   },
   {
-    text: '45 วัน', value: '45'
+    text: '45 วัน',
+    value: '45'
   },
   {
-    text: '60 วัน', value: '60'
+    text: '60 วัน',
+    value: '60'
   },
   {
-    text: '90 วัน', value: '90'
+    text: '90 วัน',
+    value: '90'
   }
-]
+];
 
-export type TPackageUnit = 'mm' | 'cm' | 'm' | 'inch' | 'ft'
+export type TPackageUnit = 'mm' | 'cm' | 'm' | 'inch' | 'ft';
 
 export const PackageUnitArr = [
   {
-    text: 'มิลลิเมตร', value: 'mm'
+    text: 'มิลลิเมตร',
+    value: 'mm'
   },
   {
-    text: 'เซนติเมตร', value: 'cm'
+    text: 'เซนติเมตร',
+    value: 'cm'
   },
   {
-    text: 'เมตร', value: 'm'
+    text: 'เมตร',
+    value: 'm'
   },
   {
-    text: 'นิ้ว', value: 'inch'
+    text: 'นิ้ว',
+    value: 'inch'
   },
   {
-    text: 'ฟุต', value: 'ft'
+    text: 'ฟุต',
+    value: 'ft'
   }
-]
+];
 
-export type TPackageWeightUnit = 'g' | 'kg' | 'oz' | 'lb' | 'ton'
+export type TPackageWeightUnit = 'g' | 'kg' | 'oz' | 'lb' | 'ton';
 
 export const PackageWeightUnitArr = [
   {
-    text: 'กรัม', value: 'g'
+    text: 'กรัม',
+    value: 'g'
   },
   {
-    text: 'กิโลกรัม', value: 'kg'
+    text: 'กิโลกรัม',
+    value: 'kg'
   },
   {
-    text: 'ออนซ์', value: 'oz'
+    text: 'ออนซ์',
+    value: 'oz'
   },
   {
-    text: 'ปอนด์', value: 'lb'
+    text: 'ปอนด์',
+    value: 'lb'
   },
   {
-    text: 'ตัน', value: 'ton'
+    text: 'ตัน',
+    value: 'ton'
   }
-
-]
+];
 
 export const RfqPaymentMethodArr = [
   {
-    text: 'โอนเงิน', value: 'deposit'
+    text: 'โอนเงิน',
+    value: 'deposit'
   },
   {
-    text: 'เช็ค', value: 'cheque'
+    text: 'เช็ค',
+    value: 'cheque'
   },
   {
-    text: 'บัตรเครดิต', value: 'creditCard'
+    text: 'บัตรเครดิต',
+    value: 'creditCard'
   },
   {
-    text: 'ชำระปลายทาง', value: 'onDelivery'
+    text: 'ชำระปลายทาง',
+    value: 'onDelivery'
   }
-]
+];
 
 export const FunnelBusinessSizeArr = [
   {
-    text: 'ขนาดย่อย (Micro)', value: 'micro'
+    text: 'ขนาดย่อย (Micro)',
+    value: 'micro'
   },
   {
-    text: 'ขนาดย่อม (S)', value: 'small'
+    text: 'ขนาดย่อม (S)',
+    value: 'small'
   },
   {
-    text: 'ขนาดกลาง (M)', value: 'medium'
+    text: 'ขนาดกลาง (M)',
+    value: 'medium'
   },
   {
-    text: 'ขนาดใหญ่ (L)', value: 'large'
+    text: 'ขนาดใหญ่ (L)',
+    value: 'large'
   }
-]
+];
 
 export const FunnelBusinessTypeArr = [
   {
-    text: 'ผู้ผลิต', value: 'manufacturer'
+    text: 'ผู้ผลิต',
+    value: 'manufacturer'
   },
   {
-    text: 'ผู้ค้าส่ง', value: 'wholesaler'
+    text: 'ผู้ค้าส่ง',
+    value: 'wholesaler'
   },
   {
-    text: 'ผู้ค้าปลีก', value: 'retailer'
+    text: 'ผู้ค้าปลีก',
+    value: 'retailer'
   }
-]
+];
 
 export const BankList = {
   bbl: {
@@ -292,7 +318,8 @@ export const BankList = {
   icbc: {
     code: '070',
     color: '#c50f1c',
-    official_name: 'INDUSTRIAL AND COMMERCIAL BANK OF CHINA (THAI) PUBLIC COMPANY LIMITED',
+    official_name:
+      'INDUSTRIAL AND COMMERCIAL BANK OF CHINA (THAI) PUBLIC COMPANY LIMITED',
     official_name_thai: 'ธนาคารไอซีบีซี',
     nice_name: 'Industrial and Commercial Bank of China (Thai)'
   },
@@ -303,7 +330,7 @@ export const BankList = {
     official_name_thai: 'ธนาคารแลนด์ แอนด์ เฮ้าส์ ',
     nice_name: 'Land and Houses Bank'
   }
-}
+};
 
 export const BankListArr = [
   {
@@ -362,4 +389,4 @@ export const BankListArr = [
     text: BankList.lhb.official_name_thai,
     value: BankList.lhb.official_name_thai
   }
-]
+];

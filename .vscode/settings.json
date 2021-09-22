@@ -4,5 +4,12 @@
     "Geeesy",
     "amphoe",
     "tambon"
-  ]
+  ],
+  "editor.tabSize": 2,
+  "[typescript]": {
+    "editor.formatOnPaste": false,
+    "editor.formatOnSave": true,
+  },
+  "editor.formatOnPaste": false,
+  "editor.formatOnSave": false,
 }

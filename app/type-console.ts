@@ -1,46 +1,45 @@
-import { ICompanyPublicEntity } from './type-company'
+import { ICompanyPublicEntity } from './type-company';
 
-export type TSpecAttributeValueType = 'text' | 'number'
+export type TSpecAttributeValueType = 'text' | 'number';
 
 // STUB: CRUD PARAMS
 export interface IApiCategoryParams {
-  identityId: string
-  marketCode: string
+  identityId: string;
+  marketCode: string;
 }
 
 export interface IApiConsoleParams {
-  identityId: string
-  username?: string
+  identityId: string;
+  username?: string;
 }
 
 /**
-  * SUPPLIER
-  */
+ * SUPPLIER
+ */
 // SUPPLIER | Create
 // ? === console -> Create Supplier
-export interface IConsoleSupplierCreate extends ICompanyPublicEntity {
-}
+export type IConsoleSupplierCreate = ICompanyPublicEntity;
 
 // SUPPLIER
 // ? === console ==> market
 export interface IConsoleSupplier extends IConsoleSupplierCreate {
   supplierId: string;
-  createdAt: string
-  updatedAt: string
+  createdAt: string;
+  updatedAt: string;
 }
 
 export interface IListSupplier {
-  companyName: string
-  companyCategoryId: string
-  supplierId: string
+  companyName: string;
+  companyCategoryId: string;
+  supplierId: string;
 }
 
 export interface IListBusiness {
-  businessId: string
+  businessId: string;
 }
 
 export interface IListCompany {
-  compId: string
+  compId: string;
 }
 
 /**
@@ -52,10 +51,10 @@ export interface IListCompany {
 // ANCHOR: CATEGORY | Entity (1/4)
 export interface ICategoryByGapp {
   isRecommend: boolean;
-  isHighLight: boolean
-  isNewArrival: boolean
+  isHighLight: boolean;
+  isNewArrival: boolean;
   impFactor: number;
-  hasProductMustApproved: boolean
+  hasProductMustApproved: boolean;
 }
 
 // ANCHOR: CATEGORY | Entity (2/4)
@@ -65,27 +64,27 @@ export interface IDBCategoryImmu {
 
 // ANCHOR: CATEGORY | Entity (3/4)
 export interface IDBCategory {
-  countSuppliers: number
-  countProducts: number
-  isActive: boolean // * on delete = false
-  wasArchived: boolean // * on delete = true
+  countSuppliers: number;
+  countProducts: number;
+  isActive: boolean; // * on delete = false
+  wasArchived: boolean; // * on delete = true
 }
 
 // ANCHOR: CATEGORY | Entity (4/4)
 export interface ICategoryEntity {
-  categoryName: string
+  categoryName: string;
   categoryImageUrl: string;
   categoryIconUrl: string;
   categoryDescription: string;
   categoryBannersUrl: string[];
-  categoryCaption: string
-  parentCatId: string // have or empty string
-  isMainCategory: boolean
-  isLastCategory: boolean
-  onHomepage?: boolean // main
-  colorPrimary?: string // main
-  colorSecondary?: string // main
-  onParentCatCard?: boolean // sub
+  categoryCaption: string;
+  parentCatId: string; // have or empty string
+  isMainCategory: boolean;
+  isLastCategory: boolean;
+  onHomepage?: boolean; // main
+  colorPrimary?: string; // main
+  colorSecondary?: string; // main
+  onParentCatCard?: boolean; // sub
 }
 
 // --------------------------------
@@ -102,57 +101,57 @@ export interface ICategoryEntity {
 // --------------------------------
 
 export interface ISpecAttribute {
-  name: string
-  valueType: TSpecAttributeValueType
-  required: boolean
-  productAttributeValue: string | number // * init with on field
+  name: string;
+  valueType: TSpecAttributeValueType;
+  required: boolean;
+  productAttributeValue: string | number; // * init with on field
 }
 
 // ANCHOR: CATEGORY | PRODUCT SPEC > GROUP > ATTRIBUTE GROUP
 export interface ICategoryProductSpecAttributeGroup {
-  specAttributeGroupName: string
-  attribute: ISpecAttribute[]
+  specAttributeGroupName: string;
+  attribute: ISpecAttribute[];
 }
 
 export interface IDBCategoryProductSpecAttributeGroup {
-  specAttributeGroupId: string
+  specAttributeGroupId: string;
 }
 
 // ANCHOR: CATEGORY | PRODUCT SPEC > GROUP
 export interface ICategoryProductSpecGroup {
   specGroupName: string;
-  specAttributeGroup: ICategoryProductSpecAttributeGroup[]
+  specAttributeGroup: ICategoryProductSpecAttributeGroup[];
 }
 
 export interface IDBCategoryProductSpecGroup {
-  specGroupId: string
+  specGroupId: string;
 }
 
 export interface ICategorySpecGroup {
-  categoryProductSpecGroup: ICategoryProductSpecGroup[]
+  categoryProductSpecGroup: ICategoryProductSpecGroup[];
 }
 
 // ANCHOR: BANNER
 export interface IDBBannerImmu {
-  bannerId: string
+  bannerId: string;
 }
 export interface IBanner {
-  bannerTitle: string
-  bannerSubtitle: string
-  bannerAlt: string
+  bannerTitle: string;
+  bannerSubtitle: string;
+  bannerAlt: string;
   bannerLink: string;
   bannerImageUrl: string;
-  bannerButtonText: string
+  bannerButtonText: string;
   sortIndex: number;
-  isShowedOnDesktop: boolean
-  isShowedOnMobile: boolean
+  isShowedOnDesktop: boolean;
+  isShowedOnMobile: boolean;
 }
 export interface IDBBannerGroupImmu {
-  bannerGroupId: string
+  bannerGroupId: string;
 }
 export interface IBannerGroup {
-  bannerGroupName: string
-  bannerItems: IBanner[]
+  bannerGroupName: string;
+  bannerItems: IBanner[];
 }
 
 // TODO: Setting > Shipping on CORE ===> USE CLIENT SIDE
@@ -161,42 +160,42 @@ export interface IBannerGroup {
  * CORE SETTING - Shipping Method
  */
 export interface IShippingMethod {
-  shippingMethodId: string
-  shippingMethodName: string
-  shippingMethodIconUrl: string
+  shippingMethodId: string;
+  shippingMethodName: string;
+  shippingMethodIconUrl: string;
 }
 
 /**
  * CORE SETTING - Shipping Party
  */
 export interface IShippingParty {
-  shippingPartyId: string
+  shippingPartyId: string;
   title: string;
   postcodes: string[];
   iconUrl: string;
 }
 
 export interface IShippingZone {
-  shippingZoneId: string
+  shippingZoneId: string;
   zoneName: string;
   zoneStates: string[];
   zonePostcodes: string[];
   zoneMethods: IShippingMethod[];
-  zoneParties: IShippingParty[]
+  zoneParties: IShippingParty[];
 }
 
 // TODO: Setting > Payment on CORE ===> USE CLIENT SIDE
 
 export interface IPaymentParty {
-  title: string
-  iconUrl: string
+  title: string;
+  iconUrl: string;
 }
 
 /**
  * CORE SETTING - Payment Method
  */
 export interface IPaymentMethod {
-  paymentMethodId: string
+  paymentMethodId: string;
   paymentMethodType: string;
   paymentParties: IPaymentParty[];
 }

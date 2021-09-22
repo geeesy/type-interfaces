@@ -1,6 +1,6 @@
-import { IPersonContactInfo } from "./type-apps";
-import { ICompanyContactInfo } from "./type-company";
-import { IPaymentMethod, IShippingMethod } from "./type-console";
+import { IPersonContactInfo } from './type-apps';
+import { ICompanyContactInfo } from './type-company';
+import { IPaymentMethod, IShippingMethod } from './type-console';
 
 /* eslint-disable no-unused-vars */
 export enum StatusOrderSeller {
@@ -27,14 +27,14 @@ export enum StatusOrderCustomer {
   Completed = 'completed'
 }
 
-export type TOrderChannel = 'facebook' | 'line' | 'other'
+export type TOrderChannel = 'facebook' | 'line' | 'other';
 
 /**
  * ORDER
  */
 export interface IOrderProduct {
-  productId: string
-  productTitle: string
+  productId: string;
+  productTitle: string;
   productUnitPrice: number;
   productUnit: string;
   productQty: number;
@@ -45,17 +45,17 @@ export interface IOrderProduct {
 }
 
 export interface IDBOrderImmu {
-  orderId: string
-  orderTemplateId: string
+  orderId: string;
+  orderTemplateId: string;
 }
 
 export interface IOrderSellerDataImmu {
-  businessId: string
-  compId: string
+  businessId: string;
+  compId: string;
 }
 
 export interface IOrderCustomerDataImmu {
-  customerId: string
+  customerId: string;
 }
 
 export interface IDBOrderData {
@@ -72,30 +72,27 @@ export interface IOrderAccounting {
   vat: number;
   grandTotalAmount: number;
   taxWithheldPercent: number;
-  withholdingTax: number
-  totalPayAmount: number
+  withholdingTax: number;
+  totalPayAmount: number;
   isVatInc: boolean;
 }
 
-export interface IShippingData extends IShippingMethod {
-}
+export type IShippingData = IShippingMethod;
 
-export interface IPaymentData extends IPaymentMethod {
-
-}
+export type IPaymentData = IPaymentMethod;
 
 export interface IOrderData {
   sellerNote: string;
   customerNote: string;
-  products: IOrderProduct[]
-  accountingData: IOrderAccounting
-  sellerContactInfo: IPersonContactInfo
-  sellerCompanyContactInfo: ICompanyContactInfo
-  customerContactInfo: IPersonContactInfo
-  customerCompanyContactInfo: ICompanyContactInfo
-  channel: TOrderChannel
-  shippingsAvailable: string[] // * USE ID ON CREATE
-  shippingData: IShippingData // * CREATE ON SUBMIT ORDER
-  paymentAvailable: string[]
-  paymentData: IPaymentData
+  products: IOrderProduct[];
+  accountingData: IOrderAccounting;
+  sellerContactInfo: IPersonContactInfo;
+  sellerCompanyContactInfo: ICompanyContactInfo;
+  customerContactInfo: IPersonContactInfo;
+  customerCompanyContactInfo: ICompanyContactInfo;
+  channel: TOrderChannel;
+  shippingsAvailable: string[]; // * USE ID ON CREATE
+  shippingData: IShippingData; // * CREATE ON SUBMIT ORDER
+  paymentAvailable: string[];
+  paymentData: IPaymentData;
 }

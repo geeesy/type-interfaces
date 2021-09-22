@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-namespace */
 import {
   DBIProductGroupImmu,
   IDBProduct,
@@ -16,7 +17,7 @@ import {
   IProductVariantAttributes,
   IProductVariantEntity,
   IProductVariantInPack
-} from './type-catalog'
+} from './type-catalog';
 /* eslint-disable no-unused-vars */
 import {
   IAddress,
@@ -108,7 +109,7 @@ import {
   ISurvey,
   ITop20Products,
   IWholesale
-} from './type-marketplace'
+} from './type-marketplace';
 import {
   IApiCategoryParams,
   IApiConsoleParams,
@@ -126,7 +127,7 @@ import {
   IDBCategoryProductSpecAttributeGroup,
   IDBCategoryProductSpecGroup,
   IPaymentMethod
-} from './type-console'
+} from './type-console';
 import {
   IApiCompanyParams,
   IApiSupplierParams,
@@ -152,7 +153,7 @@ import {
   ISettingPriceGroup,
   ISettingPriceList,
   ISupplierByGapp
-} from './type-company'
+} from './type-company';
 import {
   IApprover,
   IApproverFormCreate,
@@ -243,7 +244,7 @@ import {
   IVendorCreateParams,
   IVendorRequestAccept,
   IVendorRequestList
-} from './type-apps'
+} from './type-apps';
 import {
   IBusinessCompanyUserIdentity,
   IBusinessCompanyUserIdentityImmu,
@@ -260,8 +261,8 @@ import {
   IDBBusinessCompanyUserIdentity,
   IDBBusinessUserIdentity,
   IDBBusinessUserIdentityStatus
-} from './type-business'
-import { IDBLogTime, IDBUpdateTime } from './type-api'
+} from './type-business';
+import { IDBLogTime, IDBUpdateTime } from './type-api';
 
 /* #region FIXME: Marketplace */
 export namespace GeeesyMarketplace {
@@ -657,7 +658,9 @@ export namespace GeeesyApps {
 // --------------------------------
 export namespace GappConsole {
   // * CATEGORY
-  export type CreateCategory = ICategoryEntity & IApiCategoryParams & ICategoryByGapp;
+  export type CreateCategory = ICategoryEntity &
+    IApiCategoryParams &
+    ICategoryByGapp;
   export type Category = ICategoryByGapp &
     IDBCategoryImmu &
     IDBCategory &
@@ -672,22 +675,26 @@ export namespace GappConsole {
   export type Supplier = GappMarket.Supplier;
   export type ListSupplier = ICompanyPublicEntityImmu & ICompanyPublicEntity;
   // * PRODUCT SPECIFICATION BY CATEGORY
-  export type CreateCategoryProductSpec = ICategorySpecGroup & IApiConsoleParams;
+  export type CreateCategoryProductSpec = ICategorySpecGroup &
+    IApiConsoleParams;
   export type SpecGroup = IDBCategoryProductSpecGroup &
     ICategoryProductSpecGroup &
     IDBLogTime;
-  export type CreateSpecAttributeGroup = ICategoryProductSpecAttributeGroup & IApiConsoleParams;
+  export type CreateSpecAttributeGroup = ICategoryProductSpecAttributeGroup &
+    IApiConsoleParams;
   export type SpecAttributeGroup = IDBCategoryProductSpecAttributeGroup &
     ICategoryProductSpecAttributeGroup &
     IDBLogTime;
   // * PRODUCTS
-  export type ListProduct = IProductMarketList & IDBProductImmu & IDBProductByGapp
-  export type Product = GappInventory.Product
+  export type ListProduct = IProductMarketList &
+    IDBProductImmu &
+    IDBProductByGapp;
+  export type Product = GappInventory.Product;
   // * BANNER
-  export type CreateBannerGroup = IBannerGroup & IApiConsoleParams
-  export type BannerGroup = IDBBannerGroupImmu & IBannerGroup & IDBLogTime
-  export type CreateBanner = IBanner & IApiConsoleParams
-  export type Banner = IDBBannerImmu & IBanner & IDBLogTime
+  export type CreateBannerGroup = IBannerGroup & IApiConsoleParams;
+  export type BannerGroup = IDBBannerGroupImmu & IBannerGroup & IDBLogTime;
+  export type CreateBanner = IBanner & IApiConsoleParams;
+  export type Banner = IDBBannerImmu & IBanner & IDBLogTime;
 }
 
 // --------------------------------
@@ -751,7 +758,7 @@ export namespace GappBusiness {
     IBusinessCompanyUserIdentity &
     IDBBusinessCompanyUserIdentity &
     IDBBusinessCompanyUserData &
-    ICompanyUserData
+    ICompanyUserData;
 }
 
 export namespace GappBiz {
@@ -765,8 +772,10 @@ export namespace GappBiz {
   export type DBUpdateUser = IBusinessCompanyUserIdentity &
     IDBBusinessCompanyUserData &
     ICompanyUserData &
-    IDBUpdateTime
-  export type DBUpdateSupplier = IPortfolio & ICompanyPublicEntity & IDBUpdateTime;
+    IDBUpdateTime;
+  export type DBUpdateSupplier = IPortfolio &
+    ICompanyPublicEntity &
+    IDBUpdateTime;
   export type CreateSupplierDocument = IDocument & IApiCompanyParams;
   export type CreateSupplierCertificate = ICertificate & IApiCompanyParams;
   export type DBUpdateSupplierDocument = IDocument & IDBUpdateTime;
@@ -798,15 +807,22 @@ export namespace GappMarket {
   export type ListProductWithSupplier = IProductWithSupplierCard;
   export type ListSupplierWithProduct = ISupplierWithProductCard;
   export type Product = IProductWithSupplier;
-  export type CreateUser = IMarketUserIdentity & IMarketUserData & ICompanyUserData
-  export type User = IMarketUserIdentity & IMarketUserData &
+  export type CreateUser = IMarketUserIdentity &
+    IMarketUserData &
+    ICompanyUserData;
+  export type User = IMarketUserIdentity &
+    IMarketUserData &
     IBusinessCompanyUserIdentityImmu &
     IDBBusinessCompanyUserIdentity &
     IDBBusinessCompanyUserData &
     IDBMarketUserIdentityImmu &
-    ICompanyUserData & IDBLogTime
+    ICompanyUserData &
+    IDBLogTime;
   export type DbUpdateUser = IMarketUserIdentity &
-    IMarketUserData & IDBBusinessCompanyUserData & ICompanyUserData & IDBUpdateTime
+    IMarketUserData &
+    IDBBusinessCompanyUserData &
+    ICompanyUserData &
+    IDBUpdateTime;
 }
 
 // REVIEW: G-BIZ | PRODUCT
@@ -852,9 +868,9 @@ export namespace GappInventory {
     IDBUpdateTime;
   export type ProductPackInVariant = IProductPackInVariant;
   export type ProductVariantInPack = IProductVariantInPack;
-  export type LogProduct = ILogProduct
-  export type CreateProductGroup = IProductGroup
-  export type ProductGroup = IProductGroup & DBIProductGroupImmu & IDBLogTime
+  export type LogProduct = ILogProduct;
+  export type CreateProductGroup = IProductGroup;
+  export type ProductGroup = IProductGroup & DBIProductGroupImmu & IDBLogTime;
 }
 
 // REVIEW: G-BIZ | SETTING
@@ -884,7 +900,7 @@ export namespace GappSetting {
     IBusinessCompanyUserIdentity &
     IDBBusinessCompanyUserIdentity &
     IDBBusinessCompanyUserData &
-    ICompanyUserData
+    ICompanyUserData;
   export type CreateAdminStaff = IBusinessUserIdentityImmu &
     IBusinessUserIdentity &
     IBusinessCompanyUserIdentityImmu &
@@ -894,11 +910,11 @@ export namespace GappSetting {
   export type CountDocument = IDocWorkCount & IDocFinanceCount;
 }
 
-export * as IMarketplace from './type-marketplace'
-export * as IConsole from './type-console'
-export * as IApps from './type-apps'
-export * as ICatalog from './type-catalog'
-export * as ICompany from './type-company'
+export * as IMarketplace from './type-marketplace';
+export * as IConsole from './type-console';
+export * as IApps from './type-apps';
+export * as ICatalog from './type-catalog';
+export * as ICompany from './type-company';
 
-export * as STATUS from './enum-status'
-export * as CONST from './enum-const'
+export * as STATUS from './enum-status';
+export * as CONST from './enum-const';

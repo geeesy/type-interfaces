@@ -1,12 +1,19 @@
-import { IApprovalRule, IPersonContactInfo } from './type-apps'
-import { ICompanyByGapp, ICompanyEntityImmu, ICompanyPublicEntity, ICompanyPublicEntityImmu, IDBCompanyEntity, IDBCompanySupplierEntity } from './type-company'
+import { IApprovalRule, IPersonContactInfo } from './type-apps';
+import {
+  ICompanyByGapp,
+  ICompanyEntityImmu,
+  ICompanyPublicEntity,
+  ICompanyPublicEntityImmu,
+  IDBCompanyEntity,
+  IDBCompanySupplierEntity
+} from './type-company';
 
-export type TUserRole = 'owner' | 'admin' | 'staff' | 'user'
-export type TApproverRole = 'reviewer' | 'approver' | 'none'
-export type TApproverFlow = 'reviewer' | 'approver' | 'none'
-export type TBusinessSize = 'micro' | 'small' | 'medium' | 'large' | 'none'
-export type TBusinessTypes = 'manufacturer' | 'wholesaler' | 'retailer'
-export type TGender = 'male' | 'female' | 'neutral'
+export type TUserRole = 'owner' | 'admin' | 'staff' | 'user';
+export type TApproverRole = 'reviewer' | 'approver' | 'none';
+export type TApproverFlow = 'reviewer' | 'approver' | 'none';
+export type TBusinessSize = 'micro' | 'small' | 'medium' | 'large' | 'none';
+export type TBusinessTypes = 'manufacturer' | 'wholesaler' | 'retailer';
+export type TGender = 'male' | 'female' | 'neutral';
 
 /**
  * BUSINESS
@@ -16,19 +23,19 @@ export type TGender = 'male' | 'female' | 'neutral'
 // --------------------------------
 // ANCHOR: BUSINESS | Entity (1/2)
 export interface IBusinessEntityImmu {
-  businessId: string // * === tenantId
-  useAsCompany: boolean // ? default = false // TODO: immu?
+  businessId: string; // * === tenantId
+  useAsCompany: boolean; // ? default = false // TODO: immu?
 }
 // ANCHOR: BUSINESS | Entity (2/2)
 export interface IBusinessEntity {
-  businessName: string
-  businessCategoryId: string // * <-- include other id = OTHER000
-  businessCategoryCustomName?: string
-  businessLogoUrl: string // * replaced with Scale down (empty on create)
-  businessTypes: TBusinessTypes[]
-  businessSize: TBusinessSize
-  website: string
-  interests: string[]
+  businessName: string;
+  businessCategoryId: string; // * <-- include other id = OTHER000
+  businessCategoryCustomName?: string;
+  businessLogoUrl: string; // * replaced with Scale down (empty on create)
+  businessTypes: TBusinessTypes[];
+  businessSize: TBusinessSize;
+  website: string;
+  interests: string[];
 }
 
 // --------------------------------
@@ -36,40 +43,52 @@ export interface IBusinessEntity {
 // --------------------------------
 // ANCHOR: BUSINESS | OWNER Entity (1/2)
 export interface IBusinessOwnerIdentityImmu {
-  identityId: string
-  email: string // TODO: check cognito cred
-  cognitoUsername: string
+  identityId: string;
+  email: string; // TODO: check cognito cred
+  cognitoUsername: string;
 }
 
 // ANCHOR: BUSINESS | OWNER Entity (2/2)
 export interface IBusinessOwnerIdentity {
-  phone: string
-  ownerName: string
-  avatarThumbUrl: string
+  phone: string;
+  ownerName: string;
+  avatarThumbUrl: string;
 }
 
 // --------------------------------
 //
 // --------------------------------
 
-export type TAccessStatementAction = 'rfi' | 'rfq' | 'sales' | 'purchases' | 'finance' | 'products'
-export type TAccessScope = 'rfi' | 'rfq' | 'sales' | 'purchases' | 'finance' | 'products'
+export type TAccessStatementAction =
+  | 'rfi'
+  | 'rfq'
+  | 'sales'
+  | 'purchases'
+  | 'finance'
+  | 'products';
+export type TAccessScope =
+  | 'rfi'
+  | 'rfq'
+  | 'sales'
+  | 'purchases'
+  | 'finance'
+  | 'products';
 
 export interface IAccessStatement {
-  action: TAccessStatementAction
-  permission: IPermission
+  action: TAccessStatementAction;
+  permission: IPermission;
 }
 
 export interface IPermission {
-  create: boolean
-  read: boolean
-  update: boolean
-  delete: boolean
+  create: boolean;
+  read: boolean;
+  update: boolean;
+  delete: boolean;
 }
 
 export interface IAccessScope {
-  scope: TAccessScope
-  statement: IAccessStatement[]
+  scope: TAccessScope;
+  statement: IAccessStatement[];
 }
 
 // --------------------------------
@@ -77,32 +96,32 @@ export interface IAccessScope {
 // --------------------------------
 // ANCHOR: BUSINESS | USER (1/4)
 export interface IBusinessUserIdentityImmu {
-  email: string // TODO: check cognito cred
-  mobile: string
-  userRole: TUserRole
-  identityId: string // * from cognito
-  businessId: string
-  username: string // * for check with cognitoIdentityId on REQ
+  email: string; // TODO: check cognito cred
+  mobile: string;
+  userRole: TUserRole;
+  identityId: string; // * from cognito
+  businessId: string;
+  username: string; // * for check with cognitoIdentityId on REQ
 }
 
 // ANCHOR: BUSINESS | USER (2/4)
 export interface IBusinessUserIdentity {
-  fullName: string
-  penName: string // TODO: check cognito
-  businessDept: string
-  businessPosition: string
+  fullName: string;
+  penName: string; // TODO: check cognito
+  businessDept: string;
+  businessPosition: string;
 }
 
 // ANCHOR: BUSINESS | USER (3/4)
 export interface IDBBusinessUserIdentityStatus {
-  isActive: boolean
+  isActive: boolean;
 }
 
 // ANCHOR: BUSINESS | USER (4/4)
 export interface IDBBusinessUserIdentity {
-  companies: string[] // * as Set on DB
-  historyCountOnCompany?: number // * -> DB on ADMIN
-  historyCountOnAdmin?: number // * -> DB on STAFF
+  companies: string[]; // * as Set on DB
+  historyCountOnCompany?: number; // * -> DB on ADMIN
+  historyCountOnAdmin?: number; // * -> DB on STAFF
 }
 
 // --------------------------------
@@ -110,52 +129,57 @@ export interface IDBBusinessUserIdentity {
 // --------------------------------
 // ANCHOR: COMPANY | USER (1/6)
 export interface IBusinessCompanyUserIdentityImmu {
-  businessId: string
-  companyCode: string
-  compId: string
-  username: string
-  identityId: string // * same as Business User
+  businessId: string;
+  companyCode: string;
+  compId: string;
+  username: string;
+  identityId: string; // * same as Business User
   // tempPassword?: string // * on STAFF create
 }
 // ANCHOR: COMPANY | USER (2/6)
 export interface IBusinessCompanyUserIdentity {
-  fullName: string
-  isDefaultReceiver: boolean // * 1 Company 1 User
-  approverRole: TApproverRole // * Reviewer || Approver || NONE
-  approvalFlowRules: IApprovalRule
-  accessPolicy: IAccessScope[]
-  adminUsername?: string // * on STAFF create, update on changed admin
-  personalCode: string
+  fullName: string;
+  isDefaultReceiver: boolean; // * 1 Company 1 User
+  approverRole: TApproverRole; // * Reviewer || Approver || NONE
+  approvalFlowRules: IApprovalRule;
+  accessPolicy: IAccessScope[];
+  adminUsername?: string; // * on STAFF create, update on changed admin
+  personalCode: string;
 }
 // ANCHOR: COMPANY | USER (3/6)
 export interface IDBBusinessCompanyUserIdentity {
-  userRole: TUserRole
-
+  userRole: TUserRole;
 }
 // ANCHOR: COMPANY | USER (4/6)
 export interface IDBBusinessCompanyUserData {
-  avatarThumbUrl: string
+  avatarThumbUrl: string;
 }
 
 // ANCHOR: COMPANY | USER (5/6)
 export interface ICompanyUserData {
-  firstName: string
-  lastName: string
-  contact: IPersonContactInfo
-  companyDept: string
-  companyPosition: string
+  firstName: string;
+  lastName: string;
+  contact: IPersonContactInfo;
+  companyDept: string;
+  companyPosition: string;
   isKeyContact?: boolean;
-  avatarImageUrl: string // --> avatarThumbUrl
-  nickname: string
-  gender: TGender // default = neutral
-  birthDate: string
+  avatarImageUrl: string; // --> avatarThumbUrl
+  nickname: string;
+  gender: TGender; // default = neutral
+  birthDate: string;
 }
 
 // ANCHOR: COMPANY | USER (6/6)
 export interface ICompanyUserPrivateData {
-  signatureUrl: string
+  signatureUrl: string;
 }
 
-export interface IBusinessListCompany extends ICompanyEntityImmu, ICompanyPublicEntity, ICompanyPublicEntityImmu, IDBCompanyEntity, IDBCompanySupplierEntity, ICompanyByGapp {
-  useApprovalWorkflow: TApproverFlow
+export interface IBusinessListCompany
+  extends ICompanyEntityImmu,
+    ICompanyPublicEntity,
+    ICompanyPublicEntityImmu,
+    IDBCompanyEntity,
+    IDBCompanySupplierEntity,
+    ICompanyByGapp {
+  useApprovalWorkflow: TApproverFlow;
 }
