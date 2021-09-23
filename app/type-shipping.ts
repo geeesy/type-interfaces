@@ -73,6 +73,10 @@ export interface IDBShippingMethodImmu {
   shippingMethodId: string;
 }
 
+export interface IDBShippingMethod {
+  isActive: boolean;
+}
+
 export interface IShippingMethodEntityImmu {
   compId: string;
   shippingMethodType: ShippingMethodType;

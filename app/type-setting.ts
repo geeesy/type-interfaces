@@ -12,6 +12,10 @@ export interface IDBSaleChannelImmu {
   isUnique: boolean;
 }
 
+export interface IDBSaleChannel {
+  isActive: boolean;
+}
+
 export interface ISaleChannelEntityImmu {
   saleChannelType: SaleChannelType;
   saleChannelSubType: SaleChannelSubType;

@@ -1,7 +1,7 @@
 import { GappSetting } from '.';
+import { SaleChannelSubType } from './enum-const';
 import { IPersonContactInfo } from './type-apps';
 import { ICompanyContactInfo } from './type-company';
-import { IPaymentMethod, IShippingMethod } from './type-console';
 
 /* eslint-disable no-unused-vars */
 export enum StatusOrderSeller {
@@ -27,8 +27,6 @@ export enum StatusOrderCustomer {
   AwaitingAccepted = 'awaiting accepted',
   Completed = 'completed'
 }
-
-export type TOrderChannel = 'facebook' | 'line' | 'other';
 
 /**
  * ORDER
@@ -65,7 +63,7 @@ export interface IDBOrderData {
   paymentAvailableData: GappSetting.PaymentMethod[];
 }
 
-export interface IOrderConfirmedData {
+export interface IOrderDataOnConfirm {
   // * CREATE ON SUBMIT ORDER
   shippingData: GappSetting.ShippingMethod;
   paymentData: GappSetting.PaymentMethod;
@@ -95,7 +93,7 @@ export interface IOrderData {
   sellerCompanyContactInfo: ICompanyContactInfo;
   customerContactInfo: IPersonContactInfo;
   customerCompanyContactInfo: ICompanyContactInfo;
-  channel: TOrderChannel;
+  channel: SaleChannelSubType
   shippingsAvailableId: string[]; // * USE ID ON CREATE
   paymentAvailableId: string[]; // * USE ID ON CREATE
 }

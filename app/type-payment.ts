@@ -20,6 +20,10 @@ export interface IDBPaymentMethodImmu {
   paymentMethodId: string;
 }
 
+export interface IDBPaymentMethod {
+  isActive: boolean;
+}
+
 export interface IPaymentMethodEntityImmu {
   paymentMethodType: PaymentMethodType;
 }
