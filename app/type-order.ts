@@ -1,3 +1,4 @@
+import { GappSetting } from '.';
 import { IPersonContactInfo } from './type-apps';
 import { ICompanyContactInfo } from './type-company';
 import { IPaymentMethod, IShippingMethod } from './type-console';
@@ -60,6 +61,14 @@ export interface IOrderCustomerDataImmu {
 
 export interface IDBOrderData {
   totalOrderAmount: number;
+  shippingAvailableData: GappSetting.ShippingMethod[];
+  paymentAvailableData: GappSetting.PaymentMethod[];
+}
+
+export interface IOrderConfirmedData {
+  // * CREATE ON SUBMIT ORDER
+  shippingData: GappSetting.ShippingMethod;
+  paymentData: GappSetting.PaymentMethod;
 }
 
 export interface IOrderAccounting {
@@ -77,10 +86,6 @@ export interface IOrderAccounting {
   isVatInc: boolean;
 }
 
-export type IShippingData = IShippingMethod;
-
-export type IPaymentData = IPaymentMethod;
-
 export interface IOrderData {
   sellerNote: string;
   customerNote: string;
@@ -91,8 +96,6 @@ export interface IOrderData {
   customerContactInfo: IPersonContactInfo;
   customerCompanyContactInfo: ICompanyContactInfo;
   channel: TOrderChannel;
-  shippingsAvailable: string[]; // * USE ID ON CREATE
-  shippingData: IShippingData; // * CREATE ON SUBMIT ORDER
-  paymentAvailable: string[];
-  paymentData: IPaymentData;
+  shippingsAvailableId: string[]; // * USE ID ON CREATE
+  paymentAvailableId: string[]; // * USE ID ON CREATE
 }

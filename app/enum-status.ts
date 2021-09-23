@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+
 /* #region REVIEW: APPROVAL WORKFLOW */
 
 export enum StatusProductApproveOnMarket {
@@ -46,7 +47,7 @@ export enum StatusApproverIdx {
 
 export enum StatusInquirySender {
   Waiting = 'waiting',
-  Replied = 'replied',
+  Replied = 'replied'
 }
 
 export enum StatusInquiryReceiver {
@@ -94,13 +95,13 @@ export enum StatusPOSender {
   Issued = 'issued',
   InApproval = 'in approval',
   Confirmed = 'confirmed',
-  WaitForSO = 'wait for so',
+  WaitForSO = 'wait for so'
 }
 
 export enum StatusPOReceiver {
   ToConfirm = 'to confirm',
   Confirmed = 'confirmed',
-  ToCreateSO = 'to create so',
+  ToCreateSO = 'to create so'
 }
 
 export enum StatusSOSender {

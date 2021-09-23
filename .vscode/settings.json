@@ -1,15 +1,24 @@
 {
   "cSpell.words": [
+    "amphoe",
     "GAPP",
     "Geeesy",
-    "amphoe",
-    "tambon"
+    "Immu",
+    "lalamove",
+    "Lazada",
+    "Shopee",
+    "tambon",
+    "thaipost"
   ],
   "editor.tabSize": 2,
   "[typescript]": {
     "editor.formatOnPaste": false,
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false
+  },
+  "[json]": {
+    "editor.formatOnPaste": false,
+    "editor.formatOnSave": false
   },
   "editor.formatOnPaste": false,
-  "editor.formatOnSave": false,
+  "editor.formatOnSave": false
 }

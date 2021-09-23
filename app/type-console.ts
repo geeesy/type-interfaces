@@ -1,6 +1,6 @@
 import { ICompanyPublicEntity } from './type-company';
 
-export type TSpecAttributeValueType = 'text' | 'number';
+export type TSpecAttributeValueType = 'text' | 'number'; // prettier-ignore
 
 // STUB: CRUD PARAMS
 export interface IApiCategoryParams {

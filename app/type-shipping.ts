@@ -2,6 +2,8 @@
  * SHIPPING
  */
 
+import { ShippingMethodType } from './enum-const';
+
 export type TShippingParty =
   | 'thaipost'
   | 'kerry'
@@ -14,69 +16,82 @@ export type TShippingParty =
   | 'other';
 
 // ANCHOR: Shipping Method Attribute (Type 1)
-export interface IShippingMethodFree {
+export interface IShippingMethodTypeFree {
+  shippingMethodType: ShippingMethodType.Free;
   minOrderTotalAmount: number;
 }
 
-// ANCHOR: Shipping Method Attribute (Type 1)
-export interface IShippingMethodFixedRate {
+// ANCHOR: Shipping Method Attribute (Type 2)
+export interface IShippingMethodTypeFixedRate {
+  shippingMethodType: ShippingMethodType.FixedRate;
   shippingCost: number;
   minOrderTotalAmount: number;
 }
 
-// ANCHOR: Shipping Method Attribute (Type 1)
-export interface IShippingMethodBasedByPcs {
+// ANCHOR: Shipping Method Attribute (Type 3)
+export interface IShippingMethodTypeBasedByPcs {
+  shippingMethodType: ShippingMethodType.BasedByPcs;
   minOrderTotalAmount: number;
   shippingCostFirstPcs: number;
   shippingCostPerPcs: number;
 }
 
-// ANCHOR: Shipping Method Attribute (Type 1)
+// ANCHOR: Shipping Method Attribute (Type 4)
 export interface IShippingCostByStepPcs {
   minPcs: number;
   shippingCost: number;
 }
-
-// ANCHOR: Shipping Method Attribute (Type 1)
-export interface IShippingCostByStepWeight {
-  minWeight: number;
-  shippingCost: number;
-}
-
-export interface IShippingCostBasedByStepWeight {
-  minOrderTotalAmount: number;
-  shippingCost: IShippingCostByStepWeight[];
-}
-export interface IShippingMethodBasedByStepPcs {
+export interface IShippingMethodTypeBasedByStepPcs {
+  shippingMethodType: ShippingMethodType.BasedByStepPcs;
   minOrderTotalAmount: number;
   shippingCost: IShippingCostByStepPcs[];
 }
 
+// ANCHOR: Shipping Method Attribute (Type 5)
+export interface IShippingCostByStepWeight {
+  minWeight: number;
+  shippingCost: number;
+}
+export interface IShippingMethodTypeBasedByStepWeight {
+  shippingMethodType: ShippingMethodType.BasedByStepWeight;
+  minOrderTotalAmount: number;
+  shippingCost: IShippingCostByStepWeight[];
+}
+
+// ANCHOR: Shipping Method Attribute (Type 6)
 export interface IShippingCostByStepPrice {
   minOrderTotalAmount: number;
   shippingCost: number;
 }
-
-export interface IShippingMethodBasedByPrice {
+export interface IShippingMethodTypeBasedByOrderPrice {
+  shippingMethodType: ShippingMethodType.BasedByOrderPrice;
   shippingCost: IShippingCostByStepPrice[];
 }
 
+// REVIEW: Shipping Method
 export interface IDBShippingMethodImmu {
-  shippingId: string;
+  shippingMethodId: string;
 }
 
 export interface IShippingMethodEntityImmu {
   compId: string;
+  shippingMethodType: ShippingMethodType;
 }
 
 export interface IShippingMethodEntity {
   shippingParty: TShippingParty;
   shippingIconUrl: string;
-  shippingName: string;
+  shippingAliasName: string;
   deliveryTime: {
     earliest: number;
     last: number;
   };
   note: string;
-  shippingMethodData: string;
+  shippingMethodAttribute:
+    | IShippingMethodTypeFree
+    | IShippingMethodTypeFixedRate
+    | IShippingMethodTypeBasedByPcs
+    | IShippingMethodTypeBasedByStepPcs
+    | IShippingMethodTypeBasedByStepWeight
+    | IShippingMethodTypeBasedByOrderPrice;
 }
