@@ -276,7 +276,7 @@ import {
   IShippingMethodEntity,
   IShippingMethodEntityImmu
 } from './type-shipping';
-import { IOrderLinkDataOnConfirm } from './type-order';
+import { IOrderLinkData, IOrderLinkDataOnConfirm } from './type-order';
 
 /* #region FIXME: Marketplace */
 export namespace GeeesyMarketplace {
@@ -805,6 +805,10 @@ export namespace GappBiz {
     ICompanyEntityImmu &
     IDBLogTime &
     IPortfolioImmu;
+  // ! ORDER - ORDERLINK
+  export type CreateOrderLink = IOrderLinkData & IApiCompanyParams
+  export type OrderLink  = IOrderLinkData
+  
 }
 
 // REVIEW: G-MARKET

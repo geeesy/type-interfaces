@@ -28,6 +28,8 @@ export enum StatusOrderCustomer {
   Completed = 'completed'
 }
 
+export type TOrderType = 'ORDERLINK' | 'SALEPAGE' | 'GAPPMARKET'
+
 /**
  * ORDER
  * TYPE 1 - ORDER ALINK
@@ -103,6 +105,7 @@ export interface IOrderEntity {
   accountingData: IOrderAccounting;
   sellerContactInfo: IPersonContactInfo;
   sellerCompanyContactInfo: ICompanyContactInfo;
+  orderType: TOrderType;
 }
 
 export interface IOrderLinkData {
