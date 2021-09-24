@@ -22,7 +22,7 @@
   "rules": {
     "no-unused-vars": "warn",
     "semi": "error",
-    "indent": 1
+    "indent": ["warn", 2]
     // "prettier/prettier": 2 // Means error
   }
 }
