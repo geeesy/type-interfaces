@@ -150,6 +150,7 @@ import {
     ISettingCreatePriceGroup,
     ISettingCreatePriceList,
     ISettingDoc,
+    ISettingNotification,
     ISettingPriceGroup,
     ISettingPriceList,
     ISupplierByGapp
@@ -275,7 +276,7 @@ import {
     IShippingMethodEntity,
     IShippingMethodEntityImmu
 } from './type-shipping';
-import { IOrderData, IOrderDataOnConfirm } from './type-order';
+import { IOrderLinkDataOnConfirm } from './type-order';
 
 /* #region FIXME: Marketplace */
 export namespace GeeesyMarketplace {
@@ -804,8 +805,6 @@ export namespace GappBiz {
     ICompanyEntityImmu &
     IDBLogTime &
     IPortfolioImmu;
-  export type CreateOrder = IOrderData
-  export type Order = IOrderData & IDBLogTime
 }
 
 // REVIEW: G-MARKET
@@ -895,6 +894,7 @@ export namespace GappSetting {
   export type CreatePriceList = ISettingCreatePriceList & IApiCompanyParams;
   export type PriceList = ISettingPriceList;
   export type Document = ISettingDoc;
+  export type Notification = ISettingNotification;
   export type CompanyInfo = ICompanyPublicEntity &
     IDBCompanyEntity &
     IDBCompanySupplierEntity &
@@ -942,7 +942,7 @@ export namespace GappSetting {
 
 // REVIEW: GAPP INBOUND & OUTBOUND API
 export namespace GappApi {
-  export type ConfirmOrderLink = IOrderDataOnConfirm
+  export type ConfirmOrderLink = IOrderLinkDataOnConfirm
 }
 
 export * as IMarketplace from './type-marketplace';

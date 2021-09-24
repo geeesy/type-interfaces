@@ -446,3 +446,11 @@ export interface ISettingDoc extends IDBCompanyActivityLog {
   invoice: ISettingDocAttributes;
   taxInvoice: ISettingDocAttributes;
 }
+
+export interface ILineNotify {
+  token: string;
+}
+
+export interface ISettingNotification {
+  line: ILineNotify;
+}
