@@ -1,17 +1,19 @@
-import { IResAPI } from './interfaces';
-import { IPersonContactInfo } from './type-apps';
-import {
-  IDBProduct,
-  IProductAttributes,
-  IProductEntity,
-  IProductList,
-  IProductRootEntity
-} from './type-catalog';
 import {
   ICompanyByGapp,
   ICompanyContactInfo,
   ICompanyPublicEntity
 } from './type-company';
+import {
+  IDBProduct,
+  IProductAttributes,
+  IProductEntity,
+  IProductList,
+  IProductMarketList,
+  IProductRootEntity
+} from './type-catalog';
+
+import { IPersonContactInfo } from './type-apps';
+import { IResAPI } from './interfaces';
 
 // REVIEW: USER (Market 1/3)
 export interface IMarketUserIdentity {
@@ -43,6 +45,15 @@ export interface IProductInSupplierCard
     IProductEntity {
   supplierId: string;
 }
+export interface IProductInSupplierCardMarket
+  extends IProductMarketList,
+    IProductRootEntity,
+    IProductEntity {
+  supplierId: string;
+}
+
+
+
 
 export interface ISupplierCard extends ICompanyPublicEntity, ICompanyByGapp {
   contact: ICompanyContactInfo;

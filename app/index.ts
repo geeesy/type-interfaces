@@ -263,11 +263,6 @@ import {
     IDBBusinessUserIdentityStatus
 } from './type-business';
 import { IDBLogTime, IDBUpdateTime } from './type-api';
-import {
-    IDBShippingMethodImmu,
-    IShippingMethodEntity,
-    IShippingMethodEntityImmu
-} from './type-shipping';
 import { IDBPaymentMethodImmu, IPaymentMethodEntity } from './type-payment';
 import {
     IDBSaleChannel,
@@ -275,7 +270,12 @@ import {
     ISaleChannelEntity,
     ISaleChannelEntityImmu
 } from './type-setting';
-import { IConfirmOrderLink, IOrderData, IOrderDataOnConfirm } from './type-order';
+import {
+    IDBShippingMethodImmu,
+    IShippingMethodEntity,
+    IShippingMethodEntityImmu
+} from './type-shipping';
+import { IOrderData, IOrderDataOnConfirm } from './type-order';
 
 /* #region FIXME: Marketplace */
 export namespace GeeesyMarketplace {
