@@ -277,6 +277,7 @@ import {
   ISaleChannelEntityImmu
 } from './type-setting';
 import {
+  IDBShippingMethod,
   IDBShippingMethodImmu,
   IShippingMethodEntity,
   IShippingMethodEntityImmu
@@ -932,11 +933,13 @@ export namespace GappSetting {
     ICompanyUserData;
   export type CountDocument = IDocWorkCount & IDocFinanceCount;
   // * SHIPMENT
-  export type CreateShippingMethod = IShippingMethodEntity & IApiCompanyParams;
+  export type CreateShippingMethod = IShippingMethodEntity & IShippingMethodEntityImmu & IApiCompanyParams;
   export type ShippingMethod = IShippingMethodEntity &
+    IDBShippingMethod & 
     IDBShippingMethodImmu &
     IShippingMethodEntityImmu &
     IDBLogTime;
+  export type DBUpdateShippingMethod = IShippingMethodEntity & IDBShippingMethod & IDBUpdateTime
   // * PAYMENT
   export type CreatePaymentMethod = IPaymentMethodEntity &
     IPaymentMethodEntityImmu &
@@ -956,6 +959,7 @@ export namespace GappSetting {
     IDBSaleChannel &
     IDBSaleChannelImmu &
     IDBLogTime;
+  export type DBUpdateSaleChannel = ISaleChannelEntity & IDBSaleChannel & IDBUpdateTime
 }
 
 // REVIEW: GAPP INBOUND & OUTBOUND API

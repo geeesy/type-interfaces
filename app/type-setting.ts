@@ -1,15 +1,16 @@
 import { SaleChannelSubType, SaleChannelType } from './enum-const';
 
+// ANCHOR: Sale Channel Attribute (Type Default)
 export interface ISaleChannelSubTypeDefault {
   caption: string;
 }
 
 // REVIEW: SALE CHANNEL
-
 export interface IDBSaleChannelImmu {
   saleChannelId: string;
   hasApiConnected: boolean;
   isUnique: boolean;
+  compId: string;
 }
 
 export interface IDBSaleChannel {
@@ -17,8 +18,8 @@ export interface IDBSaleChannel {
 }
 
 export interface ISaleChannelEntityImmu {
-  saleChannelType: SaleChannelType;
-  saleChannelSubType: SaleChannelSubType;
+  saleChannelType: SaleChannelType; // ! check: use enum obj
+  saleChannelSubType: SaleChannelSubType; // ! check: use enum obj
 }
 
 export interface ISaleChannelEntity {
