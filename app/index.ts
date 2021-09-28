@@ -264,7 +264,7 @@ import {
   IDBBusinessUserIdentityStatus
 } from './type-business';
 import { IDBLogTime, IDBUpdateTime } from './type-api';
-import { IDBPaymentMethodImmu, IPaymentMethodEntity } from './type-payment';
+import { IDBPaymentMethodImmu, IPaymentMethodEntity, IPaymentMethodEntityImmu } from './type-payment';
 import {
   IDBSaleChannel,
   IDBSaleChannelImmu,
@@ -934,7 +934,7 @@ export namespace GappSetting {
     IShippingMethodEntityImmu &
     IDBLogTime;
   // * PAYMENT
-  export type CreatePaymentMethod = IPaymentMethodEntity & IApiCompanyParams;
+  export type CreatePaymentMethod = IPaymentMethodEntity & IPaymentMethodEntityImmu & IApiCompanyParams;
   export type PaymentMethod = IPaymentMethodEntity &
     IDBPaymentMethodImmu &
     IDBLogTime;
