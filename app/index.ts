@@ -264,7 +264,12 @@ import {
   IDBBusinessUserIdentityStatus
 } from './type-business';
 import { IDBLogTime, IDBUpdateTime } from './type-api';
-import { IDBPaymentMethodImmu, IPaymentMethodEntity, IPaymentMethodEntityImmu } from './type-payment';
+import {
+  IDBPaymentMethod,
+  IDBPaymentMethodImmu,
+  IPaymentMethodEntity,
+  IPaymentMethodEntityImmu
+} from './type-payment';
 import {
   IDBSaleChannel,
   IDBSaleChannelImmu,
@@ -806,9 +811,8 @@ export namespace GappBiz {
     IDBLogTime &
     IPortfolioImmu;
   // ! ORDER - ORDERLINK
-  export type CreateOrderLink = IOrderLinkData & IApiCompanyParams
-  export type OrderLink  = IOrderLinkData
-  
+  export type CreateOrderLink = IOrderLinkData & IApiCompanyParams;
+  export type OrderLink = IOrderLinkData;
 }
 
 // REVIEW: G-MARKET
@@ -934,12 +938,18 @@ export namespace GappSetting {
     IShippingMethodEntityImmu &
     IDBLogTime;
   // * PAYMENT
-  export type CreatePaymentMethod = IPaymentMethodEntity & IPaymentMethodEntityImmu & IApiCompanyParams;
+  export type CreatePaymentMethod = IPaymentMethodEntity &
+    IPaymentMethodEntityImmu &
+    IApiCompanyParams;
   export type PaymentMethod = IPaymentMethodEntity &
+    IPaymentMethodEntityImmu &
+    IDBPaymentMethod &
     IDBPaymentMethodImmu &
     IDBLogTime;
   // * SALECHANNEL
-  export type CreateSaleChannel = ISaleChannelEntity & ISaleChannelEntityImmu & IApiCompanyParams;
+  export type CreateSaleChannel = ISaleChannelEntity &
+    ISaleChannelEntityImmu &
+    IApiCompanyParams;
   export type SaleChannel = ISaleChannelEntity &
     ISaleChannelEntityImmu &
     IDBSaleChannel &

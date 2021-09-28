@@ -7,6 +7,7 @@ export interface IPaymentMethodTypeDeposit {
   accountName: string;
   accountNo: string;
   branchName: string;
+  caption: string;
 }
 
 export interface IPaymentMethodTypeCod {
@@ -18,6 +19,7 @@ export interface IPaymentMethodTypeCod {
 
 export interface IDBPaymentMethodImmu {
   paymentMethodId: string;
+  compId: string;
 }
 
 export interface IDBPaymentMethod {
