@@ -946,6 +946,7 @@ export namespace GappSetting {
     IDBPaymentMethod &
     IDBPaymentMethodImmu &
     IDBLogTime;
+  export type DBUpdatePaymentMethod = IPaymentMethodEntity & IDBPaymentMethod & IDBUpdateTime
   // * SALECHANNEL
   export type CreateSaleChannel = ISaleChannelEntity &
     ISaleChannelEntityImmu &
