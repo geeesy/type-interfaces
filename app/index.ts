@@ -927,16 +927,19 @@ export namespace GappSetting {
     IDBBusinessCompanyUserIdentity &
     ICompanyUserData;
   export type CountDocument = IDocWorkCount & IDocFinanceCount;
-  export type CreateShippingMethod = IShippingMethodEntity;
+  // * SHIPMENT
+  export type CreateShippingMethod = IShippingMethodEntity & IApiCompanyParams;
   export type ShippingMethod = IShippingMethodEntity &
     IDBShippingMethodImmu &
     IShippingMethodEntityImmu &
     IDBLogTime;
-  export type CreatePaymentMethod = IPaymentMethodEntity;
+  // * PAYMENT
+  export type CreatePaymentMethod = IPaymentMethodEntity & IApiCompanyParams;
   export type PaymentMethod = IPaymentMethodEntity &
     IDBPaymentMethodImmu &
     IDBLogTime;
-  export type CreateSaleChannel = ISaleChannelEntity & ISaleChannelEntityImmu;
+  // * SALECHANNEL
+  export type CreateSaleChannel = ISaleChannelEntity & ISaleChannelEntityImmu & IApiCompanyParams;
   export type SaleChannel = ISaleChannelEntity &
     ISaleChannelEntityImmu &
     IDBSaleChannel &
