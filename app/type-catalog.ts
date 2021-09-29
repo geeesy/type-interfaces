@@ -271,7 +271,8 @@ export interface IProductAttributes {
   productCode: string
   productShortDescription: string
   productShortDescription_market: string
-
+  productPrice: IProductPrice
+  
   isCanBuy: string
   isCanBuy_market: string
   productName: string
