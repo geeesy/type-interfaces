@@ -28,8 +28,11 @@ export enum StatusOrderCustomer {
   Completed = 'completed'
 }
 
+export type TOrderType = 'ORDERLINK' | 'SALEPAGE' | 'GAPPMARKET'
+
 /**
  * ORDER
+ * TYPE 1 - ORDER ALINK
  */
 export interface IOrderProduct {
   productId: string;
@@ -43,9 +46,9 @@ export interface IOrderProduct {
   itemsPriceRow: number;
 }
 
-export interface IDBOrderImmu {
-  orderId: string;
-  orderTemplateId: string;
+export interface IDBOrderLinkImmu {
+  orderLinkId: string;
+  // orderTemplateId: string;
 }
 
 export interface IOrderSellerDataImmu {
@@ -57,13 +60,19 @@ export interface IOrderCustomerDataImmu {
   customerId: string;
 }
 
-export interface IDBOrderData {
+export interface IDBOrderLinkData {
   totalOrderAmount: number;
   shippingAvailableData: GappSetting.ShippingMethod[];
   paymentAvailableData: GappSetting.PaymentMethod[];
+  statusOrderOnSeller: StatusOrderSeller
+  statusOrderOnBuyer: StatusOrderCustomer
 }
 
-export interface IOrderDataOnConfirm {
+
+export interface IDBOrderLinkOnConfirm {
+  orderId: string;
+}
+export interface IOrderLinkDataOnConfirm {
   // * CREATE ON SUBMIT ORDER
   shippingData: GappSetting.ShippingMethod;
   paymentData: GappSetting.PaymentMethod;
@@ -84,16 +93,35 @@ export interface IOrderAccounting {
   isVatInc: boolean;
 }
 
-export interface IOrderData {
-  sellerNote: string;
+export interface IOrderCustomerData {
+  customerContactInfo: IPersonContactInfo;
+  customerCompanyContactInfo: ICompanyContactInfo;
   customerNote: string;
+}
+
+export interface IOrderEntity {
+  sellerNote: string;
   products: IOrderProduct[];
   accountingData: IOrderAccounting;
   sellerContactInfo: IPersonContactInfo;
   sellerCompanyContactInfo: ICompanyContactInfo;
-  customerContactInfo: IPersonContactInfo;
-  customerCompanyContactInfo: ICompanyContactInfo;
+  orderType: TOrderType;
+}
+
+export interface IOrderLinkData {
+
   channel: SaleChannelSubType
+  expiryTimestamp: number; //timestamp 
   shippingsAvailableId: string[]; // * USE ID ON CREATE
   paymentAvailableId: string[]; // * USE ID ON CREATE
+}
+
+export interface IOrderSalePageData {
+  hasStockChecked: boolean;
+  hasBackOrderAccepted: boolean;
+
+}
+
+export interface IOrderMarketData {
+  isByCompany: boolean;
 }

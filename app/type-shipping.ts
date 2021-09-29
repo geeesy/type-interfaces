@@ -1,7 +1,3 @@
-/**
- * SHIPPING
- */
-
 import { ShippingMethodType } from './enum-const';
 
 export type TShippingParty =
@@ -17,23 +13,23 @@ export type TShippingParty =
 
 // ANCHOR: Shipping Method Attribute (Type 1)
 export interface IShippingMethodTypeFree {
-  shippingMethodType: ShippingMethodType.Free;
   minOrderTotalAmount: number;
+  caption: string;
 }
 
 // ANCHOR: Shipping Method Attribute (Type 2)
 export interface IShippingMethodTypeFixedRate {
-  shippingMethodType: ShippingMethodType.FixedRate;
   shippingCost: number;
   minOrderTotalAmount: number;
+  caption: string;
 }
 
 // ANCHOR: Shipping Method Attribute (Type 3)
 export interface IShippingMethodTypeBasedByPcs {
-  shippingMethodType: ShippingMethodType.BasedByPcs;
   minOrderTotalAmount: number;
   shippingCostFirstPcs: number;
   shippingCostPerPcs: number;
+  caption: string;
 }
 
 // ANCHOR: Shipping Method Attribute (Type 4)
@@ -42,9 +38,9 @@ export interface IShippingCostByStepPcs {
   shippingCost: number;
 }
 export interface IShippingMethodTypeBasedByStepPcs {
-  shippingMethodType: ShippingMethodType.BasedByStepPcs;
   minOrderTotalAmount: number;
   shippingCost: IShippingCostByStepPcs[];
+  caption: string
 }
 
 // ANCHOR: Shipping Method Attribute (Type 5)
@@ -53,9 +49,9 @@ export interface IShippingCostByStepWeight {
   shippingCost: number;
 }
 export interface IShippingMethodTypeBasedByStepWeight {
-  shippingMethodType: ShippingMethodType.BasedByStepWeight;
   minOrderTotalAmount: number;
   shippingCost: IShippingCostByStepWeight[];
+  caption: string
 }
 
 // ANCHOR: Shipping Method Attribute (Type 6)
@@ -64,13 +60,14 @@ export interface IShippingCostByStepPrice {
   shippingCost: number;
 }
 export interface IShippingMethodTypeBasedByOrderPrice {
-  shippingMethodType: ShippingMethodType.BasedByOrderPrice;
   shippingCost: IShippingCostByStepPrice[];
+  caption: string
 }
 
-// REVIEW: Shipping Method
+// REVIEW: SHIPPING METHOD
 export interface IDBShippingMethodImmu {
   shippingMethodId: string;
+  compId: string;
 }
 
 export interface IDBShippingMethod {
@@ -78,8 +75,12 @@ export interface IDBShippingMethod {
 }
 
 export interface IShippingMethodEntityImmu {
-  compId: string;
-  shippingMethodType: ShippingMethodType;
+  shippingMethodType: ShippingMethodType.Free 
+  | ShippingMethodType.FixedRate 
+  | ShippingMethodType.BasedByPcs 
+  | ShippingMethodType.BasedByStepPcs 
+  | ShippingMethodType.BasedByStepWeight 
+  | ShippingMethodType.BasedByOrderPrice;
 }
 
 export interface IShippingMethodEntity {
@@ -91,8 +92,7 @@ export interface IShippingMethodEntity {
     last: number;
   };
   note: string;
-  shippingMethodAttribute:
-    | IShippingMethodTypeFree
+  shippingMethodAttribute: IShippingMethodTypeFree
     | IShippingMethodTypeFixedRate
     | IShippingMethodTypeBasedByPcs
     | IShippingMethodTypeBasedByStepPcs

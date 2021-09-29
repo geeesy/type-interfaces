@@ -1,23 +1,24 @@
 import { BankAccountType, PaymentMethodType, TBankName } from './enum-const';
 
+// ANCHOR: Payment Attribute (Type 1)
 export interface IPaymentMethodTypeDeposit {
-  paymentMethodType: PaymentMethodType.BankDeposit;
   bankAccountType: BankAccountType.Current | BankAccountType.Saving;
   bankAccountName: TBankName;
   accountName: string;
   accountNo: string;
   branchName: string;
-}
-
-export interface IPaymentMethodTypeCod {
-  paymentMethodType: PaymentMethodType.COD;
   caption: string;
 }
 
-// REVIEW: Payment Method
+// ANCHOR: Payment Attribute (Type 2)
+export interface IPaymentMethodTypeCod {
+  caption: string;
+}
 
+// REVIEW: PAYMENT METHOD
 export interface IDBPaymentMethodImmu {
   paymentMethodId: string;
+  compId: string;
 }
 
 export interface IDBPaymentMethod {
@@ -25,7 +26,7 @@ export interface IDBPaymentMethod {
 }
 
 export interface IPaymentMethodEntityImmu {
-  paymentMethodType: PaymentMethodType;
+  paymentMethodType: PaymentMethodType.BankDeposit | PaymentMethodType.COD;
 }
 
 export interface IPaymentMethodEntity {
