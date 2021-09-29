@@ -265,13 +265,6 @@ export interface IProductAttributes {
   isRecommend: boolean
   isHighLight: boolean
   isNewArrival: boolean
-
-  productSku: string
-  productBarcode: string
-  productCode: string
-  productShortDescription: string
-  productShortDescription_market: string
-  productPrice: IProductPrice
   
   isCanBuy: string
   isCanBuy_market: string
