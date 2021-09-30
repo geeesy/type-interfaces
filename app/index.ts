@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-namespace */
 import {
-  DBIProductGroupImmu,
   IDBProduct,
   IDBProductByGapp,
+  IDBProductGroupImmu,
   IDBProductImmu,
   IDBProductVariantOnlyImmu,
   ILogProduct,
@@ -892,8 +892,9 @@ export namespace GappInventory {
   export type ProductPackInVariant = IProductPackInVariant;
   export type ProductVariantInPack = IProductVariantInPack;
   export type LogProduct = ILogProduct;
-  export type CreateProductGroup = IProductGroup;
-  export type ProductGroup = IProductGroup & DBIProductGroupImmu & IDBLogTime;
+  export type CreateProductGroup = IProductGroup & IApiCompanyParams;
+  export type ProductGroup = IProductGroup & IDBProductGroupImmu & IDBLogTime;
+  export type DBUpdateProductGroup = IProductGroup & IDBUpdateTime
 }
 
 // REVIEW: G-BIZ | SETTING

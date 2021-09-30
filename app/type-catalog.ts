@@ -277,7 +277,7 @@ export interface IProductAttributes {
   productCoverUrl: string
   productCoverUrl_market: string
   productCategoryId: string
-  productGroupIds: string
+  productGroupId: string //? 1 product 1 group
   productCategoryCustomName?: string // * id = OTHER000
   productVideoCoverUrl: string
   productVideoCoverUrl_market: string
@@ -398,9 +398,9 @@ export interface IProductGroup {
   productGroupName: string
   productGroupInfo: string
   productGroupIconUrl: string
-  compId: string
 }
 
-export interface DBIProductGroupImmu {
+export interface IDBProductGroupImmu {
   productGroupId: string
+  compId: string
 }
