@@ -292,20 +292,20 @@ export const RfqCreditTermArr = [
   }
 ];
 
-export type TPackageUnit = 'mm' | 'cm' | 'm' | 'inch' | 'ft';
+export type TPackageUnit = 'm' | 'cm' | 'mm' | 'inch' | 'ft';
 
 export const PackageUnitArr = [
   {
-    text: 'มิลลิเมตร',
-    value: 'mm'
+    text: 'เมตร',
+    value: 'm'
   },
   {
     text: 'เซนติเมตร',
     value: 'cm'
   },
   {
-    text: 'เมตร',
-    value: 'm'
+    text: 'มิลลิเมตร',
+    value: 'mm'
   },
   {
     text: 'นิ้ว',
@@ -317,16 +317,16 @@ export const PackageUnitArr = [
   }
 ];
 
-export type TPackageWeightUnit = 'g' | 'kg' | 'oz' | 'lb' | 'ton';
+export type TPackageWeightUnit = 'kg' | 'g' | 'oz' | 'lb' | 'ton';
 
 export const PackageWeightUnitArr = [
   {
-    text: 'กรัม',
-    value: 'g'
-  },
-  {
     text: 'กิโลกรัม',
     value: 'kg'
+  },
+  {
+    text: 'กรัม',
+    value: 'g'
   },
   {
     text: 'ออนซ์',
