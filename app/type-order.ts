@@ -28,11 +28,10 @@ export enum StatusOrderCustomer {
   Completed = 'completed'
 }
 
-export type TOrderType = 'ORDERLINK' | 'SALEPAGE' | 'GAPPMARKET'
+export type TOrderType = 'ORDER_LINK' | 'SALEPAGE' | 'GAPP_MARKET';
 
 /**
  * ORDER
- * TYPE 1 - ORDER ALINK
  */
 export interface IOrderProduct {
   productId: string;
@@ -46,41 +45,6 @@ export interface IOrderProduct {
   itemsPriceRow: number;
 }
 
-export interface IDBOrderLinkImmu {
-  orderLinkId: string;
-  // orderTemplateId: string;
-}
-
-export interface IOrderSellerDataImmu {
-  businessId: string;
-  compId: string;
-}
-
-export interface IOrderCustomerDataImmu {
-  customerId: string;
-}
-
-export interface IDBOrderLinkData {
-  totalOrderAmount: number;
-  shippingAvailableData: GappSetting.ShippingMethod[];
-  paymentAvailableData: GappSetting.PaymentMethod[];
-  statusOrderOnSeller: StatusOrderSeller
-  statusOrderOnBuyer: StatusOrderCustomer
-}
-
-
-export interface IDBOrderLinkOnConfirm {
-  orderId: string;
-}
-export interface IOrderLinkDataOnConfirm {
-  // * CREATE ON SUBMIT ORDER
-  shippingData: GappSetting.ShippingMethod;
-  paymentData: GappSetting.PaymentMethod;
-}
-
-/**
- * ORDER
- */
 export interface IOrderAccounting {
   subtotalAmount: number;
   shippingCost: number;
@@ -96,37 +60,101 @@ export interface IOrderAccounting {
   isVatInc: boolean;
 }
 
+// ANCHOR: ORDER | Entity (1/6)
+export interface IOrderCustomerDataImmu {
+  customerId: string;
+}
+
+// ANCHOR: ORDER | Entity (2/6)
 export interface IOrderCustomerData {
   customerContactInfo: IPersonContactInfo;
   customerCompanyContactInfo: ICompanyContactInfo;
   customerNote: string;
 }
 
-export interface IDBOrderEntity {
-  orderType: TOrderType;
+// ANCHOR: ORDER | Entity (3/6)
+export interface IDBOrderSellerDataImmu {
+  businessId: string;
+  compId: string;
 }
 
+// ANCHOR: ORDER | Entity (4/6)
+export interface IDBOrderEntity {
+  orderType: TOrderType;
+  productTitleFirst: string;
+  productImageFirstUrl: string;
+  productSkuFirst: string;
+  statusOrderOnSeller: StatusOrderSeller;
+  statusOrderOnBuyer: StatusOrderCustomer;
+}
+
+// ANCHOR: ORDER | Entity (5/6)
 export interface IOrderEntity {
   sellerNote: string;
   products: IOrderProduct[];
   accountingData: IOrderAccounting;
   sellerContactInfo: IPersonContactInfo;
   sellerCompanyContactInfo: ICompanyContactInfo;
+  totalOrderAmount: number;
+}
+
+// ANCHOR: ORDER | Entity (6/6)
+// * CREATE ON SUBMIT ORDER 
+// ! ignore on create order link
+export interface IOrderDataOnConfirm {
+  shippingData: GappSetting.ShippingMethod;
+  paymentData: GappSetting.PaymentMethod;
+}
+
+/**
+ * ORDER
+ * TYPE 1 - ORDER | ALINK
+ * * ON CREATE
+ */
+
+export interface IOrderLinkData {
+  channel: SaleChannelSubType;
+  expiryTimestamp: number; //timestamp
+  shippingsAvailableId: string[]; // * USE ID ON CREATE
+  paymentAvailableId: string[]; // * USE ID ON CREATE
+}
+
+export interface IDBOrderLinkImmu {
+  orderLinkId: string;
+  // orderTemplateId: string;
+}
+
+export interface IDBOrderLinkData {
+  shippingAvailableData: GappSetting.ShippingMethod[];
+  paymentAvailableData: GappSetting.PaymentMethod[];
 
 }
 
-export interface IOrderLinkData {
+// * ON CONFIRM
 
-  channel: SaleChannelSubType
-  expiryTimestamp: number; //timestamp 
-  shippingsAvailableId: string[]; // * USE ID ON CREATE
-  paymentAvailableId: string[]; // * USE ID ON CREATE
+export interface IDBOrderLinkOnConfirm {
+  orderId: string;
+}
+
+/**
+ * ORDER
+ * TYPE 2 - ORDER | SALE PAGE
+ */
+export interface IDBOrderSalePageImmu {
+  orderId: string;
 }
 
 export interface IOrderSalePageData {
   hasStockChecked: boolean;
   hasBackOrderAccepted: boolean;
+}
 
+/**
+ * ORDER
+ * TYPE 3 - ORDER | GAPP MARKET
+ */
+export interface IDBOrderMarketImmu {
+  orderId: string;
 }
 
 export interface IOrderMarketData {
