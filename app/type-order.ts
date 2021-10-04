@@ -122,8 +122,8 @@ export interface IDBOrderLinkImmu {
 
 // * ON CONFIRM
 export interface IOrderLinkDataOnConfirm {
-  shippingData: GappSetting.ShippingMethod;
-  paymentData: GappSetting.PaymentMethod;
+  shippingData: GappSetting.ShippingMethod | null;
+  paymentData: GappSetting.PaymentMethod | null;
 }
 
 /**
