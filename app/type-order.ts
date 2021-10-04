@@ -78,6 +78,9 @@ export interface IOrderLinkDataOnConfirm {
   paymentData: GappSetting.PaymentMethod;
 }
 
+/**
+ * ORDER
+ */
 export interface IOrderAccounting {
   subtotalAmount: number;
   shippingCost: number;
@@ -99,13 +102,17 @@ export interface IOrderCustomerData {
   customerNote: string;
 }
 
+export interface IDBOrderEntity {
+  orderType: TOrderType;
+}
+
 export interface IOrderEntity {
   sellerNote: string;
   products: IOrderProduct[];
   accountingData: IOrderAccounting;
   sellerContactInfo: IPersonContactInfo;
   sellerCompanyContactInfo: ICompanyContactInfo;
-  orderType: TOrderType;
+
 }
 
 export interface IOrderLinkData {

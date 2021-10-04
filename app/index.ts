@@ -781,6 +781,9 @@ export namespace GappBusiness {
     ICompanyUserData;
 }
 
+// --------------------------------
+// REVIEW: GAPP BIZ
+// --------------------------------
 export namespace GappBiz {
   export type User = IBusinessCompanyUserIdentityImmu &
     IBusinessCompanyUserIdentity &
