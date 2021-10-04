@@ -120,7 +120,7 @@ export interface IOrderLinkData {
 }
 
 export interface IDBOrderLinkImmu {
-  orderLinkId: string;
+  orderId: string;
   // orderTemplateId: string;
 }
 
