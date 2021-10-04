@@ -109,8 +109,8 @@ export interface IOrderEntity {
 export interface IOrderLinkData {
   channel: SaleChannelSubType;
   expiryTimestamp: number; //timestamp
-  shippingsAvailableId: string[]; // * USE ID ON CREATE
-  paymentAvailableId: string[]; // * USE ID ON CREATE
+  shippingAvailableIds: string[]; // * USE ID ON CREATE
+  paymentAvailableIds: string[]; // * USE ID ON CREATE
 }
 
 export interface IDBOrderLinkImmu {
