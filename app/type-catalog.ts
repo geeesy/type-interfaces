@@ -266,6 +266,8 @@ export interface IProductAttributes {
   isHighLight: boolean
   isNewArrival: boolean
   
+  productSkuRef: string
+
   isCanBuy: string
   isCanBuy_market: string
   productName: string
