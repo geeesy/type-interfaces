@@ -109,19 +109,15 @@ export interface IOrderEntity {
 export interface IOrderLinkData {
   channel: SaleChannelSubType;
   expiryTimestamp: number; //timestamp
-  shippingAvailableIds: string[]; // * USE ID ON CREATE
-  paymentAvailableIds: string[]; // * USE ID ON CREATE
+  shippingAvailableIds: string[]; // * USE ID FOR LATER
+  paymentAvailableIds: string[]; // * USE ID FOR LATER
+  shippingAvailableData: GappSetting.ShippingMethod[];
+  paymentAvailableData: GappSetting.PaymentMethod[];
 }
 
 export interface IDBOrderLinkImmu {
   orderId: string;
   // orderTemplateId: string;
-}
-
-export interface IDBOrderLinkData {
-  shippingAvailableData: GappSetting.ShippingMethod[];
-  paymentAvailableData: GappSetting.PaymentMethod[];
-
 }
 
 // * ON CONFIRM
