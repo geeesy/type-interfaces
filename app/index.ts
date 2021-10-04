@@ -284,6 +284,7 @@ import {
 } from './type-shipping';
 import {
   IDBOrderEntity,
+  IDBOrderLinkImmu,
   IDBOrderSellerDataImmu,
   IOrderCustomerData,
   IOrderCustomerDataImmu,
@@ -834,12 +835,14 @@ export namespace GappBiz {
     IOrderCustomerData &
     IOrderCustomerDataImmu &
     IOrderLinkData &
+    IDBOrderLinkImmu & 
     IOrderDataOnConfirm &
     IDBOrderSellerDataImmu &
     IDBLogTime;
   export type ListOrderLink = IDBOrderEntity &
     IOrderCustomerData &
     IOrderDataOnConfirm &
+    IDBOrderLinkImmu & 
     IDBLogTime;
   export type DBUpdateOrderLink = IOrderEntity &
     IDBOrderEntity &
