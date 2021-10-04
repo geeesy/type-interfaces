@@ -60,25 +60,25 @@ export interface IOrderAccounting {
   isVatInc: boolean;
 }
 
-// ANCHOR: ORDER | Entity (1/6)
+// ANCHOR: ORDER | Entity (1/5)
 export interface IOrderCustomerDataImmu {
   customerId: string;
 }
 
-// ANCHOR: ORDER | Entity (2/6)
+// ANCHOR: ORDER | Entity (2/5)
 export interface IOrderCustomerData {
   customerContactInfo: IPersonContactInfo;
   customerCompanyContactInfo: ICompanyContactInfo;
   customerNote: string;
 }
 
-// ANCHOR: ORDER | Entity (3/6)
+// ANCHOR: ORDER | Entity (3/5)
 export interface IDBOrderSellerDataImmu {
   businessId: string;
   compId: string;
 }
 
-// ANCHOR: ORDER | Entity (4/6)
+// ANCHOR: ORDER | Entity (4/5)
 export interface IDBOrderEntity {
   orderType: TOrderType;
   productTitleFirst: string;
@@ -88,7 +88,7 @@ export interface IDBOrderEntity {
   statusOrderOnBuyer: StatusOrderCustomer;
 }
 
-// ANCHOR: ORDER | Entity (5/6)
+// ANCHOR: ORDER | Entity (5/5)
 export interface IOrderEntity {
   sellerNote: string;
   products: IOrderProduct[];
@@ -98,13 +98,7 @@ export interface IOrderEntity {
   totalOrderAmount: number;
 }
 
-// ANCHOR: ORDER | Entity (6/6)
-// * CREATE ON SUBMIT ORDER 
-// ! ignore on create order link
-export interface IOrderDataOnConfirm {
-  shippingData: GappSetting.ShippingMethod;
-  paymentData: GappSetting.PaymentMethod;
-}
+
 
 /**
  * ORDER
@@ -131,9 +125,9 @@ export interface IDBOrderLinkData {
 }
 
 // * ON CONFIRM
-
-export interface IDBOrderLinkOnConfirm {
-  orderId: string;
+export interface IOrderLinkDataOnConfirm {
+  shippingData: GappSetting.ShippingMethod;
+  paymentData: GappSetting.PaymentMethod;
 }
 
 /**
@@ -147,6 +141,8 @@ export interface IDBOrderSalePageImmu {
 export interface IOrderSalePageData {
   hasStockChecked: boolean;
   hasBackOrderAccepted: boolean;
+  shippingData: GappSetting.ShippingMethod;
+  paymentData: GappSetting.PaymentMethod;
 }
 
 /**
@@ -159,4 +155,7 @@ export interface IDBOrderMarketImmu {
 
 export interface IOrderMarketData {
   isByCompany: boolean;
+  shippingData: GappSetting.ShippingMethod;
+  paymentData: GappSetting.PaymentMethod;
 }
+

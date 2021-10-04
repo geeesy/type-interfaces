@@ -288,9 +288,9 @@ import {
   IDBOrderSellerDataImmu,
   IOrderCustomerData,
   IOrderCustomerDataImmu,
-  IOrderDataOnConfirm,
   IOrderEntity,
-  IOrderLinkData
+  IOrderLinkData,
+  IOrderLinkDataOnConfirm
 } from './type-order';
 
 /* #region FIXME: Marketplace */
@@ -836,12 +836,11 @@ export namespace GappBiz {
     IOrderCustomerDataImmu &
     IOrderLinkData &
     IDBOrderLinkImmu & 
-    IOrderDataOnConfirm &
     IDBOrderSellerDataImmu &
     IDBLogTime;
   export type ListOrderLink = IDBOrderEntity &
     IOrderCustomerData &
-    IOrderDataOnConfirm &
+    IOrderLinkDataOnConfirm &
     IDBOrderLinkImmu & 
     IDBLogTime;
   export type DBUpdateOrderLink = IOrderEntity &
@@ -1012,7 +1011,7 @@ export namespace GappSetting {
 
 // REVIEW: GAPP INBOUND & OUTBOUND API
 export namespace GappApi {
-  export type ConfirmOrderLink = IOrderDataOnConfirm;
+  export type ConfirmOrderLink = IOrderLinkDataOnConfirm;
   export type ListOrderLink = GappBiz.ListOrderLink
   export type OrderLink = GappBiz.OrderLink
 
