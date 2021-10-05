@@ -124,6 +124,7 @@ export interface IDBOrderLinkImmu {
 export interface IOrderLinkDataOnConfirm {
   shippingData: GappSetting.ShippingMethod | null;
   paymentData: GappSetting.PaymentMethod | null;
+  isNewContactAddress: boolean
 }
 
 /**
