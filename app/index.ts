@@ -1011,7 +1011,7 @@ export namespace GappSetting {
 
 // REVIEW: GAPP INBOUND & OUTBOUND API
 export namespace GappApi {
-  export type ConfirmOrderLink = IOrderLinkDataOnConfirm;
+  export type ConfirmOrderLink = IOrderLinkDataOnConfirm & IOrderCustomerData & IOrderCustomerDataImmu;
   export type ListOrderLink = GappBiz.ListOrderLink
   export type OrderLink = GappBiz.OrderLink
 
