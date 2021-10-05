@@ -84,8 +84,6 @@ export interface IDBOrderEntity {
   productTitleFirst: string;
   productImageFirstUrl: string;
   productSkuFirst: string;
-  statusOrderOnSeller: StatusOrderSeller;
-  statusOrderOnBuyer: StatusOrderCustomer;
 }
 
 // ANCHOR: ORDER | Entity (5/5)
@@ -98,6 +96,11 @@ export interface IOrderEntity {
   totalOrderAmount: number;
 }
 
+// ANCHOR: ORDER | Entity (5/5)
+export interface IDBOrderStatus {
+  statusOrderOnSeller: StatusOrderSeller;
+  statusOrderOnBuyer: StatusOrderCustomer;
+}
 
 
 /**
