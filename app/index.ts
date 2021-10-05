@@ -851,6 +851,7 @@ export namespace GappBiz {
     IDBOrderEntity &
     IOrderCustomerData &
     IOrderCustomerDataImmu &
+    IDBOrderStatus &
     IOrderLinkData &
     IDBUpdateTime;
   // ! ORDER - SALEPAGE
