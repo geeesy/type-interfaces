@@ -835,13 +835,14 @@ export namespace GappBiz {
     IOrderCustomerData &
     IOrderCustomerDataImmu &
     IOrderLinkData &
-    IDBOrderLinkImmu & 
+    IDBOrderLinkImmu &
+    IOrderLinkDataOnConfirm & 
     IDBOrderSellerDataImmu &
     IDBLogTime;
   export type ListOrderLink = IDBOrderEntity &
     IOrderCustomerData &
     IOrderLinkDataOnConfirm &
-    IDBOrderLinkImmu & 
+    IDBOrderLinkImmu &
     IDBLogTime;
   export type DBUpdateOrderLink = IOrderEntity &
     IDBOrderEntity &
@@ -1011,7 +1012,11 @@ export namespace GappSetting {
 
 // REVIEW: GAPP INBOUND & OUTBOUND API
 export namespace GappApi {
-  export type ConfirmOrderLink = IOrderLinkDataOnConfirm & IOrderCustomerData & IOrderCustomerDataImmu;
+  export type ConfirmOrderLink = IOrderLinkDataOnConfirm & 
+  IOrderCustomerData
+    & IOrderCustomerDataImmu;
+  export type DBUpdateOrderLink = IOrderCustomerData
+  & IOrderLinkDataOnConfirm & IDBUpdateTime
   export type ListOrderLink = GappBiz.ListOrderLink
   export type OrderLink = GappBiz.OrderLink
 
