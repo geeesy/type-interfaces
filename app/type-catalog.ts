@@ -192,6 +192,11 @@ export interface IRefProductList {
   productType: string
   productCategoryId: string
 
+  productGroupId: string
+  
+  productShortDescription: string
+  productShortDescription_market: string
+
   productPackage: IProductPackage
 
   stockLevel: number
