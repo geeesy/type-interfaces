@@ -60,25 +60,25 @@ export interface IOrderAccounting {
   isVatInc: boolean;
 }
 
-// ANCHOR: ORDER | Entity (1/5)
+// ANCHOR: ORDER | Entity (1/6)
 export interface IOrderCustomerDataImmu {
   customerId: string;
 }
 
-// ANCHOR: ORDER | Entity (2/5)
+// ANCHOR: ORDER | Entity (2/6)
 export interface IOrderCustomerData {
   customerContactInfo: IPersonContactInfo;
   customerCompanyContactInfo: ICompanyContactInfo;
   customerNote: string;
 }
 
-// ANCHOR: ORDER | Entity (3/5)
+// ANCHOR: ORDER | Entity (3/6)
 export interface IDBOrderSellerDataImmu {
   businessId: string;
   compId: string;
 }
 
-// ANCHOR: ORDER | Entity (4/5)
+// ANCHOR: ORDER | Entity (4/6)
 export interface IDBOrderEntity {
   orderType: TOrderType;
   productTitleFirst: string;
@@ -86,7 +86,7 @@ export interface IDBOrderEntity {
   productSkuFirst: string;
 }
 
-// ANCHOR: ORDER | Entity (5/5)
+// ANCHOR: ORDER | Entity (5/6)
 export interface IOrderEntity {
   sellerNote: string;
   products: IOrderProduct[];
@@ -96,7 +96,7 @@ export interface IOrderEntity {
   totalOrderAmount: number;
 }
 
-// ANCHOR: ORDER | Entity (5/5)
+// ANCHOR: ORDER | Entity (6/6)
 export interface IDBOrderStatus {
   statusOrderOnSeller: StatusOrderSeller;
   statusOrderOnBuyer: StatusOrderCustomer;
