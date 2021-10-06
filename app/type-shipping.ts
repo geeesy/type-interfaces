@@ -87,6 +87,7 @@ export interface IShippingMethodEntity {
   shippingParty: TShippingParty;
   shippingIconUrl: string;
   shippingAliasName: string;
+  isCOD: boolean;
   deliveryTime: {
     earliest: number;
     last: number;
