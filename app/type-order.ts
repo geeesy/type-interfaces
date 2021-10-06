@@ -112,7 +112,7 @@ export interface IOrderEntity {
 export interface IDBOrderStatus {
   statusOrderOnSeller: StatusOrderSeller;
   statusOrderOnBuyer: StatusOrderCustomer;
-  statusOrder: StatusOrder;
+  statusOrder: StatusOrder | null;
 }
 
 
