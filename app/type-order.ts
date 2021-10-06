@@ -14,7 +14,8 @@ export enum StatusOrderSeller {
   S5_AwaitingPickup = 'awaiting pickup',
   S6_Shipped = 'shipped',
   S7_AwaitingAccepted = 'awaiting accepted',
-  S8_Completed = 'completed'
+  S8_Completed = 'completed',
+  S_Cancelled = 'cancelled'
 }
 
 export enum StatusOrderCustomer {
@@ -27,7 +28,16 @@ export enum StatusOrderCustomer {
   B5_AwaitingPickup = 'awaiting pickup',
   B6_Shipped = 'shipped',
   B7_AwaitingAccepted = 'awaiting accepted',
-  B8_Completed = 'completed'
+  B8_Completed = 'completed',
+  B_Cancelled = 'cancelled'
+}
+
+export enum StatusOrder {
+  Placed = 'PLACED',
+  Packed = 'PACKED',
+  Shipped = 'SHIPPED',
+  Cancelled = 'CANCELLED',
+  Completed = 'COMPLETED'
 }
 
 export type TOrderType = 'ORDER_LINK' | 'SALEPAGE' | 'GAPP_MARKET';
@@ -102,6 +112,7 @@ export interface IOrderEntity {
 export interface IDBOrderStatus {
   statusOrderOnSeller: StatusOrderSeller;
   statusOrderOnBuyer: StatusOrderCustomer;
+  statusOrder: StatusOrder;
 }
 
 
