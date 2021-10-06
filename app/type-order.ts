@@ -5,27 +5,29 @@ import { ICompanyContactInfo } from './type-company';
 
 /* eslint-disable no-unused-vars */
 export enum StatusOrderSeller {
-  None = 'none', // TODO: ignore?
-  AwaitingPayment = 'awaiting payment',
-  ToConfirm = 'to confirm',
-  AwaitingFulfillment = 'awaiting fulfillment',
-  AwaitingShipment = 'awaiting shipment',
-  AwaitingPickup = 'awaiting pickup',
-  Shipped = 'shipped',
-  AwaitingAccepted = 'awaiting accepted',
-  Completed = 'completed'
+  S0_None = 'none', // TODO: ignore?
+  S1_AwaitingConfirm = 'awaiting confirm',
+  S2_AwaitingPayment = 'awaiting payment',
+  S3_ToConfirm = 'to confirm',
+  S4_AwaitingFulfillment = 'awaiting fulfillment',
+  S5_AwaitingShipment = 'awaiting shipment',
+  S5_AwaitingPickup = 'awaiting pickup',
+  S6_Shipped = 'shipped',
+  S7_AwaitingAccepted = 'awaiting accepted',
+  S8_Completed = 'completed'
 }
 
 export enum StatusOrderCustomer {
-  None = 'none', // TODO: ignore?
-  AwaitingPayment = 'awaiting payment',
-  AwaitingConfirm = 'awaiting confirm',
-  AwaitingFulfillment = 'awaiting fulfillment',
-  AwaitingShipment = 'awaiting shipment',
-  AwaitingPickup = 'awaiting pickup',
-  Shipped = 'shipped',
-  AwaitingAccepted = 'awaiting accepted',
-  Completed = 'completed'
+  B0_None = 'none', // TODO: ignore?
+  B1_AwaitingConfirm = 'awaiting confirm',
+  B2_AwaitingPayment = 'awaiting payment',
+  B3_Paid = 'paid',
+  B4_AwaitingFulfillment = 'awaiting fulfillment',
+  B5_AwaitingShipment = 'awaiting shipment',
+  B5_AwaitingPickup = 'awaiting pickup',
+  B6_Shipped = 'shipped',
+  B7_AwaitingAccepted = 'awaiting accepted',
+  B8_Completed = 'completed'
 }
 
 export type TOrderType = 'ORDER_LINK' | 'SALEPAGE' | 'GAPP_MARKET';
