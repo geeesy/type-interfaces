@@ -174,3 +174,9 @@ export interface IOrderMarketData {
   paymentData: GappSetting.PaymentMethod;
 }
 
+export interface ISellerUpdateOrderStatus {
+  existingSellerStatus: StatusOrderSeller
+  newSellerStatus: StatusOrderSeller
+  orderType: TOrderType
+}
+

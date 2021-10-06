@@ -291,7 +291,8 @@ import {
   IOrderCustomerDataImmu,
   IOrderEntity,
   IOrderLinkData,
-  IOrderLinkDataOnConfirm
+  IOrderLinkDataOnConfirm,
+  ISellerUpdateOrderStatus
 } from './type-order';
 
 /* #region FIXME: Marketplace */
@@ -824,6 +825,8 @@ export namespace GappBiz {
     ICompanyEntityImmu &
     IDBLogTime &
     IPortfolioImmu;
+  // ! ORDER
+  export type UpdateOrderStatus = ISellerUpdateOrderStatus & IApiCompanyParams
   // ! ORDER - ORDER_LINK
   export type CreateOrderLink = IOrderEntity &
     IOrderCustomerData &
