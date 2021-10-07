@@ -37,6 +37,7 @@ export interface IInventoryEntity {
 export interface IProductInventoryImmu {
   warehouseId: string
   inventoryId: string
+  productId: string
   compId: string;
 }
 
