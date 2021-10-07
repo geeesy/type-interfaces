@@ -118,8 +118,8 @@ export interface ILogProductValue {
   productName: string
   productType: string
   productSku: string
-  stockLevel: number
-  stockOrder: number
+  // stockLevel: number
+  // stockOrder: number
   shippingMethod?: IProductShippingMethod[] | null
   productPrice: IProductPrice
   productWholesales?: IProductWholesale[] | null
@@ -141,11 +141,6 @@ export interface IProductDisplay {
   onMarketplace: boolean
   onVendorProductList: boolean
   isPriceShowed: boolean
-}
-
-export interface IProductStock {
-  initialStock: number
-  lowStockQty: number
 }
 
 export interface IProductPackage {
@@ -199,8 +194,8 @@ export interface IRefProductList {
 
   productPackage: IProductPackage
 
-  stockLevel: number
-  stockOrder: number
+  totalStock: number
+  totalReservedStock: number
 
   // -> Available
   countVariants: number // * UPDATED ON [C-U-D] VARIANT
@@ -254,9 +249,6 @@ export interface IProductEntity {
   minWholesaleQty: number
   toFreeShip: IQtyPrice
   productPackage: IProductPackage
-  stock: IProductStock
-  stockLevel: number
-  stockOrder: number
   preparingTime: IPeriodTimeByQty[]
   leadTimes: IPeriodTimeByQty[]
   displaySku: IProductDisplay
@@ -270,9 +262,7 @@ export interface IProductAttributes {
   isRecommend: boolean
   isHighLight: boolean
   isNewArrival: boolean
-  
   productSkuRef: string
-
   isCanBuy: string
   isCanBuy_market: string
   productName: string
@@ -307,6 +297,8 @@ export interface IDBProduct {
   impFactor: number
   countVariants: number // * UPDATED ON [C-U-D] VARIANT
   countPacks: number // * UPDATED ON [C-U-D] PACK
+  totalStock: number // ! INVENTORY
+  totalReservedStock: number // ! INVENTORY
   countVariantsInPack: number
   countPacksInVariant: number
   variantMatchId?: IProductVariantMatchId[]

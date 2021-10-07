@@ -294,7 +294,7 @@ import {
   IOrderLinkDataOnConfirm,
   ISellerUpdateOrderStatus
 } from './type-order';
-import { IDBInventoryEntityImmu, IDBWarehouseEntityImmu, IInventoryEntity, IWarehouseEntity } from './type-inventory';
+import { IDBInventoryEntityImmu, IDBProductInventory, IDBProductInventoryFormulaImmu, IDBWarehouseEntityImmu, IInventoryEntity, IProductInventoryImmu, IProductInventorySetting, IWarehouseEntity } from './type-inventory';
 
 /* #region FIXME: Marketplace */
 export namespace GeeesyMarketplace {
@@ -903,6 +903,8 @@ export namespace GappInventory {
   export type CreateProduct = IProductRootEntity &
     IProductEntity &
     IProductAttributes &
+    IProductInventoryImmu &
+    IProductInventorySetting &
     IApiSupplierParams;
   export type CreateProductWithVariant = IProductAttributes &
     IProductVariantAttributes &
@@ -926,6 +928,8 @@ export namespace GappInventory {
   export type CreateOneVariantOnly = IProductRootEntity &
     IProductEntity &
     IProductVariantEntity &
+    IProductInventoryImmu &
+    IProductInventorySetting &
     IApiSupplierParams;
   export type ProductVariantOnly = IProductRootEntity &
     IProductEntity &
@@ -946,6 +950,7 @@ export namespace GappInventory {
   export type Warehouse = IWarehouseEntity & IDBWarehouseEntityImmu & IDBLogTime;
   export type CreateInventory = IInventoryEntity & IApiCompanyParams
   export type Inventory = IInventoryEntity & IDBInventoryEntityImmu & IDBLogTime
+  export type Stock = IProductInventoryImmu & IDBProductInventoryFormulaImmu & IProductInventorySetting & IDBProductInventory & IDBLogTime
 }
 
 // REVIEW: G-BIZ | SETTING

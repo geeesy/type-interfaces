@@ -29,3 +29,27 @@ export interface IInventoryEntity {
   inventoryName: string;
   inventoryInfo: string;
 }
+
+/**
+ * PRODUCT
+ * ON CREATE
+ */
+export interface IProductInventoryImmu {
+  warehouseId: string
+  inventoryId: string
+  compId: string;
+}
+
+export interface IDBProductInventoryFormulaImmu {
+  initialStock: number
+  initialCostPrice: number
+}
+export interface IProductInventorySetting {
+  lowStockQty: number
+  canBelowZero: boolean // Keep Selling
+}
+
+export interface IDBProductInventory {
+  stock: number
+  reservedStock: number
+}
