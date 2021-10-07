@@ -905,6 +905,7 @@ export namespace GappInventory {
     IProductAttributes &
     IProductInventoryImmu &
     IProductInventorySetting &
+    IDBProductInventoryFormulaImmu &
     IApiSupplierParams;
   export type CreateProductWithVariant = IProductAttributes &
     IProductVariantAttributes &
@@ -930,6 +931,7 @@ export namespace GappInventory {
     IProductVariantEntity &
     IProductInventoryImmu &
     IProductInventorySetting &
+    IDBProductInventoryFormulaImmu &
     IApiSupplierParams;
   export type ProductVariantOnly = IProductRootEntity &
     IProductEntity &
