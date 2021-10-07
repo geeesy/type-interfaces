@@ -294,6 +294,7 @@ import {
   IOrderLinkDataOnConfirm,
   ISellerUpdateOrderStatus
 } from './type-order';
+import { IDBInventoryEntityImmu, IDBWarehouseEntityImmu, IInventoryEntity, IWarehouseEntity } from './type-inventory';
 
 /* #region FIXME: Marketplace */
 export namespace GeeesyMarketplace {
@@ -941,6 +942,10 @@ export namespace GappInventory {
   export type CreateProductGroup = IProductGroup & IApiCompanyParams;
   export type ProductGroup = IProductGroup & IDBProductGroupImmu & IDBLogTime;
   export type DBUpdateProductGroup = IProductGroup & IDBUpdateTime;
+  export type CreateWarehouse = IWarehouseEntity & IApiCompanyParams
+  export type Warehouse = IWarehouseEntity & IDBWarehouseEntityImmu & IDBLogTime;
+  export type CreateInventory = IInventoryEntity & IApiCompanyParams
+  export type Inventory = IInventoryEntity & IDBInventoryEntityImmu & IDBLogTime
 }
 
 // REVIEW: G-BIZ | SETTING
