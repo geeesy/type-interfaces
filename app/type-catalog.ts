@@ -326,6 +326,8 @@ export interface IDBProductImmu {
 export interface IProductVariantEntity {
   variantTitle: string;
   variantHierarchy: string[];
+  totalStock: number; // ! INVENTORY
+  totalReservedStock: number; // ! INVENTORY
 }
 
 // Variants Only
@@ -333,8 +335,6 @@ export interface IProductVariantOnly
   extends IProductRootEntity,
     IProductEntity,
     IProductVariantEntity {
-  totalStock: number; // ! INVENTORY
-  totalReservedStock: number; // ! INVENTORY
 }
 
 export interface IDBProductVariantOnlyImmu {
@@ -361,6 +361,8 @@ export interface IProductPack {
   packTitle: string;
   packSizeLabel: string;
   smallestUnitQty: number;
+  totalStock: number; // ! INVENTORY
+  totalReservedStock: number; // ! INVENTORY
 }
 
 // Packs Only
@@ -368,8 +370,6 @@ export interface IProductPackOnly
   extends IProductRootEntity,
     IProductEntity,
     IProductPack {
-  totalStock: number; // ! INVENTORY
-  totalReservedStock: number; // ! INVENTORY
   productPackId: string;
   createdAt: string;
   updatedAt: string;
