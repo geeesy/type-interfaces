@@ -254,6 +254,7 @@ export interface IProductEntity {
   leadTimes: IPeriodTimeByQty[];
   displaySku: IProductDisplay;
   shippingMethod: IProductShippingMethod[];
+  useInventory: boolean;
 }
 
 // ANCHOR: PRODUCT | Entity (3/6)
