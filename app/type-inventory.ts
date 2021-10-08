@@ -40,6 +40,9 @@ export interface IInventoryEntity {
 export interface IProductInventoryImmu {
   warehouseId: string;
   inventoryId: string; // GB+xxx || GM+xxx
+}
+
+export interface IProductCompanyImmu {
   productId: string;
   compId: string;
 }
