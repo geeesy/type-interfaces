@@ -35,22 +35,31 @@ export interface IInventoryEntity {
  * ON CREATE
  */
 export interface IProductInventoryImmu {
-  warehouseId: string
-  inventoryId: string
-  productId: string
+  warehouseId: string;
+  inventoryId: string;
+  productId: string;
   compId: string;
 }
 
 export interface IDBProductInventoryFormulaImmu {
-  initialStock: number
-  initialCostPrice: number
+  initialStock: number;
+  initialCostPrice: number;
 }
 export interface IProductInventorySetting {
-  lowStockQty: number
-  canBelowZero: boolean // Keep Selling
+  lowStockQty: number;
+  canBelowZero: boolean; // Keep Selling
 }
 
 export interface IDBProductInventory {
-  stock: number
-  reservedStock: number
+  stock: number;
+  reservedStock: number;
+}
+
+export interface ICreateProductWithStock
+  extends IProductInventoryImmu,
+    IProductInventorySetting,
+    IDBProductInventoryFormulaImmu {}
+
+export interface ICreateProductWithMultiStock {
+  inventories: ICreateProductWithStock[];
 }

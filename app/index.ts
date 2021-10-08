@@ -294,7 +294,7 @@ import {
   IOrderLinkDataOnConfirm,
   ISellerUpdateOrderStatus
 } from './type-order';
-import { IDBInventoryEntityImmu, IDBProductInventory, IDBProductInventoryFormulaImmu, IDBWarehouseEntityImmu, IInventoryEntity, IProductInventoryImmu, IProductInventorySetting, IWarehouseEntity } from './type-inventory';
+import { ICreateProductWithMultiStock, IDBInventoryEntityImmu, IDBProductInventory, IDBProductInventoryFormulaImmu, IDBWarehouseEntityImmu, IInventoryEntity, IProductInventoryImmu, IProductInventorySetting, IWarehouseEntity } from './type-inventory';
 
 /* #region FIXME: Marketplace */
 export namespace GeeesyMarketplace {
@@ -903,9 +903,7 @@ export namespace GappInventory {
   export type CreateProduct = IProductRootEntity &
     IProductEntity &
     IProductAttributes &
-    IProductInventoryImmu &
-    IProductInventorySetting &
-    IDBProductInventoryFormulaImmu &
+    ICreateProductWithMultiStock &
     IApiSupplierParams;
   export type CreateProductWithVariant = IProductAttributes &
     IProductVariantAttributes &

@@ -55,6 +55,8 @@ export interface IOrderProduct {
   productSku: string;
   discountUnitPrice: number;
   itemsPriceRow: number;
+  warehouseId: string; // ! -> INVENTORY
+  inventoryId: string; // ! -> INVENTORY
 }
 
 export interface IOrderAccounting {
