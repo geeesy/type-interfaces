@@ -1,4 +1,5 @@
 import { IAddress } from './type-company';
+import { TOrderType } from './type-order';
 /**
  * REVIEW: WAREHOUSE
  */
@@ -19,10 +20,12 @@ export interface IWarehouseEntity {
 /**
  * REVIEW: INVENTORY
  */
+export type TInventoryType = 'GB' | 'GM' | 'OWN'
 export interface IDBInventoryEntityImmu {
   inventoryId: string;
   compId: string;
   businessId: string;
+  inventoryType: TInventoryType
 }
 
 export interface IInventoryEntity {
@@ -36,7 +39,7 @@ export interface IInventoryEntity {
  */
 export interface IProductInventoryImmu {
   warehouseId: string;
-  inventoryId: string;
+  inventoryId: string; // GB+xxx || GM+xxx
   productId: string;
   compId: string;
 }
@@ -62,4 +65,12 @@ export interface ICreateProductWithStock
 
 export interface ICreateProductWithMultiStock {
   inventories: ICreateProductWithStock[];
+  useMultiStock: boolean;
+  useInventory: boolean; // ! CHECK TO CREATE STOCK OR NOT
+}
+
+export interface IStockRefData {
+  inventoryId: string;
+  warehouseId: string;
+  saleChannel: TOrderType
 }

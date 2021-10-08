@@ -40,7 +40,7 @@ export enum StatusOrder {
   Completed = 'COMPLETED'
 }
 
-export type TOrderType = 'ORDER_LINK' | 'SALEPAGE' | 'GAPP_MARKET';
+export type TOrderType = 'ORDER_LINK' | 'SALEPAGE' | 'GAPP_MARKET' | 'GAPP_BIZ';
 
 /**
  * ORDER
