@@ -31,6 +31,7 @@ export interface IDBInventoryEntityImmu {
 export interface IInventoryEntity {
   inventoryName: string;
   inventoryInfo: string;
+  canBelowZero: boolean;
 }
 
 /**
@@ -53,7 +54,7 @@ export interface IDBProductInventoryFormulaImmu {
 }
 export interface IProductInventorySetting {
   lowStockQty: number;
-  canBelowZero: boolean; // Keep Selling
+  hasKeepSelling: boolean;
 }
 
 export interface IDBProductInventory {
