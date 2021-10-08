@@ -301,7 +301,7 @@ export interface IDBProduct {
   countPacks: number; // * UPDATED ON [C-U-D] PACK
   totalStock: number; // ! INVENTORY
   totalReservedStock: number; // ! INVENTORY
-  stockRefData: IStockRefData[] // ! INVENTORY
+  stockRefData: IStockRefData[] | null; // ! INVENTORY
   countVariantsInPack: number;
   countPacksInVariant: number;
   variantMatchId?: IProductVariantMatchId[];
