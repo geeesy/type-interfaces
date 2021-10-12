@@ -8,6 +8,7 @@ import {
   ILogProduct,
   IProductAttributes,
   IProductEntity,
+  IProductEntityImmu,
   IProductGroup,
   IProductList,
   IProductMarketList,
@@ -902,6 +903,7 @@ export namespace GappInventory {
   export type ProductAttributes = IProductAttributes;
   export type CreateProduct = IProductRootEntity &
     IProductEntity &
+    IProductEntityImmu &
     IProductAttributes &
     ICreateProductWithMultiStock &
     IApiSupplierParams;
@@ -910,6 +912,7 @@ export namespace GappInventory {
     IApiSupplierParams;
   export type Product = IProductRootEntity &
     IProductEntity &
+    IProductEntityImmu &
     IProductAttributes &
     IDBProduct &
     IDBProductImmu &
@@ -926,6 +929,7 @@ export namespace GappInventory {
     IApiSupplierParams;
   export type CreateOneVariantOnly = IProductRootEntity &
     IProductEntity &
+    IProductEntityImmu &
     IProductVariantEntity &
     IProductInventoryImmu &
     IProductInventorySetting &
@@ -933,6 +937,7 @@ export namespace GappInventory {
     IApiSupplierParams;
   export type ProductVariantOnly = IProductRootEntity &
     IProductEntity &
+    IProductEntityImmu &
     IProductVariantEntity &
     IDBProductVariantOnlyImmu &
     IDBLogTime;

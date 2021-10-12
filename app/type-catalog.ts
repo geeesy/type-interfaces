@@ -254,6 +254,9 @@ export interface IProductEntity {
   leadTimes: IPeriodTimeByQty[];
   displaySku: IProductDisplay;
   shippingMethod: IProductShippingMethod[];
+}
+
+export interface IProductEntityImmu {
   useInventory: boolean;
 }
 
