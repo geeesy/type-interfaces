@@ -43,18 +43,20 @@ export interface IProductInventoryImmu {
   inventoryId: string; // GB+xxx || GM+xxx
 }
 
-export interface IProductCompanyImmu {
-  productId: string;
-  compId: string;
+export interface IProductInventorySetting {
+  lowStockQty: number;
+  hasKeepSelling: boolean;
 }
 
 export interface IDBProductInventoryFormulaImmu {
   initialStock: number;
   initialCostPrice: number;
 }
-export interface IProductInventorySetting {
-  lowStockQty: number;
-  hasKeepSelling: boolean;
+
+// === === ===
+export interface IProductCompanyImmu {
+  productId: string;
+  compId: string;
 }
 
 export interface IDBProductInventory {
