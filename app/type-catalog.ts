@@ -341,6 +341,7 @@ export interface IProductVariantEntity {
 export interface IProductVariantOnly
   extends IProductRootEntity,
     IProductEntity,
+    IProductEntityImmu,
     IProductVariantEntity {
 }
 
@@ -377,6 +378,7 @@ export interface IProductPack {
 export interface IProductPackOnly
   extends IProductRootEntity,
     IProductEntity,
+    IProductEntityImmu,
     IProductPack {
   productPackId: string;
   createdAt: string;
@@ -387,6 +389,7 @@ export interface IProductPackOnly
 export interface IProductPackInVariant
   extends IProductRootEntity,
     IProductEntity,
+    IProductEntityImmu,
     IProductVariantEntity,
     IProductPack {
   productVariantPackId: string;
@@ -398,6 +401,7 @@ export interface IProductPackInVariant
 export interface IProductVariantInPack
   extends IProductRootEntity,
     IProductEntity,
+    IProductEntityImmu,
     IProductPack,
     IProductVariantEntity {
   productPackVariantId: string;
