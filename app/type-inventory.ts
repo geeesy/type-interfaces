@@ -80,3 +80,8 @@ export interface IStockRefData {
   warehouseId: string;
   saleChannel: TOrderType
 }
+
+export interface IUpdateProductStock extends IProductInventoryImmu {
+  productId: string;
+  stock: number;
+}
