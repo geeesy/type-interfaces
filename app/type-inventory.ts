@@ -84,4 +84,7 @@ export interface IStockRefData {
 export interface IUpdateProductStock extends IProductInventoryImmu {
   productId: string;
   stock: number;
+  newStock: number;
+  increment: number;
+  decrement: number;
 }
