@@ -6,3 +6,5 @@ export interface IDBLogTime {
 export interface IDBUpdateTime {
   updatedAt: string
 }
+
+export type TApiErrorModule = 'INVENTORY' | 'ERROR'
