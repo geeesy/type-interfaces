@@ -94,6 +94,7 @@ export interface ITransferProductStock {
   destinationStock: IProductInventoryImmu
   transferQty: number;
   productId: string;
+  hasProductInDestinationStock: boolean;
 }
 
 export interface ILogStockValue extends IProductInventoryImmu, IProductInventorySetting, IDBProductInventory {
