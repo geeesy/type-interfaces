@@ -104,10 +104,11 @@ export enum StockMovementType {
   Initial = 'initial entry',
   Adjustment = 'stock adjustments',
   Transfer = 'stock transfers',
-  Purchase = 'purchases'
+  Purchase = 'purchases',
+  None = 'none'
 }
 
-export type TStockMovementAction = 'IN' | 'OUT'
+export type TStockMovementAction = 'IN' | 'OUT' | 'NONE'
 export interface ILogStock {
   updatedBy: string;
   action: string;
