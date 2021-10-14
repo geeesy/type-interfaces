@@ -100,11 +100,23 @@ export interface ILogStockValue extends IProductInventoryImmu, IProductInventory
 
 }
 
+export enum StockMovementType {
+  Initial = 'initial entry',
+  Adjustment = 'stock adjustments',
+  Transfer = 'stock transfers',
+  Purchase = 'purchases'
+}
+
+export type TStockMovementAction = 'IN' | 'OUT'
 export interface ILogStock {
   updatedBy: string;
   action: string;
+  stockMovementType: StockMovementType
+  stockMovementAction: TStockMovementAction
   createdAt: string;
   updatedAt: string;
   oldValue: ILogStockValue;
   newValue: ILogStockValue;
 }
+
+
