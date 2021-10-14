@@ -295,7 +295,7 @@ import {
   IOrderLinkDataOnConfirm,
   ISellerUpdateOrderStatus
 } from './type-order';
-import { ICreateProductWithMultiStock, IDBInventoryEntityImmu, IDBProductInventory, IDBProductInventoryFormulaImmu, IDBWarehouseEntityImmu, IInventoryEntity, IProductCompanyImmu, IProductInventoryImmu, IProductInventorySetting, ITransferProductStock, IUpdateProductStock, IWarehouseEntity } from './type-inventory';
+import { ICreateProductWithMultiStock, IDBInventoryEntityImmu, IDBProductInventory, IDBProductInventoryFormulaImmu, IDBWarehouseEntityImmu, IInventoryEntity, ILogStock, IProductCompanyImmu, IProductInventoryImmu, IProductInventorySetting, ITransferProductStock, IUpdateProductStock, IWarehouseEntity } from './type-inventory';
 
 /* #region FIXME: Marketplace */
 export namespace GeeesyMarketplace {
@@ -958,6 +958,7 @@ export namespace GappInventory {
   export type Stock = IProductCompanyImmu & IProductInventoryImmu & IDBProductInventoryFormulaImmu & IProductInventorySetting & IDBProductInventory & IDBLogTime
   export type UpdateProductStock = IApiCompanyParams & IUpdateProductStock
   export type TransferProductStock = IApiCompanyParams & ITransferProductStock
+  export type LogProductStock = ILogStock
 }
 
 // REVIEW: G-BIZ | SETTING

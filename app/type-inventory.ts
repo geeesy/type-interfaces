@@ -95,3 +95,16 @@ export interface ITransferProductStock {
   transferQty: number;
   productId: string;
 }
+
+export interface ILogStockValue extends IProductInventoryImmu, IProductInventorySetting, IDBProductInventory {
+
+}
+
+export interface ILogStock {
+  updatedBy: string;
+  action: string;
+  createdAt: string;
+  updatedAt: string;
+  oldValue: ILogStockValue;
+  newValue: ILogStockValue;
+}
