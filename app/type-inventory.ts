@@ -88,3 +88,10 @@ export interface IUpdateProductStock extends IProductInventoryImmu {
   increment: number;
   decrement: number;
 }
+
+export interface ITransferProductStock {
+  sourceStock: IProductInventoryImmu
+  destinationStock: IProductInventoryImmu
+  transferQty: number;
+  productId: string;
+}
