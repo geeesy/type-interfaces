@@ -894,6 +894,7 @@ export namespace GappMarket {
     IDBBusinessCompanyUserData &
     ICompanyUserData &
     IDBUpdateTime;
+  export type ListBanner = IDBBannerImmu & IBanner
 }
 
 // REVIEW: G-BIZ | PRODUCT
