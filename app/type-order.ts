@@ -180,5 +180,6 @@ export interface ISellerUpdateOrderStatus {
   existingSellerStatus: StatusOrderSeller
   newSellerStatus: StatusOrderSeller
   orderType: TOrderType
+  hasStockFinalized: boolean;
 }
 
