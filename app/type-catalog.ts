@@ -4,8 +4,6 @@ import {
 } from './type-console';
 
 import { StatusProductApproveOnMarket } from './enum-status';
-import { IStockRefData } from './type-inventory';
-
 export interface IPriceList {
   priceListId: string;
   price: number;
@@ -304,7 +302,7 @@ export interface IDBProduct {
   countPacks: number; // * UPDATED ON [C-U-D] PACK
   totalStock: number; // ! INVENTORY
   totalReservedStock: number; // ! INVENTORY
-  stockRefData: IStockRefData[] | null; // ! INVENTORY
+  // stockRefData: IStockRefData[] | null; // ! INVENTORY
   countVariantsInPack: number;
   countPacksInVariant: number;
   variantMatchId?: IProductVariantMatchId[];
@@ -334,7 +332,7 @@ export interface IProductVariantEntity {
   variantHierarchy: string[];
   totalStock: number; // ! INVENTORY
   totalReservedStock: number; // ! INVENTORY
-  stockRefData: IStockRefData[] // ! INVENTORY
+  // stockRefData: IStockRefData[] // ! INVENTORY
 }
 
 // Variants Only
@@ -371,7 +369,7 @@ export interface IProductPack {
   smallestUnitQty: number;
   totalStock: number; // ! INVENTORY
   totalReservedStock: number; // ! INVENTORY
-  stockRefData: IStockRefData[] // ! INVENTORY
+  // stockRefData: IStockRefData[] // ! INVENTORY
 }
 
 // Packs Only
