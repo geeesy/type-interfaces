@@ -909,6 +909,7 @@ export namespace GappInventory {
     ICreateProductWithMultiStock &
     IApiSupplierParams;
   export type CreateProductWithVariant = IProductAttributes &
+    ICreateProductWithMultiStock &
     IProductVariantAttributes &
     IApiSupplierParams;
   export type Product = IProductRootEntity &
