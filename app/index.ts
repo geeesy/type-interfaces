@@ -16,6 +16,7 @@ import {
   IProductPackOnly,
   IProductRootEntity,
   IProductVariantAttributes,
+  IProductVariantAttributesOnCreate,
   IProductVariantEntity,
   IProductVariantInPack
 } from './type-catalog';
@@ -909,8 +910,7 @@ export namespace GappInventory {
     ICreateProductWithMultiStock &
     IApiSupplierParams;
   export type CreateProductWithVariant = IProductAttributes &
-    ICreateProductWithMultiStock &
-    IProductVariantAttributes &
+    IProductVariantAttributesOnCreate &
     IApiSupplierParams;
   export type Product = IProductRootEntity &
     IProductEntity &

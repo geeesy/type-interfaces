@@ -4,6 +4,7 @@ import {
 } from './type-console';
 
 import { StatusProductApproveOnMarket } from './enum-status';
+import { ICreateProductWithStock } from './type-inventory';
 export interface IPriceList {
   priceListId: string;
   price: number;
@@ -343,6 +344,9 @@ export interface IProductVariantOnly
     IProductVariantEntity {
 }
 
+export interface IProductVariantOnlyWithStock extends IProductVariantOnly {
+  inventory: ICreateProductWithStock
+}
 export interface IDBProductVariantOnlyImmu {
   productVariantId: string;
   productId: string;
@@ -351,6 +355,12 @@ export interface IDBProductVariantOnlyImmu {
 export interface IProductVariantAttributes {
   variantSelectors: IProductVariantSelector[];
   variants: IProductVariantOnly[];
+}
+
+
+export interface IProductVariantAttributesOnCreate {
+  variantSelectors: IProductVariantSelector[];
+  variants: IProductVariantOnlyWithStock[];
 }
 
 export interface IProductVariantSelector {
