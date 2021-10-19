@@ -346,6 +346,8 @@ export interface IProductVariantOnly
 
 export interface IProductVariantOnlyWithStock extends IProductVariantOnly {
   inventory: ICreateProductWithStock
+  useMultiStock: boolean
+  useInventory: boolean
 }
 export interface IDBProductVariantOnlyImmu {
   productVariantId: string;
