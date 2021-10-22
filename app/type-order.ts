@@ -52,6 +52,8 @@ export interface IOrderProduct {
   productUnit: string;
   productQty: number;
   productCoverUrl: string;
+  productWeight: number;
+  productWeightUnit: string;
   productSku: string;
   discountUnitPrice: number;
   itemsPriceRow: number;
