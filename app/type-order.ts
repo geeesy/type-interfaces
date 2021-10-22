@@ -144,7 +144,7 @@ export interface IPaymentAttachmentData {
   paymentTime: string;
   paymentDate: string;
   paymentPrice: number
-  note: string
+  note?: string
 }
 
 // * ON CONFIRM
