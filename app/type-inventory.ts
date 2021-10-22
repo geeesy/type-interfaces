@@ -63,6 +63,7 @@ export interface IProductCompanyImmu {
 export interface IDBProductInventory {
   stock: number;
   reservedStock: number;
+  latestNoteOnAction: string; // used in log on stock transfer and adjust
 }
 
 export interface ICreateProductWithStock
