@@ -57,6 +57,7 @@ export interface IDBProductInventoryFormulaImmu {
 export interface IProductCompanyImmu {
   productId: string;
   compId: string;
+  variantId?: string;
 }
 
 export interface IDBProductInventory {
@@ -83,6 +84,7 @@ export interface IStockRefData {
 
 export interface IUpdateProductStock extends IProductInventoryImmu {
   productId: string;
+  variantId?: string;
   stock: number;
   newStock: number;
   increment: number;
@@ -94,6 +96,7 @@ export interface ITransferProductStock {
   destinationStock: IProductInventoryImmu
   transferQty: number;
   productId: string;
+  variantId?: string;
   hasProductInDestinationStock: boolean;
 }
 
