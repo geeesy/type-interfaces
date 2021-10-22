@@ -142,7 +142,7 @@ export interface IDBOrderLinkImmu {
 }
 
 export interface IPaymentAttachmentData {
-  paymentImage: string
+  paymentImageUrl: string
   paymentTime: string;
   paymentDate: string;
   paymentPrice: number
