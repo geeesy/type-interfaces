@@ -156,7 +156,7 @@ export interface IOrderLinkDataOnConfirm {
   shippingConfirmedData: GappSetting.ShippingMethod | null;
   paymentConfirmedData: GappSetting.PaymentMethod | null;
   isNewContactAddress: boolean;
-  paymentAttachmentData: IPaymentAttachmentData
+  paymentAttachmentData: IPaymentAttachmentData | null
 }
 
 /**
