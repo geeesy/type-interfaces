@@ -141,13 +141,22 @@ export interface IDBOrderLinkImmu {
   // orderTemplateId: string;
 }
 
+export interface IPaymentAttachmentData {
+  paymentImage: string
+  paymentTime: string;
+  paymentDate: string;
+  paymentPrice: number
+  note?: string
+}
+
 // * ON CONFIRM
 export interface IOrderLinkDataOnConfirm {
   shippingConfirmedId: string
   paymentConfirmedId: string
   shippingConfirmedData: GappSetting.ShippingMethod | null;
   paymentConfirmedData: GappSetting.PaymentMethod | null;
-  isNewContactAddress: boolean
+  isNewContactAddress: boolean;
+  paymentAttachmentData: IPaymentAttachmentData
 }
 
 /**
