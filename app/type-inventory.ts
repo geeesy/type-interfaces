@@ -89,6 +89,7 @@ export interface IUpdateProductStock extends IProductInventoryImmu {
   newStock: number;
   increment: number;
   decrement: number;
+  note: string;
 }
 
 export interface ITransferProductStock {
@@ -97,6 +98,7 @@ export interface ITransferProductStock {
   transferQty: number;
   productId: string;
   variantId?: string;
+  note: string;
   hasProductInDestinationStock: boolean;
 }
 
@@ -122,6 +124,7 @@ export interface ILogStock {
   updatedAt: string;
   oldValue: ILogStockValue;
   newValue: ILogStockValue;
+  note?: string; // only on action
 }
 
 
