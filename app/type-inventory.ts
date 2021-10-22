@@ -63,6 +63,7 @@ export interface IProductCompanyImmu {
 export interface IDBProductInventory {
   stock: number;
   reservedStock: number;
+  latestNoteOnAction: string; // used in log on stock transfer and adjust
 }
 
 export interface ICreateProductWithStock
@@ -89,6 +90,7 @@ export interface IUpdateProductStock extends IProductInventoryImmu {
   newStock: number;
   increment: number;
   decrement: number;
+  note: string;
 }
 
 export interface ITransferProductStock {
@@ -97,6 +99,7 @@ export interface ITransferProductStock {
   transferQty: number;
   productId: string;
   variantId?: string;
+  note: string;
   hasProductInDestinationStock: boolean;
 }
 
@@ -122,6 +125,7 @@ export interface ILogStock {
   updatedAt: string;
   oldValue: ILogStockValue;
   newValue: ILogStockValue;
+  note?: string; // only on action
 }
 
 

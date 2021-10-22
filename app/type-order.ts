@@ -52,6 +52,8 @@ export interface IOrderProduct {
   productUnit: string;
   productQty: number;
   productCoverUrl: string;
+  productWeight: number;
+  productWeightUnit: string;
   productSku: string;
   discountUnitPrice: number;
   itemsPriceRow: number;
@@ -140,7 +142,7 @@ export interface IDBOrderLinkImmu {
 }
 
 export interface IPaymentAttachmentData {
-  paymentImage: string
+  paymentImageUrl: string
   paymentTime: string;
   paymentDate: string;
   paymentPrice: number
@@ -154,7 +156,7 @@ export interface IOrderLinkDataOnConfirm {
   shippingConfirmedData: GappSetting.ShippingMethod | null;
   paymentConfirmedData: GappSetting.PaymentMethod | null;
   isNewContactAddress: boolean;
-  paymentAttachmentData: IPaymentAttachmentData
+  paymentAttachmentData: IPaymentAttachmentData | null
 }
 
 /**
