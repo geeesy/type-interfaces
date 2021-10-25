@@ -847,6 +847,8 @@ export namespace GappBiz {
     IOrderLinkDataOnConfirm &
     IDBOrderSellerDataImmu &
     IDBLogTime;
+  export type OrderSalePage = GappBiz.OrderLink
+  export type OrderGappMed = GappBiz.OrderLink
   export type ListOrderLink = IDBOrderEntity &
     IOrderCustomerData &
     IOrderLinkDataOnConfirm &
@@ -861,8 +863,7 @@ export namespace GappBiz {
     IOrderLinkData &
     IDBUpdateTime;
   export type CreateOrderSalePage = GappBiz.CreateOrderLink & IOrderLinkDataOnConfirm
-
-  // ! ORDER - GAPP_MARKET
+  export type CreateOrderGappMed = GappBiz.CreateOrderLink & IOrderLinkDataOnConfirm
 }
 
 // REVIEW: G-MARKET
@@ -1047,6 +1048,7 @@ export namespace GappApi {
   export type ListOrderLink = GappBiz.ListOrderLink
   export type OrderLink = GappBiz.OrderLink
   export type OrderSalePage = GappBiz.OrderLink
+  export type OrderGappMed = GappBiz.OrderLink
 }
 
 export * as IMarketplace from './type-marketplace';
