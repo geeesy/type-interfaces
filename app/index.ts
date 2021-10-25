@@ -860,7 +860,7 @@ export namespace GappBiz {
     IDBOrderStatus &
     IOrderLinkData &
     IDBUpdateTime;
-  // ! ORDER - SALEPAGE
+  export type CreateOrderSalePage = GappBiz.CreateOrderLink & IOrderLinkDataOnConfirm
 
   // ! ORDER - GAPP_MARKET
 }
@@ -1046,7 +1046,7 @@ export namespace GappApi {
     & IOrderLinkDataOnConfirm & IDBUpdateTime & IDBOrderStatus
   export type ListOrderLink = GappBiz.ListOrderLink
   export type OrderLink = GappBiz.OrderLink
-
+  export type OrderSalePage = GappBiz.OrderLink
 }
 
 export * as IMarketplace from './type-marketplace';
