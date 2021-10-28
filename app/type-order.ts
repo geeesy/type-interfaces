@@ -1,7 +1,7 @@
 import { GappSetting } from '.';
 import { SaleChannelSubType } from './enum-const';
 import { IPersonContactInfo } from './type-apps';
-import { ICompanyContactInfo } from './type-company';
+import { ICompanyContactInfo, IPeriodTime } from './type-company';
 
 /* eslint-disable no-unused-vars */
 export enum StatusOrderSeller {
@@ -146,7 +146,13 @@ export interface IPaymentAttachmentData {
   paymentTime: string;
   paymentDate: string;
   paymentPrice: number
-  note?: string
+  note: string
+}
+
+export interface IShippingTrackingData {
+  trackingNo: string;
+  deliveryOn: IPeriodTime
+  note: string;
 }
 
 // * ON CONFIRM
@@ -157,6 +163,7 @@ export interface IOrderLinkDataOnConfirm {
   paymentConfirmedData: GappSetting.PaymentMethod | null;
   isNewContactAddress: boolean;
   paymentAttachmentData: IPaymentAttachmentData | null
+  shippingTrackingData: IShippingTrackingData | null
 }
 
 /**
