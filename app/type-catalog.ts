@@ -207,6 +207,7 @@ export interface IRefProductList {
 export interface IProductList extends IRefProductList {
   display: IProductDisplay;
   productCode: string;
+  productSkuRef?: string; // ? for variant or pack
   productSku: string;
   productUnit: string;
   productUnit_market: string;
