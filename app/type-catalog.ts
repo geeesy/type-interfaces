@@ -3,7 +3,7 @@ import {
   IDBCategoryProductSpecGroup
 } from './type-console';
 
-import { ICreateProductWithStock } from './type-inventory';
+import { ICreateProductWithStock, IProductInventoryImmu } from './type-inventory';
 import { StatusProductApproveOnMarket } from './enum-status';
 
 export interface IPriceList {
@@ -207,6 +207,7 @@ export interface IRefProductList {
 export interface IProductList extends IRefProductList {
   display: IProductDisplay;
   productCode: string;
+  productSkuRef?: string; // ? for variant or pack
   productSku: string;
   productUnit: string;
   productUnit_market: string;
@@ -254,6 +255,7 @@ export interface IProductEntity {
   leadTimes: IPeriodTimeByQty[];
   displaySku: IProductDisplay;
   shippingMethod: IProductShippingMethod[];
+  whichStockOnMarket?: IProductInventoryImmu // ? use on order from market
 }
 
 export interface IProductEntityImmu {
@@ -267,7 +269,6 @@ export interface IProductAttributes {
   isRecommend: boolean;
   isHighLight: boolean;
   isNewArrival: boolean;
-  productSkuRef: string;
   isCanBuy: string;
   isCanBuy_market: string;
   productName: string;
@@ -295,6 +296,7 @@ export interface IProductAttributes {
   havePacks?: IProductPackOnly[];
   haveVariantsInPack?: IProductVariantInPack[];
   havePacksInVariant?: IProductPackInVariant[];
+  productSkuRef?: string; // ? for variant or pack
 }
 
 // ANCHOR: PRODUCT | Entity (4/6)
