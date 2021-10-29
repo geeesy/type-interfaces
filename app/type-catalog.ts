@@ -266,7 +266,6 @@ export interface IProductAttributes {
   isRecommend: boolean;
   isHighLight: boolean;
   isNewArrival: boolean;
-  productSkuRef: string;
   isCanBuy: string;
   isCanBuy_market: string;
   productName: string;
@@ -294,6 +293,7 @@ export interface IProductAttributes {
   havePacks?: IProductPackOnly[];
   haveVariantsInPack?: IProductVariantInPack[];
   havePacksInVariant?: IProductPackInVariant[];
+  productSkuRef?: string; // ? for variant or pack
 }
 
 // ANCHOR: PRODUCT | Entity (4/6)
