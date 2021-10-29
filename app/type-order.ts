@@ -79,6 +79,7 @@ export interface IOrderAccounting {
 // ANCHOR: ORDER | Entity (1/6)
 export interface IOrderCustomerDataImmu {
   customerId: string;
+  iamUserId?: string;
 }
 
 // ANCHOR: ORDER | Entity (2/6)

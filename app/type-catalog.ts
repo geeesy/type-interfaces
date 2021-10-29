@@ -3,8 +3,9 @@ import {
   IDBCategoryProductSpecGroup
 } from './type-console';
 
-import { StatusProductApproveOnMarket } from './enum-status';
 import { ICreateProductWithStock } from './type-inventory';
+import { StatusProductApproveOnMarket } from './enum-status';
+
 export interface IPriceList {
   priceListId: string;
   price: number;
