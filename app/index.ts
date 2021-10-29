@@ -853,6 +853,7 @@ export namespace GappBiz {
     IOrderCustomerData &
     IOrderLinkDataOnConfirm &
     IDBOrderLinkImmu &
+    IDBOrderSellerDataImmu &
     IDBOrderStatus &
     IDBLogTime;
   export type DBUpdateOrderLink = IOrderEntity &
