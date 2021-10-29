@@ -255,7 +255,7 @@ export interface IProductEntity {
   leadTimes: IPeriodTimeByQty[];
   displaySku: IProductDisplay;
   shippingMethod: IProductShippingMethod[];
-  whichStockOnMarket: IProductInventoryImmu // ? use on order from market
+  whichStockOnMarket?: IProductInventoryImmu // ? use on order from market
 }
 
 export interface IProductEntityImmu {
