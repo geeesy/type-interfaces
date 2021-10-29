@@ -3,7 +3,7 @@ import {
   IDBCategoryProductSpecGroup
 } from './type-console';
 
-import { ICreateProductWithStock } from './type-inventory';
+import { ICreateProductWithStock, IProductInventoryImmu } from './type-inventory';
 import { StatusProductApproveOnMarket } from './enum-status';
 
 export interface IPriceList {
@@ -255,7 +255,7 @@ export interface IProductEntity {
   leadTimes: IPeriodTimeByQty[];
   displaySku: IProductDisplay;
   shippingMethod: IProductShippingMethod[];
-  whichStockOnMarket: string // ? use on order from market
+  whichStockOnMarket: IProductInventoryImmu // ? use on order from market
 }
 
 export interface IProductEntityImmu {
