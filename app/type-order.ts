@@ -102,6 +102,7 @@ export interface IDBOrderEntity {
   productImageFirstUrl: string;
   productSkuFirst: string;
   wasFinalized: boolean; // stock was adjusted
+  salepageId?: string
 }
 
 // ANCHOR: ORDER | Entity (5/6)
