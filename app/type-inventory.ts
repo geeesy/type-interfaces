@@ -64,8 +64,8 @@ export interface IDBProductInventory {
   stock: number;
   reservedStock: number;
   latestNoteOnAction: string; // used in log on stock transfer and adjust
-  latestActivityType: StockMovementType; // used to identify type of adjustment (order)
-  latestActivitySource: TOrderType;
+  latestActivityType: StockMovementType; // used to identify type of adjustment
+  latestActivitySource: TOrderType; // used to identify source of adjustment
 }
 
 export interface ICreateProductWithStock
