@@ -421,7 +421,7 @@ export interface ISettingPriceList
 // STUB: SETTING | DOC
 // NOTE: Initial with default value set on server when create company
 // ! initialize on server
-export type TYearFormat = 'YYYY-MM' | 'YY-MM' | 'YYYY-MM-dd' | 'YY-MM-dd' | 'YYYY-dd' | 'YY-dd' | 'MM-dd' | 'dd' | 'MMdd' | 'YYYYMMdd' | 'YYMMdd' | 'YYYYMM' | 'YYMM'| 'YYYYdd' | 'YYdd' | 'YYYY' | 'YY' | 'none';
+export type TYearFormat = 'YYYY-MM' | 'YY-MM' | 'YYYY-MM-dd' | 'YY-MM-dd' | 'YYYY-dd' | 'YY-dd' | 'MM' |'MM-dd' | 'dd' | 'MMdd' | 'YYYYMMdd' | 'YYMMdd' | 'YYYYMM' | 'YYMM'| 'YYYYdd' | 'YYdd' | 'YYYY' | 'YY' | 'none';
 export type TSeparator = '/' | '-' | 'none';
 export interface IDocSeqNoFormat {
   //! only 4 digit on seqNo
