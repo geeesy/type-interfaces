@@ -204,3 +204,8 @@ export interface ISellerUpdateOrderStatus {
   toFinalizeStock: boolean;
 }
 
+export interface ISellerUpdateOrderDataOnStatusChanged {
+  paymentAttachmentData: IPaymentAttachmentData | null
+  shippingTrackingData: IShippingTrackingData | null
+}
+

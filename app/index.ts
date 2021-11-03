@@ -294,6 +294,7 @@ import {
   IOrderEntity,
   IOrderLinkData,
   IOrderLinkDataOnConfirm,
+  ISellerUpdateOrderDataOnStatusChanged,
   ISellerUpdateOrderStatus
 } from './type-order';
 import { ICreateProductWithMultiStock, IDBInventoryEntityImmu, IDBProductInventory, IDBProductInventoryFormulaImmu, IDBWarehouseEntityImmu, IInventoryEntity, ILogStock, IProductCompanyImmu, IProductInventoryImmu, IProductInventorySetting, ITransferProductStock, IUpdateProductStock, IWarehouseEntity } from './type-inventory';
@@ -829,7 +830,7 @@ export namespace GappBiz {
     IDBLogTime &
     IPortfolioImmu;
   // ! ORDER
-  export type UpdateOrderStatus = ISellerUpdateOrderStatus & IApiCompanyParams
+  export type UpdateOrderStatus = ISellerUpdateOrderStatus & IApiCompanyParams & ISellerUpdateOrderDataOnStatusChanged
   // ! ORDER - ORDER_LINK
   export type CreateOrderLink = IOrderEntity &
     IOrderCustomerData &
