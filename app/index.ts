@@ -285,6 +285,7 @@ import {
   IShippingMethodEntityImmu
 } from './type-shipping';
 import {
+  IDBListOrderByProduct,
   IDBOrderEntity,
   IDBOrderLinkImmu,
   IDBOrderSellerDataImmu,
@@ -866,6 +867,7 @@ export namespace GappBiz {
     IDBUpdateTime;
   export type CreateOrderSalePage = GappBiz.CreateOrderLink & IOrderLinkDataOnConfirm
   export type CreateOrderGappMed = GappBiz.CreateOrderLink & IOrderLinkDataOnConfirm
+  export type ListOrderByProduct = IDBListOrderByProduct
 }
 
 // REVIEW: G-MARKET

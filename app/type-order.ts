@@ -122,6 +122,14 @@ export interface IDBOrderStatus {
   statusOrder: StatusOrder | null;
 }
 
+// REVIEW: Ordered Product
+export interface IDBListOrderByProduct extends IDBOrderStatus, IOrderCustomerData {
+  orderId: string;
+  channel: SaleChannelSubType;
+  totalOrderAmount: number;
+  createdAt: string;
+}
+
 
 /**
  * ORDER
