@@ -285,6 +285,7 @@ import {
   IShippingMethodEntityImmu
 } from './type-shipping';
 import {
+  IDBListOrderByProduct,
   IDBOrderEntity,
   IDBOrderLinkImmu,
   IDBOrderSellerDataImmu,
@@ -294,9 +295,10 @@ import {
   IOrderEntity,
   IOrderLinkData,
   IOrderLinkDataOnConfirm,
+  ISellerUpdateOrderDataOnStatusChanged,
   ISellerUpdateOrderStatus
 } from './type-order';
-import { ICreateProductWithMultiStock, IDBInventoryEntityImmu, IDBProductInventory, IDBProductInventoryFormulaImmu, IDBWarehouseEntityImmu, IInventoryEntity, ILogStock, IProductCompanyImmu, IProductInventoryImmu, IProductInventorySetting, ITransferProductStock, IUpdateProductStock, IWarehouseEntity } from './type-inventory';
+import { ICreateProductWithMultiStock, IDBInventoryEntityImmu, IDBProductInventory, IDBProductInventoryActivityLog, IDBProductInventoryFormulaImmu, IDBWarehouseEntityImmu, IInventoryEntity, ILogStock, IProductCompanyImmu, IProductInventoryImmu, IProductInventorySetting, ITransferProductStock, IUpdateProductStock, IWarehouseEntity } from './type-inventory';
 
 /* #region FIXME: Marketplace */
 export namespace GeeesyMarketplace {
@@ -829,7 +831,7 @@ export namespace GappBiz {
     IDBLogTime &
     IPortfolioImmu;
   // ! ORDER
-  export type UpdateOrderStatus = ISellerUpdateOrderStatus & IApiCompanyParams
+  export type UpdateOrderStatus = ISellerUpdateOrderStatus & IApiCompanyParams & ISellerUpdateOrderDataOnStatusChanged
   // ! ORDER - ORDER_LINK
   export type CreateOrderLink = IOrderEntity &
     IOrderCustomerData &
@@ -865,6 +867,7 @@ export namespace GappBiz {
     IDBUpdateTime;
   export type CreateOrderSalePage = GappBiz.CreateOrderLink & IOrderLinkDataOnConfirm
   export type CreateOrderGappMed = GappBiz.CreateOrderLink & IOrderLinkDataOnConfirm
+  export type ListOrderByProduct = IDBListOrderByProduct
 }
 
 // REVIEW: G-MARKET
@@ -959,7 +962,7 @@ export namespace GappInventory {
   export type Warehouse = IWarehouseEntity & IDBWarehouseEntityImmu & IDBLogTime;
   export type CreateInventory = IInventoryEntity & IApiCompanyParams
   export type Inventory = IInventoryEntity & IDBInventoryEntityImmu & IDBLogTime
-  export type Stock = IProductCompanyImmu & IProductInventoryImmu & IDBProductInventoryFormulaImmu & IProductInventorySetting & IDBProductInventory & IDBLogTime
+  export type Stock = IProductCompanyImmu & IProductInventoryImmu & IDBProductInventoryFormulaImmu & IProductInventorySetting & IDBProductInventory & IDBProductInventoryActivityLog & IDBLogTime
   export type UpdateProductStock = IApiCompanyParams & IUpdateProductStock
   export type TransferProductStock = IApiCompanyParams & ITransferProductStock
   export type LogProductStock = ILogStock
