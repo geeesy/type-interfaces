@@ -16,7 +16,7 @@ export interface IWarehouseEntity {
   warehouseImageUrls: string[];
   warehouseInfo: string;
   warehouseAddress: IAddress;
-  inventories: GappInventory.CreateInventory[]
+  inventories?: GappInventory.CreateInventory[]
 }
 
 /**
