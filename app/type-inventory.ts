@@ -32,6 +32,7 @@ export interface IInventoryEntity {
   inventoryName: string;
   inventoryInfo: string;
   canBelowZero: boolean;
+  isDefault: boolean;
 }
 
 /**
