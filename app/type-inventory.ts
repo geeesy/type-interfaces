@@ -1,3 +1,4 @@
+import { GappInventory } from '.';
 import { IAddress } from './type-company';
 import { TOrderType } from './type-order';
 /**
@@ -15,6 +16,7 @@ export interface IWarehouseEntity {
   warehouseImageUrls: string[];
   warehouseInfo: string;
   warehouseAddress: IAddress;
+  inventories: GappInventory.CreateInventory[]
 }
 
 /**
