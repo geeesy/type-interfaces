@@ -1,5 +1,4 @@
 import { BankAccountType, PaymentMethodType, TBankName } from './enum-const';
-import { IShippingMethodEntityImmu } from './type-shipping';
 
 // ANCHOR: Payment Attribute (Type 1)
 export interface IPaymentMethodTypeDeposit {
