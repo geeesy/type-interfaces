@@ -129,6 +129,7 @@ export interface ILogStock {
   action: string;
   stockMovementType: StockMovementType
   stockMovementAction: TStockMovementAction
+  stockOrderType: TOrderType | null
   createdAt: string;
   updatedAt: string;
   oldValue: ILogStockValue;
