@@ -32,6 +32,8 @@ export interface ISaleChannelEntity {
 }
 
 export interface IUpdateShippingAndPaymentMethodOnMarket {
+  compId: string
+  businessId: string
   marketPaymentMethod: IUpdateMarketPaymentMethod[]
   marketShippingMethod: IUpdateMarketShippingMethod[]
 }

@@ -271,7 +271,6 @@ import {
   IDBPaymentMethodImmu,
   IPaymentMethodEntity,
   IPaymentMethodEntityImmu,
-  IUpdateMarketPaymentMethod
 } from './type-payment';
 import {
   IDBSaleChannel,
@@ -285,7 +284,6 @@ import {
   IDBShippingMethodImmu,
   IShippingMethodEntity,
   IShippingMethodEntityImmu,
-  IUpdateMarketShippingMethod
 } from './type-shipping';
 import {
   IDBListOrderByProduct,
