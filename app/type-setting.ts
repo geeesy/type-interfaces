@@ -1,4 +1,6 @@
 import { SaleChannelSubType, SaleChannelType } from './enum-const';
+import { IUpdateMarketPaymentMethod } from './type-payment';
+import { IUpdateMarketShippingMethod } from './type-shipping';
 
 // ANCHOR: Sale Channel Attribute (Type Default)
 export interface ISaleChannelSubTypeDefault {
@@ -27,4 +29,9 @@ export interface ISaleChannelEntity {
   saleChannelAliasName: string;
   note: string;
   saleChannelAttributes: ISaleChannelSubTypeDefault;
+}
+
+export interface IUpdateShippingAndPaymentMethodOnMarket {
+  marketPaymentMethod: IUpdateMarketPaymentMethod[]
+  marketShippingMethod: IUpdateMarketShippingMethod[]
 }

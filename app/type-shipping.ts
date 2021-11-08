@@ -100,3 +100,8 @@ export interface IShippingMethodEntity {
     | IShippingMethodTypeBasedByStepWeight
     | IShippingMethodTypeBasedByOrderPrice;
 }
+
+export interface IUpdateMarketShippingMethod {
+  shippingMethodId: string
+  activeOnMarket: boolean
+}

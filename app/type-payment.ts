@@ -1,4 +1,5 @@
 import { BankAccountType, PaymentMethodType, TBankName } from './enum-const';
+import { IShippingMethodEntityImmu } from './type-shipping';
 
 // ANCHOR: Payment Attribute (Type 1)
 export interface IPaymentMethodTypeDeposit {
@@ -30,9 +31,15 @@ export interface IPaymentMethodEntityImmu {
 }
 
 export interface IPaymentMethodEntity {
-  onMarket?: boolean
+  onMarket: boolean
+  activeOnMarket: boolean
   paymentIconUrl: string;
   paymentAliasName: string;
   note: string;
   paymentMethodAttribute: IPaymentMethodTypeDeposit | IPaymentMethodTypeCod;
+}
+
+export interface IUpdateMarketPaymentMethod {
+  shippingMethodId: string
+  activeOnMarket: boolean
 }

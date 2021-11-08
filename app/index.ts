@@ -270,19 +270,22 @@ import {
   IDBPaymentMethod,
   IDBPaymentMethodImmu,
   IPaymentMethodEntity,
-  IPaymentMethodEntityImmu
+  IPaymentMethodEntityImmu,
+  IUpdateMarketPaymentMethod
 } from './type-payment';
 import {
   IDBSaleChannel,
   IDBSaleChannelImmu,
   ISaleChannelEntity,
-  ISaleChannelEntityImmu
+  ISaleChannelEntityImmu,
+  IUpdateShippingAndPaymentMethodOnMarket
 } from './type-setting';
 import {
   IDBShippingMethod,
   IDBShippingMethodImmu,
   IShippingMethodEntity,
-  IShippingMethodEntityImmu
+  IShippingMethodEntityImmu,
+  IUpdateMarketShippingMethod
 } from './type-shipping';
 import {
   IDBListOrderByProduct,
@@ -1042,6 +1045,7 @@ export namespace GappSetting {
   export type DBUpdateSaleChannel = ISaleChannelEntity &
     IDBSaleChannel &
     IDBUpdateTime;
+  export type DBUpdateShippingAndPaymentMethodOnMarket = IUpdateShippingAndPaymentMethodOnMarket
 }
 
 // REVIEW: GAPP INBOUND & OUTBOUND API
