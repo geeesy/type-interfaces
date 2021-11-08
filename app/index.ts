@@ -960,8 +960,10 @@ export namespace GappInventory {
   export type DBUpdateProductGroup = IProductGroup & IDBUpdateTime;
   export type CreateWarehouse = IWarehouseEntity & IApiCompanyParams
   export type Warehouse = IWarehouseEntity & IDBWarehouseEntityImmu & IDBLogTime;
+  export type DBUpdateWarehouse = IWarehouseEntity & IDBUpdateTime;
   export type CreateInventory = IInventoryEntity & IApiCompanyParams
   export type Inventory = IInventoryEntity & IDBInventoryEntityImmu & IDBLogTime
+  export type DBUpdateInventory = IInventoryEntity & IDBUpdateTime
   export type Stock = IProductCompanyImmu & IProductInventoryImmu & IDBProductInventoryFormulaImmu & IProductInventorySetting & IDBProductInventory & IDBProductInventoryActivityLog & IDBLogTime
   export type UpdateProductStock = IApiCompanyParams & IUpdateProductStock
   export type TransferProductStock = IApiCompanyParams & ITransferProductStock

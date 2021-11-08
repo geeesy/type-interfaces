@@ -1,3 +1,4 @@
+import { GappInventory } from '.';
 import { IAddress } from './type-company';
 import { TOrderType } from './type-order';
 /**
@@ -15,6 +16,7 @@ export interface IWarehouseEntity {
   warehouseImageUrls: string[];
   warehouseInfo: string;
   warehouseAddress: IAddress;
+  inventories?: GappInventory.CreateInventory[]
 }
 
 /**
@@ -32,6 +34,7 @@ export interface IInventoryEntity {
   inventoryName: string;
   inventoryInfo: string;
   canBelowZero: boolean;
+  isDefault: boolean;
 }
 
 /**
@@ -126,6 +129,7 @@ export interface ILogStock {
   action: string;
   stockMovementType: StockMovementType
   stockMovementAction: TStockMovementAction
+  stockOrderType: TOrderType | null
   createdAt: string;
   updatedAt: string;
   oldValue: ILogStockValue;
