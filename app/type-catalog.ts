@@ -2,8 +2,8 @@ import {
   ICategoryProductSpecGroup,
   IDBCategoryProductSpecGroup
 } from './type-console';
-
 import { ICreateProductWithStock, IProductInventoryImmu } from './type-inventory';
+
 import { StatusProductApproveOnMarket } from './enum-status';
 
 export interface IPriceList {
@@ -220,7 +220,7 @@ export interface IProductList extends IRefProductList {
 }
 
 export interface IProductMarketList extends IProductList {
-  isCanBuy_market: string;
+  isCanBuy_market: boolean;
   productName_market: string;
   productCoverUrl_market: string;
 }
@@ -269,8 +269,8 @@ export interface IProductAttributes {
   isRecommend: boolean;
   isHighLight: boolean;
   isNewArrival: boolean;
-  isCanBuy: string;
-  isCanBuy_market: string;
+  isCanBuy: boolean;
+  isCanBuy_market: boolean;
   productName: string;
   productName_market: string;
   productType: string;
