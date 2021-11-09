@@ -84,6 +84,7 @@ export interface IShippingMethodEntityImmu {
 }
 
 export interface IShippingMethodEntity {
+  activeOnMarket: boolean
   shippingParty: TShippingParty;
   shippingIconUrl: string;
   shippingAliasName: string;
