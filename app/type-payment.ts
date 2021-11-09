@@ -30,7 +30,6 @@ export interface IPaymentMethodEntityImmu {
 }
 
 export interface IPaymentMethodEntity {
-  onMarket: boolean
   activeOnMarket: boolean
   paymentIconUrl: string;
   paymentAliasName: string;
