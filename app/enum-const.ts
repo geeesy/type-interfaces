@@ -230,7 +230,7 @@ export enum PaymentMethodType {
 }
 
 export enum ShippingMethodType {
-  Free = 'free',
+  Free = 'ฟรีไม่เก็บค่าจัดส่ง',
   FixedRate = 'fixedRate',
   BasedByPcs = 'basedByPcs',
   BasedByStepPcs = 'basedByStepPcs',
