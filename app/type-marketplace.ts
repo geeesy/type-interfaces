@@ -5,6 +5,7 @@ import {
 } from './type-company';
 import {
   IDBProduct,
+  IDBProductImmu,
   IProductAttributes,
   IProductEntity,
   IProductList,
@@ -48,12 +49,8 @@ export interface IProductInSupplierCard
 export interface IProductInSupplierCardMarket
   extends IProductMarketList,
     IProductRootEntity,
-    IProductEntity {
-  supplierId: string;
-}
-
-
-
+    IProductEntity,
+    IDBProductImmu {}
 
 export interface ISupplierCard extends ICompanyPublicEntity, ICompanyByGapp {
   contact: ICompanyContactInfo;
@@ -79,6 +76,23 @@ export interface IProductWithSupplier {
     IProductAttributes;
   supplier: ISupplierCard;
 
+  // productCurrencyCode?: string; // ?
+  // packSizeLabel: string;
+  // packSizeQty: number;
+
+  // productGroups: IProductGroup;
+
+  // supplierNames: string;
+  // supplierVerified: boolean;
+  // savedLists: ISavedList[];
+  // productCategory: ISupProductCat;
+}
+
+export interface IProductWithoutSupplier {
+  product: IDBProduct &
+    IProductRootEntity &
+    IProductEntity &
+    IProductAttributes;
   // productCurrencyCode?: string; // ?
   // packSizeLabel: string;
   // packSizeQty: number;

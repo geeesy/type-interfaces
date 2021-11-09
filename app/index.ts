@@ -28,6 +28,7 @@ import {
   IProductWithOutSupplier,
   IProductWithSupplier,
   IProductWithSupplierCard,
+  IProductWithoutSupplier,
   IRecommendCategory,
   IRecommendSupplier,
   IResAllCategoryInSearchTool,
@@ -885,7 +886,8 @@ export namespace GappMarket {
     IDBLogTime; // * SUPPLIER
   export type ListProductWithSupplier = IProductWithSupplierCard;
   export type ListSupplierWithProduct = ISupplierWithProductCard;
-  export type Product = IProductWithSupplier;
+  export type ProductWithSupplier = IProductWithSupplier;
+  export type Product = IProductWithoutSupplier;
   export type CreateUser = IMarketUserIdentity &
     IMarketUserData &
     ICompanyUserData;
