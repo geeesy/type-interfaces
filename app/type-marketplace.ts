@@ -92,7 +92,8 @@ export interface IProductWithoutSupplier {
   product: IDBProduct &
     IProductRootEntity &
     IProductEntity &
-    IProductAttributes;
+    IProductAttributes &
+    IDBProductImmu;
   // productCurrencyCode?: string; // ?
   // packSizeLabel: string;
   // packSizeQty: number;
