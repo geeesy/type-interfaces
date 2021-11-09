@@ -39,6 +39,6 @@ export interface IPaymentMethodEntity {
 }
 
 export interface IUpdateMarketPaymentMethod {
-  shippingMethodId: string
+  paymentMethodId: string
   activeOnMarket: boolean
 }
