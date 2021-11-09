@@ -88,23 +88,12 @@ export interface IProductWithSupplier {
   // productCategory: ISupProductCat;
 }
 
-export interface IProductWithoutSupplier {
-  product: IDBProduct &
-    IProductRootEntity &
-    IProductEntity &
-    IProductAttributes &
-    IDBProductImmu;
-  // productCurrencyCode?: string; // ?
-  // packSizeLabel: string;
-  // packSizeQty: number;
-
-  // productGroups: IProductGroup;
-
-  // supplierNames: string;
-  // supplierVerified: boolean;
-  // savedLists: ISavedList[];
-  // productCategory: ISupProductCat;
-}
+export interface IProductWithoutSupplier
+  extends IDBProduct,
+    IProductRootEntity,
+    IProductEntity,
+    IProductAttributes,
+    IDBProductImmu {}
 
 // ANCHOR:
 
