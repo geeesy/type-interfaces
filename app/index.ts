@@ -891,7 +891,7 @@ export namespace GappBiz {
   export type CreateOrderGappMed = GappBiz.CreateOrderLink &
     IOrderLinkDataOnConfirm;
   export type ListOrderByProduct = IDBListOrderByProduct;
-  export type ListCustomerWithOrder = ICustomerWithOrder
+  export type ListCustomerWithOrder = ICustomerWithOrder;
 }
 
 // REVIEW: G-MARKET
