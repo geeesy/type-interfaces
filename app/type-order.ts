@@ -218,7 +218,9 @@ export interface ISellerUpdateOrderDataOnStatusChanged {
   shippingTrackingData: IShippingTrackingData | null
 }
 
-
+/**
+ * ORDER
+ */
 export interface ICustomerWithOrder extends IOrderCustomerDataImmu , IOrderCustomerData{
   latestOrderType: TOrderType;
   latestOrderId: string;
