@@ -120,6 +120,7 @@ import {
   ICompanyPublicEntity,
   ICompanyPublicEntityImmu,
   ICompanySalesRep,
+  ICustomer,
   IDBCertificate,
   IDBCompanyEntity,
   IDBCompanySupplierEntity,
@@ -892,6 +893,7 @@ export namespace GappBiz {
     IOrderLinkDataOnConfirm;
   export type ListOrderByProduct = IDBListOrderByProduct;
   export type ListCustomerWithOrder = ICustomerWithOrder;
+  export type Customer = ICustomer;
 }
 
 // REVIEW: G-MARKET
