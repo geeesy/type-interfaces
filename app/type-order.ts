@@ -1,7 +1,8 @@
-import { GappSetting } from '.';
-import { SaleChannelSubType } from './enum-const';
-import { IPersonContactInfo } from './type-apps';
 import { ICompanyContactInfo, IPeriodTime } from './type-company';
+
+import { GappSetting } from '.';
+import { IPersonContactInfo } from './type-apps';
+import { SaleChannelSubType } from './enum-const';
 
 /* eslint-disable no-unused-vars */
 export enum StatusOrderSeller {
@@ -217,3 +218,10 @@ export interface ISellerUpdateOrderDataOnStatusChanged {
   shippingTrackingData: IShippingTrackingData | null
 }
 
+/**
+ * ORDER
+ */
+export interface ICustomerWithOrder extends IOrderCustomerDataImmu , IOrderCustomerData{
+  latestOrderType: TOrderType;
+  latestOrderId: string;
+}
