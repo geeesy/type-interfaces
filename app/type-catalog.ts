@@ -428,9 +428,10 @@ export interface IProductGroup {
   productGroupName: string;
   productGroupInfo: string;
   productGroupIconUrl: string;
+}
+export interface IDBProductGroupCount {
   countProduct: number;
 }
-
 export interface IDBProductGroupImmu {
   productGroupId: string;
   compId: string;

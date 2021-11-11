@@ -287,6 +287,7 @@ import {
 import {
   IDBProduct,
   IDBProductByGapp,
+  IDBProductGroupCount,
   IDBProductGroupImmu,
   IDBProductImmu,
   IDBProductVariantOnlyImmu,
@@ -985,7 +986,7 @@ export namespace GappInventory {
   export type ProductVariantInPack = IProductVariantInPack;
   export type LogProduct = ILogProduct;
   export type CreateProductGroup = IProductGroup & IApiCompanyParams;
-  export type ProductGroup = IProductGroup & IDBProductGroupImmu & IDBLogTime;
+  export type ProductGroup = IProductGroup & IDBProductGroupImmu & IDBLogTime & IDBProductGroupCount;
   export type DBUpdateProductGroup = IProductGroup & IDBUpdateTime;
   export type CreateWarehouse = IWarehouseEntity & IApiCompanyParams;
   export type Warehouse = IWarehouseEntity &
