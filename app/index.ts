@@ -226,7 +226,8 @@ import {
   IVendorCreate,
   IVendorCreateParams,
   IVendorRequestAccept,
-  IVendorRequestList
+  IVendorRequestList,
+  IDocOrderCount
 } from './type-apps';
 import {
   IBusinessCompanyUserIdentity,
@@ -1045,7 +1046,7 @@ export namespace GappSetting {
     IBusinessCompanyUserIdentity &
     IDBBusinessCompanyUserIdentity &
     ICompanyUserData;
-  export type CountDocument = IDocWorkCount & IDocFinanceCount;
+  export type CountDocument = IDocWorkCount & IDocFinanceCount & IDocOrderCount;
   // * SHIPMENT
   export type CreateShippingMethod = IShippingMethodEntity &
     IShippingMethodEntityImmu &
