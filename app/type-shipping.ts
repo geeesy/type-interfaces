@@ -22,6 +22,7 @@ export interface IShippingMethodTypeFixedRate {
   shippingCost: number;
   minOrderTotalAmount: number;
   caption: string;
+  showMinOrderTotalAmount: boolean
 }
 
 // ANCHOR: Shipping Method Attribute (Type 3)
@@ -30,6 +31,7 @@ export interface IShippingMethodTypeBasedByPcs {
   shippingCostFirstPcs: number;
   shippingCostPerPcs: number;
   caption: string;
+  showMinOrderTotalAmount: boolean
 }
 
 // ANCHOR: Shipping Method Attribute (Type 4)
@@ -41,6 +43,7 @@ export interface IShippingMethodTypeBasedByStepPcs {
   minOrderTotalAmount: number;
   shippingCost: IShippingCostByStepPcs[];
   caption: string
+  showMinOrderTotalAmount: boolean
 }
 
 // ANCHOR: Shipping Method Attribute (Type 5)
@@ -52,6 +55,7 @@ export interface IShippingMethodTypeBasedByStepWeight {
   minOrderTotalAmount: number;
   shippingCost: IShippingCostByStepWeight[];
   caption: string
+  showMinOrderTotalAmount: boolean
 }
 
 // ANCHOR: Shipping Method Attribute (Type 6)
