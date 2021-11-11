@@ -104,13 +104,13 @@ export interface IDBOrderEntity {
   productSkuFirst: string;
   wasFinalized: boolean; // stock was adjusted
   salepageId?: string
+  productAmount: number,
 }
 
 // ANCHOR: ORDER | Entity (5/6)
 export interface IOrderEntity {
   sellerNote: string;
   products: IOrderProduct[];
-  productAmount: number,
   accountingData: IOrderAccounting;
   sellerContactInfo: IPersonContactInfo;
   sellerCompanyContactInfo: ICompanyContactInfo;
