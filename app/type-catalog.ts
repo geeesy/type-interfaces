@@ -2,7 +2,10 @@ import {
   ICategoryProductSpecGroup,
   IDBCategoryProductSpecGroup
 } from './type-console';
-import { ICreateProductWithStock, IProductInventoryImmu } from './type-inventory';
+import {
+  ICreateProductWithStock,
+  IProductInventoryImmu
+} from './type-inventory';
 
 import { StatusProductApproveOnMarket } from './enum-status';
 
@@ -255,7 +258,7 @@ export interface IProductEntity {
   leadTimes: IPeriodTimeByQty[];
   displaySku: IProductDisplay;
   shippingMethod: IProductShippingMethod[];
-  whichStockOnMarket?: IProductInventoryImmu // ? use on order from market
+  whichStockOnMarket?: IProductInventoryImmu; // ? use on order from market
 }
 
 export interface IProductEntityImmu {
@@ -344,13 +347,12 @@ export interface IProductVariantOnly
   extends IProductRootEntity,
     IProductEntity,
     IProductEntityImmu,
-    IProductVariantEntity {
-}
+    IProductVariantEntity {}
 
 export interface IProductVariantOnlyWithStock extends IProductVariantOnly {
-  inventory: ICreateProductWithStock
-  useMultiStock: boolean
-  useInventory: boolean
+  inventory: ICreateProductWithStock;
+  useMultiStock: boolean;
+  useInventory: boolean;
 }
 export interface IDBProductVariantOnlyImmu {
   productVariantId: string;
@@ -361,7 +363,6 @@ export interface IProductVariantAttributes {
   variantSelectors: IProductVariantSelector[];
   variants: IProductVariantOnly[];
 }
-
 
 export interface IProductVariantAttributesOnCreate {
   variantSelectors: IProductVariantSelector[];
@@ -427,6 +428,7 @@ export interface IProductGroup {
   productGroupName: string;
   productGroupInfo: string;
   productGroupIconUrl: string;
+  countProduct: number;
 }
 
 export interface IDBProductGroupImmu {
