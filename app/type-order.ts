@@ -110,6 +110,7 @@ export interface IDBOrderEntity {
 export interface IOrderEntity {
   sellerNote: string;
   products: IOrderProduct[];
+  productAmount: number,
   accountingData: IOrderAccounting;
   sellerContactInfo: IPersonContactInfo;
   sellerCompanyContactInfo: ICompanyContactInfo;
