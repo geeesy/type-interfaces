@@ -8,7 +8,9 @@ export enum DocPrefixFormat {
   billingNote = 'BN',
   receipt = 'RE',
   invoice = 'INV',
-  taxInvoice = 'TIV'
+  taxInvoice = 'TIV',
+  order = 'OD',
+  market = 'GM'
 }
 
 export enum DocWorkSeqIdCount {
@@ -24,6 +26,11 @@ export enum DocWorkSeqIdCount {
 export enum DocFinanceSeqIdCount {
   receipt = 'CountReceipt',
   taxInvoice = 'CountTaxInvoice'
+}
+
+export enum DocOrderSeqIdCount {
+  order = 'CountOrder',
+  market = 'CountMarket'
 }
 
 export enum CurrencyTranslateTH {

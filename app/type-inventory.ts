@@ -30,6 +30,9 @@ export interface IDBInventoryEntityImmu {
   businessId: string;
   inventoryType: TInventoryType
 }
+export interface IDBInventoryEntity {
+  totalProduct: number
+}
 
 export interface IInventoryEntity {
   inventoryName: string;

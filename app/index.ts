@@ -226,7 +226,8 @@ import {
   IVendorCreate,
   IVendorCreateParams,
   IVendorRequestAccept,
-  IVendorRequestList
+  IVendorRequestList,
+  IDocOrderCount
 } from './type-apps';
 import {
   IBusinessCompanyUserIdentity,
@@ -247,6 +248,7 @@ import {
 } from './type-business';
 import {
   ICreateProductWithMultiStock,
+  IDBInventoryEntity,
   IDBInventoryEntityImmu,
   IDBProductInventory,
   IDBProductInventoryActivityLog,
@@ -994,9 +996,7 @@ export namespace GappInventory {
     IDBLogTime;
   export type DBUpdateWarehouse = IWarehouseEntity & IDBUpdateTime;
   export type CreateInventory = IInventoryEntity & IApiCompanyParams;
-  export type Inventory = IInventoryEntity &
-    IDBInventoryEntityImmu &
-    IDBLogTime;
+  export type Inventory = IInventoryEntity & IDBInventoryEntityImmu & IDBInventoryEntity & IDBLogTime;
   export type DBUpdateInventory = IInventoryEntity & IDBUpdateTime;
   export type Stock = IProductCompanyImmu &
     IProductInventoryImmu &
@@ -1045,7 +1045,7 @@ export namespace GappSetting {
     IBusinessCompanyUserIdentity &
     IDBBusinessCompanyUserIdentity &
     ICompanyUserData;
-  export type CountDocument = IDocWorkCount & IDocFinanceCount;
+  export type CountDocument = IDocWorkCount & IDocFinanceCount & IDocOrderCount;
   // * SHIPMENT
   export type CreateShippingMethod = IShippingMethodEntity &
     IShippingMethodEntityImmu &

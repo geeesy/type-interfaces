@@ -445,6 +445,8 @@ export interface ISettingDoc extends IDBCompanyActivityLog {
   receipt: ISettingDocAttributes;
   invoice: ISettingDocAttributes;
   taxInvoice: ISettingDocAttributes;
+  order: ISettingDocAttributes;
+  market: ISettingDocAttributes;
 }
 
 export interface ILineNotify {
