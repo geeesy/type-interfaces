@@ -46,6 +46,11 @@ export enum StatusOrderOfShipment {
   SHIP2_CompletedShipment = 'completed shipment'
 }
 
+export enum StatusOrderOfStock {
+  Reserved = 'reserved',
+  Deducted = 'deducted',
+}
+
 
 export enum StatusOrder {
   Placed = 'PLACED',
@@ -139,6 +144,7 @@ export interface IDBOrderStatus {
   statusOrder: StatusOrder | null;
   statusOrderOfPayment: StatusOrderOfPayment | null
   statusOrderOfShipment: StatusOrderOfShipment | null
+  statusOrderOfStock: StatusOrderOfStock | null
 }
 
 // REVIEW: Ordered Product
