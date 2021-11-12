@@ -33,6 +33,20 @@ export enum StatusOrderCustomer {
   B_Cancelled = 'cancelled'
 }
 
+export enum StatusOrderOfPayment {
+  PAY0_AwaitingPayment = 'awaiting payment',
+  PAY1_ToConfirm = 'to confirm',
+  PAY2_CompletedPayment = 'completed payment'
+}
+
+export enum StatusOrderOfShipment {
+  SHIP0_AwaitingShipment = 'awaiting shipment',
+  SHIP0_AwaitingPickup = 'awaiting pickup',
+  SHIP1_Shipped = 'shipped',
+  SHIP2_CompletedShipment = 'completed shipment'
+}
+
+
 export enum StatusOrder {
   Placed = 'PLACED',
   Packed = 'PACKED',
@@ -122,6 +136,8 @@ export interface IDBOrderStatus {
   statusOrderOnSeller: StatusOrderSeller;
   statusOrderOnBuyer: StatusOrderCustomer;
   statusOrder: StatusOrder | null;
+  statusOrderOfPayment: StatusOrderOfPayment
+  statusOrderOfShipment: StatusOrderOfShipment
 }
 
 // REVIEW: Ordered Product
