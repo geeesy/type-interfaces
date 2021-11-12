@@ -33,6 +33,14 @@ export enum DocOrderSeqIdCount {
   market = 'CountMarket'
 }
 
+export enum CountForCompanyMetric {
+  lowStockProduct = 'TotalLowStockProduct',
+  placedOrder = 'TotalPlacedOrder',
+  packedOrder = 'TotalPackedOrder',
+  shippedOrder = 'TotalShippedOrder',
+  repliedSalepage = 'TotalRepliedSalepage'
+}
+
 export enum CurrencyTranslateTH {
   THB = 'บาท',
   USD = 'ดอลลาร์สหรัฐ',
