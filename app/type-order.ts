@@ -56,6 +56,7 @@ export enum StatusOrder {
 }
 
 export type TOrderType = 'ORDER_LINK' | 'SALEPAGE' | 'GAPP_MARKET' | 'GAPP_BIZ';
+export type TSalepageType = 'LEADPAGE' | 'CONTENTPAGE' | 'SALEPAGE';
 
 /**
  * ORDER
@@ -223,14 +224,11 @@ export interface IOrderMarketData {
   paymentData: GappSetting.PaymentMethod;
 }
 
-export interface ISellerCreateOrder {
+export interface ISellerUpdateOrderStatus {
+  existingSellerStatus: StatusOrderSeller
   newSellerStatus: StatusOrderSeller
   orderType: TOrderType
   toFinalizeStock: boolean;
-}
-
-export interface ISellerUpdateOrderStatus extends ISellerCreateOrder {
-  existingSellerStatus: StatusOrderSeller
 }
 
 export interface ISellerUpdateOrderDataOnStatusChanged {

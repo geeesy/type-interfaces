@@ -13,14 +13,6 @@ export enum DocPrefixFormat {
   market = 'GM'
 }
 
-export enum CountForCompanyMetric {
-  lowStockProduct = 'TotalLowStockProduct',
-  placedOrder = 'TotalPlacedOrder',
-  packedOrder = 'TotalPackedOrder',
-  shippedOrder = 'TotalShippedOrder',
-  repliedSalepage = 'TotalRepliedSalepage'
-}
-
 export enum DocWorkSeqIdCount {
   inquiry = 'CountInquiry',
   rfq = 'CountRfq',
