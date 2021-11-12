@@ -248,6 +248,7 @@ import {
 } from './type-business';
 import {
   ICreateProductWithMultiStock,
+  IDBInventoryEntity,
   IDBInventoryEntityImmu,
   IDBProductInventory,
   IDBProductInventoryActivityLog,
@@ -995,9 +996,7 @@ export namespace GappInventory {
     IDBLogTime;
   export type DBUpdateWarehouse = IWarehouseEntity & IDBUpdateTime;
   export type CreateInventory = IInventoryEntity & IApiCompanyParams;
-  export type Inventory = IInventoryEntity &
-    IDBInventoryEntityImmu &
-    IDBLogTime;
+  export type Inventory = IInventoryEntity & IDBInventoryEntityImmu & IDBInventoryEntity & IDBLogTime;
   export type DBUpdateInventory = IInventoryEntity & IDBUpdateTime;
   export type Stock = IProductCompanyImmu &
     IProductInventoryImmu &
