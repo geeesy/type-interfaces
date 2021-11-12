@@ -137,8 +137,8 @@ export interface IDBOrderStatus {
   statusOrderOnSeller: StatusOrderSeller;
   statusOrderOnBuyer: StatusOrderCustomer;
   statusOrder: StatusOrder | null;
-  statusOrderOfPayment: StatusOrderOfPayment
-  statusOrderOfShipment: StatusOrderOfShipment
+  statusOrderOfPayment: StatusOrderOfPayment | null
+  statusOrderOfShipment: StatusOrderOfShipment | null
 }
 
 // REVIEW: Ordered Product
