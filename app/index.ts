@@ -275,6 +275,7 @@ import {
   IOrderEntity,
   IOrderLinkData,
   IOrderLinkDataOnConfirm,
+  ISellerCreateOrder,
   ISellerUpdateOrderDataOnStatusChanged,
   ISellerUpdateOrderStatus
 } from './type-order';
@@ -857,11 +858,12 @@ export namespace GappBiz {
   export type UpdateOrderStatus = ISellerUpdateOrderStatus &
     IApiCompanyParams &
     ISellerUpdateOrderDataOnStatusChanged;
-  // ! ORDER - ORDER_LINK
+  // ! MANUAL ORDER & ORDER_LINK
   export type CreateOrderLink = IOrderEntity &
     IOrderCustomerData &
     IOrderCustomerDataImmu &
     IOrderLinkData &
+    ISellerCreateOrder & 
     IApiCompanyParams;
   export type OrderLink = IDBOrderEntity &
     IOrderEntity &
