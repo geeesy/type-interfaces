@@ -18,6 +18,7 @@ export enum CountForCompanyMetric {
   placedOrder = 'TotalPlacedOrder',
   packedOrder = 'TotalPackedOrder',
   shippedOrder = 'TotalShippedOrder',
+  repliedSalepage = 'TotalRepliedSalepage'
 }
 
 export enum DocWorkSeqIdCount {
