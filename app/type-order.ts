@@ -42,6 +42,7 @@ export enum StatusOrder {
 }
 
 export type TOrderType = 'ORDER_LINK' | 'SALEPAGE' | 'GAPP_MARKET' | 'GAPP_BIZ';
+export type TSalepageType = 'LEADPAGE' | 'CONTENTPAGE' | 'SALEPAGE';
 
 /**
  * ORDER
@@ -103,8 +104,8 @@ export interface IDBOrderEntity {
   productImageFirstUrl: string;
   productSkuFirst: string;
   wasFinalized: boolean; // stock was adjusted
-  salepageId?: string
-  productAmount: number,
+  salepageId?: string;
+  productAmount: number;
 }
 
 // ANCHOR: ORDER | Entity (5/6)
@@ -125,13 +126,14 @@ export interface IDBOrderStatus {
 }
 
 // REVIEW: Ordered Product
-export interface IDBListOrderByProduct extends IDBOrderStatus, IOrderCustomerData {
+export interface IDBListOrderByProduct
+  extends IDBOrderStatus,
+    IOrderCustomerData {
   orderId: string;
   channel: SaleChannelSubType;
   totalOrderAmount: number;
   createdAt: string;
 }
-
 
 /**
  * ORDER
@@ -154,28 +156,28 @@ export interface IDBOrderLinkImmu {
 }
 
 export interface IPaymentAttachmentData {
-  paymentImageUrl: string
+  paymentImageUrl: string;
   paymentTime: string;
   paymentDate: string;
-  paymentPrice: number
-  note: string
+  paymentPrice: number;
+  note: string;
 }
 
 export interface IShippingTrackingData {
   trackingNo: string;
-  deliveryOn: IPeriodTime
+  deliveryOn: IPeriodTime;
   note: string;
 }
 
 // * ON CONFIRM
 export interface IOrderLinkDataOnConfirm {
-  shippingConfirmedId: string
-  paymentConfirmedId: string
+  shippingConfirmedId: string;
+  paymentConfirmedId: string;
   shippingConfirmedData: GappSetting.ShippingMethod | null;
   paymentConfirmedData: GappSetting.PaymentMethod | null;
   isNewContactAddress: boolean;
-  paymentAttachmentData: IPaymentAttachmentData | null
-  shippingTrackingData: IShippingTrackingData | null
+  paymentAttachmentData: IPaymentAttachmentData | null;
+  shippingTrackingData: IShippingTrackingData | null;
 }
 
 /**
@@ -208,21 +210,23 @@ export interface IOrderMarketData {
 }
 
 export interface ISellerUpdateOrderStatus {
-  existingSellerStatus: StatusOrderSeller
-  newSellerStatus: StatusOrderSeller
-  orderType: TOrderType
+  existingSellerStatus: StatusOrderSeller;
+  newSellerStatus: StatusOrderSeller;
+  orderType: TOrderType;
   toFinalizeStock: boolean;
 }
 
 export interface ISellerUpdateOrderDataOnStatusChanged {
-  paymentAttachmentData: IPaymentAttachmentData | null
-  shippingTrackingData: IShippingTrackingData | null
+  paymentAttachmentData: IPaymentAttachmentData | null;
+  shippingTrackingData: IShippingTrackingData | null;
 }
 
 /**
  * ORDER
  */
-export interface ICustomerWithOrder extends IOrderCustomerDataImmu , IOrderCustomerData{
+export interface ICustomerWithOrder
+  extends IOrderCustomerDataImmu,
+    IOrderCustomerData {
   latestOrderType: TOrderType;
   latestOrderId: string;
 }
