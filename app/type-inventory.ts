@@ -61,6 +61,7 @@ export interface IDBProductInventoryFormulaImmu {
 // === === ===
 export interface IProductCompanyImmu {
   productId: string;
+  businessId: string;
   compId: string;
   variantId?: string;
 }
