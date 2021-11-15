@@ -1,8 +1,9 @@
-import { GappSetting } from ".";
-import { SaleChannelSubType } from "./enum-const";
-import { ISocial } from "./type-apps";
-import { ISeoMeta } from "./type-catalog";
 import { IOrderProduct, TSalepageType } from "./type-order";
+
+import { GappSetting } from ".";
+import { ISeoMeta } from "./type-catalog";
+import { ISocial } from "./type-apps";
+import { SaleChannelSubType } from "./enum-const";
 
 // REVIEW: SALEPAGE
 // ANCHOR: SALE PAGE | Entity (1/4)
@@ -60,7 +61,7 @@ export interface ISettingLine {
 
 export interface ISalePageComponent {
   componentForm?: IComponentForm;
-  componentBlock: IComponentBlock;
+  componentBlock: IComponentBlock[];
 }
 
 // * Component Form
