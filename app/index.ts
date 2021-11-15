@@ -264,7 +264,6 @@ import {
   IWarehouseEntity
 } from './type-inventory';
 import {
-  ICreateSalepage,
   ICustomerWithOrder,
   IDBListOrderByProduct,
   IDBOrderEntity,
@@ -276,7 +275,6 @@ import {
   IOrderEntity,
   IOrderLinkData,
   IOrderLinkDataOnConfirm,
-  ISalepage,
   ISellerCreateOrder,
   ISellerUpdateOrderDataOnStatusChanged,
   ISellerUpdateOrderStatus
@@ -325,6 +323,7 @@ import {
   IShippingMethodEntity,
   IShippingMethodEntityImmu
 } from './type-shipping';
+import { IDBSalePageEntity, ISalePageEntity, ISalePageEntityImmu, ISalePageUIComponent } from './type-salepage';
 
 /* #region FIXME: Marketplace */
 export namespace GeeesyMarketplace {
@@ -909,9 +908,10 @@ export namespace GappBiz {
   export type ListOrderByProduct = IDBListOrderByProduct;
   export type ListCustomerWithOrder = ICustomerWithOrder;
   export type Customer = ICustomer;
-  export type CreateSalepage = ICreateSalepage;
-  export type ListSalepage = ISalepage;
-  export type Salepage = ISalepage;
+  export type CreateSalepage = ISalePageEntityImmu & ISalePageEntity & ISalePageUIComponent;
+  export type ListSalepage = Salepage;
+  export type Salepage = ISalePageEntityImmu
+  & IDBSalePageEntity & ISalePageEntity & ISalePageUIComponent & IDBLogTime;
 }
 
 // REVIEW: G-MARKET

@@ -436,3 +436,11 @@ export interface IDBProductGroupImmu {
   productGroupId: string;
   compId: string;
 }
+
+// SEO
+export interface ISeoMeta {
+  title: string;
+  imageUrl: string;
+  description: string;
+  
+}
