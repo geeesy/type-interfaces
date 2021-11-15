@@ -150,6 +150,7 @@ import {
   IDBCompanyDocHeader,
   IDBVendorRequest,
   IDocFinanceCount,
+  IDocOrderCount,
   IDocWorkCount,
   IInquiry,
   IInquiryFormCreate,
@@ -226,8 +227,7 @@ import {
   IVendorCreate,
   IVendorCreateParams,
   IVendorRequestAccept,
-  IVendorRequestList,
-  IDocOrderCount
+  IVendorRequestList
 } from './type-apps';
 import {
   IBusinessCompanyUserIdentity,
@@ -264,6 +264,7 @@ import {
   IWarehouseEntity
 } from './type-inventory';
 import {
+  ICreateSalepage,
   ICustomerWithOrder,
   IDBListOrderByProduct,
   IDBOrderEntity,
@@ -275,6 +276,7 @@ import {
   IOrderEntity,
   IOrderLinkData,
   IOrderLinkDataOnConfirm,
+  ISalepage,
   ISellerCreateOrder,
   ISellerUpdateOrderDataOnStatusChanged,
   ISellerUpdateOrderStatus
@@ -863,15 +865,15 @@ export namespace GappBiz {
     IOrderCustomerData &
     IOrderCustomerDataImmu &
     IOrderLinkData &
-    ISellerCreateOrder & 
+    ISellerCreateOrder &
     IApiCompanyParams;
-    // ! MANUAL ORDER
+  // ! MANUAL ORDER
   export type CreateManualOrder = IOrderEntity &
     IOrderCustomerData &
     IOrderCustomerDataImmu &
     IOrderLinkData &
     ISellerCreateOrder &
-    IOrderLinkDataOnConfirm & 
+    IOrderLinkDataOnConfirm &
     IApiCompanyParams;
   export type OrderLink = IDBOrderEntity &
     IOrderEntity &
@@ -907,6 +909,9 @@ export namespace GappBiz {
   export type ListOrderByProduct = IDBListOrderByProduct;
   export type ListCustomerWithOrder = ICustomerWithOrder;
   export type Customer = ICustomer;
+  export type CreateSalepage = ICreateSalepage;
+  export type ListSalepage = ISalepage;
+  export type Salepage = ISalepage;
 }
 
 // REVIEW: G-MARKET
@@ -998,7 +1003,10 @@ export namespace GappInventory {
   export type ProductVariantInPack = IProductVariantInPack;
   export type LogProduct = ILogProduct;
   export type CreateProductGroup = IProductGroup & IApiCompanyParams;
-  export type ProductGroup = IProductGroup & IDBProductGroupImmu & IDBLogTime & IDBProductGroupCount;
+  export type ProductGroup = IProductGroup &
+    IDBProductGroupImmu &
+    IDBLogTime &
+    IDBProductGroupCount;
   export type DBUpdateProductGroup = IProductGroup & IDBUpdateTime;
   export type CreateWarehouse = IWarehouseEntity & IApiCompanyParams;
   export type Warehouse = IWarehouseEntity &
@@ -1006,7 +1014,10 @@ export namespace GappInventory {
     IDBLogTime;
   export type DBUpdateWarehouse = IWarehouseEntity & IDBUpdateTime;
   export type CreateInventory = IInventoryEntity & IApiCompanyParams;
-  export type Inventory = IInventoryEntity & IDBInventoryEntityImmu & IDBInventoryEntity & IDBLogTime;
+  export type Inventory = IInventoryEntity &
+    IDBInventoryEntityImmu &
+    IDBInventoryEntity &
+    IDBLogTime;
   export type DBUpdateInventory = IInventoryEntity & IDBUpdateTime;
   export type Stock = IProductCompanyImmu &
     IProductInventoryImmu &

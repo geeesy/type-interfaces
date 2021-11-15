@@ -48,9 +48,8 @@ export enum StatusOrderOfShipment {
 
 export enum StatusOrderOfStock {
   Reserved = 'reserved',
-  Deducted = 'deducted',
+  Deducted = 'deducted'
 }
-
 
 export enum StatusOrder {
   Placed = 'PLACED',
@@ -61,7 +60,7 @@ export enum StatusOrder {
 }
 
 export type TOrderType = 'ORDER_LINK' | 'SALEPAGE' | 'GAPP_MARKET' | 'GAPP_BIZ';
-export type TSalepageType = 'LEADPAGE' | 'CONTENTPAGE' | 'SALEPAGE';
+export type TSalepageType = 'Lead Page' | 'Content Page' | 'Sale Page';
 
 /**
  * ORDER
@@ -123,8 +122,8 @@ export interface IDBOrderEntity {
   productImageFirstUrl: string;
   productSkuFirst: string;
   wasFinalized: boolean; // stock was adjusted
-  salepageId?: string
-  productAmount: number,
+  salepageId?: string;
+  productAmount: number;
 }
 
 // ANCHOR: ORDER | Entity (5/6)
@@ -142,19 +141,20 @@ export interface IDBOrderStatus {
   statusOrderOnSeller: StatusOrderSeller;
   statusOrderOnBuyer: StatusOrderCustomer;
   statusOrder: StatusOrder | null;
-  statusOrderOfPayment: StatusOrderOfPayment | null
-  statusOrderOfShipment: StatusOrderOfShipment | null
-  statusOrderOfStock: StatusOrderOfStock | null
+  statusOrderOfPayment: StatusOrderOfPayment | null;
+  statusOrderOfShipment: StatusOrderOfShipment | null;
+  statusOrderOfStock: StatusOrderOfStock | null;
 }
 
 // REVIEW: Ordered Product
-export interface IDBListOrderByProduct extends IDBOrderStatus, IOrderCustomerData {
+export interface IDBListOrderByProduct
+  extends IDBOrderStatus,
+    IOrderCustomerData {
   orderId: string;
   channel: SaleChannelSubType;
   totalOrderAmount: number;
   createdAt: string;
 }
-
 
 /**
  * ORDER
@@ -177,28 +177,28 @@ export interface IDBOrderLinkImmu {
 }
 
 export interface IPaymentAttachmentData {
-  paymentImageUrl: string
+  paymentImageUrl: string;
   paymentTime: string;
   paymentDate: string;
-  paymentPrice: number
-  note: string
+  paymentPrice: number;
+  note: string;
 }
 
 export interface IShippingTrackingData {
   trackingNo: string;
-  deliveryOn: IPeriodTime
+  deliveryOn: IPeriodTime;
   note: string;
 }
 
 // * ON CONFIRM
 export interface IOrderLinkDataOnConfirm {
-  shippingConfirmedId: string
-  paymentConfirmedId: string
+  shippingConfirmedId: string;
+  paymentConfirmedId: string;
   shippingConfirmedData: GappSetting.ShippingMethod | null;
   paymentConfirmedData: GappSetting.PaymentMethod | null;
   isNewContactAddress: boolean;
-  paymentAttachmentData: IPaymentAttachmentData | null
-  shippingTrackingData: IShippingTrackingData | null
+  paymentAttachmentData: IPaymentAttachmentData | null;
+  shippingTrackingData: IShippingTrackingData | null;
 }
 
 /**
@@ -230,33 +230,269 @@ export interface IOrderMarketData {
   paymentData: GappSetting.PaymentMethod;
 }
 
-
 export interface ISellerCreateOrder {
-  newSellerStatus: StatusOrderSeller
-  orderType: TOrderType
+  newSellerStatus: StatusOrderSeller;
+  orderType: TOrderType;
   toFinalizeStock: boolean;
 }
 
 export interface ISellerUpdateOrderStatus extends ISellerCreateOrder {
-  existingSellerStatus: StatusOrderSeller
+  existingSellerStatus: StatusOrderSeller;
 }
 
 export interface ISellerUpdateOrderStatus {
-  existingSellerStatus: StatusOrderSeller
-  newSellerStatus: StatusOrderSeller
-  orderType: TOrderType
+  existingSellerStatus: StatusOrderSeller;
+  newSellerStatus: StatusOrderSeller;
+  orderType: TOrderType;
   toFinalizeStock: boolean;
 }
 
 export interface ISellerUpdateOrderDataOnStatusChanged {
-  paymentAttachmentData: IPaymentAttachmentData | null
-  shippingTrackingData: IShippingTrackingData | null
+  paymentAttachmentData: IPaymentAttachmentData | null;
+  shippingTrackingData: IShippingTrackingData | null;
 }
 
 /**
  * ORDER
  */
-export interface ICustomerWithOrder extends IOrderCustomerDataImmu , IOrderCustomerData{
+export interface ICustomerWithOrder
+  extends IOrderCustomerDataImmu,
+    IOrderCustomerData {
   latestOrderType: TOrderType;
   latestOrderId: string;
+}
+
+// REVIEW: SALEPAGE
+/**
+ * CREATE SALEPAGE
+ */
+
+export type TOrderLink = 'multipage' | 'singlepage';
+export interface ICreateSalepage {
+  compId: string;
+  salepageId: string;
+  contentForm: IContentForm;
+  salePageData: ISalePageData;
+  typeSalepage: TSalepageType;
+}
+export interface ISalepage extends ICreateSalepage {
+  PK: string;
+  SK: string;
+  builded: string;
+  createDate: string;
+  updateDate: string;
+}
+export interface IContentForm {
+  contact: IContactLink;
+  orderLink: TOrderLink;
+  payment: IBankInSalepage;
+  settingpixeltag: ISettingpixeltag;
+  settings: ISettings;
+  settingseo: ISettingseo;
+  shipping: IShipping[];
+}
+export interface IContactLink {
+  facebooklink: string;
+  linelink: string;
+  phone: string;
+}
+
+export interface IBankInSalepage {
+  bank: IBank[];
+  paymentType: string;
+}
+
+export interface IBank {
+  activeOnMarket: boolean;
+  compId: string;
+  createdAt: string;
+  isActive: boolean;
+  note: string;
+  paymentAliasName: string;
+  paymentIconUrl: string;
+  paymentMethodAttribute: IPaymentMethodAttribute;
+  paymentMethodId: string;
+  paymentMethodType: string;
+  updatedAt: string;
+}
+export interface IPaymentMethodAttribute {
+  accountName: string;
+  accountNo: string;
+  bankAccountName: string;
+  bankAccountType: string;
+  branchName: string;
+  caption: string;
+}
+export interface ISettingpixeltag {
+  advertisefacebook: IAdvertisefacebook[];
+  advertisegoogletag: IAdvertisegoogletag;
+  advertiseline: IAdvertiseline;
+}
+export interface IAdvertisefacebook {
+  accesstoken: string;
+  pixelid: string;
+}
+export interface IAdvertisegoogletag {
+  googletagid: string;
+}
+export interface IAdvertiseline {
+  linetagid: string;
+}
+
+export interface ISettings {
+  namesalepage: string;
+  typesalepage: string;
+}
+export interface ISettingseo {
+  description: string;
+  image: string;
+  title: string;
+}
+
+export interface ISettingseo {
+  description: string;
+  image: string;
+  title: string;
+}
+
+export interface IShipping {
+  compId: string;
+  activeOnMarket: boolean;
+  createdAt: string;
+  deliveryTime: IDeliveryTime;
+  isActive: boolean;
+  isCOD: boolean;
+  note: string;
+  shippingAliasName: string;
+  shippingIconUrl: string;
+  shippingMethodAttribute: IShippingMethodAttribute;
+  shippingMethodId: string;
+  shippingMethodType: string;
+  shippingParty: string;
+  updatedAt: string;
+}
+export interface IDeliveryTime {
+  earliest: number;
+  last: number;
+}
+export interface IShippingMethodAttribute {
+  caption: string;
+  minOrderTotalAmount: number;
+  shippingCost: number;
+}
+export interface ISalePageData {
+  ComponentForm?: IComponentForm;
+  componentBlock: IComponentBlock;
+}
+
+export interface IComponentForm {
+  contactForm?: IContactForm;
+  thankyouForm?: IThankyouForm;
+}
+export interface IContactForm {
+  address?: boolean;
+  amphoe?: boolean;
+  buttondescription?: string;
+  color?: string;
+  description?: boolean;
+  email?: boolean;
+  firstname?: boolean;
+  lasname?: boolean;
+  phone?: boolean;
+  postcode?: boolean;
+  province?: boolean;
+  tambon?: boolean;
+}
+export interface IThankyouForm {
+  description: string;
+  heading: string;
+}
+export interface IComponentBlock {
+  data:
+    | IComponentBlockProgress
+    | IComponentBlockProduct
+    | IComponentBlockText
+    | IComponentBlockImage
+    | IComponentBlockVideo
+    | IComponentBlockSocail
+    | IComponentBlockLink
+    | IComponentBlockFlashSale;
+  type: string;
+}
+
+export interface IComponentBlockProgress {
+  color: string;
+  description: string;
+  icon: string;
+  nameIcon: string;
+  percen: number;
+}
+
+export interface IComponentBlockProduct {
+  brandname: string;
+  countStock: string;
+  description: string;
+  fullprice: number;
+  heading: string;
+  price: number;
+  productUnit: string;
+  productid: string;
+  productimg: string;
+  productname: string;
+  sku: string;
+  warehouse: IWarehouse;
+}
+
+export interface IWarehouse {
+  GSI1SK: string;
+  businessId: string;
+  canBelowZero: boolean;
+  compId: string;
+  createdAt: string;
+  inventoryId: string;
+  inventoryInfo: string;
+  inventoryName: string;
+  inventoryType: string;
+  isActive: boolean;
+  isDefault: boolean;
+  totalProduct: number;
+  updatedAt: string;
+}
+
+export interface IComponentBlockText {
+  text: string;
+}
+
+export interface IComponentBlockImage {
+  name: string;
+  src: string;
+}
+export interface IComponentBlockVideo {
+  url: string;
+}
+
+export interface IComponentBlockSocail {
+  facebook: string;
+  gapp: string;
+  lazada: string;
+  line: string;
+  shopee: string;
+}
+
+export interface IComponentBlockLink {
+  color: string;
+  description: string;
+  link: string;
+}
+
+export interface IComponentBlockFlashSale {
+  autoDate: boolean;
+  expiredDate: string;
+  time: ITime;
+}
+export interface ITime {
+  hours: number;
+  minutes: number;
+  ms: number;
+  seconds: number;
 }
