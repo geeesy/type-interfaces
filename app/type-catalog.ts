@@ -251,6 +251,9 @@ export interface IProductEntity {
   productPrice: IProductPrice;
   productWholesales: IProductWholesale[];
   minQty: number;
+  minQty_market: number;
+  maxQty: number;
+  maxQty_market: number;
   minWholesaleQty: number;
   toFreeShip: IQtyPrice;
   productPackage: IProductPackage;

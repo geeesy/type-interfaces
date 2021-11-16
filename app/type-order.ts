@@ -82,18 +82,18 @@ export interface IOrderProduct {
 }
 
 export interface IOrderAccounting {
-  subtotalAmount: number;
-  shippingCost: number;
-  charges: number;
-  discount: number;
-  totalDiscountAmount: number;
-  netAmount: number;
-  vat: number;
-  grandTotalAmount: number;
-  taxWithheldPercent: number;
-  withholdingTax: number;
-  totalPayAmount: number;
-  isVatInc: boolean;
+  subtotalAmount: number; // รวมเงิน
+  shippingCost: number; // ค่าขนส่ง
+  charges: number; // ค่าเพิ่มเติม
+  discount: number; // ส่วนลดเพิ่มเติม
+  totalDiscountAmount: number; // ส่วนลดรวม
+  netAmount: number; // ยอดรวมก่อนภาษี
+  vat: number; // ภาษีมูลค่าเพิ่ม
+  grandTotalAmount: number; // ยอดรวมทั้งสิ้น
+  taxWithheldPercent: number; // อัตราหัก ณ ที่จ่าย
+  withholdingTax: number; // ภาษีหัก ณ ที่จ่าย
+  totalPayAmount: number; // ยอดที่ต้องชำระทั้งสิ้น
+  isVatInc: boolean; 
 }
 
 // ANCHOR: ORDER | Entity (1/6)
