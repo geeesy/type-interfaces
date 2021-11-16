@@ -38,13 +38,19 @@ export enum CountForCompanyMetric {
   placedOrder = 'TotalPlacedOrder',
   packedOrder = 'TotalPackedOrder',
   shippedOrder = 'TotalShippedOrder',
-  repliedSalepage = 'TotalRepliedSalepage'
+  repliedSalepage = 'TotalRepliedSalepage',
+  product = 'TotalProduct'
+
 }
 
 export enum ReportForCompanyMetric {
   netSales = 'NetSales',
   productsSold = 'TotalProductsSold',
-  itemsSold = 'TotalItemsSold'
+  itemsSold = 'TotalItemsSold',
+  netOrderLinkSales = 'NetOrderLinkSales',
+  netSalePageSales = 'NetSalePageSales',
+  netGappMarketSales = 'NetGappMarketSales',
+  netGappBizSales = 'NetGappBizSales'
 }
 
 export enum CurrencyTranslateTH {
