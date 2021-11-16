@@ -41,6 +41,12 @@ export enum CountForCompanyMetric {
   repliedSalepage = 'TotalRepliedSalepage'
 }
 
+export enum ReportForCompanyMetric {
+  netSales = 'NetSales',
+  productsSold = 'TotalProductsSold',
+  itemsSold = 'TotalItemsSold'
+}
+
 export enum CurrencyTranslateTH {
   THB = 'บาท',
   USD = 'ดอลลาร์สหรัฐ',
