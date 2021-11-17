@@ -1,6 +1,5 @@
-import { IOrderProductRow} from "./type-order";
-
 import { GappSetting } from ".";
+import { IOrderProductRow } from "./type-order";
 import { ISeoMeta } from "./type-catalog";
 import { ISocial } from "./type-apps";
 import { SaleChannelSubType } from "./enum-const";
@@ -30,7 +29,7 @@ export interface ISalePageEntity{
   paymentAvailableIds: string[];
   shippingAvailableData: GappSetting.ShippingMethod[];
   paymentAvailableData: GappSetting.PaymentMethod[];
-  settingFacebook: ISettingFacebook;
+  settingFacebook: ISettingFacebook[];
   settingGoogle: ISettingGoogle;
   settingLine: ISettingLine
   settingSeo: ISeoMeta
