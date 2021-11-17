@@ -21,7 +21,7 @@ export interface IProductPrice {
   wholesalePrice: number;
   wholesalePrice_market: number;
   retailPrice: number;
-  retailPrice_market: number;
+  retailPrice_market: number; // ! -> Inc.vat
   priceList: IPriceList[]; // * <== SETTING
   priceGroupIds: string[]; // * ==> SETTING
   currency: string;
@@ -29,6 +29,8 @@ export interface IProductPrice {
   maxQty_market: number;
   minQty: number;
   minQty_market: number;
+  isVatInc: boolean;
+  vatPercent?: number // default = 7
 }
 
 export interface IQtyPrice {

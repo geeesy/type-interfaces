@@ -1,9 +1,11 @@
-import { IOrderProduct, TSalepageType } from "./type-order";
+import { IOrderProductRow} from "./type-order";
 
 import { GappSetting } from ".";
 import { ISeoMeta } from "./type-catalog";
 import { ISocial } from "./type-apps";
 import { SaleChannelSubType } from "./enum-const";
+
+export type TSalepageType = 'LeadPage' | 'ContentPage' | 'SalePage';
 
 // REVIEW: SALEPAGE
 // ANCHOR: SALE PAGE | Entity (1/4)
@@ -111,7 +113,7 @@ export interface IComponentBlockProgress {
 }
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
-export interface IComponentBlockProduct extends IOrderProduct {
+export interface IComponentBlockProduct extends IOrderProductRow {
 
 }
 

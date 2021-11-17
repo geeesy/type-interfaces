@@ -60,12 +60,12 @@ export enum StatusOrder {
 }
 
 export type TOrderType = 'ORDER_LINK' | 'SALEPAGE' | 'GAPP_MARKET' | 'GAPP_BIZ';
-export type TSalepageType = 'Lead Page' | 'Content Page' | 'Sale Page';
+
 
 /**
  * ORDER
  */
-export interface IOrderProduct {
+export interface IOrderProductRow {
   productId: string;
   productTitle: string;
   productUnitPrice: number;
@@ -77,6 +77,7 @@ export interface IOrderProduct {
   productSku: string;
   discountUnitPrice: number;
   itemsPriceRow: number;
+  isVatable: boolean;
   warehouseId: string; // ! -> INVENTORY
   inventoryId: string; // ! -> INVENTORY
 }
@@ -129,7 +130,7 @@ export interface IDBOrderEntity {
 // ANCHOR: ORDER | Entity (5/6)
 export interface IOrderEntity {
   sellerNote: string;
-  products: IOrderProduct[];
+  products: IOrderProductRow[];
   accountingData: IOrderAccounting;
   sellerContactInfo: IPersonContactInfo;
   sellerCompanyContactInfo: ICompanyContactInfo;
