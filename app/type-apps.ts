@@ -276,6 +276,7 @@ export interface IProductRow extends IProductRowEntity {
   productCoverUrl: string;
   productSku?: string;
   discountUnitPrice: number;
+  isDiscountOnPercent: boolean;
   itemsPriceRow: number;
 }
 

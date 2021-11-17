@@ -76,6 +76,7 @@ export interface IOrderProductRow {
   productWeightUnit: string;
   productSku: string;
   discountUnitPrice: number;
+  isDiscountOnPercent: boolean;
   itemsPriceRow: number;
   isVatable: boolean;
   warehouseId: string; // ! -> INVENTORY
@@ -95,6 +96,7 @@ export interface IOrderAccounting {
   withholdingTax: number; // ภาษีหัก ณ ที่จ่าย
   totalPayAmount: number; // ยอดที่ต้องชำระทั้งสิ้น
   isVatInc: boolean; 
+  isDiscountOnPercent: boolean;
 }
 
 // ANCHOR: ORDER | Entity (1/6)
