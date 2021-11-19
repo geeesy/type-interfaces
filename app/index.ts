@@ -267,6 +267,7 @@ import {
   ICustomerWithOrder,
   IDBListOrderByProduct,
   IDBOrderEntity,
+  IDBOrderEntityImmu,
   IDBOrderLinkImmu,
   IDBOrderSellerDataImmu,
   IDBOrderStatus,
@@ -875,6 +876,7 @@ export namespace GappBiz {
     IOrderLinkDataOnConfirm &
     IApiCompanyParams;
   export type OrderLink = IDBOrderEntity &
+    IDBOrderEntityImmu &
     IOrderEntity &
     IDBOrderSellerDataImmu &
     IOrderCustomerData &
@@ -888,6 +890,7 @@ export namespace GappBiz {
   export type OrderSalePage = GappBiz.OrderLink;
   export type OrderGappMed = GappBiz.OrderLink;
   export type ListOrderLink = IDBOrderEntity &
+    IDBOrderEntityImmu &
     IOrderCustomerData &
     IOrderLinkDataOnConfirm &
     IDBOrderLinkImmu &

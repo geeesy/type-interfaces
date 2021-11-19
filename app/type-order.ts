@@ -14,7 +14,8 @@ export enum StatusOrderSeller {
   S5_AwaitingShipment = 'awaiting shipment',
   S5_AwaitingPickup = 'awaiting pickup',
   S6_Shipped = 'shipped',
-  S7_AwaitingAccepted = 'awaiting accepted',
+  S6_AwaitingAccepted = 'awaiting accepted',
+  S7_AwaitingDeposit = 'awaiting deposit',
   S8_Completed = 'completed',
   S_Cancelled = 'cancelled'
 }
@@ -28,7 +29,8 @@ export enum StatusOrderCustomer {
   B5_AwaitingShipment = 'awaiting shipment',
   B5_AwaitingPickup = 'awaiting pickup',
   B6_Shipped = 'shipped',
-  B7_AwaitingAccepted = 'awaiting accepted',
+  B6_AwaitingAccepted = 'awaiting accepted',
+  B7_Accepted = 'accepted',
   B8_Completed = 'completed',
   B_Cancelled = 'cancelled'
 }
@@ -60,7 +62,7 @@ export enum StatusOrder {
 }
 
 export type TOrderType = 'ORDER_LINK' | 'SALEPAGE' | 'GAPP_MARKET' | 'GAPP_BIZ';
-
+export type TOrderSubType = 'SERVICE' | 'PRODUCT'
 
 /**
  * ORDER
@@ -118,18 +120,23 @@ export interface IDBOrderSellerDataImmu {
   compId: string;
 }
 
-// ANCHOR: ORDER | Entity (4/6)
-export interface IDBOrderEntity {
+// ANCHOR: ORDER | Entity (4/7)
+export interface IDBOrderEntityImmu {
   orderType: TOrderType;
+  orderSubType: TOrderSubType;
+  salepageId?: string;
+}
+
+// ANCHOR: ORDER | Entity (5/7)
+export interface IDBOrderEntity {
   productTitleFirst: string;
   productImageFirstUrl: string;
   productSkuFirst: string;
   wasFinalized: boolean; // stock was adjusted
-  salepageId?: string;
   productAmount: number;
 }
 
-// ANCHOR: ORDER | Entity (5/6)
+// ANCHOR: ORDER | Entity (6/7)
 export interface IOrderEntity {
   sellerNote: string;
   products: IOrderProductRow[];
@@ -139,7 +146,7 @@ export interface IOrderEntity {
   totalOrderAmount: number;
 }
 
-// ANCHOR: ORDER | Entity (6/6)
+// ANCHOR: ORDER | Entity (7/7)
 export interface IDBOrderStatus {
   statusOrderOnSeller: StatusOrderSeller;
   statusOrderOnBuyer: StatusOrderCustomer;
