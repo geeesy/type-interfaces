@@ -47,6 +47,8 @@ export enum CountForCompanyMetric {
   awaitingPaymentOrderAmount = 'TotalAwaitingPaymentOrderAmount',
   packedOrderAmount = 'TotalPackedOrderAmount',
   shippedOrderAmount = 'TotalShippedOrderAmount',
+  awaitingConfirmOrder = 'TotalAwaitingConfirmOrder',
+  awaitingConfirmOrderAmount = 'TotalAwaitingConfirmOrderAmount',
 }
 
 export enum ReportForCompanyMetric {
