@@ -62,7 +62,7 @@ export enum StatusOrder {
 }
 
 export type TOrderType = 'ORDER_LINK' | 'SALEPAGE' | 'GAPP_MARKET' | 'GAPP_BIZ';
-export type TOrderSubType = 'SERVICE' | 'PRODUCT'
+export type TOrderSubType = 'SERVICE' | 'PRODUCT';
 
 /**
  * ORDER
@@ -97,7 +97,7 @@ export interface IOrderAccounting {
   taxWithheldPercent: number; // อัตราหัก ณ ที่จ่าย
   withholdingTax: number; // ภาษีหัก ณ ที่จ่าย
   totalPayAmount: number; // ยอดที่ต้องชำระทั้งสิ้น
-  isVatInc: boolean; 
+  isVatInc: boolean;
   isDiscountOnPercent: boolean;
 }
 
@@ -273,10 +273,10 @@ export interface ICustomerWithOrder
 }
 
 /**
- * LEADPAGE 
+ * LEADPAGE
  */
 
- export interface ILeadpage{
+export interface ILeadpage {
   salepageName: string;
   salepageId: string;
   firstname: string;
@@ -285,7 +285,8 @@ export interface ICustomerWithOrder
   email: string;
   description: string;
   address: string;
+  createDate: string;
 }
-export interface ILeadpageId{
+export interface ILeadpageId {
   leadpageId: string;
 }
