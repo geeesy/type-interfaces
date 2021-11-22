@@ -275,8 +275,7 @@ export interface ICustomerWithOrder
 /**
  * LEADPAGE 
  */
-
- export interface ILeadpage{
+export interface ILeadpage{
   salepageName: string;
   salepageId: string;
   firstname: string;
