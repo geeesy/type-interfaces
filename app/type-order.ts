@@ -286,3 +286,6 @@ export interface ICustomerWithOrder
   description: string;
   address: string;
 }
+export interface ILeadpageId{
+  leadpageId: string;
+}

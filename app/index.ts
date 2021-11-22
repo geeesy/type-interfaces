@@ -272,6 +272,7 @@ import {
   IDBOrderSellerDataImmu,
   IDBOrderStatus,
   ILeadpage,
+  ILeadpageId,
   IOrderCustomerData,
   IOrderCustomerDataImmu,
   IOrderEntity,
@@ -926,7 +927,8 @@ export namespace GappBiz {
     ISalePageEntity &
     ISalePageUIComponent &
     IDBLogTime;
-  export type Leadpage = IDBOrderSellerDataImmu & ILeadpage;
+  export type LeadpageCreate = IDBOrderSellerDataImmu & ILeadpage;
+  export type Leadpage = IDBOrderSellerDataImmu & ILeadpage & ILeadpageId;
 }
 
 // REVIEW: G-MARKET
