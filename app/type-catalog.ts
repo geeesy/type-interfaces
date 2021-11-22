@@ -193,9 +193,8 @@ export interface IRefProductList {
 
   productThumbnailUrl: string;
   productName: string;
-  productType: string;
+  productType: TProductType;
   productCategoryId: string;
-
   productGroupId: string;
 
   productShortDescription: string;
@@ -205,6 +204,7 @@ export interface IRefProductList {
 
   totalStock: number;
   totalReservedStock: number;
+  useInventory: boolean;
 
   // -> Available
   countVariants: number; // * UPDATED ON [C-U-D] VARIANT
