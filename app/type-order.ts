@@ -100,7 +100,20 @@ export interface IOrderAccounting {
   isVatInc: boolean;
   isDiscountOnPercent: boolean;
 }
-
+export interface IListOrder {
+  docNo: string;
+  salepageId?: string;
+  orderType: TOrderType;
+  totalOrderAmount: number;
+  shippingConfirmedData: GappSetting.ShippingMethod | null;
+  paymentConfirmedData: GappSetting.PaymentMethod | null;
+  customerContactInfo: IPersonContactInfo;
+  productTitleFirst: string;
+  productImageFirstUrl: string;
+  productSkuFirst: string;
+  statusOrderOnSeller: StatusOrderSeller;
+  statusOrderOnBuyer: StatusOrderCustomer;
+}
 // ANCHOR: ORDER | Entity (1/6)
 export interface IOrderCustomerDataImmu {
   customerId: string;
@@ -129,6 +142,7 @@ export interface IDBOrderEntityImmu {
 
 // ANCHOR: ORDER | Entity (5/7)
 export interface IDBOrderEntity {
+  docNo: string;
   productTitleFirst: string;
   productImageFirstUrl: string;
   productSkuFirst: string;
