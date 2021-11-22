@@ -275,6 +275,7 @@ export interface IProductEntityImmu {
 
 // ANCHOR: PRODUCT | Entity (3/6)
 export interface IProductAttributes {
+  useInventory: boolean; //! dup
   display: IProductDisplay;
   isActive: boolean; // ! not show all
   isRecommend: boolean;
