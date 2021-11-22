@@ -273,6 +273,7 @@ import {
   IDBOrderStatus,
   ILeadpage,
   ILeadpageId,
+  IListOrder,
   IOrderCustomerData,
   IOrderCustomerDataImmu,
   IOrderEntity,
@@ -896,13 +897,7 @@ export namespace GappBiz {
     IDBLogTime;
   export type OrderSalePage = GappBiz.OrderLink;
   export type OrderGappMed = GappBiz.OrderLink;
-  export type ListOrderLink = IDBOrderEntity &
-    IDBOrderEntityImmu &
-    IOrderCustomerData &
-    IOrderLinkDataOnConfirm &
-    IDBOrderLinkImmu &
-    IDBOrderSellerDataImmu &
-    IDBOrderStatus &
+  export type ListOrderLink = IListOrder &
     IDBLogTime;
   export type DBUpdateOrderLink = IOrderEntity &
     IDBOrderEntity &
