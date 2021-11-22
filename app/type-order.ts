@@ -271,3 +271,18 @@ export interface ICustomerWithOrder
   latestOrderType: TOrderType;
   latestOrderId: string;
 }
+
+/**
+ * LEADPAGE 
+ */
+
+ export interface ILeadpage{
+  salepageName: string;
+  salepageId: string;
+  firstname: string;
+  lastname: string;
+  phone: string;
+  email: string;
+  description: string;
+  address: string;
+}

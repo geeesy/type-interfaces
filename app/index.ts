@@ -271,6 +271,7 @@ import {
   IDBOrderLinkImmu,
   IDBOrderSellerDataImmu,
   IDBOrderStatus,
+  ILeadpage,
   IOrderCustomerData,
   IOrderCustomerDataImmu,
   IOrderEntity,
@@ -319,12 +320,17 @@ import {
   IUpdateShippingAndPaymentMethodOnMarket
 } from './type-setting';
 import {
+  IDBSalePageEntity,
+  ISalePageEntity,
+  ISalePageEntityImmu,
+  ISalePageUIComponent
+} from './type-salepage';
+import {
   IDBShippingMethod,
   IDBShippingMethodImmu,
   IShippingMethodEntity,
   IShippingMethodEntityImmu
 } from './type-shipping';
-import { IDBSalePageEntity, ISalePageEntity, ISalePageEntityImmu, ISalePageUIComponent } from './type-salepage';
 
 /* #region FIXME: Marketplace */
 export namespace GeeesyMarketplace {
@@ -911,10 +917,16 @@ export namespace GappBiz {
   export type ListOrderByProduct = IDBListOrderByProduct;
   export type ListCustomerWithOrder = ICustomerWithOrder;
   export type Customer = ICustomer;
-  export type CreateSalepage = ISalePageEntityImmu & ISalePageEntity & ISalePageUIComponent;
+  export type CreateSalepage = ISalePageEntityImmu &
+    ISalePageEntity &
+    ISalePageUIComponent;
   export type ListSalepage = Salepage;
-  export type Salepage = ISalePageEntityImmu
-  & IDBSalePageEntity & ISalePageEntity & ISalePageUIComponent & IDBLogTime;
+  export type Salepage = ISalePageEntityImmu &
+    IDBSalePageEntity &
+    ISalePageEntity &
+    ISalePageUIComponent &
+    IDBLogTime;
+  export type Leadpage = IDBOrderSellerDataImmu & ILeadpage;
 }
 
 // REVIEW: G-MARKET
