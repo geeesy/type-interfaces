@@ -8,6 +8,9 @@ import {
 } from './type-inventory';
 
 import { StatusProductApproveOnMarket } from './enum-status';
+import { TOrderSubType } from './type-order';
+
+export type TProductType = TOrderSubType
 
 export interface IPriceList {
   priceListId: string;
@@ -281,7 +284,7 @@ export interface IProductAttributes {
   isCanBuy_market: boolean;
   productName: string;
   productName_market: string;
-  productType: string;
+  productType: TProductType;
   tags: string[];
   tags_market: string[];
   keywords: string[];
