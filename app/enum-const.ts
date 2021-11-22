@@ -36,13 +36,13 @@ export enum DocOrderSeqIdCount {
 export enum CountForCompanyMetric {
   lowStockProduct = 'TotalLowStockProduct',
   placedOrder = 'TotalPlacedOrder',
-  paidOrder = 'TotalPaidOrder',
+  toConfirmOrder = 'TotalToConfirmOrder',
   packedOrder = 'TotalPackedOrder',
   shippedOrder = 'TotalShippedOrder',
   repliedSalepage = 'TotalRepliedSalepage',
   product = 'TotalProduct',
   placedOrderAmount = 'TotalPlacedOrderAmount',
-  paidOrderAmount = 'TotalPaidOrderAmount',
+  toConfirmOrderAmount = 'TotalToConfirmOrderAmount',
   packedOrderAmount = 'TotalPackedOrderAmount',
   shippedOrderAmount = 'TotalShippedOrderAmount',
 }
