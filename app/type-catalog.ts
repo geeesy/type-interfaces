@@ -308,6 +308,7 @@ export interface IProductAttributes {
   haveVariantsInPack?: IProductVariantInPack[];
   havePacksInVariant?: IProductPackInVariant[];
   productSkuRef?: string; // ? for variant or pack
+  useInventory: boolean;
 }
 
 // ANCHOR: PRODUCT | Entity (4/6)
