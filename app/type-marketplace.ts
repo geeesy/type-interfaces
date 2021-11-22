@@ -5,6 +5,7 @@ import {
 } from './type-company';
 import {
   IDBProduct,
+  IDBProductImmu,
   IProductAttributes,
   IProductEntity,
   IProductList,
@@ -48,12 +49,8 @@ export interface IProductInSupplierCard
 export interface IProductInSupplierCardMarket
   extends IProductMarketList,
     IProductRootEntity,
-    IProductEntity {
-  supplierId: string;
-}
-
-
-
+    IProductEntity,
+    IDBProductImmu {}
 
 export interface ISupplierCard extends ICompanyPublicEntity, ICompanyByGapp {
   contact: ICompanyContactInfo;
@@ -90,6 +87,13 @@ export interface IProductWithSupplier {
   // savedLists: ISavedList[];
   // productCategory: ISupProductCat;
 }
+
+export interface IProductWithoutSupplier
+  extends IDBProduct,
+    IProductRootEntity,
+    IProductEntity,
+    IProductAttributes,
+    IDBProductImmu {}
 
 // ANCHOR:
 

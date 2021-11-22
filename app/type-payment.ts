@@ -30,7 +30,6 @@ export interface IPaymentMethodEntityImmu {
 }
 
 export interface IPaymentMethodEntity {
-  onMarket: boolean
   activeOnMarket: boolean
   paymentIconUrl: string;
   paymentAliasName: string;
@@ -39,6 +38,6 @@ export interface IPaymentMethodEntity {
 }
 
 export interface IUpdateMarketPaymentMethod {
-  shippingMethodId: string
+  paymentMethodId: string
   activeOnMarket: boolean
 }

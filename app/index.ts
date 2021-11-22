@@ -1,25 +1,3 @@
-/* eslint-disable @typescript-eslint/no-namespace */
-import {
-  IDBProduct,
-  IDBProductByGapp,
-  IDBProductGroupImmu,
-  IDBProductImmu,
-  IDBProductVariantOnlyImmu,
-  ILogProduct,
-  IProductAttributes,
-  IProductEntity,
-  IProductEntityImmu,
-  IProductGroup,
-  IProductList,
-  IProductMarketList,
-  IProductPackInVariant,
-  IProductPackOnly,
-  IProductRootEntity,
-  IProductVariantAttributes,
-  IProductVariantAttributesOnCreate,
-  IProductVariantEntity,
-  IProductVariantInPack
-} from './type-catalog';
 /* eslint-disable no-unused-vars */
 import {
   IAddress,
@@ -50,6 +28,7 @@ import {
   IProductWithOutSupplier,
   IProductWithSupplier,
   IProductWithSupplierCard,
+  IProductWithoutSupplier,
   IRecommendCategory,
   IRecommendSupplier,
   IResAllCategoryInSearchTool,
@@ -265,26 +244,7 @@ import {
   IDBBusinessUserIdentity,
   IDBBusinessUserIdentityStatus
 } from './type-business';
-import { IDBLogTime, IDBUpdateTime } from './type-api';
-import {
-  IDBPaymentMethod,
-  IDBPaymentMethodImmu,
-  IPaymentMethodEntity,
-  IPaymentMethodEntityImmu,
-} from './type-payment';
-import {
-  IDBSaleChannel,
-  IDBSaleChannelImmu,
-  ISaleChannelEntity,
-  ISaleChannelEntityImmu,
-  IUpdateShippingAndPaymentMethodOnMarket
-} from './type-setting';
-import {
-  IDBShippingMethod,
-  IDBShippingMethodImmu,
-  IShippingMethodEntity,
-  IShippingMethodEntityImmu,
-} from './type-shipping';
+import { ICreateProductWithMultiStock, IDBInventoryEntityImmu, IDBProductInventory, IDBProductInventoryActivityLog, IDBProductInventoryFormulaImmu, IDBWarehouseEntityImmu, IInventoryEntity, ILogStock, IProductCompanyImmu, IProductInventoryImmu, IProductInventorySetting, ITransferProductStock, IUpdateProductStock, IWarehouseEntity } from './type-inventory';
 import {
   IDBListOrderByProduct,
   IDBOrderEntity,
@@ -299,7 +259,49 @@ import {
   ISellerUpdateOrderDataOnStatusChanged,
   ISellerUpdateOrderStatus
 } from './type-order';
-import { ICreateProductWithMultiStock, IDBInventoryEntityImmu, IDBProductInventory, IDBProductInventoryActivityLog, IDBProductInventoryFormulaImmu, IDBWarehouseEntityImmu, IInventoryEntity, ILogStock, IProductCompanyImmu, IProductInventoryImmu, IProductInventorySetting, ITransferProductStock, IUpdateProductStock, IWarehouseEntity } from './type-inventory';
+import { IDBLogTime, IDBUpdateTime } from './type-api';
+import {
+  IDBPaymentMethod,
+  IDBPaymentMethodImmu,
+  IPaymentMethodEntity,
+  IPaymentMethodEntityImmu,
+} from './type-payment';
+/* eslint-disable @typescript-eslint/no-namespace */
+import {
+  IDBProduct,
+  IDBProductByGapp,
+  IDBProductGroupImmu,
+  IDBProductImmu,
+  IDBProductVariantOnlyImmu,
+  ILogProduct,
+  IProductAttributes,
+  IProductEntity,
+  IProductEntityImmu,
+  IProductGroup,
+  IProductList,
+  IProductMarketList,
+  IProductPackInVariant,
+  IProductPackOnly,
+  IProductRootEntity,
+  IProductVariantAttributes,
+  IProductVariantAttributesOnCreate,
+  IProductVariantEntity,
+  IProductVariantInPack
+} from './type-catalog';
+import {
+  IDBSaleChannel,
+  IDBSaleChannelImmu,
+  IListShipmentAndPaymentByCompany,
+  ISaleChannelEntity,
+  ISaleChannelEntityImmu,
+  IUpdateShippingAndPaymentMethodOnMarket
+} from './type-setting';
+import {
+  IDBShippingMethod,
+  IDBShippingMethodImmu,
+  IShippingMethodEntity,
+  IShippingMethodEntityImmu,
+} from './type-shipping';
 
 /* #region FIXME: Marketplace */
 export namespace GeeesyMarketplace {
@@ -884,7 +886,8 @@ export namespace GappMarket {
     IDBLogTime; // * SUPPLIER
   export type ListProductWithSupplier = IProductWithSupplierCard;
   export type ListSupplierWithProduct = ISupplierWithProductCard;
-  export type Product = IProductWithSupplier;
+  export type ProductWithSupplier = IProductWithSupplier;
+  export type Product = IProductWithoutSupplier;
   export type CreateUser = IMarketUserIdentity &
     IMarketUserData &
     ICompanyUserData;
@@ -902,6 +905,7 @@ export namespace GappMarket {
     ICompanyUserData &
     IDBUpdateTime;
   export type ListBanner = IDBBannerImmu & IBanner
+  export type ListShipmentAndPaymentByCompany = IListShipmentAndPaymentByCompany
 }
 
 // REVIEW: G-BIZ | PRODUCT

@@ -1,8 +1,20 @@
+import {
+  IDBPaymentMethod,
+  IDBPaymentMethodImmu,
+  IPaymentMethodEntity,
+  IPaymentMethodEntityImmu,
+  IUpdateMarketPaymentMethod
+} from './type-payment';
+import {
+  IDBShippingMethod,
+  IDBShippingMethodImmu,
+  IShippingMethodEntity,
+  IShippingMethodEntityImmu,
+  IUpdateMarketShippingMethod
+} from './type-shipping';
 import { SaleChannelSubType, SaleChannelType } from './enum-const';
-import { IUpdateMarketPaymentMethod } from './type-payment';
-import { IUpdateMarketShippingMethod } from './type-shipping';
 
-// ANCHOR: Sale Channel Attribute (Type Default)
+// ANCHOR: Sale Channel Attribute (Type Default) test
 export interface ISaleChannelSubTypeDefault {
   caption: string;
 }
@@ -32,8 +44,24 @@ export interface ISaleChannelEntity {
 }
 
 export interface IUpdateShippingAndPaymentMethodOnMarket {
-  compId: string
-  businessId: string
-  marketPaymentMethod: IUpdateMarketPaymentMethod[]
-  marketShippingMethod: IUpdateMarketShippingMethod[]
+  compId: string;
+  businessId: string;
+  marketPaymentMethod: IUpdateMarketPaymentMethod[];
+  marketShippingMethod: IUpdateMarketShippingMethod[];
+}
+
+export interface IPaymentData
+  extends IPaymentMethodEntity,
+    IPaymentMethodEntityImmu,
+    IDBPaymentMethod,
+    IDBPaymentMethodImmu {}
+
+export interface IShipmentData
+  extends IShippingMethodEntity,
+    IDBShippingMethod,
+    IDBShippingMethodImmu,
+    IShippingMethodEntityImmu {}
+export interface IListShipmentAndPaymentByCompany {
+  shipmentData: IShipmentData[];
+  paymentData: IPaymentData[];
 }
