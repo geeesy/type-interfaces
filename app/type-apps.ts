@@ -2,6 +2,7 @@
 
 import {
   DocFinanceSeqIdCount,
+  DocOrderSeqIdCount,
   DocWorkSeqIdCount,
   StatusPoolJoining,
   StatusPoolShippingMainBuyer,
@@ -27,6 +28,11 @@ export interface IDocWorkCount {
 export interface IDocFinanceCount {
   [DocFinanceSeqIdCount.receipt]: number;
   [DocFinanceSeqIdCount.taxInvoice]: number;
+}
+
+export interface IDocOrderCount {
+  [DocOrderSeqIdCount.order]: number;
+  [DocOrderSeqIdCount.market]: number;
 }
 
 export interface IApprove {
@@ -270,6 +276,7 @@ export interface IProductRow extends IProductRowEntity {
   productCoverUrl: string;
   productSku?: string;
   discountUnitPrice: number;
+  isDiscountOnPercent: boolean;
   itemsPriceRow: number;
 }
 

@@ -120,6 +120,7 @@ import {
   ICompanyPublicEntity,
   ICompanyPublicEntityImmu,
   ICompanySalesRep,
+  ICustomer,
   IDBCertificate,
   IDBCompanyEntity,
   IDBCompanySupplierEntity,
@@ -149,6 +150,7 @@ import {
   IDBCompanyDocHeader,
   IDBVendorRequest,
   IDocFinanceCount,
+  IDocOrderCount,
   IDocWorkCount,
   IInquiry,
   IInquiryFormCreate,
@@ -244,18 +246,39 @@ import {
   IDBBusinessUserIdentity,
   IDBBusinessUserIdentityStatus
 } from './type-business';
-import { ICreateProductWithMultiStock, IDBInventoryEntityImmu, IDBProductInventory, IDBProductInventoryActivityLog, IDBProductInventoryFormulaImmu, IDBWarehouseEntityImmu, IInventoryEntity, ILogStock, IProductCompanyImmu, IProductInventoryImmu, IProductInventorySetting, ITransferProductStock, IUpdateProductStock, IWarehouseEntity } from './type-inventory';
 import {
+  ICreateProductWithMultiStock,
+  IDBInventoryEntity,
+  IDBInventoryEntityImmu,
+  IDBProductInventory,
+  IDBProductInventoryActivityLog,
+  IDBProductInventoryFormulaImmu,
+  IDBWarehouseEntityImmu,
+  IInventoryEntity,
+  ILogStock,
+  IProductCompanyImmu,
+  IProductInventoryImmu,
+  IProductInventorySetting,
+  ITransferProductStock,
+  IUpdateProductStock,
+  IWarehouseEntity
+} from './type-inventory';
+import {
+  ICustomerWithOrder,
   IDBListOrderByProduct,
   IDBOrderEntity,
+  IDBOrderEntityImmu,
   IDBOrderLinkImmu,
   IDBOrderSellerDataImmu,
   IDBOrderStatus,
+  ILeadpage,
+  ILeadpageId,
   IOrderCustomerData,
   IOrderCustomerDataImmu,
   IOrderEntity,
   IOrderLinkData,
   IOrderLinkDataOnConfirm,
+  ISellerCreateOrder,
   ISellerUpdateOrderDataOnStatusChanged,
   ISellerUpdateOrderStatus
 } from './type-order';
@@ -264,12 +287,13 @@ import {
   IDBPaymentMethod,
   IDBPaymentMethodImmu,
   IPaymentMethodEntity,
-  IPaymentMethodEntityImmu,
+  IPaymentMethodEntityImmu
 } from './type-payment';
 /* eslint-disable @typescript-eslint/no-namespace */
 import {
   IDBProduct,
   IDBProductByGapp,
+  IDBProductGroupCount,
   IDBProductGroupImmu,
   IDBProductImmu,
   IDBProductVariantOnlyImmu,
@@ -297,10 +321,16 @@ import {
   IUpdateShippingAndPaymentMethodOnMarket
 } from './type-setting';
 import {
+  IDBSalePageEntity,
+  ISalePageEntity,
+  ISalePageEntityImmu,
+  ISalePageUIComponent
+} from './type-salepage';
+import {
   IDBShippingMethod,
   IDBShippingMethodImmu,
   IShippingMethodEntity,
-  IShippingMethodEntityImmu,
+  IShippingMethodEntityImmu
 } from './type-shipping';
 
 /* #region FIXME: Marketplace */
@@ -834,14 +864,26 @@ export namespace GappBiz {
     IDBLogTime &
     IPortfolioImmu;
   // ! ORDER
-  export type UpdateOrderStatus = ISellerUpdateOrderStatus & IApiCompanyParams & ISellerUpdateOrderDataOnStatusChanged
-  // ! ORDER - ORDER_LINK
+  export type UpdateOrderStatus = ISellerUpdateOrderStatus &
+    IApiCompanyParams &
+    ISellerUpdateOrderDataOnStatusChanged;
+  // ! ORDER_LINK
   export type CreateOrderLink = IOrderEntity &
     IOrderCustomerData &
     IOrderCustomerDataImmu &
     IOrderLinkData &
+    ISellerCreateOrder &
+    IApiCompanyParams;
+  // ! MANUAL ORDER
+  export type CreateManualOrder = IOrderEntity &
+    IOrderCustomerData &
+    IOrderCustomerDataImmu &
+    IOrderLinkData &
+    ISellerCreateOrder &
+    IOrderLinkDataOnConfirm &
     IApiCompanyParams;
   export type OrderLink = IDBOrderEntity &
+    IDBOrderEntityImmu &
     IOrderEntity &
     IDBOrderSellerDataImmu &
     IOrderCustomerData &
@@ -852,9 +894,10 @@ export namespace GappBiz {
     IOrderLinkDataOnConfirm &
     IDBOrderSellerDataImmu &
     IDBLogTime;
-  export type OrderSalePage = GappBiz.OrderLink
-  export type OrderGappMed = GappBiz.OrderLink
+  export type OrderSalePage = GappBiz.OrderLink;
+  export type OrderGappMed = GappBiz.OrderLink;
   export type ListOrderLink = IDBOrderEntity &
+    IDBOrderEntityImmu &
     IOrderCustomerData &
     IOrderLinkDataOnConfirm &
     IDBOrderLinkImmu &
@@ -868,9 +911,24 @@ export namespace GappBiz {
     IDBOrderStatus &
     IOrderLinkData &
     IDBUpdateTime;
-  export type CreateOrderSalePage = GappBiz.CreateOrderLink & IOrderLinkDataOnConfirm
-  export type CreateOrderGappMed = GappBiz.CreateOrderLink & IOrderLinkDataOnConfirm
-  export type ListOrderByProduct = IDBListOrderByProduct
+  export type CreateOrderSalePage = GappBiz.CreateOrderLink &
+    IOrderLinkDataOnConfirm;
+  export type CreateOrderGappMed = GappBiz.CreateOrderLink &
+    IOrderLinkDataOnConfirm;
+  export type ListOrderByProduct = IDBListOrderByProduct;
+  export type ListCustomerWithOrder = ICustomerWithOrder;
+  export type Customer = ICustomer;
+  export type CreateSalepage = ISalePageEntityImmu &
+    ISalePageEntity &
+    ISalePageUIComponent;
+  export type ListSalepage = Salepage;
+  export type Salepage = ISalePageEntityImmu &
+    IDBSalePageEntity &
+    ISalePageEntity &
+    ISalePageUIComponent &
+    IDBLogTime;
+  export type LeadpageCreate = IDBOrderSellerDataImmu & ILeadpage;
+  export type Leadpage = IDBOrderSellerDataImmu & ILeadpage & ILeadpageId;
 }
 
 // REVIEW: G-MARKET
@@ -904,8 +962,9 @@ export namespace GappMarket {
     IDBBusinessCompanyUserData &
     ICompanyUserData &
     IDBUpdateTime;
-  export type ListBanner = IDBBannerImmu & IBanner
-  export type ListShipmentAndPaymentByCompany = IListShipmentAndPaymentByCompany
+  export type ListBanner = IDBBannerImmu & IBanner;
+  export type ListShipmentAndPaymentByCompany =
+    IListShipmentAndPaymentByCompany;
 }
 
 // REVIEW: G-BIZ | PRODUCT
@@ -961,18 +1020,32 @@ export namespace GappInventory {
   export type ProductVariantInPack = IProductVariantInPack;
   export type LogProduct = ILogProduct;
   export type CreateProductGroup = IProductGroup & IApiCompanyParams;
-  export type ProductGroup = IProductGroup & IDBProductGroupImmu & IDBLogTime;
+  export type ProductGroup = IProductGroup &
+    IDBProductGroupImmu &
+    IDBLogTime &
+    IDBProductGroupCount;
   export type DBUpdateProductGroup = IProductGroup & IDBUpdateTime;
-  export type CreateWarehouse = IWarehouseEntity & IApiCompanyParams
-  export type Warehouse = IWarehouseEntity & IDBWarehouseEntityImmu & IDBLogTime;
+  export type CreateWarehouse = IWarehouseEntity & IApiCompanyParams;
+  export type Warehouse = IWarehouseEntity &
+    IDBWarehouseEntityImmu &
+    IDBLogTime;
   export type DBUpdateWarehouse = IWarehouseEntity & IDBUpdateTime;
-  export type CreateInventory = IInventoryEntity & IApiCompanyParams
-  export type Inventory = IInventoryEntity & IDBInventoryEntityImmu & IDBLogTime
-  export type DBUpdateInventory = IInventoryEntity & IDBUpdateTime
-  export type Stock = IProductCompanyImmu & IProductInventoryImmu & IDBProductInventoryFormulaImmu & IProductInventorySetting & IDBProductInventory & IDBProductInventoryActivityLog & IDBLogTime
-  export type UpdateProductStock = IApiCompanyParams & IUpdateProductStock
-  export type TransferProductStock = IApiCompanyParams & ITransferProductStock
-  export type LogProductStock = ILogStock
+  export type CreateInventory = IInventoryEntity & IApiCompanyParams;
+  export type Inventory = IInventoryEntity &
+    IDBInventoryEntityImmu &
+    IDBInventoryEntity &
+    IDBLogTime;
+  export type DBUpdateInventory = IInventoryEntity & IDBUpdateTime;
+  export type Stock = IProductCompanyImmu &
+    IProductInventoryImmu &
+    IDBProductInventoryFormulaImmu &
+    IProductInventorySetting &
+    IDBProductInventory &
+    IDBProductInventoryActivityLog &
+    IDBLogTime;
+  export type UpdateProductStock = IApiCompanyParams & IUpdateProductStock;
+  export type TransferProductStock = IApiCompanyParams & ITransferProductStock;
+  export type LogProductStock = ILogStock;
 }
 
 // REVIEW: G-BIZ | SETTING
@@ -1010,7 +1083,7 @@ export namespace GappSetting {
     IBusinessCompanyUserIdentity &
     IDBBusinessCompanyUserIdentity &
     ICompanyUserData;
-  export type CountDocument = IDocWorkCount & IDocFinanceCount;
+  export type CountDocument = IDocWorkCount & IDocFinanceCount & IDocOrderCount;
   // * SHIPMENT
   export type CreateShippingMethod = IShippingMethodEntity &
     IShippingMethodEntityImmu &
@@ -1047,22 +1120,25 @@ export namespace GappSetting {
   export type DBUpdateSaleChannel = ISaleChannelEntity &
     IDBSaleChannel &
     IDBUpdateTime;
-  export type DBUpdateShippingAndPaymentMethodOnMarket = IUpdateShippingAndPaymentMethodOnMarket
+  export type DBUpdateShippingAndPaymentMethodOnMarket =
+    IUpdateShippingAndPaymentMethodOnMarket;
 }
 
 // REVIEW: GAPP INBOUND & OUTBOUND API
 export namespace GappApi {
   export type ConfirmOrderLink = IOrderLinkDataOnConfirm &
-    IOrderCustomerData
-    & IOrderCustomerDataImmu;
-  export type ConfirmOrderSalepage = GappApi.ConfirmOrderLink
-  export type ConfirmOrderGappmed = GappApi.ConfirmOrderLink
-  export type DBUpdateOrderLink = IOrderCustomerData
-    & IOrderLinkDataOnConfirm & IDBUpdateTime & IDBOrderStatus
-  export type ListOrderLink = GappBiz.ListOrderLink
-  export type OrderLink = GappBiz.OrderLink
-  export type OrderSalePage = GappBiz.OrderLink
-  export type OrderGappMed = GappBiz.OrderLink
+    IOrderCustomerData &
+    IOrderCustomerDataImmu;
+  export type ConfirmOrderSalepage = GappApi.ConfirmOrderLink;
+  export type ConfirmOrderGappmed = GappApi.ConfirmOrderLink;
+  export type DBUpdateOrderLink = IOrderCustomerData &
+    IOrderLinkDataOnConfirm &
+    IDBUpdateTime &
+    IDBOrderStatus;
+  export type ListOrderLink = GappBiz.ListOrderLink;
+  export type OrderLink = GappBiz.OrderLink;
+  export type OrderSalePage = GappBiz.OrderLink;
+  export type OrderGappMed = GappBiz.OrderLink;
 }
 
 export * as IMarketplace from './type-marketplace';

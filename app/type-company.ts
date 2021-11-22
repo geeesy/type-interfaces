@@ -445,6 +445,8 @@ export interface ISettingDoc extends IDBCompanyActivityLog {
   receipt: ISettingDocAttributes;
   invoice: ISettingDocAttributes;
   taxInvoice: ISettingDocAttributes;
+  order: ISettingDocAttributes;
+  market: ISettingDocAttributes;
 }
 
 export interface ILineNotify {
@@ -453,4 +455,12 @@ export interface ILineNotify {
 
 export interface ISettingNotification {
   line: ILineNotify;
+}
+
+export interface ICustomer{
+  customerId: string;
+  iamUserId?: string;
+  customerContactInfo: IPersonContactInfo;
+  customerCompanyContactInfo: ICompanyContactInfo;
+  customerNote: string;
 }

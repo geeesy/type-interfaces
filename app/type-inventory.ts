@@ -17,6 +17,7 @@ export interface IWarehouseEntity {
   warehouseInfo: string;
   warehouseAddress: IAddress;
   inventories?: GappInventory.CreateInventory[]
+  isActive: boolean
 }
 
 /**
@@ -29,12 +30,16 @@ export interface IDBInventoryEntityImmu {
   businessId: string;
   inventoryType: TInventoryType
 }
+export interface IDBInventoryEntity {
+  totalProduct: number
+}
 
 export interface IInventoryEntity {
   inventoryName: string;
   inventoryInfo: string;
   canBelowZero: boolean;
   isDefault: boolean;
+  isActive: boolean
 }
 
 /**
@@ -59,6 +64,7 @@ export interface IDBProductInventoryFormulaImmu {
 // === === ===
 export interface IProductCompanyImmu {
   productId: string;
+  businessId: string;
   compId: string;
   variantId?: string;
 }

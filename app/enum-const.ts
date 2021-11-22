@@ -8,7 +8,9 @@ export enum DocPrefixFormat {
   billingNote = 'BN',
   receipt = 'RE',
   invoice = 'INV',
-  taxInvoice = 'TIV'
+  taxInvoice = 'TIV',
+  order = 'OD',
+  market = 'GM'
 }
 
 export enum DocWorkSeqIdCount {
@@ -24,6 +26,35 @@ export enum DocWorkSeqIdCount {
 export enum DocFinanceSeqIdCount {
   receipt = 'CountReceipt',
   taxInvoice = 'CountTaxInvoice'
+}
+
+export enum DocOrderSeqIdCount {
+  order = 'CountOrder',
+  market = 'CountMarket'
+}
+
+export enum CountForCompanyMetric {
+  lowStockProduct = 'TotalLowStockProduct',
+  placedOrder = 'TotalPlacedOrder',
+  paidOrder = 'TotalPaidOrder',
+  packedOrder = 'TotalPackedOrder',
+  shippedOrder = 'TotalShippedOrder',
+  repliedSalepage = 'TotalRepliedSalepage',
+  product = 'TotalProduct',
+  placedOrderAmount = 'TotalPlacedOrderAmount',
+  paidOrderAmount = 'TotalPaidOrderAmount',
+  packedOrderAmount = 'TotalPackedOrderAmount',
+  shippedOrderAmount = 'TotalShippedOrderAmount',
+}
+
+export enum ReportForCompanyMetric {
+  netSales = 'NetSales',
+  productsSold = 'TotalProductsSold',
+  itemsSold = 'TotalItemsSold',
+  netOrderLinkSales = 'NetOrderLinkSales',
+  netSalePageSales = 'NetSalePageSales',
+  netGappMarketSales = 'NetGappMarketSales',
+  netGappBizSales = 'NetGappBizSales'
 }
 
 export enum CurrencyTranslateTH {

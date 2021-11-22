@@ -2,9 +2,15 @@ import {
   ICategoryProductSpecGroup,
   IDBCategoryProductSpecGroup
 } from './type-console';
-import { ICreateProductWithStock, IProductInventoryImmu } from './type-inventory';
+import {
+  ICreateProductWithStock,
+  IProductInventoryImmu
+} from './type-inventory';
 
 import { StatusProductApproveOnMarket } from './enum-status';
+import { TOrderSubType } from './type-order';
+
+export type TProductType = TOrderSubType
 
 export interface IPriceList {
   priceListId: string;
@@ -18,7 +24,7 @@ export interface IProductPrice {
   wholesalePrice: number;
   wholesalePrice_market: number;
   retailPrice: number;
-  retailPrice_market: number;
+  retailPrice_market: number; // ! -> Inc.vat
   priceList: IPriceList[]; // * <== SETTING
   priceGroupIds: string[]; // * ==> SETTING
   currency: string;
@@ -26,6 +32,8 @@ export interface IProductPrice {
   maxQty_market: number;
   minQty: number;
   minQty_market: number;
+  isVatInc: boolean;
+  vatPercent?: number // default = 7
 }
 
 export interface IQtyPrice {
@@ -185,9 +193,8 @@ export interface IRefProductList {
 
   productThumbnailUrl: string;
   productName: string;
-  productType: string;
+  productType: TProductType;
   productCategoryId: string;
-
   productGroupId: string;
 
   productShortDescription: string;
@@ -197,6 +204,7 @@ export interface IRefProductList {
 
   totalStock: number;
   totalReservedStock: number;
+  useInventory: boolean;
 
   // -> Available
   countVariants: number; // * UPDATED ON [C-U-D] VARIANT
@@ -248,6 +256,9 @@ export interface IProductEntity {
   productPrice: IProductPrice;
   productWholesales: IProductWholesale[];
   minQty: number;
+  minQty_market: number;
+  maxQty: number;
+  maxQty_market: number;
   minWholesaleQty: number;
   toFreeShip: IQtyPrice;
   productPackage: IProductPackage;
@@ -255,7 +266,7 @@ export interface IProductEntity {
   leadTimes: IPeriodTimeByQty[];
   displaySku: IProductDisplay;
   shippingMethod: IProductShippingMethod[];
-  whichStockOnMarket?: IProductInventoryImmu // ? use on order from market
+  whichStockOnMarket?: IProductInventoryImmu; // ? use on order from market
 }
 
 export interface IProductEntityImmu {
@@ -273,7 +284,7 @@ export interface IProductAttributes {
   isCanBuy_market: boolean;
   productName: string;
   productName_market: string;
-  productType: string;
+  productType: TProductType;
   tags: string[];
   tags_market: string[];
   keywords: string[];
@@ -344,13 +355,12 @@ export interface IProductVariantOnly
   extends IProductRootEntity,
     IProductEntity,
     IProductEntityImmu,
-    IProductVariantEntity {
-}
+    IProductVariantEntity {}
 
 export interface IProductVariantOnlyWithStock extends IProductVariantOnly {
-  inventory: ICreateProductWithStock
-  useMultiStock: boolean
-  useInventory: boolean
+  inventory: ICreateProductWithStock;
+  useMultiStock: boolean;
+  useInventory: boolean;
 }
 export interface IDBProductVariantOnlyImmu {
   productVariantId: string;
@@ -361,7 +371,6 @@ export interface IProductVariantAttributes {
   variantSelectors: IProductVariantSelector[];
   variants: IProductVariantOnly[];
 }
-
 
 export interface IProductVariantAttributesOnCreate {
   variantSelectors: IProductVariantSelector[];
@@ -428,8 +437,18 @@ export interface IProductGroup {
   productGroupInfo: string;
   productGroupIconUrl: string;
 }
-
+export interface IDBProductGroupCount {
+  countProduct: number;
+}
 export interface IDBProductGroupImmu {
   productGroupId: string;
   compId: string;
+}
+
+// SEO
+export interface ISeoMeta {
+  title: string;
+  imageUrl: string;
+  description: string;
+  
 }
