@@ -285,3 +285,6 @@ export interface ILeadpage{
   description: string;
   address: string;
 }
+export interface ILeadpageId{
+  leadpageId: string;
+}
