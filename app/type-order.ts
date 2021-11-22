@@ -103,6 +103,7 @@ export interface IOrderAccounting {
 export interface IListOrder
   extends IDBOrderSellerDataImmu,
     IDBOrderEntityImmu,
+    IDBOrderLinkImmu,
     IDBOrderEntity {
   totalOrderAmount: number;
   shippingConfirmedData: GappSetting.ShippingMethod | null;
