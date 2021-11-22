@@ -269,8 +269,10 @@ export interface IProductEntity {
   whichStockOnMarket?: IProductInventoryImmu; // ? use on order from market
 }
 
+// ANCHOR: PRODUCT | Entity (2/6)
+// NOTE === attributes on each SKU (+on parent product of variant product)
 export interface IProductEntityImmu {
-  useInventory: boolean;
+  useInventory: boolean; 
 }
 
 // ANCHOR: PRODUCT | Entity (3/6)
