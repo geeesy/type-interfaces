@@ -173,6 +173,9 @@ export interface IComponentBlockVideo {
 
 export interface IRefData {
   channel: SaleChannelSubType;
+  title: string;
+  channelImageUrl: string;
+  color: string;
   url: string;
 }
 
