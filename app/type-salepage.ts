@@ -138,7 +138,7 @@ export interface IComponentBlockProduct extends IOrderProductRow {
 
 export interface ISettingDiscount {
   isActive: boolean;
-  price: string;
+  price: number;
 }
 
 export interface ICaption {
