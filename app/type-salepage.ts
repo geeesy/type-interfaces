@@ -127,13 +127,13 @@ export interface IComponentBlockProgress {
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface IComponentBlockProduct extends IOrderProductRow {
-  inventorySelect: IInventorySelect;
-  settingDiscount: ISettingDiscount;
+  inventorySelect?: IInventorySelect;
+  settingDiscount?: ISettingDiscount;
   settingBySku: boolean;
   caption: ICaption;
   isVariant: boolean;
-  variantSelectors: IProductVariantSelector;
-  productVariantArr: IProductVariantArr;
+  variantSelectors?: IProductVariantSelector;
+  productVariantArr?: IProductVariantArr;
 }
 
 export interface ISettingDiscount {
