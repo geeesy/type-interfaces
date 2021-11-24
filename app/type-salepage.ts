@@ -131,6 +131,7 @@ export interface IComponentBlockProduct extends IOrderProductRow {
   settingDiscount: ISettingDiscount;
   settingBySku: boolean;
   caption: ICaption;
+  isVariant: boolean;
   variantSelectors: IProductVariantSelector;
   productVariantArr: IProductVariantArr;
 }
