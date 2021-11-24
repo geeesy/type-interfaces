@@ -188,7 +188,7 @@ export interface IComponentBlockLink {
 
 export interface IComponentBlockFlashSale {
   isAutoCountdown: boolean;
-  expiryDate: string;
+  expiryDate: Date;
   countdownTime: ITime;
 }
 export interface ITime {
