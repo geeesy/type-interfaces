@@ -1,8 +1,23 @@
-import { GappSetting } from ".";
-import { IOrderProductRow } from "./type-order";
-import { ISeoMeta } from "./type-catalog";
-import { ISocial } from "./type-apps";
-import { SaleChannelSubType } from "./enum-const";
+import {
+  IDBInventoryEntity,
+  IDBInventoryEntityImmu,
+  IInventoryEntity
+} from './type-inventory';
+import {
+  IDBProductVariantOnlyImmu,
+  IProductEntity,
+  IProductEntityImmu,
+  IProductRootEntity,
+  IProductVariantEntity,
+  IProductVariantSelector,
+  ISeoMeta
+} from './type-catalog';
+
+import { GappSetting } from '.';
+import { IDBLogTime } from './type-api';
+import { IOrderProductRow } from './type-order';
+import { ISocial } from './type-apps';
+import { SaleChannelSubType } from './enum-const';
 
 export type TSalepageType = 'LeadPage' | 'ContentPage' | 'SalePage';
 
@@ -22,7 +37,7 @@ export interface IDBSalePageEntity {
 }
 
 // ANCHOR: SALE PAGE | Entity (3/4)
-export interface ISalePageEntity{
+export interface ISalePageEntity {
   title: string;
   contact: ISessionContact;
   shippingAvailableIds: string[];
@@ -31,8 +46,8 @@ export interface ISalePageEntity{
   paymentAvailableData: GappSetting.PaymentMethod[];
   settingFacebook: ISettingFacebook[];
   settingGoogle: ISettingGoogle;
-  settingLine: ISettingLine
-  settingSeo: ISeoMeta
+  settingLine: ISettingLine;
+  settingSeo: ISeoMeta;
 }
 
 // ANCHOR: SALE PAGE | Entity (4/4)
@@ -41,7 +56,7 @@ export interface ISalePageUIComponent {
 }
 
 export interface ISessionContact extends ISocial {
-  mobile: string
+  mobile: string;
 }
 
 export interface ISettingFacebook {
@@ -53,7 +68,7 @@ export interface ISettingGoogle {
 }
 
 export interface ISettingLine {
-  lineTagId: string
+  lineTagId: string;
 }
 
 /**
@@ -73,25 +88,24 @@ export interface IContactForm {
 }
 
 export interface IContactFormField {
-  isRequiredAddrName: boolean
-  isRequiredAddrFull: boolean
-  isRequiredAddrNumber: boolean
-  isRequiredProvince: boolean
-  isRequiredAmphoe: boolean
-  isRequiredTambon: boolean
-  isRequiredPostcode: boolean
-  isRequiredPhonesExt?: boolean
-  isRequiredPhones: boolean
-  isRequiredMobiles: boolean
-  isRequiredFaxes?: boolean
-  isRequiredEmails: boolean
-  isRequiredCountry: boolean
-  isRequiredLat?: boolean
-  isRequiredLng?: boolean
-  isRequiredOfficeHours?: boolean
-  isRequiredIsPrimary?: boolean
+  isRequiredAddrName: boolean;
+  isRequiredAddrFull: boolean;
+  isRequiredAddrNumber: boolean;
+  isRequiredProvince: boolean;
+  isRequiredAmphoe: boolean;
+  isRequiredTambon: boolean;
+  isRequiredPostcode: boolean;
+  isRequiredPhonesExt?: boolean;
+  isRequiredPhones: boolean;
+  isRequiredMobiles: boolean;
+  isRequiredFaxes?: boolean;
+  isRequiredEmails: boolean;
+  isRequiredCountry: boolean;
+  isRequiredLat?: boolean;
+  isRequiredLng?: boolean;
+  isRequiredOfficeHours?: boolean;
+  isRequiredIsPrimary?: boolean;
 }
-
 
 export interface IThankyouForm {
   caption: string;
@@ -113,8 +127,36 @@ export interface IComponentBlockProgress {
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface IComponentBlockProduct extends IOrderProductRow {
-
+  inventorySelect: IInventorySelect;
+  settingDiscount: ISettingDiscount;
+  settingBySku: boolean;
+  caption: ICaption;
+  variantSelectors: IProductVariantSelector;
+  productVariantArr: IProductVariantArr;
 }
+
+export interface ISettingDiscount {
+  isActive: boolean;
+  price: string;
+}
+
+export interface ICaption {
+  title: string;
+  description: string;
+}
+
+export interface IInventorySelect
+  extends IInventoryEntity,
+    IDBInventoryEntityImmu,
+    IDBInventoryEntity,
+    IDBLogTime {}
+export interface IProductVariantArr
+  extends IProductRootEntity,
+    IProductEntity,
+    IProductEntityImmu,
+    IProductVariantEntity,
+    IDBProductVariantOnlyImmu,
+    IDBLogTime {}
 
 export interface IComponentBlockHTML {
   html: string;
@@ -129,12 +171,12 @@ export interface IComponentBlockVideo {
 }
 
 export interface IRefData {
-  channel: SaleChannelSubType
-  url: string
+  channel: SaleChannelSubType;
+  url: string;
 }
 
 export interface IComponentBlockSocial {
-  refData: IRefData[]
+  refData: IRefData[];
 }
 
 export interface IComponentBlockLink {
@@ -156,14 +198,14 @@ export interface ITime {
 }
 
 export enum ComponentBlockType {
-  Product= 'product',
-  Progress= 'progress',
-  Text= 'text',
-  Image= 'image',
-  Video= 'video',
-  Social= 'social',
-  Link= 'link',
-  FlashSale= 'flashSale'
+  Product = 'product',
+  Progress = 'progress',
+  Text = 'text',
+  Image = 'image',
+  Video = 'video',
+  Social = 'social',
+  Link = 'link',
+  FlashSale = 'flashSale'
 }
 export interface IComponentBlock {
   data:
