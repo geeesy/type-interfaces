@@ -7,6 +7,8 @@ import {
   IDBProductVariantOnlyImmu,
   IProductEntity,
   IProductEntityImmu,
+  IProductImage,
+  IProductPrice,
   IProductRootEntity,
   IProductVariantEntity,
   IProductVariantSelector,
@@ -153,11 +155,14 @@ export interface IInventorySelect
     IDBLogTime {}
 export interface IProductVariantArr
   extends IProductRootEntity,
-    IProductEntity,
     IProductEntityImmu,
     IProductVariantEntity,
     IDBProductVariantOnlyImmu,
-    IDBLogTime {}
+    IDBLogTime {
+  productImagesUrl: IProductImage[];
+  productPrice: IProductPrice;
+  countRow: number;
+}
 
 export interface IComponentBlockHTML {
   html: string;
