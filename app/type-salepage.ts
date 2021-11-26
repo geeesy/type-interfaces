@@ -126,6 +126,7 @@ export interface IComponentBlockProgress {
   caption: string;
   iconUrl: string;
   percent: number;
+  colorCard: string;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
@@ -137,6 +138,7 @@ export interface IComponentBlockProduct extends IOrderProductRow {
   isVariant: boolean;
   variantSelectors?: IProductVariantSelector[];
   productVariantArr?: IProductVariantArr[];
+  colorCard: string;
 }
 
 export interface ISettingDiscount {
@@ -168,14 +170,17 @@ export interface IProductVariantArr
 
 export interface IComponentBlockHTML {
   html: string;
+  colorCard: string;
 }
 
 export interface IComponentBlockImage {
   name: string;
   srcUrl: string;
+  colorCard: string;
 }
 export interface IComponentBlockVideo {
   url: string;
+  colorCard: string;
 }
 
 export interface IRefData {
@@ -188,18 +193,21 @@ export interface IRefData {
 
 export interface IComponentBlockSocial {
   refData: IRefData[];
+  colorCard: string;
 }
 
 export interface IComponentBlockLink {
   color: string;
   caption: string;
   url: string;
+  colorCard: string;
 }
 
 export interface IComponentBlockFlashSale {
   isAutoCountdown: boolean;
   expiryDate: Date;
   countdownTime: ITime;
+  colorCard: string;
 }
 export interface ITime {
   hours: number;
