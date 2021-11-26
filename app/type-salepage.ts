@@ -160,6 +160,7 @@ export interface IProductVariantArr
     IDBProductVariantOnlyImmu,
     IDBLogTime {
   productImagesUrl: IProductImage[];
+  productShortDescription: string;
   productPrice: IProductPrice;
   countRow: number;
 }
