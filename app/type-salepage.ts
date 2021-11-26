@@ -134,8 +134,8 @@ export interface IComponentBlockProduct extends IOrderProductRow {
   settingBySku: boolean;
   caption: ICaption;
   isVariant: boolean;
-  variantSelectors?: IProductVariantSelector;
-  productVariantArr?: IProductVariantArr;
+  variantSelectors?: IProductVariantSelector[];
+  productVariantArr?: IProductVariantArr[];
 }
 
 export interface ISettingDiscount {
