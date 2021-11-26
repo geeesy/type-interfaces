@@ -157,8 +157,7 @@ export interface IProductVariantArr
   extends IProductRootEntity,
     IProductEntityImmu,
     IProductVariantEntity,
-    IDBProductVariantOnlyImmu,
-    IDBLogTime {
+    IDBProductVariantOnlyImmu {
   productImagesUrl: IProductImage[];
   productShortDescription: string;
   productPrice: IProductPrice;
