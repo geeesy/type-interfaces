@@ -8,6 +8,7 @@ import {
   IProductEntity,
   IProductEntityImmu,
   IProductImage,
+  IProductPackage,
   IProductPrice,
   IProductRootEntity,
   IProductVariantEntity,
@@ -161,6 +162,7 @@ export interface IProductVariantArr
   productImagesUrl: IProductImage[];
   productShortDescription: string;
   productPrice: IProductPrice;
+  productPackage: IProductPackage;
   countRow: number;
 }
 
