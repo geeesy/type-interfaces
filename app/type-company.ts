@@ -467,7 +467,7 @@ export interface ISettingDoc extends IDBCompanyActivityLog {
   order: ISettingDocAttributes;
   market: ISettingDocAttributes;
   isVatInc: boolean;
-  vatPercent?: number; // default = 7
+  vatPercent: number; // default = 7
 }
 
 export interface ILineNotify {
