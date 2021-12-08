@@ -166,6 +166,7 @@ export interface IProductVariantArr
   productPrice: IProductPrice;
   productPackage: IProductPackage;
   countRow: number;
+  canBelowZero: boolean;
 }
 
 export interface IComponentBlockHTML {
