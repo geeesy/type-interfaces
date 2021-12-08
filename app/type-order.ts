@@ -176,6 +176,8 @@ export interface IDBListOrderByProduct
   channel: SaleChannelSubType;
   totalOrderAmount: number;
   createdAt: string;
+  orderType: TOrderType
+  salepageId?: string
 }
 
 /**
