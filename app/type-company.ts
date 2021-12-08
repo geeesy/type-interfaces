@@ -421,7 +421,26 @@ export interface ISettingPriceList
 // STUB: SETTING | DOC
 // NOTE: Initial with default value set on server when create company
 // ! initialize on server
-export type TYearFormat = 'YYYY-MM' | 'YY-MM' | 'YYYY-MM-dd' | 'YY-MM-dd' | 'YYYY-dd' | 'YY-dd' | 'MM' |'MM-dd' | 'dd' | 'MMdd' | 'YYYYMMdd' | 'YYMMdd' | 'YYYYMM' | 'YYMM'| 'YYYYdd' | 'YYdd' | 'YYYY' | 'YY' | 'none';
+export type TYearFormat =
+  | 'YYYY-MM'
+  | 'YY-MM'
+  | 'YYYY-MM-dd'
+  | 'YY-MM-dd'
+  | 'YYYY-dd'
+  | 'YY-dd'
+  | 'MM'
+  | 'MM-dd'
+  | 'dd'
+  | 'MMdd'
+  | 'YYYYMMdd'
+  | 'YYMMdd'
+  | 'YYYYMM'
+  | 'YYMM'
+  | 'YYYYdd'
+  | 'YYdd'
+  | 'YYYY'
+  | 'YY'
+  | 'none';
 export type TSeparator = '/' | '-' | 'none';
 export interface IDocSeqNoFormat {
   //! only 4 digit on seqNo
@@ -447,6 +466,8 @@ export interface ISettingDoc extends IDBCompanyActivityLog {
   taxInvoice: ISettingDocAttributes;
   order: ISettingDocAttributes;
   market: ISettingDocAttributes;
+  isVatInc: boolean;
+  vatPercent: number; // default = 7
 }
 
 export interface ILineNotify {
@@ -457,7 +478,7 @@ export interface ISettingNotification {
   line: ILineNotify;
 }
 
-export interface ICustomer{
+export interface ICustomer {
   customerId: string;
   iamUserId?: string;
   customerContactInfo: IPersonContactInfo;

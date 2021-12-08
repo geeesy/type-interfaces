@@ -16,22 +16,23 @@ export interface IWarehouseEntity {
   warehouseImageUrls: string[];
   warehouseInfo: string;
   warehouseAddress: IAddress;
-  inventories?: GappInventory.CreateInventory[]
-  isActive: boolean
+  inventories?: GappInventory.CreateInventory[];
+  isActive: boolean;
 }
 
 /**
  * REVIEW: INVENTORY
  */
-export type TInventoryType = 'GB' | 'GM' | 'OWN'
+export type TInventoryType = 'GB' | 'GM' | 'OWN';
 export interface IDBInventoryEntityImmu {
   inventoryId: string;
   compId: string;
   businessId: string;
-  inventoryType: TInventoryType
+  inventoryType: TInventoryType;
+  warehouseId: string;
 }
 export interface IDBInventoryEntity {
-  totalProduct: number
+  totalProduct: number;
 }
 
 export interface IInventoryEntity {
@@ -39,7 +40,7 @@ export interface IInventoryEntity {
   inventoryInfo: string;
   canBelowZero: boolean;
   isDefault: boolean;
-  isActive: boolean
+  isActive: boolean;
 }
 
 /**
@@ -78,6 +79,7 @@ export interface IDBProductInventoryActivityLog {
   latestNoteOnAction: string; // used in log on stock transfer and adjust
   latestActivityOnStockMovementType: StockMovementType; // used to identify type of adjustment
   latestActivityOnOrderType: TOrderType | null; // used to identify source of adjustment
+  latestActionBy: string
 }
 
 export interface ICreateProductWithStock
@@ -94,7 +96,7 @@ export interface ICreateProductWithMultiStock {
 export interface IStockRefData {
   inventoryId: string;
   warehouseId: string;
-  saleChannel: TOrderType
+  saleChannel: TOrderType;
 }
 
 export interface IUpdateProductStock extends IProductInventoryImmu {
@@ -108,8 +110,8 @@ export interface IUpdateProductStock extends IProductInventoryImmu {
 }
 
 export interface ITransferProductStock {
-  sourceStock: IProductInventoryImmu
-  destinationStock: IProductInventoryImmu
+  sourceStock: IProductInventoryImmu;
+  destinationStock: IProductInventoryImmu;
   transferQty: number;
   productId: string;
   variantId?: string;
@@ -117,9 +119,10 @@ export interface ITransferProductStock {
   hasProductInDestinationStock: boolean;
 }
 
-export interface ILogStockValue extends IProductInventoryImmu, IProductInventorySetting, IDBProductInventory {
-
-}
+export interface ILogStockValue
+  extends IProductInventoryImmu,
+    IProductInventorySetting,
+    IDBProductInventory {}
 
 export enum StockMovementType {
   Initial = 'initial entry',
@@ -129,18 +132,16 @@ export enum StockMovementType {
   None = 'none'
 }
 
-export type TStockMovementAction = 'IN' | 'OUT' | 'NONE'
+export type TStockMovementAction = 'IN' | 'OUT' | 'NONE';
 export interface ILogStock {
   updatedBy: string;
   action: string;
-  stockMovementType: StockMovementType
-  stockMovementAction: TStockMovementAction
-  stockOrderType: TOrderType | null
+  stockMovementType: StockMovementType;
+  stockMovementAction: TStockMovementAction;
+  stockOrderType: TOrderType | null;
   createdAt: string;
   updatedAt: string;
   oldValue: ILogStockValue;
   newValue: ILogStockValue;
   note?: string; // only on action
 }
-
-

@@ -100,47 +100,45 @@ export interface IOrderAccounting {
   isVatInc: boolean;
   isDiscountOnPercent: boolean;
 }
-export interface IListOrder {
-  docNo: string;
-  salepageId?: string;
-  orderType: TOrderType;
+export interface IListOrder
+  extends IDBOrderSellerDataImmu,
+    IDBOrderEntityImmu,
+    IDBOrderLinkImmu,
+    IDBOrderEntity {
   totalOrderAmount: number;
   shippingConfirmedData: GappSetting.ShippingMethod | null;
   paymentConfirmedData: GappSetting.PaymentMethod | null;
   customerContactInfo: IPersonContactInfo;
-  productTitleFirst: string;
-  productImageFirstUrl: string;
-  productSkuFirst: string;
   statusOrderOnSeller: StatusOrderSeller;
   statusOrderOnBuyer: StatusOrderCustomer;
 }
-// ANCHOR: ORDER | Entity (1/6)
+// ANCHOR: ORDER | Entity (1/10)
 export interface IOrderCustomerDataImmu {
   customerId: string;
   iamUserId?: string;
 }
 
-// ANCHOR: ORDER | Entity (2/6)
+// ANCHOR: ORDER | Entity (2/10)
 export interface IOrderCustomerData {
   customerContactInfo: IPersonContactInfo;
   customerCompanyContactInfo: ICompanyContactInfo;
   customerNote: string;
 }
 
-// ANCHOR: ORDER | Entity (3/6)
+// ANCHOR: ORDER | Entity (3/10)
 export interface IDBOrderSellerDataImmu {
   businessId: string;
   compId: string;
 }
 
-// ANCHOR: ORDER | Entity (4/7)
+// ANCHOR: ORDER | Entity (4/10)
 export interface IDBOrderEntityImmu {
   orderType: TOrderType;
   orderSubType: TOrderSubType;
   salepageId?: string;
 }
 
-// ANCHOR: ORDER | Entity (5/7)
+// ANCHOR: ORDER | Entity (5/10)
 export interface IDBOrderEntity {
   docNo: string;
   productTitleFirst: string;
@@ -186,6 +184,7 @@ export interface IDBListOrderByProduct
  * * ON CREATE
  */
 
+// ANCHOR: ORDER | Entity (8/10)
 export interface IOrderLinkData {
   channel: SaleChannelSubType;
   expiryTimestamp: number; //timestamp
@@ -195,6 +194,7 @@ export interface IOrderLinkData {
   paymentAvailableData: GappSetting.PaymentMethod[];
 }
 
+// ANCHOR: ORDER | Entity (9/10)
 export interface IDBOrderLinkImmu {
   orderId: string;
   // orderTemplateId: string;
@@ -214,6 +214,7 @@ export interface IShippingTrackingData {
   note: string;
 }
 
+// ANCHOR: ORDER | Entity (10/10)
 // * ON CONFIRM
 export interface IOrderLinkDataOnConfirm {
   shippingConfirmedId: string;
