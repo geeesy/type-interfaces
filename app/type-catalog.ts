@@ -292,6 +292,8 @@ export interface IProductAttributes {
   keywords: string[];
   productCoverUrl: string;
   productCoverUrl_market: string;
+  productImagesUrl: IProductImage[];
+  productImagesUrl_market: IProductImage[];
   productCategoryId: string;
   productGroupId: string; //? 1 product 1 group
   productCategoryCustomName?: string; // * id = OTHER000
