@@ -320,6 +320,7 @@ export interface IDBProduct {
   impFactor: number;
   countVariants: number; // * UPDATED ON [C-U-D] VARIANT
   countPacks: number; // * UPDATED ON [C-U-D] PACK
+  rangeCostPrice: [number, number]; // * UPDATED ON [C-U-D] VARIANT OR PACK
   totalStock: number; // ! INVENTORY
   totalReservedStock: number; // ! INVENTORY
   // stockRefData: IStockRefData[] | null; // ! INVENTORY
