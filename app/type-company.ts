@@ -109,6 +109,7 @@ export interface ICompanyContactInfo {
   shippingAddress?: IAddress[];
   companyNote?: string;
   companyRegisNo: string;
+  hasVatRegistration: boolean;
   companyTaxInfo?: ICompanyTaxInfo;
 }
 

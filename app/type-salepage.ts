@@ -5,7 +5,6 @@ import {
 } from './type-inventory';
 import {
   IDBProductVariantOnlyImmu,
-  IProductEntity,
   IProductEntityImmu,
   IProductImage,
   IProductPackage,
