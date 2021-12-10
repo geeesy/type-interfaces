@@ -173,7 +173,7 @@ export interface IDBOrderStatus {
 export interface IDBListOrderByProduct
   extends IDBOrderStatus,
     IOrderCustomerData {
-  salepageId?: '';
+  salepageId?: string;
   orderId: string;
   channel: SaleChannelSubType;
   totalOrderAmount: number;
