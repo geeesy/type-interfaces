@@ -69,6 +69,7 @@ export type TOrderSubType = 'SERVICE' | 'PRODUCT';
  */
 export interface IOrderProductRow {
   productId: string;
+  variantId: string; // on product variant
   productTitle: string;
   productUnitPrice: number;
   productUnit: string;
