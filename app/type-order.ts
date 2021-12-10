@@ -129,7 +129,6 @@ export interface IOrderCustomerData {
 export interface IDBOrderSellerDataImmu {
   businessId: string;
   compId: string;
-  hasVatRegistration: boolean;
 }
 
 // ANCHOR: ORDER | Entity (4/10)
@@ -177,8 +176,6 @@ export interface IDBListOrderByProduct
   channel: SaleChannelSubType;
   totalOrderAmount: number;
   createdAt: string;
-  orderType: TOrderType
-  salepageId?: string
 }
 
 /**

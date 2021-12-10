@@ -31,6 +31,7 @@ export interface ISalePageEntityImmu {
   salepageId: string;
   salepageType: TSalepageType;
   isOnePage?: boolean;
+  hasVatRegistration: boolean;
 }
 
 // ANCHOR: SALE PAGE | Entity (2/4)
