@@ -275,6 +275,7 @@ import {
   ILeadpageId,
   IListOrder,
   IOrderAccounting,
+  IOrderAccountingOnly,
   IOrderCustomerData,
   IOrderCustomerDataImmu,
   IOrderEntity,
@@ -1125,7 +1126,7 @@ export namespace GappSetting {
 export namespace GappApi {
   export type ConfirmOrderLink = IOrderLinkDataOnConfirm &
     IOrderCustomerData &
-    IOrderCustomerDataImmu & IOrderAccounting;
+    IOrderCustomerDataImmu & IOrderAccountingOnly;
   export type ConfirmOrderSalepage = GappApi.ConfirmOrderLink;
   export type ConfirmOrderGappmed = GappApi.ConfirmOrderLink;
   export type DBUpdateOrderLink = IOrderCustomerData &

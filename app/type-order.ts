@@ -159,6 +159,10 @@ export interface IOrderEntity {
   totalOrderAmount: number;
 }
 
+export interface IOrderAccountingOnly{
+  accountingData: IOrderAccounting;
+}
+
 // ANCHOR: ORDER | Entity (7/7)
 export interface IDBOrderStatus {
   statusOrderOnSeller: StatusOrderSeller;
