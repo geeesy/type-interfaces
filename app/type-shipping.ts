@@ -76,6 +76,7 @@ export interface IDBShippingMethodImmu {
 
 export interface IDBShippingMethod {
   isActive: boolean;
+  hasArchived: boolean;
 }
 
 export interface IShippingMethodEntityImmu {
