@@ -94,7 +94,7 @@ export interface IOrderAccounting {
   totalDiscountAmount: number; // ส่วนลดรวม
   netAmount: number; // ยอดรวมก่อนภาษี
   vat: number; // ภาษีมูลค่าเพิ่ม
-  grandTotalAmount: number; // ยอดรวมทั้งสิ้น
+  grandTotalAmount: number; // ยอดรวมทั้งสิ้น -> USE IN LIST
   taxWithheldPercent: number; // อัตราหัก ณ ที่จ่าย
   withholdingTax: number; // ภาษีหัก ณ ที่จ่าย
   totalPayAmount: number; // ยอดที่ต้องชำระทั้งสิ้น
@@ -106,7 +106,7 @@ export interface IListOrder
     IDBOrderEntityImmu,
     IDBOrderLinkImmu,
     IDBOrderEntity {
-  totalOrderAmount: number;
+  totalOrderAmount: number; // * === grandTotalAmount
   shippingConfirmedData: GappSetting.ShippingMethod | null;
   paymentConfirmedData: GappSetting.PaymentMethod | null;
   customerContactInfo: IPersonContactInfo;
@@ -146,7 +146,7 @@ export interface IDBOrderEntity {
   productImageFirstUrl: string;
   productSkuFirst: string;
   wasFinalized: boolean; // stock was adjusted
-  productAmount: number;
+  totalProductQty: number;
 }
 
 // ANCHOR: ORDER | Entity (6/7)
@@ -156,7 +156,8 @@ export interface IOrderEntity {
   accountingData: IOrderAccounting;
   sellerContactInfo: IPersonContactInfo;
   sellerCompanyContactInfo: ICompanyContactInfo;
-  totalOrderAmount: number;
+  totalOrderAmount: number; // * === grandTotalAmount
+  totalProductAmount: number // ? sum from product rows
 }
 
 export interface IOrderAccountingOnly{
@@ -180,7 +181,7 @@ export interface IDBListOrderByProduct
   salepageId?: string;
   orderId: string;
   channel: SaleChannelSubType;
-  totalOrderAmount: number;
+  totalOrderAmount: number; // * === grandTotalAmount
   orderType: TOrderType;
   createdAt: string;
   docNo: string;
