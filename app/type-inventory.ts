@@ -79,6 +79,7 @@ export interface IDBProductInventoryActivityLog {
   latestNoteOnAction: string; // used in log on stock transfer and adjust
   latestActivityOnStockMovementType: StockMovementType; // used to identify type of adjustment
   latestActivityOnOrderType: TOrderType | null; // used to identify source of adjustment
+  latestActivityOnTransferInOut?: string; // used to identify on stock transfer
   latestActionBy: string
 }
 
@@ -144,4 +145,5 @@ export interface ILogStock {
   oldValue: ILogStockValue;
   newValue: ILogStockValue;
   note?: string; // only on action
+  latestInOutInventoryId?: string; // only on transfer
 }
