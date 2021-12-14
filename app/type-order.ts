@@ -160,7 +160,7 @@ export interface IOrderEntity {
 }
 
 export interface IOrderAccountingOnly{
-  accountingData: IOrderAccounting;
+  accountingData?: IOrderAccounting;
 }
 
 // ANCHOR: ORDER | Entity (7/7)
