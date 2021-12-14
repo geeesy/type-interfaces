@@ -183,6 +183,7 @@ export interface IDBListOrderByProduct
   totalOrderAmount: number;
   orderType: TOrderType;
   createdAt: string;
+  docNo: string;
 }
 
 /**
