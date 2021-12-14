@@ -23,6 +23,7 @@ export interface IDBPaymentMethodImmu {
 
 export interface IDBPaymentMethod {
   isActive: boolean;
+  hasArchived: boolean;
 }
 
 export interface IPaymentMethodEntityImmu {

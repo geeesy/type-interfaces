@@ -29,6 +29,7 @@ export interface IDBSaleChannelImmu {
 
 export interface IDBSaleChannel {
   isActive: boolean;
+  hasArchived: boolean;
 }
 
 export interface ISaleChannelEntityImmu {
