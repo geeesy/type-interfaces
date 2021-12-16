@@ -273,6 +273,7 @@ export interface IProductEntity {
 // NOTE === attributes on each SKU (+on parent product of variant product)
 export interface IProductEntityImmu {
   useInventory: boolean; 
+  hasArchived: boolean; // ! on delete
 }
 
 // ANCHOR: PRODUCT | Entity (3/6)
