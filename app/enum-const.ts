@@ -101,8 +101,8 @@ export const SearchPageArr = [
 export enum StatusPoolJoining {
   Joined = 'joined',
   Cancel = 'cancel',
-  RequestCancel = 'request-cancel',
-  AcceptedCancel = 'accepted-cancel'
+  RequestCancel = 'request_cancel',
+  AcceptedCancel = 'accepted_cancel'
 }
 
 export enum StatusPoolShippingMainBuyer {

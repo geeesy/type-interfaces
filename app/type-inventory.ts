@@ -126,9 +126,9 @@ export interface ILogStockValue
     IDBProductInventory {}
 
 export enum StockMovementType {
-  Initial = 'initial entry',
-  Adjustment = 'stock adjustments',
-  Transfer = 'stock transfers',
+  Initial = 'initial_entry',
+  Adjustment = 'stock_adjustments',
+  Transfer = 'stock_transfers',
   Purchase = 'purchases',
   None = 'none'
 }
