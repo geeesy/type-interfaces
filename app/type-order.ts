@@ -281,6 +281,7 @@ export interface ISellerUpdateOrderStatus {
   toFinalizeStock: boolean;
 }
 
+// FIXME: to remove interface (dup)
 export interface ISellerUpdateOrderDataOnStatusChanged {
   paymentAttachmentData: IPaymentAttachmentData | null;
   shippingTrackingData: IShippingTrackingData | null;
