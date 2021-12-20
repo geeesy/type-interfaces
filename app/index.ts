@@ -281,7 +281,6 @@ import {
   IOrderLinkData,
   IOrderLinkDataOnConfirm,
   ISellerCreateOrder,
-  ISellerUpdateOrderDataOnStatusChanged,
   ISellerUpdateOrderStatus
 } from './type-order';
 import { IDBLogTime, IDBUpdateTime } from './type-api';
