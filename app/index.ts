@@ -867,6 +867,7 @@ export namespace GappBiz {
   // ! ORDER
   export type UpdateOrderStatus = ISellerUpdateOrderStatus &
     IApiCompanyParams &
+    IOrderAccountingOnly &
     IOrderLinkDataOnConfirm;
   // ! ORDER_LINK
   export type CreateOrderLink = IOrderEntity &
