@@ -581,13 +581,18 @@ export interface IQuotationRfqFormCreate {
 
 export interface IQuotationFormGroupAccounting {
   subtotalAmount: number;
+  shippingCost: number;
+  charges: number;
   discount: number;
   totalDiscountAmount: number;
   netAmount: number;
   vat: number;
   grandTotalAmount: number;
   taxWithheldPercent: number;
+  withholdingTax: number;
+  totalPayAmount: number;
   isVatInc: boolean;
+  isDiscountOnPercent: boolean;
 }
 
 export interface IQuotationFormGroupData {
