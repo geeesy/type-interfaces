@@ -233,6 +233,7 @@ export interface IOrderLinkDataOnConfirm {
   isNewContactAddress: boolean;
   paymentAttachmentData: IPaymentAttachmentData | null;
   shippingTrackingData: IShippingTrackingData | null;
+  accountingData: IOrderAccounting;
 }
 
 /**
