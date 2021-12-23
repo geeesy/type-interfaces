@@ -484,4 +484,7 @@ export interface ICustomer {
   customerContactInfo: IPersonContactInfo;
   customerCompanyContactInfo: ICompanyContactInfo;
   customerNote: string;
+  TotalPaidAmount: number;
+  CountCompletedOrder: number;
+  AvgPaidAmount: number;
 }
