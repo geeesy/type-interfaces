@@ -295,6 +295,9 @@ export interface ICustomerWithOrder
     IOrderCustomerData {
   latestOrderType: TOrderType;
   latestOrderId: string;
+  TotalPaidAmount: number;
+  CountCompletedOrder: number;
+  AvgPaidAmount: number;
 }
 
 /**
