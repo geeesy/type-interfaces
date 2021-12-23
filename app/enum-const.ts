@@ -224,6 +224,36 @@ export enum SaleChannelType {
   Other = 'other'
 }
 
+export const OrderTypeAttr = {
+  orderLink: {
+    title_th: 'ออเดอร์ออนไลน์',
+    title_en: 'Order Link'
+  },
+  salePage: {
+    title_th: 'เซลเพจ',
+    title_en: 'Sale Page'
+  },
+  gappMarket: {
+    title_th: 'มาร์เก็ตเพลส',
+    title_en: 'GAPP market'
+  },
+  gappBiz: {
+    title_th: 'ออเดอร์',
+    title_en: 'Order'
+  }
+};
+
+export const OrderSubTypeAttr = {
+  service: {
+    title_th: 'บริการ',
+    title_en: 'Service'
+  },
+  product: {
+    title_th: 'สินค้า',
+    title_en: 'Product'
+  }
+};
+
 export const SaleChannelTypeArr = [
   {
     text: 'ช่องทางขายสินค้าออนไลน์',
