@@ -195,6 +195,7 @@ export interface IDBListOrderByProduct
 
 // ANCHOR: ORDER | Entity (8/10)
 export interface IOrderLinkData {
+  saleChannelId: string;
   channel: SaleChannelSubType;
   expiryTimestamp: number; //timestamp
   shippingAvailableIds: string[]; // * USE ID FOR LATER
