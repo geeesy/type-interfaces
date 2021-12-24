@@ -456,6 +456,7 @@ export interface IDBProductGroupImmu {
 export interface ISeoMeta {
   title: string;
   imageUrl: string;
+  imageFacebook: string;
+  imageTwitter: string;
   description: string;
-  
 }
