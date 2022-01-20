@@ -296,6 +296,11 @@ export interface ICompanyPublicEntity {
   setting: ICompanySetting;
 }
 
+export interface IShopeeToken {
+  accessToken: string
+  refreshToken: string
+}
+
 // ANCHOR: COMPANY | Entity (7/7)
 // === Not show on public as Private Entity
 export interface ICompanyPrivateEntity {
@@ -304,6 +309,7 @@ export interface ICompanyPrivateEntity {
   companySize: TBusinessSize;
   companyInterests: string[];
   useApprovalWorkflow: TApproverFlow;
+  shopeeToken: IShopeeToken
 }
 
 // --------------------------------
