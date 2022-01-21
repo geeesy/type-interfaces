@@ -280,6 +280,7 @@ export interface ISellerUpdateOrderStatus {
   newSellerStatus: StatusOrderSeller;
   orderType: TOrderType;
   toFinalizeStock: boolean;
+  toCompleteShipping?: boolean;
 }
 
 // FIXME: to remove interface (dup)
