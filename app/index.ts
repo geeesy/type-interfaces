@@ -274,6 +274,7 @@ import {
   ILeadpage,
   ILeadpageId,
   IListOrder,
+  ILogOrder,
   IOrderAccountingOnly,
   IOrderCustomerData,
   IOrderCustomerDataImmu,
@@ -925,6 +926,7 @@ export namespace GappBiz {
     IDBLogTime;
   export type LeadpageCreate = IDBOrderSellerDataImmu & ILeadpage;
   export type Leadpage = IDBOrderSellerDataImmu & ILeadpage & ILeadpageId;
+  export type LogOrder = ILogOrder;
 }
 
 // REVIEW: G-MARKET

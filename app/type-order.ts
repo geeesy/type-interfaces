@@ -320,3 +320,22 @@ export interface ILeadpage {
 export interface ILeadpageId {
   leadpageId: string;
 }
+
+export interface ILogOrderValue extends 
+IOrderCustomerData,
+IDBOrderEntity,
+IOrderEntity,
+IOrderLinkData
+{
+
+}
+
+export interface ILogOrder {
+  updatedBy: string;
+  updatedAt: string;
+  note?: string;
+  oldStatus: IDBOrderStatus;
+  newStatus: IDBOrderStatus;
+  oldValue: ILogOrderValue;
+  newValue: ILogOrderValue;
+}
