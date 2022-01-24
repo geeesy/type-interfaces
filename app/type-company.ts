@@ -299,6 +299,7 @@ export interface ICompanyPublicEntity {
 export interface IShopeeToken {
   accessToken: string
   refreshToken: string
+  expireIn: number
 }
 
 // ANCHOR: COMPANY | Entity (7/7)
