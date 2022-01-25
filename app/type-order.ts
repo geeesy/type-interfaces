@@ -202,6 +202,7 @@ export interface IOrderLinkData {
   paymentAvailableIds: string[]; // * USE ID FOR LATER
   shippingAvailableData: GappSetting.ShippingMethod[];
   paymentAvailableData: GappSetting.PaymentMethod[];
+  hasNoShipment: boolean;
 }
 
 // ANCHOR: ORDER | Entity (9/10)
