@@ -161,7 +161,7 @@ export interface IOrderEntity {
 }
 
 export interface IOrderAccountingOnly{
-  accountingData?: IOrderAccounting;
+  accountingData: IOrderAccounting;
 }
 
 // ANCHOR: ORDER | Entity (7/7)
@@ -281,7 +281,7 @@ export interface ISellerUpdateOrderStatus {
   newSellerStatus: StatusOrderSeller;
   orderType: TOrderType;
   toFinalizeStock: boolean;
-  toCompleteShipping?: boolean;
+  toCompleteShipping: boolean;
 }
 
 // FIXME: to remove interface (dup)
