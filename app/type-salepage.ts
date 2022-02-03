@@ -51,6 +51,8 @@ export interface ISalePageEntity {
   settingGoogle: ISettingGoogle;
   settingLine: ISettingLine;
   settingSeo: ISeoMeta;
+  startDate: Date;
+  endDate: Date;
 }
 
 // ANCHOR: SALE PAGE | Entity (4/4)
