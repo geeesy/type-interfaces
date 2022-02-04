@@ -300,7 +300,8 @@ export enum ShippingMethodType {
   BasedByPcs = 'basedByPcs',
   BasedByStepPcs = 'basedByStepPcs',
   BasedByStepWeight = 'basedByStepWeight',
-  BasedByOrderPrice = 'basedByOrderPrice'
+  BasedByOrderPrice = 'basedByOrderPrice',
+  Pickup = 'pickup'
 }
 
 export const ShippingMethodTypeArr = [

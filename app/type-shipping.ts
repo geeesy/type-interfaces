@@ -9,6 +9,7 @@ export type TShippingParty =
   | 'grab'
   | 'lalamove'
   | 'lineman'
+  | 'pickup'
   | 'other';
 
 // ANCHOR: Shipping Method Attribute (Type 1)
@@ -68,6 +69,11 @@ export interface IShippingMethodTypeBasedByOrderPrice {
   caption: string
 }
 
+// ANCHOR: Shipping Method Attribute (Type 7)
+export interface IShippingMethodTypePickup {
+  caption: string;
+}
+
 // REVIEW: SHIPPING METHOD
 export interface IDBShippingMethodImmu {
   shippingMethodId: string;
@@ -85,7 +91,8 @@ export interface IShippingMethodEntityImmu {
   | ShippingMethodType.BasedByPcs 
   | ShippingMethodType.BasedByStepPcs 
   | ShippingMethodType.BasedByStepWeight 
-  | ShippingMethodType.BasedByOrderPrice;
+  | ShippingMethodType.BasedByOrderPrice
+  | ShippingMethodType.Pickup;
 }
 
 export interface IShippingMethodEntity {
@@ -104,7 +111,8 @@ export interface IShippingMethodEntity {
     | IShippingMethodTypeBasedByPcs
     | IShippingMethodTypeBasedByStepPcs
     | IShippingMethodTypeBasedByStepWeight
-    | IShippingMethodTypeBasedByOrderPrice;
+    | IShippingMethodTypeBasedByOrderPrice
+    | IShippingMethodTypePickup;
 }
 
 export interface IUpdateMarketShippingMethod {
