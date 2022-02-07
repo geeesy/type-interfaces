@@ -19,8 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a19b798-daac-433f-bb9b-6132570f93cd" name="Default Changelist" comment="update">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="8a19b798-daac-433f-bb9b-6132570f93cd" name="Default Changelist" comment="update admin">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/main.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +37,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="4" />
     <option name="recentBranches">
       <RecentBranches>
         <option name="branchesForRepo">
@@ -112,6 +114,7 @@
       <workItem from="1613640205285" duration="1064000" />
       <workItem from="1628573231756" duration="1036000" />
       <workItem from="1644234829994" duration="59000" />
+      <workItem from="1644239945197" duration="341000" />
     </task>
     <task id="LOCAL-00001" summary="update and resolve conflict">
       <created>1612688719981</created>
@@ -127,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612865120381</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="update admin">
+      <created>1644236073548</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1644236073548</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -154,7 +164,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="master" />
+                        <option value="dev" />
                       </list>
                     </value>
                   </entry>
@@ -171,6 +181,17 @@
     <MESSAGE value="update" />
     <MESSAGE value="check protected branch" />
     <MESSAGE value="check protected for admin" />
-    <option name="LAST_COMMIT_MESSAGE" value="check protected for admin" />
+    <MESSAGE value="update admin" />
+    <option name="LAST_COMMIT_MESSAGE" value="update admin" />
+  </component>
+  <component name="regexState">
+    <option name="map">
+      <map>
+        <entry key="flags" value="0" />
+        <entry key="mode" value="0" />
+        <entry key="regex" value="(19||20)\d\d([- /.])(0[1-9]||1[012])\2(0[1-9]||[12][0-9]||3[01])" />
+        <entry key="text" value="1900-01-01 2007/08/13 1900.01.01 1900 01 01 1900-01.01 1900 13 01 1900 02 31" />
+      </map>
+    </option>
   </component>
 </project>
