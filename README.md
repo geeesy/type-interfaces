@@ -60,4 +60,5 @@ test bypass pr
 update
 fix
 check protected branch
+check protected for admin
 
