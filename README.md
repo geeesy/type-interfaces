@@ -53,5 +53,5 @@ export class AnyService {
 ```
 ...
 
-check github action 0
+check github action push
 
