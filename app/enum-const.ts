@@ -8,7 +8,9 @@ export enum DocPrefixFormat {
   billingNote = 'BN',
   receipt = 'RE',
   invoice = 'INV',
-  taxInvoice = 'TIV'
+  taxInvoice = 'TIV',
+  order = 'OD',
+  market = 'GM'
 }
 
 export enum DocWorkSeqIdCount {
@@ -18,12 +20,45 @@ export enum DocWorkSeqIdCount {
   po = 'CountPO',
   so = 'CountSO',
   billingNote = 'CountBillingNote',
-  invoice = 'CountInvoice',
+  invoice = 'CountInvoice'
 }
 
 export enum DocFinanceSeqIdCount {
   receipt = 'CountReceipt',
   taxInvoice = 'CountTaxInvoice'
+}
+
+export enum DocOrderSeqIdCount {
+  order = 'CountOrder',
+  market = 'CountMarket'
+}
+
+export enum CountForCompanyMetric {
+  lowStockProduct = 'TotalLowStockProduct',
+  placedOrder = 'TotalPlacedOrder',
+  awaitingPaymentOrder = 'TotalAwaitingPaymentOrder',
+  toConfirmPaymentOrder = 'TotalToConfirmPaymentOrder',
+  packedOrder = 'TotalPackedOrder',
+  shippedOrder = 'TotalShippedOrder',
+  repliedSalepage = 'TotalRepliedSalepage',
+  product = 'TotalProduct',
+  placedOrderAmount = 'TotalPlacedOrderAmount',
+  toConfirmPaymentOrderAmount = 'TotalToConfirmOrderPaymentAmount',
+  awaitingPaymentOrderAmount = 'TotalAwaitingPaymentOrderAmount',
+  packedOrderAmount = 'TotalPackedOrderAmount',
+  shippedOrderAmount = 'TotalShippedOrderAmount',
+  awaitingConfirmOrder = 'TotalAwaitingConfirmOrder',
+  awaitingConfirmOrderAmount = 'TotalAwaitingConfirmOrderAmount',
+}
+
+export enum ReportForCompanyMetric {
+  netSales = 'NetSales',
+  productsSold = 'TotalProductsSold',
+  itemsSold = 'TotalItemsSold',
+  netOrderLinkSales = 'NetOrderLinkSales',
+  netSalePageSales = 'NetSalePageSales',
+  netGappMarketSales = 'NetGappMarketSales',
+  netGappBizSales = 'NetGappBizSales'
 }
 
 export enum CurrencyTranslateTH {
@@ -32,11 +67,10 @@ export enum CurrencyTranslateTH {
   CNY = 'หยวน'
 }
 
-
 export enum CurrencyCode {
   THAI = 'THB',
   USA = 'USD',
-  CHINA = 'CNY',
+  CHINA = 'CNY'
 }
 
 export enum UnitTH {
@@ -62,13 +96,13 @@ export const SearchPageArr = [
   SearchPage.Product,
   SearchPage.Supplier,
   SearchPage.Location
-]
+];
 
 export enum StatusPoolJoining {
   Joined = 'joined',
   Cancel = 'cancel',
-  RequestCancel = 'request-cancel',
-  AcceptedCancel = 'accepted-cancel'
+  RequestCancel = 'request_cancel',
+  AcceptedCancel = 'accepted_cancel'
 }
 
 export enum StatusPoolShippingMainBuyer {
@@ -97,109 +131,366 @@ export enum StatusPoolShippingSubBuyer {
 
 // export const FunnelBusinessTypes = ['manufacturer', 'wholesaler', 'retailer']
 
-export const ValidUntilDate = [7, 15, 30, 60, 90]
+export const ValidUntilDate = [7, 15, 30, 60, 90];
 
-export const CreditDay = [30, 45, 60, 90]
+export const CreditDay = [30, 45, 60, 90];
+
+export enum SaleChannelSubType {
+  GappMed = 'gappMed',
+  GappBiz = 'gappBiz',
+  Lazada = 'lazada',
+  Shopee = 'shopee',
+  JD = 'jd',
+  Facebook = 'facebook',
+  Line = 'line',
+  Ig = 'ig',
+  WeChat = 'weChat',
+  WhatsApp = 'whatsApp',
+  Youtube = 'youtube',
+  Website = 'website',
+  Phone = 'phone',
+  CallCenter = 'callCenter',
+  Store = 'store',
+  Other = 'other'
+}
+
+export const SaleChannelSubTypeArr = [
+  {
+    text: 'GAPP med',
+    value: SaleChannelSubType.GappMed
+  },
+  {
+    text: 'GAPP Biz',
+    value: SaleChannelSubType.GappBiz
+  },
+  {
+    text: 'Lazada',
+    value: SaleChannelSubType.Lazada
+  },
+  {
+    text: 'Shopee',
+    value: SaleChannelSubType.Shopee
+  },
+  {
+    text: 'JD Central',
+    value: SaleChannelSubType.JD
+  },
+  {
+    text: 'Facebook',
+    value: SaleChannelSubType.Facebook
+  },
+  {
+    text: 'LINE',
+    value: SaleChannelSubType.Line
+  },
+  {
+    text: 'Instagram',
+    value: SaleChannelSubType.Ig
+  },
+  {
+    text: 'WeChat',
+    value: SaleChannelSubType.WeChat
+  },
+  {
+    text: 'WhatsApp',
+    value: SaleChannelSubType.WhatsApp
+  },
+  {
+    text: 'Youtube',
+    value: SaleChannelSubType.Youtube
+  },
+  {
+    text: 'Website',
+    value: SaleChannelSubType.Website
+  },
+  {
+    text: 'Phone',
+    value: SaleChannelSubType.Phone
+  },
+  {
+    text: 'Call Center',
+    value: SaleChannelSubType.CallCenter
+  },
+  {
+    text: 'หน้าร้าน / สาขา',
+    value: SaleChannelSubType.Store
+  }
+];
+
+export enum SaleChannelType {
+  Online = 'online',
+  Social = 'social',
+  Offline = 'offline',
+  Other = 'other'
+}
+
+export const OrderTypeAttr = {
+  orderLink: {
+    title_th: 'ออเดอร์ออนไลน์',
+    title_en: 'Order Link'
+  },
+  salePage: {
+    title_th: 'เซลเพจ',
+    title_en: 'Sale Page'
+  },
+  gappMarket: {
+    title_th: 'มาร์เก็ตเพลส',
+    title_en: 'GAPP market'
+  },
+  gappBiz: {
+    title_th: 'ออเดอร์',
+    title_en: 'Order'
+  }
+};
+
+export const OrderSubTypeAttr = {
+  service: {
+    title_th: 'บริการ',
+    title_en: 'Service'
+  },
+  product: {
+    title_th: 'สินค้า',
+    title_en: 'Product'
+  }
+};
+
+export const SaleChannelTypeArr = [
+  {
+    text: 'ช่องทางขายสินค้าออนไลน์',
+    value: SaleChannelType.Online
+  },
+  {
+    text: 'ช่องทางขายสินค้าโซเชียลมีเดีย',
+    value: SaleChannelType.Social
+  },
+  {
+    text: 'ช่องทางขายสินค้าออฟไลน์',
+    value: SaleChannelType.Offline
+  },
+  {
+    text: 'ช่องทางขายอื่นๆ',
+    value: SaleChannelType.Other
+  }
+];
+
+export enum BankAccountType {
+  Saving = 'saving',
+  Current = 'current'
+}
+
+export const BankAccountTypeArr = [
+  {
+    text: 'บัญชีออมทรัพย์',
+    value: BankAccountType.Saving
+  },
+  {
+    text: 'บัญชีกระแสรายวัน',
+    value: BankAccountType.Current
+  }
+];
+
+export enum PaymentMethodType {
+  BankDeposit = 'bankDeposit',
+  COD = 'COD'
+}
+
+export enum ShippingMethodType {
+  Free = 'free',
+  FixedRate = 'fixedRate',
+  BasedByPcs = 'basedByPcs',
+  BasedByStepPcs = 'basedByStepPcs',
+  BasedByStepWeight = 'basedByStepWeight',
+  BasedByOrderPrice = 'basedByOrderPrice',
+  Pickup = 'pickup'
+}
+
+export const ShippingMethodTypeArr = [
+  {
+    text: 'ฟรี ไม่เก็บค่าจัดส่ง',
+    value: ShippingMethodType.Free
+  },
+  {
+    text: 'กำหนดค่าจัดส่งแบบคงที่',
+    value: ShippingMethodType.FixedRate
+  },
+  {
+    text: 'คิดตามจำนวนสินค้า (คิดเป็นชิ้น)',
+    value: ShippingMethodType.BasedByPcs
+  },
+  {
+    text: 'คิดตามจำนวนสินค้า',
+    value: ShippingMethodType.BasedByStepPcs
+  },
+  {
+    text: 'คิดตามน้ำหนักรวมของสินค้า',
+    value: ShippingMethodType.BasedByStepWeight
+  },
+  {
+    text: 'คิดตามราคาของสินค้าหลังหักส่วนลดแล้ว',
+    value: ShippingMethodType.BasedByOrderPrice
+  }
+];
 
 export const RfqCreditTermArr = [
   {
-    text: 'ไม่ระบุ', value: 'none'
+    text: 'ไม่ระบุ',
+    value: 'none'
   },
   {
-    text: 'เงินสด', value: 'cash'
+    text: 'เงินสด',
+    value: 'cash'
   },
   {
-    text: '30 วัน', value: '30'
+    text: '30 วัน',
+    value: '30'
   },
   {
-    text: '45 วัน', value: '45'
+    text: '45 วัน',
+    value: '45'
   },
   {
-    text: '60 วัน', value: '60'
+    text: '60 วัน',
+    value: '60'
   },
   {
-    text: '90 วัน', value: '90'
+    text: '90 วัน',
+    value: '90'
   }
-]
+];
+
+export type TPackageUnit = 'm' | 'cm' | 'mm' | 'inch' | 'ft';
 
 export const PackageUnitArr = [
   {
-    text: 'มิลลิเมตร', value: 'mm'
+    text: 'เมตร',
+    value: 'm'
   },
   {
-    text: 'เซนติเมตร', value: 'cm'
+    text: 'เซนติเมตร',
+    value: 'cm'
   },
   {
-    text: 'เมตร', value: 'm'
+    text: 'มิลลิเมตร',
+    value: 'mm'
   },
   {
-    text: 'นิ้ว', value: 'inch'
+    text: 'นิ้ว',
+    value: 'inch'
   },
   {
-    text: 'ฟุต', value: 'ft'
+    text: 'ฟุต',
+    value: 'ft'
   }
-]
+];
+
+export type TPackageWeightUnit = 'kg' | 'g' | 'oz' | 'lb' | 'ton';
 
 export const PackageWeightUnitArr = [
   {
-    text: 'กรัม', value: 'g'
+    text: 'กิโลกรัม',
+    value: 'kg'
   },
   {
-    text: 'กิโลกรัม', value: 'kg'
+    text: 'กรัม',
+    value: 'g'
   },
   {
-    text: 'ออนซ์', value: 'oz'
+    text: 'ออนซ์',
+    value: 'oz'
   },
   {
-    text: 'ปอนด์', value: 'lb'
+    text: 'ปอนด์',
+    value: 'lb'
   },
   {
-    text: 'ตัน', value: 'ton'
+    text: 'ตัน',
+    value: 'ton'
   }
-
-]
+];
 
 export const RfqPaymentMethodArr = [
   {
-    text: 'โอนเงิน', value: 'deposit'
+    text: 'โอนเงิน',
+    value: 'deposit'
   },
   {
-    text: 'เช็ค', value: 'cheque'
+    text: 'เช็ค',
+    value: 'cheque'
   },
   {
-    text: 'บัตรเครดิต', value: 'creditCard'
+    text: 'บัตรเครดิต',
+    value: 'creditCard'
   },
   {
-    text: 'ชำระปลายทาง', value: 'onDelivery'
+    text: 'ชำระปลายทาง',
+    value: 'onDelivery'
   }
-]
+];
 
 export const FunnelBusinessSizeArr = [
   {
-    text: 'ขนาดย่อย (Micro)', value: 'micro'
+    text: 'ขนาดย่อย (Micro)',
+    value: 'micro'
   },
   {
-    text: 'ขนาดย่อม (S)', value: 'small'
+    text: 'ขนาดย่อม (S)',
+    value: 'small'
   },
   {
-    text: 'ขนาดกลาง (M)', value: 'medium'
+    text: 'ขนาดกลาง (M)',
+    value: 'medium'
   },
   {
-    text: 'ขนาดใหญ่ (L)', value: 'large'
+    text: 'ขนาดใหญ่ (L)',
+    value: 'large'
   }
-]
+];
 
 export const FunnelBusinessTypeArr = [
   {
-    text: 'ผู้ผลิต', value: 'manufacturer'
+    text: 'ผู้ผลิต',
+    value: 'manufacturer'
   },
   {
-    text: 'ผู้ค้าส่ง', value: 'wholesaler'
+    text: 'ผู้ค้าส่ง',
+    value: 'wholesaler'
   },
   {
-    text: 'ผู้ค้าปลีก', value: 'retailer'
+    text: 'ผู้ค้าปลีก',
+    value: 'retailer'
   }
-]
+];
+
+export type TBankName =
+  | 'BBL'
+  | 'KBANK'
+  | 'KTB'
+  | 'SCB'
+  | 'CIMB'
+  | 'UOB'
+  | 'BAY'
+  | 'GSB'
+  | 'BAAC'
+  | 'KK'
+  | 'ICBC'
+  | 'LHB'
+  | 'TTB';
+
+export enum BankName {
+  BBL = 'BBL',
+  KBANK = 'KBANK',
+  KTB = 'KTB',
+  SCB = 'SCB',
+  CIMB = 'CIMB',
+  UOB = 'UOB',
+  BAY = 'BAY',
+  GSB = 'GSB',
+  BAAC = 'BAAC',
+  KK = 'KK',
+  ICBC = 'ICBC',
+  LHB = 'LHB',
+  TTB = 'TTB'
+}
 
 export const BankList = {
   bbl: {
@@ -207,100 +498,107 @@ export const BankList = {
     color: '#1e4598',
     official_name: 'BANGKOK BANK PUBLIC COMPANY LTD.',
     official_name_thai: 'ธนาคารกรุงเทพ',
-    nice_name: 'Bangkok Bank'
+    nice_name: 'Bangkok Bank',
+    acronym: BankName.BBL
   },
   kbank: {
     code: '004',
     color: '#138f2d',
     official_name: 'KASIKORNBANK PUBLIC COMPANY LTD.',
     official_name_thai: 'ธนาคารกสิกรไทย',
-    nice_name: 'Kasikornbank'
+    nice_name: 'Kasikornbank',
+    acronym: BankName.KBANK
   },
   ktb: {
     code: '006',
     color: '#1ba5e1',
     official_name: 'KRUNG THAI BANK PUBLIC COMPANY LTD.',
     official_name_thai: 'ธนาคารกรุงไทย',
-    nice_name: 'Krungthai Bank'
+    nice_name: 'Krungthai Bank',
+    acronym: BankName.KTB
   },
-  tmb: {
+  ttb: {
     code: '011',
-    color: '#1279be',
-    official_name: 'TMB BANK PUBLIC COMPANY LIMITED.',
-    official_name_thai: 'ธนาคารทหารไทย',
-    nice_name: 'TMB Bank'
+    color: '#114ff1',
+    official_name: 'TTB BANK',
+    official_name_thai: 'ธนาคารทีเอ็มบีธนชาติ',
+    nice_name: 'TTB Bank',
+    acronym: BankName.TTB
   },
   scb: {
     code: '014',
     color: '#4e2e7f',
     official_name: 'SIAM COMMERCIAL BANK PUBLIC COMPANY LTD.',
     official_name_thai: 'ธนาคารไทยพาณิชย์',
-    nice_name: 'Siam Commercial Bank'
+    nice_name: 'Siam Commercial Bank',
+    acronym: BankName.SCB
   },
   cimb: {
     code: '022',
     color: '#7e2f36',
     official_name: 'CIMB THAI BANK PUPBLIC COMPANY LTD.',
     official_name_thai: 'ธนาคารซีไอเอ็มบี',
-    nice_name: 'CIMB Thai Bank'
+    nice_name: 'CIMB Thai Bank',
+    acronym: BankName.CIMB
   },
   uob: {
     code: '024',
     color: '#0b3979',
     official_name: 'UNITED OVERSEAS BANK (THAI) PUBLIC COMPANY LIMITED',
     official_name_thai: 'ธนาคารยูโอบี',
-    nice_name: 'United Overseas Bank (Thai)'
+    nice_name: 'United Overseas Bank (Thai)',
+    acronym: BankName.UOB
   },
   bay: {
     code: '025',
     color: '#fec43b',
     official_name: 'BANK OF AYUDHYA PUBLIC COMPANY LTD.',
     official_name_thai: 'ธนาคารกรุงศรีอยุธยา',
-    nice_name: 'Krungsri'
+    nice_name: 'Krungsri',
+    acronym: BankName.BAY
   },
   gsb: {
     code: '030',
     color: '#eb198d',
     official_name: 'THE GOVERNMENT SAVINGS BANK',
     official_name_thai: 'ธนาคารออมสิน',
-    nice_name: 'Government Savings Bank'
+    nice_name: 'Government Savings Bank',
+    acronym: BankName.GSB
   },
   baac: {
     code: '034',
     color: '#4b9b1d',
     official_name: 'BANK FOR AGRICULTURE AND AGRICULTURAL COOPERATIVES',
     official_name_thai: 'ธนาคารเพื่อการเกษตร',
-    nice_name: 'Bank for Agriculture and Agricultural Cooperatives'
-  },
-  tbank: {
-    code: '065',
-    color: '#fc4f1f',
-    official_name: 'THANACHART BANK PUBLIC COMPANY LTD.',
-    official_name_thai: 'ธนาคารธนชาติ',
-    nice_name: 'Thanachart Bank'
+    nice_name: 'Bank for Agriculture and Agricultural Cooperatives',
+    acronym: BankName.BAAC
   },
   kk: {
     code: '069',
     color: '#199cc5',
     official_name: 'KIATNAKIN BANK PUBLIC COMPANY LIMITED',
     official_name_thai: 'ธนาคารเกียรตินาคิน',
-    nice_name: 'Kiatnakin Bank'
+    nice_name: 'Kiatnakin Bank',
+    acronym: BankName.KK
   },
   icbc: {
     code: '070',
     color: '#c50f1c',
-    official_name: 'INDUSTRIAL AND COMMERCIAL BANK OF CHINA (THAI) PUBLIC COMPANY LIMITED',
+    official_name:
+      'INDUSTRIAL AND COMMERCIAL BANK OF CHINA (THAI) PUBLIC COMPANY LIMITED',
     official_name_thai: 'ธนาคารไอซีบีซี',
-    nice_name: 'Industrial and Commercial Bank of China (Thai)'
+    nice_name: 'Industrial and Commercial Bank of China (Thai)',
+    acronym: BankName.ICBC
   },
   lhb: {
     code: '073',
     color: '#6d6e71',
     official_name: 'LAND AND HOUSES BANK PUBLIC COMPANY LIMITED',
     official_name_thai: 'ธนาคารแลนด์ แอนด์ เฮ้าส์ ',
-    nice_name: 'Land and Houses Bank'
+    nice_name: 'Land and Houses Bank',
+    acronym: BankName.LHB
   }
-}
+};
 
 export const BankListArr = [
   {
@@ -316,8 +614,8 @@ export const BankListArr = [
     value: BankList.ktb.official_name_thai
   },
   {
-    text: BankList.tmb.official_name_thai,
-    value: BankList.tmb.official_name_thai
+    text: BankList.ttb.official_name_thai,
+    value: BankList.ttb.official_name_thai
   },
   {
     text: BankList.scb.official_name_thai,
@@ -344,10 +642,6 @@ export const BankListArr = [
     value: BankList.baac.official_name_thai
   },
   {
-    text: BankList.tbank.official_name_thai,
-    value: BankList.tbank.official_name_thai
-  },
-  {
     text: BankList.kk.official_name_thai,
     value: BankList.kk.official_name_thai
   },
@@ -359,4 +653,4 @@ export const BankListArr = [
     text: BankList.lhb.official_name_thai,
     value: BankList.lhb.official_name_thai
   }
-]
+];

@@ -1,8 +1,39 @@
 {
   "cSpell.words": [
-    "GAPP",
-    "Geeesy",
     "amphoe",
-    "tambon"
-  ]
+    "GAPP",
+    "GAPPMARKET",
+    "Geeesy",
+    "Immu",
+    "lalamove",
+    "Lazada",
+    "SALEPAGE",
+    "Shopee",
+    "tambon",
+    "thaipost",
+    "Vatable",
+    "ค่าขนส่ง",
+    "ค่าเพิ่มเติม",
+    "จ่าย",
+    "ภาษีมูลค่าเพิ่ม",
+    "ภาษีหัก",
+    "ยอดที่ต้องชำระทั้งสิ้น",
+    "ยอดรวมก่อนภาษี",
+    "ยอดรวมทั้งสิ้น",
+    "รวมเงิน",
+    "ส่วนลดเพิ่มเติม",
+    "ส่วนลดรวม",
+    "อัตราหัก"
+  ],
+  "editor.tabSize": 2,
+  "[typescript]": {
+    "editor.formatOnPaste": false,
+    "editor.formatOnSave": false
+  },
+  "[json]": {
+    "editor.formatOnPaste": false,
+    "editor.formatOnSave": false
+  },
+  "editor.formatOnPaste": false,
+  "editor.formatOnSave": false
 }

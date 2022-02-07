@@ -1,26 +1,38 @@
 /* #region STUB: Version 3.x */
 
-import { DocFinanceSeqIdCount, DocWorkSeqIdCount, StatusPoolJoining, StatusPoolShippingMainBuyer, StatusPoolShippingSubBuyer } from "./enum-const";
-import { IAddress, ICompanyContactInfo } from "./type-company";
+import {
+  DocFinanceSeqIdCount,
+  DocOrderSeqIdCount,
+  DocWorkSeqIdCount,
+  StatusPoolJoining,
+  StatusPoolShippingMainBuyer,
+  StatusPoolShippingSubBuyer
+} from './enum-const';
+import { IAddress, ICompanyContactInfo } from './type-company';
 
 export interface IDBCompanyDocHeader {
-  receiverCompLogo: string
-  senderCompLogo: string
+  receiverCompLogo: string;
+  senderCompLogo: string;
 }
 
 export interface IDocWorkCount {
-  [DocWorkSeqIdCount.inquiry]: number
-  [DocWorkSeqIdCount.rfq]: number
-  [DocWorkSeqIdCount.quotation]: number
-  [DocWorkSeqIdCount.po]: number
-  [DocWorkSeqIdCount.so]: number
-  [DocWorkSeqIdCount.billingNote]: number
-  [DocWorkSeqIdCount.invoice]: number
+  [DocWorkSeqIdCount.inquiry]: number;
+  [DocWorkSeqIdCount.rfq]: number;
+  [DocWorkSeqIdCount.quotation]: number;
+  [DocWorkSeqIdCount.po]: number;
+  [DocWorkSeqIdCount.so]: number;
+  [DocWorkSeqIdCount.billingNote]: number;
+  [DocWorkSeqIdCount.invoice]: number;
 }
 
 export interface IDocFinanceCount {
-  [DocFinanceSeqIdCount.receipt]: number
-  [DocFinanceSeqIdCount.taxInvoice]: number
+  [DocFinanceSeqIdCount.receipt]: number;
+  [DocFinanceSeqIdCount.taxInvoice]: number;
+}
+
+export interface IDocOrderCount {
+  [DocOrderSeqIdCount.order]: number;
+  [DocOrderSeqIdCount.market]: number;
 }
 
 export interface IApprove {
@@ -31,32 +43,34 @@ export interface IApprove {
 }
 
 export interface IApprovalRule {
-  rfqTypeR: boolean
-  quotationTypeM: boolean
-  quotationTypeR: boolean
-  quotationTypeD: boolean
-  poTypeR: boolean
-  poTypeS: boolean
-  poTypeD: boolean
-  soTypeR: boolean
-  soTypeS: boolean
-  soTypeD: boolean
+  rfqTypeR: boolean;
+  quotationTypeM: boolean;
+  quotationTypeR: boolean;
+  quotationTypeD: boolean;
+  poTypeR: boolean;
+  poTypeS: boolean;
+  poTypeD: boolean;
+  soTypeR: boolean;
+  soTypeS: boolean;
+  soTypeD: boolean;
 }
 
 export interface IApproverFormCreate {
-  formGroupPerson: IApprove
-  formGroupApprovalRule: IApprovalRule
+  formGroupPerson: IApprove;
+  formGroupApprovalRule: IApprovalRule;
 }
 
 export interface IApproverFormCreateParams {
-  sellerId: string
-  buyerId: string
+  sellerId: string;
+  buyerId: string;
 }
 
-export interface IApprover extends IApproverFormCreate, IApproverFormCreateParams {
-  approverId: string
-  createdAt: string
-  updatedAt: string
+export interface IApprover
+  extends IApproverFormCreate,
+    IApproverFormCreateParams {
+  approverId: string;
+  createdAt: string;
+  updatedAt: string;
 }
 
 export interface IResApprover {
@@ -81,10 +95,10 @@ export interface ISocial {
 
 // TODO: cloned to type-company
 export interface ICompanyBankingInfo {
-  accountType: string
-  bankName: string
-  bankBranch: string
-  accountNumber: string
+  accountType: string;
+  bankName: string;
+  bankBranch: string;
+  accountNumber: string;
 }
 
 // TODO: cloned to type-company
@@ -108,50 +122,53 @@ export interface IPersonContactInfo {
   social?: ISocial;
   address?: IAddress;
   note?: string;
+  shippingAddress?: IAddress[];
 }
 
-
 // STUB: VENDOR
-export type TVendorType = 'seller' | 'buyer' | 'multi'
+export type TVendorType = 'seller' | 'buyer' | 'multi' | 'other';
 
 export interface IVendorCreateParams {
-  compId: string
-  identityId: string
+  compId: string;
+  identityId: string;
 }
 
 export interface IVendorCreate extends ICompanyContactInfo {
-  companyLogoUrl: string // * Scale down on init
-  contactPersons: IPersonContactInfo[]
-  vendorType: TVendorType
-  remark: string
-  note: string
+  companyLogoUrl: string; // * Scale down on init
+  contactPersons: IPersonContactInfo[];
+  vendorType: TVendorType;
+  remark: string;
+  note: string;
 }
 
 export interface IRefVendorList {
-  createdAt: string
-  updatedAt: string
-  companyLogoUrl: string
-  companyName: string
+  createdAt: string;
+  updatedAt: string;
+  companyLogoUrl: string;
+  companyName: string;
   contactAddress: IAddress;
   companyPhones: string[];
   companyEmails: string[];
   companyNote?: string;
-  vendorId: string
+  vendorId: string;
+  vendorType: TVendorType;
+  isCompanyVendor: boolean;
 }
 
 export interface IVendor extends IVendorCreate {
-  createdAt: string
-  updatedAt: string
-  createdBy: string
-  vendorId: string
-  relCompId: string
+  createdAt: string;
+  updatedAt: string;
+  createdBy: string;
+  vendorId: string;
+  relCompId: string;
+  isCompanyVendor: boolean;
 }
 
 export interface ICompanyOnList {
-  compId: string // * Company have, BUT Vendor maybe
-  contact: ICompanyContactInfo
-  companyLogoUrl: string
-  supplierId: string // * Vendor have, BUT Company maybe
+  compId: string; // * Company have, BUT Vendor maybe
+  contact: ICompanyContactInfo;
+  companyLogoUrl: string;
+  supplierId: string; // * Vendor have, BUT Company maybe
   //! INDEX on CORE
   isVerified: boolean;
   rating: number;
@@ -163,63 +180,65 @@ export interface ICompanyOnList {
 }
 
 export interface IVendorRequestList extends ICompanyOnList {
-  createdAt: string
-  updatedAt: string
-  requestId: string
-  vendorType: TVendorType
+  createdAt: string;
+  updatedAt: string;
+  requestId: string;
+  vendorType: TVendorType;
 }
 
 export interface ICompRequestVendor {
-  companyParams: { // ? sender
-    compId: string
-    companyCode: string
-    businessId: string
-    senderId: string // ? identityId
-  }
-  vendorParams: { // ? receiver
-    supplierId: string
-    compId: string
-    receiverId: string
-  }
-  vendorType: TVendorType
+  companyParams: {
+    // ? sender
+    compId: string;
+    companyCode: string;
+    businessId: string;
+    senderId: string; // ? identityId
+  };
+  vendorParams: {
+    // ? receiver
+    supplierId: string;
+    compId: string;
+    receiverId: string;
+  };
+  vendorType: TVendorType;
 }
 
 export interface ICredentialCompany {
-  compId: string
-  companyCode: string
-  businessId: string
-  supplierId: string
+  compId: string;
+  companyCode: string;
+  businessId: string;
+  supplierId: string;
 }
 
 // ! ONLY ON DB
 export interface IDBVendorRequest {
-  createdAt: string
-  updatedAt: string
-  companyInfo: ICompanyOnList
-  vendorInfo: ICompanyOnList
-  requestId: string
-  senderId: string
-  receiverId: string
-  vendorType: TVendorType
-  acceptedAt?: string
-  idOnCompany: ICredentialCompany
-  idOnVendor: ICredentialCompany
+  createdAt: string;
+  updatedAt: string;
+  companyInfo: ICompanyOnList;
+  vendorInfo: ICompanyOnList;
+  requestId: string;
+  senderId: string;
+  receiverId: string;
+  vendorType: TVendorType;
+  acceptedAt?: string;
+  idOnCompany: ICredentialCompany;
+  idOnVendor: ICredentialCompany;
 }
 
 export interface IVendorRequestAccept {
   vendorParams: {
-    compId: string
-    supplierId: string
-    companyCode: string
-    businessId: string
-    acceptorId: string
-  }
+    compId: string;
+    supplierId: string;
+    companyCode: string;
+    businessId: string;
+    acceptorId: string;
+  };
   companyParams: {
-    compId: string
-  }
-  requestId: string
-  vendorType: TVendorType
-  vendorTypeOnAccept: TVendorType
+    compId: string;
+  };
+  requestId: string;
+  vendorType: TVendorType;
+  vendorTypeOnAccept: TVendorType;
 }
 
 export interface ISenderContact {
@@ -233,8 +252,8 @@ export interface IReceiverContact {
 }
 
 export interface IReceiverManyContact extends IReceiverContact {
-  receiverId: string
-  sellerId: string
+  receiverId: string;
+  sellerId: string;
 }
 
 export interface IProductShort {
@@ -243,30 +262,31 @@ export interface IProductShort {
 }
 
 export interface IProductRowEntity {
-  productRowIndex: number
-  productId?: string
-  productTitle: string
+  productRowIndex: number;
+  productId?: string;
+  productTitle: string;
   productUnitPrice: number;
   productUnit: string;
   productQty: number;
-  productInfo?: string
-  isOption: boolean
+  productInfo?: string;
+  isOption: boolean;
 }
 
 export interface IProductRow extends IProductRowEntity {
   productCoverUrl: string;
   productSku?: string;
   discountUnitPrice: number;
+  isDiscountOnPercent: boolean;
   itemsPriceRow: number;
 }
 
 export interface IRfqProductRow extends IProductRowEntity {
-  rfqProductRowIndex: number
+  rfqProductRowIndex: number;
   productImagesUrl: string[];
 }
 
 export interface IRfqQuoProductRow extends IProductRow {
-  rfqProductRowIndex: number
+  rfqProductRowIndex: number;
 }
 
 export interface IPaymentTerm {
@@ -291,7 +311,7 @@ export interface IInquiryFormGroupProduct {
   productCurrency: string;
   productName: string;
   productCoverUrl: string;
-  productImagesUrl: string[]
+  productImagesUrl: string[];
 }
 
 export interface IInquiryFormGroupData {
@@ -325,8 +345,8 @@ export interface IInquiryList {
 }
 
 export interface IInquiry extends IInquiryFormCreateParams, IInquiryList {
-  product: IInquiryFormGroupProduct
-  data: IInquiryFormGroupData
+  product: IInquiryFormGroupProduct;
+  data: IInquiryFormGroupData;
 }
 
 export interface IResInquiryList {
@@ -354,16 +374,16 @@ export interface IRfqMarketFormCreate {
 }
 
 export interface IRfqMarketFormGroupFunnel {
-  businessSizes: string[]
-  businessTypes: string[]
-  companyAge: string
-  haveCertificate: boolean
-  haveVerified: boolean
-  companyProvinces: string[]
+  businessSizes: string[];
+  businessTypes: string[];
+  companyAge: string;
+  haveCertificate: boolean;
+  haveVerified: boolean;
+  companyProvinces: string[];
 }
 
 export interface IRfqMarketFunnel {
-  funnel: IRfqMarketFormGroupFunnel
+  funnel: IRfqMarketFormGroupFunnel;
 }
 
 export interface IRfqMarketFormGroupProduct {
@@ -371,7 +391,7 @@ export interface IRfqMarketFormGroupProduct {
   productKeywords: string[];
   description: string;
   categoryId: string;
-  categoryName: string
+  categoryName: string;
   productQty: number;
   productUnit: string;
   productCurrency: string;
@@ -394,12 +414,12 @@ export interface IRfqMarketFormCreateParams {
 }
 
 export interface IRfqMarketFunnelParams extends IRfqMarketFormCreateParams {
-  sellerId: string
+  sellerId: string;
 }
 
 export interface IRfqMarketList {
-  rfqId: string
-  sender: ISenderContact
+  rfqId: string;
+  sender: ISenderContact;
   expiryDate: string;
   shippingDate: string;
   productTitle: string;
@@ -410,9 +430,9 @@ export interface IRfqMarketList {
   rfqScore: number;
   statusRfqSender: string;
   statusRfqReceiver: string;
-  createdAt: string
-  updatedAt: string
-  senderId: string
+  createdAt: string;
+  updatedAt: string;
+  senderId: string;
 }
 
 export interface IRfqMarket extends IRfqMarketFormCreateParams, IRfqMarketList {
@@ -442,15 +462,15 @@ export interface IRfqFormCreate {
   formGroupData: IRfqFormGroupData;
   formGroupSender: ISenderContact;
   formGroupReceiver: IReceiverContact;
-  formGroupApprover: IRfqFormGroupApprover
+  formGroupApprover: IRfqFormGroupApprover;
 }
 
 export interface IRfqManyFormCreate {
   formGroupProducts: IRfqProductRow[];
   formGroupData: IRfqFormGroupData;
   formGroupSender: ISenderContact;
-  formGroupApprover: IRfqFormGroupApprover
-  formGroupReceivers: IReceiverManyContact[]
+  formGroupApprover: IRfqFormGroupApprover;
+  formGroupReceivers: IReceiverManyContact[];
 }
 
 export interface IRfqFormGroupApprover {
@@ -487,8 +507,8 @@ export interface IRfqFormCreateParams {
 
 export interface IRfqManyFormCreateParams {
   senderId: string;
-  buyerId: string
-  rfqCount: number
+  buyerId: string;
+  rfqCount: number;
 }
 
 export interface IRfqList {
@@ -508,19 +528,19 @@ export interface IRfqList {
   statusReviewerAction: string;
   statusApproverAction: string;
   createdAt: string;
-  updatedAt: string
-  buyerId: string
-  senderId: string
-  totalRfqRow: number
-  productCurrency: string
-  isMany?: boolean
+  updatedAt: string;
+  buyerId: string;
+  senderId: string;
+  totalRfqRow: number;
+  productCurrency: string;
+  isMany?: boolean;
 }
 
 export interface IRfq extends IRfqFormCreateParams, IRfqList {
   products: IRfqProductRow[];
   data: IRfqFormGroupData;
-  approver: IRfqFormGroupApprover
-  receivers?: IReceiverManyContact[]
+  approver: IRfqFormGroupApprover;
+  receivers?: IReceiverManyContact[];
 }
 
 export interface IResRfqList {
@@ -552,8 +572,8 @@ export interface IQuotationFormCreate {
 export interface IQuotationRfqFormCreate {
   formGroupSender: ISenderContact;
   formGroupReceiver: IReceiverContact;
-  formGroupProductsRfq: IRfqProductRow[] // from RFQ
-  formGroupProductsRfqQuo: IRfqQuoProductRow[] // Quotation from RFQ
+  formGroupProductsRfq: IRfqProductRow[]; // from RFQ
+  formGroupProductsRfqQuo: IRfqQuoProductRow[]; // Quotation from RFQ
   formGroupAccounting: IQuotationFormGroupAccounting;
   formGroupData: IQuotationFormGroupData;
   formGroupApprover: IQuotationFormGroupApprover;
@@ -561,13 +581,18 @@ export interface IQuotationRfqFormCreate {
 
 export interface IQuotationFormGroupAccounting {
   subtotalAmount: number;
+  shippingCost: number;
+  charges: number;
   discount: number;
   totalDiscountAmount: number;
   netAmount: number;
   vat: number;
   grandTotalAmount: number;
   taxWithheldPercent: number;
+  withholdingTax: number;
+  totalPayAmount: number;
   isVatInc: boolean;
+  isDiscountOnPercent: boolean;
 }
 
 export interface IQuotationFormGroupData {
@@ -576,11 +601,11 @@ export interface IQuotationFormGroupData {
   validUntilDate: string;
   expiryDate: string;
   creditDay: number;
-  paymentTerm: IPaymentTerm[]
-  bankingInfo: ICompanyBankingInfo[]
+  paymentTerm: IPaymentTerm[];
+  bankingInfo: ICompanyBankingInfo[];
   shippingDate: string;
-  shippingMethods: string[]
-  shippingInfo: string
+  shippingMethods: string[];
+  shippingInfo: string;
   remark: string;
   termsCondition: string;
   senderNote: string;
@@ -589,7 +614,7 @@ export interface IQuotationFormGroupData {
   buyerNote: string;
   attachmentsUrl: string[];
   productCurrency: string;
-  paymentMethods: string[]
+  paymentMethods: string[];
 }
 
 export interface IQuotationFormGroupApprover {
@@ -614,7 +639,7 @@ export interface IQuotationList {
   productTitleFirst: string;
   productImageFirstUrl: string;
   grandTotalAmount: number;
-  productCurrency: string
+  productCurrency: string;
   statusQuotationSender: string;
   statusQuotationReceiver: string;
   statusApprovalFlow: string;
@@ -623,28 +648,30 @@ export interface IQuotationList {
   createdAt: string;
   updatedAt: string;
   senderId: string;
-  sellerId: string
+  sellerId: string;
   creditDay?: number;
   shippingDate?: string;
 }
 
 export interface IQuotationRfqList extends IQuotationList {
-  rfqId: string
+  rfqId: string;
 }
 
 export interface IQuotation extends IQuotationFormCreateParams, IQuotationList {
-  products: IProductRow[]
-  accounting: IQuotationFormGroupAccounting
-  data: IQuotationFormGroupData
-  approver: IQuotationFormGroupApprover
+  products: IProductRow[];
+  accounting: IQuotationFormGroupAccounting;
+  data: IQuotationFormGroupData;
+  approver: IQuotationFormGroupApprover;
 }
 
-export interface IQuotationRfq extends IQuotationFormCreateParams, IQuotationList {
-  products: IRfqQuoProductRow[]
-  productsRfq: IRfqProductRow[]
-  accounting: IQuotationFormGroupAccounting
-  data: IQuotationFormGroupData
-  approver: IQuotationFormGroupApprover
+export interface IQuotationRfq
+  extends IQuotationFormCreateParams,
+    IQuotationList {
+  products: IRfqQuoProductRow[];
+  productsRfq: IRfqProductRow[];
+  accounting: IQuotationFormGroupAccounting;
+  data: IQuotationFormGroupData;
+  approver: IQuotationFormGroupApprover;
 }
 
 export interface IResQuotationList {
@@ -679,33 +706,33 @@ export interface IResQuotationRfq {
 
 // STUB: Quotation Compare List
 export interface IWeightScoreRow {
-  comment: string
-  weight: number
-  score: number
+  comment: string;
+  weight: number;
+  score: number;
 }
 
 export interface IQuotationScore {
-  price: IWeightScoreRow
-  option: IWeightScoreRow
-  vendorHistory: IWeightScoreRow
-  companyCapital: IWeightScoreRow
-  creditTerm: IWeightScoreRow
-  totalScore: number
+  price: IWeightScoreRow;
+  option: IWeightScoreRow;
+  vendorHistory: IWeightScoreRow;
+  companyCapital: IWeightScoreRow;
+  creditTerm: IWeightScoreRow;
+  totalScore: number;
 }
 
 export interface IQuotationCompareColumn {
-  sender: ISenderContact
-  products: IProductRowEntity[]
-  totalProductPrice: number
-  options: IProductRowEntity[]
-  totalOptionPrice: number
-  paymentTerm: IPaymentTerm[]
-  creditDay: number
-  shippingDate: string
-  shippingMethods: string[]
-  shippingInfo: string
-  weightedScore: IQuotationScore
-  note: string
+  sender: ISenderContact;
+  products: IProductRowEntity[];
+  totalProductPrice: number;
+  options: IProductRowEntity[];
+  totalOptionPrice: number;
+  paymentTerm: IPaymentTerm[];
+  creditDay: number;
+  shippingDate: string;
+  shippingMethods: string[];
+  shippingInfo: string;
+  weightedScore: IQuotationScore;
+  note: string;
 }
 
 /* #region FIXME: PO */
@@ -755,7 +782,6 @@ export interface IPOFormCreateParams {
   quotationId: string;
 }
 
-
 export interface IPOList {
   purchaseOrderId: string;
   sender: ISenderContact;
@@ -765,7 +791,7 @@ export interface IPOList {
   productTitleFirst: string;
   productImageFirstUrl: string;
   grandTotalAmount: number;
-  productCurrency: string
+  productCurrency: string;
   statusPOSender: string;
   statusPOReceiver: string;
   statusApprovalFlow: string;
@@ -774,18 +800,17 @@ export interface IPOList {
   createdAt: string;
   updatedAt: string;
   senderId: string;
-  sellerId: string
-  buyerId: string
+  sellerId: string;
+  buyerId: string;
   creditDay: number;
   shippingDate: string;
 }
 
 export interface IPO extends IPOFormCreateParams, IPOList {
-  products: IProductRow[]
-  data: IPOFormGroupData
-  accounting: IPOFormGroupAccounting
-  approver: IPOFormGroupApprover
-
+  products: IProductRow[];
+  data: IPOFormGroupData;
+  accounting: IPOFormGroupAccounting;
+  approver: IPOFormGroupApprover;
 }
 
 export interface IResPOList {
@@ -930,10 +955,10 @@ export interface IBillingNoteFormCreateParams {
 
 export interface IBillingNoteList {
   billingNoteId: string;
-  sender: ISenderContact
-  receiver: IReceiverContact
+  sender: ISenderContact;
+  receiver: IReceiverContact;
   senderId: string;
-  sellerId: string
+  sellerId: string;
   docNo: string;
   docDate: string;
   grandTotalAmount: number;
@@ -944,10 +969,12 @@ export interface IBillingNoteList {
   updatedAt: string;
 }
 
-export interface IBillingNote extends IBillingNoteFormCreateParams, IBillingNoteList {
-  products: IProductRow[]
-  data: IBillingNoteFormGroupData
-  accounting: IBillingNoteFormGroupAccounting
+export interface IBillingNote
+  extends IBillingNoteFormCreateParams,
+    IBillingNoteList {
+  products: IProductRow[];
+  data: IBillingNoteFormGroupData;
+  accounting: IBillingNoteFormGroupAccounting;
 }
 
 export interface IResBillingNoteList {
@@ -963,8 +990,6 @@ export interface IResBillingNote {
   message: string;
   data: IBillingNote;
 }
-
-
 
 /* #endregion */
 
@@ -1022,10 +1047,10 @@ export interface IInvoiceFormCreateParams {
 
 export interface IInvoiceList {
   invoiceId: string;
-  sender: ISenderContact
-  receiver: IReceiverContact
+  sender: ISenderContact;
+  receiver: IReceiverContact;
   senderId: string;
-  sellerId: string
+  sellerId: string;
   docNo: string;
   docDate: string;
   grandTotalAmount: number;
@@ -1037,9 +1062,9 @@ export interface IInvoiceList {
 }
 
 export interface IInvoice extends IInvoiceFormCreateParams, IInvoiceList {
-  products: IProductRow[]
-  data: IInvoiceFormGroupData
-  accounting: IInvoiceFormGroupAccounting
+  products: IProductRow[];
+  data: IInvoiceFormGroupData;
+  accounting: IInvoiceFormGroupAccounting;
 }
 
 export interface IResInvoiceList {
@@ -1104,11 +1129,11 @@ export interface IReceiptFormCreateParams {
 }
 
 export interface IReceiptList {
-  receiptId: string
-  sender: ISenderContact
-  receiver: IReceiverContact
+  receiptId: string;
+  sender: ISenderContact;
+  receiver: IReceiverContact;
   senderId: string;
-  sellerId: string
+  sellerId: string;
   docNo: string;
   docDate: string;
   grandTotalAmount: number;
@@ -1120,9 +1145,9 @@ export interface IReceiptList {
 }
 
 export interface IReceipt extends IReceiptFormCreateParams, IReceiptList {
-  products: IProductRow[]
-  data: IReceiptFormGroupData
-  accounting: IReceiptFormGroupAccounting
+  products: IProductRow[];
+  data: IReceiptFormGroupData;
+  accounting: IReceiptFormGroupAccounting;
 }
 
 export interface IResReceiptList {
@@ -1136,13 +1161,10 @@ export interface IResReceipt {
   status: string;
   statusText: string;
   message: string;
-  data: IReceipt
+  data: IReceipt;
 }
 
-
 /* #endregion */
-
-
 
 /* #region FIXME: TAX Invoice */
 
@@ -1192,11 +1214,11 @@ export interface ITaxInvoiceFormCreateParams {
 }
 
 export interface ITaxInvoiceList {
-  taxInvoiceId: string
-  sender: ISenderContact
-  receiver: IReceiverContact
+  taxInvoiceId: string;
+  sender: ISenderContact;
+  receiver: IReceiverContact;
   senderId: string;
-  sellerId: string
+  sellerId: string;
   docNo: string;
   docDate: string;
   grandTotalAmount: number;
@@ -1207,17 +1229,19 @@ export interface ITaxInvoiceList {
   updatedAt: string;
 }
 
-export interface ITaxInvoice extends ITaxInvoiceFormCreateParams, ITaxInvoiceList {
-  products: IProductRow[]
-  data: ITaxInvoiceFormGroupData
-  accounting: ITaxInvoiceFormGroupAccounting
+export interface ITaxInvoice
+  extends ITaxInvoiceFormCreateParams,
+    ITaxInvoiceList {
+  products: IProductRow[];
+  data: ITaxInvoiceFormGroupData;
+  accounting: ITaxInvoiceFormGroupAccounting;
 }
 
 export interface IResTaxInvoiceList {
   status: string;
   statusText: string;
   message: string;
-  data: ITaxInvoiceList[]
+  data: ITaxInvoiceList[];
 }
 
 export interface IResTaxInvoice {
@@ -1228,122 +1252,118 @@ export interface IResTaxInvoice {
 }
 /* #endregion */
 
-
 /* #region Pooled Procurement */
 // STUB: Pooled Procurement Form
 export interface IPoolProduct {
-  productTitle: string
-  productImageUrls: string[]
-  poolQty: number
-  minQty: number
-  stepQty: number
-  productUnitPrice: number
-  productUnit: string
-  productId?: string
+  productTitle: string;
+  productImageUrls: string[];
+  poolQty: number;
+  minQty: number;
+  stepQty: number;
+  productUnitPrice: number;
+  productUnit: string;
+  productId?: string;
 }
 
 export interface IPoolShipping {
-  shippingMethod: string
-  shippingCost: number
+  shippingMethod: string;
+  shippingCost: number;
 }
 
 export interface IPoolData {
-  expiryTimestamp: number //timestamp
-  shippingMethods: IPoolShipping[]
-  contact: ISenderContact
-  leadTimeDay: number
-  note: string
-  remark: string
-  senderId: string
-  supplierId?: string
-  compId?: string
-  marketCode: string
-  isOverPool: boolean
+  expiryTimestamp: number; //timestamp
+  shippingMethods: IPoolShipping[];
+  contact: ISenderContact;
+  leadTimeDay: number;
+  note: string;
+  remark: string;
+  senderId: string;
+  supplierId?: string;
+  compId?: string;
+  marketCode: string;
+  isOverPool: boolean;
 }
 
 // ANCHOR: POOL | MAIN-BUYER --> CREATE POOL
 export interface IPoolFormCreate {
-  formGroupProduct: IPoolProduct
-  formGroupData: IPoolData
+  formGroupProduct: IPoolProduct;
+  formGroupData: IPoolData;
 }
 
 // ANCHOR: POOL | MAIN-BUYER --> LIST POOLS
 export interface IPoolList extends IPoolProduct {
-  poolId: string
-  remainPoolQty: number // * TO UPDATE
-  createdAt: string
-  updatedAt: string
-  expiryDate: string
-  senderId: string
-  joinsCount: number // * TO UPDATE
-  joinersCount: number // * TO UPDATE
-  subBuyersCount: number // * TO UPDATE
-  isClosed: boolean // * TO UPDATE (on QTY === POOL)
-  isOverPool: boolean
+  poolId: string;
+  remainPoolQty: number; // * TO UPDATE
+  createdAt: string;
+  updatedAt: string;
+  expiryDate: string;
+  senderId: string;
+  joinsCount: number; // * TO UPDATE
+  joinersCount: number; // * TO UPDATE
+  subBuyersCount: number; // * TO UPDATE
+  isClosed: boolean; // * TO UPDATE (on QTY === POOL)
+  isOverPool: boolean;
 }
 
 // REVIEW: POOL ENTITY
 export interface IPool extends IPoolList {
-  product: IPoolProduct
-  data: IPoolData
+  product: IPoolProduct;
+  data: IPoolData;
 }
 
 // ANCHOR: POOL | JOINER --> JOIN POOL
 export interface IJoinerJoinPool extends IPoolProduct {
   poolId: string;
-  senderId: string
-  subSenderId: string
-  contact: ISenderContact
-  joinPoolQty: number
-  supplierId?: string
-  compId?: string
+  senderId: string;
+  subSenderId: string;
+  contact: ISenderContact;
+  joinPoolQty: number;
+  supplierId?: string;
+  compId?: string;
 }
 
 // ANCHOR: POOL | JOINER --> LIST JOINING POOLS
 export interface IJoinerListJoiningPools extends IJoinerJoinPool {
-  joinedAt: string
-  statusApproved: boolean
-  statusUpdatedAt: string
-  statusJoining: StatusPoolJoining
+  joinedAt: string;
+  statusApproved: boolean;
+  statusUpdatedAt: string;
+  statusJoining: StatusPoolJoining;
 }
 
 // STUB: POOL | JOINING
-export interface IJoining extends IJoinerListJoiningPools {
-
-}
+export type IJoining = IJoinerListJoiningPools;
 
 // STUB: POOL | DB | JOINER x POOL ENTITY
 export interface IJoinerListPools extends IPoolProduct {
   poolId: string;
-  senderId: string
-  subSenderId: string
-  contact: ISenderContact
-  supplierId?: string
-  compId?: string
-  firstJoinedAt: string
-  latestStatusUpdatedAt: string
-  totalJoinPoolQty: number // * TO UPDATE ON JOIN
-  totalAcceptedJoinPoolQty: number // * TO UPDATE ON ACCEPT
-  statusShippingMainBuyer: StatusPoolShippingMainBuyer
-  statusShippingSubBuyer: StatusPoolShippingSubBuyer
+  senderId: string;
+  subSenderId: string;
+  contact: ISenderContact;
+  supplierId?: string;
+  compId?: string;
+  firstJoinedAt: string;
+  latestStatusUpdatedAt: string;
+  totalJoinPoolQty: number; // * TO UPDATE ON JOIN
+  totalAcceptedJoinPoolQty: number; // * TO UPDATE ON ACCEPT
+  statusShippingMainBuyer: StatusPoolShippingMainBuyer;
+  statusShippingSubBuyer: StatusPoolShippingSubBuyer;
 }
 
 export interface IPoolStatus {
-  poolQty: number
-  remainPoolQty: number
-  isClosed: boolean
+  poolQty: number;
+  remainPoolQty: number;
+  isClosed: boolean;
 }
 
 // ANCHOR: POOL | JOINER --> LIST POOLS
-export interface IRefJoinerListPools extends IJoinerListPools, IPoolStatus {
-}
+export interface IRefJoinerListPools extends IJoinerListPools, IPoolStatus {}
 
 // ANCHOR: POOL | MAIN-BUYER --> ACCEPT JOINING
 export interface IPoolAcceptJoining {
-  poolId: string
-  senderId: string
-  subSenderId: string
-  joinedAt: string
-  joinPoolQty: number
+  poolId: string;
+  senderId: string;
+  subSenderId: string;
+  joinedAt: string;
+  joinPoolQty: number;
 }
 /* #endregion */
