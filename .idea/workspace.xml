@@ -19,9 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a19b798-daac-433f-bb9b-6132570f93cd" name="Default Changelist" comment="fix build">
+    <list default="true" id="8a19b798-daac-433f-bb9b-6132570f93cd" name="Default Changelist" comment="refactor(order): update text status on buyer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/type-order.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/type-order.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/type-inventory.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/type-inventory.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +115,8 @@
       <workItem from="1628573231756" duration="1036000" />
       <workItem from="1644234829994" duration="59000" />
       <workItem from="1644239945197" duration="1113000" />
-      <workItem from="1644296945578" duration="1204000" />
+      <workItem from="1644296945578" duration="3517000" />
+      <workItem from="1644334179792" duration="350000" />
     </task>
     <task id="LOCAL-00001" summary="update and resolve conflict">
       <created>1612688719981</created>
@@ -145,7 +146,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644240878428</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="refactor(order): update text status on buyer">
+      <created>1644317556338</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1644317556338</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,7 +199,8 @@
     <MESSAGE value="check protected for admin" />
     <MESSAGE value="update admin" />
     <MESSAGE value="fix build" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix build" />
+    <MESSAGE value="refactor(order): update text status on buyer" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor(order): update text status on buyer" />
   </component>
   <component name="regexState">
     <option name="map">
