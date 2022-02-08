@@ -27,7 +27,7 @@ export enum StatusOrderCustomer {
   B3_Paid = 'paid',
   B4_AwaitingFulfillment = 'awaiting_fulfillment',
   B5_AwaitingShipment = 'awaiting_shipment',
-  B5_AwaitingPickup = 'awaiting_pickup',
+  B5_ToPickup = 'to_pickup',
   B6_Shipped = 'shipped',
   B6_AwaitingAccepted = 'awaiting_accepted',
   B7_Accepted = 'accepted',
@@ -280,8 +280,8 @@ export interface ISellerUpdateOrderStatus {
   existingSellerStatus: StatusOrderSeller;
   newSellerStatus: StatusOrderSeller;
   orderType: TOrderType;
-  toFinalizeStock: boolean;
-  toCompleteShipping: boolean;
+  toFinalizeStock: boolean; // ? to deduct stock
+  toCompleteShipping: boolean; // ? to
 }
 
 // FIXME: to remove interface (dup)
@@ -322,7 +322,7 @@ export interface ILeadpageId {
   leadpageId: string;
 }
 
-export interface ILogOrderValue extends 
+export interface ILogOrderValue extends
 IOrderCustomerData,
 IDBOrderEntity,
 IOrderEntity,
