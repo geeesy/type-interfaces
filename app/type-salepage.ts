@@ -53,6 +53,7 @@ export interface ISalePageEntity {
   settingSeo: ISeoMeta;
   startDate: Date;
   endDate: Date;
+  hasNoShipment: boolean;
 }
 
 // ANCHOR: SALE PAGE | Entity (4/4)
