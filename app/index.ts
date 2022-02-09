@@ -896,7 +896,6 @@ export namespace GappBiz {
     IOrderLinkData &
     IDBOrderLinkImmu &
     IOrderLinkDataOnConfirm &
-    IDBOrderSellerDataImmu &
       IOrderDataOnComplete &
       IDBOrderDataImmu &
     IDBLogTime;
