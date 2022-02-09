@@ -113,33 +113,33 @@ export interface IListOrder
   statusOrderOnSeller: StatusOrderSeller;
   statusOrderOnBuyer: StatusOrderCustomer;
 }
-// ANCHOR: ORDER | Entity (1/10)
+// ANCHOR: ORDER | Entity (1/11)
 export interface IOrderCustomerDataImmu {
   customerId: string;
   iamUserId?: string;
 }
 
-// ANCHOR: ORDER | Entity (2/10)
+// ANCHOR: ORDER | Entity (2/11)
 export interface IOrderCustomerData {
   customerContactInfo: IPersonContactInfo;
   customerCompanyContactInfo: ICompanyContactInfo;
   customerNote: string;
 }
 
-// ANCHOR: ORDER | Entity (3/10)
+// ANCHOR: ORDER | Entity (3/11)
 export interface IDBOrderSellerDataImmu {
   businessId: string;
   compId: string;
 }
 
-// ANCHOR: ORDER | Entity (4/10)
+// ANCHOR: ORDER | Entity (4/11)
 export interface IDBOrderEntityImmu {
   orderType: TOrderType;
   orderSubType: TOrderSubType;
   salepageId?: string;
 }
 
-// ANCHOR: ORDER | Entity (5/10)
+// ANCHOR: ORDER | Entity (5/11)
 export interface IDBOrderEntity {
   docNo: string;
   productTitleFirst: string;
@@ -149,7 +149,7 @@ export interface IDBOrderEntity {
   totalProductQty: number;
 }
 
-// ANCHOR: ORDER | Entity (6/7)
+// ANCHOR: ORDER | Entity (6/11)
 export interface IOrderEntity {
   sellerNote: string;
   products: IOrderProductRow[];
@@ -164,7 +164,7 @@ export interface IOrderAccountingOnly{
   accountingData: IOrderAccounting;
 }
 
-// ANCHOR: ORDER | Entity (7/7)
+// ANCHOR: ORDER | Entity (7/11)
 export interface IDBOrderStatus {
   statusOrderOnSeller: StatusOrderSeller;
   statusOrderOnBuyer: StatusOrderCustomer;
@@ -193,7 +193,7 @@ export interface IDBListOrderByProduct
  * * ON CREATE
  */
 
-// ANCHOR: ORDER | Entity (8/10)
+// ANCHOR: ORDER | Entity (8/11)
 export interface IOrderLinkData {
   saleChannelId: string;
   channel: SaleChannelSubType;
@@ -205,7 +205,7 @@ export interface IOrderLinkData {
   hasNoShipment: boolean;
 }
 
-// ANCHOR: ORDER | Entity (9/10)
+// ANCHOR: ORDER | Entity (9/11)
 export interface IDBOrderLinkImmu {
   orderId: string;
   // orderTemplateId: string;
@@ -225,7 +225,7 @@ export interface IShippingTrackingData {
   note: string;
 }
 
-// ANCHOR: ORDER | Entity (10/10)
+// ANCHOR: ORDER | Entity (10/11)
 // * ON CONFIRM
 export interface IOrderLinkDataOnConfirm {
   shippingConfirmedId: string;
@@ -235,6 +235,15 @@ export interface IOrderLinkDataOnConfirm {
   isNewContactAddress: boolean;
   paymentAttachmentData: IPaymentAttachmentData | null;
   shippingTrackingData: IShippingTrackingData | null;
+}
+
+// ANCHOR: ORDER | Entity (11/11)
+export interface IOrderDataOnComplete {
+  finalDeliveryAt: string
+  finalDeliveryBy: string
+  deliveryImageUrl: string
+  completedAt: string
+  completedBy: string
 }
 
 /**

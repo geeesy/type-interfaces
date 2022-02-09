@@ -277,7 +277,7 @@ import {
   ILogOrder,
   IOrderAccountingOnly,
   IOrderCustomerData,
-  IOrderCustomerDataImmu,
+  IOrderCustomerDataImmu, IOrderDataOnComplete,
   IOrderEntity,
   IOrderLinkData,
   IOrderLinkDataOnConfirm,
@@ -869,6 +869,7 @@ export namespace GappBiz {
   export type UpdateOrderStatus = ISellerUpdateOrderStatus &
     IApiCompanyParams &
     IOrderAccountingOnly &
+      IOrderDataOnComplete &
     IOrderLinkDataOnConfirm;
   // ! ORDER_LINK
   export type CreateOrderLink = IOrderEntity &
@@ -896,6 +897,7 @@ export namespace GappBiz {
     IDBOrderLinkImmu &
     IOrderLinkDataOnConfirm &
     IDBOrderSellerDataImmu &
+      IOrderDataOnComplete &
     IDBLogTime;
   export type OrderSalePage = GappBiz.OrderLink;
   export type OrderGappMed = GappBiz.OrderLink;
@@ -905,7 +907,7 @@ export namespace GappBiz {
     IDBOrderEntity &
     IOrderCustomerData &
     IOrderCustomerDataImmu &
-    IOrderLinkDataOnConfirm & 
+    IOrderLinkDataOnConfirm &
     IOrderLinkData &
     IDBUpdateTime;
   export type CreateOrderSalePage = GappBiz.CreateOrderLink &
