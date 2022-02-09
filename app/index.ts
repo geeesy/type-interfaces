@@ -265,7 +265,7 @@ import {
 } from './type-inventory';
 import {
   ICustomerWithOrder,
-  IDBListOrderByProduct,
+  IDBListOrderByProduct, IDBOrderDataImmu,
   IDBOrderEntity,
   IDBOrderEntityImmu,
   IDBOrderLinkImmu,
@@ -898,6 +898,7 @@ export namespace GappBiz {
     IOrderLinkDataOnConfirm &
     IDBOrderSellerDataImmu &
       IOrderDataOnComplete &
+      IDBOrderDataImmu &
     IDBLogTime;
   export type OrderSalePage = GappBiz.OrderLink;
   export type OrderGappMed = GappBiz.OrderLink;
