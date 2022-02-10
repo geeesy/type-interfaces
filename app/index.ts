@@ -910,6 +910,7 @@ export namespace GappBiz {
     IOrderCustomerDataImmu &
     IOrderLinkDataOnConfirm &
     IOrderLinkData &
+    IDBOrderActivityLog &
     IDBUpdateTime;
   export type CreateOrderSalePage = GappBiz.CreateOrderLink &
     IOrderLinkDataOnConfirm;
