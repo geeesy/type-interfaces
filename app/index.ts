@@ -904,6 +904,12 @@ export namespace GappBiz {
   export type OrderGappMed = GappBiz.OrderLink;
   export type ListOrderLink = IListOrder &
     IDBLogTime;
+  export type UpdateOrder = IOrderEntity &
+  IOrderCustomerData &
+  IOrderCustomerDataImmu &
+  IOrderLinkDataOnConfirm &
+  IOrderLinkData &
+  IApiCompanyParams
   export type DBUpdateOrderLink = IOrderEntity &
     IDBOrderEntity &
     IOrderCustomerData &
