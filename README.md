@@ -51,15 +51,12 @@ export class AnyService {
 
 }
 ```
-...
+### NPM VERSION (SEMVER on commit)
+```javascript
+majorWords: [ 'BREAKING CHANGE', 'major' ]
+minorWords: [ 'feat', 'minor' ]
+patchWords: null
+preReleaseWords: [ 'pre-alpha', 'pre-beta', 'pre-rc' ]
+```
 
-check github action push
-fix error
-fix permission
-test bypass pr
-update
-fix
-check protected branch
-check protected for admin
-update admin
 
