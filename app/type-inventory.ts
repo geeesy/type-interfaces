@@ -100,7 +100,7 @@ export interface IStockRefData {
   saleChannel: TOrderType;
 }
 
-export interface IUpdateProductStock extends IProductInventoryImmu {
+export interface IUpdateProductStock extends IProductInventoryImmu, IProductInventorySetting, IDBProductInventoryFormulaImmu {
   productId: string;
   variantId?: string;
   stock: number;

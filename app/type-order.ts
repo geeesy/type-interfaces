@@ -27,7 +27,7 @@ export enum StatusOrderCustomer {
   B3_Paid = 'paid',
   B4_AwaitingFulfillment = 'awaiting_fulfillment',
   B5_AwaitingShipment = 'awaiting_shipment',
-  B5_AwaitingPickup = 'awaiting_pickup',
+  B5_ToPickup = 'to_pickup',
   B6_Shipped = 'shipped',
   B6_AwaitingAccepted = 'awaiting_accepted',
   B7_Accepted = 'accepted',
@@ -117,33 +117,33 @@ export interface IListOrder
   statusOrderOnSeller: StatusOrderSeller;
   statusOrderOnBuyer: StatusOrderCustomer;
 }
-// ANCHOR: ORDER | Entity (1/10)
+// ANCHOR: ORDER | Entity (1/13)
 export interface IOrderCustomerDataImmu {
   customerId: string;
   iamUserId?: string;
 }
 
-// ANCHOR: ORDER | Entity (2/10)
+// ANCHOR: ORDER | Entity (2/13)
 export interface IOrderCustomerData {
   customerContactInfo: IPersonContactInfo;
   customerCompanyContactInfo: ICompanyContactInfo;
   customerNote: string;
 }
 
-// ANCHOR: ORDER | Entity (3/10)
+// ANCHOR: ORDER | Entity (3/13)
 export interface IDBOrderSellerDataImmu {
   businessId: string;
   compId: string;
 }
 
-// ANCHOR: ORDER | Entity (4/10)
+// ANCHOR: ORDER | Entity (4/13)
 export interface IDBOrderEntityImmu {
   orderType: TOrderType;
   orderSubType: TOrderSubType;
   salepageId?: string;
 }
 
-// ANCHOR: ORDER | Entity (5/10)
+// ANCHOR: ORDER | Entity (5/13)
 export interface IDBOrderEntity {
   docNo: string;
   productTitleFirst: string;
@@ -153,7 +153,7 @@ export interface IDBOrderEntity {
   totalProductQty: number;
 }
 
-// ANCHOR: ORDER | Entity (6/7)
+// ANCHOR: ORDER | Entity (6/13)
 export interface IOrderEntity {
   sellerNote: string;
   products: IOrderProductRow[];
@@ -168,7 +168,7 @@ export interface IOrderAccountingOnly{
   accountingData: IOrderAccounting;
 }
 
-// ANCHOR: ORDER | Entity (7/7)
+// ANCHOR: ORDER | Entity (7/13)
 export interface IDBOrderStatus {
   statusOrderOnSeller: StatusOrderSeller;
   statusOrderOnBuyer: StatusOrderCustomer;
@@ -197,7 +197,7 @@ export interface IDBListOrderByProduct
  * * ON CREATE
  */
 
-// ANCHOR: ORDER | Entity (8/10)
+// ANCHOR: ORDER | Entity (8/13)
 export interface IOrderLinkData {
   saleChannelId: string;
   channel: SaleChannelSubType;
@@ -206,10 +206,10 @@ export interface IOrderLinkData {
   paymentAvailableIds: string[]; // * USE ID FOR LATER
   shippingAvailableData: GappSetting.ShippingMethod[];
   paymentAvailableData: GappSetting.PaymentMethod[];
-  hasNoShipment?: boolean;
+  hasNoShipment: boolean;
 }
 
-// ANCHOR: ORDER | Entity (9/10)
+// ANCHOR: ORDER | Entity (9/13)
 export interface IDBOrderLinkImmu {
   orderId: string;
   // orderTemplateId: string;
@@ -229,7 +229,7 @@ export interface IShippingTrackingData {
   note: string;
 }
 
-// ANCHOR: ORDER | Entity (10/10)
+// ANCHOR: ORDER | Entity (10/13)
 // * ON CONFIRM
 export interface IOrderLinkDataOnConfirm {
   shippingConfirmedId: string;
@@ -239,6 +239,27 @@ export interface IOrderLinkDataOnConfirm {
   isNewContactAddress: boolean;
   paymentAttachmentData: IPaymentAttachmentData | null;
   shippingTrackingData: IShippingTrackingData | null;
+}
+
+// ANCHOR: ORDER | Entity (11/13)
+export interface IOrderDataOnComplete {
+  finalDeliveryAt: string
+  finalDeliveryBy: string
+  deliveryImageUrl: string
+  completedAt: string
+  completedBy: string
+}
+
+// ANCHOR: ORDER | Entity (12/13)
+export interface IDBOrderDataImmu {
+  finalizedAt: string
+}
+
+// ANCHOR: ORDER | Entity (13/13)
+export interface IDBOrderActivityLog {
+  latestNoteOnAction: string;
+  latestActivityOnOrderType: TOrderType | null;
+  latestActionBy: string // ? use to identify action -> buyer or seller (identityId)
 }
 
 /**
@@ -284,8 +305,8 @@ export interface ISellerUpdateOrderStatus {
   existingSellerStatus: StatusOrderSeller;
   newSellerStatus: StatusOrderSeller;
   orderType: TOrderType;
-  toFinalizeStock: boolean;
-  toCompleteShipping: boolean;
+  toFinalizeStock: boolean; // ? to deduct stock
+  toCompleteShipping: boolean; // ? to
 }
 
 // FIXME: to remove interface (dup)
@@ -326,7 +347,7 @@ export interface ILeadpageId {
   leadpageId: string;
 }
 
-export interface ILogOrderValue extends 
+export interface ILogOrderValue extends
 IOrderCustomerData,
 IDBOrderEntity,
 IOrderEntity,
