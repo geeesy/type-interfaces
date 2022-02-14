@@ -293,6 +293,7 @@ import {
 } from './type-payment';
 /* eslint-disable @typescript-eslint/no-namespace */
 import {
+  IDBOrderAnalytics,
   IDBProduct,
   IDBProductByGapp,
   IDBProductGroupCount,
@@ -1032,7 +1033,7 @@ export namespace GappInventory {
   export type ProductGroup = IProductGroup &
     IDBProductGroupImmu &
     IDBLogTime &
-    IDBProductGroupCount;
+    IDBProductGroupCount &  IDBOrderAnalytics;
   export type DBUpdateProductGroup = IProductGroup & IDBUpdateTime;
   export type CreateWarehouse = IWarehouseEntity & IApiCompanyParams;
   export type Warehouse = IWarehouseEntity &
@@ -1101,7 +1102,7 @@ export namespace GappSetting {
     IDBShippingMethod &
     IDBShippingMethodImmu &
     IShippingMethodEntityImmu &
-    IDBLogTime;
+    IDBLogTime &  IDBOrderAnalytics;
   export type DBUpdateShippingMethod = IShippingMethodEntity &
     IDBShippingMethod &
     IDBUpdateTime;
@@ -1113,7 +1114,7 @@ export namespace GappSetting {
     IPaymentMethodEntityImmu &
     IDBPaymentMethod &
     IDBPaymentMethodImmu &
-    IDBLogTime;
+    IDBLogTime &  IDBOrderAnalytics;
   export type DBUpdatePaymentMethod = IPaymentMethodEntity &
     IDBPaymentMethod &
     IDBUpdateTime;
@@ -1125,7 +1126,7 @@ export namespace GappSetting {
     ISaleChannelEntityImmu &
     IDBSaleChannel &
     IDBSaleChannelImmu &
-    IDBLogTime;
+    IDBLogTime &  IDBOrderAnalytics;
   export type DBUpdateSaleChannel = ISaleChannelEntity &
     IDBSaleChannel &
     IDBUpdateTime;
