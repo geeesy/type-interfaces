@@ -84,6 +84,10 @@ export interface IOrderProductRow {
   isVatable: boolean;
   warehouseId: string; // ! -> INVENTORY
   inventoryId: string; // ! -> INVENTORY
+  productGroupId: string;
+  productGroupName: string;
+  productCategoryId: string;
+  productCategoryName: string
 }
 
 export interface IOrderAccounting {
