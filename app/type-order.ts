@@ -63,7 +63,7 @@ export enum StatusOrder {
 
 export type TOrderType = 'ORDER_LINK' | 'SALEPAGE' | 'GAPP_MARKET' | 'GAPP_BIZ';
 export type TOrderSubType = 'SERVICE' | 'PRODUCT';
-
+export type TOrderChannelUTM = 'WEBSITE' | 'FACEBOOK' | 'INSTAGRAM' | 'LINE' | 'YOUTUBE' | 'GOOGLE' | 'OTHER';
 /**
  * ORDER
  */
@@ -140,6 +140,7 @@ export interface IDBOrderSellerDataImmu {
 export interface IDBOrderEntityImmu {
   orderType: TOrderType;
   orderSubType: TOrderSubType;
+  orderChannelType: TOrderChannelUTM;
   salepageId?: string;
 }
 

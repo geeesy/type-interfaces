@@ -450,10 +450,6 @@ export interface IDBProductGroupCount {
   countProduct: number;
 }
 
-export interface IDBOrderAnalytics {
-    totalSaleAmount: number;
-    countOrderAmount: number;
-}
 export interface IDBProductGroupImmu {
   productGroupId: string;
   compId: string;

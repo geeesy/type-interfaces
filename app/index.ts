@@ -293,7 +293,6 @@ import {
 } from './type-payment';
 /* eslint-disable @typescript-eslint/no-namespace */
 import {
-  IDBOrderAnalytics,
   IDBProduct,
   IDBProductByGapp,
   IDBProductGroupCount,
@@ -335,6 +334,7 @@ import {
   IShippingMethodEntity,
   IShippingMethodEntityImmu
 } from './type-shipping';
+import { IAnalytics } from './interfaces';
 
 /* #region FIXME: Marketplace */
 export namespace GeeesyMarketplace {
@@ -1033,7 +1033,7 @@ export namespace GappInventory {
   export type ProductGroup = IProductGroup &
     IDBProductGroupImmu &
     IDBLogTime &
-    IDBProductGroupCount &  IDBOrderAnalytics;
+    IDBProductGroupCount & IAnalytics ;
   export type DBUpdateProductGroup = IProductGroup & IDBUpdateTime;
   export type CreateWarehouse = IWarehouseEntity & IApiCompanyParams;
   export type Warehouse = IWarehouseEntity &
@@ -1102,7 +1102,7 @@ export namespace GappSetting {
     IDBShippingMethod &
     IDBShippingMethodImmu &
     IShippingMethodEntityImmu &
-    IDBLogTime &  IDBOrderAnalytics;
+    IDBLogTime ;
   export type DBUpdateShippingMethod = IShippingMethodEntity &
     IDBShippingMethod &
     IDBUpdateTime;
@@ -1110,11 +1110,11 @@ export namespace GappSetting {
   export type CreatePaymentMethod = IPaymentMethodEntity &
     IPaymentMethodEntityImmu &
     IApiCompanyParams;
-  export type PaymentMethod = IPaymentMethodEntity &
+  export type PaymentMethod = IPaymentMethodEntity & IAnalytics &
     IPaymentMethodEntityImmu &
     IDBPaymentMethod &
     IDBPaymentMethodImmu &
-    IDBLogTime &  IDBOrderAnalytics;
+    IDBLogTime;
   export type DBUpdatePaymentMethod = IPaymentMethodEntity &
     IDBPaymentMethod &
     IDBUpdateTime;
@@ -1126,7 +1126,7 @@ export namespace GappSetting {
     ISaleChannelEntityImmu &
     IDBSaleChannel &
     IDBSaleChannelImmu &
-    IDBLogTime &  IDBOrderAnalytics;
+    IDBLogTime;
   export type DBUpdateSaleChannel = ISaleChannelEntity &
     IDBSaleChannel &
     IDBUpdateTime;
