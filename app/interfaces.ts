@@ -17,3 +17,8 @@ export interface IResAPI {
   statusText: string
   message: string
 }
+
+export interface IAnalytics {
+  totalSaleAmount: number
+  countOrder: number 
+}

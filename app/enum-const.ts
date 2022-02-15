@@ -58,7 +58,9 @@ export enum ReportForCompanyMetric {
   netOrderLinkSales = 'NetOrderLinkSales',
   netSalePageSales = 'NetSalePageSales',
   netGappMarketSales = 'NetGappMarketSales',
-  netGappBizSales = 'NetGappBizSales'
+  netGappBizSales = 'NetGappBizSales',
+  cancellationRate = 'CancellationRate',
+  avgOrderValue = 'AvgOrderValue'
 }
 
 export enum CurrencyTranslateTH {

@@ -334,6 +334,7 @@ import {
   IShippingMethodEntity,
   IShippingMethodEntityImmu
 } from './type-shipping';
+import { IAnalytics } from './interfaces';
 
 /* #region FIXME: Marketplace */
 export namespace GeeesyMarketplace {
@@ -1032,7 +1033,7 @@ export namespace GappInventory {
   export type ProductGroup = IProductGroup &
     IDBProductGroupImmu &
     IDBLogTime &
-    IDBProductGroupCount;
+    IDBProductGroupCount & IAnalytics ;
   export type DBUpdateProductGroup = IProductGroup & IDBUpdateTime;
   export type CreateWarehouse = IWarehouseEntity & IApiCompanyParams;
   export type Warehouse = IWarehouseEntity &
@@ -1109,7 +1110,7 @@ export namespace GappSetting {
   export type CreatePaymentMethod = IPaymentMethodEntity &
     IPaymentMethodEntityImmu &
     IApiCompanyParams;
-  export type PaymentMethod = IPaymentMethodEntity &
+  export type PaymentMethod = IPaymentMethodEntity & IAnalytics &
     IPaymentMethodEntityImmu &
     IDBPaymentMethod &
     IDBPaymentMethodImmu &

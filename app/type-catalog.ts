@@ -296,7 +296,9 @@ export interface IProductAttributes {
   productImagesUrl: IProductImage[];
   productImagesUrl_market: IProductImage[];
   productCategoryId: string;
+  productCategoryName: string;
   productGroupId: string; //? 1 product 1 group
+  productGroupName: string;
   productCategoryCustomName?: string; // * id = OTHER000
   productVideoCoverUrl: string;
   productVideoCoverUrl_market: string;
@@ -447,6 +449,7 @@ export interface IProductGroup {
 export interface IDBProductGroupCount {
   countProduct: number;
 }
+
 export interface IDBProductGroupImmu {
   productGroupId: string;
   compId: string;
