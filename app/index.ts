@@ -1102,7 +1102,7 @@ export namespace GappSetting {
     IDBShippingMethod &
     IDBShippingMethodImmu &
     IShippingMethodEntityImmu &
-    IDBLogTime ;
+    IDBLogTime;
   export type DBUpdateShippingMethod = IShippingMethodEntity &
     IDBShippingMethod &
     IDBUpdateTime;
