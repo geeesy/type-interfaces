@@ -139,7 +139,7 @@ export interface IDBOrderSellerDataImmu {
 // ANCHOR: ORDER | Entity (4/13)
 export interface IDBOrderEntityImmu {
   orderType: TOrderType;
-  orderSubType: TOrderItemType;
+  orderItemType: TOrderItemType;
   orderChannelUTM: TOrderChannelUTM;
   salepageId?: string;
 }

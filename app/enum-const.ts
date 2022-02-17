@@ -245,7 +245,7 @@ export const OrderTypeAttr = {
   }
 };
 
-export const OrderSubTypeAttr = {
+export const OrderItemTypeAttr = {
   service: {
     title_th: 'บริการ',
     title_en: 'Service'
