@@ -126,7 +126,7 @@ export interface IOrderCustomerDataImmu {
 // ANCHOR: ORDER | Entity (2/13)
 export interface IOrderCustomerData {
   customerContactInfo: IPersonContactInfo;
-  customerCompanyContactInfo: ICompanyContactInfo;
+  customerCompanyContactInfo: ICompanyContactInfo | null;
   customerNote: string;
 }
 
