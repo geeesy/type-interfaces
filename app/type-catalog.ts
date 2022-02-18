@@ -184,7 +184,7 @@ export interface IProductImage {
 // ANCHOR: PRODUCT | List
 // NOTE === g-biz -> list all products
 export interface IRefProductList {
-  // index
+  // index 1
   isActive: boolean; // ! not show all
   isRecommend: boolean;
   isHighLight: boolean;
