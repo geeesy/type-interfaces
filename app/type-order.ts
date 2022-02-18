@@ -310,6 +310,13 @@ export interface ISellerUpdateOrderStatus {
   toCompleteShipping: boolean; // ? to
 }
 
+export interface ISellerCancelOrder {
+  returnProduct: IOrderProductRow[] | null;
+  hasRefunded: boolean;
+  refundAmount: number;
+  note: string;
+}
+
 // FIXME: to remove interface (dup)
 export interface ISellerUpdateOrderDataOnStatusChanged {
   paymentAttachmentData: IPaymentAttachmentData | null;
