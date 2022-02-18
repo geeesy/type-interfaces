@@ -8,9 +8,9 @@ import {
 } from './type-inventory';
 
 import { StatusProductApproveOnMarket } from './enum-status';
-import { TOrderSubType } from './type-order';
+import { TOrderItemType } from './type-order';
 
-export type TProductType = TOrderSubType;
+export type TProductType = TOrderItemType
 
 export interface IPriceList {
   priceListId: string;
