@@ -10,7 +10,7 @@ import {
 import { StatusProductApproveOnMarket } from './enum-status';
 import { TOrderSubType } from './type-order';
 
-export type TProductType = TOrderSubType
+export type TProductType = TOrderSubType;
 
 export interface IPriceList {
   priceListId: string;
@@ -33,7 +33,7 @@ export interface IProductPrice {
   minQty: number;
   minQty_market: number;
   isVatInc: boolean;
-  vatPercent?: number // default = 7
+  vatPercent?: number; // default = 7
 }
 
 export interface IQtyPrice {
@@ -195,8 +195,9 @@ export interface IRefProductList {
   productName: string;
   productType: TProductType;
   productCategoryId: string;
+  productCategoryName: string;
   productGroupId: string;
-
+  productGroupName: string;
   productShortDescription: string;
   productShortDescription_market: string;
 
@@ -272,7 +273,7 @@ export interface IProductEntity {
 // ANCHOR: PRODUCT | Entity (2/6)
 // NOTE === attributes on each SKU (+on parent product of variant product)
 export interface IProductEntityImmu {
-  useInventory: boolean; 
+  useInventory: boolean;
   hasArchived: boolean; // ! on delete
 }
 
