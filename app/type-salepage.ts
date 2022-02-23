@@ -43,6 +43,7 @@ export interface IDBSalePageEntity {
 export interface ISalePageEntity {
   title: string;
   contact: ISessionContact;
+  orderChannelUTM: GappSetting.SaleChannel[];
   shippingAvailableIds: string[];
   paymentAvailableIds: string[];
   shippingAvailableData: GappSetting.ShippingMethod[];
