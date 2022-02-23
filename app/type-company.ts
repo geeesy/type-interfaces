@@ -454,8 +454,9 @@ export interface IDocSeqNoFormat {
   suffix: string; // -> init === ''
   yearFormat: TYearFormat; // -> init === 'none'
   separator: TSeparator; // -> init === 'none'
-  hasShowedMonth: boolean;
-  hasShowedDay: boolean;
+  hasShowedYear: boolean; // -> init === true
+  hasShowedMonth: boolean; // -> init === true
+  hasShowedDay: boolean; // -> init === true
   numDigit: number;   //FIXME only 4 digit on seqNo
 }
 export interface ISettingDocAttributes {
