@@ -281,6 +281,7 @@ import {
   IOrderEntity,
   IOrderLinkData,
   IOrderLinkDataOnConfirm,
+  ISellerCancelOrder,
   ISellerCreateOrder,
   ISellerUpdateOrderStatus
 } from './type-order';
@@ -911,6 +912,8 @@ export namespace GappBiz {
   IOrderCustomerDataImmu &
   IOrderLinkDataOnConfirm &
   IOrderLinkData &
+  IApiCompanyParams
+  export type CancelOrder = ISellerCancelOrder &
   IApiCompanyParams
   export type DBUpdateOrderLink = IOrderEntity &
     IDBOrderEntity &
