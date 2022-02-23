@@ -40,6 +40,8 @@ export interface ISaleChannelEntityImmu {
 export interface ISaleChannelEntity {
   saleChannelIconUrl: string;
   saleChannelAliasName: string;
+  saleChannelTagUTM: string;
+  saleChannelCustomeUTM: string;
   note: string;
   saleChannelAttributes: ISaleChannelSubTypeDefault;
 }
