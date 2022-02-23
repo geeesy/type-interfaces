@@ -452,12 +452,13 @@ export type TSeparator = '/' | '-' | 'none';
 export interface IDocSeqNoFormat {
   prefix: string; // -> init === enum DocPrefixFormat
   suffix: string; // -> init === ''
-  yearFormat: TYearFormat; // -> init === 'none'
+  yearFormat: TYearFormat; // -> init === 'YYMM'
   separator: TSeparator; // -> init === 'none'
   hasShowedYear: boolean; // -> init === true
   hasShowedMonth: boolean; // -> init === true
-  hasShowedDay: boolean; // -> init === true
-  numDigit: number;   //FIXME only 4 digit on seqNo
+  hasShowedDay: boolean; // -> init === false
+  numDigit: number;   //FIXME only 4 digit on seqNo -> init = 6
+  useBuddhistCalendar: boolean // -> init === false
 }
 export interface ISettingDocAttributes {
   seqNoFormat: IDocSeqNoFormat;
