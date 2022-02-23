@@ -41,7 +41,7 @@ export interface ISaleChannelEntity {
   saleChannelIconUrl: string;
   saleChannelAliasName: string;
   saleChannelTagUTM: string;
-  saleChannelCustomeUTM: string;
+  saleChannelCustomUTM: string;
   note: string;
   saleChannelAttributes: ISaleChannelSubTypeDefault;
 }
