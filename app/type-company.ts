@@ -489,7 +489,7 @@ export interface ICustomer {
   customerId: string;
   iamUserId?: string;
   customerContactInfo: IPersonContactInfo;
-  customerCompanyContactInfo: ICompanyContactInfo;
+  customerCompanyContactInfo: ICompanyContactInfo | null;
   customerNote: string;
   TotalPaidAmount: number;
   CountCompletedOrder: number;
