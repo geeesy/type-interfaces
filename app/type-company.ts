@@ -450,11 +450,13 @@ export type TYearFormat =
   | 'none';
 export type TSeparator = '/' | '-' | 'none';
 export interface IDocSeqNoFormat {
-  //! only 4 digit on seqNo
   prefix: string; // -> init === enum DocPrefixFormat
   suffix: string; // -> init === ''
   yearFormat: TYearFormat; // -> init === 'none'
   separator: TSeparator; // -> init === 'none'
+  hasShowedMonth: boolean;
+  hasShowedDay: boolean;
+  numDigit: number;   //FIXME only 4 digit on seqNo
 }
 export interface ISettingDocAttributes {
   seqNoFormat: IDocSeqNoFormat;
