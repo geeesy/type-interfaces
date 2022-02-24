@@ -265,7 +265,9 @@ import {
 } from './type-inventory';
 import {
   ICustomerWithOrder,
-  IDBListOrderByProduct, IDBOrderActivityLog, IDBOrderDataImmu,
+  IDBListOrderByProduct,
+  IDBOrderActivityLog,
+  IDBOrderDataImmu,
   IDBOrderEntity,
   IDBOrderEntityImmu,
   IDBOrderLinkImmu,
@@ -277,10 +279,12 @@ import {
   ILogOrder,
   IOrderAccountingOnly,
   IOrderCustomerData,
-  IOrderCustomerDataImmu, IOrderDataOnComplete,
+  IOrderCustomerDataImmu,
+  IOrderDataOnComplete,
   IOrderEntity,
   IOrderLinkData,
   IOrderLinkDataOnConfirm,
+  IOrderLinkImmuDataOnConfirm,
   ISellerCancelOrder,
   ISellerCreateOrder,
   ISellerUpdateOrderStatus
@@ -335,6 +339,7 @@ import {
   IShippingMethodEntity,
   IShippingMethodEntityImmu
 } from './type-shipping';
+
 import { IAnalytics } from './interfaces';
 
 /* #region FIXME: Marketplace */
@@ -924,7 +929,7 @@ export namespace GappBiz {
     IDBOrderActivityLog &
     IDBUpdateTime;
   export type CreateOrderSalePage = GappBiz.CreateOrderLink &
-    IOrderLinkDataOnConfirm;
+    IOrderLinkDataOnConfirm & IOrderLinkImmuDataOnConfirm;
   export type CreateOrderGappMed = GappBiz.CreateOrderLink &
     IOrderLinkDataOnConfirm;
   export type ListOrderByProduct = IDBListOrderByProduct;
@@ -1142,7 +1147,7 @@ export namespace GappSetting {
 export namespace GappApi {
   export type ConfirmOrderLink = IOrderLinkDataOnConfirm &
     IOrderCustomerData &
-    IOrderCustomerDataImmu & IOrderAccountingOnly;
+    IOrderCustomerDataImmu & IOrderAccountingOnly & IOrderLinkImmuDataOnConfirm;
   export type ConfirmOrderSalepage = GappApi.ConfirmOrderLink;
   export type ConfirmOrderGappmed = GappApi.ConfirmOrderLink;
   export type DBUpdateOrderLink = IOrderCustomerData &

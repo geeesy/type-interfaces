@@ -12,6 +12,7 @@ import {
   IShippingMethodEntityImmu,
   IUpdateMarketShippingMethod
 } from './type-shipping';
+import { ISaleChannelCustomUTM, TOrderChannelUTM } from './type-order';
 import { SaleChannelSubType, SaleChannelType } from './enum-const';
 
 // ANCHOR: Sale Channel Attribute (Type Default) test
@@ -40,8 +41,8 @@ export interface ISaleChannelEntityImmu {
 export interface ISaleChannelEntity {
   saleChannelIconUrl: string;
   saleChannelAliasName: string;
-  saleChannelTagUTM: string;
-  saleChannelCustomUTM: string;
+  saleChannelSourceUTM:TOrderChannelUTM
+  saleChannelCustomUTM:ISaleChannelCustomUTM
   note: string;
   saleChannelAttributes: ISaleChannelSubTypeDefault;
 }
