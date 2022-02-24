@@ -877,7 +877,7 @@ export namespace GappBiz {
   export type UpdateOrderStatus = ISellerUpdateOrderStatus &
     IApiCompanyParams &
     IOrderAccountingOnly &
-      IOrderDataOnComplete &
+    IOrderDataOnComplete &
     IOrderLinkDataOnConfirm;
   // ! ORDER_LINK
   export type CreateOrderLink = IOrderEntity &
@@ -904,22 +904,21 @@ export namespace GappBiz {
     IOrderLinkData &
     IDBOrderLinkImmu &
     IOrderLinkDataOnConfirm &
-      IOrderDataOnComplete &
-      IDBOrderDataImmu &
-      IDBOrderActivityLog & 
+    IOrderDataOnComplete &
+    IDBOrderDataImmu &
+    IDBOrderActivityLog &
+    IOrderLinkImmuDataOnConfirm &
     IDBLogTime;
   export type OrderSalePage = GappBiz.OrderLink;
   export type OrderGappMed = GappBiz.OrderLink;
-  export type ListOrderLink = IListOrder &
-    IDBLogTime;
+  export type ListOrderLink = IListOrder & IDBLogTime;
   export type UpdateOrder = IOrderEntity &
-  IOrderCustomerData &
-  IOrderCustomerDataImmu &
-  IOrderLinkDataOnConfirm &
-  IOrderLinkData &
-  IApiCompanyParams
-  export type CancelOrder = ISellerCancelOrder &
-  IApiCompanyParams
+    IOrderCustomerData &
+    IOrderCustomerDataImmu &
+    IOrderLinkDataOnConfirm &
+    IOrderLinkData &
+    IApiCompanyParams;
+  export type CancelOrder = ISellerCancelOrder & IApiCompanyParams;
   export type DBUpdateOrderLink = IOrderEntity &
     IDBOrderEntity &
     IOrderCustomerData &
@@ -929,7 +928,8 @@ export namespace GappBiz {
     IDBOrderActivityLog &
     IDBUpdateTime;
   export type CreateOrderSalePage = GappBiz.CreateOrderLink &
-    IOrderLinkDataOnConfirm & IOrderLinkImmuDataOnConfirm;
+    IOrderLinkDataOnConfirm &
+    IOrderLinkImmuDataOnConfirm;
   export type CreateOrderGappMed = GappBiz.CreateOrderLink &
     IOrderLinkDataOnConfirm;
   export type ListOrderByProduct = IDBListOrderByProduct;
@@ -1042,7 +1042,8 @@ export namespace GappInventory {
   export type ProductGroup = IProductGroup &
     IDBProductGroupImmu &
     IDBLogTime &
-    IDBProductGroupCount & IAnalytics ;
+    IDBProductGroupCount &
+    IAnalytics;
   export type DBUpdateProductGroup = IProductGroup & IDBUpdateTime;
   export type CreateWarehouse = IWarehouseEntity & IApiCompanyParams;
   export type Warehouse = IWarehouseEntity &
@@ -1119,7 +1120,8 @@ export namespace GappSetting {
   export type CreatePaymentMethod = IPaymentMethodEntity &
     IPaymentMethodEntityImmu &
     IApiCompanyParams;
-  export type PaymentMethod = IPaymentMethodEntity & IAnalytics &
+  export type PaymentMethod = IPaymentMethodEntity &
+    IAnalytics &
     IPaymentMethodEntityImmu &
     IDBPaymentMethod &
     IDBPaymentMethodImmu &
@@ -1147,7 +1149,9 @@ export namespace GappSetting {
 export namespace GappApi {
   export type ConfirmOrderLink = IOrderLinkDataOnConfirm &
     IOrderCustomerData &
-    IOrderCustomerDataImmu & IOrderAccountingOnly & IOrderLinkImmuDataOnConfirm;
+    IOrderCustomerDataImmu &
+    IOrderAccountingOnly &
+    IOrderLinkImmuDataOnConfirm;
   export type ConfirmOrderSalepage = GappApi.ConfirmOrderLink;
   export type ConfirmOrderGappmed = GappApi.ConfirmOrderLink;
   export type DBUpdateOrderLink = IOrderCustomerData &
