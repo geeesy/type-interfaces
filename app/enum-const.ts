@@ -145,7 +145,7 @@ export enum SaleChannelSubType {
   JD = 'jd',
   Facebook = 'facebook',
   Line = 'line',
-  Ig = 'ig',
+  Instagram = 'instagram',
   WeChat = 'weChat',
   WhatsApp = 'whatsApp',
   Youtube = 'youtube',
@@ -187,7 +187,7 @@ export const SaleChannelSubTypeArr = [
   },
   {
     text: 'Instagram',
-    value: SaleChannelSubType.Ig
+    value: SaleChannelSubType.Instagram
   },
   {
     text: 'WeChat',

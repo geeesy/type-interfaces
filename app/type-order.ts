@@ -63,7 +63,7 @@ export enum StatusOrder {
 
 export type TOrderType = 'ORDER_LINK' | 'SALEPAGE' | 'GAPP_MARKET' | 'GAPP_BIZ';
 export type TOrderItemType = 'SERVICE' | 'PRODUCT';
-export type TOrderChannelUTM = 'WEBSITE' | 'FACEBOOK' | 'INSTAGRAM' | 'LINE' | 'YOUTUBE' | 'GOOGLE' | 'OTHER';
+export type TOrderChannelUTM = 'WEBSITE' | 'FACEBOOK' | 'INSTAGRAM' | 'LINE' | 'YOUTUBE' | 'WHATSAPP' | 'WECHAT' | 'OTHER';
 /**
  * ORDER
  */
@@ -240,6 +240,16 @@ export interface IOrderLinkDataOnConfirm {
   isNewContactAddress: boolean;
   paymentAttachmentData: IPaymentAttachmentData | null;
   shippingTrackingData: IShippingTrackingData | null;
+}
+
+export interface IOrderLinkImmuDataOnConfirm{
+  saleChannelSourceUTM:TOrderChannelUTM
+  saleChannelCustomUTM:ISaleChannelCustomUTM
+}
+
+export interface ISaleChannelCustomUTM{
+  utmName:string
+  utmValue:string
 }
 
 // ANCHOR: ORDER | Entity (11/13)
