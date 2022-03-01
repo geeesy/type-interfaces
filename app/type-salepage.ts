@@ -52,9 +52,16 @@ export interface ISalePageEntity {
   settingGoogle: ISettingGoogle;
   settingLine: ISettingLine;
   settingSeo: ISeoMeta;
+  timePeriod: ITimePeriod;
+  hasNoShipment: boolean;
+}
+export interface ITimePeriod {
   startDate: Date;
   endDate: Date;
-  hasNoShipment: boolean;
+  chkSetTime: boolean;
+  chkStartDate: boolean;
+  chkEndDate: boolean;
+  chkStartNow: boolean;
 }
 
 // ANCHOR: SALE PAGE | Entity (4/4)

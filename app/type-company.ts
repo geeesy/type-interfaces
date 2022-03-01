@@ -297,9 +297,9 @@ export interface ICompanyPublicEntity {
 }
 
 export interface IShopeeToken {
-  accessToken: string
-  refreshToken: string
-  expireIn: number
+  accessToken: string;
+  refreshToken: string;
+  expireIn: number;
 }
 
 // ANCHOR: COMPANY | Entity (7/7)
@@ -310,7 +310,7 @@ export interface ICompanyPrivateEntity {
   companySize: TBusinessSize;
   companyInterests: string[];
   useApprovalWorkflow: TApproverFlow;
-  shopeeToken: IShopeeToken
+  shopeeToken: IShopeeToken;
 }
 
 // --------------------------------
@@ -429,14 +429,7 @@ export interface ISettingPriceList
 // NOTE: Initial with default value set on server when create company
 // ! initialize on server
 export type TYearFormat =
-  | 'YYYY-MM'
-  | 'YY-MM'
-  | 'YYYY-MM-dd'
-  | 'YY-MM-dd'
-  | 'YYYY-dd'
-  | 'YY-dd'
   | 'MM'
-  | 'MM-dd'
   | 'dd'
   | 'MMdd'
   | 'YYYYMMdd'
@@ -457,8 +450,8 @@ export interface IDocSeqNoFormat {
   hasShowedYear: boolean; // -> init === true
   hasShowedMonth: boolean; // -> init === true
   hasShowedDay: boolean; // -> init === false
-  numDigit: number;   //FIXME only 4 digit on seqNo -> init = 6
-  useBuddhistCalendar: boolean // -> init === false
+  numDigit: number; //FIXME only 4 digit on seqNo -> init = 6
+  useBuddhistCalendar: boolean; // -> init === false
 }
 export interface ISettingDocAttributes {
   seqNoFormat: IDocSeqNoFormat;
