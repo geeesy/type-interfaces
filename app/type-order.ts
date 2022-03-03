@@ -116,6 +116,8 @@ export interface IListOrder
   customerContactInfo: IPersonContactInfo;
   statusOrderOnSeller: StatusOrderSeller;
   statusOrderOnBuyer: StatusOrderCustomer;
+  statusOrderOfPayment: StatusOrderOfPayment | null;
+  paymentAttachmentData: IPaymentAttachmentData | null;
 }
 // ANCHOR: ORDER | Entity (1/13)
 export interface IOrderCustomerDataImmu {
