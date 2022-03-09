@@ -325,7 +325,8 @@ import {
   IListShipmentAndPaymentByCompany,
   ISaleChannelEntity,
   ISaleChannelEntityImmu,
-  IUpdateShippingAndPaymentMethodOnMarket
+  IUpdateShippingAndPaymentMethodOnMarket,
+  IUserNotification
 } from './type-setting';
 import {
   IDBSalePageEntity,
@@ -1076,6 +1077,7 @@ export namespace GappSetting {
   export type PriceList = ISettingPriceList;
   export type Document = ISettingDoc;
   export type Notification = ISettingNotification;
+  export type UserNotification = IUserNotification
   export type CompanyInfo = ICompanyPublicEntity &
     IDBCompanyEntity &
     IDBCompanySupplierEntity &
