@@ -69,3 +69,47 @@ export interface IListShipmentAndPaymentByCompany {
   shipmentData: IShipmentData[];
   paymentData: IPaymentData[];
 }
+
+// ANCHOR: USER NOTIFICATION SETTING
+
+export interface ISettingNotifyOrderAttribute {
+  onCreate: boolean
+  onConfirm: boolean
+  onSubmitPaymentWithSlip: boolean
+  onConfirmPaidWithSlip: boolean
+  onShipped: boolean
+  onCompleted: boolean
+  onCancelled: boolean
+}
+
+export interface ISettingNotifySalepageAttribute extends ISettingNotifyOrderAttribute {
+  onLeadPageReply: boolean
+}
+
+export interface ISettingNotifyStockAttribute {
+  onLowStock: boolean
+  onOutOfStock: boolean
+}
+
+export interface ISettingNotifyInventoryAttribute {
+  onEmpty: boolean
+}
+
+export interface ISettingNotifyCommerce {
+  orderLinkNotifyMessage: ISettingNotifyOrderAttribute
+  salepageNotifyMessage: ISettingNotifySalepageAttribute
+  orderLinkNotifyEmail: ISettingNotifyOrderAttribute
+  salepageNotifyEmail: ISettingNotifySalepageAttribute
+}
+
+export interface ISettingNotifyInventory {
+  productStockNotifyMessage: ISettingNotifyStockAttribute
+  inventoryNotifyMessage: ISettingNotifyInventoryAttribute
+  productStockNotifyEmail: ISettingNotifyStockAttribute
+  inventoryNotifyEmail: ISettingNotifyInventoryAttribute
+}
+
+export interface IUserNotification {
+  commerce: ISettingNotifyCommerce
+  inventory: ISettingNotifyInventory
+}
