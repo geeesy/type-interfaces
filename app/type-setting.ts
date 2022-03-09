@@ -96,13 +96,17 @@ export interface ISettingNotifyInventoryAttribute {
 }
 
 export interface ISettingNotifyCommerce {
-  orderLink: ISettingNotifyOrderAttribute
-  salepage: ISettingNotifySalepageAttribute
+  orderLinkNotifyMessage: ISettingNotifyOrderAttribute
+  salepageNotifyMessage: ISettingNotifySalepageAttribute
+  orderLinkNotifyEmail: ISettingNotifyOrderAttribute
+  salepageNotifyEmail: ISettingNotifySalepageAttribute
 }
 
 export interface ISettingNotifyInventory {
-  productStock: ISettingNotifyStockAttribute
-  inventory: ISettingNotifyInventoryAttribute
+  productStockNotifyMessage: ISettingNotifyStockAttribute
+  inventoryNotifyMessage: ISettingNotifyInventoryAttribute
+  productStockNotifyEmail: ISettingNotifyStockAttribute
+  inventoryNotifyEmail: ISettingNotifyInventoryAttribute
 }
 
 export interface IUserNotification {
