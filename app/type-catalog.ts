@@ -368,7 +368,7 @@ export interface IProductVariantOnly
     IProductVariantEntity {}
 
 export interface IProductVariantOnlyWithStock extends IProductVariantOnly {
-  inventory: ICreateProductWithStock;
+  inventories: ICreateProductWithStock[];
   useMultiStock: boolean;
   useInventory: boolean;
 }
