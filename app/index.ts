@@ -132,7 +132,6 @@ import {
   ISettingCreatePriceGroup,
   ISettingCreatePriceList,
   ISettingDoc,
-  ISettingNotification,
   ISettingPriceGroup,
   ISettingPriceList,
   ISupplierByGapp
@@ -1080,7 +1079,6 @@ export namespace GappSetting {
   export type PriceList = ISettingPriceList;
   export type Document = ISettingDoc;
   // * NOTIFICATION
-  export type Notification = ISettingNotification;
   export type UserNotification = IUserNotification
   export type CreateLineNotify = ISettingLineNotifyEntity & ISettingNotifyLine & IApiCompanyParams;
   export type CompanyNotification = ICompanyNotification & IDBLogTime & IDBLogAction
