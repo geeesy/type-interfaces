@@ -3,6 +3,10 @@ export interface IDBLogTime {
   updatedAt: string
 }
 
+export interface IDBLogAction {
+  updatedBy: string
+}
+
 export interface IDBUpdateTime {
   updatedAt: string
 }

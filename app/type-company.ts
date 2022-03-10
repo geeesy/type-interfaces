@@ -474,13 +474,6 @@ export interface ISettingDoc extends IDBCompanyActivityLog {
   vatPercent: number; // default = 7
 }
 
-export interface ILineNotify {
-  token: string;
-}
-
-export interface ISettingNotification {
-  line: ILineNotify;
-}
 
 export interface ICustomer {
   customerId: string;

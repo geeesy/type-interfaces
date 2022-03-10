@@ -70,7 +70,7 @@ export interface IListShipmentAndPaymentByCompany {
   paymentData: IPaymentData[];
 }
 
-// ANCHOR: USER NOTIFICATION SETTING
+// ANCHOR: USER NOTIFICATION SETTING (BY USER)
 
 export interface ISettingNotifyOrderAttribute {
   onCreate: boolean
@@ -112,4 +112,33 @@ export interface ISettingNotifyInventory {
 export interface IUserNotification {
   commerce: ISettingNotifyCommerce
   inventory: ISettingNotifyInventory
+}
+
+// ANCHOR: NOTIFICATION SETTING (BY COMPANY)
+
+export interface ISettingLineNotifyEntityImmu {
+  id: string
+  compId: string
+  businessId: string
+  createdAt: string
+}
+
+export interface ISettingLineNotifyEntity {
+  token: string
+  title: string
+  caption: string
+}
+
+export interface ISettingNotifyLine {
+  orderLink: ISettingNotifyOrderAttribute
+  salepage: ISettingNotifySalepageAttribute
+  productStock: ISettingNotifyStockAttribute
+  inventory: ISettingNotifyInventoryAttribute
+}
+
+export interface ISettingLineNotify 
+extends ISettingLineNotifyEntityImmu, ISettingLineNotifyEntity, ISettingNotifyLine {}
+
+export interface ICompanyNotification {
+  lineNotify: ISettingLineNotify[]
 }
