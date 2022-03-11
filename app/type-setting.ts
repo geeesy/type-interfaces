@@ -120,7 +120,6 @@ export interface ISettingLineNotifyEntityImmu {
   id: string
   compId: string
   businessId: string
-  createdAt: string
 }
 
 export interface ISettingLineNotifyEntity {
