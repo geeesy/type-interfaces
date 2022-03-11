@@ -288,7 +288,7 @@ import {
   ISellerCreateOrder,
   ISellerUpdateOrderStatus
 } from './type-order';
-import { IDBLogAction, IDBLogCreate, IDBLogTime, IDBLogUpdate, IDBUpdateTime } from './type-api';
+import { IDBLogCreate, IDBLogTime, IDBLogUpdate, IDBUpdateTime } from './type-api';
 import {
   IDBPaymentMethod,
   IDBPaymentMethodImmu,
