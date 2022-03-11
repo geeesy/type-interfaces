@@ -288,7 +288,7 @@ import {
   ISellerCreateOrder,
   ISellerUpdateOrderStatus
 } from './type-order';
-import { IDBLogAction, IDBLogTime, IDBUpdateTime } from './type-api';
+import { IDBLogCreate, IDBLogTime, IDBLogUpdate, IDBUpdateTime } from './type-api';
 import {
   IDBPaymentMethod,
   IDBPaymentMethodImmu,
@@ -325,6 +325,7 @@ import {
   IListShipmentAndPaymentByCompany,
   ISaleChannelEntity,
   ISaleChannelEntityImmu,
+  ISettingLineNotify,
   ISettingLineNotifyEntity,
   ISettingNotifyLine,
   IUpdateShippingAndPaymentMethodOnMarket,
@@ -1081,8 +1082,9 @@ export namespace GappSetting {
   // * NOTIFICATION
   export type UserNotification = IUserNotification
   export type CreateLineNotify = ISettingLineNotifyEntity & ISettingNotifyLine & IApiCompanyParams;
-  export type CompanyNotification = ICompanyNotification & IDBLogTime & IDBLogAction
-  export type DBUpdateLineNotify = ISettingLineNotifyEntity & ISettingNotifyLine & IDBUpdateTime
+  export type CompanyNotification = ICompanyNotification
+  export type LineNotify  = ISettingLineNotify & IDBLogUpdate & IDBLogCreate
+  export type DBUpdateLineNotify = ISettingLineNotifyEntity & ISettingNotifyLine & IDBLogUpdate
    // * ---
   export type CompanyInfo = ICompanyPublicEntity &
     IDBCompanyEntity &
