@@ -226,7 +226,8 @@ import {
   IVendorCreate,
   IVendorCreateParams,
   IVendorRequestAccept,
-  IVendorRequestList
+  IVendorRequestList,
+  INotifyMessage
 } from './type-apps';
 import {
   IBusinessCompanyUserIdentity,
@@ -951,6 +952,7 @@ export namespace GappBiz {
   export type LeadpageCreate = IDBOrderSellerDataImmu & ILeadpage;
   export type Leadpage = IDBOrderSellerDataImmu & ILeadpage & ILeadpageId;
   export type LogOrder = ILogOrder;
+  export type NotifyMessage = INotifyMessage
 }
 
 // REVIEW: G-MARKET
