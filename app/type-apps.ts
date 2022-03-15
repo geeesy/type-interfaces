@@ -1367,3 +1367,34 @@ export interface IPoolAcceptJoining {
   joinPoolQty: number;
 }
 /* #endregion */
+
+// ANCHOR: Notification Message Center
+export type TNotifyTopic = 'commerce' | 'inventory'
+export type TNotifySubtopic = 'orderLink' | 'salepage' | 'productStock' | 'inventory'
+export type TNotifyEvent =
+  'orderOnCreate' |
+  'orderOnConfirm' |
+  'orderOnSubmitPaymentWithSlip' |
+  'orderOnConfirmPaidWithSlip' |
+  'orderOnShipped' | 
+  'orderOnCompleted' |
+  'orderOnCancelled' |
+  'salepageOnLeadPageReply' |
+  'stockOnLowStock' |
+  'stockOnOutOfStock' |
+  'inventoryOnEmpty'
+export type TNotifyStatus = 'unread' | 'read' | 'opened' | 'clicked'
+
+export interface INotifyMessage {
+  id: string;
+  compId: string
+  topic: TNotifyTopic
+  subtopic: TNotifySubtopic
+  event: TNotifyEvent
+  message: string
+  sender: string
+  entityId: string
+  entitySubId: string
+  status: TNotifyStatus
+  createdAt: string
+}
