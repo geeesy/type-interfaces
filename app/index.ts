@@ -1169,7 +1169,8 @@ export namespace GappApi {
   export type DBUpdateOrderLink = IOrderCustomerData &
     IOrderLinkDataOnConfirm &
     IDBUpdateTime &
-    IDBOrderStatus;
+    IDBOrderStatus &
+    IDBOrderActivityLog
   export type ListOrderLink = GappBiz.ListOrderLink;
   export type OrderLink = GappBiz.OrderLink;
   export type OrderSalePage = GappBiz.OrderLink;
