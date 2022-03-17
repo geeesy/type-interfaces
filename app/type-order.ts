@@ -6,51 +6,51 @@ import { SaleChannelSubType } from './enum-const';
 
 /* eslint-disable no-unused-vars */
 export enum StatusOrderSeller {
-  S0_None = 'none', // TODO: ignore?
-  S1_AwaitingConfirm = 'awaiting_confirm',
-  S2_AwaitingPayment = 'awaiting_payment',
-  S3_ToConfirm = 'to_confirm',
-  S4_AwaitingFulfillment = 'awaiting_fulfillment',
-  S5_AwaitingShipment = 'awaiting_shipment',
-  S5_AwaitingPickup = 'awaiting_pickup',
-  S6_Shipped = 'shipped',
-  S6_AwaitingAccepted = 'awaiting_accepted',
-  S7_AwaitingDeposit = 'awaiting_deposit',
-  S8_Completed = 'completed',
-  S_Cancelled = 'cancelled'
+  S0_None = 'NONE', // TODO: ignore?
+  S1_AwaitingConfirm = 'AWAITING_CONFIRM',
+  S2_AwaitingPayment = 'AWAITING_PAYMENT',
+  S3_ToConfirm = 'TO_CONFIRM',
+  S4_AwaitingFulfillment = 'AWAITING_FULFILLMENT',
+  S5_AwaitingShipment = 'AWAITING_SHIPMENT',
+  S5_AwaitingPickup = 'AWAITING_PICKUP',
+  S6_Shipped = 'SHIPPED',
+  S6_AwaitingAccepted = 'AWAITING_ACCEPTED',
+  S7_AwaitingDeposit = 'AWAITING_DEPOSIT',
+  S8_Completed = 'COMPLETED',
+  S_Cancelled = 'CANCELLED'
 }
 
 export enum StatusOrderCustomer {
-  B0_None = 'none', // TODO: ignore?
-  B1_AwaitingConfirm = 'awaiting_confirm',
-  B2_AwaitingPayment = 'awaiting_payment',
-  B3_Paid = 'paid',
-  B4_AwaitingFulfillment = 'awaiting_fulfillment',
-  B5_AwaitingShipment = 'awaiting_shipment',
-  B5_ToPickup = 'to_pickup',
-  B6_Shipped = 'shipped',
-  B6_AwaitingAccepted = 'awaiting_accepted',
-  B7_Accepted = 'accepted',
-  B8_Completed = 'completed',
-  B_Cancelled = 'cancelled'
+  B0_None = 'NONE', // TODO: ignore?
+  B1_AwaitingConfirm = 'AWAITING_CONFIRM',
+  B2_AwaitingPayment = 'AWAITING_PAYMENT',
+  B3_Paid = 'PAID',
+  B4_AwaitingFulfillment = 'AWAITING_FULFILLMENT',
+  B5_AwaitingShipment = 'AWAITING_SHIPMENT',
+  B5_ToPickup = 'TO_PICKUP',
+  B6_Shipped = 'SHIPPED',
+  B6_AwaitingAccepted = 'AWAITING_ACCEPTED',
+  B7_Accepted = 'ACCEPTED',
+  B8_Completed = 'COMPLETED',
+  B_Cancelled = 'CANCELLED'
 }
 
 export enum StatusOrderOfPayment {
-  PAY0_AwaitingPayment = 'awaiting_payment',
-  PAY1_ToConfirm = 'to_confirm',
-  PAY2_CompletedPayment = 'completed_payment'
+  PAY0_AwaitingPayment = 'AWAITING_PAYMENT',
+  PAY1_ToConfirm = 'TO_CONFIRM',
+  PAY2_CompletedPayment = 'COMPLETED_PAYMENT'
 }
 
 export enum StatusOrderOfShipment {
-  SHIP0_AwaitingShipment = 'awaiting_shipment',
-  SHIP0_AwaitingPickup = 'awaiting_pickup',
-  SHIP1_Shipped = 'shipped',
-  SHIP2_CompletedShipment = 'completed_shipment'
+  SHIP0_AwaitingShipment = 'AWAITING_SHIPMENT',
+  SHIP0_AwaitingPickup = 'AWAITING_PICKUP',
+  SHIP1_Shipped = 'SHIPPED',
+  SHIP2_CompletedShipment = 'COMPLETED_SHIPMENT'
 }
 
 export enum StatusOrderOfStock {
-  Reserved = 'reserved',
-  Deducted = 'deducted'
+  Reserved = 'RESERVED',
+  Deducted = 'DEDUCTED'
 }
 
 export enum StatusOrder {

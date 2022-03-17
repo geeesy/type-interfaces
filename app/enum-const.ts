@@ -101,28 +101,28 @@ export const SearchPageArr = [
 ];
 
 export enum StatusPoolJoining {
-  Joined = 'joined',
-  Cancel = 'cancel',
-  RequestCancel = 'request_cancel',
-  AcceptedCancel = 'accepted_cancel'
+  Joined = 'JOINED',
+  Cancel = 'CANCEL',
+  RequestCancel = 'REQUEST_CANCEL',
+  AcceptedCancel = 'ACCEPTED_CANCEL'
 }
 
 export enum StatusPoolShippingMainBuyer {
-  'none',
-  'to_purchase',
-  'prepare',
-  'shipped',
-  'received',
-  'complete'
+  'NONE',
+  'TO_PURCHASE',
+  'PREPARE',
+  'SHIPPED',
+  'RECEIVED',
+  'COMPLETE'
 }
 
 export enum StatusPoolShippingSubBuyer {
-  'none',
-  'waiting',
-  'purchasing',
-  'packing',
-  'shipping',
-  'complete'
+  'NONE',
+  'WAITING',
+  'PURCHASING',
+  'PACKING',
+  'SHIPPING',
+  'COMPLETE'
 }
 
 // export const RfqCreditTerm = ['none', 'cash', '30', '60', '90']
