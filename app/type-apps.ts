@@ -1384,6 +1384,8 @@ export type TNotifyEvent =
   'stockOnOutOfStock' |
   'inventoryOnEmpty'
 export type TNotifyStatus = 'unread' | 'read' | 'opened' | 'clicked'
+export type TNotifySender = 'gapp' | 'seller' | 'company' | 'business' | 'buyer'
+export type TNotifyPriority = 'highest' | 'high' | 'normal' | 'low' | 'lowest'
 
 export interface INotifyMessage {
   id: string;
@@ -1392,7 +1394,9 @@ export interface INotifyMessage {
   subtopic: TNotifySubtopic
   event: TNotifyEvent
   message: string
-  sender: string
+  sender: TNotifySender
+  actorIdentityId: string
+  priority: TNotifyPriority
   entityId: string
   entitySubId: string
   status: TNotifyStatus
