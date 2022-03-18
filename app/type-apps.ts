@@ -1376,7 +1376,7 @@ export type TNotifyEvent =
   'orderOnConfirm' |
   'orderOnSubmitPaymentWithSlip' |
   'orderOnConfirmPaidWithSlip' |
-  'orderOnShipped' | 
+  'orderOnShipped' |
   'orderOnCompleted' |
   'orderOnCancelled' |
   'salepageOnLeadPageReply' |
@@ -1401,4 +1401,5 @@ export interface INotifyMessage {
   entitySubId: string
   status: TNotifyStatus
   createdAt: string
+  refDocNo: string
 }
