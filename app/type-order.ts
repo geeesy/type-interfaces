@@ -275,6 +275,7 @@ export interface IDBOrderActivityLog {
   latestNoteOnAction: string;
   latestActivityOnOrderType: TOrderType | null;
   latestActionBy: string | null; // ? use to identify action -> buyer (null) or seller (identityId)
+  latestActionByFullName?: string // ? -> firstname + lastname
 }
 
 /**
