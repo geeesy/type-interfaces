@@ -114,6 +114,11 @@ export interface IUserNotification {
   inventory: ISettingNotifyInventory
 }
 
+export interface IUserNotificationToggle {
+  hasNotifyByMessage: boolean
+  hasNotifyByEmail: boolean
+}
+
 // ANCHOR: NOTIFICATION SETTING (BY COMPANY)
 
 export interface ISettingLineNotifyEntityImmu {
@@ -135,9 +140,13 @@ export interface ISettingNotifyLine {
   inventory: ISettingNotifyInventoryAttribute
 }
 
-export interface ISettingLineNotify 
+export interface ISettingLineNotify
 extends ISettingLineNotifyEntityImmu, ISettingLineNotifyEntity, ISettingNotifyLine {}
 
 export interface ICompanyNotification {
   lineNotify: ISettingLineNotify[]
+}
+
+export interface ICompanyNotificationToggle {
+  hasNotifyByLineNotify: boolean
 }
