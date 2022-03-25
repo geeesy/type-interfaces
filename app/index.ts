@@ -1086,6 +1086,7 @@ export namespace GappSetting {
   export type CreateLineNotify = ISettingLineNotifyEntity & ISettingNotifyLine & IApiCompanyParams;
   export type CompanyNotification = ICompanyNotification & ICompanyNotificationToggle
   export type LineNotify  = ISettingLineNotify & IDBLogUpdate & IDBLogCreate
+  export type ToggleLineNotify = ICompanyNotificationToggle
   export type DBUpdateLineNotify = ISettingLineNotifyEntity & ISettingNotifyLine & IDBLogUpdate
    // * ---
   export type CompanyInfo = ICompanyPublicEntity &
