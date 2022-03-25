@@ -13,6 +13,7 @@ export interface IApiCompanyParams {
   businessId: string;
   compId: string;
   identityId: string;
+  identityFullName?: string
   companyCode: string;
 }
 
