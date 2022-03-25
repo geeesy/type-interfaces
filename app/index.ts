@@ -320,7 +320,7 @@ import {
   IProductVariantInPack
 } from './type-catalog';
 import {
-  ICompanyNotification,
+  ICompanyNotification, ICompanyNotificationToggle,
   IDBSaleChannel,
   IDBSaleChannelImmu,
   IListShipmentAndPaymentByCompany,
@@ -330,7 +330,7 @@ import {
   ISettingLineNotifyEntity,
   ISettingNotifyLine,
   IUpdateShippingAndPaymentMethodOnMarket,
-  IUserNotification
+  IUserNotification, IUserNotificationToggle
 } from './type-setting';
 import {
   IDBSalePageEntity,
@@ -1082,9 +1082,9 @@ export namespace GappSetting {
   export type PriceList = ISettingPriceList;
   export type Document = ISettingDoc;
   // * NOTIFICATION
-  export type UserNotification = IUserNotification
+  export type UserNotification = IUserNotification & IUserNotificationToggle
   export type CreateLineNotify = ISettingLineNotifyEntity & ISettingNotifyLine & IApiCompanyParams;
-  export type CompanyNotification = ICompanyNotification
+  export type CompanyNotification = ICompanyNotification & ICompanyNotificationToggle
   export type LineNotify  = ISettingLineNotify & IDBLogUpdate & IDBLogCreate
   export type DBUpdateLineNotify = ISettingLineNotifyEntity & ISettingNotifyLine & IDBLogUpdate
    // * ---
