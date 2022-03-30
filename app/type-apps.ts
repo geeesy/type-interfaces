@@ -1396,6 +1396,7 @@ export interface INotifyMessage {
   message: string
   sender: TNotifySender
   actorIdentityId: string
+  actorFullName: string
   priority: TNotifyPriority
   entityId: string
   entitySubId: string
