@@ -109,6 +109,7 @@ import {
   IDBCategoryProductSpecGroup,
   IPaymentMethod
 } from './type-console';
+import { IApiCompanyParams, IDBLogCreate, IDBLogTime, IDBLogUpdate, IDBUpdateTime } from './type-api';
 import {
   IApiSupplierParams,
   ICertificate,
@@ -162,6 +163,7 @@ import {
   IJoinerListJoiningPools,
   IJoinerListPools,
   IJoining,
+  INotifyMessage,
   IPO,
   IPOFormCreate,
   IPOFormCreateParams,
@@ -225,8 +227,7 @@ import {
   IVendorCreate,
   IVendorCreateParams,
   IVendorRequestAccept,
-  IVendorRequestList,
-  INotifyMessage
+  IVendorRequestList
 } from './type-apps';
 import {
   IBusinessCompanyUserIdentity,
@@ -245,6 +246,21 @@ import {
   IDBBusinessUserIdentity,
   IDBBusinessUserIdentityStatus
 } from './type-business';
+import {
+  ICompanyNotification,
+  ICompanyNotificationToggle,
+  IDBSaleChannel,
+  IDBSaleChannelImmu,
+  IListShipmentAndPaymentByCompany,
+  ISaleChannelEntity,
+  ISaleChannelEntityImmu,
+  ISettingLineNotify,
+  ISettingLineNotifyEntity,
+  ISettingNotifyLine,
+  IUpdateShippingAndPaymentMethodOnMarket,
+  IUserNotification,
+  IUserNotificationToggle
+} from './type-setting';
 import {
   ICreateProductWithMultiStock,
   IDBInventoryEntity,
@@ -279,16 +295,15 @@ import {
   IOrderAccountingOnly,
   IOrderCustomerData,
   IOrderCustomerDataImmu,
+  IOrderData,
   IOrderDataOnComplete,
   IOrderEntity,
-  IOrderData,
   IOrderLinkDataOnConfirm,
   IOrderLinkImmuDataOnConfirm,
   ISellerCancelOrder,
   ISellerCreateOrder,
   ISellerUpdateOrderStatus
 } from './type-order';
-import { IApiCompanyParams, IDBLogCreate, IDBLogTime, IDBLogUpdate, IDBUpdateTime } from './type-api';
 import {
   IDBPaymentMethod,
   IDBPaymentMethodImmu,
@@ -318,19 +333,6 @@ import {
   IProductVariantEntity,
   IProductVariantInPack
 } from './type-catalog';
-import {
-  ICompanyNotification, ICompanyNotificationToggle,
-  IDBSaleChannel,
-  IDBSaleChannelImmu,
-  IListShipmentAndPaymentByCompany,
-  ISaleChannelEntity,
-  ISaleChannelEntityImmu,
-  ISettingLineNotify,
-  ISettingLineNotifyEntity,
-  ISettingNotifyLine,
-  IUpdateShippingAndPaymentMethodOnMarket,
-  IUserNotification, IUserNotificationToggle
-} from './type-setting';
 import {
   IDBSalePageEntity,
   ISalePageEntity,
@@ -1045,10 +1047,11 @@ export namespace GappInventory {
   export type LogProduct = ILogProduct;
   export type CreateProductGroup = IProductGroup & IApiCompanyParams;
   export type ProductGroup = IProductGroup &
-    IDBProductGroupImmu &
+    IDBProductGroupImmu & 
     IDBLogTime &
     IDBProductGroupCount &
-    IAnalytics;
+    IAnalytics &
+    IApiCompanyParams;
   export type DBUpdateProductGroup = IProductGroup & IDBUpdateTime;
   export type CreateWarehouse = IWarehouseEntity & IApiCompanyParams;
   export type Warehouse = IWarehouseEntity &
@@ -1084,10 +1087,10 @@ export namespace GappSetting {
   export type UserNotification = IUserNotification & IUserNotificationToggle
   export type CreateLineNotify = ISettingLineNotifyEntity & ISettingNotifyLine & IApiCompanyParams;
   export type CompanyNotification = ICompanyNotification & ICompanyNotificationToggle
-  export type LineNotify  = ISettingLineNotify & IDBLogUpdate & IDBLogCreate
+  export type LineNotify = ISettingLineNotify & IDBLogUpdate & IDBLogCreate
   export type ToggleLineNotify = ICompanyNotificationToggle
   export type DBUpdateLineNotify = ISettingLineNotifyEntity & ISettingNotifyLine & IDBLogUpdate
-   // * ---
+  // * ---
   export type CompanyInfo = ICompanyPublicEntity &
     IDBCompanyEntity &
     IDBCompanySupplierEntity &
