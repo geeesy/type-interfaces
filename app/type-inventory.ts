@@ -81,12 +81,14 @@ export interface IDBProductInventoryActivityLog {
   latestActivityOnOrderType: TOrderType | null; // used to identify source of adjustment
   latestActivityOnTransferInOut?: string; // used to identify on stock transfer
   latestActionBy: string
+  latestactionByFullName: string // userd
 }
+
 
 export interface ICreateProductWithStock
   extends IProductInventoryImmu,
-    IProductInventorySetting,
-    IDBProductInventoryFormulaImmu {}
+  IProductInventorySetting,
+  IDBProductInventoryFormulaImmu { }
 
 export interface ICreateProductWithMultiStock {
   inventories: ICreateProductWithStock[];
@@ -122,8 +124,8 @@ export interface ITransferProductStock {
 
 export interface ILogStockValue
   extends IProductInventoryImmu,
-    IProductInventorySetting,
-    IDBProductInventory {}
+  IProductInventorySetting,
+  IDBProductInventory { }
 
 export enum StockMovementType {
   Initial = 'initial_entry',
