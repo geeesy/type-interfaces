@@ -281,7 +281,7 @@ import {
   IOrderCustomerDataImmu,
   IOrderDataOnComplete,
   IOrderEntity,
-  IOrderLinkData,
+  IOrderData,
   IOrderLinkDataOnConfirm,
   IOrderLinkImmuDataOnConfirm,
   ISellerCancelOrder,
@@ -887,14 +887,14 @@ export namespace GappBiz {
   export type CreateOrderLink = IOrderEntity &
     IOrderCustomerData &
     IOrderCustomerDataImmu &
-    IOrderLinkData &
+    IOrderData &
     ISellerCreateOrder &
     IApiCompanyParams;
   // ! MANUAL ORDER
   export type CreateManualOrder = IOrderEntity &
     IOrderCustomerData &
     IOrderCustomerDataImmu &
-    IOrderLinkData &
+    IOrderData &
     ISellerCreateOrder &
     IOrderLinkDataOnConfirm &
     IApiCompanyParams;
@@ -905,7 +905,7 @@ export namespace GappBiz {
     IOrderCustomerData &
     IOrderCustomerDataImmu &
     IDBOrderStatus &
-    IOrderLinkData &
+    IOrderData &
     IDBOrderLinkImmu &
     IOrderLinkDataOnConfirm &
     IOrderDataOnComplete &
@@ -920,7 +920,7 @@ export namespace GappBiz {
     IOrderCustomerData &
     IOrderCustomerDataImmu &
     IOrderLinkDataOnConfirm &
-    IOrderLinkData &
+    IOrderData &
     IApiCompanyParams;
   export type CancelOrder = ISellerCancelOrder & IApiCompanyParams;
   export type DBUpdateOrderLink = IOrderEntity &
@@ -928,7 +928,7 @@ export namespace GappBiz {
     IOrderCustomerData &
     IOrderCustomerDataImmu &
     IOrderLinkDataOnConfirm &
-    IOrderLinkData &
+    IOrderData &
     IDBOrderActivityLog &
     IDBUpdateTime;
   export type CreateOrderSalePage = GappBiz.CreateOrderLink &
