@@ -21,4 +21,12 @@ export interface IDBLogUpdate {
   updatedBy: string
 }
 
+export interface IApiCompanyParams {
+  businessId: string;
+  compId: string;
+  identityId: string;
+  identityFullName: string
+  companyCode: string;
+}
+
 export type TApiErrorModule = 'INVENTORY' | 'ERROR'
