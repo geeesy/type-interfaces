@@ -202,7 +202,8 @@ export interface IDBListOrderByProduct
  */
 
 // ANCHOR: ORDER | Entity (8/13)
-export interface IOrderLinkData {
+export interface IOrderData {
+  salepageName: string;
   saleChannelId: string;
   channel: SaleChannelSubType;
   expiryTimestamp: number; //timestamp
@@ -374,7 +375,7 @@ export interface ILogOrderValue extends
 IOrderCustomerData,
 IDBOrderEntity,
 IOrderEntity,
-IOrderLinkData
+IOrderData
 {
 
 }
