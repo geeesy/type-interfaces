@@ -1052,7 +1052,7 @@ export namespace GappInventory {
     IDBProductGroupCount &
     IAnalytics &
     IApiCompanyParams;
-  export type DBUpdateProductGroup = IProductGroup & IDBUpdateTime;
+  export type DBUpdateProductGroup = IProductGroup & IDBUpdateTime & IApiCompanyParams;
   export type CreateWarehouse = IWarehouseEntity & IApiCompanyParams;
   export type Warehouse = IWarehouseEntity &
     IDBWarehouseEntityImmu &
