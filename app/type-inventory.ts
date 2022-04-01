@@ -81,8 +81,9 @@ export interface IDBProductInventoryActivityLog {
   latestActivityOnOrderType: TOrderType | null; // used to identify source of adjustment
   latestActivityOnTransferInOut?: string; // used to identify on stock transfer
   latestActionBy: string
-  latestactionByFullName: string // used
+  latestactionByFullName: string
 }
+
 
 export interface ICreateProductWithStock
   extends IProductInventoryImmu,
