@@ -9,13 +9,7 @@ import { IPaymentMethod, IShippingZone } from './type-console';
 import { IPersonContactInfo } from './type-apps';
 
 /* #region COMPANY */
-export interface IApiCompanyParams {
-  businessId: string;
-  compId: string;
-  identityId: string;
-  identityFullName?: string
-  companyCode: string;
-}
+
 
 export interface IApiSupplierParams {
   businessId: string;

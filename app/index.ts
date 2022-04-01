@@ -110,7 +110,6 @@ import {
   IPaymentMethod
 } from './type-console';
 import {
-  IApiCompanyParams,
   IApiSupplierParams,
   ICertificate,
   ICompanyByGapp,
@@ -289,7 +288,7 @@ import {
   ISellerCreateOrder,
   ISellerUpdateOrderStatus
 } from './type-order';
-import { IDBLogCreate, IDBLogTime, IDBLogUpdate, IDBUpdateTime } from './type-api';
+import { IApiCompanyParams, IDBLogCreate, IDBLogTime, IDBLogUpdate, IDBUpdateTime } from './type-api';
 import {
   IDBPaymentMethod,
   IDBPaymentMethodImmu,
