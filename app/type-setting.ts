@@ -41,8 +41,8 @@ export interface ISaleChannelEntityImmu {
 export interface ISaleChannelEntity {
   saleChannelIconUrl: string;
   saleChannelAliasName: string;
-  saleChannelSourceUTM:TOrderChannelUTM
-  saleChannelCustomUTM:ISaleChannelCustomUTM
+  saleChannelSourceUTM: TOrderChannelUTM
+  saleChannelCustomUTM: ISaleChannelCustomUTM
   note: string;
   saleChannelAttributes: ISaleChannelSubTypeDefault;
 }
@@ -56,15 +56,15 @@ export interface IUpdateShippingAndPaymentMethodOnMarket {
 
 export interface IPaymentData
   extends IPaymentMethodEntity,
-    IPaymentMethodEntityImmu,
-    IDBPaymentMethod,
-    IDBPaymentMethodImmu {}
+  IPaymentMethodEntityImmu,
+  IDBPaymentMethod,
+  IDBPaymentMethodImmu { }
 
 export interface IShipmentData
   extends IShippingMethodEntity,
-    IDBShippingMethod,
-    IDBShippingMethodImmu,
-    IShippingMethodEntityImmu {}
+  IDBShippingMethod,
+  IDBShippingMethodImmu,
+  IShippingMethodEntityImmu { }
 export interface IListShipmentAndPaymentByCompany {
   shipmentData: IShipmentData[];
   paymentData: IPaymentData[];
@@ -128,6 +128,7 @@ export interface ISettingLineNotifyEntityImmu {
 }
 
 export interface ISettingLineNotifyEntity {
+  active: boolean
   token: string
   title: string
   caption: string
@@ -141,7 +142,7 @@ export interface ISettingNotifyLine {
 }
 
 export interface ISettingLineNotify
-extends ISettingLineNotifyEntityImmu, ISettingLineNotifyEntity, ISettingNotifyLine {}
+  extends ISettingLineNotifyEntityImmu, ISettingLineNotifyEntity, ISettingNotifyLine { }
 
 export interface ICompanyNotification {
   lineNotify: ISettingLineNotify[]
