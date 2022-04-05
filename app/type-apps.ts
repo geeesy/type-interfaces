@@ -1403,4 +1403,5 @@ export interface INotifyMessage {
   status: TNotifyStatus
   createdAt: string
   refDocNo: string
+  notifiedAt: string
 }
