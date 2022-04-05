@@ -1387,8 +1387,7 @@ export type TNotifyStatus = 'unread' | 'read' | 'opened' | 'clicked'
 export type TNotifySender = 'gapp' | 'seller' | 'company' | 'business' | 'buyer'
 export type TNotifyPriority = 'highest' | 'high' | 'normal' | 'low' | 'lowest'
 
-export interface INotifyMessage {
-  id: string;
+export interface ICreateNotifyMessage {
   compId: string
   topic: TNotifyTopic
   subtopic: TNotifySubtopic
@@ -1401,6 +1400,11 @@ export interface INotifyMessage {
   entityId: string
   entitySubId: string
   status: TNotifyStatus
-  createdAt: string
   refDocNo: string
+  notifiedAt: string
+}
+
+export interface INotifyMessage extends ICreateNotifyMessage {
+  id: string
+  createdAt: string
 }
