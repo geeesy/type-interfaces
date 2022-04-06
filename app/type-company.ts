@@ -10,14 +10,6 @@ import { IPersonContactInfo } from './type-apps';
 
 /* #region COMPANY */
 
-
-export interface IApiSupplierParams {
-  businessId: string;
-  compId: string;
-  identityId: string;
-  supplierId: string;
-}
-
 export interface IPublishParams {
   businessId: string;
   compId: string;
