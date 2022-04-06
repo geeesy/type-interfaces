@@ -79,7 +79,7 @@ export interface ISettingNotifyOrderAttribute {
   onConfirmPaidWithSlip: boolean
   onShipped: boolean
   onCompleted: boolean
-  onCancelled: boolean
+  onCanceled: boolean
 }
 
 export interface ISettingNotifySalepageAttribute extends ISettingNotifyOrderAttribute {

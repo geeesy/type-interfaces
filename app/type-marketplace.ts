@@ -191,14 +191,14 @@ export interface ICreateLatestVisitProducts {
 } // Like a IProduct + userId
 export type IResLatestVisitProducts = IResProduct; // Like a Products
 export interface ICreateMessage {
-  msg: string;
+  message: string;
   userIds: string;
-  msgFilesUrl: string[];
+  messageFilesUrl: string[];
   supplierIds: string;
 }
 export interface ICreateMessageReply {
   userIds: string;
-  msgNames: string;
+  messageNames: string;
   supplierIds: string;
 }
 export interface IResMessageList {
@@ -208,11 +208,11 @@ export interface IResMessageList {
 export interface IMessageList {
   userIds: string;
   supplierLogosUrl: string;
-  msgIds: string;
-  msgNames: string;
+  messageIds: string;
+  messageNames: string;
   supplierIds: string;
   supplierNames: string;
-  msgDate: string;
+  messageDate: string;
   unread: boolean;
 }
 export interface IResMessageDetail {
@@ -220,10 +220,10 @@ export interface IResMessageDetail {
   data: IMessageDetail[];
 }
 export interface IMessageDetail {
-  msg: string;
-  msgDate: string;
-  msgFilesUrl: string;
-  msgIsReplied: boolean;
+  message: string;
+  messageDate: string;
+  messageFilesUrl: string;
+  messageIsReplied: boolean;
 }
 export interface ICreateSavedListProduct {
   userIds: string;

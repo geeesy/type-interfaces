@@ -1,6 +1,6 @@
 {
   "name": "@geeesy/type-interfaces",
-  "version": "9.33.12",
+  "version": "9.34.0",
   "description": "Geeesy's API Interfaces for HTTP Client and Lambda Functions",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
@@ -25,6 +25,7 @@
   "homepage": "https://github.com/geeesy/type-interfaces#readme",
   "dependencies": {
     "banks-logo": "^1.0.14",
+    "eslint-plugin-spellcheck": "0.0.19",
     "typescript": "^3.9.10"
   },
   "devDependencies": {
