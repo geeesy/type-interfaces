@@ -25,7 +25,7 @@
     "semi": "error",
     "indent": ["warn", 2],
     "spellcheck/spell-checker": [
-      1,
+      2,
       {
         "comments": false,
         "strings": false,
