@@ -16,13 +16,64 @@
     "sourceType": "module"
   },
   "plugins": [
-    "@typescript-eslint"
+    "@typescript-eslint",
+    "spellcheck"
     // "prettier"
   ],
   "rules": {
     "no-unused-vars": "warn",
     "semi": "error",
-    "indent": ["warn", 2]
+    "indent": ["warn", 2],
+    "spellcheck/spell-checker": [
+      1,
+      {
+        "comments": false,
+        "strings": false,
+        "identifiers": true,
+        "lang": "en_US",
+        "skipWords": [
+          "rfq", 
+          "Gapp", 
+          "Pcs", 
+          "Immu", 
+          "Approver",
+          "Addr", 
+          "salepage", 
+          "leadpage", 
+          "thankyou", 
+          "Amphoe", 
+          "Tambon",
+          "Shopee",
+          "Sku",
+          "Seo", 
+          "Urls",
+          "Url",
+          "Cers",
+          "Geeesy",
+          "thai",
+          "baac",
+          "kbank",
+          "cimb",
+          "Lazada",
+          "Youtube",
+          "icbc",
+          "Gappmed",
+          "facebook",
+          "cognito",
+          "Barcode",
+          "acceptor",
+          "Regis",
+          "birthdate",
+          "zoneinfo",
+          "decrement",
+          "Vatable"
+        ],
+        "skipIfMatch": ["http://[^s]*"],
+        "skipWordIfMatch": ["^foobar.*$"],
+        "minLength": 4
+      }
+    ]
+    // "spellcheck/spell-checker": ["warn"]
     // "prettier/prettier": 2 // Means error
   }
 }

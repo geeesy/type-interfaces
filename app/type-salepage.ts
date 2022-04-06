@@ -36,7 +36,7 @@ export interface ISalePageEntityImmu {
 
 // ANCHOR: SALE PAGE | Entity (2/4)
 export interface IDBSalePageEntity {
-  hasBuilded: boolean;
+  hasBuilt: boolean;
 }
 
 // ANCHOR: SALE PAGE | Entity (3/4)

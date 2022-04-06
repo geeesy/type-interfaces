@@ -17,7 +17,7 @@ export enum StatusOrderSeller {
   S6_AwaitingAccepted = 'AWAITING_ACCEPTED',
   S7_AwaitingDeposit = 'AWAITING_DEPOSIT',
   S8_Completed = 'COMPLETED',
-  S_Cancelled = 'CANCELLED'
+  S_Canceled = 'CANCELED'
 }
 
 export enum StatusOrderCustomer {
@@ -32,7 +32,7 @@ export enum StatusOrderCustomer {
   B6_AwaitingAccepted = 'AWAITING_ACCEPTED',
   B7_Accepted = 'ACCEPTED',
   B8_Completed = 'COMPLETED',
-  B_Cancelled = 'CANCELLED'
+  B_Canceled = 'CANCELED'
 }
 
 export enum StatusOrderOfPayment {
@@ -57,7 +57,7 @@ export enum StatusOrder {
   Placed = 'PLACED',
   Packed = 'PACKED',
   Shipped = 'SHIPPED',
-  Cancelled = 'CANCELLED',
+  Canceled = 'CANCELED',
   Completed = 'COMPLETED'
 }
 
@@ -276,7 +276,7 @@ export interface IDBOrderActivityLog {
   latestNoteOnAction: string;
   latestActivityOnOrderType: TOrderType | null;
   latestActionBy: string | null; // ? use to identify action -> buyer (null) or seller (identityId)
-  latestActionByFullName?: string // ? -> firstname + lastname
+  latestActionByFullName?: string // ? -> firstName + lastName
 }
 
 /**
@@ -359,8 +359,8 @@ export interface ICustomerWithOrder
 export interface ILeadpage {
   salepageName: string;
   salepageId: string;
-  firstname: string;
-  lastname: string;
+  firstName: string;
+  lastName: string;
   phone: string;
   email: string;
   description: string;

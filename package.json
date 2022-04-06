@@ -25,6 +25,7 @@
   "homepage": "https://github.com/geeesy/type-interfaces#readme",
   "dependencies": {
     "banks-logo": "^1.0.14",
+    "eslint-plugin-spellcheck": "0.0.19",
     "typescript": "^3.9.10"
   },
   "devDependencies": {
