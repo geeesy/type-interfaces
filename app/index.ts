@@ -109,9 +109,8 @@ import {
   IDBCategoryProductSpecGroup,
   IPaymentMethod
 } from './type-console';
-import { IApiCompanyParams, IDBLogCreate, IDBLogTime, IDBLogUpdate, IDBUpdateTime } from './type-api';
+import { IApiCompanyParams, IApiSupplierParams, IDBLogCreate, IDBLogTime, IDBLogUpdate, IDBUpdateTime } from './type-api';
 import {
-  IApiSupplierParams,
   ICertificate,
   ICompanyByGapp,
   ICompanyCreateSalesRep,
