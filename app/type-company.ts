@@ -6,7 +6,7 @@ import {
 } from './type-business';
 import { IPaymentMethod, IShippingZone } from './type-console';
 
-import { IPersonContactInfo } from './type-apps';
+import { IImage, IPersonContactInfo } from './type-apps';
 
 /* #region COMPANY */
 
@@ -145,17 +145,14 @@ export interface ICompanySetting {
   creditTerms: string[];
 }
 
-export interface IImage {
-  url: string;
-  title: string;
-  caption: string;
+export interface IImageVerified extends IImage{
   isVerified: boolean;
 }
 
 export interface IImageGroup {
   type: string;
   title: string;
-  images: IImage[];
+  images: IImageVerified[];
 }
 
 export type TDocumentType =

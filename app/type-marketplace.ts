@@ -13,7 +13,7 @@ import {
   IProductRootEntity
 } from './type-product';
 
-import { IPersonContactInfo } from './type-apps';
+import { IImage, IPersonContactInfo } from './type-apps';
 import { IResAPI } from './interfaces';
 
 // REVIEW: USER (Market 1/3)
@@ -658,12 +658,9 @@ export interface ISupplierDocs {
 export interface ISupplierImage {
   type: string;
   title: string;
-  image: IImages[];
+  image: IImage[];
 }
-export interface IImages {
-  url: string;
-  caption: string;
-}
+
 export interface ISupplierCertificates {
   url: string;
   type: string;

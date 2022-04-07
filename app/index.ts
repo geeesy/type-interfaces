@@ -9,7 +9,6 @@ import {
   IFactoryAddress,
   IFilterResultProduct,
   IFilterResultSupplier,
-  IImages,
   IInterest,
   ILeadTime,
   IMarketUserData,
@@ -226,7 +225,8 @@ import {
   IVendorCreate,
   IVendorCreateParams,
   IVendorRequestAccept,
-  IVendorRequestList
+  IVendorRequestList,
+  IImage
 } from './type-apps';
 import {
   IBusinessCompanyUserIdentity,
@@ -490,7 +490,7 @@ export namespace GeeesyMarketplace {
   export type FactoryAddress = IFactoryAddress;
   export type SupplierDocs = ISupplierDocs;
   export type SupplierImage = ISupplierImage;
-  export type Images = IImages;
+  export type Image = IImage;
   export type SupplierCertificates = ISupplierCertificates;
 }
 /* #endregion */
