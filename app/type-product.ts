@@ -415,7 +415,7 @@ export interface IProductPack {
 export interface IProductPackOnly
   extends IProductRootEntity,
     IProductEntity,
-    IProductAssets,
+    IProductImages,
     IProductEntityImmu,
     IProductPack {
   productPackId: string;
