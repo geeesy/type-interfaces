@@ -6,7 +6,6 @@ import {
 import {
   IDBProductVariantOnlyImmu,
   IProductEntityImmu,
-  IProductImage,
   IProductPackage,
   IProductPrice,
   IProductRootEntity,
@@ -18,7 +17,7 @@ import {
 import { GappSetting } from '.';
 import { IDBLogTime } from './type-api';
 import { IOrderProductRow } from './type-order';
-import { ISocial } from './type-apps';
+import { IImage, ISocial } from './type-apps';
 import { SaleChannelSubType } from './enum-const';
 
 export type TSalepageType = 'LeadPage' | 'ContentPage' | 'SalePage';
@@ -172,7 +171,7 @@ export interface IProductVariantArr
     IProductEntityImmu,
     IProductVariantEntity,
     IDBProductVariantOnlyImmu {
-  productImagesUrl: IProductImage[];
+  productImagesUrl: IImage[];
   productShortDescription: string;
   productPrice: IProductPrice;
   productPackage: IProductPackage;

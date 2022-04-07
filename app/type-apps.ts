@@ -1408,3 +1408,9 @@ export interface INotifyMessage extends ICreateNotifyMessage {
   id: string
   createdAt: string
 }
+
+export interface IImage {
+  url: string;
+  title: string;
+  caption: string;
+}

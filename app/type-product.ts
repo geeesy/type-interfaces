@@ -9,6 +9,7 @@ import {
 
 import { StatusProductApproveOnMarket } from './enum-status';
 import { TOrderItemType } from './type-order';
+import { IImage } from './type-apps';
 
 export type TProductType = TOrderItemType
 
@@ -172,12 +173,6 @@ export interface IProductSpec
   extends ICategoryProductSpecGroup,
     IDBCategoryProductSpecGroup {}
 
-export interface IProductImage {
-  url: string;
-  title: string;
-  caption: string;
-}
-
 /**
  * PRODUCT
  */
@@ -313,10 +308,13 @@ export interface IProductAttributes {
 export interface IProductAssets {
   productCoverUrl: string;
   productCoverUrl_market: string;
-  productImagesUrl: IProductImage[];
-  productImagesUrl_market: IProductImage[];
   productVideoCoverUrl: string;
   productVideoCoverUrl_market: string;
+}
+
+export interface IProductImages {
+  productImagesUrl: IImage[];
+  productImagesUrl_market: IImage[];
 }
 
 export interface IDBProductAssets {
@@ -369,7 +367,7 @@ export interface IProductVariantEntity {
 export interface IProductVariantOnly
   extends IProductRootEntity,
     IProductEntity,
-    IProductAssets,
+    IProductImages,
     IProductEntityImmu,
     IProductVariantEntity {}
 
@@ -429,7 +427,7 @@ export interface IProductPackOnly
 export interface IProductPackInVariant
   extends IProductRootEntity,
     IProductEntity,
-    IProductAssets,
+    IProductImages,
     IProductEntityImmu,
     IProductVariantEntity,
     IProductPack {
@@ -442,7 +440,7 @@ export interface IProductPackInVariant
 export interface IProductVariantInPack
   extends IProductRootEntity,
     IProductEntity,
-    IProductAssets,
+    IProductImages,
     IProductEntityImmu,
     IProductPack,
     IProductVariantEntity {
