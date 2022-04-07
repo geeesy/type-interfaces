@@ -324,6 +324,7 @@ import {
   IProductEntity,
   IProductEntityImmu,
   IProductGroup,
+  IProductImages,
   IProductList,
   IProductMarketList,
   IProductPackInVariant,
@@ -1003,11 +1004,13 @@ export namespace GappInventory {
     IProductEntityImmu &
     IProductAttributes &
     IProductAssets &
+    IProductImages &
     ICreateProductWithMultiStock &
     IApiSupplierParams;
   export type CreateProductWithVariant = IProductAttributes &
     IProductEntityImmu &
     IProductAssets &
+    IProductImages &
     IProductVariantAttributesOnCreate &
     IApiSupplierParams;
   export type Product = IProductRootEntity &
@@ -1015,6 +1018,7 @@ export namespace GappInventory {
     IProductEntityImmu &
     IProductAttributes &
     IProductAssets &
+    IProductImages &
     IDBProductAssets &
     IDBProduct &
     IDBProductImmu &
@@ -1024,6 +1028,7 @@ export namespace GappInventory {
     IProductEntity &
     IProductAttributes &
     IProductAssets &
+    IProductImages &
     IDBProductAssets &
     IDBProduct &
     IDBUpdateTime;
@@ -1033,7 +1038,7 @@ export namespace GappInventory {
     IApiSupplierParams;
   export type CreateOneVariantOnly = IProductRootEntity &
     IProductEntity &
-    IProductAssets &
+    IProductImages &
     IProductEntityImmu &
     IProductVariantEntity &
     IProductInventoryImmu &
@@ -1042,14 +1047,16 @@ export namespace GappInventory {
     IApiSupplierParams;
   export type ProductVariantOnly = IProductRootEntity &
     IProductEntity &
-    IProductAssets &
+    IProductImages &
+    IDBProductAssets &
     IProductEntityImmu &
     IProductVariantEntity &
     IDBProductVariantOnlyImmu &
     IDBLogTime;
   export type DBUpdateVariantOnly = IProductRootEntity &
     IProductEntity &
-    IProductAssets &
+    IProductImages &
+    IDBProductAssets &
     IDBProductAssets &
     IProductVariantEntity &
     IDBUpdateTime;
