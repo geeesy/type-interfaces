@@ -13,7 +13,7 @@ import {
   IProductVariantEntity,
   IProductVariantSelector,
   ISeoMeta
-} from './type-catalog';
+} from './type-product';
 
 import { GappSetting } from '.';
 import { IDBLogTime } from './type-api';
