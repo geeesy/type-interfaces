@@ -312,12 +312,14 @@ import {
 /* eslint-disable @typescript-eslint/no-namespace */
 import {
   IDBProduct,
+  IDBProductAssets,
   IDBProductByGapp,
   IDBProductGroupCount,
   IDBProductGroupImmu,
   IDBProductImmu,
   IDBProductVariantOnlyImmu,
   ILogProduct,
+  IProductAssets,
   IProductAttributes,
   IProductEntity,
   IProductEntityImmu,
@@ -331,7 +333,7 @@ import {
   IProductVariantAttributesOnCreate,
   IProductVariantEntity,
   IProductVariantInPack
-} from './type-catalog';
+} from './type-product';
 import {
   IDBSalePageEntity,
   ISalePageEntity,
@@ -1000,16 +1002,20 @@ export namespace GappInventory {
     IProductEntity &
     IProductEntityImmu &
     IProductAttributes &
+    IProductAssets &
     ICreateProductWithMultiStock &
     IApiSupplierParams;
   export type CreateProductWithVariant = IProductAttributes &
     IProductEntityImmu &
+    IProductAssets &
     IProductVariantAttributesOnCreate &
     IApiSupplierParams;
   export type Product = IProductRootEntity &
     IProductEntity &
     IProductEntityImmu &
     IProductAttributes &
+    IProductAssets &
+    IDBProductAssets &
     IDBProduct &
     IDBProductImmu &
     IDBProductByGapp &
@@ -1017,6 +1023,8 @@ export namespace GappInventory {
   export type DBUpdateProduct = IProductRootEntity &
     IProductEntity &
     IProductAttributes &
+    IProductAssets &
+    IDBProductAssets &
     IDBProduct &
     IDBUpdateTime;
   export type ListProduct = IProductList;
@@ -1025,6 +1033,7 @@ export namespace GappInventory {
     IApiSupplierParams;
   export type CreateOneVariantOnly = IProductRootEntity &
     IProductEntity &
+    IProductAssets &
     IProductEntityImmu &
     IProductVariantEntity &
     IProductInventoryImmu &
@@ -1033,12 +1042,15 @@ export namespace GappInventory {
     IApiSupplierParams;
   export type ProductVariantOnly = IProductRootEntity &
     IProductEntity &
+    IProductAssets &
     IProductEntityImmu &
     IProductVariantEntity &
     IDBProductVariantOnlyImmu &
     IDBLogTime;
   export type DBUpdateVariantOnly = IProductRootEntity &
     IProductEntity &
+    IProductAssets &
+    IDBProductAssets &
     IProductVariantEntity &
     IDBUpdateTime;
   export type ProductPackInVariant = IProductPackInVariant;
@@ -1182,7 +1194,7 @@ export namespace GappApi {
 export * as IMarketplace from './type-marketplace';
 export * as IConsole from './type-console';
 export * as IApps from './type-apps';
-export * as ICatalog from './type-catalog';
+export * as ICatalog from './type-product';
 export * as ICompany from './type-company';
 
 export * as STATUS from './enum-status';

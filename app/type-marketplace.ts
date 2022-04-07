@@ -11,7 +11,7 @@ import {
   IProductList,
   IProductMarketList,
   IProductRootEntity
-} from './type-catalog';
+} from './type-product';
 
 import { IPersonContactInfo } from './type-apps';
 import { IResAPI } from './interfaces';

@@ -247,8 +247,6 @@ export interface IProductRootEntity {
 // ANCHOR: PRODUCT | Entity (2/6)
 // NOTE === attributes on each SKU
 export interface IProductEntity {
-  productImagesUrl: IProductImage[];
-  productImagesUrl_market: IProductImage[];
   productCode: string;
   productModel: string;
   productBarcode: string;
@@ -292,24 +290,17 @@ export interface IProductAttributes {
   tags: string[];
   tags_market: string[];
   keywords: string[];
-  productCoverUrl: string;
-  productCoverUrl_market: string;
-  productImagesUrl: IProductImage[];
-  productImagesUrl_market: IProductImage[];
   productCategoryId: string;
   productCategoryName: string;
   productGroupId: string; //? 1 product 1 group
   productGroupName: string;
   productCategoryCustomName?: string; // * id = OTHER000
-  productVideoCoverUrl: string;
-  productVideoCoverUrl_market: string;
   productDescription: string;
   productDescription_market: string;
   productBrand: string;
   productSource: string;
   productOrigin: string;
   productChannels: string[];
-  productThumbnailUrl: string;
   productSpec?: IProductSpec[];
   haveVariants?: IProductVariantOnly[];
   havePacks?: IProductPackOnly[];
@@ -317,6 +308,20 @@ export interface IProductAttributes {
   havePacksInVariant?: IProductPackInVariant[];
   productSkuRef?: string; // ? for variant or pack
   useInventory: boolean;
+}
+
+export interface IProductAssets {
+  productCoverUrl: string;
+  productCoverUrl_market: string;
+  productImagesUrl: IProductImage[];
+  productImagesUrl_market: IProductImage[];
+  productVideoCoverUrl: string;
+  productVideoCoverUrl_market: string;
+}
+
+export interface IDBProductAssets {
+  productThumbnailUrl: string;
+  productThumbImagesUrl: string[];
 }
 
 // ANCHOR: PRODUCT | Entity (4/6)
