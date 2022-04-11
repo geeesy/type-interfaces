@@ -31,7 +31,8 @@ export interface IBusinessEntity {
   businessName: string;
   businessCategoryId: string; // * <-- include other id = OTHER000
   businessCategoryCustomName?: string;
-  businessLogoUrl: string; // * replaced with Scale down (empty on create)
+  businessLogoUrl: string; // * empty on create
+  businessLogoThumbUrl: string; 
   businessTypes: TBusinessTypes[];
   businessSize: TBusinessSize;
   website: string;
