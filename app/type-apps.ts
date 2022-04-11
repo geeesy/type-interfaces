@@ -134,7 +134,7 @@ export interface IVendorCreateParams {
 }
 
 export interface IVendorCreate extends ICompanyContactInfo {
-  companyLogoUrl: string; // * Scale down on init
+  companyLogoThumbUrl: string; // * Scale down on init
   contactPersons: IPersonContactInfo[];
   vendorType: TVendorType;
   remark: string;
@@ -145,7 +145,7 @@ export interface IVendorCreate extends ICompanyContactInfo {
 export interface IRefVendorList {
   createdAt: string;
   updatedAt: string;
-  companyLogoUrl: string;
+  companyLogoThumbUrl: string;
   companyName: string;
   contactAddress: IAddress;
   companyPhones: string[];
@@ -167,7 +167,7 @@ export interface IVendor extends IVendorCreate {
 export interface ICompanyOnList {
   compId: string; // * Company have, BUT Vendor maybe
   contact: ICompanyContactInfo;
-  companyLogoUrl: string;
+  companyLogoThumbUrl: string;
   supplierId: string; // * Vendor have, BUT Company maybe
   //! INDEX on CORE
   isVerified: boolean;

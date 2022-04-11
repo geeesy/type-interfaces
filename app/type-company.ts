@@ -269,8 +269,8 @@ export interface ICompanyPublicEntity {
   companyCategoryCustomName?: string; // * id = OTHER000
 
   // CI
-  companyFullLogoUrl: string;
-  companyLogoUrl: string; // * Scale down {companyFullLogoUrl}
+  companyLogoUrl: string;
+  companyLogoThumbUrl: string; // * Scale down {companyLogoUrl}
   companyMarketLogoUrl: string;
 
   // Contact
