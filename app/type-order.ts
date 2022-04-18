@@ -107,9 +107,9 @@ export interface IOrderAccounting {
 }
 export interface IListOrder
   extends IDBOrderSellerDataImmu,
-    IDBOrderEntityImmu,
-    IDBOrderLinkImmu,
-    IDBOrderEntity {
+  IDBOrderEntityImmu,
+  IDBOrderLinkImmu,
+  IDBOrderEntity {
   totalOrderAmount: number; // * === grandTotalAmount
   shippingConfirmedData: GappSetting.ShippingMethod | null;
   paymentConfirmedData: GappSetting.PaymentMethod | null;
@@ -168,7 +168,7 @@ export interface IOrderEntity {
   totalProductAmount: number // ? sum from product rows
 }
 
-export interface IOrderAccountingOnly{
+export interface IOrderAccountingOnly {
   accountingData: IOrderAccounting;
 }
 
@@ -185,7 +185,7 @@ export interface IDBOrderStatus {
 // REVIEW: Ordered Product
 export interface IDBListOrderByProduct
   extends IDBOrderStatus,
-    IOrderCustomerData {
+  IOrderCustomerData {
   salepageId?: string;
   orderId: string;
   channel: SaleChannelSubType;
@@ -204,7 +204,7 @@ export interface IDBListOrderByProduct
 // ANCHOR: ORDER | Entity (8/13)
 export interface IOrderData {
   salepageName?: string;
-  saleChannelId: string;
+  saleChannelId: string; // * id = OTHER000
   channel: SaleChannelSubType;
   expiryTimestamp: number; //timestamp
   shippingAvailableIds: string[]; // * USE ID FOR LATER
@@ -247,14 +247,14 @@ export interface IOrderLinkDataOnConfirm {
   OrderStatusDate?: string;
 }
 
-export interface IOrderLinkImmuDataOnConfirm{
-  saleChannelSourceUTM:TOrderChannelUTM
-  saleChannelCustomUTM:ISaleChannelCustomUTM
+export interface IOrderLinkImmuDataOnConfirm {
+  saleChannelSourceUTM: TOrderChannelUTM
+  saleChannelCustomUTM: ISaleChannelCustomUTM
 }
 
-export interface ISaleChannelCustomUTM{
-  utmName:string
-  utmValue:string
+export interface ISaleChannelCustomUTM {
+  utmName: string
+  utmValue: string
 }
 
 // ANCHOR: ORDER | Entity (11/13)
@@ -344,7 +344,7 @@ export interface ISellerUpdateOrderDataOnStatusChanged {
  */
 export interface ICustomerWithOrder
   extends IOrderCustomerDataImmu,
-    IOrderCustomerData {
+  IOrderCustomerData {
   latestOrderType: TOrderType;
   latestOrderId: string;
   TotalPaidAmount: number;
@@ -372,11 +372,10 @@ export interface ILeadpageId {
 }
 
 export interface ILogOrderValue extends
-IOrderCustomerData,
-IDBOrderEntity,
-IOrderEntity,
-IOrderData
-{
+  IOrderCustomerData,
+  IDBOrderEntity,
+  IOrderEntity,
+  IOrderData {
 
 }
 
