@@ -3,6 +3,7 @@
 import {
   DocFinanceSeqIdCount,
   DocOrderSeqIdCount,
+  DocUTMCount,
   DocWorkSeqIdCount,
   StatusPoolJoining,
   StatusPoolShippingMainBuyer,
@@ -23,6 +24,17 @@ export interface IDocWorkCount {
   [DocWorkSeqIdCount.so]: number;
   [DocWorkSeqIdCount.billingNote]: number;
   [DocWorkSeqIdCount.invoice]: number;
+}
+
+export interface ISalePageUTMCount {
+  [DocUTMCount.website]: number;
+  [DocUTMCount.facebook]: number;
+  [DocUTMCount.instagram]: number;
+  [DocUTMCount.line]: number;
+  [DocUTMCount.youtube]: number;
+  [DocUTMCount.whatsapp]: number;
+  [DocUTMCount.wechat]: number;
+  [DocUTMCount.other]: number;
 }
 
 export interface IDocFinanceCount {
@@ -1369,44 +1381,53 @@ export interface IPoolAcceptJoining {
 /* #endregion */
 
 // ANCHOR: Notification Message Center
-export type TNotifyTopic = 'commerce' | 'inventory'
-export type TNotifySubtopic = 'orderLink' | 'salepage' | 'productStock' | 'inventory'
+export type TNotifyTopic = 'commerce' | 'inventory';
+export type TNotifySubtopic =
+  | 'orderLink'
+  | 'salepage'
+  | 'productStock'
+  | 'inventory';
 export type TNotifyEvent =
-  'orderOnCreate' |
-  'orderOnConfirm' |
-  'orderOnSubmitPaymentWithSlip' |
-  'orderOnConfirmPaidWithSlip' |
-  'orderOnShipped' |
-  'orderOnCompleted' |
-  'orderOnCancelled' |
-  'salepageOnLeadPageReply' |
-  'stockOnLowStock' |
-  'stockOnOutOfStock' |
-  'inventoryOnEmpty'
-export type TNotifyStatus = 'unread' | 'read' | 'opened' | 'clicked'
-export type TNotifySender = 'gapp' | 'seller' | 'company' | 'business' | 'buyer'
-export type TNotifyPriority = 'highest' | 'high' | 'normal' | 'low' | 'lowest'
+  | 'orderOnCreate'
+  | 'orderOnConfirm'
+  | 'orderOnSubmitPaymentWithSlip'
+  | 'orderOnConfirmPaidWithSlip'
+  | 'orderOnShipped'
+  | 'orderOnCompleted'
+  | 'orderOnCancelled'
+  | 'salepageOnLeadPageReply'
+  | 'stockOnLowStock'
+  | 'stockOnOutOfStock'
+  | 'inventoryOnEmpty';
+export type TNotifyStatus = 'unread' | 'read' | 'opened' | 'clicked';
+export type TNotifySender =
+  | 'gapp'
+  | 'seller'
+  | 'company'
+  | 'business'
+  | 'buyer';
+export type TNotifyPriority = 'highest' | 'high' | 'normal' | 'low' | 'lowest';
 
 export interface ICreateNotifyMessage {
-  compId: string
-  topic: TNotifyTopic
-  subtopic: TNotifySubtopic
-  event: TNotifyEvent
-  message: string
-  sender: TNotifySender
-  actorIdentityId: string
-  actorFullName: string
-  priority: TNotifyPriority
-  entityId: string
-  entitySubId: string
-  status: TNotifyStatus
-  refDocNo: string
-  notifiedAt: string
+  compId: string;
+  topic: TNotifyTopic;
+  subtopic: TNotifySubtopic;
+  event: TNotifyEvent;
+  message: string;
+  sender: TNotifySender;
+  actorIdentityId: string;
+  actorFullName: string;
+  priority: TNotifyPriority;
+  entityId: string;
+  entitySubId: string;
+  status: TNotifyStatus;
+  refDocNo: string;
+  notifiedAt: string;
 }
 
 export interface INotifyMessage extends ICreateNotifyMessage {
-  id: string
-  createdAt: string
+  id: string;
+  createdAt: string;
 }
 
 export interface IImage {
