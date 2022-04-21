@@ -66,7 +66,10 @@
           "birthdate",
           "zoneinfo",
           "decrement",
-          "Vatable"
+          "Vatable",
+          "instagram",
+          "whatsapp",
+          "wechat"
         ],
         "skipIfMatch": ["http://[^s]*"],
         "skipWordIfMatch": ["^foobar.*$"],

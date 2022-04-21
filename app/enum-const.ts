@@ -23,6 +23,19 @@ export enum DocWorkSeqIdCount {
   invoice = 'CountInvoice'
 }
 
+export enum DocUTMCount {
+  website = 'CountWebsite',
+  facebook= 'CountFacebook',
+  instagram = 'CountInstagram',
+  line = 'CountLine',
+  youtube = 'CountYoutube',
+  whatsapp = 'CountWhatsApp',
+  wechat = 'CountWeChat',
+  other = 'CountOther'
+}
+
+export type TOrderChannelUTM = 'WEBSITE' | 'FACEBOOK' | 'INSTAGRAM' | 'LINE' | 'YOUTUBE' | 'WHATSAPP' | 'WECHAT' | 'OTHER';
+
 export enum DocFinanceSeqIdCount {
   receipt = 'CountReceipt',
   taxInvoice = 'CountTaxInvoice'

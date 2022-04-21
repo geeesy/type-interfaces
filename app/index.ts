@@ -226,7 +226,8 @@ import {
   IVendorCreateParams,
   IVendorRequestAccept,
   IVendorRequestList,
-  IImage
+  IImage,
+  ISalePageUTMCount
 } from './type-apps';
 import {
   IBusinessCompanyUserIdentity,
@@ -945,13 +946,13 @@ export namespace GappBiz {
   export type Customer = ICustomer;
   export type CreateSalepage = ISalePageEntityImmu &
     ISalePageEntity &
-    ISalePageUIComponent;
+    ISalePageUIComponent & ISalePageUTMCount;
   export type ListSalepage = Salepage;
   export type Salepage = ISalePageEntityImmu &
     IDBSalePageEntity &
     ISalePageEntity &
     ISalePageUIComponent &
-    IDBLogTime;
+    IDBLogTime & ISalePageUTMCount;
   export type LeadpageCreate = IDBOrderSellerDataImmu & ILeadpage;
   export type Leadpage = IDBOrderSellerDataImmu & ILeadpage & ILeadpageId;
   export type LogOrder = ILogOrder;
