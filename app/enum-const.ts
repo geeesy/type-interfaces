@@ -24,14 +24,14 @@ export enum DocWorkSeqIdCount {
 }
 
 export enum DocUTMCount {
-  website = 'CountWebsite',
-  facebook= 'CountFacebook',
-  instagram = 'CountInstagram',
-  line = 'CountLine',
-  youtube = 'CountYoutube',
-  whatsapp = 'CountWhatsApp',
-  wechat = 'CountWeChat',
-  other = 'CountOther'
+  website = 'CountUtmUtmWebsite',
+  facebook = 'CountUtmFacebook',
+  instagram = 'CountUtmInstagram',
+  line = 'CountUtmLine',
+  youtube = 'CountUtmYoutube',
+  whatsapp = 'CountUtmWhatsApp',
+  wechat = 'CountUtmWeChat',
+  other = 'CountUtmOther'
 }
 
 export type TOrderChannelUTM = 'WEBSITE' | 'FACEBOOK' | 'INSTAGRAM' | 'LINE' | 'YOUTUBE' | 'WHATSAPP' | 'WECHAT' | 'OTHER';
