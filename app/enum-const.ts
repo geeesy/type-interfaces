@@ -24,7 +24,7 @@ export enum DocWorkSeqIdCount {
 }
 
 export enum DocUTMCount {
-  website = 'CountUtmUtmWebsite',
+  website = 'CountUtmWebsite',
   facebook = 'CountUtmFacebook',
   instagram = 'CountUtmInstagram',
   line = 'CountUtmLine',
