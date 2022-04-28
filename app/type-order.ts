@@ -213,6 +213,8 @@ export interface IOrderData {
   shippingAvailableData: GappSetting.ShippingMethod[];
   paymentAvailableData: GappSetting.PaymentMethod[];
   hasNoShipment: boolean;
+  hasOverrideEmailSending: boolean;
+  overrideEmailSendingAttribute: string;
 }
 
 // ANCHOR: ORDER | Entity (9/13)
