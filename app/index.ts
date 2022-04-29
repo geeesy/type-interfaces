@@ -939,7 +939,7 @@ export namespace GappBiz {
     IDBUpdateTime;
   export type CreateOrderSalePage = GappBiz.CreateOrderLink &
     IOrderLinkDataOnConfirm &
-    IOrderLinkImmuDataOnConfirm & IDBOrderActivityLog;
+    IOrderLinkImmuDataOnConfirm & IDBOrderActivityLog; //confirm salepage
   export type CreateOrderGappMed = GappBiz.CreateOrderLink &
     IOrderLinkDataOnConfirm;
   export type ListOrderByProduct = IDBListOrderByProduct;
