@@ -955,7 +955,7 @@ export namespace GappBiz {
     ISalePageEntity &
     ISalePageUIComponent &
     IDBLogTime & ISalePageUTMCount;
-  export type LeadpageCreate = IDBOrderSellerDataImmu & ILeadpage;
+  export type LeadpageCreate = IDBOrderSellerDataImmu & ILeadpage & IApiCompanyParams;
   export type Leadpage = IDBOrderSellerDataImmu & ILeadpage & ILeadpageId;
   export type LogOrder = ILogOrder;
   export type NotifyMessage = INotifyMessage
