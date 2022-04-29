@@ -947,7 +947,7 @@ export namespace GappBiz {
   export type Customer = ICustomer;
   export type CreateSalepage = ISalePageEntityImmu &
     ISalePageEntity &
-    ISalePageUIComponent & ISalePageUTMCount &
+    ISalePageUIComponent & ISalePageUTMCount & IApiCompanyParams &
     IDBLogUpdate & IDBLogCreate;
   export type ListSalepage = Salepage;
   export type Salepage = ISalePageEntityImmu &
