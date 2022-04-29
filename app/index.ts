@@ -110,31 +110,6 @@ import {
 } from './type-console';
 import { IApiCompanyParams, IApiSupplierParams, IDBLogCreate, IDBLogTime, IDBLogUpdate, IDBUpdateTime } from './type-api';
 import {
-  ICertificate,
-  ICompanyByGapp,
-  ICompanyCreateSalesRep,
-  ICompanyEntityImmu,
-  ICompanyPrivateEntity,
-  ICompanyPublicEntity,
-  ICompanyPublicEntityImmu,
-  ICompanySalesRep,
-  ICustomer,
-  IDBCertificate,
-  IDBCompanyEntity,
-  IDBCompanySupplierEntity,
-  IDBDocument,
-  IDocument,
-  IPortfolio,
-  IPortfolioImmu,
-  IPublishParams,
-  ISettingCreatePriceGroup,
-  ISettingCreatePriceList,
-  ISettingDoc,
-  ISettingPriceGroup,
-  ISettingPriceList,
-  ISupplierByGapp
-} from './type-company';
-import {
   IApprover,
   IApproverFormCreate,
   IApproverFormCreateParams,
@@ -149,6 +124,7 @@ import {
   IDocFinanceCount,
   IDocOrderCount,
   IDocWorkCount,
+  IImage,
   IInquiry,
   IInquiryFormCreate,
   IInquiryFormCreateParams,
@@ -217,6 +193,7 @@ import {
   ISO,
   ISOFormCreate,
   ISOFormCreateParams,
+  ISalePageUTMCount,
   ITaxInvoice,
   ITaxInvoiceFormCreate,
   ITaxInvoiceFormCreateParams,
@@ -225,9 +202,7 @@ import {
   IVendorCreate,
   IVendorCreateParams,
   IVendorRequestAccept,
-  IVendorRequestList,
-  IImage,
-  ISalePageUTMCount
+  IVendorRequestList
 } from './type-apps';
 import {
   IBusinessCompanyUserIdentity,
@@ -246,6 +221,31 @@ import {
   IDBBusinessUserIdentity,
   IDBBusinessUserIdentityStatus
 } from './type-business';
+import {
+  ICertificate,
+  ICompanyByGapp,
+  ICompanyCreateSalesRep,
+  ICompanyEntityImmu,
+  ICompanyPrivateEntity,
+  ICompanyPublicEntity,
+  ICompanyPublicEntityImmu,
+  ICompanySalesRep,
+  ICustomer,
+  IDBCertificate,
+  IDBCompanyEntity,
+  IDBCompanySupplierEntity,
+  IDBDocument,
+  IDocument,
+  IPortfolio,
+  IPortfolioImmu,
+  IPublishParams,
+  ISettingCreatePriceGroup,
+  ISettingCreatePriceList,
+  ISettingDoc,
+  ISettingPriceGroup,
+  ISettingPriceList,
+  ISupplierByGapp
+} from './type-company';
 import {
   ICompanyNotification,
   ICompanyNotificationToggle,
@@ -917,7 +917,8 @@ export namespace GappBiz {
     IDBOrderDataImmu &
     IDBOrderActivityLog &
     IOrderLinkImmuDataOnConfirm &
-    IDBLogTime;
+    IDBLogUpdate &
+    IDBLogCreate;
   export type OrderSalePage = GappBiz.OrderLink;
   export type OrderGappMed = GappBiz.OrderLink;
   export type ListOrderLink = IListOrder & IDBLogTime;
@@ -938,7 +939,7 @@ export namespace GappBiz {
     IDBUpdateTime;
   export type CreateOrderSalePage = GappBiz.CreateOrderLink &
     IOrderLinkDataOnConfirm &
-    IOrderLinkImmuDataOnConfirm;
+    IOrderLinkImmuDataOnConfirm & IDBOrderActivityLog; //confirm salepage
   export type CreateOrderGappMed = GappBiz.CreateOrderLink &
     IOrderLinkDataOnConfirm;
   export type ListOrderByProduct = IDBListOrderByProduct;
@@ -946,7 +947,8 @@ export namespace GappBiz {
   export type Customer = ICustomer;
   export type CreateSalepage = ISalePageEntityImmu &
     ISalePageEntity &
-    ISalePageUIComponent & ISalePageUTMCount;
+    ISalePageUIComponent & ISalePageUTMCount & IApiCompanyParams &
+    IDBLogUpdate & IDBLogCreate;
   export type ListSalepage = Salepage;
   export type Salepage = ISalePageEntityImmu &
     IDBSalePageEntity &
@@ -1066,7 +1068,7 @@ export namespace GappInventory {
   export type LogProduct = ILogProduct;
   export type CreateProductGroup = IProductGroup & IApiCompanyParams;
   export type ProductGroup = IProductGroup &
-    IDBProductGroupImmu & 
+    IDBProductGroupImmu &
     IDBLogTime &
     IDBProductGroupCount &
     IAnalytics &
