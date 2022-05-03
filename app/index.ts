@@ -1187,7 +1187,8 @@ export namespace GappApi {
     IOrderCustomerData &
     IOrderCustomerDataImmu &
     IOrderAccountingOnly &
-    IOrderLinkImmuDataOnConfirm;
+    IOrderLinkImmuDataOnConfirm &
+    IDBOrderActivityLog;
   export type ConfirmOrderSalepage = GappApi.ConfirmOrderLink;
   export type ConfirmOrderGappmed = GappApi.ConfirmOrderLink;
   export type DBUpdateOrderLink = IOrderCustomerData &
