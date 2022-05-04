@@ -141,11 +141,16 @@ export interface ISettingNotifyLine {
   inventory: ISettingNotifyInventoryAttribute
 }
 
+export interface ISettingNotifyBuyer {
+  order: ISettingNotifyOrderAttribute
+}
+
 export interface ISettingLineNotify
   extends ISettingLineNotifyEntityImmu, ISettingLineNotifyEntity, ISettingNotifyLine { }
 
 export interface ICompanyNotification {
   lineNotify: ISettingLineNotify[]
+  emailToBuyer: ISettingNotifyBuyer
 }
 
 export interface ICompanyNotificationToggle {
