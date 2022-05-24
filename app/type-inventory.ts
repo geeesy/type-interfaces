@@ -47,16 +47,20 @@ export interface IInventoryEntity {
  * PRODUCT
  * ON CREATE
  */
+
+// ANCHOR: STOCK (2/6)
 export interface IProductInventoryImmu {
   warehouseId: string;
   inventoryId: string; // GB+xxx || GM+xxx
 }
 
+// ANCHOR: STOCK (4/6)
 export interface IProductInventorySetting {
   lowStockQty: number;
   hasKeepSelling: boolean;
 }
 
+// ANCHOR: STOCK (3/6)
 export interface IDBProductInventoryFormulaImmu {
   initialStock: number;
   initialCostPrice: number;
@@ -70,6 +74,8 @@ export interface IProductInventoryData {
 }
 
 // === === ===
+
+// ANCHOR: STOCK (1/6)
 export interface IProductCompanyImmu {
   productId: string;
   businessId: string;
@@ -77,11 +83,13 @@ export interface IProductCompanyImmu {
   variantId?: string;
 }
 
+// ANCHOR: STOCK (5/6)
 export interface IDBProductInventory {
   stock: number;
   reservedStock: number;
 }
 
+// ANCHOR: STOCK (6/6)
 export interface IDBProductInventoryActivityLog {
   latestNoteOnAction: string; // used in log on stock transfer and adjust
   latestActivityOnStockMovementType: StockMovementType; // used to identify type of adjustment
