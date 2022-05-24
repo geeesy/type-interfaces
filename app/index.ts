@@ -272,6 +272,7 @@ import {
   IInventoryEntity,
   ILogStock,
   IProductCompanyImmu,
+  IProductInventoryData,
   IProductInventoryImmu,
   IProductInventorySetting,
   ITransferProductStock,
@@ -1087,6 +1088,7 @@ export namespace GappInventory {
   export type DBUpdateInventory = IInventoryEntity & IDBUpdateTime;
   export type Stock = IProductCompanyImmu &
     IProductInventoryImmu &
+    IProductInventoryData &
     IDBProductInventoryFormulaImmu &
     IProductInventorySetting &
     IDBProductInventory &
