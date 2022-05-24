@@ -108,7 +108,14 @@ import {
   IDBCategoryProductSpecGroup,
   IPaymentMethod
 } from './type-console';
-import { IApiCompanyParams, IApiSupplierParams, IDBLogCreate, IDBLogTime, IDBLogUpdate, IDBUpdateTime } from './type-api';
+import {
+  IApiCompanyParams,
+  IApiSupplierParams,
+  IDBLogCreate,
+  IDBLogTime,
+  IDBLogUpdate,
+  IDBUpdateTime
+} from './type-api';
 import {
   IApprover,
   IApproverFormCreate,
@@ -272,6 +279,7 @@ import {
   IInventoryEntity,
   ILogStock,
   IProductCompanyImmu,
+  IProductInventoryData,
   IProductInventoryImmu,
   IProductInventorySetting,
   ITransferProductStock,
@@ -939,7 +947,8 @@ export namespace GappBiz {
     IDBUpdateTime;
   export type CreateOrderSalePage = GappBiz.CreateOrderLink &
     IOrderLinkDataOnConfirm &
-    IOrderLinkImmuDataOnConfirm & IDBOrderActivityLog; //confirm salepage
+    IOrderLinkImmuDataOnConfirm &
+    IDBOrderActivityLog; //confirm salepage
   export type CreateOrderGappMed = GappBiz.CreateOrderLink &
     IOrderLinkDataOnConfirm;
   export type ListOrderByProduct = IDBListOrderByProduct;
@@ -947,18 +956,27 @@ export namespace GappBiz {
   export type Customer = ICustomer;
   export type CreateSalepage = ISalePageEntityImmu &
     ISalePageEntity &
-    ISalePageUIComponent & ISalePageUTMCount & IApiCompanyParams &
-    IDBLogUpdate & IDBLogCreate;
+    ISalePageUIComponent &
+    ISalePageUTMCount &
+    IApiCompanyParams &
+    IDBLogUpdate &
+    IDBLogCreate;
   export type ListSalepage = Salepage;
   export type Salepage = ISalePageEntityImmu &
     IDBSalePageEntity &
     ISalePageEntity &
     ISalePageUIComponent &
-    IDBLogTime & ISalePageUTMCount;
-  export type LeadpageCreate = IDBOrderSellerDataImmu & ILeadpage & IApiCompanyParams;
-  export type Leadpage = IDBOrderSellerDataImmu & ILeadpage & ILeadpageId & IApiCompanyParams;
+    IDBLogTime &
+    ISalePageUTMCount;
+  export type LeadpageCreate = IDBOrderSellerDataImmu &
+    ILeadpage &
+    IApiCompanyParams;
+  export type Leadpage = IDBOrderSellerDataImmu &
+    ILeadpage &
+    ILeadpageId &
+    IApiCompanyParams;
   export type LogOrder = ILogOrder;
-  export type NotifyMessage = INotifyMessage
+  export type NotifyMessage = INotifyMessage;
 }
 
 // REVIEW: G-MARKET
@@ -1073,7 +1091,9 @@ export namespace GappInventory {
     IDBProductGroupCount &
     IAnalytics &
     IApiCompanyParams;
-  export type DBUpdateProductGroup = IProductGroup & IDBUpdateTime & IApiCompanyParams;
+  export type DBUpdateProductGroup = IProductGroup &
+    IDBUpdateTime &
+    IApiCompanyParams;
   export type CreateWarehouse = IWarehouseEntity & IApiCompanyParams;
   export type Warehouse = IWarehouseEntity &
     IDBWarehouseEntityImmu &
@@ -1087,10 +1107,18 @@ export namespace GappInventory {
   export type DBUpdateInventory = IInventoryEntity & IDBUpdateTime;
   export type Stock = IProductCompanyImmu &
     IProductInventoryImmu &
+    IProductInventoryData &
     IDBProductInventoryFormulaImmu &
     IProductInventorySetting &
     IDBProductInventory &
     IDBProductInventoryActivityLog &
+    IDBLogTime;
+  export type ListStock = IProductCompanyImmu &
+    IProductInventoryData &
+    IProductInventoryImmu &
+    IDBProductInventoryFormulaImmu &
+    IProductInventorySetting &
+    IDBProductInventory &
     IDBLogTime;
   export type UpdateProductStock = IApiCompanyParams & IUpdateProductStock;
   export type TransferProductStock = IApiCompanyParams & ITransferProductStock;
@@ -1105,12 +1133,17 @@ export namespace GappSetting {
   export type PriceList = ISettingPriceList;
   export type Document = ISettingDoc;
   // * NOTIFICATION
-  export type UserNotification = IUserNotification & IUserNotificationToggle
-  export type CreateLineNotify = ISettingLineNotifyEntity & ISettingNotifyLine & IApiCompanyParams;
-  export type CompanyNotification = ICompanyNotification & ICompanyNotificationToggle
-  export type LineNotify = ISettingLineNotify & IDBLogUpdate & IDBLogCreate
-  export type ToggleLineNotify = ICompanyNotificationToggle
-  export type DBUpdateLineNotify = ISettingLineNotifyEntity & ISettingNotifyLine & IDBLogUpdate
+  export type UserNotification = IUserNotification & IUserNotificationToggle;
+  export type CreateLineNotify = ISettingLineNotifyEntity &
+    ISettingNotifyLine &
+    IApiCompanyParams;
+  export type CompanyNotification = ICompanyNotification &
+    ICompanyNotificationToggle;
+  export type LineNotify = ISettingLineNotify & IDBLogUpdate & IDBLogCreate;
+  export type ToggleLineNotify = ICompanyNotificationToggle;
+  export type DBUpdateLineNotify = ISettingLineNotifyEntity &
+    ISettingNotifyLine &
+    IDBLogUpdate;
   // * ---
   export type CompanyInfo = ICompanyPublicEntity &
     IDBCompanyEntity &
@@ -1195,7 +1228,7 @@ export namespace GappApi {
     IOrderLinkDataOnConfirm &
     IDBUpdateTime &
     IDBOrderStatus &
-    IDBOrderActivityLog
+    IDBOrderActivityLog;
   export type ListOrderLink = GappBiz.ListOrderLink;
   export type OrderLink = GappBiz.OrderLink;
   export type OrderSalePage = GappBiz.OrderLink;

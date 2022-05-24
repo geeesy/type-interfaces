@@ -66,6 +66,13 @@ export interface IDBProductInventoryFormulaImmu {
   initialCostPrice: number;
 }
 
+export interface IProductInventoryData {
+  productName: string;
+  productThumbnailUrl: string;
+  productSku: string;
+  productUnit: string
+}
+
 // === === ===
 
 // ANCHOR: STOCK (1/6)
