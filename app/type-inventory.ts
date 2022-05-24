@@ -119,6 +119,7 @@ export interface IStockRefData {
 
 export interface IUpdateProductStock extends IProductInventoryImmu, IProductInventorySetting, IDBProductInventoryFormulaImmu {
   productId: string;
+  productSku: string;
   variantId?: string;
   stock: number;
   newStock: number;
@@ -132,6 +133,7 @@ export interface ITransferProductStock {
   destinationStock: IProductInventoryImmu;
   transferQty: number;
   productId: string;
+  productSku: string;
   variantId?: string;
   note: string;
   hasProductInDestinationStock: boolean;
