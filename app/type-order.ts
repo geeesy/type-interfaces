@@ -120,6 +120,8 @@ export interface IListOrder
   paymentAttachmentData: IPaymentAttachmentData | null;
   channel: SaleChannelSubType;
   channelId: string // * channelId
+  shippingTrackingData: string;
+  shippingCost: string;
 }
 // ANCHOR: ORDER | Entity (1/13)
 export interface IOrderCustomerDataImmu {
