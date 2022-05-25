@@ -1045,6 +1045,7 @@ export namespace GappInventory {
     IDBProductImmu &
     IDBProductByGapp &
     IDBLogTime;
+  export type UpdateProduct = GappInventory.Product & IApiSupplierParams
   export type DBUpdateProduct = IProductRootEntity &
     IProductEntity &
     IProductAttributes &
@@ -1074,6 +1075,7 @@ export namespace GappInventory {
     IProductVariantEntity &
     IDBProductVariantOnlyImmu &
     IDBLogTime;
+  export type UpdateProductVariantOnly = GappInventory.ProductVariantOnly & IApiSupplierParams
   export type DBUpdateVariantOnly = IProductRootEntity &
     IProductEntity &
     IProductImages &
