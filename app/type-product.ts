@@ -331,7 +331,7 @@ export interface IProductImages {
 
 // REVIEW: PRODUCT | Entity (7/10)
 export interface IDBProductAssets {
-  productThumbnailUrl: string; // STUB: Product Thumbnail (From Product Cover)
+  productThumbnailUrl: string; // STUB: Product Thumbnail (From Product Cover || Showed Image)
   productThumbImagesUrl: string[]; // STUB: [Product Images (Scaled)]
   productShowedThumbnailUrl: string; // STUB: SKU Thumbnail (From Showed Image)
 }
