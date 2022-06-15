@@ -140,12 +140,9 @@ export interface IPersonContactInfo {
 // STUB: VENDOR
 export type TVendorType = 'seller' | 'buyer' | 'multi' | 'other';
 
-export interface IVendorCreateParams {
-  compId: string;
-  identityId: string;
-}
 
 export interface IVendorCreate extends ICompanyContactInfo {
+  companyLogoUrl: string;
   companyLogoThumbUrl: string; // * Scale down on init
   contactPersons: IPersonContactInfo[];
   vendorType: TVendorType;
