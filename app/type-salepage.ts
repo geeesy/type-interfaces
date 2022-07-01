@@ -27,6 +27,8 @@ export type TSalepageType = 'LeadPage' | 'ContentPage' | 'SalePage';
 export interface ISalePageEntityImmu {
   compId: string;
   companyName: string;
+  companyMarketName: string;
+  companyMarketLogoUrl: string;
   businessId: string;
   salepageId: string;
   salepageType: TSalepageType;
