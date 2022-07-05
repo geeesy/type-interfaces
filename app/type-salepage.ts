@@ -13,11 +13,11 @@ import {
   IProductVariantSelector,
   ISeoMeta
 } from './type-product';
+import { IImage, ISocial } from './type-apps';
 
 import { GappSetting } from '.';
 import { IDBLogTime } from './type-api';
 import { IOrderProductRow } from './type-order';
-import { IImage, ISocial } from './type-apps';
 import { SaleChannelSubType } from './enum-const';
 
 export type TSalepageType = 'LeadPage' | 'ContentPage' | 'SalePage';
@@ -26,6 +26,9 @@ export type TSalepageType = 'LeadPage' | 'ContentPage' | 'SalePage';
 // ANCHOR: SALE PAGE | Entity (1/4)
 export interface ISalePageEntityImmu {
   compId: string;
+  companyName: string;
+  companyMarketName: string;
+  companyMarketLogoUrl: string;
   businessId: string;
   salepageId: string;
   salepageType: TSalepageType;
@@ -163,14 +166,14 @@ export interface ICaption {
 
 export interface IInventorySelect
   extends IInventoryEntity,
-    IDBInventoryEntityImmu,
-    IDBInventoryEntity,
-    IDBLogTime {}
+  IDBInventoryEntityImmu,
+  IDBInventoryEntity,
+  IDBLogTime { }
 export interface IProductVariantArr
   extends IProductRootEntity,
-    IProductEntityImmu,
-    IProductVariantEntity,
-    IDBProductVariantOnlyImmu {
+  IProductEntityImmu,
+  IProductVariantEntity,
+  IDBProductVariantOnlyImmu {
   productImagesUrl: IImage[];
   productShortDescription: string;
   productPrice: IProductPrice;
@@ -239,13 +242,13 @@ export enum ComponentBlockType {
 }
 export interface IComponentBlock {
   data:
-    | IComponentBlockProgress
-    | IComponentBlockProduct
-    | IComponentBlockHTML
-    | IComponentBlockImage
-    | IComponentBlockVideo
-    | IComponentBlockSocial
-    | IComponentBlockLink
-    | IComponentBlockFlashSale;
+  | IComponentBlockProgress
+  | IComponentBlockProduct
+  | IComponentBlockHTML
+  | IComponentBlockImage
+  | IComponentBlockVideo
+  | IComponentBlockSocial
+  | IComponentBlockLink
+  | IComponentBlockFlashSale;
   type: ComponentBlockType;
 }

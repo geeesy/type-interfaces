@@ -4,9 +4,8 @@ import {
   TBusinessSize,
   TBusinessTypes
 } from './type-business';
-import { IPaymentMethod, IShippingZone } from './type-console';
-
 import { IImage, IPersonContactInfo } from './type-apps';
+import { IPaymentMethod, IShippingZone } from './type-console';
 
 /* #region COMPANY */
 
@@ -86,6 +85,7 @@ export interface IMapLocation {
 
 export interface ICompanyContactInfo {
   companyMarketName: string;
+  companyMarketLogoUrl: string;
   companyName: string;
   companyPhones: string[];
   companyWebsite: string;

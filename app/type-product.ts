@@ -174,7 +174,7 @@ export interface IProductSpec
     IDBCategoryProductSpecGroup {}
 
 /**
- * PRODUCT
+ * SECTION: PRODUCT
  */
 // ANCHOR: PRODUCT | List
 // NOTE === g-biz -> list all products
@@ -229,17 +229,27 @@ export interface IProductMarketList extends IProductList {
   productCoverUrl_market: string;
 }
 
-// ANCHOR: PRODUCT | Entity (1/6)
+// REVIEW: PRODUCT | Entity (1/10)
 // NOTE === attributes on each SKU (variant and pack creation)
 export interface IProductRootEntity {
-  productShowedImageUrl: string;
+  productShowedImageUrl: string; // STUB: SKU Image
+  /**
+   * --- productShowedImage ---
+   * ! DEV
+   * Product -> productShowedImage = productCover
+   * Variant -> productShowedImage = {{REQ.productShowedImage}}
+   * ! PROD
+   * Product -> productShowedImage = user has to select one from all product images (if has no product cover image)
+   * Variant -> productShowedImage = user has to select one from all product images on each variant
+  */ 
+
   productSku: string;
   productUnit: string;
   productUnit_market: string;
   productUnitPrice: number;
 }
 
-// ANCHOR: PRODUCT | Entity (2/6)
+// REVIEW: PRODUCT | Entity (2/10)
 // NOTE === attributes on each SKU
 export interface IProductEntity {
   productCode: string;
@@ -263,14 +273,14 @@ export interface IProductEntity {
   whichStockOnMarket?: IProductInventoryImmu; // ? use on order from market
 }
 
-// ANCHOR: PRODUCT | Entity (2/6)
+// REVIEW: PRODUCT | Entity (3/10)
 // NOTE === attributes on each SKU (+on parent product of variant product)
 export interface IProductEntityImmu {
   useInventory: boolean;
   hasArchived: boolean; // ! on delete
 }
 
-// ANCHOR: PRODUCT | Entity (3/6)
+// REVIEW: PRODUCT | Entity (4/10)
 export interface IProductAttributes {
   display: IProductDisplay;
   isActive: boolean; // ! not show all
@@ -305,24 +315,28 @@ export interface IProductAttributes {
   useInventory: boolean;
 }
 
+// REVIEW: PRODUCT | Entity (5/10)
 export interface IProductAssets {
-  productCoverUrl: string;
+  productCoverUrl: string; // STUB: Product Cover
   productCoverUrl_market: string;
   productVideoCoverUrl: string;
   productVideoCoverUrl_market: string;
 }
 
+// REVIEW: PRODUCT | Entity (6/10)
 export interface IProductImages {
-  productImagesUrl: IImage[];
+  productImagesUrl: IImage[]; // STUB: [Product Images]
   productImagesUrl_market: IImage[];
 }
 
+// REVIEW: PRODUCT | Entity (7/10)
 export interface IDBProductAssets {
-  productThumbnailUrl: string;
-  productThumbImagesUrl: string[];
+  productThumbnailUrl: string; // STUB: Product Thumbnail (From Product Cover || Showed Image)
+  productThumbImagesUrl: string[]; // STUB: [Product Images (Scaled)]
+  productShowedThumbnailUrl: string; // STUB: SKU Thumbnail (From Showed Image)
 }
 
-// ANCHOR: PRODUCT | Entity (4/6)
+// REVIEW: PRODUCT | Entity (8/10)
 export interface IDBProduct {
   impFactor: number;
   countVariants: number; // * UPDATED ON [C-U-D] VARIANT
@@ -338,14 +352,14 @@ export interface IDBProduct {
   updatedBy: string;
 }
 
-// ANCHOR: PRODUCT | Entity (5/6)
+// REVIEW: PRODUCT | Entity (9/10)
 export interface IDBProductByGapp {
   statusProductApproveOnMarket: StatusProductApproveOnMarket;
   supportNote: string;
   supportBadge: string;
 }
 
-// ANCHOR: PRODUCT | Entity (6/6)
+// REVIEW: PRODUCT | Entity (10/10)
 export interface IDBProductImmu {
   productId: string;
   compId: string;
@@ -354,6 +368,9 @@ export interface IDBProductImmu {
   createdBy: string;
 }
 
+/**
+ * SECTION: VARIANT
+ */
 // ANCHOR: VARIANT | Entity
 export interface IProductVariantEntity {
   variantTitle: string;

@@ -207,7 +207,6 @@ import {
   ITaxInvoiceList,
   IVendor,
   IVendorCreate,
-  IVendorCreateParams,
   IVendorRequestAccept,
   IVendorRequestList
 } from './type-apps';
@@ -733,7 +732,7 @@ export namespace GeeesyApps {
   /**
    * Vendor
    */
-  export type VendorCreate = IVendorCreate & IVendorCreateParams;
+  export type VendorCreate = IVendorCreate & IApiCompanyParams;
   export type Vendor = IVendor;
   export type VendorList = IRefVendorList;
   export type VendorRequestCreate = ICompRequestVendor;
