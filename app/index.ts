@@ -1185,7 +1185,7 @@ export namespace GappSetting {
     IShippingMethodEntityImmu &
     IDBLogTime;
   export type DBUpdateShippingMethod = IShippingMethodEntity &
-    IDBShippingMethod &
+    IDBShippingMethod &  IShippingMethodEntityImmu &
     IDBUpdateTime;
   // * PAYMENT
   export type CreatePaymentMethod = IPaymentMethodEntity &
