@@ -120,6 +120,7 @@ export interface IListOrder
   paymentAttachmentData: IPaymentAttachmentData | null;
   channel: SaleChannelSubType;
   channelId: string // * channelId
+  channelName: string;
   shippingTracking: string;
   shippingCost: number
 }
