@@ -18,6 +18,12 @@ import { SaleChannelSubType, SaleChannelType } from './enum-const';
 // ANCHOR: Sale Channel Attribute (Type Default) test
 export interface ISaleChannelSubTypeDefault {
   caption: string;
+  facebook: IFacebookData
+}
+
+export interface IFacebookData {
+  facebookId: string;
+  name: string;
 }
 
 // REVIEW: SALE CHANNEL
