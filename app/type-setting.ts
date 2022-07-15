@@ -22,8 +22,16 @@ export interface ISaleChannelSubTypeDefault {
 }
 
 export interface IFacebookData {
-  facebookId: string;
-  name: string;
+  facebookUserId: string;
+  facebookUserName: string;
+  FacebookUserAccessToken: string;
+  facebookPageName: string
+  facebookPageLogo: string
+  facebookPageId: string
+  facebookPageAccessToken: string
+  tokenType: string;
+  expiresIn: number   
+  statusActive: boolean;
 }
 
 // REVIEW: SALE CHANNEL
