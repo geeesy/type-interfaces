@@ -20,7 +20,8 @@ export enum DocWorkSeqIdCount {
   po = 'CountPO',
   so = 'CountSO',
   billingNote = 'CountBillingNote',
-  invoice = 'CountInvoice'
+  invoice = 'CountInvoice',
+  receipt = 'CountReceipt'
 }
 
 export enum DocUTMCount {
