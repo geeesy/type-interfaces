@@ -126,3 +126,15 @@ export enum StatusDocSender {
 export enum TextMenu {
   createRfq = ''
 }
+
+export enum FilterStock {
+//   FILTER BY
+// 0 -> ALL = all_stock
+// 1 -> IN_STOCK = in_stock
+// 2 -> LOW_STOCK = low_stock
+// 3 -> OUT_OF_STOCK = out_stock
+  ALL = 'all_stock',
+  IN_STOCK = 'in_stock',
+  LOW_STOCK = 'low_stock',
+  OUT_OF_STOCK = 'out_stock'
+}
