@@ -24,7 +24,7 @@ export interface ISaleChannelSubTypeDefault {
 export interface IFacebookData {
   facebookUserId: string;
   facebookUserName: string;
-  FacebookUserAccessToken: string;
+  facebookUserAccessToken: string;
   facebookPageName: string
   facebookPageLogo: string
   facebookPageId: string

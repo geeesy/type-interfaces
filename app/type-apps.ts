@@ -1,5 +1,6 @@
 /* #region STUB: Version 3.x */
 
+import { GappSetting } from '.';
 import {
   DocFinanceSeqIdCount,
   DocOrderSeqIdCount,
@@ -24,6 +25,7 @@ export interface IDocWorkCount {
   [DocWorkSeqIdCount.so]: number;
   [DocWorkSeqIdCount.billingNote]: number;
   [DocWorkSeqIdCount.invoice]: number;
+  [DocWorkSeqIdCount.receipt]: number;
 }
 
 export interface ISalePageUTMCount {
@@ -135,6 +137,9 @@ export interface IPersonContactInfo {
   address?: IAddress;
   note?: string;
   shippingAddress?: IAddress[];
+  personPic: string;
+  tags: string[];
+  prefixName: string;
 }
 
 // STUB: VENDOR
@@ -1112,6 +1117,7 @@ export interface IReceiptFormGroupData {
   sellerNote: string;
   buyerNote: string;
   productCurrency: string;
+  paymentConfirmedData: GappSetting.PaymentMethod;
 }
 
 export interface IReceiptFormGroupAccounting {
@@ -1121,6 +1127,10 @@ export interface IReceiptFormGroupAccounting {
   totalDiscountAmount: number;
   netAmount: number;
   grandTotalAmount: number;
+  taxWithheldPercent: number;
+  totalPayAmount: number;
+  vat: number,
+  withholdingTax: number
 }
 
 export interface IReceiptFormGroupApprover {
