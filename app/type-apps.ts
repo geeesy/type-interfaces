@@ -168,6 +168,7 @@ export interface IRefVendorList {
   vendorId: string;
   vendorType: TVendorType;
   isCompanyVendor: boolean;
+  tags: string[];
 }
 
 export interface IVendor extends IVendorCreate {
