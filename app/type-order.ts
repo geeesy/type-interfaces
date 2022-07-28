@@ -38,14 +38,19 @@ export enum StatusOrderCustomer {
 export enum StatusOrderOfPayment {
   PAY0_AwaitingPayment = 'AWAITING_PAYMENT',
   PAY1_ToConfirm = 'TO_CONFIRM',
-  PAY2_CompletedPayment = 'COMPLETED_PAYMENT'
+  PAY2_CompletedPayment = 'COMPLETED_PAYMENT',
+  PAY_C_Refunding = 'REFUNDING',
+  PAY_C_CompletedRefund = 'COMPLETED_REFUND'
 }
 
 export enum StatusOrderOfShipment {
   SHIP0_AwaitingShipment = 'AWAITING_SHIPMENT',
   SHIP0_AwaitingPickup = 'AWAITING_PICKUP',
   SHIP1_Shipped = 'SHIPPED',
-  SHIP2_CompletedShipment = 'COMPLETED_SHIPMENT'
+  SHIP2_CompletedShipment = 'COMPLETED_SHIPMENT',
+  SHIP_C_AwaitingReturn = 'AWAITING_RETURN',
+  SHIP_C_Returning = 'RETURNING',
+  SHIP_C_CompletedReturn = 'COMPLETED_RETURN'
 }
 
 export enum StatusOrderOfStock {
