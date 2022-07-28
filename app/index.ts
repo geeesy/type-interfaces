@@ -686,6 +686,7 @@ export namespace GeeesyApps {
   export type ReceiptList = IReceiptList;
   export type ResReceipt = IResReceipt | IReceipt;
   export type Receipt = IReceipt & IDBCompanyDocHeader;
+  export type ReceiptUpdate = IReceipt & IApiCompanyParams;
 
   /**
    * @description
@@ -1184,7 +1185,7 @@ export namespace GappSetting {
     IShippingMethodEntityImmu &
     IDBLogTime;
   export type DBUpdateShippingMethod = IShippingMethodEntity &
-  IShippingMethodEntityImmu & IDBShippingMethod &  
+    IShippingMethodEntityImmu & IDBShippingMethod &
     IDBUpdateTime;
   // * PAYMENT
   export type CreatePaymentMethod = IPaymentMethodEntity &
