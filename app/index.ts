@@ -889,7 +889,7 @@ export namespace GappBiz {
     ICompanyEntityImmu &
     IDBLogTime &
     IPortfolioImmu;
-  // ! ORDER
+  // STUB: ORDER
   export type UpdateOrderStatus = ISellerUpdateOrderStatus &
     IApiCompanyParams &
     IOrderAccountingOnly &
