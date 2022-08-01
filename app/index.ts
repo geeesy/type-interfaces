@@ -208,7 +208,13 @@ import {
   IVendor,
   IVendorCreate,
   IVendorRequestAccept,
-  IVendorRequestList
+  IVendorRequestList,
+  IResRO,
+  IRO,
+  IROFormCreate,
+  IROFormCreateParams,
+  IResROList,
+  IROList
 } from './type-apps';
 import {
   IBusinessCompanyUserIdentity,
@@ -588,7 +594,9 @@ export namespace GeeesyApps {
   export type QuotationFormSubmit = IQuotationFormCreate &
     IQuotationFormCreateParams &
     IApiCompanyParams &
-    IDBCompanyDocHeader; // REVIEW: Quotation Type D | Create
+    IDBCompanyDocHeader; 
+  
+    // REVIEW: Quotation Type D | Create
   export type QuotationRfqFormSubmit = IQuotationRfqFormCreate &
     IQuotationFormCreateParams &
     IApiCompanyParams &
@@ -627,6 +635,7 @@ export namespace GeeesyApps {
    * @param
 
    */
+  // * SO
   export type SOFormCreate = ISOFormCreate;
   export type SoFormCreateParams = ISOFormCreateParams;
   export type SOFormSubmit = ISOFormCreate &
@@ -636,12 +645,25 @@ export namespace GeeesyApps {
   export type ResSO = IResSO | ISO;
   export type SO = ISO & IDBCompanyDocHeader;
 
+  // STUB: Return Order (RO)
+  export type ROFormCreate = IROFormCreate;
+  export type ROFormCreateParams = IROFormCreateParams;
+  export type ROFormSubmit = IROFormCreate &
+    IROFormCreateParams &
+    IApiCompanyParams &
+    IDBCompanyDocHeader;
+  export type ResROList = IResROList | IROList;
+  export type ROList = IROList;
+  export type ResRO = IResRO | IRO;
+  export type RO = IRO & IDBCompanyDocHeader;
+
   /**
    * @description
    * FORM Interface for Billing Note creation
    * @param
 
    */
+  
   export type BillingNoteFormCreate = IBillingNoteFormCreate;
   export type BillingNoteFormCreateParams = IBillingNoteFormCreateParams;
   export type BillingNoteFormSubmit = IBillingNoteFormCreate &
@@ -890,6 +912,7 @@ export namespace GappBiz {
     ICompanyEntityImmu &
     IDBLogTime &
     IPortfolioImmu;
+    
   // STUB: ORDER
   export type UpdateOrderStatus = ISellerUpdateOrderStatus &
     IApiCompanyParams &

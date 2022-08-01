@@ -337,6 +337,7 @@ export interface ISellerUpdateOrderStatus {
   toCompleteShipping: boolean; // ? to
 }
 
+// STUB: Cancel Order (By Seller)
 export interface ISellerCancelOrder {
   returnProduct: IOrderProductRow[] | null;
   hasRefunded: boolean;
