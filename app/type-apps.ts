@@ -847,6 +847,72 @@ export interface IResPO {
 
 /* #region FIXME: SO */
 
+export interface ISOFormCreate {
+  formGroupSender: ISenderContact;
+  formGroupReceiver: IReceiverContact;
+  formGroupProducts: IProductRow[];
+  formGroupData: ISOFormGroupData;
+  formGroupAccounting: ISOFormGroupAccounting;
+  formGroupApprover: ISOFormGroupApprover;
+}
+
+export interface ISOFormGroupData {
+  docNo: string;
+  docDate: string;
+  creditDay: number;
+  shippingDate: string;
+  remark: string;
+  termsCondition: string;
+  senderNote: string;
+  receiverNote: string;
+  sellerNote: string;
+  buyerNote: string;
+  attachmentsUrl: string[];
+}
+
+export interface ISOFormGroupAccounting {
+  subtotalAmount: number;
+  shippingCost: number;
+  charges: number;
+  depositAmount: number;
+  totalDiscountAmount: number;
+  netAmount: number;
+  vat: number;
+  grandTotalAmount: number;
+}
+export interface ISOFormCreateParams {
+  senderId: string;
+  receiverId: string;
+  buyerId: string;
+  sellerId: string;
+  rfqId: string;
+  quotationId: string;
+  purchaseOrderId: string;
+}
+
+export interface ISOFormGroupApprover {
+  approve: IApprove[];
+  stampUrl: string;
+}
+
+export interface ISO extends ISOFormCreate, ISOFormCreateParams {
+  salesOrderId: string;
+  statusSOSender: string;
+  statusSOReceiver: string;
+  statusApprovalFlow: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface IResSO {
+  status: string;
+  statusText: string;
+  message: string;
+  data: ISO[];
+}
+
+/* #endregion */
+
 /* #region FIXME: RO */
 export interface IROFormCreate {
   formGroupSender: ISenderContact;

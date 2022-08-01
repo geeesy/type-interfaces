@@ -184,7 +184,6 @@ import {
   IResRfqList,
   IResRfqMarket,
   IResRfqMarketList,
-  IResSO,
   IResTaxInvoice,
   IRfq,
   IRfqFormCreate,
@@ -197,9 +196,6 @@ import {
   IRfqMarketFormCreateParams,
   IRfqMarketFunnel,
   IRfqMarketList,
-  ISO,
-  ISOFormCreate,
-  ISOFormCreateParams,
   ISalePageUTMCount,
   ITaxInvoice,
   ITaxInvoiceFormCreate,
@@ -214,7 +210,11 @@ import {
   IROFormCreate,
   IROFormCreateParams,
   IResROList,
-  IROList
+  IROList,
+  IResSO,
+  ISO,
+  ISOFormCreate,
+  ISOFormCreateParams
 } from './type-apps';
 import {
   IBusinessCompanyUserIdentity,
