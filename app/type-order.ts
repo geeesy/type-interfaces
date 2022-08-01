@@ -342,7 +342,7 @@ export interface ISellerUpdateOrderStatus {
 
 // STUB: Cancel Order (By Seller)
 export interface ISellerCancelOrder {
-  toReturn: boolean
+  isReturnLater: boolean
   toRestock: boolean
   returnProduct: IOrderProductRow[] | null;
   toRefund: boolean;
