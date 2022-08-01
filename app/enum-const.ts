@@ -23,7 +23,6 @@ export enum DocWorkSeqIdCount {
   billingNote = 'CountBillingNote',
   invoice = 'CountInvoice',
   receipt = 'CountReceipt',
-  returnOrder = 'CountRO'
 }
 
 export enum DocUTMCount {
@@ -46,7 +45,8 @@ export enum DocFinanceSeqIdCount {
 
 export enum DocOrderSeqIdCount {
   order = 'CountOrder',
-  market = 'CountMarket'
+  market = 'CountMarket',
+  returnOrder = 'CountRO'
 }
 
 export enum CountForCompanyMetric {

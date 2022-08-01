@@ -341,9 +341,12 @@ export interface ISellerUpdateOrderStatus {
 
 // STUB: Cancel Order (By Seller)
 export interface ISellerCancelOrder {
+  toReturn: boolean
+  toRestock: boolean
   returnProduct: IOrderProductRow[] | null;
-  hasRefunded: boolean;
+  toRefund: boolean;
   refundAmount: number;
+  reason: string
   note: string;
 }
 
