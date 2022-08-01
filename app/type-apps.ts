@@ -11,6 +11,7 @@ import {
   StatusPoolShippingSubBuyer
 } from './enum-const';
 import { IAddress, ICompanyContactInfo } from './type-company';
+import { IOrderLinkDataOnConfirm, IOrderLinkImmuDataOnConfirm } from './type-order';
 
 export interface IDBCompanyDocHeader {
   receiverCompLogo: string;
@@ -846,16 +847,17 @@ export interface IResPO {
 
 /* #region FIXME: SO */
 
-export interface ISOFormCreate {
+/* #region FIXME: RO */
+export interface IROFormCreate {
   formGroupSender: ISenderContact;
   formGroupReceiver: IReceiverContact;
   formGroupProducts: IProductRow[];
-  formGroupData: ISOFormGroupData;
-  formGroupAccounting: ISOFormGroupAccounting;
-  formGroupApprover: ISOFormGroupApprover;
+  formGroupData: IROFormGroupData;
+  formGroupAccounting: IROFormGroupAccounting;
+  formGroupApprover: IROFormGroupApprover;
 }
 
-export interface ISOFormGroupData {
+export interface IROFormGroupData {
   docNo: string;
   docDate: string;
   creditDay: number;
@@ -867,9 +869,10 @@ export interface ISOFormGroupData {
   sellerNote: string;
   buyerNote: string;
   attachmentsUrl: string[];
+  productCurrency: string;
 }
 
-export interface ISOFormGroupAccounting {
+export interface IROFormGroupAccounting {
   subtotalAmount: number;
   shippingCost: number;
   charges: number;
@@ -879,7 +882,12 @@ export interface ISOFormGroupAccounting {
   vat: number;
   grandTotalAmount: number;
 }
-export interface ISOFormCreateParams {
+
+export interface IROFormGroupApprover {
+  approve: IApprove[];
+  stampUrl: string;
+}
+export interface IROFormCreateParams {
   senderId: string;
   receiverId: string;
   buyerId: string;
@@ -887,27 +895,54 @@ export interface ISOFormCreateParams {
   rfqId: string;
   quotationId: string;
   purchaseOrderId: string;
+  orderId: string
 }
 
-export interface ISOFormGroupApprover {
-  approve: IApprove[];
-  stampUrl: string;
-}
-
-export interface ISO extends ISOFormCreate, ISOFormCreateParams {
-  salesOrderId: string;
-  statusSOSender: string;
-  statusSOReceiver: string;
+export interface IROList {
+  returnOrderId: string;
+  sender: ISenderContact;
+  receiver: IReceiverContact;
+  docNo: string;
+  docDate: string;
+  productTitleFirst: string;
+  productImageFirstUrl: string;
+  grandTotalAmount: number;
+  productCurrency: string;
+  statusROSender: string;
+  statusROReceiver: string;
   statusApprovalFlow: string;
+  statusReviewerAction: string;
+  statusApproverAction: string;
   createdAt: string;
   updatedAt: string;
+  senderId: string;
+  sellerId: string;
+  buyerId: string;
+  creditDay: number;
+  shippingDate: string;
 }
 
-export interface IResSO {
+export interface IRO extends IROList, IROFormCreateParams {
+  products: IProductRow[];
+  data: IROFormGroupData;
+  accounting: IROFormGroupAccounting;
+  approver: IROFormGroupApprover;
+  orderData: IOrderLinkDataOnConfirm & IOrderLinkImmuDataOnConfirm
+}
+
+
+export interface IResROList {
   status: string;
   statusText: string;
   message: string;
-  data: ISO[];
+  data: IROList[];
+}
+
+export interface IResRO {
+  status: string;
+  statusText: string;
+  message: string;
+  data: IRO;
 }
 
 /* #endregion */
