@@ -57,7 +57,8 @@ export enum StatusOrderOfShipment {
 
 export enum StatusOrderOfStock {
   Reserved = 'RESERVED',
-  Deducted = 'DEDUCTED'
+  Deducted = 'DEDUCTED',
+  Restocked = 'RESTOCKED'
 }
 
 export enum StatusOrder {
