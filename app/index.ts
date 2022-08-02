@@ -309,11 +309,13 @@ import {
   IOrderCustomerData,
   IOrderCustomerDataImmu,
   IOrderData,
+  IOrderDataOnCancel,
   IOrderDataOnComplete,
   IOrderEntity,
   IOrderLinkDataOnConfirm,
   IOrderLinkImmuDataOnConfirm,
   ISellerCancelOrder,
+  ISellerCancelOrderParams,
   ISellerCreateOrder,
   ISellerUpdateOrderStatus
 } from './type-order';
@@ -959,7 +961,8 @@ export namespace GappBiz {
     IOrderLinkDataOnConfirm &
     IOrderData &
     IApiCompanyParams;
-  export type CancelOrder = ISellerCancelOrder & IApiCompanyParams;
+  export type CreateCancelOrder = ISellerCancelOrderParams & ISellerCancelOrder & IApiCompanyParams;
+  export type OrderWithCancel = GappBiz.OrderLink & ISellerCancelOrder & IOrderDataOnCancel
   export type DBUpdateOrderLink = IOrderEntity &
     IDBOrderEntity &
     IOrderCustomerData &

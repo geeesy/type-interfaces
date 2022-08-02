@@ -341,14 +341,24 @@ export interface ISellerUpdateOrderStatus {
 }
 
 // STUB: Cancel Order (By Seller)
-export interface ISellerCancelOrder {
+export interface ISellerCancelOrderParams {
   isReturnLater: boolean
   toRestock: boolean
-  returnProduct: IOrderProductRow[] | null;
   toRefund: boolean;
+}
+
+export interface ISellerCancelOrder {
+  returnProduct: IOrderProductRow[] | null;
   refundAmount: number;
   reason: string
   note: string;
+}
+
+export interface IOrderDataOnCancel {
+  requestCancelAt: string
+  requestCancelBy: string
+  canceledAt: string
+  canceledBy: string
 }
 
 // FIXME: to remove interface (dup)
