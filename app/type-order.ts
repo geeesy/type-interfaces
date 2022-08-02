@@ -344,12 +344,14 @@ export interface ISellerUpdateOrderStatus {
 export interface ISellerCancelOrderParams {
   isReturnLater: boolean
   toRestock: boolean
+  isRefundLater: boolean
+  isFullRefund: boolean
   toRefund: boolean;
 }
 
 export interface ISellerCancelOrder {
   returnProduct: IOrderProductRow[] | null;
-  refundAttachmentData: IPaymentAttachmentData | null;
+  refundAttachmentData: IPaymentAttachmentData[] | null;
   refundAmount: number;
   reason: string
   note: string;
