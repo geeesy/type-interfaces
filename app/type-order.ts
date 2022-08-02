@@ -349,6 +349,7 @@ export interface ISellerCancelOrderParams {
 
 export interface ISellerCancelOrder {
   returnProduct: IOrderProductRow[] | null;
+  refundAttachmentData: IPaymentAttachmentData | null;
   refundAmount: number;
   reason: string
   note: string;
