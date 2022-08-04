@@ -351,21 +351,26 @@ export interface ISellerCancelOrderParams {
 }
 
 export interface ISellerCancelOrder {
-  returnProduct: IOrderProductRow[] | null;
-  refundAttachmentData: IPaymentAttachmentData[] | null;
-  refundAmount: number;
   reason: string
   note: string;
 }
 
-export interface IRefundData extends IDBLogCreate, IDBLogUpdate {
-  refundAttachmentData: IPaymentAttachmentData[];
+export interface ISellerRefundOrder {
+  refundAttachmentData: IPaymentAttachmentData[] | null;
   refundAmount: number;
+}
+
+export interface ISellerReturnOrder {
+  returnProduct: IOrderProductRow[] | null;
+}
+
+export interface IRefundData extends ISellerRefundOrder{
+  refundOrderId: string
   note: string
 }
 
-export interface IReturnData extends IDBLogCreate, IDBLogUpdate {
-  returnProduct: IOrderProductRow[]
+export interface IReturnData extends ISellerReturnOrder  {
+  returnOrderId: string
   note: string
 }
 
