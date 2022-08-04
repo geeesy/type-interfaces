@@ -3,7 +3,6 @@ import { ICompanyContactInfo, IPeriodTime } from './type-company';
 import { GappSetting } from '.';
 import { IPersonContactInfo } from './type-apps';
 import { SaleChannelSubType } from './enum-const';
-import { IDBLogCreate, IDBLogUpdate } from './type-api';
 
 /* eslint-disable no-unused-vars */
 export enum StatusOrderSeller {
