@@ -3,6 +3,7 @@ import { ICompanyContactInfo, IPeriodTime } from './type-company';
 import { GappSetting } from '.';
 import { IPersonContactInfo } from './type-apps';
 import { SaleChannelSubType } from './enum-const';
+import { IDBLogCreate, IDBLogUpdate } from './type-api';
 
 /* eslint-disable no-unused-vars */
 export enum StatusOrderSeller {
@@ -357,12 +358,26 @@ export interface ISellerCancelOrder {
   note: string;
 }
 
+export interface IRefundData extends IDBLogCreate, IDBLogUpdate {
+  refundAttachmentData: IPaymentAttachmentData[];
+  refundAmount: number;
+  note: string
+}
+
+export interface IReturnData extends IDBLogCreate, IDBLogUpdate {
+  returnProduct: IOrderProductRow[]
+  note: string
+}
+
 export interface IOrderDataOnCancel {
   requestCancelAt: string
   requestCancelBy: string
   canceledAt: string
   canceledBy: string
+  refundData: IRefundData[] | null
+  returnData: IReturnData[] | null
 }
+// === === ===
 
 // FIXME: to remove interface (dup)
 export interface ISellerUpdateOrderDataOnStatusChanged {
