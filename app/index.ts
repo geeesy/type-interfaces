@@ -961,8 +961,10 @@ export namespace GappBiz {
     IOrderLinkDataOnConfirm &
     IOrderData &
     IApiCompanyParams;
+  // STUB: Cancel Order
   export type CreateCancelOrder = ISellerCancelOrderParams & ISellerCancelOrder & IApiCompanyParams;
   export type OrderWithCancel = GappBiz.OrderLink & ISellerCancelOrder & IOrderDataOnCancel
+  // === === ===
   export type DBUpdateOrderLink = IOrderEntity &
     IDBOrderEntity &
     IOrderCustomerData &
