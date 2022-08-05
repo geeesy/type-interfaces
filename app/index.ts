@@ -214,7 +214,8 @@ import {
   IResSO,
   ISO,
   ISOFormCreate,
-  ISOFormCreateParams
+  ISOFormCreateParams,
+  IUpdateDocStatus
 } from './type-apps';
 import {
   IBusinessCompanyUserIdentity,
@@ -710,6 +711,7 @@ export namespace GeeesyApps {
     IReceiptFormCreateParams &
     IApiCompanyParams &
     IDBCompanyDocHeader;
+  export type UpdateReceiptStatus = IUpdateDocStatus & IApiCompanyParams
   export type ResReceiptList = IResReceiptList | IReceiptList;
   export type ReceiptList = IReceiptList;
   export type ResReceipt = IResReceipt | IReceipt;
