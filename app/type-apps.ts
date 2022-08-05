@@ -10,13 +10,18 @@ import {
   StatusPoolShippingMainBuyer,
   StatusPoolShippingSubBuyer
 } from './enum-const';
-import { StatusApprovalFlow, StatusDocSender } from './enum-status';
+import { StatusApprovalFlow, StatusDocSender, StatusQuotationSender } from './enum-status';
 import { IAddress, ICompanyContactInfo } from './type-company';
 import { IOrderLinkDataOnConfirm, IOrderLinkImmuDataOnConfirm } from './type-order';
 
 export interface IUpdateDocStatus {
   existingDocStatus: StatusDocSender
   newDocStatus: StatusDocSender
+}
+
+export interface IUpdateQuotationStatus {
+  existingQuotationStatus: StatusQuotationSender
+  newQuotationStatus: StatusQuotationSender
 }
 
 export interface IDBActivityLog {

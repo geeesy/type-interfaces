@@ -216,7 +216,8 @@ import {
   ISOFormCreate,
   ISOFormCreateParams,
   IUpdateDocStatus,
-  IDBActivityLog
+  IDBActivityLog,
+  IUpdateQuotationStatus
 } from './type-apps';
 import {
   IBusinessCompanyUserIdentity,
@@ -610,6 +611,7 @@ export namespace GeeesyApps {
     IApiCompanyParams &
     IDBCompanyDocHeader; // FIXME
 
+  export type UpdateQuotationStatus = IUpdateQuotationStatus & IApiCompanyParams
   export type ResQuotationList = IResQuotationList | IQuotationList;
   export type QuotationList = IQuotationList;
   export type QuotationRfqList = IQuotationRfqList;
