@@ -973,6 +973,8 @@ export namespace GappBiz {
   // STUB: Cancel Order === === ===
   export type CreateCancelOrder = ISellerCancelOrderParams & ISellerCancelOrder & ISellerRefundOrder & ISellerReturnOrder & IApiCompanyParams;
   export type OrderWithCancel = GappBiz.OrderLink & ISellerCancelOrder & IOrderDataOnCancel
+  export type CreateReturnCanceledOrder = ISellerReturnOrder & IApiCompanyParams
+  export type CreateRefundCanceledOrder = ISellerRefundOrder & IApiCompanyParams
   export type ReturnOrder = IReturnData & IDBLogCreate & IDBLogUpdate
   export type RefundOrder = IRefundData & IDBLogCreate & IDBLogUpdate
   // === === ===

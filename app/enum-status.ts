@@ -118,7 +118,7 @@ export enum StatusSOReceiver {
 
 export enum StatusDocSender {
   Draft = 'draft',
-  Issued = 'issued',
+  Issued = 'issued', // = ยืนยัน
   InApproval = 'in_approval'
 }
 /* #endregion */
