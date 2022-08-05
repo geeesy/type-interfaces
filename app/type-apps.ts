@@ -10,8 +10,15 @@ import {
   StatusPoolShippingMainBuyer,
   StatusPoolShippingSubBuyer
 } from './enum-const';
+import { StatusApprovalFlow, StatusDocSender } from './enum-status';
 import { IAddress, ICompanyContactInfo } from './type-company';
 import { IOrderLinkDataOnConfirm, IOrderLinkImmuDataOnConfirm } from './type-order';
+
+export interface IUpdateDocStatus {
+  existingDocStatus: StatusDocSender
+  newDocStatus: StatusDocSender
+}
+
 
 export interface IDBCompanyDocHeader {
   receiverCompLogo: string;
@@ -1252,6 +1259,7 @@ export interface IReceiptFormCreateParams {
 
 export interface IReceiptList {
   receiptId: string;
+  orderId: string
   sender: ISenderContact;
   receiver: IReceiverContact;
   senderId: string;
@@ -1260,8 +1268,8 @@ export interface IReceiptList {
   docDate: string;
   grandTotalAmount: number;
   productCurrency: string;
-  statusDocSender: string;
-  statusApprovalFlow: string;
+  statusDocSender: StatusDocSender;
+  statusApprovalFlow: StatusApprovalFlow;
   createdAt: string;
   updatedAt: string;
 }
