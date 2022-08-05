@@ -19,6 +19,12 @@ export interface IUpdateDocStatus {
   newDocStatus: StatusDocSender
 }
 
+export interface IDBActivityLog {
+  latestNoteOnAction: string;
+  latestActionBy: string | null; // ? use to identify action -> buyer (null) or seller (identityId)
+  latestActionByFullName: string // ? -> firstName + lastName
+}
+
 
 export interface IDBCompanyDocHeader {
   receiverCompLogo: string;
