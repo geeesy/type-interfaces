@@ -1247,6 +1247,7 @@ export interface IReceiptFormCreateParams {
   sellerId: string;
   quotationId: string;
   purchaseOrderId: string;
+  orderId: string
 }
 
 export interface IReceiptList {
@@ -1332,6 +1333,7 @@ export interface ITaxInvoiceFormCreateParams {
   sellerId: string;
   quotationId: string;
   purchaseOrderId: string;
+  orderId: string
 }
 
 export interface ITaxInvoiceList {
