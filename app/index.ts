@@ -215,7 +215,8 @@ import {
   ISO,
   ISOFormCreate,
   ISOFormCreateParams,
-  IUpdateDocStatus
+  IUpdateDocStatus,
+  IDBActivityLog
 } from './type-apps';
 import {
   IBusinessCompanyUserIdentity,
@@ -699,12 +700,13 @@ export namespace GeeesyApps {
   export type ResInvoice = IResInvoice | IInvoice;
   export type Invoice = IInvoice & IDBCompanyDocHeader;
 
+  
   /**
    * @description
    * FORM Interface for RECEIPT creation
    * @param
-
    */
+  // STUB: RECEIPT
   export type ReceiptFormCreate = IReceiptFormCreate;
   export type ReceiptFormCreateParams = IReceiptFormCreateParams;
   export type ReceiptFormSubmit = IReceiptFormCreate &
@@ -715,7 +717,7 @@ export namespace GeeesyApps {
   export type ResReceiptList = IResReceiptList | IReceiptList;
   export type ReceiptList = IReceiptList;
   export type ResReceipt = IResReceipt | IReceipt;
-  export type Receipt = IReceipt & IDBCompanyDocHeader;
+  export type Receipt = IReceipt & IDBCompanyDocHeader & IDBActivityLog;
   export type ReceiptUpdate = IReceipt & IApiCompanyParams;
 
   /**
