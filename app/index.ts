@@ -324,6 +324,7 @@ import {
   ISellerCreateOrder,
   ISellerRefundOrder,
   ISellerReturnOrder,
+  ISellerUpdateOrder,
   ISellerUpdateOrderStatus
 } from './type-order';
 import {
@@ -965,12 +966,16 @@ export namespace GappBiz {
   export type OrderSalePage = GappBiz.OrderLink;
   export type OrderGappMed = GappBiz.OrderLink;
   export type ListOrderLink = IListOrder & IDBLogTime;
+
+  // STUB: Edit, Update Order === === ===
   export type UpdateOrder = IOrderEntity &
     IOrderCustomerData &
     IOrderCustomerDataImmu &
     IOrderLinkDataOnConfirm &
     IOrderData &
+    ISellerUpdateOrder &
     IApiCompanyParams;
+  // === === ===
 
   // STUB: Cancel Order === === ===
   export type CreateCancelOrder = ISellerCancelOrderParams & ISellerCancelOrder & ISellerRefundOrder & ISellerReturnOrder & IApiCompanyParams;
