@@ -438,3 +438,7 @@ export interface ILogOrder {
   oldValue: ILogOrderValue;
   newValue: ILogOrderValue;
 }
+
+export interface ISellerUpdateOrder {
+  toUpdateProduct: boolean
+}
