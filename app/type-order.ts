@@ -376,7 +376,7 @@ export interface IReturnData extends ISellerReturnOrder  {
 export interface IOrderDataOnCancel {
   statusOrderOfPaymentWhenCanceled: StatusOrderOfPayment
   statusOrderOfShipmentWhenCanceled: StatusOrderOfShipment
-  statusOrderOnCustomerWhenCanceled: StatusOrderCustomer
+  statusOrderOnBuyerWhenCanceled: StatusOrderCustomer
   statusOrderOnSellerWhenCanceled: StatusOrderSeller
   requestCancelAt: string
   requestCancelBy: string
