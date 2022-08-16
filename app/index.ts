@@ -318,7 +318,9 @@ import {
   IOrderLinkDataOnConfirm,
   IOrderLinkImmuDataOnConfirm,
   IRefundData,
+  IRefundRowData,
   IReturnData,
+  IReturnRowData,
   ISellerCancelOrder,
   ISellerCancelOrderParams,
   ISellerCreateOrder,
@@ -982,8 +984,10 @@ export namespace GappBiz {
   export type OrderWithCancel = GappBiz.OrderLink & ISellerCancelOrder & IOrderDataOnCancel
   export type CreateReturnCanceledOrder = ISellerReturnOrder & IApiCompanyParams
   export type CreateRefundCanceledOrder = ISellerRefundOrder & IApiCompanyParams
-  export type ReturnOrderRow = IReturnData & IDBLogCreate & IDBLogUpdate
-  export type RefundOrderRow = IRefundData & IDBLogCreate & IDBLogUpdate
+  export type ReturnOrder = IReturnData & IDBLogCreate & IDBLogUpdate
+  export type RefundOrder = IRefundData & IDBLogCreate & IDBLogUpdate
+  export type ReturnOrderRow = IReturnRowData & IDBLogCreate & IDBLogUpdate
+  export type RefundOrderRow = IRefundRowData & IDBLogCreate & IDBLogUpdate
   // === === ===
 
   export type DBUpdateOrderLink = IOrderEntity &

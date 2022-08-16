@@ -369,9 +369,20 @@ export interface IRefundData extends ISellerRefundOrder{
   note: string
 }
 
+export interface IRefundRowData {
+  refundRowId: string
+  refundAttachmentData: IPaymentAttachmentData[];
+  refundAmount: number;
+}
+
 export interface IReturnData extends ISellerReturnOrder  {
   returnOrderId: string
   note: string
+}
+
+export interface IReturnRowData {
+  returnRowId: string
+  returnProduct: IOrderProductRow
 }
 
 export interface IOrderDataOnCancel {
