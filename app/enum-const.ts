@@ -161,7 +161,7 @@ export enum SaleChannelSubType {
   ShopeeConnect = 'shopeeConnect',
   JD = 'jd',
   Facebook = 'facebook',
-  FacebookConnect ='facebookConnect',
+  FacebookConnect = 'facebookConnect',
   Line = 'line',
   Instagram = 'instagram',
   WeChat = 'weChat',
@@ -311,7 +311,8 @@ export const BankAccountTypeArr = [
 
 export enum PaymentMethodType {
   BankDeposit = 'bankDeposit',
-  COD = 'COD'
+  COD = 'COD',
+  Cash = 'cash',
 }
 
 export enum ShippingMethodType {
