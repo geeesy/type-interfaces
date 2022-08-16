@@ -15,6 +15,10 @@ export interface IPaymentMethodTypeCod {
   caption: string;
 }
 
+export interface IPaymentMethodTypeCash {
+  caption: string;
+}
+
 // REVIEW: PAYMENT METHOD
 export interface IDBPaymentMethodImmu {
   paymentMethodId: string;
@@ -27,7 +31,7 @@ export interface IDBPaymentMethod {
 }
 
 export interface IPaymentMethodEntityImmu {
-  paymentMethodType: PaymentMethodType.BankDeposit | PaymentMethodType.COD;
+  paymentMethodType: PaymentMethodType.BankDeposit | PaymentMethodType.COD | PaymentMethodType.Cash;
 }
 
 export interface IPaymentMethodEntity {
@@ -35,7 +39,7 @@ export interface IPaymentMethodEntity {
   paymentIconUrl: string;
   paymentAliasName: string;
   note: string;
-  paymentMethodAttribute: IPaymentMethodTypeDeposit | IPaymentMethodTypeCod;
+  paymentMethodAttribute: IPaymentMethodTypeDeposit | IPaymentMethodTypeCod | IPaymentMethodTypeCash;
 }
 
 export interface IUpdateMarketPaymentMethod {
