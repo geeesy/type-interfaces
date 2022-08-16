@@ -982,8 +982,8 @@ export namespace GappBiz {
   export type OrderWithCancel = GappBiz.OrderLink & ISellerCancelOrder & IOrderDataOnCancel
   export type CreateReturnCanceledOrder = ISellerReturnOrder & IApiCompanyParams
   export type CreateRefundCanceledOrder = ISellerRefundOrder & IApiCompanyParams
-  export type ReturnOrder = IReturnData & IDBLogCreate & IDBLogUpdate
-  export type RefundOrder = IRefundData & IDBLogCreate & IDBLogUpdate
+  export type ReturnOrderRow = IReturnData & IDBLogCreate & IDBLogUpdate
+  export type RefundOrderRow = IRefundData & IDBLogCreate & IDBLogUpdate
   // === === ===
 
   export type DBUpdateOrderLink = IOrderEntity &
