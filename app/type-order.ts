@@ -347,6 +347,7 @@ export interface ISellerCancelOrderParams {
   isRefundLater: boolean
   isFullRefund: boolean
   toRefund: boolean;
+  toBypassReturn: boolean
 }
 
 export interface ISellerCancelOrder {
