@@ -302,6 +302,7 @@ import {
   IDBOrderEntity,
   IDBOrderEntityImmu,
   IDBOrderLinkImmu,
+  IDBOrderPaymentRowEntityImmu,
   IDBOrderSellerDataImmu,
   IDBOrderStatus,
   ILeadpage,
@@ -973,7 +974,9 @@ export namespace GappBiz {
   export type ListReturnOrder =  IListReturnOrder & IDBLogTime;
 
   // STUB: send slip
-  export type SlipData = IOrderPaymentRow
+  export type CreateSlipData = IOrderPaymentRow
+  export type SlipData = IOrderPaymentRow & IDBOrderPaymentRowEntityImmu
+  // === === ===
 
   // STUB: Edit, Update Order === === ===
   export type UpdateOrder = IOrderEntity &
