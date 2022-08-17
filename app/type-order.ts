@@ -133,6 +133,14 @@ export interface IListOrder
   shippingTracking: string;
   shippingCost: number
 }
+
+export interface IListReturnOrder  extends IDBOrderSellerDataImmu,IDBOrderLinkImmu,IDBOrderEntity{
+  statusOrderOnSeller: StatusOrderSeller;
+  statusOrderOnBuyer: StatusOrderCustomer;
+  statusOrderOfPayment: StatusOrderOfPayment | null;
+  statusReturnOrder: boolean
+}
+
 // ANCHOR: ORDER | Entity (1/13)
 export interface IOrderCustomerDataImmu {
   customerId: string;
@@ -462,14 +470,7 @@ export interface ISellerUpdateOrder {
 
 export interface IOrderPaymentRow extends IApiCompanyParams, IDBLogTime {
   orderId: string;
-  statusApprove: boolean;
-  paymentConfirmedData: GappSetting.PaymentMethod | null;
-  paymentAttachmentData: IPaymentAttachmentData | null;
-  identityData: GappBiz.User | null
-}
-
-export interface IListPayment  {
-  orderId: string;
+  paymentRowId: string;
   statusApprove: boolean;
   paymentConfirmedData: GappSetting.PaymentMethod | null;
   paymentAttachmentData: IPaymentAttachmentData | null;
