@@ -1,5 +1,5 @@
 import { GappBiz, GappSetting } from '.';
-import { IApiCompanyParams, IDBLogTime } from './type-api';
+import { IApiCompanyParams } from './type-api';
 import { ICompanyContactInfo, IPeriodTime } from './type-company';
 
 import { IPersonContactInfo } from './type-apps';
