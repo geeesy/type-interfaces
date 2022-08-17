@@ -1,6 +1,7 @@
+import { GappBiz, GappSetting } from '.';
+import { IApiCompanyParams, IDBLogTime } from './type-api';
 import { ICompanyContactInfo, IPeriodTime } from './type-company';
 
-import { GappSetting } from '.';
 import { IPersonContactInfo } from './type-apps';
 import { SaleChannelSubType } from './enum-const';
 
@@ -364,7 +365,7 @@ export interface ISellerReturnOrder {
   returnProduct: IOrderProductRow[] | null;
 }
 
-export interface IRefundData extends ISellerRefundOrder{
+export interface IRefundData extends ISellerRefundOrder {
   refundOrderId: string
   note: string
 }
@@ -375,7 +376,7 @@ export interface IRefundRowData {
   refundAmount: number;
 }
 
-export interface IReturnData extends ISellerReturnOrder  {
+export interface IReturnData extends ISellerReturnOrder {
   returnOrderId: string
   note: string
 }
@@ -457,4 +458,20 @@ export interface ILogOrder {
 
 export interface ISellerUpdateOrder {
   toUpdateProduct: boolean
+}
+
+export interface IOrderPaymentRow extends IApiCompanyParams, IDBLogTime {
+  orderId: string;
+  statusApprove: boolean;
+  paymentConfirmedData: GappSetting.PaymentMethod | null;
+  paymentAttachmentData: IPaymentAttachmentData | null;
+  identityData: GappBiz.User | null
+}
+
+export interface IListPayment  {
+  orderId: string;
+  statusApprove: boolean;
+  paymentConfirmedData: GappSetting.PaymentMethod | null;
+  paymentAttachmentData: IPaymentAttachmentData | null;
+  identityData: GappBiz.User | null
 }
