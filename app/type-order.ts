@@ -70,6 +70,11 @@ export enum StatusOrder {
   Completed = 'COMPLETED'
 }
 
+export enum StatusReturnOrder {
+  RETURN_Waiting = 'RETURN_WAITING',
+  RETURN_Completed = 'RETURN_COMPLETED'
+}
+
 export type TOrderType = 'ORDER_LINK' | 'SALEPAGE' | 'GAPP_MARKET' | 'GAPP_BIZ';
 export type TOrderItemType = 'SERVICE' | 'PRODUCT';
 export type TOrderChannelUTM = 'WEBSITE' | 'FACEBOOK' | 'INSTAGRAM' | 'LINE' | 'YOUTUBE' | 'WHATSAPP' | 'WECHAT' | 'OTHER';
@@ -133,13 +138,10 @@ export interface IListOrder
   shippingTracking: string;
   shippingCost: number
 }
-
-export interface IListReturnOrder extends IDBOrderSellerDataImmu, IDBOrderLinkImmu, IDBOrderEntity {
-  statusOrderOnSeller: StatusOrderSeller;
-  statusOrderOnBuyer: StatusOrderCustomer;
-  statusOrderOfPayment: StatusOrderOfPayment | null;
-  statusReturnOrder: boolean;
-  docNoRef: string;
+export interface IListReturnOrder  extends IDBOrderSellerDataImmu,IDBOrderLinkImmu{
+  statusReturnOrder: StatusReturnOrder;
+  returnOrderData: IDBOrderEntity;
+  docNo: string;
 }
 
 // ANCHOR: ORDER | Entity (1/13)
