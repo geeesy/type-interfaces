@@ -133,6 +133,14 @@ export interface IListOrder
   shippingTracking: string;
   shippingCost: number
 }
+
+export interface IListReturnOrder  extends IDBOrderSellerDataImmu,IDBOrderLinkImmu,IDBOrderEntity{
+  statusOrderOnSeller: StatusOrderSeller;
+  statusOrderOnBuyer: StatusOrderCustomer;
+  statusOrderOfPayment: StatusOrderOfPayment | null;
+  statusReturnOrder: boolean
+}
+
 // ANCHOR: ORDER | Entity (1/13)
 export interface IOrderCustomerDataImmu {
   customerId: string;

@@ -307,6 +307,7 @@ import {
   ILeadpage,
   ILeadpageId,
   IListOrder,
+  IListReturnOrder,
   ILogOrder,
   IOrderAccountingOnly,
   IOrderCustomerData,
@@ -969,6 +970,7 @@ export namespace GappBiz {
   export type OrderSalePage = GappBiz.OrderLink;
   export type OrderGappMed = GappBiz.OrderLink;
   export type ListOrderLink = IListOrder & IDBLogTime;
+  export type ListReturnOrder =  IListReturnOrder & IDBLogTime;
 
   // STUB: send slip
   export type SlipData = IOrderPaymentRow
