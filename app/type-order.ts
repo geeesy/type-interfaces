@@ -471,13 +471,16 @@ export interface ISellerUpdateOrder {
   toUpdateProduct: boolean
 }
 
-export interface IOrderPaymentRow extends IApiCompanyParams, IDBLogTime {
-  orderId: string;
+export interface IOrderPaymentRow extends IApiCompanyParams {
   paymentConfirmedData: GappSetting.PaymentMethod | null;
   paymentAttachmentData: IPaymentAttachmentData | null;
   identityData: GappBiz.User | null
+  isAutoConfirmSlip: boolean,
+  isCompletedPayment: boolean
 }
 export interface IDBOrderPaymentRowEntityImmu {
+  orderId: string;
+}
+export interface IPaymentRowId {
   paymentRowId: string;
-  statusApprove: boolean;
 }
