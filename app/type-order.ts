@@ -71,8 +71,8 @@ export enum StatusOrder {
 }
 
 export enum StatusReturnOrder {
-  RETURN_WAITING = 'RETURN_WAITING',
-  RETURN_COMPLETED = 'RETURN_COMPLETED'
+  RETURN_Waiting = 'RETURN_WAITING',
+  RETURN_Completed = 'RETURN_COMPLETED'
 }
 
 export type TOrderType = 'ORDER_LINK' | 'SALEPAGE' | 'GAPP_MARKET' | 'GAPP_BIZ';
@@ -138,7 +138,6 @@ export interface IListOrder
   shippingTracking: string;
   shippingCost: number
 }
-
 export interface IListReturnOrder  extends IDBOrderSellerDataImmu,IDBOrderLinkImmu{
   statusReturnOrder: StatusReturnOrder;
   returnOrderData: IDBOrderEntity;
@@ -474,11 +473,11 @@ export interface ISellerUpdateOrder {
 
 export interface IOrderPaymentRow extends IApiCompanyParams, IDBLogTime {
   orderId: string;
-  statusApprove: boolean;
   paymentConfirmedData: GappSetting.PaymentMethod | null;
   paymentAttachmentData: IPaymentAttachmentData | null;
   identityData: GappBiz.User | null
 }
 export interface IDBOrderPaymentRowEntityImmu {
   paymentRowId: string;
+  statusApprove: boolean;
 }
