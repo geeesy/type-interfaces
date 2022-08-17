@@ -139,6 +139,7 @@ export interface IListReturnOrder  extends IDBOrderSellerDataImmu,IDBOrderLinkIm
   statusOrderOnBuyer: StatusOrderCustomer;
   statusOrderOfPayment: StatusOrderOfPayment | null;
   statusReturnOrder: boolean
+  docNoRef: string
 }
 
 // ANCHOR: ORDER | Entity (1/13)
