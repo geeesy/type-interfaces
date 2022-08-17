@@ -470,14 +470,7 @@ export interface ISellerUpdateOrder {
 
 export interface IOrderPaymentRow extends IApiCompanyParams, IDBLogTime {
   orderId: string;
-  statusApprove: boolean;
-  paymentConfirmedData: GappSetting.PaymentMethod | null;
-  paymentAttachmentData: IPaymentAttachmentData | null;
-  identityData: GappBiz.User | null
-}
-
-export interface IListPayment  {
-  orderId: string;
+  paymentRowId: string;
   statusApprove: boolean;
   paymentConfirmedData: GappSetting.PaymentMethod | null;
   paymentAttachmentData: IPaymentAttachmentData | null;
