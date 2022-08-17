@@ -126,6 +126,7 @@ import {
   IBillingNoteList,
   ICompRequestVendor,
   ICompanyOnList,
+  IDBActivityLog,
   IDBCompanyDocHeader,
   IDBVendorRequest,
   IDocFinanceCount,
@@ -161,6 +162,10 @@ import {
   IQuotationRfq,
   IQuotationRfqFormCreate,
   IQuotationRfqList,
+  IRO,
+  IROFormCreate,
+  IROFormCreateParams,
+  IROList,
   IReceipt,
   IReceiptFormCreate,
   IReceiptFormCreateParams,
@@ -178,12 +183,15 @@ import {
   IResQuotation,
   IResQuotationList,
   IResQuotationRfq,
+  IResRO,
+  IResROList,
   IResReceipt,
   IResReceiptList,
   IResRfq,
   IResRfqList,
   IResRfqMarket,
   IResRfqMarketList,
+  IResSO,
   IResTaxInvoice,
   IRfq,
   IRfqFormCreate,
@@ -196,28 +204,20 @@ import {
   IRfqMarketFormCreateParams,
   IRfqMarketFunnel,
   IRfqMarketList,
+  ISO,
+  ISOFormCreate,
+  ISOFormCreateParams,
   ISalePageUTMCount,
   ITaxInvoice,
   ITaxInvoiceFormCreate,
   ITaxInvoiceFormCreateParams,
   ITaxInvoiceList,
+  IUpdateDocStatus,
+  IUpdateQuotationStatus,
   IVendor,
   IVendorCreate,
   IVendorRequestAccept,
-  IVendorRequestList,
-  IResRO,
-  IRO,
-  IROFormCreate,
-  IROFormCreateParams,
-  IResROList,
-  IROList,
-  IResSO,
-  ISO,
-  ISOFormCreate,
-  ISOFormCreateParams,
-  IUpdateDocStatus,
-  IDBActivityLog,
-  IUpdateQuotationStatus
+  IVendorRequestList
 } from './type-apps';
 import {
   IBusinessCompanyUserIdentity,
@@ -317,6 +317,7 @@ import {
   IOrderEntity,
   IOrderLinkDataOnConfirm,
   IOrderLinkImmuDataOnConfirm,
+  IOrderPaymentRow,
   IRefundData,
   IRefundRowData,
   IReturnData,
@@ -606,9 +607,9 @@ export namespace GeeesyApps {
   export type QuotationFormSubmit = IQuotationFormCreate &
     IQuotationFormCreateParams &
     IApiCompanyParams &
-    IDBCompanyDocHeader; 
-  
-    // REVIEW: Quotation Type D | Create
+    IDBCompanyDocHeader;
+
+  // REVIEW: Quotation Type D | Create
   export type QuotationRfqFormSubmit = IQuotationRfqFormCreate &
     IQuotationFormCreateParams &
     IApiCompanyParams &
@@ -676,7 +677,7 @@ export namespace GeeesyApps {
    * @param
 
    */
-  
+
   export type BillingNoteFormCreate = IBillingNoteFormCreate;
   export type BillingNoteFormCreateParams = IBillingNoteFormCreateParams;
   export type BillingNoteFormSubmit = IBillingNoteFormCreate &
@@ -705,7 +706,7 @@ export namespace GeeesyApps {
   export type ResInvoice = IResInvoice | IInvoice;
   export type Invoice = IInvoice & IDBCompanyDocHeader;
 
-  
+
   /**
    * @description
    * FORM Interface for RECEIPT creation
@@ -927,7 +928,7 @@ export namespace GappBiz {
     ICompanyEntityImmu &
     IDBLogTime &
     IPortfolioImmu;
-    
+
   // STUB: ORDER
   export type UpdateOrderStatus = ISellerUpdateOrderStatus &
     IApiCompanyParams &
@@ -968,6 +969,9 @@ export namespace GappBiz {
   export type OrderSalePage = GappBiz.OrderLink;
   export type OrderGappMed = GappBiz.OrderLink;
   export type ListOrderLink = IListOrder & IDBLogTime;
+
+  // STUB: send slip
+  export type SlipData = IOrderPaymentRow
 
   // STUB: Edit, Update Order === === ===
   export type UpdateOrder = IOrderEntity &
