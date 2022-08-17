@@ -138,11 +138,7 @@ export interface IListOrder
   shippingTracking: string;
   shippingCost: number
 }
-export interface IListReturnOrder  extends IDBOrderSellerDataImmu,IDBOrderLinkImmu{
-  statusReturnOrder: StatusReturnOrder;
-  returnOrderData: IDBOrderEntity;
-  docNo: string;
-}
+
 
 // ANCHOR: ORDER | Entity (1/13)
 export interface IOrderCustomerDataImmu {
@@ -363,41 +359,11 @@ export interface ISellerCancelOrderParams {
 }
 
 export interface ISellerCancelOrder {
-  reason: string
-  note: string;
+  canceledReason: string
+  canceledNote: string;
 }
 
-export interface ISellerRefundOrder {
-  refundAttachmentData: IPaymentAttachmentData[] | null;
-  refundAmount: number;
-}
-
-export interface ISellerReturnOrder {
-  returnProduct: IOrderProductRow[] | null;
-}
-
-export interface IRefundData extends ISellerRefundOrder {
-  refundOrderId: string
-  note: string
-}
-
-export interface IRefundRowData {
-  refundRowId: string
-  refundAttachmentData: IPaymentAttachmentData[];
-  refundAmount: number;
-}
-
-export interface IReturnData extends ISellerReturnOrder {
-  returnOrderId: string
-  note: string
-}
-
-export interface IReturnRowData {
-  returnRowId: string
-  returnProduct: IOrderProductRow
-}
-
-export interface IOrderDataOnCancel {
+export interface IDBOrderDataOnCancelImmu {
   statusOrderOfPaymentWhenCanceled: StatusOrderOfPayment
   statusOrderOfShipmentWhenCanceled: StatusOrderOfShipment
   statusOrderOnBuyerWhenCanceled: StatusOrderCustomer
@@ -406,9 +372,70 @@ export interface IOrderDataOnCancel {
   requestCancelBy: string
   canceledAt: string
   canceledBy: string
-  refundData: IRefundData[] | null
-  returnData: IReturnData[] | null
 }
+
+// STUB: Cancel -> Refund
+export interface ISellerRefundOrder {
+  refundAttachmentData: IPaymentAttachmentData[] | null;
+  refundAmount: number;
+}
+
+// STUB: Cancel -> Return
+/**
+ * - 1 Order has only 1 Return Order
+ * - Use Order row on DB
+ */
+export interface ISellerReturnOrder {
+  returnProducts: IOrderProductRow[] | null
+}
+export interface IDBReturnOrderEntity {
+  returnDocNo: string
+}
+export interface IDBReturnOrderDataImmu {
+  returnOrderId: string
+  returnOrderCreatedAt: string
+  returnOrderCreatedBy: string
+}
+export interface IReturnOrderData {
+  returnOrderNote: string // * empty on create
+}
+export interface IListReturnOrder extends IDBOrderSellerDataImmu, IDBOrderLinkImmu {
+  statusReturnOrder: StatusReturnOrder;
+  // ! TODO: more prop
+}
+// === === ===
+
+
+
+export interface IRefundData extends ISellerRefundOrder {
+  refundOrderId: string
+  note: string
+}
+
+export interface IRefundRowData {
+  refundRowId: string
+  refundAttachmentData: IPaymentAttachmentData;
+  refundAmount: number;
+}
+
+
+
+// STUB: RESTOCK
+export interface ISellerRestockOrder {
+  restockProducts: IOrderProductRow[] | null;
+}
+
+export interface IRestockData extends ISellerRestockOrder {
+  restockOrderId: string
+  note: string
+}
+
+export interface IRestockRowData {
+  restockRowId: string
+  restockProduct: IOrderProductRow
+}
+// === === ===
+
 // === === ===
 
 // FIXME: to remove interface (dup)
