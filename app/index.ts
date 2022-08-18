@@ -306,6 +306,8 @@ import {
   IDBOrderPaymentRowEntityImmu,
   IDBOrderSellerDataImmu,
   IDBOrderStatus,
+  IDBReturnOrderDataImmu,
+  IDBReturnOrderEntity,
   ILeadpage,
   ILeadpageId,
   IListOrder,
@@ -997,7 +999,7 @@ export namespace GappBiz {
 
   // STUB: Return Order
   export type ListReturnOrder = IListReturnOrder & IDBLogTime;
-  export type ReturnOrder = IReturnOrderData
+  export type ReturnOrder = ISellerReturnOrder & IDBReturnOrderEntity & IDBReturnOrderDataImmu & IReturnOrderData
 
   // STUB: Restock
   export type CreateRestockReturnOrder = ISellerRestockOrder & IApiCompanyParams

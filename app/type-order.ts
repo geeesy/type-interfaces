@@ -399,10 +399,10 @@ export interface IDBReturnOrderDataImmu {
   returnOrderCreatedBy: string
 }
 export interface IReturnOrderData {
-  returnOrderNote: string // * empty on create
+  returnOrderNote: string
+  statusReturnOrder: StatusReturnOrder;
 }
 export interface IListReturnOrder extends IDBOrderSellerDataImmu, ISellerReturnOrder, IDBReturnOrderEntity, IReturnOrderData, IDBReturnOrderDataImmu {
-  statusReturnOrder: StatusReturnOrder;
   docNo: string
 }
 // === === ===
