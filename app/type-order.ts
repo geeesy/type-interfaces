@@ -496,7 +496,7 @@ export interface IOrderPaymentRow extends IApiCompanyParams {
   isAutoConfirmSlip: boolean,
   isCompletedPayment: boolean,
 }
-export interface IOrderTypeOfPaymentRow {
+export interface ICreatePaymentRowParams {
   salepageId?: string,
   orderType: TOrderType
 }

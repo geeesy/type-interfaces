@@ -277,24 +277,7 @@ import {
   IUserNotificationToggle
 } from './type-setting';
 import {
-  ICreateProductWithMultiStock,
-  IDBInventoryEntity,
-  IDBInventoryEntityImmu,
-  IDBProductInventory,
-  IDBProductInventoryActivityLog,
-  IDBProductInventoryFormulaImmu,
-  IDBWarehouseEntityImmu,
-  IInventoryEntity,
-  ILogStock,
-  IProductCompanyImmu,
-  IProductInventoryData,
-  IProductInventoryImmu,
-  IProductInventorySetting,
-  ITransferProductStock,
-  IUpdateProductStock,
-  IWarehouseEntity
-} from './type-inventory';
-import {
+  ICreatePaymentRowParams,
   ICustomerWithOrder,
   IDBListOrderByProduct,
   IDBOrderActivityLog,
@@ -322,7 +305,6 @@ import {
   IOrderLinkDataOnConfirm,
   IOrderLinkImmuDataOnConfirm,
   IOrderPaymentRow,
-  IOrderTypeOfPaymentRow,
   IPaymentRowId,
   IRefundRowData,
   IRestockRowData,
@@ -336,6 +318,24 @@ import {
   ISellerUpdateOrder,
   ISellerUpdateOrderStatus
 } from './type-order';
+import {
+  ICreateProductWithMultiStock,
+  IDBInventoryEntity,
+  IDBInventoryEntityImmu,
+  IDBProductInventory,
+  IDBProductInventoryActivityLog,
+  IDBProductInventoryFormulaImmu,
+  IDBWarehouseEntityImmu,
+  IInventoryEntity,
+  ILogStock,
+  IProductCompanyImmu,
+  IProductInventoryData,
+  IProductInventoryImmu,
+  IProductInventorySetting,
+  ITransferProductStock,
+  IUpdateProductStock,
+  IWarehouseEntity
+} from './type-inventory';
 import {
   IDBPaymentMethod,
   IDBPaymentMethodImmu,
@@ -978,7 +978,7 @@ export namespace GappBiz {
 
 
   // STUB: send slip
-  export type CreatePaymentRowInOrder = IOrderPaymentRow & IOrderTypeOfPaymentRow & IDBOrderPaymentRowEntityImmu
+  export type CreatePaymentRowInOrder = IOrderPaymentRow & ICreatePaymentRowParams & IDBOrderPaymentRowEntityImmu
   export type PaymentRowInOrder = IOrderPaymentRow & IPaymentRowId & IDBOrderPaymentRowEntityImmu & IDBLogCreate & IDBLogUpdate
   // === === ===
 
