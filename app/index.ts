@@ -299,12 +299,15 @@ import {
   IDBListOrderByProduct,
   IDBOrderActivityLog,
   IDBOrderDataImmu,
+  IDBOrderDataOnCancelImmu,
   IDBOrderEntity,
   IDBOrderEntityImmu,
   IDBOrderLinkImmu,
   IDBOrderPaymentRowEntityImmu,
   IDBOrderSellerDataImmu,
   IDBOrderStatus,
+  IDBReturnOrderDataImmu,
+  IDBReturnOrderEntity,
   ILeadpage,
   ILeadpageId,
   IListOrder,
@@ -314,21 +317,20 @@ import {
   IOrderCustomerData,
   IOrderCustomerDataImmu,
   IOrderData,
-  IOrderDataOnCancel,
   IOrderDataOnComplete,
   IOrderEntity,
   IOrderLinkDataOnConfirm,
   IOrderLinkImmuDataOnConfirm,
   IOrderPaymentRow,
   IPaymentRowId,
-  IRefundData,
   IRefundRowData,
-  IReturnData,
-  IReturnRowData,
+  IRestockRowData,
+  IReturnOrderData,
   ISellerCancelOrder,
   ISellerCancelOrderParams,
   ISellerCreateOrder,
   ISellerRefundOrder,
+  ISellerRestockOrder,
   ISellerReturnOrder,
   ISellerUpdateOrder,
   ISellerUpdateOrderStatus
@@ -972,7 +974,7 @@ export namespace GappBiz {
   export type OrderSalePage = GappBiz.OrderLink;
   export type OrderGappMed = GappBiz.OrderLink;
   export type ListOrderLink = IListOrder & IDBLogTime;
-  export type ListReturnOrder = IListReturnOrder & IDBLogTime;
+
 
   // STUB: send slip
   export type CreatePaymentRowInOrder = IOrderPaymentRow & IDBOrderPaymentRowEntityImmu
@@ -991,13 +993,20 @@ export namespace GappBiz {
 
   // STUB: Cancel Order === === ===
   export type CreateCancelOrder = ISellerCancelOrderParams & ISellerCancelOrder & ISellerRefundOrder & ISellerReturnOrder & IApiCompanyParams;
-  export type OrderWithCancel = GappBiz.OrderLink & ISellerCancelOrder & IOrderDataOnCancel
-  export type CreateReturnCanceledOrder = ISellerReturnOrder & IApiCompanyParams
+  export type OrderWithCancel = GappBiz.OrderLink & ISellerCancelOrder & IDBOrderDataOnCancelImmu
+
+  // STUB: Return Order
+  export type ListReturnOrder = IListReturnOrder & IDBLogTime;
+  export type ReturnOrder = ISellerReturnOrder & IDBReturnOrderEntity & IDBReturnOrderDataImmu & IReturnOrderData
+
+  // STUB: Restock
+  export type CreateRestockReturnOrder = ISellerRestockOrder & IApiCompanyParams
+  export type RestockOrderRow = IRestockRowData & IDBLogCreate & IDBLogUpdate
+
+  // STUB: Refund
   export type CreateRefundCanceledOrder = ISellerRefundOrder & IApiCompanyParams
-  export type ReturnOrder = IReturnData & IDBLogCreate & IDBLogUpdate
-  export type RefundOrder = IRefundData & IDBLogCreate & IDBLogUpdate
-  export type ReturnOrderRow = IReturnRowData & IDBLogCreate & IDBLogUpdate
   export type RefundOrderRow = IRefundRowData & IDBLogCreate & IDBLogUpdate
+  
   // === === ===
 
   export type DBUpdateOrderLink = IOrderEntity &

@@ -1,7 +1,7 @@
 import { GappBiz, GappSetting } from '.';
-import { IApiCompanyParams, IDBLogTime } from './type-api';
 import { ICompanyContactInfo, IPeriodTime } from './type-company';
 
+import { IApiCompanyParams } from './type-api';
 import { IPersonContactInfo } from './type-apps';
 import { SaleChannelSubType } from './enum-const';
 
@@ -42,7 +42,8 @@ export enum StatusOrderOfPayment {
   PAY2_CompletedPayment = 'COMPLETED_PAYMENT',
   PAY_C_ToRefund = 'TO_REFUND',
   PAY_C_Refunding = 'REFUNDING',
-  PAY_C_CompletedRefund = 'COMPLETED_REFUND'
+  PAY_C_CompletedRefund = 'COMPLETED_REFUND',
+  PAY_C_NotSpecified = 'NOT_SPECIFIED'
 }
 
 export enum StatusOrderOfShipment {
@@ -53,7 +54,8 @@ export enum StatusOrderOfShipment {
   SHIP_C_ToReturn = 'TO_RETURN',
   SHIP_C_AwaitingReturn = 'AWAITING_RETURN',
   SHIP_C_Returning = 'RETURNING',
-  SHIP_C_CompletedReturn = 'COMPLETED_RETURN'
+  SHIP_C_CompletedReturn = 'COMPLETED_RETURN',
+  SHIP_C_NotSpecified = 'NOT_SPECIFIED'
 }
 
 export enum StatusOrderOfStock {
@@ -102,6 +104,7 @@ export interface IOrderProductRow {
   productGroupName: string;
   productCategoryId: string;
   productCategoryName: string
+  note?: string
 }
 
 export interface IOrderAccounting {
@@ -137,11 +140,6 @@ export interface IListOrder
   channelName: string;
   shippingTracking: string;
   shippingCost: number
-}
-export interface IListReturnOrder extends IDBOrderSellerDataImmu, IDBOrderLinkImmu {
-  statusReturnOrder: StatusReturnOrder;
-  returnOrderData: IDBOrderEntity;
-  docNo: string;
 }
 
 // ANCHOR: ORDER | Entity (1/13)
@@ -349,7 +347,7 @@ export interface ISellerUpdateOrderStatus {
   newSellerStatus: StatusOrderSeller;
   orderType: TOrderType;
   toFinalizeStock: boolean; // ? to deduct stock
-  toCompleteShipping: boolean; // ? to
+  toCompleteShipping: boolean;
 }
 
 // STUB: Cancel Order (By Seller)
@@ -363,41 +361,11 @@ export interface ISellerCancelOrderParams {
 }
 
 export interface ISellerCancelOrder {
-  reason: string
-  note: string;
+  canceledReason: string
+  canceledNote: string;
 }
 
-export interface ISellerRefundOrder {
-  refundAttachmentData: IPaymentAttachmentData[] | null;
-  refundAmount: number;
-}
-
-export interface ISellerReturnOrder {
-  returnProduct: IOrderProductRow[] | null;
-}
-
-export interface IRefundData extends ISellerRefundOrder {
-  refundOrderId: string
-  note: string
-}
-
-export interface IRefundRowData {
-  refundRowId: string
-  refundAttachmentData: IPaymentAttachmentData[];
-  refundAmount: number;
-}
-
-export interface IReturnData extends ISellerReturnOrder {
-  returnOrderId: string
-  note: string
-}
-
-export interface IReturnRowData {
-  returnRowId: string
-  returnProduct: IOrderProductRow
-}
-
-export interface IOrderDataOnCancel {
+export interface IDBOrderDataOnCancelImmu {
   statusOrderOfPaymentWhenCanceled: StatusOrderOfPayment
   statusOrderOfShipmentWhenCanceled: StatusOrderOfShipment
   statusOrderOnBuyerWhenCanceled: StatusOrderCustomer
@@ -406,10 +374,60 @@ export interface IOrderDataOnCancel {
   requestCancelBy: string
   canceledAt: string
   canceledBy: string
-  refundData: IRefundData[] | null
-  returnData: IReturnData[] | null
+}
+
+
+
+// STUB: Cancel -> Return
+/**
+ * - 1 Order has only 1 Return Order
+ * - Use Order row on DB
+ */
+export interface ISellerReturnOrder {
+  returnProducts: IOrderProductRow[] | null
+}
+export interface IDBReturnOrderEntity {
+  returnDocNo: string
+}
+export interface IDBReturnOrderDataImmu {
+  returnOrderId: string
+  returnOrderCreatedAt: string
+  returnOrderCreatedBy: string
+}
+export interface IReturnOrderData {
+  returnOrderNote: string
+  statusReturnOrder: StatusReturnOrder;
+}
+export interface IListReturnOrder extends IDBOrderSellerDataImmu, ISellerReturnOrder, IDBReturnOrderEntity, IReturnOrderData, IDBReturnOrderDataImmu {
+  docNo: string
 }
 // === === ===
+
+// STUB: RESTOCK
+export interface ISellerRestockOrder {
+  restockProducts: IOrderProductRow[];
+}
+
+export interface IRestockRowData {
+  restockRowId: string
+  restockProduct: IOrderProductRow
+}
+// === === ===
+
+// STUB: Cancel -> Refund
+export interface ISellerRefundOrder {
+  refundAttachmentData: IPaymentAttachmentData;
+  refundAmount: number;
+  note: string
+}
+
+export interface IRefundRowData extends ISellerRefundOrder {
+  refundRowId: string
+}
+
+/**
+ * === === ===
+ */
 
 // FIXME: to remove interface (dup)
 export interface ISellerUpdateOrderDataOnStatusChanged {
