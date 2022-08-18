@@ -138,7 +138,7 @@ export interface IListOrder
   shippingTracking: string;
   shippingCost: number
 }
-export interface IListReturnOrder  extends IDBOrderSellerDataImmu,IDBOrderLinkImmu{
+export interface IListReturnOrder extends IDBOrderSellerDataImmu, IDBOrderLinkImmu {
   statusReturnOrder: StatusReturnOrder;
   returnOrderData: IDBOrderEntity;
   docNo: string;
@@ -476,7 +476,9 @@ export interface IOrderPaymentRow extends IApiCompanyParams {
   paymentAttachmentData: IPaymentAttachmentData | null;
   identityData: GappBiz.User | null
   isAutoConfirmSlip: boolean,
-  isCompletedPayment: boolean
+  isCompletedPayment: boolean,
+  salepageId?: string,
+  orderType: TOrderType
 }
 export interface IDBOrderPaymentRowEntityImmu {
   orderId: string;
