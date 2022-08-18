@@ -397,6 +397,8 @@ export interface IDBReturnOrderDataImmu {
 export interface IReturnOrderData {
   returnOrderNote: string
   statusReturnOrder: StatusReturnOrder;
+  returnOrderUpdatedAt: string
+  returnOrderUpdatedBy: string
 }
 export interface IListReturnOrder extends IDBOrderSellerDataImmu, ISellerReturnOrder, IDBReturnOrderEntity, IReturnOrderData, IDBReturnOrderDataImmu {
   docNo: string
