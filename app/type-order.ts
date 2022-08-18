@@ -397,6 +397,8 @@ export interface IDBReturnOrderDataImmu {
 export interface IReturnOrderData {
   returnOrderNote: string
   statusReturnOrder: StatusReturnOrder;
+  returnOrderUpdatedAt: string
+  returnOrderUpdatedBy: string
 }
 export interface IListReturnOrder extends IDBOrderSellerDataImmu, ISellerReturnOrder, IDBReturnOrderEntity, IReturnOrderData, IDBReturnOrderDataImmu {
   docNo: string
@@ -490,20 +492,24 @@ export interface ISellerUpdateOrder {
   toUpdateProduct: boolean
 }
 
-export interface IOrderPaymentRow extends IApiCompanyParams {
+//STUB: payment row
+export interface IOrderPaymentRowData {
   paymentConfirmedData: GappSetting.PaymentMethod | null;
   paymentAttachmentData: IPaymentAttachmentData | null;
   identityData: GappBiz.User | null
   isAutoConfirmSlip: boolean,
   isCompletedPayment: boolean,
 }
+export interface IDBOrderPaymentRow {
+  paymentRowId: string;
+}
+export interface IOrderPaymentRow extends IOrderPaymentRowData, IDBOrderPaymentRow {
+}
+export interface ISellerUpdateOrderPaymentRow extends ICreatePaymentRowParams {
+  paymentRows: IOrderPaymentRow[]
+}
 export interface ICreatePaymentRowParams {
+  orderId: string;
   salepageId?: string,
   orderType: TOrderType
-}
-export interface IDBOrderPaymentRowEntityImmu {
-  orderId: string;
-}
-export interface IPaymentRowId {
-  paymentRowId: string;
 }

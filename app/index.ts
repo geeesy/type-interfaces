@@ -286,7 +286,7 @@ import {
   IDBOrderEntity,
   IDBOrderEntityImmu,
   IDBOrderLinkImmu,
-  IDBOrderPaymentRowEntityImmu,
+  IDBOrderPaymentRow,
   IDBOrderSellerDataImmu,
   IDBOrderStatus,
   IDBReturnOrderDataImmu,
@@ -305,7 +305,7 @@ import {
   IOrderLinkDataOnConfirm,
   IOrderLinkImmuDataOnConfirm,
   IOrderPaymentRow,
-  IPaymentRowId,
+  IOrderPaymentRowData,
   IRefundRowData,
   IRestockRowData,
   IReturnOrderData,
@@ -316,7 +316,8 @@ import {
   ISellerRestockOrder,
   ISellerReturnOrder,
   ISellerUpdateOrder,
-  ISellerUpdateOrderStatus
+  ISellerUpdateOrderPaymentRow,
+  ISellerUpdateOrderStatus,
 } from './type-order';
 import {
   ICreateProductWithMultiStock,
@@ -978,8 +979,9 @@ export namespace GappBiz {
 
 
   // STUB: send slip
-  export type CreatePaymentRowInOrder = IOrderPaymentRow & ICreatePaymentRowParams & IDBOrderPaymentRowEntityImmu
-  export type PaymentRowInOrder = IOrderPaymentRow & IPaymentRowId & IDBOrderPaymentRowEntityImmu & IDBLogCreate & IDBLogUpdate
+  export type CreatePaymentRowInOrder = IOrderPaymentRowData & IApiCompanyParams & ICreatePaymentRowParams
+  export type UpdatePaymentRowInOrder =  ISellerUpdateOrderPaymentRow & IDBLogCreate & IDBLogUpdate
+  export type PaymentRowInOrder = IOrderPaymentRowData & IDBOrderPaymentRow & IDBLogCreate & IDBLogUpdate
   // === === ===
 
   // STUB: Edit, Update Order === === ===
