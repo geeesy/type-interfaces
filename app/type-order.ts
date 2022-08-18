@@ -104,6 +104,7 @@ export interface IOrderProductRow {
   productGroupName: string;
   productCategoryId: string;
   productCategoryName: string
+  note?: string
 }
 
 export interface IOrderAccounting {
@@ -376,11 +377,7 @@ export interface IDBOrderDataOnCancelImmu {
   canceledBy: string
 }
 
-// STUB: Cancel -> Refund
-export interface ISellerRefundOrder {
-  refundAttachmentData: IPaymentAttachmentData[] | null;
-  refundAmount: number;
-}
+
 
 // STUB: Cancel -> Return
 /**
@@ -407,29 +404,9 @@ export interface IListReturnOrder extends IDBOrderSellerDataImmu, ISellerReturnO
 }
 // === === ===
 
-
-
-export interface IRefundData extends ISellerRefundOrder {
-  refundOrderId: string
-  note: string
-}
-
-export interface IRefundRowData {
-  refundRowId: string
-  refundAttachmentData: IPaymentAttachmentData;
-  refundAmount: number;
-}
-
-
-
 // STUB: RESTOCK
 export interface ISellerRestockOrder {
-  restockProducts: IOrderProductRow[] | null;
-}
-
-export interface IRestockData extends ISellerRestockOrder {
-  restockOrderId: string
-  note: string
+  restockProducts: IOrderProductRow[];
 }
 
 export interface IRestockRowData {
@@ -438,7 +415,20 @@ export interface IRestockRowData {
 }
 // === === ===
 
-// === === ===
+// STUB: Cancel -> Refund
+export interface ISellerRefundOrder {
+  refundAttachmentData: IPaymentAttachmentData;
+  refundAmount: number;
+  note: string
+}
+
+export interface IRefundRowData extends ISellerRefundOrder {
+  refundRowId: string
+}
+
+/**
+ * === === ===
+ */
 
 // FIXME: to remove interface (dup)
 export interface ISellerUpdateOrderDataOnStatusChanged {
