@@ -322,6 +322,7 @@ import {
   IOrderLinkDataOnConfirm,
   IOrderLinkImmuDataOnConfirm,
   IOrderPaymentRow,
+  IOrderTypeOfPaymentRow,
   IPaymentRowId,
   IRefundRowData,
   IRestockRowData,
@@ -977,7 +978,7 @@ export namespace GappBiz {
 
 
   // STUB: send slip
-  export type CreatePaymentRowInOrder = IOrderPaymentRow & IDBOrderPaymentRowEntityImmu
+  export type CreatePaymentRowInOrder = IOrderPaymentRow & IOrderTypeOfPaymentRow & IDBOrderPaymentRowEntityImmu
   export type PaymentRowInOrder = IOrderPaymentRow & IPaymentRowId & IDBOrderPaymentRowEntityImmu & IDBLogCreate & IDBLogUpdate
   // === === ===
 
@@ -1006,7 +1007,7 @@ export namespace GappBiz {
   // STUB: Refund
   export type CreateRefundCanceledOrder = ISellerRefundOrder & IApiCompanyParams
   export type RefundOrderRow = IRefundRowData & IDBLogCreate & IDBLogUpdate
-  
+
   // === === ===
 
   export type DBUpdateOrderLink = IOrderEntity &

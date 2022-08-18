@@ -495,6 +495,8 @@ export interface IOrderPaymentRow extends IApiCompanyParams {
   identityData: GappBiz.User | null
   isAutoConfirmSlip: boolean,
   isCompletedPayment: boolean,
+}
+export interface IOrderTypeOfPaymentRow {
   salepageId?: string,
   orderType: TOrderType
 }
