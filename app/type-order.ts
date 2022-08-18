@@ -406,6 +406,7 @@ export interface IListReturnOrder extends IDBOrderSellerDataImmu, ISellerReturnO
 // STUB: RESTOCK
 export interface ISellerRestockOrder {
   restockProducts: IOrderProductRow[];
+  isCompletedReturn: boolean
 }
 
 export interface IRestockRowData {
@@ -418,7 +419,7 @@ export interface IRestockRowData {
 export interface ISellerRefundOrder {
   refundAttachmentData: IPaymentAttachmentData;
   refundAmount: number;
-  note: string
+  refundNote: string
 }
 
 export interface IRefundRowData extends ISellerRefundOrder {
