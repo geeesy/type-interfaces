@@ -347,7 +347,7 @@ export interface ISellerUpdateOrderStatus {
   newSellerStatus: StatusOrderSeller;
   orderType: TOrderType;
   toFinalizeStock: boolean; // ? to deduct stock
-  toCompleteShipping: boolean; // ? to
+  toCompleteShipping: boolean;
 }
 
 // STUB: Cancel Order (By Seller)
@@ -403,8 +403,7 @@ export interface IReturnOrderData {
 }
 export interface IListReturnOrder extends IDBOrderSellerDataImmu, ISellerReturnOrder, IDBReturnOrderEntity, IReturnOrderData, IDBReturnOrderDataImmu {
   statusReturnOrder: StatusReturnOrder;
-  orderDocNo: string
-  // ! TODO: more prop
+  docNo: string
 }
 // === === ===
 
