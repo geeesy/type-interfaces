@@ -1,7 +1,7 @@
 import { GappBiz, GappSetting } from '.';
-import { IApiCompanyParams } from './type-api';
 import { ICompanyContactInfo, IPeriodTime } from './type-company';
 
+import { IApiCompanyParams } from './type-api';
 import { IPersonContactInfo } from './type-apps';
 import { SaleChannelSubType } from './enum-const';
 
@@ -141,7 +141,6 @@ export interface IListOrder
   shippingTracking: string;
   shippingCost: number
 }
-
 
 // ANCHOR: ORDER | Entity (1/13)
 export interface IOrderCustomerDataImmu {
@@ -495,7 +494,11 @@ export interface IOrderPaymentRow extends IApiCompanyParams {
   paymentAttachmentData: IPaymentAttachmentData | null;
   identityData: GappBiz.User | null
   isAutoConfirmSlip: boolean,
-  isCompletedPayment: boolean
+  isCompletedPayment: boolean,
+}
+export interface ICreatePaymentRowParams {
+  salepageId?: string,
+  orderType: TOrderType
 }
 export interface IDBOrderPaymentRowEntityImmu {
   orderId: string;
