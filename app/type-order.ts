@@ -406,6 +406,7 @@ export interface IListReturnOrder extends IDBOrderSellerDataImmu, ISellerReturnO
 // STUB: RESTOCK
 export interface ISellerRestockOrder {
   restockProducts: IOrderProductRow[];
+  isCompletedReturn: boolean
 }
 
 export interface IRestockRowData {
