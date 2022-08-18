@@ -77,6 +77,7 @@ export enum StatusReturnOrder {
   RETURN_Completed = 'RETURN_COMPLETED'
 }
 
+export type TPaymentRowStatus = 'WAIT' | 'REJECT' | 'COMPLETE';
 export type TOrderType = 'ORDER_LINK' | 'SALEPAGE' | 'GAPP_MARKET' | 'GAPP_BIZ';
 export type TOrderItemType = 'SERVICE' | 'PRODUCT';
 export type TOrderChannelUTM = 'WEBSITE' | 'FACEBOOK' | 'INSTAGRAM' | 'LINE' | 'YOUTUBE' | 'WHATSAPP' | 'WECHAT' | 'OTHER';
@@ -498,7 +499,7 @@ export interface IOrderPaymentRowData {
   paymentAttachmentData: IPaymentAttachmentData | null;
   identityData: GappBiz.User | null
   isAutoConfirmSlip: boolean,
-  isCompletedPayment: boolean,
+  isStatusPayment: TPaymentRowStatus,
 }
 export interface IDBOrderPaymentRow {
   paymentRowId: string;
