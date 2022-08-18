@@ -418,7 +418,7 @@ export interface IRestockRowData {
 export interface ISellerRefundOrder {
   refundAttachmentData: IPaymentAttachmentData;
   refundAmount: number;
-  note: string
+  refundNote: string
 }
 
 export interface IRefundRowData extends ISellerRefundOrder {
