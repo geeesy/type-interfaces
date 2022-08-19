@@ -71,8 +71,9 @@ export enum StatusOrder {
 }
 
 export enum StatusReturnOrder {
-  RETURN_Waiting = 'RETURN_WAITING',
-  RETURN_Completed = 'RETURN_COMPLETED'
+  RETURN_AwaitingRestock = 'RETURN_AWAITING_RESTOCK',
+  RETURN_InRestock = "RETURN_IN_RESTOCK",
+  RETURN_CompletedRestock = 'RETURN_COMPLETED_RESTOCK'
 }
 
 export type TPaymentRowStatus = 'WAIT' | 'REJECT' | 'COMPLETE';
@@ -404,6 +405,10 @@ export interface IDBReturnOrder extends ISellerReturnOrder, IDBReturnOrderEntity
 }
 export interface IListReturnOrder extends IDBOrderSellerDataImmu, ISellerReturnOrder, IDBReturnOrderEntity, IReturnOrderData, IDBReturnOrderDataImmu {
   docNo: string
+}
+
+export interface IRefCancelWithReturn extends IDBReturnOrderEntity, IDBReturnOrderDataImmu{
+
 }
 // === === ===
 

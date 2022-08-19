@@ -304,6 +304,7 @@ import {
   IOrderLinkDataOnConfirm,
   IOrderLinkImmuDataOnConfirm,
   IOrderPaymentRowData,
+  IRefCancelWithReturn,
   IRefundRowData,
   IRestockRowData,
   ISellerCancelOrder,
@@ -993,7 +994,7 @@ export namespace GappBiz {
 
   // STUB: Cancel Order === === ===
   export type CreateCancelOrder = ISellerCancelOrderParams & ISellerCancelOrder & ISellerRefundOrder & ISellerReturnOrder & IApiCompanyParams;
-  export type OrderWithCancel = GappBiz.OrderLink & ISellerCancelOrder & IDBOrderDataOnCancelImmu
+  export type OrderWithCancel = GappBiz.OrderLink & ISellerCancelOrder & IDBOrderDataOnCancelImmu & IRefCancelWithReturn
 
   // STUB: Return Order
   export type ListReturnOrder = IListReturnOrder & IDBLogTime;
