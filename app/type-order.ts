@@ -495,6 +495,7 @@ export interface ISellerUpdateOrder {
 
 //STUB: payment row
 export interface IOrderPaymentRowData {
+  orderId: string;
   paymentConfirmedData: GappSetting.PaymentMethod | null;
   paymentAttachmentData: IPaymentAttachmentData | null;
   identityData: GappBiz.User | null
@@ -510,7 +511,6 @@ export interface ISellerUpdateOrderPaymentRow extends ICreatePaymentRowParams {
   paymentRows: IOrderPaymentRow[]
 }
 export interface ICreatePaymentRowParams {
-  orderId: string;
   salepageId?: string,
   orderType: TOrderType
 }
