@@ -980,7 +980,7 @@ export namespace GappBiz {
 
   // STUB: send slip
   export type CreatePaymentRowInOrder = IOrderPaymentRowData & IApiCompanyParams & ICreatePaymentRowParams
-  export type UpdatePaymentRowInOrder = ISellerUpdateOrderPaymentRow & IApiCompanyParams & IDBLogCreate & IDBLogUpdate
+  export type UpdatePaymentRowInOrder = ISellerUpdateOrderPaymentRow & IApiCompanyParams
   export type PaymentRowInOrder = IOrderPaymentRowData & IDBOrderPaymentRow & IDBLogCreate & IDBLogUpdate
   // === === ===
 
