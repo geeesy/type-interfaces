@@ -1,5 +1,6 @@
 import { GappBiz, GappSetting } from '.';
 import { ICompanyContactInfo, IPeriodTime } from './type-company';
+
 import { IPersonContactInfo } from './type-apps';
 import { SaleChannelSubType } from './enum-const';
 
