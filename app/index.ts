@@ -289,6 +289,7 @@ import {
   IDBOrderPaymentRow,
   IDBOrderSellerDataImmu,
   IDBOrderStatus,
+  IDBReturnOrder,
   IDBReturnOrderDataImmu,
   IDBReturnOrderEntity,
   ILeadpage,
@@ -980,7 +981,7 @@ export namespace GappBiz {
 
   // STUB: send slip
   export type CreatePaymentRowInOrder = IOrderPaymentRowData & IApiCompanyParams & ICreatePaymentRowParams
-  export type UpdatePaymentRowInOrder = ISellerUpdateOrderPaymentRow & IApiCompanyParams
+  export type UpdatePaymentRowInOrder =  ISellerUpdateOrderPaymentRow & IDBLogCreate & IDBLogUpdate
   export type PaymentRowInOrder = IOrderPaymentRowData & IDBOrderPaymentRow & IDBLogCreate & IDBLogUpdate
   // === === ===
 
@@ -1000,7 +1001,7 @@ export namespace GappBiz {
 
   // STUB: Return Order
   export type ListReturnOrder = IListReturnOrder & IDBLogTime;
-  export type ReturnOrder = ISellerReturnOrder & IDBReturnOrderEntity & IDBReturnOrderDataImmu & IReturnOrderData
+  export type ReturnOrder = IDBReturnOrder & IOrderCustomerData & IOrderEntity & IDBOrderStatus & IOrderData
 
   // STUB: Restock
   export type CreateRestockReturnOrder = ISellerRestockOrder & IApiCompanyParams
