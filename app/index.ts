@@ -999,7 +999,7 @@ export namespace GappBiz {
 
   // STUB: Return Order
   export type ListReturnOrder = IListReturnOrder & IDBLogTime;
-  export type ReturnOrder = IDBReturnOrder & IOrderCustomerData & IOrderEntity & IDBOrderStatus & IOrderData
+  export type ReturnOrder = IDBReturnOrder & IOrderCustomerData & IOrderEntity & IDBOrderStatus & IOrderData & IOrderLinkDataOnConfirm & IDBOrderDataOnCancelImmu
 
   // STUB: Restock
   export type CreateRestockReturnOrder = ISellerRestockOrder & IApiCompanyParams
