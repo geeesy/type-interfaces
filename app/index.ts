@@ -976,11 +976,11 @@ export namespace GappBiz {
   export type ListOrderLink = IListOrder & IDBLogTime;
 
 
-  // STUB: send slip
-  export type CreatePaymentRowInOrder = IOrderPaymentRowData & IApiCompanyParams & ICreatePaymentRowParams
-  export type UpdatePaymentRowInOrder =  ISellerUpdateOrderPaymentRow & IDBLogCreate & IDBLogUpdate
-  export type PaymentRowInOrder = IOrderPaymentRowData & IDBOrderPaymentRow & IDBLogCreate & IDBLogUpdate
-  // === === ===
+ // STUB: send slip
+ export type CreatePaymentRowInOrder = IOrderPaymentRowData & IApiCompanyParams & ICreatePaymentRowParams
+ export type UpdatePaymentRowInOrder = ISellerUpdateOrderPaymentRow & IApiCompanyParams
+ export type PaymentRowInOrder = IOrderPaymentRowData & IDBOrderPaymentRow & IDBLogCreate & IDBLogUpdate
+ // === === ===
 
   // STUB: Edit, Update Order === === ===
   export type UpdateOrder = IOrderEntity &
