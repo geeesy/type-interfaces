@@ -507,7 +507,7 @@ export interface IDBOrderPaymentRow {
 }
 export interface IOrderPaymentRow extends IOrderPaymentRowData, IDBOrderPaymentRow {
 }
-export interface ISellerUpdateOrderPaymentRow extends ICreatePaymentRowParams {
+export interface ISellerUpdateOrderPaymentRow {
   paymentRows: IOrderPaymentRow[]
 }
 export interface ICreatePaymentRowParams {
