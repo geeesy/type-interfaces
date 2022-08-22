@@ -453,6 +453,7 @@ export interface ISettingDoc extends IDBCompanyActivityLog {
   invoice: ISettingDocAttributes;
   taxInvoice: ISettingDocAttributes;
   order: ISettingDocAttributes;
+  return: ISettingDocAttributes
   market: ISettingDocAttributes;
   isVatInc: boolean;
   vatPercent: number; // default = 7
