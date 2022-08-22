@@ -11,7 +11,8 @@ export enum DocPrefixFormat {
   taxInvoice = 'TIV',
   order = 'OD',
   market = 'GM',
-  returnOrder = 'RO'
+  returnOrder = 'RO',
+  returnVoucher = 'RV'
 }
 
 export enum DocWorkSeqIdCount {
@@ -46,7 +47,8 @@ export enum DocFinanceSeqIdCount {
 export enum DocOrderSeqIdCount {
   order = 'CountOrder',
   market = 'CountMarket',
-  returnOrder = 'CountRO'
+  returnOrder = 'CountRO',
+  returnVoucher = 'CountRV'
 }
 
 export enum CountForCompanyMetric {
