@@ -42,7 +42,6 @@ export enum StatusOrderOfPayment {
   PAY_C_ToRefund = 'TO_REFUND',
   PAY_C_Refunding = 'REFUNDING',
   PAY_C_CompletedRefund = 'COMPLETED_REFUND',
-  PAY_C_NotSpecified = 'NOT_SPECIFIED'
 }
 
 export enum StatusOrderOfShipment {
@@ -54,7 +53,6 @@ export enum StatusOrderOfShipment {
   SHIP_C_AwaitingReturn = 'AWAITING_RETURN',
   SHIP_C_Returning = 'RETURNING',
   SHIP_C_CompletedReturn = 'COMPLETED_RETURN',
-  SHIP_C_NotSpecified = 'NOT_SPECIFIED'
 }
 
 export enum StatusOrderOfStock {
@@ -75,6 +73,12 @@ export enum StatusReturnOrder {
   RETURN_AwaitingRestock = 'RETURN_AWAITING_RESTOCK',
   RETURN_InRestock = "RETURN_IN_RESTOCK",
   RETURN_CompletedRestock = 'RETURN_COMPLETED_RESTOCK'
+}
+
+export enum StatusRefundOrder {
+  REFUND_AwaitingRefund = 'AWAITING_REFUND',
+  REFUND_InRefund = 'IN_REFUND',
+  REFUND_CompletedRefund = 'COMPLETED_REFUND'
 }
 
 export type TPaymentRowStatus = 'WAIT' | 'REJECT' | 'COMPLETE';
