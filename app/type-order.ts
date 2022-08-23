@@ -413,7 +413,8 @@ export interface IListReturnOrder extends IDBOrderSellerDataImmu, ISellerReturnO
 }
 
 export interface IRefCancelWithReturn extends IDBReturnOrderEntity, IDBReturnOrderDataImmu{
-
+  statusReturnOrder: StatusReturnOrder;
+  statusRefundOrder: StatusRefundOrder
 }
 // === === ===
 
