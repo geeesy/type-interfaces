@@ -377,8 +377,8 @@ export interface IDBOrderDataOnCancelImmu {
   statusOrderOnSellerWhenCanceled: StatusOrderSeller
   requestCancelAt: string
   requestCancelBy: string
-  canceledAt: string
-  canceledBy: string
+  completedCanceledAt: string
+  completedCanceledBy: string
 }
 
 
