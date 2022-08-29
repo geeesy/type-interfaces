@@ -420,7 +420,7 @@ export interface IRefCancelWithReturn extends IDBReturnOrderEntity, IDBReturnOrd
 
 // STUB: RESTOCK
 export interface ISellerRestockOrder {
-  restockProducts: IOrderProductRow[];
+  restockProducts: IOrderProductRow[] | null // ? use null on complete return without products
   isCompletedReturn: boolean
 }
 
