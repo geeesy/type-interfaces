@@ -182,6 +182,9 @@ export interface IDBOrderEntity {
   productSkuFirst: string;
   wasFinalized: boolean; // stock was adjusted
   totalProductQty: number;
+  hasArchived: boolean; // ! on delete
+  hasExpired: boolean; // ! on expired
+  isActive: boolean; // ?
 }
 
 // ANCHOR: ORDER | Entity (6/13)
@@ -233,7 +236,7 @@ export interface IOrderData {
   salepageName?: string;
   saleChannelId: string; // * id = OTHER000
   channel: SaleChannelSubType;
-  expiryTimestamp: number; //timestamp
+  expiryTimestamp: number; // ! expire order -> ttl auto delete on timestamp
   shippingAvailableIds: string[]; // * USE ID FOR LATER
   paymentAvailableIds: string[]; // * USE ID FOR LATER
   shippingAvailableData: GappSetting.ShippingMethod[];
