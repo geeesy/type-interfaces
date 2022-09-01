@@ -56,6 +56,7 @@ export interface ISalePageEntity {
   settingSeo: ISeoMeta;
   timePeriod: ITimePeriod;
   hasNoShipment: boolean;
+  expiryTimestamp: number;
 }
 export interface ITimePeriod {
   startDate: Date;
