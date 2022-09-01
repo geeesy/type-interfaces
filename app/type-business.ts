@@ -120,6 +120,7 @@ export interface IDBBusinessUserIdentityStatus {
 
 // ANCHOR: BUSINESS | USER (4/4)
 export interface IDBBusinessUserIdentity {
+  wasConfirmedByFirstLogin: boolean // ? TODO: update to TRUE on first login (force change password)
   companies: string[]; // * as Set on DB
   historyCountOnCompany?: number; // * -> DB on ADMIN
   historyCountOnAdmin?: number; // * -> DB on STAFF
