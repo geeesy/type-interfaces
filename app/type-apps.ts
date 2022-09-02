@@ -181,6 +181,7 @@ export interface IRefVendorList {
   companyLogoThumbUrl: string;
   companyName: string;
   contactAddress: IAddress;
+  contactPersons: IPersonContactInfo[];
   companyPhones: string[];
   companyEmails: string[];
   companyNote?: string;
@@ -195,6 +196,7 @@ export interface IVendor extends IVendorCreate {
   updatedAt: string;
   createdBy: string;
   vendorId: string;
+  customerId: string;
   relCompId: string;
 }
 

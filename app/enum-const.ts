@@ -23,7 +23,7 @@ export enum DocWorkSeqIdCount {
   so = 'CountSO',
   billingNote = 'CountBillingNote',
   invoice = 'CountInvoice',
-  receipt = 'CountReceipt',
+  receipt = 'CountReceipt'
 }
 
 export enum DocUTMCount {
@@ -37,7 +37,15 @@ export enum DocUTMCount {
   other = 'CountUtmOther'
 }
 
-export type TOrderChannelUTM = 'WEBSITE' | 'FACEBOOK' | 'INSTAGRAM' | 'LINE' | 'YOUTUBE' | 'WHATSAPP' | 'WECHAT' | 'OTHER';
+export type TOrderChannelUTM =
+  | 'WEBSITE'
+  | 'FACEBOOK'
+  | 'INSTAGRAM'
+  | 'LINE'
+  | 'YOUTUBE'
+  | 'WHATSAPP'
+  | 'WECHAT'
+  | 'OTHER';
 
 export enum DocFinanceSeqIdCount {
   receipt = 'CountReceipt',
@@ -66,7 +74,7 @@ export enum CountForCompanyMetric {
   packedOrderAmount = 'TotalPackedOrderAmount',
   shippedOrderAmount = 'TotalShippedOrderAmount',
   awaitingConfirmOrder = 'TotalAwaitingConfirmOrder',
-  awaitingConfirmOrderAmount = 'TotalAwaitingConfirmOrderAmount',
+  awaitingConfirmOrderAmount = 'TotalAwaitingConfirmOrderAmount'
 }
 
 export enum ReportForCompanyMetric {
@@ -154,6 +162,8 @@ export enum StatusPoolShippingSubBuyer {
 export const ValidUntilDate = [7, 15, 30, 60, 90];
 
 export const CreditDay = [30, 45, 60, 90];
+
+export type ExpireInMin = 15 | 60 | 180 | 480 | 720 | 1440 | 2880;
 
 export enum SaleChannelSubType {
   GappMed = 'gappMed',
@@ -314,7 +324,7 @@ export const BankAccountTypeArr = [
 export enum PaymentMethodType {
   BankDeposit = 'bankDeposit',
   COD = 'COD',
-  Cash = 'cash',
+  Cash = 'cash'
 }
 
 export enum ShippingMethodType {

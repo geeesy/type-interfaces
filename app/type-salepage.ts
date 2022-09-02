@@ -18,7 +18,7 @@ import { IImage, ISocial } from './type-apps';
 import { GappSetting } from '.';
 import { IDBLogTime } from './type-api';
 import { IOrderProductRow } from './type-order';
-import { SaleChannelSubType } from './enum-const';
+import {ExpireInMin, SaleChannelSubType} from './enum-const';
 
 export type TSalepageType = 'LeadPage' | 'ContentPage' | 'SalePage';
 
@@ -56,7 +56,7 @@ export interface ISalePageEntity {
   settingSeo: ISeoMeta;
   timePeriod: ITimePeriod;
   hasNoShipment: boolean;
-  expiryTimestamp: number;
+  expiryOnPaymentInMin: ExpireInMin;
 }
 export interface ITimePeriod {
   startDate: Date;
