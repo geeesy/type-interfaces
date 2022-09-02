@@ -195,6 +195,7 @@ export interface IVendor extends IVendorCreate {
   updatedAt: string;
   createdBy: string;
   vendorId: string;
+  customerId: string;
   relCompId: string;
 }
 
