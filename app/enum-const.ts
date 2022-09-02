@@ -163,7 +163,7 @@ export const ValidUntilDate = [7, 15, 30, 60, 90];
 
 export const CreditDay = [30, 45, 60, 90];
 
-export const ExpireInMin = [15, 60, 180, 480, 720, 1440, 2880];
+export type ExpireInMin = 15 | 60 | 180 | 480 | 720 | 1440 | 2880;
 
 export enum SaleChannelSubType {
   GappMed = 'gappMed',

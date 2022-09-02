@@ -181,6 +181,7 @@ export interface IRefVendorList {
   companyLogoThumbUrl: string;
   companyName: string;
   contactAddress: IAddress;
+  contactPersons: IPersonContactInfo[];
   companyPhones: string[];
   companyEmails: string[];
   companyNote?: string;
