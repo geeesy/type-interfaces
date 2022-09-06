@@ -145,6 +145,8 @@ export interface IListOrder
   channelName: string;
   shippingTracking: string;
   shippingCost: number
+  completedCanceledAt: string
+  completedCanceledBy: string
 }
 
 // ANCHOR: ORDER | Entity (1/13)
