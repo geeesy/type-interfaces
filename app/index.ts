@@ -969,6 +969,7 @@ export namespace GappBiz {
     IDBOrderDataImmu &
     IDBOrderActivityLog &
     IOrderLinkImmuDataOnConfirm &
+    IDBOrderDataOnCancelImmu&
     IDBLogUpdate &
     IDBLogCreate;
   export type OrderSalePage = GappBiz.OrderLink;
