@@ -1551,7 +1551,7 @@ export interface ICreateNotifyMessage {
   actorFullName: string;
   priority: TNotifyPriority;
   entityId: string;
-  title: string;
+  entityTitle: string;
   entitySubId: string;
   status: TNotifyStatus;
   refDocNo: string;
