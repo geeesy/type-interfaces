@@ -245,6 +245,7 @@ export interface IDBCompanySupplierEntity {
   havePortfolio: boolean; // * to check port init , false on Create (changed only once)
   onMarket: boolean; // * false on Create
   onHub: boolean; // * false on Create
+  haveAvailable: boolean // * true on Create
 }
 
 // ANCHOR: COMPANY | Entity (4/7)
