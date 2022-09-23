@@ -103,7 +103,7 @@ export interface IBusinessUserIdentityImmu {
   identityId: string; // * from cognito
   businessId: string;
   username: string; // * for check with cognitoIdentityId on REQ
-  haveAvailable: false;
+  haveAvailable: boolean;
 }
 
 // ANCHOR: BUSINESS | USER (2/4)
