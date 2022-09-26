@@ -138,6 +138,7 @@ export interface IBusinessCompanyUserIdentityImmu {
   username: string;
   identityId: string; // * same as Business User
   // tempPassword?: string // * on STAFF create
+  haveAvailable: boolean;
 }
 // ANCHOR: COMPANY | USER (2/6)
 export interface IBusinessCompanyUserIdentity {
