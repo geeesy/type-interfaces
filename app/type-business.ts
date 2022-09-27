@@ -103,7 +103,7 @@ export interface IBusinessUserIdentityImmu {
   identityId: string; // * from cognito
   businessId: string;
   username: string; // * for check with cognitoIdentityId on REQ
-  haveAvailable: boolean;
+  hasArchived: boolean;
 }
 
 // ANCHOR: BUSINESS | USER (2/4)
@@ -138,7 +138,7 @@ export interface IBusinessCompanyUserIdentityImmu {
   username: string;
   identityId: string; // * same as Business User
   // tempPassword?: string // * on STAFF create
-  haveAvailable: boolean;
+  hasArchived: boolean;
 }
 // ANCHOR: COMPANY | USER (2/6)
 export interface IBusinessCompanyUserIdentity {
