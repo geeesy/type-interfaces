@@ -1052,8 +1052,8 @@ export namespace GappBiz {
     IApiCompanyParams;
   export type LogOrder = ILogOrder;
   export type NotifyMessage = INotifyMessage;
-  export type exportInventory = IInventoryExport & IApiCompanyParams;
-  export type exportOrder = IOrderStatus & IOrderData & IApiCompanyParams;
+  export type ExportInventory = IInventoryExport & IApiCompanyParams;
+  export type ExportOrder = IOrderStatus & IOrderData & IApiCompanyParams;
 }
 
 // REVIEW: G-MARKET
