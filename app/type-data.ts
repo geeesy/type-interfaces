@@ -1,4 +1,4 @@
-// export Inventory
+// $export Inventory
 export interface IInventoryData {
   inventoryId: string;
   warehouseId: string;
@@ -10,8 +10,8 @@ export interface IInventoryExport {
   inventoryData: IInventoryData[]
 }
 
-// export OrderList
-export interface IOrderStatus {
+// $export OrderList
+export interface IOrderStatusExport {
   awaitingPayment: boolean;
   confirmPayment: boolean;
   awaitingShipment: boolean;
@@ -20,9 +20,8 @@ export interface IOrderStatus {
   canceled: boolean;
 }
 
-export interface IOrderData {
+export interface ITimeStamp {
   startDate: string;
   endDate: string;
-
 }
 
