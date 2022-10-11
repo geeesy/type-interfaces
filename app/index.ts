@@ -381,7 +381,7 @@ import {
 } from './type-shipping';
 
 import { IAnalytics } from './interfaces';
-import {IInventoryExport, IOrderStatus} from "./type-data";
+import {IInventoryExport, IOrderStatusExport, ITimeStamp} from "./type-data";
 
 /* #region FIXME: Marketplace */
 export namespace GeeesyMarketplace {
@@ -1053,7 +1053,7 @@ export namespace GappBiz {
   export type LogOrder = ILogOrder;
   export type NotifyMessage = INotifyMessage;
   export type ExportInventory = IInventoryExport & IApiCompanyParams;
-  export type ExportOrder = IOrderStatus & IOrderData & IApiCompanyParams;
+  export type ExportOrder = IOrderStatusExport & ITimeStamp & IApiCompanyParams;
 }
 
 // REVIEW: G-MARKET
