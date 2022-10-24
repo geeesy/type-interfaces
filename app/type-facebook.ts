@@ -13,7 +13,6 @@ export type TBroadcastStatus =
   | 'SCHEDULED_CANCELED';
 
 export interface IFacebookLive {
-  facebookLiveId: string;
   facebookLiveName: string;
   facebookData: IFacebookData;
   broadcastStatus: TBroadcastStatus;
@@ -21,8 +20,11 @@ export interface IFacebookLive {
   products: IProductFacebookRow[];
 }
 
+export interface IFacebookLiveId {
+  facebookLiveId: string;
+}
+
 export interface IFacebookPost {
-  facebookPostId: string;
   facebookPostName: string;
   statusPost: string;
   facebookData: IFacebookData;
@@ -30,6 +32,10 @@ export interface IFacebookPost {
   products: IProductFacebookRow[];
   periodStartDate: Date;
   periodEndDate: Date;
+}
+
+export interface IFacebookPostId {
+  facebookPostId: string;
 }
 
 export interface IProductFacebookRow extends IProductRow {

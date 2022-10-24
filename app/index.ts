@@ -382,7 +382,12 @@ import {
 
 import { IAnalytics } from './interfaces';
 import { IInventoryExport, IOrderStatusExport, ITimeStamp } from './type-data';
-import { IFacebookLive, IFacebookPost } from './type-facebook';
+import {
+  IFacebookLive,
+  IFacebookLiveId,
+  IFacebookPost,
+  IFacebookPostId
+} from './type-facebook';
 
 /* #region FIXME: Marketplace */
 export namespace GeeesyMarketplace {
@@ -1081,11 +1086,13 @@ export namespace GappBiz {
   //facebook connect
   export type CreateFacebookPost = IFacebookPost & IApiCompanyParams;
   export type FacebookPost = IFacebookPost &
+    IFacebookPostId &
     IApiCompanyParams &
     IDBLogUpdate &
     IDBLogCreate;
   export type CreateFacebookLive = IFacebookLive & IApiCompanyParams;
   export type FacebookLive = IFacebookLive &
+    IFacebookLiveId &
     IApiCompanyParams &
     IDBLogUpdate &
     IDBLogCreate;
