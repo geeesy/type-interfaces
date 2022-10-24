@@ -5,7 +5,7 @@ export type TBroadcastStatus = 'UNPUBLISHED' | 'LIVE' | 'LIVE_STOPPED' | 'PROCES
 
 export interface IFacebookLive {
   FacebookLiveName: string;
-  facebook: IFacebookData;
+  facebookData: IFacebookData;
   broadcastStatus: TBroadcastStatus;
   liveTimestamp: number;
   products: IProductFacebookRow[];
@@ -14,7 +14,7 @@ export interface IFacebookLive {
 export interface IFacebookPost {
   FacebookPostName: string;
   statusPost: string;
-  facebook: IFacebookData;
+  facebookData: IFacebookData;
   postId: string;
   products: IProductFacebookRow[];
   periodDateStart: Date;
