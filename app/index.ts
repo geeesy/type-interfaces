@@ -315,7 +315,7 @@ import {
   ISellerReturnOrder,
   ISellerUpdateOrder,
   ISellerUpdateOrderPaymentRow,
-  ISellerUpdateOrderStatus,
+  ISellerUpdateOrderStatus
 } from './type-order';
 import {
   ICreateProductWithMultiStock,
@@ -381,7 +381,8 @@ import {
 } from './type-shipping';
 
 import { IAnalytics } from './interfaces';
-import {IInventoryExport, IOrderStatusExport, ITimeStamp} from "./type-data";
+import { IInventoryExport, IOrderStatusExport, ITimeStamp } from './type-data';
+import { IFacebookLive, IFacebookPost } from './type-facebook';
 
 /* #region FIXME: Marketplace */
 export namespace GeeesyMarketplace {
@@ -621,7 +622,8 @@ export namespace GeeesyApps {
     IApiCompanyParams &
     IDBCompanyDocHeader; // FIXME
 
-  export type UpdateQuotationStatus = IUpdateQuotationStatus & IApiCompanyParams
+  export type UpdateQuotationStatus = IUpdateQuotationStatus &
+    IApiCompanyParams;
   export type ResQuotationList = IResQuotationList | IQuotationList;
   export type QuotationList = IQuotationList;
   export type QuotationRfqList = IQuotationRfqList;
@@ -712,7 +714,6 @@ export namespace GeeesyApps {
   export type ResInvoice = IResInvoice | IInvoice;
   export type Invoice = IInvoice & IDBCompanyDocHeader;
 
-
   /**
    * @description
    * FORM Interface for RECEIPT creation
@@ -725,7 +726,7 @@ export namespace GeeesyApps {
     IReceiptFormCreateParams &
     IApiCompanyParams &
     IDBCompanyDocHeader;
-  export type UpdateReceiptStatus = IUpdateDocStatus & IApiCompanyParams
+  export type UpdateReceiptStatus = IUpdateDocStatus & IApiCompanyParams;
   export type ResReceiptList = IResReceiptList | IReceiptList;
   export type ReceiptList = IReceiptList;
   export type ResReceipt = IResReceipt | IReceipt;
@@ -970,19 +971,24 @@ export namespace GappBiz {
     IDBOrderDataImmu &
     IDBOrderActivityLog &
     IOrderLinkImmuDataOnConfirm &
-    IDBOrderDataOnCancelImmu&
+    IDBOrderDataOnCancelImmu &
     IDBLogUpdate &
     IDBLogCreate;
   export type OrderSalePage = GappBiz.OrderLink;
   export type OrderGappMed = GappBiz.OrderLink;
   export type ListOrderLink = IListOrder & IDBLogTime;
 
-
- // STUB: send slip
- export type CreatePaymentRowInOrder = IOrderPaymentRowData & IApiCompanyParams & ICreatePaymentRowParams
- export type UpdatePaymentRowInOrder = ISellerUpdateOrderPaymentRow & IApiCompanyParams
- export type PaymentRowInOrder = IOrderPaymentRowData & IDBOrderPaymentRow & IDBLogCreate & IDBLogUpdate
- // === === ===
+  // STUB: send slip
+  export type CreatePaymentRowInOrder = IOrderPaymentRowData &
+    IApiCompanyParams &
+    ICreatePaymentRowParams;
+  export type UpdatePaymentRowInOrder = ISellerUpdateOrderPaymentRow &
+    IApiCompanyParams;
+  export type PaymentRowInOrder = IOrderPaymentRowData &
+    IDBOrderPaymentRow &
+    IDBLogCreate &
+    IDBLogUpdate;
+  // === === ===
 
   // STUB: Edit, Update Order === === ===
   export type UpdateOrder = IOrderEntity &
@@ -995,20 +1001,37 @@ export namespace GappBiz {
   // === === ===
 
   // STUB: Cancel Order === === ===
-  export type CreateCancelOrder = ISellerCancelOrderParams & ISellerCancelOrder & ISellerRefundOrder & ISellerReturnOrder & IApiCompanyParams;
-  export type OrderWithCancel = GappBiz.OrderLink & ISellerCancelOrder & IDBOrderDataOnCancelImmu & IRefCancelWithReturn
+  export type CreateCancelOrder = ISellerCancelOrderParams &
+    ISellerCancelOrder &
+    ISellerRefundOrder &
+    ISellerReturnOrder &
+    IApiCompanyParams;
+  export type OrderWithCancel = GappBiz.OrderLink &
+    ISellerCancelOrder &
+    IDBOrderDataOnCancelImmu &
+    IRefCancelWithReturn;
 
   // STUB: Return Order
   export type ListReturnOrder = IListReturnOrder & IDBLogTime;
-  export type ReturnOrder = IDBReturnOrder & IOrderCustomerData & IDBOrderEntityImmu & IOrderEntity & IDBOrderStatus & IOrderData & IOrderLinkDataOnConfirm & IDBOrderDataOnCancelImmu & IDBOrderLinkImmu
+  export type ReturnOrder = IDBReturnOrder &
+    IOrderCustomerData &
+    IDBOrderEntityImmu &
+    IOrderEntity &
+    IDBOrderStatus &
+    IOrderData &
+    IOrderLinkDataOnConfirm &
+    IDBOrderDataOnCancelImmu &
+    IDBOrderLinkImmu;
 
   // STUB: Restock
-  export type CreateRestockReturnOrder = ISellerRestockOrder & IApiCompanyParams
-  export type RestockOrderRow = IRestockRowData & IDBLogCreate & IDBLogUpdate
+  export type CreateRestockReturnOrder = ISellerRestockOrder &
+    IApiCompanyParams;
+  export type RestockOrderRow = IRestockRowData & IDBLogCreate & IDBLogUpdate;
 
   // STUB: Refund
-  export type CreateRefundCanceledOrder = ISellerRefundOrder & IApiCompanyParams
-  export type RefundOrderRow = IRefundRowData & IDBLogCreate & IDBLogUpdate
+  export type CreateRefundCanceledOrder = ISellerRefundOrder &
+    IApiCompanyParams;
+  export type RefundOrderRow = IRefundRowData & IDBLogCreate & IDBLogUpdate;
 
   // === === ===
 
@@ -1054,6 +1077,19 @@ export namespace GappBiz {
   export type NotifyMessage = INotifyMessage;
   export type ExportInventory = IInventoryExport & IApiCompanyParams;
   export type ExportOrder = IOrderStatusExport & ITimeStamp & IApiCompanyParams;
+
+  //facebook connect
+  export type CreateFacebookPost = IFacebookPost & IApiCompanyParams;
+  export type FacebookPost = IFacebookPost &
+    IApiCompanyParams &
+    IDBLogUpdate &
+    IDBLogCreate;
+  export type CreateFacebookLive = IFacebookLive & IApiCompanyParams;
+  export type FacebookLive = IFacebookLive &
+    IApiCompanyParams &
+    IDBLogUpdate &
+    IDBLogCreate;
+  // === === ===
 }
 
 // REVIEW: G-MARKET
@@ -1122,7 +1158,7 @@ export namespace GappInventory {
     IDBProductImmu &
     IDBProductByGapp &
     IDBLogTime;
-  export type UpdateProduct = GappInventory.Product & IApiSupplierParams
+  export type UpdateProduct = GappInventory.Product & IApiSupplierParams;
   export type DBUpdateProduct = IProductRootEntity &
     IProductEntity &
     IProductAttributes &
@@ -1152,7 +1188,8 @@ export namespace GappInventory {
     IProductVariantEntity &
     IDBProductVariantOnlyImmu &
     IDBLogTime;
-  export type UpdateProductVariantOnly = GappInventory.ProductVariantOnly & IApiSupplierParams
+  export type UpdateProductVariantOnly = GappInventory.ProductVariantOnly &
+    IApiSupplierParams;
   export type DBUpdateVariantOnly = IProductRootEntity &
     IProductEntity &
     IProductImages &
@@ -1262,7 +1299,8 @@ export namespace GappSetting {
     IShippingMethodEntityImmu &
     IDBLogTime;
   export type DBUpdateShippingMethod = IShippingMethodEntity &
-    IShippingMethodEntityImmu & IDBShippingMethod &
+    IShippingMethodEntityImmu &
+    IDBShippingMethod &
     IDBUpdateTime;
   // * PAYMENT
   export type CreatePaymentMethod = IPaymentMethodEntity &
