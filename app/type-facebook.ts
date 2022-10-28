@@ -1,7 +1,7 @@
 import { IFacebookData } from './type-setting';
 import { IProductRow } from './type-apps';
 
-export type TBroadcastStatus =
+export type TStatusBroadcast =
   | 'UNPUBLISHED'
   | 'LIVE'
   | 'LIVE_STOPPED'
@@ -12,27 +12,48 @@ export type TBroadcastStatus =
   | 'SCHEDULED_EXPIRED'
   | 'SCHEDULED_CANCELED';
 
-export interface IFacebookLive {
+/**
+ * FACEBOOK LIVE
+ */
+export interface IFacebookLiveList {
   facebookLiveId: string;
   facebookLiveName: string;
   facebookData: IFacebookData;
-  broadcastStatus: TBroadcastStatus;
+  statusBroadcast: TStatusBroadcast;
+  timestampLive: number;
+}
+
+export interface IFacebookLive {
   products: IProductFacebookRow[];
-  liveTimestamp: number;
 }
 
 export interface IFacebookLiveId {
   liveId: string;
 }
 
-export interface IFacebookPost {
+/**
+ * FACEBOOK POST
+ */
+// ANCHOR FACEBOOK POST LIST
+export interface IFacebookPostList {
   facebookPostId: string;
   facebookPostName: string;
   facebookData: IFacebookData;
   statusPost: string;
-  products: IProductFacebookRow[];
   periodStartDate: Date;
   periodEndDate: Date;
+}
+// FACEBOOK POST DETAIL
+export interface IFacebookPost {
+  products: IProductFacebookRow[];
+}
+
+export interface ICountFacebookPostRow {
+  CountComment: number;
+  CountAwaitingConfirmOrder: number;
+  CountAwaitingPaymentOrder: number;
+  CountCompletedOrder: number;
+  TotalAmount: number;
 }
 
 export interface IFacebookPostId {
