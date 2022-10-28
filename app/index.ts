@@ -1098,7 +1098,7 @@ export namespace GappBiz {
   export type ListFacebookPost = ICountFacebookPostRow &
     IFacebookPostList &
     IFacebookPostId &
-    IDBOrderSellerDataImmu &
+    IApiCompanyParams &
     IDBLogUpdate &
     IDBLogCreate &
     ICountFacebookPostRow;
@@ -1107,7 +1107,7 @@ export namespace GappBiz {
     IFacebookPostList &
     IFacebookPost &
     IFacebookPostId &
-    IDBOrderSellerDataImmu &
+    IApiCompanyParams &
     IDBLogUpdate &
     IDBLogCreate;
   /**
