@@ -1092,11 +1092,13 @@ export namespace GappBiz {
    */
   // create
   export type CreateFacebookPost = IFacebookPostList & IApiCompanyParams;
+  // update
+  export type UpdateFacebookPost = IFacebookPostList & ICountFacebookPostRow & IApiCompanyParams;
   // list
   export type ListFacebookPost = ICountFacebookPostRow &
     IFacebookPostList &
     IFacebookPostId &
-    IApiCompanyParams &
+    IDBOrderSellerDataImmu &
     IDBLogUpdate &
     IDBLogCreate &
     ICountFacebookPostRow;
@@ -1105,7 +1107,7 @@ export namespace GappBiz {
     IFacebookPostList &
     IFacebookPost &
     IFacebookPostId &
-    IApiCompanyParams &
+    IDBOrderSellerDataImmu &
     IDBLogUpdate &
     IDBLogCreate;
   /**
@@ -1113,11 +1115,13 @@ export namespace GappBiz {
    */
   //create
   export type CreateFacebookLive = IFacebookLiveList & IApiCompanyParams;
+  //update
+  export type UpdateFacebookLive = IFacebookLiveList & IApiCompanyParams;
   //list
   export type ListFacebookLive = IFacebookLiveList &
     IFacebookLive &
     IFacebookLiveId &
-    IApiCompanyParams &
+    IDBOrderSellerDataImmu &
     IDBLogUpdate &
     IDBLogCreate;
   //detail
@@ -1125,7 +1129,7 @@ export namespace GappBiz {
     IFacebookLiveList &
     IFacebookLive &
     IFacebookLiveId &
-    IApiCompanyParams &
+    IDBOrderSellerDataImmu &
     IDBLogUpdate &
     IDBLogCreate;
   // === === ===
