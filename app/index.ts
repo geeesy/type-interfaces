@@ -382,7 +382,15 @@ import {
 
 import { IAnalytics } from './interfaces';
 import { IInventoryExport, IOrderStatusExport, ITimeStamp } from './type-data';
-import { IFacebookLive, IFacebookPost } from './type-facebook';
+import {
+  ICountFacebookPostRow,
+  IFacebookLive,
+  IFacebookLiveId,
+  IFacebookLiveList,
+  IFacebookPost,
+  IFacebookPostId,
+  IFacebookPostList
+} from './type-facebook';
 
 /* #region FIXME: Marketplace */
 export namespace GeeesyMarketplace {
@@ -1079,13 +1087,44 @@ export namespace GappBiz {
   export type ExportOrder = IOrderStatusExport & ITimeStamp & IApiCompanyParams;
 
   //facebook connect
-  export type CreateFacebookPost = IFacebookPost & IApiCompanyParams;
-  export type FacebookPost = IFacebookPost &
+  /**
+   * FACEBOOK POST
+   */
+  // create
+  export type CreateFacebookPost = IFacebookPostList & IApiCompanyParams;
+  // list
+  export type ListFacebookPost = ICountFacebookPostRow &
+    IFacebookPostList &
+    IFacebookPostId &
+    IApiCompanyParams &
+    IDBLogUpdate &
+    IDBLogCreate &
+    ICountFacebookPostRow;
+  //detail
+  export type FacebookPost = ICountFacebookPostRow &
+    IFacebookPostList &
+    IFacebookPost &
+    IFacebookPostId &
     IApiCompanyParams &
     IDBLogUpdate &
     IDBLogCreate;
-  export type CreateFacebookLive = IFacebookLive & IApiCompanyParams;
-  export type FacebookLive = IFacebookLive &
+  /**
+   * FACEBOOK LIVE
+   */
+  //create
+  export type CreateFacebookLive = IFacebookLiveList & IApiCompanyParams;
+  //list
+  export type ListFacebookLive = IFacebookLiveList &
+    IFacebookLive &
+    IFacebookLiveId &
+    IApiCompanyParams &
+    IDBLogUpdate &
+    IDBLogCreate;
+  //detail
+  export type FacebookLive = ICountFacebookPostRow &
+    IFacebookLiveList &
+    IFacebookLive &
+    IFacebookLiveId &
     IApiCompanyParams &
     IDBLogUpdate &
     IDBLogCreate;
