@@ -15,7 +15,7 @@ export type TStatusBroadcast =
 /**
  * FACEBOOK LIVE
  */
-export interface IFacebookLiveList {
+export interface IFacebookLiveCreate {
   facebookLiveId: string;
   facebookLiveName: string;
   facebookData: IFacebookData;
@@ -31,11 +31,16 @@ export interface IFacebookLiveId {
   liveId: string;
 }
 
+export interface IFacebookLiveList
+  extends IFacebookLiveCreate,
+    IFacebookLive,
+    IFacebookLiveId {}
+
 /**
  * FACEBOOK POST
  */
-// ANCHOR FACEBOOK POST LIST
-export interface IFacebookPostList {
+
+export interface IFacebookPostCreate {
   facebookPostId: string;
   facebookPostName: string;
   facebookData: IFacebookData;
@@ -43,10 +48,19 @@ export interface IFacebookPostList {
   periodStartDate: Date;
   periodEndDate: Date;
 }
-// FACEBOOK POST DETAIL
+
 export interface IFacebookPost {
   products: IProductFacebookRow[];
 }
+
+export interface IFacebookPostId {
+  postId: string;
+}
+
+export interface IFacebookPostList
+  extends IFacebookPostCreate,
+    IFacebookPost,
+    IFacebookPostId {}
 
 export interface ICountFacebookPostRow {
   CountComment: number;
@@ -54,10 +68,6 @@ export interface ICountFacebookPostRow {
   CountAwaitingPaymentOrder: number;
   CountCompletedOrder: number;
   TotalAmount: number;
-}
-
-export interface IFacebookPostId {
-  postId: string;
 }
 
 export interface IProductFacebookRow extends IProductRow {
