@@ -384,11 +384,10 @@ import { IAnalytics } from './interfaces';
 import { IInventoryExport, IOrderStatusExport, ITimeStamp } from './type-data';
 import {
   ICountFacebookPostRow,
-  IFacebookLive,
-  IFacebookLiveId,
+  ICreateFacebookProductRow,
+  IFacebookLiveCreate,
   IFacebookLiveList,
-  IFacebookPost,
-  IFacebookPostId,
+  IFacebookPostCreate,
   IFacebookPostList
 } from './type-facebook';
 
@@ -1091,13 +1090,11 @@ export namespace GappBiz {
    * FACEBOOK POST
    */
   // create
-  export type CreateFacebookPost = IFacebookPostList & IApiCompanyParams;
+  export type CreateFacebookPost = IFacebookPostCreate & IApiCompanyParams;
   // update
-  export type UpdateFacebookPost = IFacebookPostList & ICountFacebookPostRow & IApiCompanyParams;
+  export type UpdateFacebookPost = IFacebookPostCreate & IApiCompanyParams;
   // list
-  export type ListFacebookPost = ICountFacebookPostRow &
-    IFacebookPostList &
-    IFacebookPostId &
+  export type ListFacebookPost = IFacebookPostList &
     IApiCompanyParams &
     IDBLogUpdate &
     IDBLogCreate &
@@ -1105,8 +1102,6 @@ export namespace GappBiz {
   //detail
   export type FacebookPost = ICountFacebookPostRow &
     IFacebookPostList &
-    IFacebookPost &
-    IFacebookPostId &
     IApiCompanyParams &
     IDBLogUpdate &
     IDBLogCreate;
@@ -1114,25 +1109,35 @@ export namespace GappBiz {
    * FACEBOOK LIVE
    */
   //create
-  export type CreateFacebookLive = IFacebookLiveList & IApiCompanyParams;
+  export type CreateFacebookLive = IFacebookLiveCreate & IApiCompanyParams;
   //update
-  export type UpdateFacebookLive = IFacebookLiveList & IApiCompanyParams;
+  export type UpdateFacebookLive = IFacebookLiveCreate & IApiCompanyParams;
   //list
   export type ListFacebookLive = IFacebookLiveList &
-    IFacebookLive &
-    IFacebookLiveId &
-    IDBOrderSellerDataImmu &
+    IApiCompanyParams &
     IDBLogUpdate &
     IDBLogCreate;
   //detail
   export type FacebookLive = ICountFacebookPostRow &
     IFacebookLiveList &
-    IFacebookLive &
-    IFacebookLiveId &
-    IDBOrderSellerDataImmu &
+    IApiCompanyParams &
     IDBLogUpdate &
     IDBLogCreate;
   // === === ===
+  /**
+   * FACEBOOK PRODUCT ROW
+   */
+  //create
+  export type CreateFacebookProductRow = ICreateFacebookProductRow &
+    IApiCompanyParams;
+  //update
+  export type UpdateFacebookProductRow = ICreateFacebookProductRow &
+    IApiCompanyParams;
+
+  export type FacebookProductRow = ICreateFacebookProductRow &
+    IApiCompanyParams &
+    IDBLogUpdate &
+    IDBLogCreate;
 }
 
 // REVIEW: G-MARKET

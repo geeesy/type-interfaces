@@ -12,10 +12,12 @@ export type TStatusBroadcast =
   | 'SCHEDULED_EXPIRED'
   | 'SCHEDULED_CANCELED';
 
+export type TTypeFacebook = 'POST' | 'LIVE';
+
 /**
  * FACEBOOK LIVE
  */
-export interface IFacebookLiveList {
+export interface IFacebookLiveCreate {
   facebookLiveId: string;
   facebookLiveName: string;
   facebookData: IFacebookData;
@@ -23,19 +25,19 @@ export interface IFacebookLiveList {
   timestampLive: number;
 }
 
-export interface IFacebookLive {
-  products: IProductFacebookRow[];
-}
-
 export interface IFacebookLiveId {
   liveId: string;
 }
 
+export interface IFacebookLiveList
+  extends IFacebookLiveCreate,
+    IFacebookLiveId {}
+
 /**
  * FACEBOOK POST
  */
-// ANCHOR FACEBOOK POST LIST
-export interface IFacebookPostList {
+
+export interface IFacebookPostCreate {
   facebookPostId: string;
   facebookPostName: string;
   facebookData: IFacebookData;
@@ -43,10 +45,14 @@ export interface IFacebookPostList {
   periodStartDate: Date;
   periodEndDate: Date;
 }
-// FACEBOOK POST DETAIL
-export interface IFacebookPost {
-  products: IProductFacebookRow[];
+
+export interface IFacebookPostId {
+  postId: string;
 }
+
+export interface IFacebookPostList
+  extends IFacebookPostCreate,
+    IFacebookPostId {}
 
 export interface ICountFacebookPostRow {
   CountComment: number;
@@ -56,9 +62,18 @@ export interface ICountFacebookPostRow {
   TotalAmount: number;
 }
 
-export interface IFacebookPostId {
-  postId: string;
+/**
+ * FACEBOOK PRODUCT ROW
+ */
+
+export interface ICreateFacebookProductRow extends IProductFacebookRow {
+  type: TTypeFacebook;
+  facebookRelationId: string;
 }
+
+// export interface IFacebookProductRow extends ICreateFacebookProductRow {
+//   facebookProductRowId: string;
+// }
 
 export interface IProductFacebookRow extends IProductRow {
   codeCf: string;
