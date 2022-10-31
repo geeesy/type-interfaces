@@ -66,7 +66,8 @@ export interface ICountFacebookPostRow {
  * FACEBOOK PRODUCT ROW
  */
 
-export interface ICreateFacebookProductRow extends IProductFacebookRow {
+export interface ICreateFacebookProductRow {
+  products: IProductFacebookRow[];
   type: TTypeFacebook;
   facebookRelationId: string;
 }
