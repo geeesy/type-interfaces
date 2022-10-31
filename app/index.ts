@@ -384,14 +384,12 @@ import { IAnalytics } from './interfaces';
 import { IInventoryExport, IOrderStatusExport, ITimeStamp } from './type-data';
 import {
   ICountFacebookPostRow,
-  IFacebookLive,
+  ICreateFacebookProductRow,
   IFacebookLiveCreate,
-  IFacebookLiveId,
   IFacebookLiveList,
-  IFacebookPost,
   IFacebookPostCreate,
-  IFacebookPostId,
-  IFacebookPostList
+  IFacebookPostList,
+  IFacebookProductRow
 } from './type-facebook';
 
 /* #region FIXME: Marketplace */
@@ -1095,9 +1093,7 @@ export namespace GappBiz {
   // create
   export type CreateFacebookPost = IFacebookPostCreate & IApiCompanyParams;
   // update
-  export type UpdateFacebookPost = IFacebookPostCreate &
-    IFacebookPost &
-    IApiCompanyParams;
+  export type UpdateFacebookPost = IFacebookPostCreate & IApiCompanyParams;
   // list
   export type ListFacebookPost = IFacebookPostList &
     IApiCompanyParams &
@@ -1116,9 +1112,7 @@ export namespace GappBiz {
   //create
   export type CreateFacebookLive = IFacebookLiveCreate & IApiCompanyParams;
   //update
-  export type UpdateFacebookLive = IFacebookLiveCreate &
-    IFacebookLive &
-    IApiCompanyParams;
+  export type UpdateFacebookLive = IFacebookLiveCreate & IApiCompanyParams;
   //list
   export type ListFacebookLive = IFacebookLiveList &
     IApiCompanyParams &
@@ -1131,6 +1125,20 @@ export namespace GappBiz {
     IDBLogUpdate &
     IDBLogCreate;
   // === === ===
+  /**
+   * FACEBOOK PRODUCT ROW
+   */
+  //create
+  export type CreateFacebookProductRow = ICreateFacebookProductRow &
+    IApiCompanyParams;
+  //update
+  export type UpdateFacebookProductRow = ICreateFacebookProductRow &
+    IApiCompanyParams;
+
+  export type FacebookProductRow = IFacebookProductRow &
+    IApiCompanyParams &
+    IDBLogUpdate &
+    IDBLogCreate;
 }
 
 // REVIEW: G-MARKET
