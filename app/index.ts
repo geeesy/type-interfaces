@@ -388,8 +388,7 @@ import {
   IFacebookLiveCreate,
   IFacebookLiveList,
   IFacebookPostCreate,
-  IFacebookPostList,
-  IFacebookProductRow
+  IFacebookPostList
 } from './type-facebook';
 
 /* #region FIXME: Marketplace */
@@ -1135,7 +1134,7 @@ export namespace GappBiz {
   export type UpdateFacebookProductRow = ICreateFacebookProductRow &
     IApiCompanyParams;
 
-  export type FacebookProductRow = IFacebookProductRow &
+  export type FacebookProductRow = ICreateFacebookProductRow &
     IApiCompanyParams &
     IDBLogUpdate &
     IDBLogCreate;

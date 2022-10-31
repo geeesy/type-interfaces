@@ -71,9 +71,9 @@ export interface ICreateFacebookProductRow extends IProductFacebookRow {
   facebookRelationId: string;
 }
 
-export interface IFacebookProductRow extends ICreateFacebookProductRow {
-  facebookProductRowId: string;
-}
+// export interface IFacebookProductRow extends ICreateFacebookProductRow {
+//   facebookProductRowId: string;
+// }
 
 export interface IProductFacebookRow extends IProductRow {
   codeCf: string;
