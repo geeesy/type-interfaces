@@ -385,10 +385,12 @@ import { IInventoryExport, IOrderStatusExport, ITimeStamp } from './type-data';
 import {
   ICountFacebookPostRow,
   ICreateFacebookProductRow,
+  IFacebookConnect,
   IFacebookLiveCreate,
   IFacebookLiveList,
   IFacebookPostCreate,
-  IFacebookPostList
+  IFacebookPostList,
+  IProductFacebookRow
 } from './type-facebook';
 
 /* #region FIXME: Marketplace */
@@ -1134,7 +1136,8 @@ export namespace GappBiz {
   export type UpdateFacebookProductRow = ICreateFacebookProductRow &
     IApiCompanyParams;
 
-  export type FacebookProductRow = ICreateFacebookProductRow &
+  export type FacebookProductRow = IFacebookConnect &
+    IProductFacebookRow &
     IApiCompanyParams &
     IDBLogUpdate &
     IDBLogCreate;
