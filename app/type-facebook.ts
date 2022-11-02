@@ -1,6 +1,5 @@
 import { IFacebookData } from './type-setting';
-import { IProductRow } from './type-apps';
-import {IInventorySelect} from "./type-salepage";
+import {IOrderProductRow} from "./type-order";
 
 export type TStatusBroadcast =
   | 'UNPUBLISHED'
@@ -80,7 +79,6 @@ export interface IFacebookConnect{
 //   facebookProductRowId: string;
 // }
 
-export interface IProductFacebookRow extends IProductRow {
+export interface IProductFacebookRow extends IOrderProductRow {
   codeCf: string;
-  warehouse:IInventorySelect
 }
