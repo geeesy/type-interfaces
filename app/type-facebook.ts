@@ -1,5 +1,6 @@
 import { IFacebookData } from './type-setting';
 import { IProductRow } from './type-apps';
+import {IInventorySelect} from "./type-salepage";
 
 export type TStatusBroadcast =
   | 'UNPUBLISHED'
@@ -81,4 +82,5 @@ export interface IFacebookConnect{
 
 export interface IProductFacebookRow extends IProductRow {
   codeCf: string;
+  warehouse:IInventorySelect
 }
