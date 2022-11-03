@@ -1,5 +1,7 @@
 import { IFacebookData } from './type-setting';
 import {IOrderProductRow} from "./type-order";
+import {GappSetting} from "./index";
+
 
 export type TStatusBroadcast =
   | 'UNPUBLISHED'
@@ -23,6 +25,11 @@ export interface IFacebookLiveCreate {
   facebookData: IFacebookData;
   statusBroadcast: TStatusBroadcast;
   timestampLive: number;
+  shippingAvailableIds: string[]; // * USE ID FOR LATER
+  paymentAvailableIds: string[]; // * USE ID FOR LATER
+  shippingAvailableData: GappSetting.ShippingMethod[]
+  paymentAvailableData: GappSetting.PaymentMethod[];
+  hasNoShipment: boolean;
 }
 
 export interface IFacebookLiveId {
