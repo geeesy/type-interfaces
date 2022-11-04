@@ -88,4 +88,5 @@ export interface IFacebookConnect{
 
 export interface IProductFacebookRow extends IOrderProductRow {
   codeCf: string;
+  totalReservedStock: number
 }
