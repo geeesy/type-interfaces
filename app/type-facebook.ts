@@ -4,6 +4,7 @@ import {GappSetting} from "./index";
 
 
 export type TStatusBroadcast =
+  | undefined
   | null
   | 'UNPUBLISHED'
   | 'LIVE'
