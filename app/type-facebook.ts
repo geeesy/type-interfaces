@@ -4,6 +4,7 @@ import {GappSetting} from "./index";
 
 
 export type TStatusBroadcast =
+  | 'NULL'
   | 'UNPUBLISHED'
   | 'LIVE'
   | 'LIVE_STOPPED'
@@ -13,6 +14,7 @@ export type TStatusBroadcast =
   | 'SCHEDULED_LIVE'
   | 'SCHEDULED_EXPIRED'
   | 'SCHEDULED_CANCELED';
+
 
 export type TTypeFacebook = 'POST' | 'LIVE';
 
