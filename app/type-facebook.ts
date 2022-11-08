@@ -14,6 +14,7 @@ export type TStatusBroadcast =
   | 'SCHEDULED_EXPIRED'
   | 'SCHEDULED_CANCELED';
 
+
 export type TTypeFacebook = 'POST' | 'LIVE';
 
 /**
