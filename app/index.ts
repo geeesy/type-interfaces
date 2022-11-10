@@ -386,15 +386,12 @@ import {
   ICountFacebookPostRow,
   ICreateFacebookProductRow,
   IFacebookConnect,
-  IFacebookLiveCreate,
+  IFacebookLiveCreate, IFacebookLiveId,
   IFacebookLiveList,
-  IFacebookPostCreate,
-  IFacebookPostList, IOBSId,
-  IOBSTemplateCreate,
-  IOBSTemplateDetail,
-  IOBSTemplateList,
-  IOBSTemplateRow, IOBSTemplateRowUpdate,
-  IOBSTemplateUpdate,
+  IFacebookPostCreate, IFacebookPostId,
+  IFacebookPostList, IOBSId, IOBSTemplate,
+IOBSTemplateId,
+  IOBSTemplateRow,
   IProductFacebookRow
 } from './type-facebook';
 
@@ -1099,7 +1096,7 @@ export namespace GappBiz {
   // create
   export type CreateFacebookPost = IFacebookPostCreate & IApiCompanyParams;
   // update
-  export type UpdateFacebookPost = IFacebookPostCreate & IApiCompanyParams;
+  export type UpdateFacebookPost = IFacebookPostCreate & IFacebookPostId & IApiCompanyParams;
   // list
   export type ListFacebookPost = IFacebookPostList &
     IApiCompanyParams &
@@ -1118,7 +1115,7 @@ export namespace GappBiz {
   //create
   export type CreateFacebookLive = IFacebookLiveCreate & IApiCompanyParams;
   //update
-  export type UpdateFacebookLive = IFacebookLiveCreate & IApiCompanyParams;
+  export type UpdateFacebookLive = IFacebookLiveCreate & IFacebookLiveId & IApiCompanyParams;
   //list
   export type ListFacebookLive = IFacebookLiveList &
     IApiCompanyParams &
@@ -1148,19 +1145,17 @@ export namespace GappBiz {
     IDBLogCreate;
 
   // $ OBS
-  export type CreateOBSTemplate = IOBSTemplateCreate & IApiCompanyParams;
-  export type UpdateOBSTemplate = IOBSTemplateUpdate & IApiCompanyParams;
-  export type ListOBSTemplate = IOBSTemplateList & IApiCompanyParams &
-    IDBLogUpdate &
-    IDBLogCreate;
-  export type OBSTemplate = IOBSTemplateDetail &
+  export type CreateOBSTemplate = IOBSTemplate & IApiCompanyParams;
+  export type UpdateOBSTemplate = IOBSTemplate & IOBSTemplateId & IApiCompanyParams;
+  export type ListOBSTemplate = IOBSTemplate & IOBSTemplateId & IApiCompanyParams &   IDBLogUpdate & IDBLogCreate;
+  export type OBSTemplate = IOBSTemplate & IOBSTemplateId &
     IApiCompanyParams &
     IDBLogUpdate &
     IDBLogCreate;
 
   //  $ Overlay
   export type CreateOverlayRow = IOBSTemplateRow & IApiCompanyParams;
-  export type UpdateOverlayRow = IOBSTemplateRowUpdate & IApiCompanyParams;
+  export type UpdateOverlayRow = IOBSTemplateRow & IOBSId & IApiCompanyParams;
   export type OverlayRow = IOBSId & IOBSTemplateRow &
     IApiCompanyParams &
     IDBLogUpdate &
