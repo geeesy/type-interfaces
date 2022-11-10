@@ -29,7 +29,7 @@ export type TTypeTemplate = 'DESKTOP' | 'MOBILE';
 /**
  * FACEBOOK LIVE
  */
-export interface IFacebookLiveCreate {
+export interface IFacebookLiveCreate extends IProducts{
   facebookLiveId: string;
   facebookLiveName: string;
   facebookData: IFacebookData;
@@ -55,7 +55,7 @@ export interface IFacebookLiveList
  * FACEBOOK POST
  */
 
-export interface IFacebookPostCreate {
+export interface IFacebookPostCreate extends IProducts {
   facebookPostId: string;
   facebookPostName: string;
   facebookData: IFacebookData;
@@ -89,13 +89,16 @@ export interface ICountFacebookPostRow {
  * FACEBOOK PRODUCT ROW
  */
 
-export interface ICreateFacebookProductRow extends IFacebookConnect {
+export interface ICreateFacebookProductRow extends IProducts,IFacebookConnect {
+}
+
+export interface IProducts {
   products: IProductFacebookRow[];
 }
 
 export interface IFacebookConnect {
   type: TTypeFacebook;
-  facebookRelationId: string;
+  liveId: string;
 }
 
 // export interface IFacebookProductRow extends ICreateFacebookProductRow {
@@ -115,55 +118,34 @@ export interface IProductFacebookRow extends IOrderProductRow {
 
 // ^ OBS OVERLAY TEMPLATE
 
-export interface IOBSTemplateCreate {
+export interface IOBSTemplate {
   templateOBSName: string;
   templateType: TTypeTemplate;
+  overlays:overlayDetail[]
 }
 
-export interface IOBSTemplateList {
+export interface IOBSTemplateId {
   templateOBSId: string;
-  templateOBSName: string;
-  templateType: TTypeTemplate;
-}
-
-export interface IOBSTemplateUpdate {
-  templateOBSId: string;
-  templateOBSName: string;
-}
-
-export interface IOBSTemplateDetail {
-  templateOBSId: string;
-  templateOBSName: string;
-  templateType: TTypeTemplate;
 }
 
 export interface IOBSTemplateRow {
-  overlayName: string;
   templateOBSId: string;
+  overlays:overlayDetail[]
+}
+
+export interface overlayDetail {
   overlayType: TTypeOverlay;
   overlayAttributes:
     | IOverlayLogo
-    | IOverlayBank
-    | IOverlayText
-    | IOverlaySound
-    | IOverlayTime
-    | IOverlayProduct;
+  | IOverlayBank
+  | IOverlayText
+  | IOverlaySound
+  | IOverlayTime
+  | IOverlayProduct;
 }
 
 export interface IOBSId {
   overlayId: string;
-}
-
-export interface IOBSTemplateRowUpdate {
-  overlayId: string;
-  overlayName: string;
-  overlayAttributes:
-    | IOverlayLogo
-    | IOverlayBank
-    | IOverlayText
-    | IOverlaySound
-    | IOverlayTime
-    | IOverlayProduct;
 }
 
 // $ Overlay Attributes
