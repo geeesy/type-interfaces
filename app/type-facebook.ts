@@ -98,7 +98,7 @@ export interface IProducts {
 
 export interface IFacebookConnect {
   type: TTypeFacebook;
-  liveId: string;
+  facebookRelationId: string;
 }
 
 // export interface IFacebookProductRow extends ICreateFacebookProductRow {
