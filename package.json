@@ -1,6 +1,6 @@
 {
   "name": "@geeesy/type-interfaces",
-  "version": "9.38.72",
+  "version": "9.38.73",
   "description": "Geeesy's API Interfaces for HTTP Client and Lambda Functions",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
