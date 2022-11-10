@@ -29,7 +29,7 @@ export type TTypeTemplate = 'DESKTOP' | 'MOBILE';
 /**
  * FACEBOOK LIVE
  */
-export interface IFacebookLiveCreate extends IProducts{
+export interface IFacebookLiveCreate{
   facebookLiveId: string;
   facebookLiveName: string;
   facebookData: IFacebookData;
@@ -55,7 +55,7 @@ export interface IFacebookLiveList
  * FACEBOOK POST
  */
 
-export interface IFacebookPostCreate extends IProducts {
+export interface IFacebookPostCreate {
   facebookPostId: string;
   facebookPostName: string;
   facebookData: IFacebookData;
@@ -121,6 +121,9 @@ export interface IProductFacebookRow extends IOrderProductRow {
 export interface IOBSTemplate {
   templateOBSName: string;
   templateType: TTypeTemplate;
+}
+
+export interface IOverlays{
   overlays:overlayDetail[]
 }
 
