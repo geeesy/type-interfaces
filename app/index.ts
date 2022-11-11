@@ -391,7 +391,7 @@ import {
   IFacebookPostCreate, IFacebookPostId,
   IFacebookPostList, IOBSId, IOBSTemplate,
   IOBSTemplateId,
-  IOBSTemplateRow,
+  IOBSTemplateRow, IOverlays,
   IProductFacebookRow, IProducts, overlayDetail
 } from './type-facebook';
 
@@ -1145,8 +1145,8 @@ export namespace GappBiz {
     IDBLogCreate;
 
   // $ OBS
-  export type CreateOBSTemplate = IOBSTemplate & IApiCompanyParams;
-  export type UpdateOBSTemplate = IOBSTemplate & IOBSTemplateId & IApiCompanyParams;
+  export type CreateOBSTemplate = IOBSTemplate & IOverlays & IApiCompanyParams;
+  export type UpdateOBSTemplate = IOBSTemplate & IOverlays & IOBSTemplateId & IApiCompanyParams;
   export type ListOBSTemplate = IOBSTemplate & IOBSTemplateId & IApiCompanyParams &   IDBLogUpdate & IDBLogCreate;
   export type OBSTemplate = IOBSTemplate & IOBSTemplateId &
     IApiCompanyParams &
