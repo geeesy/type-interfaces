@@ -392,7 +392,7 @@ import {
   IFacebookPostList, IOBSId, IOBSTemplate,
   IOBSTemplateId,
   IOBSTemplateRow, IOverlays,
-  IProductFacebookRow, IProducts, overlayDetail
+  IProductFacebookRow, IProducts, IUpdateOverlays, overlayDetail
 } from './type-facebook';
 
 /* #region FIXME: Marketplace */
@@ -1155,7 +1155,7 @@ export namespace GappBiz {
 
   //  $ Overlay
   export type CreateOverlayRow = IOBSTemplateRow & IApiCompanyParams;
-  export type UpdateOverlayRow = IOBSTemplateRow & IApiCompanyParams;
+  export type UpdateOverlayRow = IOBSTemplateId & IUpdateOverlays & IApiCompanyParams;
   export type OverlayRow = IOBSId & IOBSTemplateId & overlayDetail  &
     IApiCompanyParams &
     IDBLogUpdate &
