@@ -390,7 +390,7 @@ import {
   IFacebookLiveList,
   IFacebookPostCreate, IFacebookPostId,
   IFacebookPostList, IOBSId, IOBSTemplate,
-IOBSTemplateId,
+  IOBSTemplateId,
   IOBSTemplateRow,
   IProductFacebookRow
 } from './type-facebook';
