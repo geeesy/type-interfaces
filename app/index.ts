@@ -392,7 +392,7 @@ import {
   IFacebookPostList, IOBSId, IOBSTemplate,
   IOBSTemplateId,
   IOBSTemplateRow,
-  IProductFacebookRow
+  IProductFacebookRow, IProducts
 } from './type-facebook';
 
 /* #region FIXME: Marketplace */
@@ -1094,9 +1094,9 @@ export namespace GappBiz {
    * FACEBOOK POST
    */
   // create
-  export type CreateFacebookPost = IFacebookPostCreate & IApiCompanyParams;
+  export type CreateFacebookPost = IFacebookPostCreate & IProducts & IApiCompanyParams;
   // update
-  export type UpdateFacebookPost = IFacebookPostCreate & IFacebookPostId & IApiCompanyParams;
+  export type UpdateFacebookPost = IFacebookPostCreate & IProducts & IFacebookPostId & IApiCompanyParams;
   // list
   export type ListFacebookPost = IFacebookPostList &
     IApiCompanyParams &
@@ -1104,7 +1104,7 @@ export namespace GappBiz {
     IDBLogCreate &
     ICountFacebookPostRow;
   //detail
-  export type FacebookPost = ICountFacebookPostRow &
+  export type FacebookPost = ICountFacebookPostRow & IProducts &
     IFacebookPostList &
     IApiCompanyParams &
     IDBLogUpdate &
@@ -1113,16 +1113,16 @@ export namespace GappBiz {
    * FACEBOOK LIVE
    */
   //create
-  export type CreateFacebookLive = IFacebookLiveCreate & IApiCompanyParams;
+  export type CreateFacebookLive = IFacebookLiveCreate & IProducts & IApiCompanyParams;
   //update
-  export type UpdateFacebookLive = IFacebookLiveCreate & IFacebookLiveId & IApiCompanyParams;
+  export type UpdateFacebookLive = IFacebookLiveCreate & IProducts & IFacebookLiveId & IApiCompanyParams;
   //list
   export type ListFacebookLive = IFacebookLiveList &
     IApiCompanyParams &
     IDBLogUpdate &
     IDBLogCreate;
   //detail
-  export type FacebookLive = ICountFacebookPostRow &
+  export type FacebookLive = ICountFacebookPostRow & IProducts &
     IFacebookLiveList &
     IApiCompanyParams &
     IDBLogUpdate &
