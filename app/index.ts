@@ -1155,7 +1155,7 @@ export namespace GappBiz {
 
   //  $ Overlay
   export type CreateOverlayRow = IOBSTemplateRow & IApiCompanyParams;
-  export type UpdateOverlayRow = IOBSTemplateRow & IOBSId & IApiCompanyParams;
+  export type UpdateOverlayRow = IOBSTemplateRow & IApiCompanyParams;
   export type OverlayRow = IOBSId & IOBSTemplateId & overlayDetail  &
     IApiCompanyParams &
     IDBLogUpdate &
