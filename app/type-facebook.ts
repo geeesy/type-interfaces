@@ -127,6 +127,21 @@ export interface IOverlays{
   overlays:overlayDetail[]
 }
 
+export interface IUpdateOverlays{
+  overlays:overlayUpdateDetail[]
+}
+
+export interface overlayUpdateDetail extends IOBSId{
+  overlayType: TTypeOverlay;
+  overlayAttributes:
+    | IOverlayLogo
+    | IOverlayBank
+    | IOverlayText
+    | IOverlaySound
+    | IOverlayTime
+    | IOverlayProduct;
+}
+
 export interface IOBSTemplateId {
   templateOBSId: string;
 }
