@@ -1148,7 +1148,7 @@ export namespace GappBiz {
   export type CreateOBSTemplate = IOBSTemplate & IOverlays & IApiCompanyParams;
   export type UpdateOBSTemplate = IOBSTemplate & IOverlays & IOBSTemplateId & IApiCompanyParams;
   export type ListOBSTemplate = IOBSTemplate & IOBSTemplateId & IApiCompanyParams &   IDBLogUpdate & IDBLogCreate;
-  export type OBSTemplate = IOBSTemplate & IOBSTemplateId &
+  export type OBSTemplate = IOBSTemplate & IOverlays & IOBSTemplateId &
     IApiCompanyParams &
     IDBLogUpdate &
     IDBLogCreate;
