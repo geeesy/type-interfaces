@@ -30,7 +30,7 @@ export type TTypeTemplate = 'DESKTOP' | 'MOBILE';
 /**
  * FACEBOOK LIVE
  */
-export interface IFacebookLiveCreate{
+export interface IFacebookLiveCreate {
   facebookLiveId: string;
   facebookLiveName: string;
   facebookData: IFacebookData;
@@ -57,7 +57,10 @@ export interface IFacebookLiveList
  */
 
 export interface IFacebookPostCreate {
-  facebookConnected: IFacebookConnectPosts[]
+  // facebookConnected: IFacebookConnectPosts[];
+  facebookPostId: string;
+  facebookPostName: string;
+  facebookData: IFacebookData;
   statusPost: string;
   periodStartDate: Date;
   periodEndDate: Date;
@@ -98,8 +101,9 @@ export interface ICountFacebookPostRow {
  * FACEBOOK PRODUCT ROW
  */
 
-export interface ICreateFacebookProductRow extends IProducts,IFacebookConnect {
-}
+export interface ICreateFacebookProductRow
+  extends IProducts,
+    IFacebookConnect {}
 
 export interface IProducts {
   products: IProductFacebookRow[];
@@ -132,15 +136,15 @@ export interface IOBSTemplate {
   templateType: TTypeTemplate;
 }
 
-export interface IOverlays{
-  overlays:overlayDetail[]
+export interface IOverlays {
+  overlays: overlayDetail[];
 }
 
-export interface IUpdateOverlays{
-  overlays:overlayUpdateDetail[]
+export interface IUpdateOverlays {
+  overlays: overlayUpdateDetail[];
 }
 
-export interface overlayUpdateDetail extends IOBSId{
+export interface overlayUpdateDetail extends IOBSId {
   overlayType: TTypeOverlay;
   overlayAttributes:
     | IOverlayLogo
@@ -157,18 +161,18 @@ export interface IOBSTemplateId {
 
 export interface IOBSTemplateRow {
   templateOBSId: string;
-  overlays:overlayDetail[]
+  overlays: overlayDetail[];
 }
 
 export interface overlayDetail {
   overlayType: TTypeOverlay;
   overlayAttributes:
     | IOverlayLogo
-  | IOverlayBank
-  | IOverlayText
-  | IOverlaySound
-  | IOverlayTime
-  | IOverlayProduct;
+    | IOverlayBank
+    | IOverlayText
+    | IOverlaySound
+    | IOverlayTime
+    | IOverlayProduct;
 }
 
 export interface IOBSId {
