@@ -56,9 +56,7 @@ export interface IFacebookLiveList
  */
 
 export interface IFacebookPostCreate {
-  facebookPostId: string;
-  facebookPostName: string;
-  facebookData: IFacebookData;
+  facebookConnected: IFacebookConnectPosts[]
   statusPost: string;
   periodStartDate: Date;
   periodEndDate: Date;
@@ -71,6 +69,11 @@ export interface IFacebookPostCreate {
 
 export interface IFacebookPostId {
   postId: string;
+}
+
+export interface IFacebookConnectPosts {
+  facebookPostId: string[];
+  facebookData: IFacebookData;
 }
 
 export interface IFacebookPostList
