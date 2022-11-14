@@ -22,7 +22,8 @@ export type TTypeOverlay =
   | 'TEXT'
   | 'SOUND'
   | 'TIME'
-  | 'PRODUCT';
+  | 'PRODUCT'
+  | 'SELECT';
 
 export type TTypeTemplate = 'DESKTOP' | 'MOBILE';
 
@@ -72,8 +73,13 @@ export interface IFacebookPostId {
 }
 
 export interface IFacebookConnectPosts {
-  facebookPostId: string[];
+  facebookPostData: IFacebookPostData[];
   facebookData: IFacebookData;
+}
+
+export interface IFacebookPostData {
+  facebookPostId: string;
+  facebookPostName: string;
 }
 
 export interface IFacebookPostList
