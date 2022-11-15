@@ -41,7 +41,7 @@ export enum StatusOrderOfPayment {
   PAY2_CompletedPayment = 'COMPLETED_PAYMENT',
   PAY_C_ToRefund = 'TO_REFUND',
   PAY_C_Refunding = 'REFUNDING',
-  PAY_C_CompletedRefund = 'COMPLETED_REFUND',
+  PAY_C_CompletedRefund = 'COMPLETED_REFUND'
 }
 
 export enum StatusOrderOfShipment {
@@ -52,7 +52,7 @@ export enum StatusOrderOfShipment {
   SHIP_C_ToReturn = 'TO_RETURN',
   SHIP_C_AwaitingReturn = 'AWAITING_RETURN',
   SHIP_C_Returning = 'RETURNING',
-  SHIP_C_CompletedReturn = 'COMPLETED_RETURN',
+  SHIP_C_CompletedReturn = 'COMPLETED_RETURN'
 }
 
 export enum StatusOrderOfStock {
@@ -71,7 +71,7 @@ export enum StatusOrder {
 
 export enum StatusReturnOrder {
   RETURN_AwaitingRestock = 'RETURN_AWAITING_RESTOCK',
-  RETURN_InRestock = "RETURN_IN_RESTOCK",
+  RETURN_InRestock = 'RETURN_IN_RESTOCK',
   RETURN_CompletedRestock = 'RETURN_COMPLETED_RESTOCK'
 }
 
@@ -82,9 +82,23 @@ export enum StatusRefundOrder {
 }
 
 export type TPaymentRowStatus = 'WAIT' | 'REJECT' | 'COMPLETE';
-export type TOrderType = 'ORDER_LINK' | 'SALEPAGE' | 'GAPP_MARKET' | 'GAPP_BIZ';
+export type TOrderType =
+  | 'ORDER_LINK'
+  | 'SALEPAGE'
+  | 'GAPP_MARKET'
+  | 'GAPP_BIZ'
+  | 'POST_FB'
+  | 'LIVE_FB';
 export type TOrderItemType = 'SERVICE' | 'PRODUCT';
-export type TOrderChannelUTM = 'WEBSITE' | 'FACEBOOK' | 'INSTAGRAM' | 'LINE' | 'YOUTUBE' | 'WHATSAPP' | 'WECHAT' | 'OTHER';
+export type TOrderChannelUTM =
+  | 'WEBSITE'
+  | 'FACEBOOK'
+  | 'INSTAGRAM'
+  | 'LINE'
+  | 'YOUTUBE'
+  | 'WHATSAPP'
+  | 'WECHAT'
+  | 'OTHER';
 /**
  * ORDER
  */
@@ -108,8 +122,8 @@ export interface IOrderProductRow {
   productGroupId: string;
   productGroupName: string;
   productCategoryId: string;
-  productCategoryName: string
-  note?: string
+  productCategoryName: string;
+  note?: string;
 }
 
 export interface IOrderAccounting {
@@ -129,9 +143,9 @@ export interface IOrderAccounting {
 }
 export interface IListOrder
   extends IDBOrderSellerDataImmu,
-  IDBOrderEntityImmu,
-  IDBOrderLinkImmu,
-  IDBOrderEntity {
+    IDBOrderEntityImmu,
+    IDBOrderLinkImmu,
+    IDBOrderEntity {
   totalOrderAmount: number; // * === grandTotalAmount
   shippingConfirmedData: GappSetting.ShippingMethod | null;
   paymentConfirmedData: GappSetting.PaymentMethod | null;
@@ -141,12 +155,12 @@ export interface IListOrder
   statusOrderOfPayment: StatusOrderOfPayment | null;
   paymentAttachmentData: IPaymentAttachmentData | null;
   channel: SaleChannelSubType;
-  channelId: string // * channelId
+  channelId: string; // * channelId
   channelName: string;
   shippingTracking: string;
-  shippingCost: number
-  completedCanceledAt: string
-  completedCanceledBy: string
+  shippingCost: number;
+  completedCanceledAt: string;
+  completedCanceledBy: string;
 }
 
 // ANCHOR: ORDER | Entity (1/13)
@@ -197,7 +211,7 @@ export interface IOrderEntity {
   sellerContactInfo: IPersonContactInfo;
   sellerCompanyContactInfo: ICompanyContactInfo;
   totalOrderAmount: number; // * === grandTotalAmount
-  totalProductAmount: number // ? sum from product rows
+  totalProductAmount: number; // ? sum from product rows
 }
 
 export interface IOrderAccountingOnly {
@@ -217,7 +231,7 @@ export interface IDBOrderStatus {
 // REVIEW: Ordered Product
 export interface IDBListOrderByProduct
   extends IDBOrderStatus,
-  IOrderCustomerData {
+    IOrderCustomerData {
   salepageId?: string;
   orderId: string;
   channel: SaleChannelSubType;
@@ -282,27 +296,27 @@ export interface IOrderLinkDataOnConfirm {
 }
 
 export interface IOrderLinkImmuDataOnConfirm {
-  saleChannelSourceUTM: TOrderChannelUTM
-  saleChannelCustomUTM: ISaleChannelCustomUTM
+  saleChannelSourceUTM: TOrderChannelUTM;
+  saleChannelCustomUTM: ISaleChannelCustomUTM;
 }
 
 export interface ISaleChannelCustomUTM {
-  utmName: string
-  utmValue: string
+  utmName: string;
+  utmValue: string;
 }
 
 // ANCHOR: ORDER | Entity (11/13)
 export interface IOrderDataOnComplete {
-  finalDeliveryAt: string
-  finalDeliveryBy: string
-  deliveryImageUrl: string
-  completedAt: string
-  completedBy: string
+  finalDeliveryAt: string;
+  finalDeliveryBy: string;
+  deliveryImageUrl: string;
+  completedAt: string;
+  completedBy: string;
 }
 
 // ANCHOR: ORDER | Entity (12/13)
 export interface IDBOrderDataImmu {
-  finalizedAt: string
+  finalizedAt: string;
 }
 
 // ANCHOR: ORDER | Entity (13/13)
@@ -310,7 +324,7 @@ export interface IDBOrderActivityLog {
   latestNoteOnAction: string;
   latestActivityOnOrderType: TOrderType | null;
   latestActionBy: string | null; // ? use to identify action -> buyer (null) or seller (identityId)
-  latestActionByFullName?: string // ? -> firstName + lastName
+  latestActionByFullName?: string; // ? -> firstName + lastName
 }
 
 /**
@@ -362,31 +376,29 @@ export interface ISellerUpdateOrderStatus {
 
 // STUB: Cancel Order (By Seller)
 export interface ISellerCancelOrderParams {
-  isReturnLater: boolean
-  toRestock: boolean
-  isRefundLater: boolean
-  isFullRefund: boolean
+  isReturnLater: boolean;
+  toRestock: boolean;
+  isRefundLater: boolean;
+  isFullRefund: boolean;
   toRefund: boolean;
-  toBypassReturn: boolean
+  toBypassReturn: boolean;
 }
 
 export interface ISellerCancelOrder {
-  canceledReason: string
+  canceledReason: string;
   canceledNote: string;
 }
 
 export interface IDBOrderDataOnCancelImmu {
-  statusOrderOfPaymentWhenCanceled: StatusOrderOfPayment
-  statusOrderOfShipmentWhenCanceled: StatusOrderOfShipment
-  statusOrderOnBuyerWhenCanceled: StatusOrderCustomer
-  statusOrderOnSellerWhenCanceled: StatusOrderSeller
-  requestCancelAt: string
-  requestCancelBy: string
-  completedCanceledAt: string
-  completedCanceledBy: string
+  statusOrderOfPaymentWhenCanceled: StatusOrderOfPayment;
+  statusOrderOfShipmentWhenCanceled: StatusOrderOfShipment;
+  statusOrderOnBuyerWhenCanceled: StatusOrderCustomer;
+  statusOrderOnSellerWhenCanceled: StatusOrderSeller;
+  requestCancelAt: string;
+  requestCancelBy: string;
+  completedCanceledAt: string;
+  completedCanceledBy: string;
 }
-
-
 
 // STUB: Cancel -> Return
 /**
@@ -394,44 +406,53 @@ export interface IDBOrderDataOnCancelImmu {
  * - Use Order row on DB
  */
 export interface ISellerReturnOrder {
-  returnProducts: IOrderProductRow[] | null
+  returnProducts: IOrderProductRow[] | null;
 }
 export interface IDBReturnOrderEntity {
-  returnDocNo: string
+  returnDocNo: string;
 }
 export interface IDBReturnOrderDataImmu {
-  returnOrderId: string
-  returnOrderCreatedAt: string
-  returnOrderCreatedBy: string
+  returnOrderId: string;
+  returnOrderCreatedAt: string;
+  returnOrderCreatedBy: string;
 }
 export interface IReturnOrderData {
-  returnOrderNote: string
+  returnOrderNote: string;
   statusReturnOrder: StatusReturnOrder;
-  returnOrderUpdatedAt: string
-  returnOrderUpdatedBy: string
+  returnOrderUpdatedAt: string;
+  returnOrderUpdatedBy: string;
 }
-export interface IDBReturnOrder extends ISellerReturnOrder, IDBReturnOrderEntity, IDBReturnOrderDataImmu, IReturnOrderData {
+export interface IDBReturnOrder
+  extends ISellerReturnOrder,
+    IDBReturnOrderEntity,
+    IDBReturnOrderDataImmu,
+    IReturnOrderData {}
+export interface IListReturnOrder
+  extends IDBOrderSellerDataImmu,
+    ISellerReturnOrder,
+    IDBReturnOrderEntity,
+    IReturnOrderData,
+    IDBReturnOrderDataImmu {
+  docNo: string;
+}
 
-}
-export interface IListReturnOrder extends IDBOrderSellerDataImmu, ISellerReturnOrder, IDBReturnOrderEntity, IReturnOrderData, IDBReturnOrderDataImmu {
-  docNo: string
-}
-
-export interface IRefCancelWithReturn extends IDBReturnOrderEntity, IDBReturnOrderDataImmu{
+export interface IRefCancelWithReturn
+  extends IDBReturnOrderEntity,
+    IDBReturnOrderDataImmu {
   statusReturnOrder: StatusReturnOrder;
-  statusRefundOrder: StatusRefundOrder
+  statusRefundOrder: StatusRefundOrder;
 }
 // === === ===
 
 // STUB: RESTOCK
 export interface ISellerRestockOrder {
-  restockProducts: IOrderProductRow[] | null // ? use null on complete return without products
-  isCompletedReturn: boolean
+  restockProducts: IOrderProductRow[] | null; // ? use null on complete return without products
+  isCompletedReturn: boolean;
 }
 
 export interface IRestockRowData {
-  restockRowId: string
-  restockProduct: IOrderProductRow
+  restockRowId: string;
+  restockProduct: IOrderProductRow;
 }
 // === === ===
 
@@ -439,11 +460,11 @@ export interface IRestockRowData {
 export interface ISellerRefundOrder {
   refundAttachmentData: IPaymentAttachmentData;
   refundAmount: number;
-  refundNote: string
+  refundNote: string;
 }
 
 export interface IRefundRowData extends ISellerRefundOrder {
-  refundRowId: string
+  refundRowId: string;
 }
 
 /**
@@ -461,7 +482,7 @@ export interface ISellerUpdateOrderDataOnStatusChanged {
  */
 export interface ICustomerWithOrder
   extends IOrderCustomerDataImmu,
-  IOrderCustomerData {
+    IOrderCustomerData {
   latestOrderType: TOrderType;
   latestOrderId: string;
   TotalPaidAmount: number;
@@ -488,13 +509,11 @@ export interface ILeadpageId {
   leadpageId: string;
 }
 
-export interface ILogOrderValue extends
-  IOrderCustomerData,
-  IDBOrderEntity,
-  IOrderEntity,
-  IOrderData {
-
-}
+export interface ILogOrderValue
+  extends IOrderCustomerData,
+    IDBOrderEntity,
+    IOrderEntity,
+    IOrderData {}
 
 export interface ILogOrder {
   updatedBy: string;
@@ -507,7 +526,7 @@ export interface ILogOrder {
 }
 
 export interface ISellerUpdateOrder {
-  toUpdateProduct: boolean
+  toUpdateProduct: boolean;
 }
 
 //STUB: payment row
@@ -515,19 +534,20 @@ export interface IOrderPaymentRowData {
   orderId: string;
   paymentConfirmedData: GappSetting.PaymentMethod | null;
   paymentAttachmentData: IPaymentAttachmentData | null;
-  identityData: GappBiz.User | null
-  isAutoConfirmSlip: boolean,
-  isStatusPayment: TPaymentRowStatus,
+  identityData: GappBiz.User | null;
+  isAutoConfirmSlip: boolean;
+  isStatusPayment: TPaymentRowStatus;
 }
 export interface IDBOrderPaymentRow {
   paymentRowId: string;
 }
-export interface IOrderPaymentRow extends IOrderPaymentRowData, IDBOrderPaymentRow {
-}
+export interface IOrderPaymentRow
+  extends IOrderPaymentRowData,
+    IDBOrderPaymentRow {}
 export interface ISellerUpdateOrderPaymentRow {
-  paymentRows: IOrderPaymentRow[]
+  paymentRows: IOrderPaymentRow[];
 }
 export interface ICreatePaymentRowParams {
-  salepageId?: string,
-  orderType: TOrderType
+  salepageId?: string;
+  orderType: TOrderType;
 }

@@ -1,5 +1,5 @@
 import { IFacebookData } from './type-setting';
-import { IOrderProductRow } from './type-order';
+import {IOrderProductRow, TOrderType} from './type-order';
 import { GappSetting } from './index';
 import { IPaymentMethodEntity } from './type-payment';
 
@@ -123,6 +123,8 @@ export interface IProductFacebookRow extends IOrderProductRow {
   totalReservedStock: number;
   productType: string;
   useInventory: string;
+  isShowOnOBS: boolean;
+  productOrderType: TOrderType;
 }
 
 /**
