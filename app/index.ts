@@ -265,7 +265,7 @@ import {
   ICompanyNotification,
   ICompanyNotificationToggle,
   IDBSaleChannel,
-  IDBSaleChannelImmu,
+  IDBSaleChannelImmu, IFacebookData,
   IListShipmentAndPaymentByCompany,
   ISaleChannelEntity,
   ISaleChannelEntityImmu,
@@ -392,7 +392,7 @@ import {
   IFacebookLiveCreate,
   IFacebookLiveId,
   IFacebookLiveList,
-  IFacebookPostCreate,
+  IFacebookPostCreate, IFacebookPostData,
   IFacebookPostId,
   IFacebookPostList,
   IOBSId,
@@ -1200,8 +1200,7 @@ export namespace GappBiz {
 
   //  $ ConnectPage
   export type CreateConnectPostRow = IFacebookConnectPosts & IApiCompanyParams;
-  export type ConnectPostRow = IFacebookConnectPost &
-    IFacebookConnectPostId &
+  export type ConnectPostRow = IFacebookData & IFacebookPostData &
     IApiCompanyParams &
     IDBLogUpdate &
     IDBLogCreate;
