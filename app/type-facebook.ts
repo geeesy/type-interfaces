@@ -213,7 +213,7 @@ export interface IOverlayLogo {
   overlayImage: string;
 }
 
-export interface IOverlayTime {
+export interface IOverlayTime extends IOverlayAction{
   overlayIsCountDown: boolean;
   overlayUrl: string;
   overlayTime: ICountDown | ISetTime;
@@ -243,11 +243,16 @@ export interface IOverlayBank {
   overlayPaymentData: IPaymentMethodEntity;
 }
 
-export interface IOverlaySound {
+export interface IOverlaySound extends IOverlayAction{
   overlayName: string;
   overlayUrl: string;
   overlayCodeSound: string;
   overlayNote: string;
+}
+
+export interface IOverlayAction{
+  hasStarted:boolean,
+  hasStopped:boolean
 }
 
 export interface IOverlayProduct {
