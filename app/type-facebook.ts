@@ -1,5 +1,5 @@
 import { IFacebookData } from './type-setting';
-import {IOrderProductRow, TOrderType} from './type-order';
+import { IOrderProductRow, TOrderType } from './type-order';
 import { GappSetting } from './index';
 import { IPaymentMethodEntity } from './type-payment';
 
@@ -57,10 +57,10 @@ export interface IFacebookLiveList
  */
 
 export interface IFacebookPostCreate {
-  // facebookConnected: IFacebookConnectPosts[];
-  facebookPostId: string;
-  facebookPostName: string;
-  facebookData: IFacebookData;
+  facebookPostId: string; // ! Wait Delete When New Api Completed !!!
+  facebookPostName: string; // ! Wait Delete When New Api Completed !!!
+  facebookData: IFacebookData; // ! Wait Delete When New Api Completed !!!
+  facebookConnect: IFacebookConnectPost[];
   statusPost: string;
   periodStartDate: Date;
   periodEndDate: Date;
@@ -69,8 +69,8 @@ export interface IFacebookPostCreate {
   shippingAvailableData: GappSetting.ShippingMethod[];
   paymentAvailableData: GappSetting.PaymentMethod[];
   hasNoShipment: boolean;
-  expiredPayment: IExpiredPayment
-  replyMessage: IReplyMessage
+  expiredPayment: IExpiredPayment;
+  replyMessage: IReplyMessage;
 }
 
 export interface IExpiredPayment {
@@ -84,20 +84,8 @@ export interface IReplyMessage {
   messageHeaderSecond: string;
 }
 
-
-
 export interface IFacebookPostId {
   postId: string;
-}
-
-export interface IFacebookConnectPosts {
-  facebookPostData: IFacebookPostData[];
-  facebookData: IFacebookData;
-}
-
-export interface IFacebookPostData {
-  facebookPostId: string;
-  facebookPostName: string;
 }
 
 export interface IFacebookPostList
@@ -110,6 +98,27 @@ export interface ICountFacebookPostRow {
   CountAwaitingPaymentOrder: number;
   CountCompletedOrder: number;
   TotalAmount: number;
+}
+
+// $ConnectPOST_FB
+export interface IFacebookConnectPost {
+  facebookPostData: IFacebookPostData[];
+  facebookData: IFacebookData;
+}
+
+export interface IFacebookPostData {
+  facebookPostId: string;
+  facebookPostMessage: string;
+  facebookPostType: string;
+  facebookPostImage: string;
+  facebookPostCreated: string;
+}
+export interface IFacebookConnectPostId {
+  facebookPostConnectedRowId: string;
+}
+
+export interface IFacebookConnectPosts {
+  facebookConnects: IFacebookConnectPost[];
 }
 
 /**

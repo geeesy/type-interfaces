@@ -386,13 +386,24 @@ import {
   ICountFacebookPostRow,
   ICreateFacebookProductRow,
   IFacebookConnect,
-  IFacebookLiveCreate, IFacebookLiveId,
+  IFacebookConnectPost,
+  IFacebookConnectPostId,
+  IFacebookConnectPosts,
+  IFacebookLiveCreate,
+  IFacebookLiveId,
   IFacebookLiveList,
-  IFacebookPostCreate, IFacebookPostId,
-  IFacebookPostList, IOBSId, IOBSTemplate,
+  IFacebookPostCreate,
+  IFacebookPostId,
+  IFacebookPostList,
+  IOBSId,
+  IOBSTemplate,
   IOBSTemplateId,
-  IOBSTemplateRow, IOverlays,
-  IProductFacebookRow, IProducts, IUpdateOverlays, overlayDetail
+  IOBSTemplateRow,
+  IOverlays,
+  IProductFacebookRow,
+  IProducts,
+  IUpdateOverlays,
+  overlayDetail
 } from './type-facebook';
 
 /* #region FIXME: Marketplace */
@@ -1094,9 +1105,14 @@ export namespace GappBiz {
    * FACEBOOK POST
    */
   // create
-  export type CreateFacebookPost = IFacebookPostCreate & IProducts & IApiCompanyParams;
+  export type CreateFacebookPost = IFacebookPostCreate &
+    IProducts &
+    IApiCompanyParams;
   // update
-  export type UpdateFacebookPost = IFacebookPostCreate & IProducts & IFacebookPostId & IApiCompanyParams;
+  export type UpdateFacebookPost = IFacebookPostCreate &
+    IProducts &
+    IFacebookPostId &
+    IApiCompanyParams;
   // list
   export type ListFacebookPost = IFacebookPostList &
     IApiCompanyParams &
@@ -1104,7 +1120,9 @@ export namespace GappBiz {
     IDBLogCreate &
     ICountFacebookPostRow;
   //detail
-  export type FacebookPost = ICountFacebookPostRow & IProducts &
+  export type FacebookPost = ICountFacebookPostRow &
+    IProducts &
+    IFacebookConnectPosts &
     IFacebookPostList &
     IApiCompanyParams &
     IDBLogUpdate &
@@ -1113,16 +1131,22 @@ export namespace GappBiz {
    * FACEBOOK LIVE
    */
   //create
-  export type CreateFacebookLive = IFacebookLiveCreate & IProducts & IApiCompanyParams;
+  export type CreateFacebookLive = IFacebookLiveCreate &
+    IProducts &
+    IApiCompanyParams;
   //update
-  export type UpdateFacebookLive = IFacebookLiveCreate & IProducts & IFacebookLiveId & IApiCompanyParams;
+  export type UpdateFacebookLive = IFacebookLiveCreate &
+    IProducts &
+    IFacebookLiveId &
+    IApiCompanyParams;
   //list
   export type ListFacebookLive = IFacebookLiveList &
     IApiCompanyParams &
     IDBLogUpdate &
     IDBLogCreate;
   //detail
-  export type FacebookLive = ICountFacebookPostRow & IProducts &
+  export type FacebookLive = ICountFacebookPostRow &
+    IProducts &
     IFacebookLiveList &
     IApiCompanyParams &
     IDBLogUpdate &
@@ -1146,17 +1170,38 @@ export namespace GappBiz {
 
   // $ OBS
   export type CreateOBSTemplate = IOBSTemplate & IOverlays & IApiCompanyParams;
-  export type UpdateOBSTemplate = IOBSTemplate & IUpdateOverlays & IOBSTemplateId & IApiCompanyParams;
-  export type ListOBSTemplate = IOBSTemplate & IOBSTemplateId & IApiCompanyParams &   IDBLogUpdate & IDBLogCreate;
-  export type OBSTemplate = IOBSTemplate & IOverlays & IOBSTemplateId &
+  export type UpdateOBSTemplate = IOBSTemplate &
+    IUpdateOverlays &
+    IOBSTemplateId &
+    IApiCompanyParams;
+  export type ListOBSTemplate = IOBSTemplate &
+    IOBSTemplateId &
+    IApiCompanyParams &
+    IDBLogUpdate &
+    IDBLogCreate;
+  export type OBSTemplate = IOBSTemplate &
+    IOverlays &
+    IOBSTemplateId &
     IApiCompanyParams &
     IDBLogUpdate &
     IDBLogCreate;
 
   //  $ Overlay
   export type CreateOverlayRow = IOBSTemplateRow & IApiCompanyParams;
-  export type UpdateOverlayRow = IOBSTemplateId & IUpdateOverlays & IApiCompanyParams;
-  export type OverlayRow = IOBSId & IOBSTemplateId & overlayDetail  &
+  export type UpdateOverlayRow = IOBSTemplateId &
+    IUpdateOverlays &
+    IApiCompanyParams;
+  export type OverlayRow = IOBSId &
+    IOBSTemplateId &
+    overlayDetail &
+    IApiCompanyParams &
+    IDBLogUpdate &
+    IDBLogCreate;
+
+  //  $ ConnectPage
+  export type CreateConnectPostRow = IFacebookConnectPost & IApiCompanyParams;
+  export type ConnectPostRow = IFacebookConnectPost &
+    IFacebookConnectPostId &
     IApiCompanyParams &
     IDBLogUpdate &
     IDBLogCreate;
