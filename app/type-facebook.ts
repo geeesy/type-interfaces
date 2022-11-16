@@ -69,7 +69,22 @@ export interface IFacebookPostCreate {
   shippingAvailableData: GappSetting.ShippingMethod[];
   paymentAvailableData: GappSetting.PaymentMethod[];
   hasNoShipment: boolean;
+  expiredPayment: IExpiredPayment
+  replyMessage: IReplyMessage
 }
+
+export interface IExpiredPayment {
+  setExpiredCheck: boolean;
+  setExpiredTime: number;
+}
+
+export interface IReplyMessage {
+  patternType: string;
+  messageHeaderFirst: string;
+  messageHeaderSecond: string;
+}
+
+
 
 export interface IFacebookPostId {
   postId: string;
