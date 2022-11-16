@@ -1199,7 +1199,7 @@ export namespace GappBiz {
     IDBLogCreate;
 
   //  $ ConnectPage
-  export type CreateConnectPostRow = IFacebookConnectPost & IApiCompanyParams;
+  export type CreateConnectPostRow = IFacebookConnectPosts & IApiCompanyParams;
   export type ConnectPostRow = IFacebookConnectPost &
     IFacebookConnectPostId &
     IApiCompanyParams &
