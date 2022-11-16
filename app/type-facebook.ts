@@ -192,6 +192,7 @@ export interface IOBSTemplateRow {
 
 export interface overlayDetail {
   overlayType: TTypeOverlay;
+  isDependentOnLive:boolean;
   overlayAttributes:
     | IOverlayLogo
     | IOverlayBank
