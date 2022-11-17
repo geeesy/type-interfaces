@@ -58,7 +58,7 @@ export interface IFacebookLiveList
 
 export interface IFacebookPostCreate {
   // facebookPostId: string; // ! Wait Delete When New Api Completed !!!
-  // facebookPostName: string; // ! Wait Delete When New Api Completed !!!
+  postName: string;
   // facebookData: IFacebookData; // ! Wait Delete When New Api Completed !!!
   // facebookConnect: IFacebookConnectPost[];
   statusPost: string;
