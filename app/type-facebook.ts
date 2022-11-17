@@ -243,6 +243,7 @@ export interface IOverlayText {
   overlayDescription: string;
   overlayTextStyle: string;
   overlayTextBackgroundColor: string;
+  overlayIsShowBackgroundColor: string;
 }
 
 export interface IOverlayBank {
