@@ -389,9 +389,17 @@ export interface IFacebookUser {
   middle_name: string;
   name: string;
   name_format: string;
-  picture: string;
+  picture: IFacebookPicForUser;
   short_name: string;
 }
+
+export interface IFacebookPicForUser {
+  height: number,
+  is_silhouette: boolean,
+  url: string,
+  width: number
+}
+
 
 export interface IFacebookConversation {
   id: string;
