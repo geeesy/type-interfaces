@@ -326,25 +326,37 @@ export interface IOverlayProduct {
   overlayColorPrice: string;
 }
 
+// $CF DATA
+export interface ICFData {
+  codeCf: string;
+  amountCf: number;
+  productUnit: string;
+}
+
 // $LiveCommentRespond
 export interface IFacebookLiveCommentRespond {
-  id: string;
   message: string;
+  from: IFacebookUser;
   created_time: string;
+  cfData: ICFData[]
+  id: string;
+}
+
+export interface IGraphAPIFacebookLiveCommentRespond extends IFacebookLiveCommentRespond{
+  like_count: number;
+  user_likes: boolean;
   can_comment: boolean;
   can_remove: boolean;
   can_hide: boolean;
   can_like: boolean;
   can_reply_privately: boolean;
   comment_count: number;
-  from: IFacebookUser;
-  like_count: number;
   message_tags: string;
   object: string;
   parent_id: string;
   private_reply_conversation: IFacebookConversation;
-  user_likes: boolean;
 }
+
 
 export interface IFacebookUser {
   id: string;
