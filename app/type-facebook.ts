@@ -27,6 +27,59 @@ export type TTypeOverlay =
 
 export type TTypeTemplate = 'DESKTOP' | 'MOBILE';
 
+export type TTypeVideoInsights =
+  | 'total_video_views'
+  | 'total_video_views_unique'
+  | 'total_video_views_autoplayed'
+  | 'total_video_views_clicked_to_play'
+  | 'total_video_views_organic'
+  | 'total_video_views_organic_unique'
+  | 'total_video_views_paid'
+  | 'total_video_views_paid_unique'
+  | 'total_video_views_sound_on'
+  | 'total_video_complete_views'
+  | 'total_video_complete_views_unique'
+  | 'total_video_complete_views_auto_played'
+  | 'total_video_complete_views_clicked_to_play'
+  | 'total_video_complete_views_organic'
+  | 'total_video_complete_views_organic_unique'
+  | 'total_video_complete_views_paid'
+  | 'total_video_complete_views_paid_unique'
+  | 'total_video_10s_views'
+  | 'total_video_10s_views_unique'
+  | 'total_video_10s_views_auto_played'
+  | 'total_video_10s_views_clicked_to_play'
+  | 'total_video_10s_views_organic'
+  | 'total_video_10s_views_paid'
+  | 'total_video_10s_views_sound_on'
+  | 'total_video_15s_views'
+  | 'total_video_60s_excludes_shorter_views'
+  | 'total_video_retention_graph'
+  | 'total_video_retention_graph_autoplayed'
+  | 'total_video_retention_graph_clicked_to_play'
+  | 'total_video_avg_time_watched'
+  | 'total_video_view_total_time'
+  | 'total_video_view_total_time_organic'
+  | 'total_video_view_total_time_paid'
+  | 'total_video_impressions'
+  | 'total_video_impressions_unique'
+  | 'total_video_impressions_paid_unique'
+  | 'total_video_impressions_paid'
+  | 'total_video_impressions_organic_unique'
+  | 'total_video_impressions_organic'
+  | 'total_video_impressions_viral_unique'
+  | 'total_video_impressions_viral'
+  | 'total_video_impressions_fan_unique'
+  | 'total_video_impressions_fan'
+  | 'total_video_impressions_fan_paid_unique'
+  | 'total_video_impressions_fan_paid'
+  | 'total_video_stories_by_action_type'
+  | 'total_video_reactions_by_type_total'
+  | 'total_video_view_time_by_age_bucket_and_gender'
+  | 'total_video_view_time_by_region_id'
+  | 'total_video_views_by_distribution_type'
+  | 'total_video_view_time_by_distribution_type';
+
 /**
  * FACEBOOK LIVE
  */
@@ -273,39 +326,61 @@ export interface IOverlayProduct {
   overlayColorPrice: string;
 }
 
+// $CF DATA
+export interface ICFData {
+  codeCf: string;
+  amountCf: number;
+  productUnit: string;
+}
+
 // $LiveCommentRespond
 export interface IFacebookLiveCommentRespond {
-  id: string;
   message: string;
+  from: IFacebookUser;
   created_time: string;
+  cfData: ICFData[]
+  id: string;
+}
+
+export interface IGraphAPIFacebookLiveCommentRespond extends IFacebookLiveCommentRespond{
+  like_count: number;
+  user_likes: boolean;
   can_comment: boolean;
   can_remove: boolean;
   can_hide: boolean;
   can_like: boolean;
   can_reply_privately: boolean;
   comment_count: number;
-  from: IFacebookUser;
-  like_count: number;
-  message_tags: string
+  message_tags: string;
   object: string;
   parent_id: string;
-  private_reply_conversation: IFacebookConversation
-  user_likes: boolean;
+  private_reply_conversation: IFacebookConversation;
 }
+
 
 export interface IFacebookUser {
   id: string;
-  first_name: string
+  first_name: string;
   last_name: string;
   middle_name: string;
-  name: string
-  name_format: string
-  picture: string
-  short_name: string
+  name: string;
+  name_format: string;
+  picture: string;
+  short_name: string;
 }
 
 export interface IFacebookConversation {
   id: string;
   message: string;
   updated_time: string;
+}
+
+export interface IFacebookLiveDetail {
+  name: TTypeVideoInsights;
+  period: string;
+  values: IFacebookLiveDetailValue[];
+}
+
+export interface IFacebookLiveDetailValue {
+  value: string;
 }
