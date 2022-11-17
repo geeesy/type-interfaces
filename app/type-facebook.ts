@@ -208,6 +208,7 @@ export interface IProductFacebookRow extends IOrderProductRow {
   useInventory: string;
   isShowOnOBS: boolean;
   productOrderType: TOrderType;
+  sortIndex: string;
 }
 
 /**
