@@ -272,3 +272,40 @@ export interface IOverlayProduct {
   overlayColorProductName: string;
   overlayColorPrice: string;
 }
+
+// $LiveCommentRespond
+export interface IFacebookLiveCommentRespond {
+  id: string;
+  message: string;
+  created_time: string;
+  can_comment: boolean;
+  can_remove: boolean;
+  can_hide: boolean;
+  can_like: boolean;
+  can_reply_privately: boolean;
+  comment_count: number;
+  from: IFacebookUser;
+  like_count: number;
+  message_tags: string
+  object: string;
+  parent_id: string;
+  private_reply_conversation: IFacebookConversation
+  user_likes: boolean;
+}
+
+export interface IFacebookUser {
+  id: string;
+  first_name: string
+  last_name: string;
+  middle_name: string;
+  name: string
+  name_format: string
+  picture: string
+  short_name: string
+}
+
+export interface IFacebookConversation {
+  id: string;
+  message: string;
+  updated_time: string;
+}
