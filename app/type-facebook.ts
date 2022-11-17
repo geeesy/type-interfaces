@@ -80,11 +80,34 @@ export type TTypeVideoInsights =
   | 'total_video_views_by_distribution_type'
   | 'total_video_view_time_by_distribution_type';
 
+export interface IGraphFacebookPageRequest {
+  facebookPageId: string;
+  facebookPageAccessToken: string;
+}
+
+export interface IGraphFacebookUserRequest {
+  facebookUserId: string;
+  facebookUserAccessToken: string;
+}
+
+export interface IGraphFacebookPageLiveRequest {
+  facebookLiveId: string;
+}
+
+export interface IGraphAPIFacebookDebugTokenRespond {
+  app_id: string;
+  type: string;
+  application: string;
+  data_access_expires_at: number;
+  expires_at: number;
+  is_valid: boolean;
+  issued_at: number;
+}
+
 /**
  * FACEBOOK LIVE
  */
-export interface IFacebookLiveCreate {
-  facebookLiveId: string;
+export interface IFacebookLiveCreate extends IGraphFacebookPageLiveRequest{
   facebookLiveName: string;
   facebookData: IFacebookData;
   statusBroadcast: TStatusBroadcast;
@@ -339,11 +362,12 @@ export interface IFacebookLiveCommentRespond {
   message: string;
   from: IFacebookUser;
   created_time: string;
-  cfData: ICFData[]
+  cfData: ICFData[];
   id: string;
 }
 
-export interface IGraphAPIFacebookLiveCommentRespond extends IFacebookLiveCommentRespond{
+export interface IGraphAPIFacebookLiveCommentRespond
+  extends IFacebookLiveCommentRespond {
   like_count: number;
   user_likes: boolean;
   can_comment: boolean;
@@ -357,7 +381,6 @@ export interface IGraphAPIFacebookLiveCommentRespond extends IFacebookLiveCommen
   parent_id: string;
   private_reply_conversation: IFacebookConversation;
 }
-
 
 export interface IFacebookUser {
   id: string;
