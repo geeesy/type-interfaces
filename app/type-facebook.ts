@@ -79,6 +79,12 @@ export interface IExpiredPayment {
 }
 
 export interface IReplyMessage {
+  messageFirst: IReplyMessageDetail;
+  messageSecond: IReplyMessageDetail;
+  messageThird: IReplyMessageDetail;
+}
+
+export interface IReplyMessageDetail {
   patternType: string;
   messageHeaderFirst: string;
   messageHeaderSecond: string;
@@ -192,7 +198,7 @@ export interface IOBSTemplateRow {
 
 export interface overlayDetail {
   overlayType: TTypeOverlay;
-  isDependentOnLive:boolean;
+  isDependentOnLive: boolean;
   overlayAttributes:
     | IOverlayLogo
     | IOverlayBank
@@ -214,7 +220,7 @@ export interface IOverlayLogo {
   overlayImage: string;
 }
 
-export interface IOverlayTime extends IOverlayAction{
+export interface IOverlayTime extends IOverlayAction {
   overlayIsCountDown: boolean;
   overlayUrl: string;
   overlayTime: ICountDown | ISetTime;
@@ -237,6 +243,7 @@ export interface IOverlayText {
   overlayDescription: string;
   overlayTextStyle: string;
   overlayTextBackgroundColor: string;
+  overlayTextColor: string;
 }
 
 export interface IOverlayBank {
@@ -244,16 +251,16 @@ export interface IOverlayBank {
   overlayPaymentData: IPaymentMethodEntity;
 }
 
-export interface IOverlaySound extends IOverlayAction{
+export interface IOverlaySound extends IOverlayAction {
   overlayName: string;
   overlayUrl: string;
   overlayCodeSound: string;
   overlayNote: string;
 }
 
-export interface IOverlayAction{
-  hasStarted:boolean,
-  hasStopped:boolean
+export interface IOverlayAction {
+  hasStarted: boolean;
+  hasStopped: boolean;
 }
 
 export interface IOverlayProduct {
