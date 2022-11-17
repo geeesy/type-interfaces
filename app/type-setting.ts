@@ -14,23 +14,25 @@ import {
 } from './type-shipping';
 import { ISaleChannelCustomUTM, TOrderChannelUTM } from './type-order';
 import { SaleChannelSubType, SaleChannelType } from './enum-const';
+import {
+  IGraphFacebookPageRequest,
+  IGraphFacebookUserRequest
+} from './type-facebook';
 
 // ANCHOR: Sale Channel Attribute (Type Default) test
 export interface ISaleChannelSubTypeDefault {
   caption: string;
-  facebook: IFacebookData
+  facebook: IFacebookData;
 }
 
-export interface IFacebookData {
-  facebookUserId: string;
+export interface IFacebookData
+  extends IGraphFacebookPageRequest,
+    IGraphFacebookUserRequest {
   facebookUserName: string;
-  facebookUserAccessToken: string;
-  facebookPageName: string
-  facebookPageLogo: string
-  facebookPageId: string
-  facebookPageAccessToken: string
+  facebookPageName: string;
+  facebookPageLogo: string;
   tokenType: string;
-  expiresIn: number   
+  expiresIn: number;
   statusActive: boolean;
 }
 
@@ -55,8 +57,8 @@ export interface ISaleChannelEntityImmu {
 export interface ISaleChannelEntity {
   saleChannelIconUrl: string;
   saleChannelAliasName: string;
-  saleChannelSourceUTM: TOrderChannelUTM
-  saleChannelCustomUTM: ISaleChannelCustomUTM
+  saleChannelSourceUTM: TOrderChannelUTM;
+  saleChannelCustomUTM: ISaleChannelCustomUTM;
   note: string;
   saleChannelAttributes: ISaleChannelSubTypeDefault;
 }
@@ -70,15 +72,15 @@ export interface IUpdateShippingAndPaymentMethodOnMarket {
 
 export interface IPaymentData
   extends IPaymentMethodEntity,
-  IPaymentMethodEntityImmu,
-  IDBPaymentMethod,
-  IDBPaymentMethodImmu { }
+    IPaymentMethodEntityImmu,
+    IDBPaymentMethod,
+    IDBPaymentMethodImmu {}
 
 export interface IShipmentData
   extends IShippingMethodEntity,
-  IDBShippingMethod,
-  IDBShippingMethodImmu,
-  IShippingMethodEntityImmu { }
+    IDBShippingMethod,
+    IDBShippingMethodImmu,
+    IShippingMethodEntityImmu {}
 export interface IListShipmentAndPaymentByCompany {
   shipmentData: IShipmentData[];
   paymentData: IPaymentData[];
@@ -87,86 +89,89 @@ export interface IListShipmentAndPaymentByCompany {
 // ANCHOR: USER NOTIFICATION SETTING (BY USER)
 
 export interface ISettingNotifyOrderAttribute {
-  onCreate: boolean
-  onConfirm: boolean
-  onSubmitPaymentWithSlip: boolean
-  onConfirmPaidWithSlip: boolean
-  onShipped: boolean
-  onCompleted: boolean
-  onCanceled: boolean
+  onCreate: boolean;
+  onConfirm: boolean;
+  onSubmitPaymentWithSlip: boolean;
+  onConfirmPaidWithSlip: boolean;
+  onShipped: boolean;
+  onCompleted: boolean;
+  onCanceled: boolean;
 }
 
-export interface ISettingNotifySalepageAttribute extends ISettingNotifyOrderAttribute {
-  onLeadPageReply: boolean
+export interface ISettingNotifySalepageAttribute
+  extends ISettingNotifyOrderAttribute {
+  onLeadPageReply: boolean;
 }
 
 export interface ISettingNotifyStockAttribute {
-  onLowStock: boolean
-  onOutOfStock: boolean
+  onLowStock: boolean;
+  onOutOfStock: boolean;
 }
 
 export interface ISettingNotifyInventoryAttribute {
-  onEmpty: boolean
+  onEmpty: boolean;
 }
 
 export interface ISettingNotifyCommerce {
-  orderLinkNotifyMessage: ISettingNotifyOrderAttribute
-  salepageNotifyMessage: ISettingNotifySalepageAttribute
-  orderLinkNotifyEmail: ISettingNotifyOrderAttribute
-  salepageNotifyEmail: ISettingNotifySalepageAttribute
+  orderLinkNotifyMessage: ISettingNotifyOrderAttribute;
+  salepageNotifyMessage: ISettingNotifySalepageAttribute;
+  orderLinkNotifyEmail: ISettingNotifyOrderAttribute;
+  salepageNotifyEmail: ISettingNotifySalepageAttribute;
 }
 
 export interface ISettingNotifyInventory {
-  productStockNotifyMessage: ISettingNotifyStockAttribute
-  inventoryNotifyMessage: ISettingNotifyInventoryAttribute
-  productStockNotifyEmail: ISettingNotifyStockAttribute
-  inventoryNotifyEmail: ISettingNotifyInventoryAttribute
+  productStockNotifyMessage: ISettingNotifyStockAttribute;
+  inventoryNotifyMessage: ISettingNotifyInventoryAttribute;
+  productStockNotifyEmail: ISettingNotifyStockAttribute;
+  inventoryNotifyEmail: ISettingNotifyInventoryAttribute;
 }
 
 export interface IUserNotification {
-  commerce: ISettingNotifyCommerce
-  inventory: ISettingNotifyInventory
+  commerce: ISettingNotifyCommerce;
+  inventory: ISettingNotifyInventory;
 }
 
 export interface IUserNotificationToggle {
-  hasNotifyByMessage: boolean
-  hasNotifyByEmail: boolean
+  hasNotifyByMessage: boolean;
+  hasNotifyByEmail: boolean;
 }
 
 // ANCHOR: NOTIFICATION SETTING (BY COMPANY)
 
 export interface ISettingLineNotifyEntityImmu {
-  id: string
-  compId: string
-  businessId: string
+  id: string;
+  compId: string;
+  businessId: string;
 }
 
 export interface ISettingLineNotifyEntity {
-  active: boolean
-  token: string
-  title: string
-  caption: string
+  active: boolean;
+  token: string;
+  title: string;
+  caption: string;
 }
 
 export interface ISettingNotifyLine {
-  orderLink: ISettingNotifyOrderAttribute
-  salepage: ISettingNotifySalepageAttribute
-  productStock: ISettingNotifyStockAttribute
-  inventory: ISettingNotifyInventoryAttribute
+  orderLink: ISettingNotifyOrderAttribute;
+  salepage: ISettingNotifySalepageAttribute;
+  productStock: ISettingNotifyStockAttribute;
+  inventory: ISettingNotifyInventoryAttribute;
 }
 
 export interface ISettingNotifyBuyer {
-  order: ISettingNotifyOrderAttribute
+  order: ISettingNotifyOrderAttribute;
 }
 
 export interface ISettingLineNotify
-  extends ISettingLineNotifyEntityImmu, ISettingLineNotifyEntity, ISettingNotifyLine { }
+  extends ISettingLineNotifyEntityImmu,
+    ISettingLineNotifyEntity,
+    ISettingNotifyLine {}
 
 export interface ICompanyNotification {
-  lineNotify: ISettingLineNotify[]
-  emailToBuyer: ISettingNotifyBuyer
+  lineNotify: ISettingLineNotify[];
+  emailToBuyer: ISettingNotifyBuyer;
 }
 
 export interface ICompanyNotificationToggle {
-  hasNotifyByLineNotify: boolean
+  hasNotifyByLineNotify: boolean;
 }
