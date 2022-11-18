@@ -1,4 +1,3 @@
-import { IFacebookData } from './type-setting';
 import { IOrderProductRow, TOrderType } from './type-order';
 import { GappSetting } from './index';
 import { IPaymentMethodEntity } from './type-payment';
@@ -79,6 +78,17 @@ export type TTypeVideoInsights =
   | 'total_video_view_time_by_region_id'
   | 'total_video_views_by_distribution_type'
   | 'total_video_view_time_by_distribution_type';
+
+export interface IFacebookData
+  extends IGraphFacebookPageRequest,
+    IGraphFacebookUserRequest {
+  facebookUserName: string;
+  facebookPageName: string;
+  facebookPageLogo: string;
+  tokenType: string;
+  expiresIn: number;
+  statusActive: boolean;
+}
 
 export interface IGraphFacebookPageRequest {
   facebookPageId: string;
@@ -358,6 +368,11 @@ export interface ICFData {
 }
 
 // $LiveCommentRespond
+export interface IFacebookLiveOrderStatus {
+  hasOrderCreated: boolean
+  hasOrderConfirmed: boolean
+}
+
 export interface IFacebookLiveCommentRespond {
   message: string;
   from: IFacebookUser;
