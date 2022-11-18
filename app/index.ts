@@ -1210,10 +1210,10 @@ export namespace GappBiz {
     IDBLogCreate;
 
   // $GraphFacebook
-  export type ListCommentBox = IGraphFacebookPageRequest &
+  export type ListCommentBox = IFacebookLiveId & IGraphFacebookPageRequest &
     IGraphFacebookPageLiveRequest &
     IApiCompanyParams;
-  export type CommentBox = IFacebookLiveCommentRespond & IFacebookLiveOrderStatus &
+  export type CommentBox = IFacebookLiveId & IFacebookLiveCommentRespond & IFacebookLiveOrderStatus &
     IApiCompanyParams &
     IDBLogUpdate &
     IDBLogCreate;
