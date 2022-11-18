@@ -266,7 +266,6 @@ import {
   ICompanyNotificationToggle,
   IDBSaleChannel,
   IDBSaleChannelImmu,
-  IFacebookData,
   IListShipmentAndPaymentByCompany,
   ISaleChannelEntity,
   ISaleChannelEntityImmu,
@@ -387,13 +386,11 @@ import {
   ICountFacebookPostRow,
   ICreateFacebookProductRow,
   IFacebookConnect,
-  IFacebookConnectPost,
-  IFacebookConnectPostId,
   IFacebookConnectPosts,
   IFacebookLiveCommentRespond,
   IFacebookLiveCreate,
   IFacebookLiveId,
-  IFacebookLiveList,
+  IFacebookLiveList, IFacebookLiveOrderStatus,
   IFacebookPostCreate,
   IFacebookPostData,
   IFacebookPostId,
@@ -408,7 +405,8 @@ import {
   IProductFacebookRow,
   IProducts,
   IUpdateOverlays,
-  overlayDetail
+  overlayDetail,
+  IFacebookData,
 } from './type-facebook';
 
 /* #region FIXME: Marketplace */
@@ -1212,10 +1210,10 @@ export namespace GappBiz {
     IDBLogCreate;
 
   // $GraphFacebook
-  export type ListCommentBox = IGraphFacebookPageRequest &
+  export type ListCommentBox = IFacebookLiveId & IGraphFacebookPageRequest &
     IGraphFacebookPageLiveRequest &
     IApiCompanyParams;
-  export type CommentBox = IFacebookLiveCommentRespond &
+  export type CommentBox = IFacebookLiveId & IFacebookLiveCommentRespond & IFacebookLiveOrderStatus &
     IApiCompanyParams &
     IDBLogUpdate &
     IDBLogCreate;

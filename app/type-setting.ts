@@ -15,8 +15,7 @@ import {
 import { ISaleChannelCustomUTM, TOrderChannelUTM } from './type-order';
 import { SaleChannelSubType, SaleChannelType } from './enum-const';
 import {
-  IGraphFacebookPageRequest,
-  IGraphFacebookUserRequest
+  IFacebookData,
 } from './type-facebook';
 
 // ANCHOR: Sale Channel Attribute (Type Default) test
@@ -25,16 +24,7 @@ export interface ISaleChannelSubTypeDefault {
   facebook: IFacebookData;
 }
 
-export interface IFacebookData
-  extends IGraphFacebookPageRequest,
-    IGraphFacebookUserRequest {
-  facebookUserName: string;
-  facebookPageName: string;
-  facebookPageLogo: string;
-  tokenType: string;
-  expiresIn: number;
-  statusActive: boolean;
-}
+
 
 // REVIEW: SALE CHANNEL
 export interface IDBSaleChannelImmu {
