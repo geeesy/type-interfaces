@@ -336,6 +336,7 @@ export interface IOverlayText {
 
 export interface IOverlayBank {
   overlayUrl: string;
+  overlayPaymentMethodId: string;
   overlayPaymentData: IPaymentMethodEntity;
 }
 
