@@ -462,7 +462,8 @@ export interface ISettingDoc extends IDBCompanyActivityLog {
 }
 
 
-export interface ICustomer extends IGraphFacebookUserRequest{
+export interface ICustomer {
+  facebookUserId: string;
   customerId: string;
   iamUserId?: string;
   customerContactInfo: IPersonContactInfo;
