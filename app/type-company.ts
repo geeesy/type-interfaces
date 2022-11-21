@@ -463,6 +463,7 @@ export interface ISettingDoc extends IDBCompanyActivityLog {
 
 export interface ICustomer {
   customerId: string;
+  customerOnlineId: string;
   iamUserId?: string;
   customerContactInfo: IPersonContactInfo;
   customerCompanyContactInfo: ICompanyContactInfo | null;
