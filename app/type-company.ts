@@ -6,6 +6,7 @@ import {
 } from './type-business';
 import { IImage, IPersonContactInfo } from './type-apps';
 import { IPaymentMethod, IShippingZone } from './type-console';
+import {IGraphFacebookUserRequest} from "./type-facebook";
 
 /* #region COMPANY */
 
@@ -461,9 +462,8 @@ export interface ISettingDoc extends IDBCompanyActivityLog {
 }
 
 
-export interface ICustomer {
+export interface ICustomer extends IGraphFacebookUserRequest{
   customerId: string;
-  customerOnlineId: string;
   iamUserId?: string;
   customerContactInfo: IPersonContactInfo;
   customerCompanyContactInfo: ICompanyContactInfo | null;
