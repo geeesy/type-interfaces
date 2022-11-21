@@ -165,6 +165,7 @@ export interface IListOrder
 
 // ANCHOR: ORDER | Entity (1/13)
 export interface IOrderCustomerDataImmu {
+  facebookUserId: string;
   customerId: string;
   iamUserId?: string;
 }
