@@ -237,7 +237,7 @@ export interface IFacebookConnect {
 // }
 
 export interface IProductFacebookRow extends IOrderProductRow {
-  codeCf: string;
+  cfCode: string;
   totalReservedStock: number;
   productType: string;
   useInventory: string;
@@ -365,8 +365,8 @@ export interface IOverlayProduct {
 
 // $CF DATA
 export interface ICFData {
-  codeCf: string;
-  amountCf: number;
+  cfCode: string;
+  cfAmount: number;
   productUnit: string;
 }
 
