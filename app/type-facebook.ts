@@ -381,6 +381,7 @@ export interface IFacebookLiveCommentRespond {
   userData: IFacebookUser;
   cfData: ICFData[];
   commentId: string;
+  commentedTime: string;
   statusComment: TTypeStatusComment;
 }
 
