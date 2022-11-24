@@ -237,7 +237,7 @@ export interface IFacebookConnect {
 // }
 
 export interface IProductFacebookRow extends IOrderProductRow {
-  codeCf: string;
+  cfCode: string;
   totalReservedStock: number;
   productType: string;
   useInventory: string;
@@ -365,8 +365,8 @@ export interface IOverlayProduct {
 
 // $CF DATA
 export interface ICFData {
-  codeCf: string;
-  amountCf: number;
+  cfCode: string;
+  cfAmount: number;
   productUnit: string;
 }
 
@@ -387,18 +387,18 @@ export interface IFacebookLiveCommentRespond {
 
 export interface IGraphAPIFacebookLiveCommentRespond
   extends IFacebookLiveCommentRespond {
-  like_count: number;
-  user_likes: boolean;
-  can_comment: boolean;
-  can_remove: boolean;
-  can_hide: boolean;
-  can_like: boolean;
-  can_reply_privately: boolean;
-  comment_count: number;
-  message_tags: string;
+  likeCount: number;
+  userLikes: boolean;
+  canComment: boolean;
+  canRemove: boolean;
+  canHide: boolean;
+  canLike: boolean;
+  canReplyPrivately: boolean;
+  commentCount: number;
+  messageTags: string;
   object: string;
-  parent_id: string;
-  private_reply_conversation: IFacebookConversation;
+  parentId: string;
+  privateReplyConversation: IFacebookConversation;
 }
 
 export interface IFacebookUser {
@@ -414,7 +414,7 @@ export interface IFacebookUser {
 
 export interface IFacebookPicForUser {
   height: number,
-  is_silhouette: boolean,
+  isSilhouette: boolean,
   url: string,
   width: number
 }
@@ -423,7 +423,7 @@ export interface IFacebookPicForUser {
 export interface IFacebookConversation {
   id: string;
   message: string;
-  updated_time: string;
+  updatedTime: string;
 }
 
 export interface IFacebookLiveDetail {
