@@ -26,6 +26,8 @@ export type TTypeOverlay =
 
 export type TTypeTemplate = 'DESKTOP' | 'MOBILE';
 
+export type TTypeStatusComment = 'NONE' | 'CONFIRM' | 'AWAITING_CONFIRM' | 'CANCELED';
+
 export type TTypeVideoInsights =
   | 'total_video_views'
   | 'total_video_views_unique'
@@ -380,6 +382,7 @@ export interface IFacebookLiveCommentRespond {
   created_time: string;
   cfData: ICFData[];
   id: string;
+  statusComment: TTypeStatusComment;
 }
 
 export interface IGraphAPIFacebookLiveCommentRespond
