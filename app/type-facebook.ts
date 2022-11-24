@@ -378,10 +378,9 @@ export interface IFacebookLiveOrderStatus {
 
 export interface IFacebookLiveCommentRespond {
   message: string;
-  from: IFacebookUser;
-  created_time: string;
+  userData: IFacebookUser;
   cfData: ICFData[];
-  id: string;
+  commentId: string;
   statusComment: TTypeStatusComment;
 }
 
@@ -402,14 +401,14 @@ export interface IGraphAPIFacebookLiveCommentRespond
 }
 
 export interface IFacebookUser {
-  id: string;
-  first_name: string;
-  last_name: string;
-  middle_name: string;
+  userId: string;
+  firstName: string;
+  lastName: string;
+  middleName: string;
   name: string;
-  name_format: string;
+  nameFormat: string;
   picture: IFacebookPicForUser;
-  short_name: string;
+  shortName: string;
 }
 
 export interface IFacebookPicForUser {
