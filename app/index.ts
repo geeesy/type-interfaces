@@ -406,7 +406,7 @@ import {
   IProducts,
   IUpdateOverlays,
   overlayDetail,
-  IFacebookData,
+  IFacebookData, IFacebookLiveOrderList,
 } from './type-facebook';
 
 /* #region FIXME: Marketplace */
@@ -1217,6 +1217,7 @@ export namespace GappBiz {
     IApiCompanyParams &
     IDBLogUpdate &
     IDBLogCreate;
+  export type LiveOrderList = IFacebookLiveOrderList;
 }
 
 // REVIEW: G-MARKET

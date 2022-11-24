@@ -378,10 +378,10 @@ export interface IFacebookLiveOrderStatus {
 
 export interface IFacebookLiveCommentRespond {
   message: string;
-  from: IFacebookUser;
-  created_time: string;
+  userData: IFacebookUser;
   cfData: ICFData[];
-  id: string;
+  commentId: string;
+  commentedTime: string;
   statusComment: TTypeStatusComment;
 }
 
@@ -402,14 +402,14 @@ export interface IGraphAPIFacebookLiveCommentRespond
 }
 
 export interface IFacebookUser {
-  id: string;
-  first_name: string;
-  last_name: string;
-  middle_name: string;
+  userId: string;
+  firstName: string;
+  lastName: string;
+  middleName: string;
   name: string;
-  name_format: string;
+  nameFormat: string;
   picture: IFacebookPicForUser;
-  short_name: string;
+  shortName: string;
 }
 
 export interface IFacebookPicForUser {
@@ -434,4 +434,22 @@ export interface IFacebookLiveDetail {
 
 export interface IFacebookLiveDetailValue {
   value: string;
+}
+
+
+export interface IFacebookLiveOrderList {
+  docNo: string
+  orderId: string;
+  statusOrderOnSeller: string;
+  productImageUrl: string;
+  productTitle: string;
+  productSku: string;
+  orderType: string;
+  customerFullName: string;
+  channelName: string;
+  paymentChannel: string;
+  shipmentChannel: string;
+  totalOrderAmount: number;
+  createdAt: string;
+  updatedAt: string;
 }
