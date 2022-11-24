@@ -435,3 +435,21 @@ export interface IFacebookLiveDetail {
 export interface IFacebookLiveDetailValue {
   value: string;
 }
+
+
+export interface IFacebookLiveOrderList {
+  docNo: string
+  orderId: string;
+  statusOrderOnSeller: string;
+  productImageUrl: string;
+  productTitle: string;
+  productSku: string;
+  orderType: string;
+  customerFullName: string;
+  channelName: string;
+  paymentChannel: string;
+  shipmentChannel: string;
+  totalOrderAmount: number;
+  createdAt: string;
+  updatedAt: string;
+}
