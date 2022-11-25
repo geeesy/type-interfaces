@@ -1232,7 +1232,6 @@ export namespace GappBiz {
     IDBLogUpdate &
     IDBLogCreate;
   export type ListCommentPostBox = IFacebookPostId &
-    IGraphFacebookPageRequest &
     IFacebookConnectPosts &
     IApiCompanyParams;
 }
