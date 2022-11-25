@@ -412,7 +412,7 @@ export interface IFacebookUser {
   middleName: string;
   name: string;
   nameFormat: string;
-  picture: IFacebookPicForUser;
+  picture: string;
   shortName: string;
 }
 
