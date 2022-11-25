@@ -1,83 +1,113 @@
 schema {
   query: Query
   mutation: Mutation
+  subscription: Subscription
 }
+
 # schema
 type Query {
-  liveComment(liveId: String!): LiveComment
+  getLiveComment(liveId: String!, commentId: String!): LiveComment
+  listLiveComment(liveId: String!): [LiveComment]
 }
 
 type Mutation {
-  addLiveComment(liveComment: LiveCommentInput): LiveComment 
+  addLiveComment(input: CreateLiveCommentInput!): LiveComment
+  updateLiveComment(input: UpdateLiveCommentInput!): LiveComment
+}
+
+type Subscription {
+  liveComment(liveId: String): LiveComment
+  @aws_subscription(mutation: ["addLiveComment", "updateLiveComment"])
 }
 
 # input types
-input LiveCommentInput {
-    commentId:,
-    commentedTime: "",
-    userData: this.facebookUser,
-    businessId: "",
-    cfData: this.cfData,
-    compId: "",
-    companyCode: "",
-    createdAt: "",
-    createdBy: "",
-    hasOrderConfirmed: false,
-    hasOrderCreated: false,
-    identityFullName: "",
-    identityId: "",
-    liveId: "",
-    message: "",
-    statusComment: "NONE",
-    updatedAt: "",
-    updatedBy: ""
+input CreateFacebookUser {
+  firstName: String
+  lastName: String
+  middleName: String
+  name: String
+  nameFormat: String
+  pictureUrl: String
+  shortName: String
+  userId: String
+}
+
+input CreateCfData {
+  cfAmount: Int
+  cfCode: String
+  productUnit: String
+}
+
+input CreateLiveCommentInput {
+  liveId: String!
+  commentId: String!
+  commentedTime: String
+  userData: CreateFacebookUser
+  businessId: String
+  cfData: [CreateCfData]
+  compId: String
+  companyCode: String
+  hasOrderConfirmed: Boolean
+  hasOrderCreated: Boolean
+  message: String
+  statusComment: TTypeStatusComment
+}
+
+input UpdateLiveCommentInput {
+  liveId: String!
+  commentId: String!
+  commentedTime: String
+  userData: CreateFacebookUser
+  businessId: String
+  cfData: [CreateCfData]
+  compId: String
+  companyCode: String
+  hasOrderConfirmed: Boolean
+  hasOrderCreated: Boolean
+  message: String
+  statusComment: TTypeStatusComment
+}
+
+# enum
+enum TTypeStatusComment {
+  NONE
+  AWAITING_CONFIRM
+  CONFIRM
+  CANCELED
 }
 
 # type
-type  FacebookPicForUser {
-    height: Int
-    isSilhouette: Boolean
-    url: String
-    width: Int
-  }
-
-type  FacebookUser {
-    firstName: "",
-    lastName: "",
-    middleName: "",
-    name: "",
-    nameFormat: "",
-    picture: FacebookPicForUser,
-    shortName: "",
-    userId: ""
-  }
-
-type CfData: ICFData[] = [{
-    cfAmount: 0,
-    cfCode: "",
-    productUnit: ""
-  }]
-
-type LiveComment {
-    id: ID!
-    commentId:,
-    commentedTime: "",
-    userData: this.facebookUser,
-    businessId: "",
-    cfData: this.cfData,
-    compId: "",
-    companyCode: "",
-    createdAt: "",
-    createdBy: "",
-    hasOrderConfirmed: false,
-    hasOrderCreated: false,
-    identityFullName: "",
-    identityId: "",
-    liveId: "",
-    message: "",
-    statusComment: "NONE",
-    updatedAt: "",
-    updatedBy: ""
+type CfData {
+  cfAmount: Int
+  cfCode: String
+  productUnit: String
 }
 
+type FacebookUser {
+  firstName: String
+  lastName: String
+  middleName: String
+  name: String
+  nameFormat: String
+  picture: String
+  shortName: String
+  userId: String
+}
 
+type LiveComment {
+  #liveId: String! @index(name: "byLiveId", sortKeyFields: ["commentId"], queryField: "commentByLiveId")
+  liveId: String! @primaryKey(sortKeyFields: ["commentId"]) # ! -> LIVE#{liveId}
+  commentId: String! # ! -> COMMENT#{commentId}
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+  commentedTime: String
+  userData: FacebookUser
+  businessId: String
+  cfData: [CfData]
+  compId: String
+  companyCode: String
+  hasOrderConfirmed: Boolean
+  hasOrderCreated: Boolean
+  message: String
+  statusComment: TTypeStatusComment
+}
