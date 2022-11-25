@@ -414,7 +414,7 @@ export interface IFacebookUser {
   middleName: string;
   name: string;
   nameFormat: string;
-  picture: string;
+  pictureUrl: string;
   shortName: string;
 }
 
