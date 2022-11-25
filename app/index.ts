@@ -390,7 +390,7 @@ import {
   IFacebookLiveCommentRespond,
   IFacebookLiveCreate,
   IFacebookLiveId,
-  IFacebookLiveList, IFacebookLiveOrderStatus,
+  IFacebookLiveList,
   IFacebookPostCreate,
   IFacebookPostData,
   IFacebookPostId,
@@ -406,7 +406,10 @@ import {
   IProducts,
   IUpdateOverlays,
   overlayDetail,
-  IFacebookData, IFacebookLiveOrderList,
+  IFacebookData,
+  IFacebookLiveOrderList,
+  IFacebookCommentOrderStatus,
+  IGraphFacebookPagePostRequest
 } from './type-facebook';
 
 /* #region FIXME: Marketplace */
@@ -1210,14 +1213,27 @@ export namespace GappBiz {
     IDBLogCreate;
 
   // $GraphFacebook
-  export type ListCommentBox = IFacebookLiveId & IGraphFacebookPageRequest &
+  export type ListCommentLiveBox = IFacebookLiveId &
+    IGraphFacebookPageRequest &
     IGraphFacebookPageLiveRequest &
     IApiCompanyParams;
-  export type CommentBox = IFacebookLiveId & IFacebookLiveCommentRespond & IFacebookLiveOrderStatus &
+  export type CommentLiveBox = IFacebookLiveId &
+    IFacebookLiveCommentRespond &
+    IFacebookCommentOrderStatus &
     IApiCompanyParams &
     IDBLogUpdate &
     IDBLogCreate;
   export type LiveOrderList = IFacebookLiveOrderList;
+  export type CommentPostBox = IFacebookPostId &
+    IFacebookLiveCommentRespond &
+    IFacebookCommentOrderStatus &
+    IGraphFacebookPagePostRequest &
+    IApiCompanyParams &
+    IDBLogUpdate &
+    IDBLogCreate;
+  export type ListCommentPostBox = IFacebookPostId &
+    IFacebookConnectPosts &
+    IApiCompanyParams;
 }
 
 // REVIEW: G-MARKET
