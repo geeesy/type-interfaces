@@ -1,0 +1,83 @@
+schema {
+  query: Query
+  mutation: Mutation
+}
+# schema
+type Query {
+  liveComment(liveId: String!): LiveComment
+}
+
+type Mutation {
+  addLiveComment(liveComment: LiveCommentInput): LiveComment 
+}
+
+# input types
+input LiveCommentInput {
+    commentId:,
+    commentedTime: "",
+    userData: this.facebookUser,
+    businessId: "",
+    cfData: this.cfData,
+    compId: "",
+    companyCode: "",
+    createdAt: "",
+    createdBy: "",
+    hasOrderConfirmed: false,
+    hasOrderCreated: false,
+    identityFullName: "",
+    identityId: "",
+    liveId: "",
+    message: "",
+    statusComment: "NONE",
+    updatedAt: "",
+    updatedBy: ""
+}
+
+# type
+type  FacebookPicForUser {
+    height: Int
+    isSilhouette: Boolean
+    url: String
+    width: Int
+  }
+
+type  FacebookUser {
+    firstName: "",
+    lastName: "",
+    middleName: "",
+    name: "",
+    nameFormat: "",
+    picture: FacebookPicForUser,
+    shortName: "",
+    userId: ""
+  }
+
+type CfData: ICFData[] = [{
+    cfAmount: 0,
+    cfCode: "",
+    productUnit: ""
+  }]
+
+type LiveComment {
+    id: ID!
+    commentId:,
+    commentedTime: "",
+    userData: this.facebookUser,
+    businessId: "",
+    cfData: this.cfData,
+    compId: "",
+    companyCode: "",
+    createdAt: "",
+    createdBy: "",
+    hasOrderConfirmed: false,
+    hasOrderCreated: false,
+    identityFullName: "",
+    identityId: "",
+    liveId: "",
+    message: "",
+    statusComment: "NONE",
+    updatedAt: "",
+    updatedBy: ""
+}
+
+
