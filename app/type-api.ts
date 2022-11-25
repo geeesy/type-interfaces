@@ -32,6 +32,7 @@ export interface IApiCompanyParams {
 export interface IApiCompanyFacebookParams {
   businessId: string;
   compId: string;
+  companyCode: string;
 }
 
 export interface IApiSupplierParams extends IApiCompanyParams {
