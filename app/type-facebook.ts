@@ -97,6 +97,10 @@ export interface IGraphFacebookPageRequest {
   facebookPageAccessToken: string;
 }
 
+export interface IGraphFacebookPagePostRequest {
+  facebookPostId: string;
+}
+
 export interface IGraphFacebookUserRequest {
   facebookUserId: string;
   facebookUserAccessToken: string;
@@ -371,7 +375,7 @@ export interface ICFData {
 }
 
 // $LiveCommentRespond
-export interface IFacebookLiveOrderStatus {
+export interface IFacebookCommentOrderStatus {
   hasOrderCreated: boolean
   hasOrderConfirmed: boolean
 }
