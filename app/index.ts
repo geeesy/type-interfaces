@@ -109,6 +109,7 @@ import {
   IPaymentMethod
 } from './type-console';
 import {
+  IApiCompanyFacebookParams,
   IApiCompanyParams,
   IApiSupplierParams,
   IDBLogCreate,
@@ -1220,17 +1221,13 @@ export namespace GappBiz {
   export type CommentLiveBox = IFacebookLiveId &
     IFacebookLiveCommentRespond &
     IFacebookCommentOrderStatus &
-    IApiCompanyParams &
-    IDBLogUpdate &
-    IDBLogCreate;
+    IApiCompanyFacebookParams;
   export type LiveOrderList = IFacebookLiveOrderList;
   export type CommentPostBox = IFacebookPostId &
     IFacebookLiveCommentRespond &
     IFacebookCommentOrderStatus &
     IGraphFacebookPagePostRequest &
-    IApiCompanyParams &
-    IDBLogUpdate &
-    IDBLogCreate;
+    IApiCompanyFacebookParams;
   export type ListCommentPostBox = IFacebookPostId &
     IFacebookConnectPosts &
     IApiCompanyParams;
