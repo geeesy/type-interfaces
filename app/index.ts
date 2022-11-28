@@ -1007,6 +1007,56 @@ export namespace GappBiz {
   export type OrderGappMed = GappBiz.OrderLink;
   export type ListOrderLink = IListOrder & IDBLogTime;
 
+  // STUB: ORDER by LIVE Facebook
+  export type CreateOrderLinkByLiveFacebook = IFacebookLiveId & IOrderEntity &
+    IOrderCustomerData &
+    IOrderCustomerDataImmu &
+    IOrderData &
+    ISellerCreateOrder &
+    IApiCompanyParams;
+  export type OrderLinkByLiveFacebook = IFacebookLiveId & IDBOrderEntity &
+    IDBOrderEntityImmu &
+    IOrderEntity &
+    IDBOrderSellerDataImmu &
+    IOrderCustomerData &
+    IOrderCustomerDataImmu &
+    IDBOrderStatus &
+    IOrderData &
+    IDBOrderLinkImmu &
+    IOrderLinkDataOnConfirm &
+    IOrderDataOnComplete &
+    IDBOrderDataImmu &
+    IDBOrderActivityLog &
+    IOrderLinkImmuDataOnConfirm &
+    IDBOrderDataOnCancelImmu &
+    IDBLogUpdate &
+    IDBLogCreate;
+
+  // STUB: ORDER by POST Facebook
+  export type CreateOrderLinkByPostFacebook = IFacebookPostId & IOrderEntity &
+    IOrderCustomerData &
+    IOrderCustomerDataImmu &
+    IOrderData &
+    ISellerCreateOrder &
+    IApiCompanyParams;
+  export type OrderLinkByPostFacebook = IFacebookPostId & IDBOrderEntity &
+    IDBOrderEntityImmu &
+    IOrderEntity &
+    IDBOrderSellerDataImmu &
+    IOrderCustomerData &
+    IOrderCustomerDataImmu &
+    IDBOrderStatus &
+    IOrderData &
+    IDBOrderLinkImmu &
+    IOrderLinkDataOnConfirm &
+    IOrderDataOnComplete &
+    IDBOrderDataImmu &
+    IDBOrderActivityLog &
+    IOrderLinkImmuDataOnConfirm &
+    IDBOrderDataOnCancelImmu &
+    IDBLogUpdate &
+    IDBLogCreate;
+
   // STUB: send slip
   export type CreatePaymentRowInOrder = IOrderPaymentRowData &
     IApiCompanyParams &
