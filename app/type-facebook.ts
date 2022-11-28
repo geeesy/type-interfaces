@@ -272,6 +272,7 @@ export interface IUpdateOverlays {
 }
 
 export interface overlayUpdateDetail extends IOBSId {
+  sortIndex: number;
   overlayType: TTypeOverlay;
   overlayAttributes:
     | IOverlayLogo
