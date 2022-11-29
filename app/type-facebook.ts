@@ -293,6 +293,7 @@ export interface IOBSTemplateRow {
 }
 
 export interface overlayDetail {
+  sortIndex: number;
   overlayType: TTypeOverlay;
   isDependentOnLive: boolean;
   overlayAttributes:
