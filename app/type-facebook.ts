@@ -1,6 +1,9 @@
 import { IOrderProductRow, TOrderType } from './type-order';
 import { GappSetting } from './index';
 import { IPaymentMethodEntity } from './type-payment';
+import {StatusOrderSeller} from "./type-order";
+import {ISaleChannelEntity} from "./type-setting";
+import {IShippingMethodEntity} from "./type-shipping";
 
 export type TStatusBroadcast =
   | 'UNPUBLISHED'
@@ -448,15 +451,15 @@ export interface IFacebookLiveDetailValue {
 export interface IFacebookLiveOrderList {
   docNo: string
   orderId: string;
-  statusOrderOnSeller: string;
+  statusOrderOnSeller: StatusOrderSeller;
   productImageUrl: string;
   productTitle: string;
   productSku: string;
-  orderType: string;
+  orderType:  TOrderType;
   customerFullName: string;
-  channelName: string;
-  paymentChannel: string;
-  shipmentChannel: string;
+  channelAttribute: ISaleChannelEntity;
+  paymentAttribute: IPaymentMethodEntity;
+  shipmentAttribute: IShippingMethodEntity;
   totalOrderAmount: number;
   createdAt: string;
   updatedAt: string;
