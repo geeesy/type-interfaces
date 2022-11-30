@@ -460,4 +460,5 @@ export interface IFacebookLiveOrderList {
   totalOrderAmount: number;
   createdAt: string;
   updatedAt: string;
+  compId: string;
 }
