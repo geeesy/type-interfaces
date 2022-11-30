@@ -483,20 +483,16 @@ export interface IGlobalCFSetting {
   cfChatAttribute: IChatSettingAttr;
 }
 
-export interface ILiveSettingAttr {
-  isReadKeyword: boolean;
-  isProtectDuplicate: boolean;
-  isLimitedAmount: boolean;
+export interface ILiveSettingAttr extends IPostSettingAttr,IChatSettingAttr{
   isExpired: boolean;
-  textHeader: string;
-  textTotalProduct: string;
-  textDescription: string;
+  expiredDate: string;
 }
 
 export interface IPostSettingAttr {
   isReadKeyword: boolean;
   isProtectDuplicate: boolean;
   isLimitedAmount: boolean;
+  limitedAmount: number;
 }
 
 export interface IChatSettingAttr {
