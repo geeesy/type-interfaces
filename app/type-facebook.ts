@@ -1,6 +1,9 @@
 import { IOrderProductRow, TOrderType } from './type-order';
 import { GappSetting } from './index';
 import { IPaymentMethodEntity } from './type-payment';
+import {StatusOrderSeller} from "./type-order";
+import {ISaleChannelEntity} from "./type-setting";
+import {IShippingMethodEntity} from "./type-shipping";
 
 export type TStatusBroadcast =
   | 'UNPUBLISHED'
@@ -163,6 +166,10 @@ export interface IFacebookPostCreate {
   hasNoShipment: boolean;
   expiredPayment: IExpiredPayment;
   replyMessage: IReplyMessage;
+  chkEndDate: boolean;
+  chkSetTime: boolean;
+  chkStartDate: boolean;
+  chkStartNow: boolean;
 }
 
 export interface IExpiredPayment {
@@ -448,17 +455,49 @@ export interface IFacebookLiveDetailValue {
 export interface IFacebookLiveOrderList {
   docNo: string
   orderId: string;
-  statusOrderOnSeller: string;
+  statusOrderOnSeller: StatusOrderSeller;
   productImageUrl: string;
   productTitle: string;
   productSku: string;
-  orderType: string;
+  orderType:  TOrderType;
   customerFullName: string;
-  channelName: string;
-  paymentChannel: string;
-  shipmentChannel: string;
+  channelAttribute: ISaleChannelEntity;
+  paymentAttribute: IPaymentMethodEntity;
+  shipmentAttribute: IShippingMethodEntity;
   totalOrderAmount: number;
   createdAt: string;
   updatedAt: string;
   compId: string;
 }
+
+// $GLOBAL CF SETTING
+export interface IGlobalCFSetting {
+  cfLiveAttribute: ILiveSettingAttr;
+  cfPostAttribute: IPostSettingAttr;
+  cfChatAttribute: IChatSettingAttr;
+}
+
+export interface ILiveSettingAttr {
+  isReadKeyword: boolean;
+  isProtectDuplicate: boolean;
+  isLimitedAmount: boolean
+  isExpired: boolean;
+  textHeader: string;
+  textTotalProduct: string;
+  textDescription: string
+}
+
+export interface IPostSettingAttr {
+  isReadKeyword: boolean;
+  isProtectDuplicate: boolean;
+  isLimitedAmount: boolean
+}
+
+export interface IChatSettingAttr {
+  textHeader: string;
+  textTotalProduct: string;
+  textDescription: string
+}
+
+
+
