@@ -410,7 +410,7 @@ import {
   IFacebookData,
   IFacebookLiveOrderList,
   IFacebookCommentOrderStatus,
-  IGraphFacebookPagePostRequest
+  IGraphFacebookPagePostRequest, IGlobalCFSetting
 } from './type-facebook';
 
 /* #region FIXME: Marketplace */
@@ -1281,6 +1281,9 @@ export namespace GappBiz {
   export type ListCommentPostBox = IFacebookPostId &
     IFacebookConnectPosts &
     IApiCompanyParams;
+
+  // $Global CF SETTING
+  export type GlobalCFSetting = IGlobalCFSetting &   IApiCompanyParams;
 }
 
 // REVIEW: G-MARKET

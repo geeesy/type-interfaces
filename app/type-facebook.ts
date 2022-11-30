@@ -465,3 +465,35 @@ export interface IFacebookLiveOrderList {
   updatedAt: string;
   compId: string;
 }
+
+// $GLOBAL CF SETTING
+export interface IGlobalCFSetting {
+  cfLiveAttribute: ILiveSettingAttr;
+  cfPostAttribute: IPostSettingAttr;
+  cfChatAttribute: IChatSettingAttr;
+}
+
+export interface ILiveSettingAttr {
+  isReadKeyword: boolean;
+  isProtectDuplicate: boolean;
+  isLimitedAmount: boolean
+  isExpired: boolean;
+  textHeader: string;
+  textTotalProduct: string;
+  textDescription: string
+}
+
+export interface IPostSettingAttr {
+  isReadKeyword: boolean;
+  isProtectDuplicate: boolean;
+  isLimitedAmount: boolean
+}
+
+export interface IChatSettingAttr {
+  textHeader: string;
+  textTotalProduct: string;
+  textDescription: string
+}
+
+
+
