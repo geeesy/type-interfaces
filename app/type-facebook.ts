@@ -166,6 +166,10 @@ export interface IFacebookPostCreate {
   hasNoShipment: boolean;
   expiredPayment: IExpiredPayment;
   replyMessage: IReplyMessage;
+  chkEndDate: boolean;
+  chkSetTime: boolean;
+  chkStartDate: boolean;
+  chkStartNow: boolean;
 }
 
 export interface IExpiredPayment {
