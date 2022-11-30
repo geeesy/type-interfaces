@@ -1,9 +1,10 @@
 import { IOrderProductRow, TOrderType } from './type-order';
 import { GappSetting } from './index';
 import { IPaymentMethodEntity } from './type-payment';
-import {StatusOrderSeller} from "./type-order";
-import {ISaleChannelEntity} from "./type-setting";
-import {IShippingMethodEntity} from "./type-shipping";
+import { StatusOrderSeller } from './type-order';
+import { ISaleChannelEntity } from './type-setting';
+import { IShippingMethodEntity, TShippingParty } from './type-shipping';
+import { SaleChannelSubType } from './enum-const';
 
 export type TStatusBroadcast =
   | 'UNPUBLISHED'
@@ -29,7 +30,11 @@ export type TTypeOverlay =
 
 export type TTypeTemplate = 'DESKTOP' | 'MOBILE';
 
-export type TTypeStatusComment = 'NONE' | 'CONFIRM' | 'AWAITING_CONFIRM' | 'CANCELED';
+export type TTypeStatusComment =
+  | 'NONE'
+  | 'CONFIRM'
+  | 'AWAITING_CONFIRM'
+  | 'CANCELED';
 
 export type TTypeVideoInsights =
   | 'total_video_views'
@@ -126,7 +131,7 @@ export interface IGraphAPIFacebookDebugTokenRespond {
 /**
  * FACEBOOK LIVE
  */
-export interface IFacebookLiveCreate extends IGraphFacebookPageLiveRequest{
+export interface IFacebookLiveCreate extends IGraphFacebookPageLiveRequest {
   facebookLiveName: string;
   facebookData: IFacebookData;
   statusBroadcast: TStatusBroadcast;
@@ -387,8 +392,8 @@ export interface ICFData {
 
 // $LiveCommentRespond
 export interface IFacebookCommentOrderStatus {
-  hasOrderCreated: boolean
-  hasOrderConfirmed: boolean
+  hasOrderCreated: boolean;
+  hasOrderConfirmed: boolean;
 }
 
 export interface IFacebookLiveCommentRespond {
@@ -428,12 +433,11 @@ export interface IFacebookUser {
 }
 
 export interface IFacebookPicForUser {
-  height: number,
-  isSilhouette: boolean,
-  url: string,
-  width: number
+  height: number;
+  isSilhouette: boolean;
+  url: string;
+  width: number;
 }
-
 
 export interface IFacebookConversation {
   id: string;
@@ -451,19 +455,21 @@ export interface IFacebookLiveDetailValue {
   value: string;
 }
 
-
 export interface IFacebookLiveOrderList {
-  docNo: string
+  docNo: string;
   orderId: string;
   statusOrderOnSeller: StatusOrderSeller;
   productImageUrl: string;
   productTitle: string;
   productSku: string;
-  orderType:  TOrderType;
+  orderType: TOrderType;
   customerFullName: string;
-  channelAttribute: ISaleChannelEntity;
-  paymentAttribute: IPaymentMethodEntity;
-  shipmentAttribute: IShippingMethodEntity;
+  saleChannelSubType: SaleChannelSubType;
+  saleChannelAliasName: string;
+  paymentAliasName: string;
+  bankAccountName: string;
+  shippingParty: TShippingParty;
+  shippingAliasName: string;
   totalOrderAmount: number;
   createdAt: string;
   updatedAt: string;
@@ -480,24 +486,21 @@ export interface IGlobalCFSetting {
 export interface ILiveSettingAttr {
   isReadKeyword: boolean;
   isProtectDuplicate: boolean;
-  isLimitedAmount: boolean
+  isLimitedAmount: boolean;
   isExpired: boolean;
   textHeader: string;
   textTotalProduct: string;
-  textDescription: string
+  textDescription: string;
 }
 
 export interface IPostSettingAttr {
   isReadKeyword: boolean;
   isProtectDuplicate: boolean;
-  isLimitedAmount: boolean
+  isLimitedAmount: boolean;
 }
 
 export interface IChatSettingAttr {
   textHeader: string;
   textTotalProduct: string;
-  textDescription: string
+  textDescription: string;
 }
-
-
-
