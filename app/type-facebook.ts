@@ -262,6 +262,8 @@ export interface IProductFacebookRow extends IOrderProductRow {
   sortIndex: number;
   useOriginInventory: boolean;
   liveInventoryId: string;
+  isLimitedAmountByOrder: boolean;
+  limitedAmountByOrder: number;
 }
 
 /**
