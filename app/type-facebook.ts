@@ -378,6 +378,7 @@ export interface IOverlayAction {
 
 export interface IOverlayProduct {
   overlayProducts: IProductFacebookRow[];
+  overlayName: string;
   overlayUrl: string;
   overlayColorPrimary: string;
   overlayColorCode: string;
