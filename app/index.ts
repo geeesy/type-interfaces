@@ -247,7 +247,7 @@ import {
   ICompanyPublicEntityImmu,
   ICompanySalesRep,
   ICustomer,
-  IDBCertificate,
+  IDBCertificate, IDBCompanyActivityLog,
   IDBCompanyEntity,
   IDBCompanySupplierEntity,
   IDBDocument,
@@ -1283,7 +1283,7 @@ export namespace GappBiz {
     IApiCompanyParams;
 
   // $Global CF SETTING
-  export type GlobalCFSetting = IGlobalCFSetting &   IApiCompanyParams;
+  export type GlobalCFSetting = IGlobalCFSetting &   IApiCompanyParams & IDBCompanyActivityLog;
 }
 
 // REVIEW: G-MARKET
