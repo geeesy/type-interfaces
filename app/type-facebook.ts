@@ -477,6 +477,14 @@ export interface IFacebookLiveOrderList {
   createdAt: string;
   updatedAt: string;
   compId: string;
+  paymentPrice: string;
+  paymentDate: string;
+  paymentTime: string;
+  paymentIconUrl: string;
+  shippingIconUrl: string;
+  isCOD: string;
+  shippingCost: string;
+  shippingTracking: string;
 }
 
 // $GLOBAL CF SETTING
