@@ -482,7 +482,7 @@ export interface IFacebookLiveOrderList {
   paymentTime: string;
   paymentIconUrl: string;
   shippingIconUrl: string;
-  isCOD: string;
+  isCOD: boolean;
   shippingCost: string;
   shippingTracking: string;
 }
