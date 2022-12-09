@@ -177,6 +177,11 @@ export interface IFacebookPostCreate {
   chkStartNow: boolean;
 }
 
+export interface IFacebookShowPost  extends  IFacebookPostData{
+  facebookPageName: string;
+  facebookPageLogo: string;
+}
+
 export interface IExpiredPayment {
   setExpiredCheck: boolean;
   setExpiredTime: number;

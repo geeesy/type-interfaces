@@ -410,7 +410,7 @@ import {
   IFacebookData,
   IFacebookLiveOrderList,
   IFacebookCommentOrderStatus,
-  IGraphFacebookPagePostRequest, IGlobalCFSetting
+  IGraphFacebookPagePostRequest, IGlobalCFSetting, IFacebookShowPost
 } from './type-facebook';
 
 /* #region FIXME: Marketplace */
@@ -1171,7 +1171,7 @@ export namespace GappBiz {
     IFacebookPostId &
     IApiCompanyParams;
   // list
-  export type ListFacebookPost = IFacebookPostList &
+  export type ListFacebookPost = IFacebookPostList & IFacebookShowPost &
     IApiCompanyParams &
     IDBLogUpdate &
     IDBLogCreate &
