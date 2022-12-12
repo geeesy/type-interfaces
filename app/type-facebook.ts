@@ -516,3 +516,10 @@ export interface IChatSettingAttr {
   textTotalProduct: string;
   textDescription: string;
 }
+
+// $TAG
+export interface ITagAttr {
+  tagName: string;
+  tagDescription: string;
+  tagColor: string;
+}
