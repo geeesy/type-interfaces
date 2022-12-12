@@ -381,8 +381,8 @@ import {
   IShippingMethodEntityImmu
 } from './type-shipping';
 
-import { IAnalytics } from './interfaces';
-import { IInventoryExport, IOrderStatusExport, ITimeStamp } from './type-data';
+import {IAnalytics} from './interfaces';
+import {IInventoryExport, IOrderStatusExport, ITimeStamp} from './type-data';
 import {
   ICountFacebookPostRow,
   ICreateFacebookProductRow,
@@ -410,7 +410,7 @@ import {
   IFacebookData,
   IFacebookLiveOrderList,
   IFacebookCommentOrderStatus,
-  IGraphFacebookPagePostRequest, IGlobalCFSetting, IFacebookShowPost
+  IGraphFacebookPagePostRequest, IGlobalCFSetting, IFacebookShowPost, ITagAttr
 } from './type-facebook';
 
 /* #region FIXME: Marketplace */
@@ -817,7 +817,7 @@ export namespace GeeesyApps {
   export type CompanyOnList = ICompanyOnList;
 
   /**
-  Sales Rep
+   Sales Rep
    */
   export type CreateSalesRep = ICompanyCreateSalesRep;
   export type SalesRep = ICompanySalesRep;
@@ -1283,7 +1283,11 @@ export namespace GappBiz {
     IApiCompanyParams;
 
   // $Global CF SETTING
-  export type GlobalCFSetting = IGlobalCFSetting &   IApiCompanyParams & IDBCompanyActivityLog;
+  export type GlobalCFSetting = IGlobalCFSetting & IApiCompanyParams & IDBCompanyActivityLog;
+
+  // $TAG
+  export type createTag = ITagAttr & IApiCompanyParams & IDBCompanyActivityLog;
+  export type ListTag = ITagAttr & IApiCompanyParams & IDBCompanyActivityLog;
 }
 
 // REVIEW: G-MARKET
