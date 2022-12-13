@@ -519,6 +519,7 @@ export interface IChatSettingAttr {
 
 // $TAG
 export interface ITagAttr {
+  tagId: string;
   tagName: string;
   tagDescription: string;
   tagColor: string;
