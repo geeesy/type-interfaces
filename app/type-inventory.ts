@@ -18,6 +18,7 @@ export interface IWarehouseEntity {
   warehouseAddress: IAddress;
   inventories?: GappInventory.CreateInventory[];
   isActive: boolean;
+  isDisabled: boolean;
 }
 
 /**
@@ -41,6 +42,7 @@ export interface IInventoryEntity {
   canBelowZero: boolean;
   isDefault: boolean;
   isActive: boolean;
+  isDisabled: boolean
 }
 
 /**
