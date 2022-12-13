@@ -1286,7 +1286,7 @@ export namespace GappBiz {
   export type GlobalCFSetting = IGlobalCFSetting & IApiCompanyParams & IDBCompanyActivityLog;
 
   // $TAG
-  export type createTag = ITagAttr & IApiCompanyParams & IDBCompanyActivityLog;
+  export type CreateTag = ITagAttr & IApiCompanyParams & IDBCompanyActivityLog;
   export type ListTag = ITagAttr & IApiCompanyParams & IDBCompanyActivityLog;
 }
 
