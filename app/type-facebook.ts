@@ -367,6 +367,7 @@ export interface IOverlayBank {
   overlayUrl: string;
   overlayPaymentMethodId: string;
   overlayPaymentData: IPaymentMethodEntity;
+  overlayPaymentName: string;
 }
 
 export interface IOverlaySound extends IOverlayAction {
