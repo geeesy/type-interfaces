@@ -24,7 +24,7 @@ export interface IWarehouseEntity {
 /**
  * REVIEW: INVENTORY
  */
-export type TInventoryType = 'GB' | 'GM' | 'OWN';
+export type TInventoryType = 'GB' | 'GM' | 'OWN' | 'LIVE' | 'POST';
 export interface IDBInventoryEntityImmu {
   inventoryId: string;
   compId: string;
