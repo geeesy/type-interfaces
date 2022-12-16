@@ -164,6 +164,11 @@ export interface IPersonContactInfo {
 // STUB: VENDOR
 export type TVendorType = 'seller' | 'buyer' | 'multi' | 'other';
 
+export interface IFromFacebook {
+  facebookUserId: string;
+  tags: string[],
+  isBlocked: boolean
+}
 
 export interface IVendorCreate extends ICompanyContactInfo {
   companyLogoUrl: string;
