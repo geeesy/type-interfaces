@@ -164,13 +164,13 @@ export interface IPersonContactInfo {
 // STUB: VENDOR
 export type TVendorType = 'seller' | 'buyer' | 'multi' | 'other';
 
-export interface IFromFacebook {
+export interface IVendorFromFacebook {
   facebookUserId: string;
   tags: string[],
   isBlocked: boolean
 }
 
-export interface IVendorCreate extends ICompanyContactInfo {
+export interface IVendorCreate extends ICompanyContactInfo,IVendorFromFacebook {
   companyLogoUrl: string;
   companyLogoThumbUrl: string; // * Scale down on init
   contactPersons: IPersonContactInfo[];
