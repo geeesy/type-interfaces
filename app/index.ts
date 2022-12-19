@@ -218,7 +218,7 @@ import {
   IVendor,
   IVendorCreate,
   IVendorRequestAccept,
-  IVendorRequestList
+  IVendorRequestList, IVendorFromFacebook
 } from './type-apps';
 import {
   IBusinessCompanyUserIdentity,
@@ -1288,6 +1288,10 @@ export namespace GappBiz {
   // $TAG
   export type CreateTag = ITagAttr & IApiCompanyParams & IDBCompanyActivityLog;
   export type ListTag = ITagAttr & IApiCompanyParams & IDBCompanyActivityLog;
+
+  // $MEMBER From Facebook
+  export type CreateMemberTag = IVendorFromFacebook & IApiCompanyParams & IDBCompanyActivityLog;
+  export type ListMemberTag = IVendorFromFacebook & IApiCompanyParams & IDBCompanyActivityLog;
 }
 
 // REVIEW: G-MARKET
