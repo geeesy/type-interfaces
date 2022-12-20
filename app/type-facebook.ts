@@ -1,10 +1,8 @@
-import { IOrderProductRow, TOrderType } from './type-order';
-import { GappSetting } from './index';
-import { IPaymentMethodEntity } from './type-payment';
-import { StatusOrderSeller } from './type-order';
-import { ISaleChannelEntity } from './type-setting';
-import { IShippingMethodEntity, TShippingParty } from './type-shipping';
 import { SaleChannelSubType } from './enum-const';
+import { GappSetting } from './index';
+import { IOrderProductRow, StatusOrderSeller, TOrderType } from './type-order';
+import { IPaymentMethodEntity } from './type-payment';
+import { TShippingParty } from './type-shipping';
 
 export type TStatusBroadcast =
   | 'UNPUBLISHED'
@@ -269,6 +267,8 @@ export interface IProductFacebookRow extends IOrderProductRow {
   liveInventoryId: string;
   isLimitedAmountByOrder: boolean;
   limitedAmountByOrder: number;
+  stockLive:number;
+  reservedStockLive:number;
 }
 
 /**
