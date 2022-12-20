@@ -13,6 +13,7 @@ import {
 import { StatusApprovalFlow, StatusDocSender, StatusQuotationSender } from './enum-status';
 import { IAddress, ICompanyContactInfo } from './type-company';
 import { IOrderLinkDataOnConfirm, IOrderLinkImmuDataOnConfirm } from './type-order';
+import {ITagAttr} from "./type-facebook";
 
 export interface IUpdateDocStatus {
   existingDocStatus: StatusDocSender
@@ -166,7 +167,7 @@ export type TVendorType = 'seller' | 'buyer' | 'multi' | 'other';
 
 export interface IVendorFromFacebook {
   facebookUserId: string;
-  tags: string[],
+  tags: ITagAttr[],
   isBlocked: boolean
 }
 
