@@ -1,12 +1,11 @@
+import { IImage, IPersonContactInfo } from './type-apps';
 import {
   ICompanyUserData,
   TApproverFlow,
   TBusinessSize,
   TBusinessTypes
 } from './type-business';
-import { IImage, IPersonContactInfo } from './type-apps';
 import { IPaymentMethod, IShippingZone } from './type-console';
-import {IGraphFacebookUserRequest} from "./type-facebook";
 
 /* #region COMPANY */
 
