@@ -235,7 +235,8 @@ import {
   IDBBusinessCompanyUserData,
   IDBBusinessCompanyUserIdentity,
   IDBBusinessUserIdentity,
-  IDBBusinessUserIdentityStatus
+  IDBBusinessUserIdentityStatus,
+  IUserAccessPolicy
 } from './type-business';
 import {
   ICertificate,
@@ -879,9 +880,12 @@ export namespace GappBusiness {
   export type Business = IBusinessEntityImmu & IBusinessEntity & IDBLogTime;
   export type DBUpdateBusiness = IBusinessEntity & IDBUpdateTime;
   // * BUSINESS OWNER
+  // 👨‍💼 === OWNER
   export type Owner = IBusinessOwnerIdentity &
     IBusinessOwnerIdentityImmu &
+    IUserAccessPolicy &
     IDBLogTime;
+  // === === ===
   export type DBUpdateOwner = IBusinessOwnerIdentity & IDBUpdateTime;
   // * BUSINESS USER
   export type CreateBusinessUser = IBusinessUserIdentityImmu &
@@ -890,11 +894,14 @@ export namespace GappBusiness {
     IBusinessUserIdentity &
     IDBBusinessUserIdentityStatus &
     IDBLogTime;
+  // 👨‍💼 === BUSINESS USER
   export type User = IBusinessUserIdentityImmu &
     IBusinessUserIdentity &
     IDBBusinessUserIdentityStatus &
     IDBBusinessUserIdentity &
+    IUserAccessPolicy &
     IDBLogTime;
+  // === === ===
   export type DBUpdateUser = IBusinessUserIdentity &
     IDBBusinessUserIdentityStatus &
     IDBUpdateTime;
@@ -935,13 +942,16 @@ export namespace GappBusiness {
 // REVIEW: GAPP BIZ
 // --------------------------------
 export namespace GappBiz {
+  // 👨‍💼 === COMPANY USER
   export type User = IBusinessCompanyUserIdentityImmu &
     IBusinessCompanyUserIdentity &
     IDBBusinessCompanyUserIdentity &
     IDBBusinessCompanyUserData &
     ICompanyUserData &
     ICompanyUserPrivateData &
+    IUserAccessPolicy &
     IDBLogTime;
+  // === === ===
   export type DBUpdateUser = IBusinessCompanyUserIdentity &
     IDBBusinessCompanyUserData &
     ICompanyUserData &

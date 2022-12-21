@@ -93,9 +93,14 @@ export interface IAccessScope {
   statement: IAccessStatement[];
 }
 
+// ANCHOR: USER
+export interface IUserAccessPolicy {
+  accessPolicy: IAccessScope[];
+}
+
 
 // --------------------------------
-// REVIEW: BUSINESS USER
+// REVIEW: BUSINESS USER ()
 // --------------------------------
 // ANCHOR: BUSINESS | USER (1/4)
 export interface IBusinessUserIdentityImmu {
@@ -148,10 +153,10 @@ export interface IBusinessCompanyUserIdentity {
   isDefaultReceiver: boolean; // * 1 Company 1 User
   approverRole: TApproverRole; // * Reviewer || Approver || NONE
   approvalFlowRules: IApprovalRule;
-  accessPolicy: IAccessScope[];
   adminUsername?: string; // * on STAFF create, update on changed admin
   personalCode: string;
 }
+
 // ANCHOR: COMPANY | USER (3/6)
 export interface IDBBusinessCompanyUserIdentity {
   userRole: TUserRole;
