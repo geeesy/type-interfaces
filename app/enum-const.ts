@@ -8,6 +8,14 @@ export enum AccessScope {
   products = 'products'
 }
 
+export enum AccessStatementEntity {
+  rfi = 'rfi',
+  rfq = 'rfq',
+  sales = 'sales',
+  purchases = 'purchases',
+  finance = 'finance',
+  products = 'products'
+}
 
 export enum DocPrefixFormat {
   inquiry = 'INQ',
