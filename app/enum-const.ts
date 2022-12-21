@@ -1,4 +1,14 @@
 /* eslint-disable no-unused-vars */
+export enum AccessScope {
+  rfi = 'rfi',
+  rfq = 'rfq',
+  sales = 'sales',
+  purchases = 'purchases',
+  finance = 'finance',
+  products = 'products'
+}
+
+
 export enum DocPrefixFormat {
   inquiry = 'INQ',
   rfq = 'RFQ',
