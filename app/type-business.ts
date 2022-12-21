@@ -60,7 +60,7 @@ export interface IBusinessOwnerIdentity {
 //
 // --------------------------------
 
-export type TAccessStatementAction =
+export type TAccessStatementEntity =
   | 'rfi'
   | 'rfq'
   | 'sales'
@@ -76,13 +76,14 @@ export type TAccessScope =
   | 'products';
 
 export interface IAccessStatement {
-  action: TAccessStatementAction;
+  entity: TAccessStatementEntity;
   permission: IPermission;
 }
 
 export interface IPermission {
   create: boolean;
   read: boolean;
+  list: boolean
   update: boolean;
   delete: boolean;
 }
@@ -91,6 +92,7 @@ export interface IAccessScope {
   scope: TAccessScope;
   statement: IAccessStatement[];
 }
+
 
 // --------------------------------
 // REVIEW: BUSINESS USER
