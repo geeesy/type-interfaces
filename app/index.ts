@@ -926,6 +926,7 @@ export namespace GappBusiness {
     IBusinessUserIdentity &
     IBusinessCompanyUserIdentityImmu &
     IBusinessCompanyUserIdentity &
+    IUserAccessPolicy &
     ICompanyUserData;
   export type DBUpdateCompanyUser = IBusinessCompanyUserIdentity &
     ICompanyUserData &
