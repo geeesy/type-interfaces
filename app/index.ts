@@ -236,7 +236,7 @@ import {
   IDBBusinessCompanyUserIdentity,
   IDBBusinessUserIdentity,
   IDBBusinessUserIdentityStatus,
-  IUserAccessPolicy
+  IUserAccessPolicy, IUserRole
 } from './type-business';
 import {
   ICertificate,
@@ -1303,6 +1303,8 @@ export namespace GappBiz {
   // $MEMBER From Facebook
   export type CreateMemberTag = IVendorFromFacebook & IApiCompanyParams & IDBCompanyActivityLog;
   export type ListMemberTag = IVendorFromFacebook & IApiCompanyParams & IDBCompanyActivityLog;
+
+  export type CreateRole = IUserRole & IUserAccessPolicy & IApiCompanyParams & IDBCompanyActivityLog;
 }
 
 // REVIEW: G-MARKET

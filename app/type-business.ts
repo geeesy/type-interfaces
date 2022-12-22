@@ -85,6 +85,10 @@ export interface IUserAccessPolicy {
   accessPolicy: IAccessScope[];
 }
 
+export interface IUserRole {
+  roleName: string;
+}
+
 
 // --------------------------------
 // REVIEW: BUSINESS USER ()
