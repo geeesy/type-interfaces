@@ -1,20 +1,68 @@
 /* eslint-disable no-unused-vars */
 export enum AccessScope {
-  rfi = 'rfi',
-  rfq = 'rfq',
-  sales = 'sales',
+  commerce = 'commerce',
+  products = 'products',
+  inventory = 'inventory',
+  procurement = 'procurement',
   purchases = 'purchases',
+  biz = 'biz',
   finance = 'finance',
-  products = 'products'
 }
 
 export enum AccessStatementEntity {
-  rfi = 'rfi',
-  rfq = 'rfq',
-  sales = 'sales',
-  purchases = 'purchases',
-  finance = 'finance',
-  products = 'products'
+  // $เอกสารขาย
+  menuPurchase = 'menuPurchase',
+  quotation = 'quotation',
+  receipt = 'receipt',
+  // $ออเดอร์สินค้า
+  menuOrder = 'menuOrder',
+  orderLink = 'orderLink',
+  allOrder = 'allOrder',
+  allReturnOrder = 'allReturnOrder',
+  // $การเชื่อมต่อ
+  menuFacebook = 'menuFacebook',
+  facebookConnecting = 'facebookConnecting',
+  liveOrder = 'liveOrder',
+  postOrder = 'postOrder',
+  allChat = 'allChat',
+  obsTemplate = 'obsTemplate',
+  // $สินค้า
+  menuProduct = 'menuProduct',
+  allProduct = 'allProduct',
+  allProductGroup = 'allProductGroup',
+  // $คลังสินค้า
+  menuInventory = 'menuInventory',
+  allWarehouse = 'allWarehouse',
+  allStock = 'allStock',
+  // $คู่ค้า
+  menuPartner = 'menuPartner',
+  allPartner = 'allPartner',
+  // $แค็ตตาล็อก
+  menuCatalog = 'menuCatalog',
+  catalog = 'catalog',
+  allCatalog = 'allCatalog',
+  // $เซลเพจ
+  menuSalePage = 'menuSalePage',
+  salePage = 'salePage',
+  allSalePage = 'allSalePage',
+  // $รายงาน
+  menuReport = 'menuReport',
+  overviewReport = 'overviewReport',
+  saleReportBySaleChannel = 'saleReportBySaleChannel',
+  saleReportByProductGroup = 'saleReportByProductGroup',
+  saleReportByProduct = 'saleReportByProduct',
+  saleReportByPaymentChannel = 'saleReportByPaymentChannel',
+  // $การตั้งค่า
+  userRole = 'userRole',
+  user = 'user',
+  companyInfo = 'companyInfo',
+  documentSetting = 'documentSetting',
+  personalInfo = 'personalInfo',
+  saleChannel = 'saleChannel',
+  paymentChannel = 'paymentChannel',
+  shipmentChannel = 'shipmentChannel',
+  emailNotifySetting = 'emailNotifySetting',
+  lineNotifySetting = 'lineNotifySetting'
 }
 
 export enum DocPrefixFormat {
