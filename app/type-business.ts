@@ -1,3 +1,4 @@
+import { AccessScope, AccessStatementEntity } from './enum-const';
 import { IApprovalRule, IPersonContactInfo } from './type-apps';
 import {
   ICompanyByGapp,
@@ -60,23 +61,8 @@ export interface IBusinessOwnerIdentity {
 //
 // --------------------------------
 
-export type TAccessStatementEntity =
-  | 'rfi'
-  | 'rfq'
-  | 'sales'
-  | 'purchases'
-  | 'finance'
-  | 'products';
-export type TAccessScope =
-  | 'rfi'
-  | 'rfq'
-  | 'sales'
-  | 'purchases'
-  | 'finance'
-  | 'products';
-
 export interface IAccessStatement {
-  entity: TAccessStatementEntity;
+  entity: AccessStatementEntity;
   permission: IPermission;
 }
 
@@ -86,10 +72,11 @@ export interface IPermission {
   list: boolean
   update: boolean;
   delete: boolean;
+  manage: boolean;
 }
 
 export interface IAccessScope {
-  scope: TAccessScope;
+  scope: AccessScope;
   statement: IAccessStatement[];
 }
 
