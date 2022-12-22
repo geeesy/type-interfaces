@@ -54,6 +54,7 @@ export enum AccessStatementEntity {
   saleReportByPaymentChannel = 'saleReportByPaymentChannel',
   // $การตั้งค่า
   userRole = 'userRole',
+  userRoleOnStaff = 'userRoleOnStaff',
   user = 'user',
   companyInfo = 'companyInfo',
   documentSetting = 'documentSetting',
