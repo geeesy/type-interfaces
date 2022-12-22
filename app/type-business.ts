@@ -89,6 +89,12 @@ export interface IUserRole {
   roleName: string;
 }
 
+export interface IUserRoleImmu {
+  roleId: string;
+}
+
+
+
 
 // --------------------------------
 // REVIEW: BUSINESS USER ()

@@ -236,7 +236,7 @@ import {
   IDBBusinessCompanyUserIdentity,
   IDBBusinessUserIdentity,
   IDBBusinessUserIdentityStatus,
-  IUserAccessPolicy, IUserRole
+  IUserAccessPolicy, IUserRole, IUserRoleImmu
 } from './type-business';
 import {
   ICertificate,
@@ -1304,7 +1304,8 @@ export namespace GappBiz {
   export type CreateMemberTag = IVendorFromFacebook & IApiCompanyParams & IDBCompanyActivityLog;
   export type ListMemberTag = IVendorFromFacebook & IApiCompanyParams & IDBCompanyActivityLog;
 
-  export type CreateRole = IUserRole & IUserAccessPolicy & IApiCompanyParams & IDBCompanyActivityLog;
+  export type CreateUserRole = IUserRole & IUserAccessPolicy & IApiCompanyParams & IDBCompanyActivityLog;
+  export type UserRole = IUserRoleImmu & IUserRole & IUserAccessPolicy & IApiCompanyParams & IDBCompanyActivityLog;
 }
 
 // REVIEW: G-MARKET
