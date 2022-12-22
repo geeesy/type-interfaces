@@ -15,6 +15,7 @@ export enum AccessStatementEntity {
   rfq = 'rfq',
   inventory = 'inventory',
   purchases = 'purchases',
+  order = 'order',
   finance = 'finance',
   facebook = 'facebook',
   products = 'products',
