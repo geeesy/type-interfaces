@@ -1,20 +1,35 @@
 /* eslint-disable no-unused-vars */
 export enum AccessScope {
-  rfi = 'rfi',
-  rfq = 'rfq',
-  sales = 'sales',
+  commerce = 'commerce',
+  product = 'product',
+  inventory = 'inventory',
+  procurement = 'procurement',
   purchases = 'purchases',
+  biz = 'biz',
   finance = 'finance',
-  products = 'products'
 }
 
 export enum AccessStatementEntity {
+  dashboard = 'dashboard',
   rfi = 'rfi',
   rfq = 'rfq',
-  sales = 'sales',
+  inventory = 'inventory',
   purchases = 'purchases',
   finance = 'finance',
-  products = 'products'
+  facebook = 'facebook',
+  products = 'products',
+  partners = 'partners',
+  catalog = 'catalog',
+  salepage = 'salepage',
+  report = 'report',
+  company = 'company',
+  user = 'user',
+  document = 'document',
+  saleChannel = 'saleChannel',
+  paymentChannel = 'paymentChannel',
+  shipmentChannel = 'shipmentChannel',
+  emailNotify = 'emailNotify',
+  lineNotify = 'lineNotify'
 }
 
 export enum DocPrefixFormat {
