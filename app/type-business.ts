@@ -67,12 +67,12 @@ export interface IAccessStatement {
 }
 
 export interface IPermission {
-  create: boolean;
-  read: boolean;
-  list: boolean
-  update: boolean;
-  delete: boolean;
-  manage: boolean;
+  create: boolean | null;
+  read: boolean | null;
+  list: boolean | null
+  update: boolean | null;
+  delete: boolean | null;
+  manage: boolean | null;
 }
 
 export interface IAccessScope {
