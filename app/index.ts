@@ -883,7 +883,7 @@ export namespace GappBusiness {
   // 👨‍💼 === OWNER
   export type Owner = IBusinessOwnerIdentity &
     IBusinessOwnerIdentityImmu &
-    IUserAccessPolicy &
+    IUserRoleImmu &
     IDBLogTime;
   // === === ===
   export type DBUpdateOwner = IBusinessOwnerIdentity & IDBUpdateTime;
@@ -950,7 +950,7 @@ export namespace GappBiz {
     IDBBusinessCompanyUserData &
     ICompanyUserData &
     ICompanyUserPrivateData &
-    IUserAccessPolicy &
+    IUserRoleImmu &
     IDBLogTime;
   // === === ===
   export type DBUpdateUser = IBusinessCompanyUserIdentity &
