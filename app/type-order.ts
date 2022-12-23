@@ -88,7 +88,8 @@ export type TOrderType =
   | 'GAPP_MARKET'
   | 'GAPP_BIZ'
   | 'POST_FB'
-  | 'LIVE_FB';
+  | 'LIVE_FB'
+  | 'CHAT_FB';
 export type TOrderItemType = 'SERVICE' | 'PRODUCT';
 export type TOrderChannelUTM =
   | 'WEBSITE'
