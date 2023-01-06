@@ -205,6 +205,7 @@ export interface IVendor extends IVendorCreate {
   vendorId: string;
   customerId: string;
   relCompId: string;
+  hasArchived: boolean;
 }
 
 export interface ICompanyOnList {
