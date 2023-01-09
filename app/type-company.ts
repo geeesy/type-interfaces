@@ -472,6 +472,7 @@ export interface ICustomer {
   TotalPaidAmount: number;
   CountCompletedOrder: number;
   AvgPaidAmount: number;
+  hasArchived:boolean;
 }
 
 export interface ICreateCustomer {

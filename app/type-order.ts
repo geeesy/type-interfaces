@@ -490,6 +490,7 @@ export interface ICustomerWithOrder
   TotalPaidAmount: number;
   CountCompletedOrder: number;
   AvgPaidAmount: number;
+  hasArchived:boolean;
 }
 
 /**
