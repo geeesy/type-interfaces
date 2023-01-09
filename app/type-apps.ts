@@ -179,6 +179,7 @@ export interface IVendorCreate extends ICompanyContactInfo,IVendorFromFacebook {
   remark: string;
   note: string;
   isCompanyVendor: boolean;
+  vendorCode:string;
 }
 
 export interface IRefVendorList {
