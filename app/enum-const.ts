@@ -18,6 +18,7 @@ export enum AccessName {
   saleChannel = 'ช่องทางการขาย',
   paymentChannel = 'ช่องทางการชำระเงิน',
   shipmentChannel = 'ช่องทางการขนส่ง',
+  notification = 'การแจ้งเตือน',
   emailNotifySetting = 'การแจ้งเตือนผ่านระบบ Email',
   lineNotifySetting = 'การแจ้งเตือนผ่านระบบ Line'
 }
