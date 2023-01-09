@@ -195,7 +195,8 @@ export interface IRefVendorList {
   vendorType: TVendorType;
   isCompanyVendor: boolean;
   tags: string[];
-  facebookUserId:string
+  facebookUserId:string;
+  hasArchived: boolean;
 }
 
 export interface IVendor extends IVendorCreate {
