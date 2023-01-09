@@ -1,4 +1,28 @@
 /* eslint-disable no-unused-vars */
+export enum AccessName {
+  menuPurchase = 'เอกสารขาย',
+  menuOrder = 'ออเดอร์สินค้า',
+  menuFacebook = 'การเชื่อมต่อ',
+  menuProduct = 'สินค้า',
+  menuInventory = 'คลังสินค้า',
+  menuPartner = 'คู่ค้า',
+  menuCatalog = 'แค็ตตาล็อกสินค้า',
+  menuSalePage = 'เซลเพจ',
+  menuReport = 'รายงาน',
+  menuSetting = 'การตั้งค่า',
+  userRole = 'จัดการบทบาท',
+  user = 'จัดการผู้ใช้งาน',
+  companyInfo = 'ข้อมูลบริษัท',
+  documentSetting = 'ตั้งค่าเอกสาร',
+  personalInfo = 'ข้อมูลส่วนตัว',
+  saleChannel = 'ช่องทางการขาย',
+  paymentChannel = 'ช่องทางการชำระเงิน',
+  shipmentChannel = 'ช่องทางการขนส่ง',
+  notification = 'การแจ้งเตือน',
+  emailNotifySetting = 'การแจ้งเตือนผ่านระบบ Email',
+  lineNotifySetting = 'การแจ้งเตือนผ่านระบบ Line'
+}
+
 export enum AccessScope {
   commerce = 'commerce',
   products = 'products',
@@ -53,6 +77,7 @@ export enum AccessStatementEntity {
   saleReportByProduct = 'saleReportByProduct',
   saleReportByPaymentChannel = 'saleReportByPaymentChannel',
   // $การตั้งค่า
+  menuSetting = 'menuSetting',
   userRole = 'userRole',
   userRoleOnStaff = 'userRoleOnStaff',
   user = 'user',
