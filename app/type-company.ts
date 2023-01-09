@@ -6,6 +6,7 @@ import {
   TBusinessTypes
 } from './type-business';
 import { IPaymentMethod, IShippingZone } from './type-console';
+import {TOrderType} from "./type-order";
 
 /* #region COMPANY */
 
@@ -471,4 +472,13 @@ export interface ICustomer {
   TotalPaidAmount: number;
   CountCompletedOrder: number;
   AvgPaidAmount: number;
+  hasArchived:boolean;
+}
+
+export interface ICreateCustomer {
+  facebookUserId: string;
+  customerContactInfo: IPersonContactInfo;
+  customerCompanyContactInfo: ICompanyContactInfo | null;
+  customerNote: string;
+  orderType:TOrderType;
 }
