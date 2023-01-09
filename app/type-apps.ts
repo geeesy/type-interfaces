@@ -198,12 +198,9 @@ export interface IRefVendorList {
   tags: string[];
   facebookUserId:string;
   hasArchived: boolean;
-  latestOrder:ILatestOrder
-}
-
-export interface ILatestOrder {
-  docNo:string;
-  orderId:string;
+  latestOrderType:string;
+  latestOrderId:string;
+  vendorCode:string;
 }
 
 export interface IVendor extends IVendorCreate {
