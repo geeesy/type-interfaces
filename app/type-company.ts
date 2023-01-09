@@ -472,3 +472,10 @@ export interface ICustomer {
   CountCompletedOrder: number;
   AvgPaidAmount: number;
 }
+
+export interface ICreateCustomer {
+  facebookUserId: string;
+  customerContactInfo: IPersonContactInfo;
+  customerCompanyContactInfo: ICompanyContactInfo | null;
+  customerNote: string;
+}
