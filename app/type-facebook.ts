@@ -206,12 +206,15 @@ export interface IFacebookPostList
     IFacebookPostId {}
 
 export interface ICountFacebookPostRow {
+  CountViews:number,
   CountComment: number;
+  CountOrder:number;
   CountAwaitingConfirmOrder: number;
   CountAwaitingPaymentOrder: number;
   CountCompletedOrder: number;
   TotalAmount: number;
 }
+
 
 // $ConnectPOST_FB
 export interface IFacebookConnectPost {
