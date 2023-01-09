@@ -200,6 +200,7 @@ export interface IRefVendorList {
   hasArchived: boolean;
   latestOrderType:string;
   latestOrderId:string;
+  vendorCode:string;
 }
 
 export interface IVendor extends IVendorCreate {
