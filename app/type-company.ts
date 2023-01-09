@@ -6,6 +6,7 @@ import {
   TBusinessTypes
 } from './type-business';
 import { IPaymentMethod, IShippingZone } from './type-console';
+import {TOrderType} from "./type-order";
 
 /* #region COMPANY */
 
@@ -478,4 +479,5 @@ export interface ICreateCustomer {
   customerContactInfo: IPersonContactInfo;
   customerCompanyContactInfo: ICompanyContactInfo | null;
   customerNote: string;
+  orderType:TOrderType;
 }
