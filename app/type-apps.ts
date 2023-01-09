@@ -198,8 +198,6 @@ export interface IRefVendorList {
   tags: string[];
   facebookUserId:string;
   hasArchived: boolean;
-  latestOrderType:string;
-  latestOrderId:string;
   vendorCode:string;
 }
 
