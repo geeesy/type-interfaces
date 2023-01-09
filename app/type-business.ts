@@ -87,6 +87,7 @@ export interface IUserAccessPolicy {
 
 export interface IUserRole {
   roleName: string;
+  roleDescription: string;
 }
 
 export interface IUserRoleImmu {
