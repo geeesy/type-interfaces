@@ -88,6 +88,8 @@ export interface IUserAccessPolicy {
 export interface IUserRole {
   roleName: string;
   roleDescription: string;
+  canApproveRole: boolean;
+  approveRoleId: IUserRoleImmu[]
 }
 
 export interface IUserRoleImmu {
