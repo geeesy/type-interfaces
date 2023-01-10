@@ -476,6 +476,7 @@ export interface ICustomer {
 }
 
 export interface ICreateCustomer {
+  compId:string;
   facebookUserId: string;
   customerContactInfo: IPersonContactInfo;
   customerCompanyContactInfo: ICompanyContactInfo | null;
