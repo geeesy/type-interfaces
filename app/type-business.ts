@@ -90,7 +90,8 @@ export interface IUserRole {
   roleType: string;
   roleDescription: string;
   canApproveRole: boolean;
-  approveRoleId: IUserRoleImmu[]
+  approveRoleId: IUserRoleImmu[];
+  isDefault: boolean;
 }
 
 export interface IUserRoleImmu {
