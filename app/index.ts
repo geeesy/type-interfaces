@@ -936,6 +936,7 @@ export namespace GappBusiness {
     IBusinessCompanyUserIdentity &
     IDBBusinessCompanyUserIdentity &
     IDBBusinessCompanyUserData &
+    IUserRoleImmu &
     ICompanyUserData;
 }
 
