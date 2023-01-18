@@ -162,6 +162,7 @@ export interface IBusinessCompanyUserIdentity {
 // ANCHOR: COMPANY | USER (3/6)
 export interface IDBBusinessCompanyUserIdentity {
   userRole: TUserRole;
+  roleId: string;
 }
 // ANCHOR: COMPANY | USER (4/6)
 export interface IDBBusinessCompanyUserData {
