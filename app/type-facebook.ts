@@ -209,8 +209,7 @@ export interface ICountFacebookPostRow {
   CountViews:number,
   CountComment: number;
   CountOrder:number;
-  CountAwaitingConfirmOrder: number;
-  CountAwaitingPaymentOrder: number;
+  CountAwaitingShipmentOrder:number;
   CountCompletedOrder: number;
   TotalAmount: number;
 }
