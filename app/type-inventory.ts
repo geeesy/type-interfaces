@@ -11,6 +11,7 @@ export interface IDBWarehouseEntityImmu {
 }
 export interface IWarehouseEntity {
   warehouseName: string;
+  warehouseInternalId: string;
   warehouseIconUrl: string;
   warehouseCoverUrl: string;
   warehouseImageUrls: string[];
@@ -38,6 +39,7 @@ export interface IDBInventoryEntity {
 
 export interface IInventoryEntity {
   inventoryName: string;
+  inventoryInternalId: string;
   inventoryInfo: string;
   canBelowZero: boolean;
   isDefault: boolean;
