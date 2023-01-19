@@ -14,6 +14,7 @@ import { StatusApprovalFlow, StatusDocSender, StatusQuotationSender } from './en
 import { IAddress, ICompanyContactInfo } from './type-company';
 import { IOrderLinkDataOnConfirm, IOrderLinkImmuDataOnConfirm } from './type-order';
 import {ITagAttr} from "./type-facebook";
+import {ISaleChannelEntity} from "./type-setting";
 
 export interface IUpdateDocStatus {
   existingDocStatus: StatusDocSender
@@ -167,6 +168,7 @@ export type TVendorType = 'seller' | 'buyer' | 'multi' | 'other';
 
 export interface IVendorFromFacebook {
   facebookUserId: string;
+  facebookPages: ISaleChannelEntity[]
   tags: ITagAttr[],
   isBlocked: boolean
 }
