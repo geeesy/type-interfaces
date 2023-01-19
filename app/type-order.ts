@@ -3,6 +3,7 @@ import { ICompanyContactInfo, IPeriodTime } from './type-company';
 
 import { IPersonContactInfo } from './type-apps';
 import { SaleChannelSubType } from './enum-const';
+import {ISaleChannelEntity} from "./type-setting";
 
 /* eslint-disable no-unused-vars */
 export enum StatusOrderSeller {
@@ -167,6 +168,7 @@ export interface IListOrder
 // ANCHOR: ORDER | Entity (1/13)
 export interface IOrderCustomerDataImmu {
   facebookUserId: string;
+  facebookPages: ISaleChannelEntity[]
   customerId: string;
   iamUserId?: string;
 }
