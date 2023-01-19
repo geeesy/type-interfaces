@@ -1530,7 +1530,9 @@ export type TNotifySubtopic =
   | 'salepage'
   | 'productStock'
   | 'inventory'
-  | 'facebook';
+  | 'facebookPost'
+  | 'facebookLive'
+  | 'facebookChat';
 export type TNotifyEvent =
   | 'orderOnCreate'
   | 'orderOnConfirm'
