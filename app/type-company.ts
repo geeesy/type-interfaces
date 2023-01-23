@@ -7,6 +7,7 @@ import {
 } from './type-business';
 import { IPaymentMethod, IShippingZone } from './type-console';
 import {TOrderType} from "./type-order";
+import {ISaleChannelEntity} from "./type-setting";
 
 /* #region COMPANY */
 
@@ -477,6 +478,7 @@ export interface ICustomer {
 
 export interface ICreateCustomer {
   compId:string;
+  facebookPages: ISaleChannelEntity[];
   facebookUserId: string;
   customerContactInfo: IPersonContactInfo;
   customerCompanyContactInfo: ICompanyContactInfo | null;
