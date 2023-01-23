@@ -264,6 +264,7 @@ export interface IOrderData {
   hasNoShipment: boolean;
   hasOverrideEmailSending: boolean;
   overrideEmailSendingAttribute: string;
+  isSendChat:boolean;
 }
 
 // ANCHOR: ORDER | Entity (9/13)
