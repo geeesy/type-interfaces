@@ -118,6 +118,7 @@ export interface IBusinessUserIdentityImmu {
 // ANCHOR: BUSINESS | USER (2/4)
 export interface IBusinessUserIdentity {
   fullName: string;
+  roleId: string;
   penName: string; // TODO: check cognito
   businessDept: string;
   businessPosition: string;
