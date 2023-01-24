@@ -158,6 +158,7 @@ export interface IBusinessCompanyUserIdentity {
   approvalFlowRules: IApprovalRule;
   adminUsername?: string; // * on STAFF create, update on changed admin
   personalCode: string;
+  roleId: string;
 }
 
 // ANCHOR: COMPANY | USER (3/6)
