@@ -35,6 +35,7 @@ export interface IDBInventoryEntityImmu {
 }
 export interface IDBInventoryEntity {
   totalProduct: number;
+  totalProductBySku:number;
 }
 
 export interface IInventoryEntity {
