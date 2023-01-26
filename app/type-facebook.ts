@@ -339,6 +339,7 @@ export interface IOverlayLogo {
 }
 
 export interface IOverlayTime extends IOverlayAction {
+  overlayName: string;
   overlayIsCountDown: boolean;
   overlayUrl: string;
   overlayTime: ICountDown | ISetTime;
