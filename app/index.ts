@@ -1078,6 +1078,7 @@ export namespace GappBiz {
   export type PaymentRowInOrder = IOrderPaymentRowData &
     IDBOrderPaymentRow &
     IDBLogCreate &
+    IApiCompanyParams &
     IDBLogUpdate;
   // === === ===
 
