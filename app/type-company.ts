@@ -464,6 +464,7 @@ export interface ISettingDoc extends IDBCompanyActivityLog {
 
 
 export interface ICustomer {
+  facebookPages: ISaleChannelEntity[];
   facebookUserId: string;
   customerId: string;
   iamUserId?: string;
