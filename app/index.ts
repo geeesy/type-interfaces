@@ -411,7 +411,7 @@ import {
   IFacebookData,
   IFacebookLiveOrderList,
   IFacebookCommentOrderStatus,
-  IGraphFacebookPagePostRequest, IGlobalCFSetting, IFacebookShowPost, ITagAttr
+  IGraphFacebookPagePostRequest, IGlobalCFSetting, IFacebookShowPost, ITagAttr, IProductLiveRow
 } from './type-facebook';
 
 /* #region FIXME: Marketplace */
@@ -1238,6 +1238,8 @@ export namespace GappBiz {
     IApiCompanyParams &
     IDBLogUpdate &
     IDBLogCreate;
+
+  export type FacebookProductLive = IProductLiveRow &  IApiCompanyParams;
 
   // $ OBS
   export type CreateOBSTemplate = IOBSTemplate & IOverlays & IApiCompanyParams;

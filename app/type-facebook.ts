@@ -273,6 +273,27 @@ export interface IProductFacebookRow extends IOrderProductRow {
   reservedStockLive:number;
 }
 
+export interface IProductLiveRow {
+  liveId: string;
+  stockLive:number;
+  reservedStockLive:number;
+  liveInventoryId: string;
+  isLimitedAmountByOrder: boolean;
+  limitedAmountByOrder: number;
+  productId: string;
+  variantId: string; // on product variant
+  productTitle: string;
+  productUnitPrice: number;
+  productUnit: string;
+  productQty: number;
+  productCoverUrl: string;
+  productSku: string;
+  itemsPriceRow: number;
+  warehouseId: string; // ! -> INVENTORY
+  inventoryId: string; // ! -> INVENTORY
+  cfCode: string;
+}
+
 /**
  * OBS
  */
