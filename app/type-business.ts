@@ -1,5 +1,5 @@
 import { AccessScope, AccessStatementEntity } from './enum-const';
-import { IApprovalRule, IPersonContactInfo } from './type-apps';
+import {IApprovalRule, IPersonContactInfo, ISocial} from './type-apps';
 import {
   ICompanyByGapp,
   ICompanyEntityImmu,
@@ -55,6 +55,16 @@ export interface IBusinessOwnerIdentity {
   phone: string;
   ownerName: string;
   avatarThumbUrl: string;
+}
+
+export interface IBusinessOwnerData {
+  avatarImageUrl: string;
+  nickname: string;
+  birthDate: string;
+  social: ISocial;
+  companyDept: string;
+  companyPosition: string;
+  personalCode: string;
 }
 
 // --------------------------------
