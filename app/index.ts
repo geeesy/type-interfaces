@@ -225,7 +225,7 @@ import {
   IBusinessCompanyUserIdentityImmu,
   IBusinessEntity,
   IBusinessEntityImmu,
-  IBusinessListCompany,
+  IBusinessListCompany, IBusinessOwnerData,
   IBusinessOwnerIdentity,
   IBusinessOwnerIdentityImmu,
   IBusinessUserIdentity,
@@ -884,6 +884,7 @@ export namespace GappBusiness {
   export type Owner = IBusinessOwnerIdentity &
     IBusinessOwnerIdentityImmu &
     IUserRoleImmu &
+      IBusinessOwnerData &
     IDBLogTime;
   // === === ===
   export type DBUpdateOwner = IBusinessOwnerIdentity & IDBUpdateTime;
