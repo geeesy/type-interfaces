@@ -268,6 +268,7 @@ export interface ICompanyPublicEntityImmu {
 export interface ICompanyPublicEntity {
   companyName: string; // TODO: update on cognito?
   companyMarketName: string;
+  companyMarketDescription: string;
   companyCategoryId: string;
   companyCategoryCustomName?: string; // * id = OTHER000
 
