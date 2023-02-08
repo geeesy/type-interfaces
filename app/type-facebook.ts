@@ -173,6 +173,7 @@ export interface IFacebookPostCreate {
   chkSetTime: boolean;
   chkStartDate: boolean;
   chkStartNow: boolean;
+  isPooling: boolean; // Pooling CF
 }
 
 export interface IFacebookShowPost  extends  IFacebookPostData{
