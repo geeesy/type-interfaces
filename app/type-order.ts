@@ -546,6 +546,8 @@ export interface IOrderPaymentRowData {
 }
 export interface IDBOrderPaymentRow {
   paymentRowId: string;
+  confirmBy:string,
+  confirmByFullName:string,
 }
 export interface IOrderPaymentRow
   extends IOrderPaymentRowData,
