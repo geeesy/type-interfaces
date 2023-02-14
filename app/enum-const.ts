@@ -267,6 +267,7 @@ export enum SaleChannelSubType {
   Facebook = 'facebook',
   FacebookConnect = 'facebookConnect',
   Line = 'line',
+  LineOA = 'lineOA',
   Instagram = 'instagram',
   WeChat = 'weChat',
   WhatsApp = 'whatsApp',
