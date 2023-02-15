@@ -1167,7 +1167,7 @@ export namespace GappBiz {
     ILeadpage &
     ILeadpageId &
     IApiCompanyParams;
-  export type LogOrder = ILogOrder;
+  export type LogOrder = ILogOrder & IDBActivityLog;
   export type NotifyMessage = INotifyMessage;
   export type ExportInventory = IInventoryExport & IApiCompanyParams;
   export type ExportOrder = IOrderStatusExport & ITimeStamp & IApiCompanyParams;
