@@ -317,6 +317,7 @@ export interface IUpdateOverlays {
 export interface overlayUpdateDetail extends IOBSId {
   sortIndex: number;
   overlayType: TTypeOverlay;
+  overlayUrl: string;
   overlayAttributes:
     | IOverlayLogo
     | IOverlayBank
@@ -338,6 +339,7 @@ export interface IOBSTemplateRow {
 export interface overlayDetail {
   sortIndex: number;
   overlayType: TTypeOverlay;
+  overlayUrl: string;
   isDependentOnLive: boolean;
   overlayAttributes:
     | IOverlayLogo
@@ -356,14 +358,12 @@ export interface IOBSId {
 
 export interface IOverlayLogo {
   overlayName: string;
-  overlayUrl: string;
   overlayImage: string;
 }
 
 export interface IOverlayTime extends IOverlayAction {
   overlayName: string;
   overlayIsCountDown: boolean;
-  overlayUrl: string;
   overlayTime: ICountDown | ISetTime;
 }
 
@@ -380,7 +380,6 @@ export interface ISetTime {
 }
 
 export interface IOverlayText {
-  overlayUrl: string;
   overlayDescription: string;
   overlayTextStyle: string;
   overlayTextBackgroundColor: string;
@@ -389,7 +388,6 @@ export interface IOverlayText {
 }
 
 export interface IOverlayBank {
-  overlayUrl: string;
   overlayPaymentMethodId: string;
   overlayPaymentData: IPaymentMethodEntity;
   overlayPaymentName: string;
@@ -397,7 +395,6 @@ export interface IOverlayBank {
 
 export interface IOverlaySound extends IOverlayAction {
   overlayName: string;
-  overlayUrl: string;
   overlayCodeSound: string;
   overlayNote: string;
 }
@@ -410,7 +407,6 @@ export interface IOverlayAction {
 export interface IOverlayProduct {
   overlayProducts: IProductFacebookRow[];
   overlayName: string;
-  overlayUrl: string;
   overlayColorPrimary: string;
   overlayColorCode: string;
   overlayColorProductName: string;
