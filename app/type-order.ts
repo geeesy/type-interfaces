@@ -4,6 +4,7 @@ import { ICompanyContactInfo, IPeriodTime } from './type-company';
 import { IPersonContactInfo } from './type-apps';
 import { SaleChannelSubType } from './enum-const';
 import {ISaleChannelEntity} from "./type-setting";
+import {IOrderInLogStock} from "./type-inventory";
 
 /* eslint-disable no-unused-vars */
 export enum StatusOrderSeller {
@@ -330,6 +331,7 @@ export interface IDBOrderActivityLog {
   latestActivityOnOrderType: TOrderType | null;
   latestActionBy: string | null; // ? use to identify action -> buyer (null) or seller (identityId)
   latestActionByFullName?: string; // ? -> firstName + lastName
+  latestEntityOnAction: IOrderInLogStock
 }
 
 /**
