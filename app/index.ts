@@ -328,7 +328,7 @@ import {
   IDBProductInventoryFormulaImmu,
   IDBWarehouseEntityImmu,
   IInventoryEntity,
-  ILogStock,
+  ILogStock, IOrderInLogStock,
   IProductCompanyImmu,
   IProductInventoryData,
   IProductInventoryImmu,
@@ -1460,7 +1460,7 @@ export namespace GappInventory {
     IDBLogTime;
   export type UpdateProductStock = IApiCompanyParams & IUpdateProductStock;
   export type TransferProductStock = IApiCompanyParams & ITransferProductStock;
-  export type LogProductStock = ILogStock;
+  export type LogProductStock = ILogStock & IOrderInLogStock;
 }
 
 // REVIEW: G-BIZ | SETTING
