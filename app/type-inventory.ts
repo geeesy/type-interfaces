@@ -171,3 +171,10 @@ export interface ILogStock {
   note?: string; // only on action
   latestInOutInventoryId?: string; // only on transfer
 }
+
+export interface IOrderInLogStock {
+  docNo: string;
+  orderId :string;
+  salepageId: string;
+  orderType: TOrderType;
+}
