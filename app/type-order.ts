@@ -547,6 +547,7 @@ export interface IOrderPaymentRowData {
   isStatusPayment: TPaymentRowStatus;
 }
 export interface IDBOrderPaymentRow {
+  orderType:TOrderType;
   paymentRowId: string;
   confirmBy:string,
   confirmByFullName:string,
