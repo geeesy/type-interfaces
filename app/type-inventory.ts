@@ -102,6 +102,7 @@ export interface IDBProductInventoryActivityLog {
   latestActivityOnTransferInOut?: string; // used to identify on stock transfer
   latestActionBy: string
   latestActionByFullName: string
+  latestEntityOnAction: IOrderInLogStock
 }
 
 
