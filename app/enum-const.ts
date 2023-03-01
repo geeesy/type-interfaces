@@ -166,7 +166,9 @@ export enum CountForCompanyMetric {
   packedOrderAmount = 'TotalPackedOrderAmount',
   shippedOrderAmount = 'TotalShippedOrderAmount',
   awaitingConfirmOrder = 'TotalAwaitingConfirmOrder',
-  awaitingConfirmOrderAmount = 'TotalAwaitingConfirmOrderAmount'
+  awaitingConfirmOrderAmount = 'TotalAwaitingConfirmOrderAmount',
+  awaitingDepositOrder = 'TotalAwaitingDepositOrder',
+  awaitingDepositOrderAmount = 'TotalAwaitingDepositOrderAmount'
 }
 
 export enum ReportForCompanyMetric {
