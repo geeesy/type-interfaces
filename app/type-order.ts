@@ -160,7 +160,7 @@ export interface IListOrder
   channel: SaleChannelSubType;
   channelId: string; // * channelId
   channelName: string;
-  channelImageUrl: string;
+  // channelImageUrl: string;
   shippingTracking: string;
   shippingCost: number;
   completedCanceledAt: string;
@@ -258,8 +258,8 @@ export interface IOrderData {
   salepageName?: string;
   saleChannelId: string; // * id = OTHER000
   channel: SaleChannelSubType;
-  channelName: string;
-  channelImageUrl: string;
+  // channelName: string;
+  // channelImageUrl: string;
   expiryTimestamp: number; // ! expire order -> ttl auto delete on timestamp
   shippingAvailableIds: string[]; // * USE ID FOR LATER
   paymentAvailableIds: string[]; // * USE ID FOR LATER
