@@ -413,7 +413,7 @@ import {
   IFacebookCommentOrderStatus,
   IGraphFacebookPagePostRequest, IGlobalCFSetting, IFacebookShowPost, ITagAttr, IProductLiveRow
 } from './type-facebook';
-import {ICampaignData, ICampaignId} from "./type-affiliate";
+import {ICampaignData, ICampaignId, IPartnerData} from "./type-affiliate";
 
 /* #region FIXME: Marketplace */
 export namespace GeeesyMarketplace {
@@ -1315,8 +1315,9 @@ export namespace GappBiz {
   export type UserRole = IUserRoleImmu & IUserRole & IUserAccessPolicy & IApiCompanyParams & IDBCompanyActivityLog;
 
   // $AFFILIATE
-  export type CreteCampaign = ICampaignData & IApiCompanyParams & IDBCompanyActivityLog;
+  export type CreateCampaign = ICampaignData & IApiCompanyParams & IDBCompanyActivityLog;
   export type Campaign = ICampaignId & ICampaignData & IApiCompanyParams & IDBCompanyActivityLog;
+  export type Partner = IPartnerData
 }
 
 // REVIEW: G-MARKET
