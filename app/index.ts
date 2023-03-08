@@ -413,7 +413,15 @@ import {
   IFacebookCommentOrderStatus,
   IGraphFacebookPagePostRequest, IGlobalCFSetting, IFacebookShowPost, ITagAttr, IProductLiveRow
 } from './type-facebook';
-import {ICampaignData, ICampaignId, IPartnerData} from "./type-affiliate";
+import {
+  ICampaignConfigAttr,
+  ICampaignData,
+  ICampaignDataImmu,
+  ICampaignDateType,
+  IPartnerCommissionData,
+  IPartnerData,
+  IPartnerDataImmu
+} from "./type-affiliate";
 
 /* #region FIXME: Marketplace */
 export namespace GeeesyMarketplace {
@@ -1315,9 +1323,10 @@ export namespace GappBiz {
   export type UserRole = IUserRoleImmu & IUserRole & IUserAccessPolicy & IApiCompanyParams & IDBCompanyActivityLog;
 
   // $AFFILIATE
-  export type CreateCampaign = ICampaignData & IApiCompanyParams & IDBCompanyActivityLog;
-  export type Campaign = ICampaignId & ICampaignData & IApiCompanyParams & IDBCompanyActivityLog;
-  export type Partner = IPartnerData
+  export type CreateCampaign = ICampaignData & ICampaignDateType & IApiCompanyParams & ICampaignConfigAttr & IDBCompanyActivityLog;
+  export type Campaign = ICampaignDataImmu & ICampaignData & ICampaignDateType & ICampaignConfigAttr & IApiCompanyParams & IDBCompanyActivityLog;
+  export type Partner = IPartnerData & IPartnerDataImmu;
+  export type ListConversionOn = ICampaignDateType & IPartnerCommissionData & ICampaignConfigAttr & IDBCompanyActivityLog;
 }
 
 // REVIEW: G-MARKET
