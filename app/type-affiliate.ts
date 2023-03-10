@@ -1,5 +1,9 @@
 import { IImage } from './type-apps';
-import { ITimePeriod } from './type-salepage';
+import {
+  ISalePageComponent,
+  ITimePeriod,
+  TSalepageType
+} from './type-salepage';
 import {
   IDBOrderActivityLog,
   IDBOrderDataImmu,
@@ -18,7 +22,7 @@ import {
   IOrderLinkImmuDataOnConfirm
 } from './type-order';
 import { IDBLogCreate, IDBLogUpdate } from './type-api';
-import { GappBiz } from './index';
+import { GappBiz, GappSetting } from './index';
 
 export type TTypeCampaign =
   | 'SALEPAGE'
@@ -51,24 +55,23 @@ export interface ICouponCodeAttr {
 }
 
 // ANCHOR: Campaign Type (Type 2)
-export interface ISalepageAttr
-  extends IDBOrderEntity,
-    IDBOrderEntityImmu,
-    IOrderEntity,
-    IDBOrderSellerDataImmu,
-    IOrderCustomerData,
-    IOrderCustomerDataImmu,
-    IDBOrderStatus,
-    IOrderData,
-    IDBOrderLinkImmu,
-    IOrderLinkDataOnConfirm,
-    IOrderDataOnComplete,
-    IDBOrderDataImmu,
-    IDBOrderActivityLog,
-    IOrderLinkImmuDataOnConfirm,
-    IDBOrderDataOnCancelImmu,
-    IDBLogUpdate,
-    IDBLogCreate {}
+export interface ISalepageAttr {
+  salepageId: string;
+  title: string;
+  salepageType: TSalepageType;
+  timePeriod: ITimePeriod;
+  salePageComponent: ISalePageComponent;
+  shippingAvailableData: GappSetting.ShippingMethod[];
+  paymentAvailableData: GappSetting.PaymentMethod[];
+  isActive: boolean;
+  hasNoShipment: boolean;
+  createdAt: string;
+  companyMarketLogoUrl: string;
+  companyMarketName: string;
+  companyName: string;
+  businessId: string;
+  compId: string;
+}
 
 // ANCHOR: Campaign Type (Type 3)
 export interface IPostBlogAttr {
@@ -95,7 +98,7 @@ export interface ICampaignConfigByPercentageOfSales {
   showStepCalculate: boolean;
   minCost: number; // showStep: true ==> 0
   calculateCycle: string; // showStep: true ==> ''
-  costs: ICostPercentageByStep[]
+  costs: ICostPercentageByStep[];
 }
 
 // ANCHOR: Campaign Config (Type 3)
@@ -110,7 +113,7 @@ export interface ICampaignConfigByOrders {
   showMinOrder: boolean;
   minOrder: number;
   calculateCycle: string; // showStep: true ==> ''
-  costs: ICostOrderByStep[]
+  costs: ICostOrderByStep[];
 }
 
 // ANCHOR: Campaign Config (Type 4)
@@ -125,7 +128,7 @@ export interface ICampaignConfigByProductsSold {
   showMinQty: boolean;
   minQty: number;
   calculateCycle: string; // showStep: true ==> ''
-  costs: ICostQtyByStep[]
+  costs: ICostQtyByStep[];
 }
 
 // ANCHOR: Campaign Config (Type 5)
@@ -138,7 +141,7 @@ export interface ICampaignConfigByResponses {
   showStepCalculate: boolean;
   minReply: number; // showStep: true ==> ''
   calculateCycle: string; // showStep: true ==> ''
-  costs: ICostReplyByStep[]
+  costs: ICostReplyByStep[];
 }
 
 // ANCHOR: Campaign Config (Type 6)
@@ -174,14 +177,13 @@ export interface ICampaignData {
 // ANCHOR: CAMPAIGN | Entity (4/4)
 export interface ICampaignConfigAttr {
   configAttr:
-      | ICampaignConfigByNotCalculateCommission
-      | ICampaignConfigByPercentageOfSales
-      | ICampaignConfigByOrders
-      | ICampaignConfigByProductsSold
-      | ICampaignConfigByResponses
-      | ICampaignConfigByVisitors;
+    | ICampaignConfigByNotCalculateCommission
+    | ICampaignConfigByPercentageOfSales
+    | ICampaignConfigByOrders
+    | ICampaignConfigByProductsSold
+    | ICampaignConfigByResponses
+    | ICampaignConfigByVisitors;
 }
-
 
 // ANCHOR: PARTNER | Entity (1/2)
 export interface IPartnerDataImmu {
