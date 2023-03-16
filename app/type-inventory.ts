@@ -161,6 +161,7 @@ export enum StockMovementType {
 export type TStockMovementAction = 'IN' | 'OUT' | 'NONE';
 export interface ILogStock {
   updatedBy: string;
+  latestActionByFullName: string;
   action: string;
   stockMovementType: StockMovementType;
   stockMovementAction: TStockMovementAction;
