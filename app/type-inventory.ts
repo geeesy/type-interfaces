@@ -155,6 +155,7 @@ export enum StockMovementType {
   Adjustment = 'stock_adjustments',
   Transfer = 'stock_transfers',
   Purchase = 'purchases',
+  Return = 'return',
   None = 'none'
 }
 
