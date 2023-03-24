@@ -31,6 +31,7 @@ export interface ISalePageEntityImmu {
   companyMarketLogoUrl: string;
   businessId: string;
   salepageId: string;
+  shortSalepageId?:string;
   salepageType: TSalepageType;
   isOnePage?: boolean;
   hasVatRegistration: boolean;

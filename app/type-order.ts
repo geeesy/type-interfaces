@@ -274,6 +274,7 @@ export interface IOrderData {
 // ANCHOR: ORDER | Entity (9/13)
 export interface IDBOrderLinkImmu {
   orderId: string;
+  shortOrderId?:string;
   // orderTemplateId: string;
 }
 
