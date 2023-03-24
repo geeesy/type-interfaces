@@ -414,7 +414,7 @@ import {
   IGraphFacebookPagePostRequest, IGlobalCFSetting, IFacebookShowPost, ITagAttr, IProductLiveRow
 } from './type-facebook';
 import {
-  ICampaignConfigAttr,
+  ICampaignConfigAttr, ICampaignCount,
   ICampaignData,
   ICampaignDataImmu,
   ICampaignDateType,
@@ -1323,8 +1323,8 @@ export namespace GappBiz {
   export type UserRole = IUserRoleImmu & IUserRole & IUserAccessPolicy & IApiCompanyParams & IDBCompanyActivityLog;
 
   // $AFFILIATE
-  export type CreateCampaign = ICampaignData & ICampaignDateType & IApiCompanyParams & ICampaignConfigAttr & IDBCompanyActivityLog;
-  export type Campaign = ICampaignDataImmu & ICampaignData & ICampaignDateType & ICampaignConfigAttr & IApiCompanyParams & IDBCompanyActivityLog;
+  export type CreateCampaign = ICampaignData & ICampaignDateType & IApiCompanyParams & ICampaignConfigAttr & IDBCompanyActivityLog & ICampaignCount;
+  export type Campaign = ICampaignDataImmu & ICampaignData & ICampaignDateType & ICampaignConfigAttr & IApiCompanyParams & IDBCompanyActivityLog & ICampaignCount;
   export type Partner = IPartnerData & IPartnerDataImmu;
   export type ListConversionOn = ICampaignDateType & IPartnerCommissionData & ICampaignConfigAttr & IDBCompanyActivityLog;
 }

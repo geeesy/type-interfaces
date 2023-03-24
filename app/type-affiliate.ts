@@ -151,17 +151,17 @@ export interface ICampaignConfigByVisitors {
   minCost: number;
 }
 
-// ANCHOR: CAMPAIGN | Entity (1/4)
+// ANCHOR: CAMPAIGN | Entity (1/5)
 export interface ICampaignDataImmu {
   campaignId: string;
 }
 
-// ANCHOR: CAMPAIGN | Entity (2/4)
+// ANCHOR: CAMPAIGN | Entity (2/5)
 export interface ICampaignDateType {
   campaignType: TTypeCampaign;
 }
 
-// ANCHOR: CAMPAIGN | Entity (3/4)
+// ANCHOR: CAMPAIGN | Entity (3/5)
 export interface ICampaignData {
   campaignName: string;
   campaignAttr: ISalepageAttr | ICouponCodeAttr | IPostBlogAttr | IMarketAttr;
@@ -174,7 +174,7 @@ export interface ICampaignData {
   partners: GappBiz.Partner[];
 }
 
-// ANCHOR: CAMPAIGN | Entity (4/4)
+// ANCHOR: CAMPAIGN | Entity (4/5)
 export interface ICampaignConfigAttr {
   configAttr:
     | ICampaignConfigByNotCalculateCommission
@@ -184,6 +184,16 @@ export interface ICampaignConfigAttr {
     | ICampaignConfigByResponses
     | ICampaignConfigByVisitors;
 }
+
+// ANCHOR: CAMPAIGN | Entity (5/5)
+export interface ICampaignCount {
+  viewCount: 0,
+  totalSaleAmount: 0,
+  conversionCount: 0,
+  partnerCount: 0
+}
+
+
 
 // ANCHOR: PARTNER | Entity (1/2)
 export interface IPartnerDataImmu {
