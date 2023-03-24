@@ -190,6 +190,7 @@ export interface ICampaignCount {
   viewCount: 0,
   totalSaleAmount: 0,
   conversionCount: 0,
+  partnerCount: 0
 }
 
 
