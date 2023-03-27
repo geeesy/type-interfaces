@@ -1314,6 +1314,7 @@ export namespace GappBiz {
 
   // $REPLY
   export type ReplyTemplate = IReplyData & IApiCompanyParams & IDBCompanyActivityLog;
+  export type ListReplyTemplate = IReplyData & IApiCompanyParams & IDBCompanyActivityLog;
 
   // $TAG
   export type CreateTag = ITagAttr & IApiCompanyParams & IDBCompanyActivityLog;
