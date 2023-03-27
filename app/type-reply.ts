@@ -6,3 +6,4 @@ export interface IReplyData {
     replyDescription: string;
     replyImagesUrl: IImage[];
 }
+
