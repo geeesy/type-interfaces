@@ -422,6 +422,7 @@ import {
   IPartnerData,
   IPartnerDataImmu
 } from "./type-affiliate";
+import {IReplyData} from "./type-reply";
 
 /* #region FIXME: Marketplace */
 export namespace GeeesyMarketplace {
@@ -1310,6 +1311,10 @@ export namespace GappBiz {
 
   // $Global CF SETTING
   export type GlobalCFSetting = IGlobalCFSetting & IApiCompanyParams & IDBCompanyActivityLog;
+
+  // $REPLY
+  export type ReplyTemplate = IReplyData & IApiCompanyParams & IDBCompanyActivityLog;
+  export type ListReplyTemplate = IReplyData & IApiCompanyParams & IDBCompanyActivityLog;
 
   // $TAG
   export type CreateTag = ITagAttr & IApiCompanyParams & IDBCompanyActivityLog;
