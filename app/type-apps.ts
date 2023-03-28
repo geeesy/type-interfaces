@@ -167,6 +167,7 @@ export interface IPersonContactInfo {
 export type TVendorType = 'seller' | 'buyer' | 'multi' | 'other';
 
 export interface IVendorFromFacebook {
+  customerId: string;
   facebookUserId: string;
   facebookPages: ISaleChannelEntity[]
   tags: ITagAttr[],
