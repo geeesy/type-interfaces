@@ -464,6 +464,15 @@ export interface ISettingDoc extends IDBCompanyActivityLog {
   isVatEnabled: boolean;
 }
 
+export interface ITags {
+  tagId: string
+}
+
+export interface ICustomerData {
+  tags: ITags[];
+  isMember: boolean;
+}
+
 
 export interface ICustomer {
   facebookPages: ISaleChannelEntity[];
