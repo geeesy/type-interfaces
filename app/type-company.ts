@@ -471,6 +471,7 @@ export interface ITags {
 export interface ICustomerData {
   tags: ITags[];
   isMember: boolean;
+  isBlocked: boolean;
 }
 
 
