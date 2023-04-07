@@ -14,13 +14,14 @@ Sticker
 /* type facebook
 text, image, audio, video, or file
  */
+
+// ^ Social Chat Message
 export interface IDBSocialChatMessage{
   messageId:string
 }
 
 export interface ISocialChatMessage {
   type: TSocialChatMessage,
-  unread_count: number
   timestamp: string,
   from: ISocialChatMessageFrom,
   message: IMessage
@@ -47,4 +48,22 @@ export interface IMessage {
       }
     }
   ]
+}
+
+// ^ Conversations
+
+export interface IDBConversations{
+  conversationId:string
+}
+
+export interface IConversations{
+  type: TSocialChatMessage,
+  unread_count: number
+  name:string;
+  profileUrl:string
+  latestMessage:{
+    from: ISocialChatMessageFrom,
+    text:string,
+    created_time:string
+  }
 }
