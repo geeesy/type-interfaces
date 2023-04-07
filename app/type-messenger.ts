@@ -1,4 +1,4 @@
-export type TMessenger = 'facebook' | 'line';
+export type TSocialChatMessage = 'facebook' | 'line';
 export type TMessage = 'text' | 'image' | 'audio' | 'video' | 'file' | 'location' | 'sticker';
 
 /* type line
@@ -14,25 +14,25 @@ Sticker
 /* type facebook
 text, image, audio, video, or file
  */
-export interface IDBMessenger{
+export interface IDBSocialChatMessage{
   messageId:string
 }
 
-export interface IMessenger {
-  type: TMessenger,
+export interface ISocialChatMessage {
+  type: TSocialChatMessage,
   unread_count: number
   timestamp: string,
-  from: IMessengerFrom,
-  message: IMessengerMessage
+  from: ISocialChatMessageFrom,
+  message: IMessage
 }
 
-export interface IMessengerFrom {
+export interface ISocialChatMessageFrom {
   id: string;
   name:string;
   isPage:boolean
 }
 
-export interface IMessengerMessage {
+export interface IMessage {
   mid: string,
   type: TMessage,
   text?: string,
