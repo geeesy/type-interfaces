@@ -423,6 +423,7 @@ import {
   IPartnerDataImmu
 } from "./type-affiliate";
 import {IReplyData} from "./type-reply";
+import {IDBMessenger, IMessenger} from "./type-messenger";
 
 /* #region FIXME: Marketplace */
 export namespace GeeesyMarketplace {
@@ -1572,6 +1573,10 @@ export namespace GappSetting {
   export type DBUpdateShippingAndPaymentMethodOnMarket =
     IUpdateShippingAndPaymentMethodOnMarket;
 }
+// * messenger
+export type CreateMessenger = IMessenger & IDBMessenger
+export type Messenger = IMessenger
+
 
 // REVIEW: GAPP INBOUND & OUTBOUND API
 export namespace GappApi {
