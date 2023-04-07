@@ -24,7 +24,6 @@ export interface ISaleChannelSubTypeDefault {
   caption: string;
   facebook: IFacebookData;
   line?: ILineData
-  countUnread: number
 }
 
 
