@@ -423,6 +423,7 @@ import {
   IPartnerDataImmu
 } from "./type-affiliate";
 import {IReplyData} from "./type-reply";
+import {IDBSocialChatMessage, ISocialChatMessage} from "./type-messenger";
 
 /* #region FIXME: Marketplace */
 export namespace GeeesyMarketplace {
@@ -1592,6 +1593,10 @@ export namespace GappApi {
   export type OrderLink = GappBiz.OrderLink;
   export type OrderSalePage = GappBiz.OrderLink;
   export type OrderGappMed = GappBiz.OrderLink;
+
+  // * messenger
+  export type CreateSocialChatMessage = ISocialChatMessage & IDBSocialChatMessage
+  export type SocialChatMessage = ISocialChatMessage
 }
 
 export * as IMarketplace from './type-marketplace';
