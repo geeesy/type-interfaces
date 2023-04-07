@@ -1,3 +1,6 @@
+import {ISaleChannelEntity} from "./type-setting";
+import {SaleChannelType} from "./enum-const";
+
 export type TSocialChatMessage = 'facebook' | 'line';
 export type TMessage = 'text' | 'image' | 'audio' | 'video' | 'file' | 'location' | 'sticker';
 
@@ -17,34 +20,34 @@ text, image, audio, video, or file
 
 // ^ Social Chat Message
 export interface IDBSocialChatMessage{
-  messageId:string
+  messageId:string;
 }
 
 export interface ISocialChatMessage {
-  type: TSocialChatMessage,
-  timestamp: string,
-  from: ISocialChatMessageFrom,
-  message: IMessage
+  type: TSocialChatMessage;
+  timestamp: number;
+  from: ISocialChatMessageFrom;
+  message: IMessage;
 }
 
 export interface ISocialChatMessageFrom {
   id: string;
-  name:string;
-  isPage:boolean
+  profileName:string;
+  isPage:boolean;
 }
 
 export interface IMessage {
-  mid: string,
-  type: TMessage,
-  text?: string,
+  mid: string;
+  type: TMessage;
+  text?: string;
   attachments: [
     {
       payload: {
-        url?: string,
-        title?: string,
-        address?: string,
-        latitude?: string,
-        longitude?: string
+        url?: string;
+        title?: string;
+        address?: string;
+        latitude?: string;
+        longitude?: string;
       }
     }
   ]
@@ -53,17 +56,29 @@ export interface IMessage {
 // ^ Conversations
 
 export interface IDBConversations{
-  conversationId:string
+  conversationId:string;
 }
 
 export interface IConversations{
-  type: TSocialChatMessage,
-  unread_count: number
-  name:string;
-  profileUrl:string
+  hasBlocked:boolean;
+  type: TSocialChatMessage;
+  totalUnread: number;
+  profileName:string;
+  profileUrl:string;
   latestMessage:{
-    from: ISocialChatMessageFrom,
-    text:string,
-    created_time:string
+    from: ISocialChatMessageFrom;
+    text:string;
+    receivedTimestamp:number;
   }
+}
+
+// ^ SaleChannel Short
+
+export interface ISaleChannelShort{
+  saleChannelId:string;
+  saleChannelType: SaleChannelType;
+  pageId:string;
+  saleChannelIconUrl: string;
+  saleChannelAliasName:string;
+  totalUnread:number;
 }
