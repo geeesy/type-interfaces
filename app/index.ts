@@ -247,7 +247,7 @@ import {
   ICompanyPublicEntity,
   ICompanyPublicEntityImmu,
   ICompanySalesRep, ICreateCustomer,
-  ICustomer,
+  ICustomer, ICustomerData,
   IDBCertificate, IDBCompanyActivityLog,
   IDBCompanyEntity,
   IDBCompanySupplierEntity,
@@ -1154,9 +1154,9 @@ export namespace GappBiz {
   export type CreateOrderGappMed = GappBiz.CreateOrderLink &
     IOrderLinkDataOnConfirm;
   export type ListOrderByProduct = IDBListOrderByProduct;
-  export type ListCustomerWithOrder = ICustomerWithOrder;
-  export type Customer = ICustomer;
-  export type CreateCustomer = ICreateCustomer
+  export type ListCustomerWithOrder = ICustomerWithOrder & ICustomerData;
+  export type Customer = ICustomer & ICustomerData;
+  export type CreateCustomer = ICreateCustomer  & ICustomerData
   export type CreateSalepage = ISalePageEntityImmu &
     ISalePageEntity &
     ISalePageUIComponent &

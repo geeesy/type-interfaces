@@ -461,6 +461,17 @@ export interface ISettingDoc extends IDBCompanyActivityLog {
   market: ISettingDocAttributes;
   isVatInc: boolean;
   vatPercent: number; // default = 7
+  isVatEnabled: boolean;
+}
+
+export interface ITags {
+  tagId: string
+}
+
+export interface ICustomerData {
+  tags: ITags[];
+  isMember: boolean;
+  isBlocked: boolean;
 }
 
 
