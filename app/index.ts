@@ -1335,8 +1335,8 @@ export namespace GappBiz {
   export type ListConversionOn = ICampaignDateType & IPartnerCommissionData & ICampaignConfigAttr & IDBCompanyActivityLog;
 
   // $ messenger
-  export type CreateConversations = IConversations & IDBConversations
-  export type Conversations = IConversations
+  export type CreateConversations = IConversations & IDBConversations & IDBActivityLog
+  export type Conversations = IConversations & IDBActivityLog
   export type CreateSocialChatMessage = ISocialChatMessage & IDBSocialChatMessage
   export type SocialChatMessage = ISocialChatMessage
 }
