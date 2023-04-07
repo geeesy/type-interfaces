@@ -57,6 +57,7 @@ export interface IDBConversations{
 }
 
 export interface IConversations{
+  type: TSocialChatMessage,
   unread_count: number
   name:string;
   profileUrl:string
