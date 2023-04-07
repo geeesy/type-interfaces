@@ -260,7 +260,7 @@ export interface IOrderData {
   channel: SaleChannelSubType;
   channelName: string;
   channelImageUrl: string;
-  expiryTimestamp: number; // ! expire order -> ttl auto delete on timestamp
+  expiryTimestamp: number; // ! expire order -> ttl auto delete on timestamp 10 digit
   shippingAvailableIds: string[]; // * USE ID FOR LATER
   paymentAvailableIds: string[]; // * USE ID FOR LATER
   shippingAvailableData: GappSetting.ShippingMethod[];
