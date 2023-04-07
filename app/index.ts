@@ -1573,10 +1573,6 @@ export namespace GappSetting {
   export type DBUpdateShippingAndPaymentMethodOnMarket =
     IUpdateShippingAndPaymentMethodOnMarket;
 }
-// * messenger
-export type CreateMessenger = IMessenger & IDBMessenger
-export type Messenger = IMessenger
-
 
 // REVIEW: GAPP INBOUND & OUTBOUND API
 export namespace GappApi {
@@ -1597,6 +1593,10 @@ export namespace GappApi {
   export type OrderLink = GappBiz.OrderLink;
   export type OrderSalePage = GappBiz.OrderLink;
   export type OrderGappMed = GappBiz.OrderLink;
+
+  // * messenger
+  export type CreateMessenger = IMessenger & IDBMessenger
+  export type Messenger = IMessenger
 }
 
 export * as IMarketplace from './type-marketplace';
