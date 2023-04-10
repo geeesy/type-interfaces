@@ -1,5 +1,4 @@
-import {ISaleChannelEntity} from "./type-setting";
-import {SaleChannelType} from "./enum-const";
+import { SaleChannelType } from "./enum-const";
 
 export type TSocialChatMessage = 'facebook' | 'line';
 export type TMessage = 'text' | 'image' | 'audio' | 'video' | 'file' | 'location' | 'sticker';
