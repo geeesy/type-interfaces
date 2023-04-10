@@ -1,6 +1,7 @@
 
 export interface ILineData {
-    lineChannelId: string;
-    lineChannelSecret: string;
-    lineChannelAccessToken: string;
+    channelId: string;
+    channelSecret: string;
+    channelAccessToken: string;
+    channelWebUrl: string;
 }
