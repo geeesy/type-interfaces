@@ -60,12 +60,12 @@ export interface IMessage {
 // ^ Conversations
 // ANCHOR Conversations | Entity (1/2)
 
-export interface IDBConversations{
+export interface IDBConversation{
   conversationId:string;
 }
 
 // ANCHOR Conversations | Entity (2/2)
-export interface IConversations{
+export interface IConversation{
   hasBlocked:boolean;
   type: TSocialChatMessage;
   totalUnread: number;
