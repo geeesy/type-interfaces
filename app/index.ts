@@ -1342,11 +1342,12 @@ export namespace GappBiz {
 
   // $ messenger
   // STUB: Social Chat Message
+  // ! AppSync Schema
   // * Channel
-  export type CreateSaleChannelShort = ISaleChannelShort & IApiCompanyParams
-  export type SaleChannelShort = ISaleChannelShort & IApiCompanyParams & IDBLogTime
+  export type CreateSocialChannel = ISaleChannelShort & IApiCompanyParams
+  export type SocialChannel = ISaleChannelShort & IApiCompanyParams & IDBLogTime
   // * Conversation
-  export type CreateConversations = IConversation & IDBConversation & IDBActivityLog & IApiCompanyParams
+  export type CreateConversation = IConversation & IDBConversation & IDBActivityLog & IApiCompanyParams
   export type Conversation = IConversation & IDBActivityLog & IDBLogTime
   // * Chat Message
   export type CreateSocialChatMessage = ISocialChatMessage & IApiCompanyParams
