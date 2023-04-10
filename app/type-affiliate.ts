@@ -1,28 +1,10 @@
+import { GappBiz, GappSetting } from './index';
 import { IImage } from './type-apps';
 import {
   ISalePageComponent,
   ITimePeriod,
   TSalepageType
 } from './type-salepage';
-import {
-  IDBOrderActivityLog,
-  IDBOrderDataImmu,
-  IDBOrderDataOnCancelImmu,
-  IDBOrderEntity,
-  IDBOrderEntityImmu,
-  IDBOrderLinkImmu,
-  IDBOrderSellerDataImmu,
-  IDBOrderStatus,
-  IOrderCustomerData,
-  IOrderCustomerDataImmu,
-  IOrderData,
-  IOrderDataOnComplete,
-  IOrderEntity,
-  IOrderLinkDataOnConfirm,
-  IOrderLinkImmuDataOnConfirm
-} from './type-order';
-import { IDBLogCreate, IDBLogUpdate } from './type-api';
-import { GappBiz, GappSetting } from './index';
 
 export type TTypeCampaign =
   | 'SALEPAGE'
