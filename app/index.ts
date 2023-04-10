@@ -1341,12 +1341,17 @@ export namespace GappBiz {
   export type ListConversionOn = ICampaignDateType & IPartnerCommissionData & ICampaignConfigAttr & IDBCompanyActivityLog;
 
   // $ messenger
-  export type CreateConversations = IConversations & IDBConversations & IDBActivityLog
-  export type Conversations = IConversations & IDBActivityLog
-  export type CreateSocialChatMessage = ISocialChatMessage & IDBSocialChatMessage
-  export type SocialChatMessage = ISocialChatMessage
+  // STUB: Social Chat Message
+  // * Channel
   export type CreateSaleChannelShort = ISaleChannelShort & IApiCompanyParams
-  export type SaleChannelShort = ISaleChannelShort & IApiCompanyParams
+  export type SaleChannelShort = ISaleChannelShort & IApiCompanyParams & IDBLogTime
+  // * Conversation
+  export type CreateConversations = IConversations & IDBConversations & IDBActivityLog & IApiCompanyParams
+  export type Conversations = IConversations & IDBActivityLog & IDBLogTime
+  // * Chat Message
+  export type CreateSocialChatMessage = ISocialChatMessage & IApiCompanyParams
+  export type SocialChatMessage = ISocialChatMessage & IDBSocialChatMessage & IDBLogTime
+
 }
 
 // REVIEW: G-MARKET
