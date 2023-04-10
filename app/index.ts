@@ -424,8 +424,8 @@ import {
 } from "./type-affiliate";
 import {IReplyData} from "./type-reply";
 import {
-  IConversations,
-  IDBConversations,
+  IConversation,
+  IDBConversation,
   IDBSocialChatMessage,
   ISaleChannelShort,
   ISocialChatMessage
@@ -1346,8 +1346,8 @@ export namespace GappBiz {
   export type CreateSaleChannelShort = ISaleChannelShort & IApiCompanyParams
   export type SaleChannelShort = ISaleChannelShort & IApiCompanyParams & IDBLogTime
   // * Conversation
-  export type CreateConversations = IConversations & IDBConversations & IDBActivityLog & IApiCompanyParams
-  export type Conversations = IConversations & IDBActivityLog & IDBLogTime
+  export type CreateConversations = IConversation & IDBConversation & IDBActivityLog & IApiCompanyParams
+  export type Conversation = IConversation & IDBActivityLog & IDBLogTime
   // * Chat Message
   export type CreateSocialChatMessage = ISocialChatMessage & IApiCompanyParams
   export type SocialChatMessage = ISocialChatMessage & IDBSocialChatMessage & IDBLogTime
