@@ -190,6 +190,8 @@ export interface IPartnerData {
   partnerImageUrl: string;
   link: string;
   isCommission: boolean;
+  totalSaleAmount: number;
+  totalCommission: number;
 }
 
 // ANCHOR: COMMISSION | Entity (1/1)
