@@ -423,7 +423,13 @@ import {
   IPartnerDataImmu
 } from "./type-affiliate";
 import {IReplyData} from "./type-reply";
-import {IConversations, IDBConversations, IDBSocialChatMessage, ISocialChatMessage} from "./type-messenger";
+import {
+  IConversation,
+  IDBConversation,
+  IDBSocialChatMessage,
+  ISaleChannelShort,
+  ISocialChatMessage
+} from "./type-messenger";
 
 /* #region FIXME: Marketplace */
 export namespace GeeesyMarketplace {
@@ -1335,10 +1341,18 @@ export namespace GappBiz {
   export type ListConversionOn = ICampaignDateType & IPartnerCommissionData & ICampaignConfigAttr & IDBCompanyActivityLog;
 
   // $ messenger
-  export type CreateConversations = IConversations & IDBConversations & IDBActivityLog
-  export type Conversations = IConversations & IDBActivityLog
-  export type CreateSocialChatMessage = ISocialChatMessage & IDBSocialChatMessage
-  export type SocialChatMessage = ISocialChatMessage
+  // STUB: Social Chat Message
+  // ! AppSync Schema
+  // * Channel
+  export type CreateSocialChannel = ISaleChannelShort & IApiCompanyParams
+  export type SocialChannel = ISaleChannelShort & IApiCompanyParams & IDBLogTime
+  // * Conversation
+  export type CreateConversation = IConversation & IDBConversation & IDBActivityLog & IApiCompanyParams
+  export type Conversation = IConversation & IDBActivityLog & IDBLogTime
+  // * Chat Message
+  export type CreateSocialChatMessage = ISocialChatMessage & IApiCompanyParams
+  export type SocialChatMessage = ISocialChatMessage & IDBSocialChatMessage & IDBLogTime
+
 }
 
 // REVIEW: G-MARKET
