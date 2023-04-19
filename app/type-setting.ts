@@ -23,7 +23,7 @@ import {ILineData} from "./typ-line";
 export interface ISaleChannelSubTypeDefault {
   caption: string;
   facebook: IFacebookData;
-  line?: ILineData
+  line: ILineData
 }
 
 
