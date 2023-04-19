@@ -1337,7 +1337,7 @@ export namespace GappBiz {
   // $AFFILIATE
   export type CreateCampaign = ICampaignData & ICampaignDateType & IApiCompanyParams & ICampaignConfigAttr & IDBCompanyActivityLog & ICampaignCount;
   export type Campaign = ICampaignDataImmu & ICampaignData & ICampaignDateType & ICampaignConfigAttr & IApiCompanyParams & IDBCompanyActivityLog & ICampaignCount;
-  export type Partner = IPartnerData & IPartnerDataImmu;
+  export type Partner = IPartnerData & IPartnerDataImmu & IDBCompanyActivityLog;
   export type ListConversionOn = ICampaignDateType & IPartnerCommissionData & ICampaignConfigAttr & IDBCompanyActivityLog;
 
   // $ messenger
