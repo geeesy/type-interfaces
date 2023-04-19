@@ -189,6 +189,7 @@ export interface IPartnerData {
   partnerFullName: string;
   partnerImageUrl: string;
   link: string;
+  linkReport: string;
   isCommission: boolean;
   totalSaleAmount: number;
   totalCommission: number;
