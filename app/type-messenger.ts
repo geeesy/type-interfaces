@@ -27,15 +27,14 @@ export interface IDBSocialChatMessage{
 export interface ISocialChatMessage {
   type: TSocialChatMessage;
   timestamp: number;
-  from: ISocialChatMessageSender;
   message: IMessage;
 }
 
 
 export interface ISocialChatMessageSender {
-  id: string;
-  profileName:string;
-  isPage:boolean;
+  senderId: string;
+  senderProfileName:string;
+  isPageSender:boolean;
 }
 
 export interface IMessage {

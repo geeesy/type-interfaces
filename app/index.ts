@@ -428,7 +428,8 @@ import {
   IDBConversation,
   IDBSocialChatMessage,
   ISaleChannelShort,
-  ISocialChatMessage
+  ISocialChatMessage,
+  ISocialChatMessageSender
 } from "./type-messenger";
 
 /* #region FIXME: Marketplace */
@@ -1350,8 +1351,8 @@ export namespace GappBiz {
   export type CreateConversation = IConversation & IDBConversation & IDBActivityLog & IApiCompanyParams
   export type Conversation = IConversation & IDBActivityLog & IDBLogTime
   // * Chat Message
-  export type CreateSocialChatMessage = ISocialChatMessage & IApiCompanyParams
-  export type SocialChatMessage = ISocialChatMessage & IDBSocialChatMessage & IDBLogTime
+  export type CreateSocialChatMessage = ISocialChatMessage & ISocialChatMessageSender & IApiCompanyParams
+  export type SocialChatMessage = ISocialChatMessage & ISocialChatMessageSender & IDBSocialChatMessage & IDBLogTime
 
 }
 
