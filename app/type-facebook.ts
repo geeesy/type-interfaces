@@ -133,17 +133,25 @@ export interface IFacebookLiveCreate extends IGraphFacebookPageLiveRequest {
   facebookLiveName: string;
   facebookData: IFacebookData;
   statusBroadcast: TStatusBroadcast;
-  timestampLive: number;
+  timeStampLiveAt: string;
   shippingAvailableIds: string[]; // * USE ID FOR LATER
   paymentAvailableIds: string[]; // * USE ID FOR LATER
   shippingAvailableData: GappSetting.ShippingMethod[];
   paymentAvailableData: GappSetting.PaymentMethod[];
   hasNoShipment: boolean;
   templateOBSId: string; // * OBS OverlayID
+  liveEndedAt: string;
+  liveEndedBy: string;
 }
 
 export interface IFacebookLiveId {
   liveId: string;
+}
+
+
+export interface ISocialTransaction {
+  liveId?: string,
+  postId?: string
 }
 
 export interface IFacebookLiveList
