@@ -2,7 +2,7 @@ import { SaleChannelType } from "./enum-const";
 
 export type TSocialChatMessage = 'facebook' | 'line';
 export type TMessage = 'text' | 'image' | 'audio' | 'video' | 'file' | 'location' | 'sticker';
-
+export type TMessageStatus = 'sent' | 'unread' | 'read' | 'failed' | 'unknown';
 /* type line
 Text
 Image
@@ -27,6 +27,7 @@ export interface IDBSocialChatMessage{
 export interface ISocialChatMessage {
   type: TSocialChatMessage;
   timestamp: number;
+  messageStatus: string;
   message: IMessage;
 }
 
