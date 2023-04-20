@@ -5,6 +5,7 @@ import { IPersonContactInfo } from './type-apps';
 import { SaleChannelSubType } from './enum-const';
 import {ISaleChannelEntity} from "./type-setting";
 import {IOrderInLogStock} from "./type-inventory";
+import {ISocialTransaction} from "./type-facebook";
 
 /* eslint-disable no-unused-vars */
 export enum StatusOrderSeller {
@@ -257,6 +258,9 @@ export interface IDBListOrderByProduct
 export interface IOrderData {
   salepageName?: string;
   saleChannelId: string; // * id = OTHER000
+  liveId: string;
+  postId: string;
+  socialTransactionArr: ISocialTransaction[];
   channel: SaleChannelSubType;
   channelName: string;
   channelImageUrl: string;
