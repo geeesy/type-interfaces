@@ -1,7 +1,7 @@
 import { SaleChannelType } from "./enum-const";
 
-export type TSocialChatMessage = 'facebook' | 'line';
-export type TMessage = 'text' | 'image' | 'audio' | 'video' | 'file' | 'location' | 'sticker';
+export type TSocialSource = 'facebook' | 'line';
+export type TMessageType = 'text' | 'image' | 'audio' | 'video' | 'file' | 'location' | 'sticker';
 export type TMessageStatus = 'sent' | 'unread' | 'read' | 'failed' | 'unknown';
 /* type line
 Text
@@ -25,7 +25,7 @@ export interface IDBSocialChatMessage{
 
 // ANCHOR: Social Chat Message | Entity (2/2)
 export interface ISocialChatMessage {
-  type: TSocialChatMessage;
+  socialSource: TSocialSource;
   timestamp: number;
   messageStatus: string;
   message: IMessage;
@@ -40,7 +40,7 @@ export interface ISocialChatMessageSender {
 
 export interface IMessage {
   mid: string;
-  type: TMessage;
+  type: TMessageType;
   text?: string;
   attachments: [
     {
@@ -67,7 +67,7 @@ export interface IDBConversation{
 // ANCHOR Conversations | Entity (2/2)
 export interface IConversation{
   hasBlocked:boolean;
-  type: TSocialChatMessage;
+  socialSource: TSocialSource;
   totalUnread: number;
   profileName:string;
   profileUrl:string;
