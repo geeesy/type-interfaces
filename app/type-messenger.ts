@@ -20,7 +20,7 @@ text, image, audio, video, or file
 // ^ Social Chat Message
 // ANCHOR: Social Chat Message | Entity (1/2)
 export interface IDBSocialChatMessage{
-  messageId:string;
+  id:string; //! AppSync
 }
 
 // ANCHOR: Social Chat Message | Entity (2/2)
