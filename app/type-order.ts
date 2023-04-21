@@ -165,6 +165,9 @@ export interface IListOrder
   shippingCost: number;
   completedCanceledAt: string;
   completedCanceledBy: string;
+  liveId: string;
+  postId: string;
+  facebookTransactionArr: [number,  number, number]; // [Live, LateLive, Post]
 }
 
 // ANCHOR: ORDER | Entity (1/13)
