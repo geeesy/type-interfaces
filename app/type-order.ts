@@ -270,6 +270,9 @@ export interface IOrderData {
   hasOverrideEmailSending: boolean;
   overrideEmailSendingAttribute: string;
   isSendChat:boolean;
+  liveId: string;
+  postId: string;
+  socialTransactionArr: ISocialTransaction[];
 }
 
 // ANCHOR: ORDER | Entity (9/13)

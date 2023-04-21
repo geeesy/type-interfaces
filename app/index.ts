@@ -411,7 +411,7 @@ import {
   IFacebookData,
   IFacebookLiveOrderList,
   IFacebookCommentOrderStatus,
-  IGraphFacebookPagePostRequest, IGlobalCFSetting, IFacebookShowPost, ITagAttr, IProductLiveRow, IOrderFromSocial
+  IGraphFacebookPagePostRequest, IGlobalCFSetting, IFacebookShowPost, ITagAttr, IProductLiveRow
 } from './type-facebook';
 import {
   ICampaignConfigAttr, ICampaignCount,
@@ -1039,12 +1039,12 @@ export namespace GappBiz {
   export type ListOrderLink = IListOrder & IDBLogTime;
 
   // STUB: ORDER by LIVE Facebook
-  export type CreateOrderLinkByLiveFacebook = GappBiz.CreateOrderLink & IOrderFromSocial
-  export type OrderLinkByLiveFacebook = GappBiz.OrderLink & IOrderFromSocial
+  export type CreateOrderLinkByLiveFacebook = GappBiz.CreateOrderLink
+  export type OrderLinkByLiveFacebook = GappBiz.OrderLink
 
   // STUB: ORDER by POST Facebook
-  export type CreateOrderLinkByPostFacebook = GappBiz.CreateOrderLink & IOrderFromSocial
-  export type OrderLinkByPostFacebook = GappBiz.OrderLink & IOrderFromSocial
+  export type CreateOrderLinkByPostFacebook = GappBiz.CreateOrderLink
+  export type OrderLinkByPostFacebook = GappBiz.OrderLink
 
   // STUB: send slip
   export type CreatePaymentRowInOrder = IOrderPaymentRowData &
