@@ -189,6 +189,7 @@ export interface IFacebookPostCreate {
   chkStartNow: boolean;
   isPooling: boolean; // Pooling CF
   liveId: string;
+  isPostFromLive: boolean
 }
 
 export interface IFacebookShowPost  extends  IFacebookPostData{
