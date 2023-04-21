@@ -142,15 +142,11 @@ export interface IFacebookLiveCreate extends IGraphFacebookPageLiveRequest {
   templateOBSId: string; // * OBS OverlayID
   liveEndedAt: string;
   liveEndedBy: string;
+  isPooling: boolean;
 }
 
 export interface IFacebookLiveId {
   liveId: string;
-}
-
-export interface ISocialTransaction {
-  liveId?: string,
-  postId?: string
 }
 
 export interface IFacebookLiveList
