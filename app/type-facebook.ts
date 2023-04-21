@@ -148,6 +148,12 @@ export interface IFacebookLiveId {
   liveId: string;
 }
 
+export interface IOrderFromSocial {
+  liveId: string;
+  postId: string;
+  socialTransactionArr: ISocialTransaction[];
+}
+
 
 export interface ISocialTransaction {
   liveId?: string,

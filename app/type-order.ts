@@ -258,9 +258,6 @@ export interface IDBListOrderByProduct
 export interface IOrderData {
   salepageName?: string;
   saleChannelId: string; // * id = OTHER000
-  liveId: string;
-  postId: string;
-  socialTransactionArr: ISocialTransaction[];
   channel: SaleChannelSubType;
   channelName: string;
   channelImageUrl: string;
