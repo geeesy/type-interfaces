@@ -5,7 +5,6 @@ import { IPersonContactInfo } from './type-apps';
 import { SaleChannelSubType } from './enum-const';
 import {ISaleChannelEntity} from "./type-setting";
 import {IOrderInLogStock} from "./type-inventory";
-import {ISocialTransaction} from "./type-facebook";
 
 /* eslint-disable no-unused-vars */
 export enum StatusOrderSeller {
@@ -272,7 +271,7 @@ export interface IOrderData {
   isSendChat:boolean;
   liveId: string;
   postId: string;
-  socialTransactionArr: ISocialTransaction[];
+  facebookTransactionArr: [number,  number, number]; // [Live, LateLive, Post]
 }
 
 // ANCHOR: ORDER | Entity (9/13)
