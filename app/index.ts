@@ -1304,7 +1304,7 @@ export namespace GappBiz {
   // ! AppSync Schema
   // * Channel
   export type CreateSocialChannel = ISaleChannelShort & IApiCompanyParams
-  export type SocialChannel = ISaleChannelShort & IApiCompanyParams & IDBLogTime
+  export type SocialChannel = ISaleChannelShort & IDBLogTime
   // * Conversation
   export type CreateConversation = IConversation & IDBConversation & IDBActivityLog & IApiCompanyParams
   export type Conversation = IConversation & IDBActivityLog & IDBLogTime
