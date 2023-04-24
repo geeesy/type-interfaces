@@ -17,10 +17,61 @@ Sticker
 text, image, audio, video, or file
  */
 
-// ^ Social Chat Message
+/**
+ * REVIEW Social Channel
+ * ! AppSync
+ * - Social Channel Selector
+ */
+
+export interface ISocialChannelImmu {
+  compId: string;
+  businessId: string;
+  channelId: string;
+}
+
+export interface ISocialChannel{
+  pageId: string;
+  saleChannelId: string;
+  saleChannelType: SaleChannelType;
+  saleChannelIconUrl: string;
+  saleChannelAliasName: string;
+  totalUnread: number;
+}
+
+/**
+ * REVIEW Social Conversation
+ * ! AppSync
+ */
+
+// ANCHOR Conversation | Entity (1/2)
+
+export interface IDBConversationImmu {
+  compId: string;
+  conversationId: string;
+}
+
+// ANCHOR Conversation | Entity (2/2)
+export interface IConversation{
+  hasBlocked: boolean;
+  socialSource: TSocialSource;
+  totalUnread: number;
+  profileName:string;
+  profileUrl: string;
+  latestMessage:{
+    from: ISocialChatMessageSender;
+    text: string;
+    receivedTimestamp: number;
+  }
+}
+
+/**
+ * REVIEW Social Chat Message
+ * ! AppSync
+ */
+
 // ANCHOR: Social Chat Message | Entity (1/2)
-export interface IDBSocialChatMessage{
-  id:string; //! AppSync
+export interface IDBSocialChatMessageImmu {
+  id: string; //! By AppSync
 }
 
 // ANCHOR: Social Chat Message | Entity (2/2)
@@ -30,7 +81,6 @@ export interface ISocialChatMessage {
   messageStatus: string;
   message: IMessage;
 }
-
 
 export interface ISocialChatMessageSender {
   senderId: string;
@@ -57,34 +107,3 @@ export interface IMessage {
 
 
 
-// ^ Conversations
-// ANCHOR Conversations | Entity (1/2)
-
-export interface IDBConversation{
-  conversationId:string;
-}
-
-// ANCHOR Conversations | Entity (2/2)
-export interface IConversation{
-  hasBlocked:boolean;
-  socialSource: TSocialSource;
-  totalUnread: number;
-  profileName:string;
-  profileUrl:string;
-  latestMessage:{
-    from: ISocialChatMessageSender;
-    text:string;
-    receivedTimestamp:number;
-  }
-}
-
-// ^ SaleChannel Short
-// STUB Sale-channel switcher
-export interface ISaleChannelShort{
-  saleChannelId:string;
-  saleChannelType: SaleChannelType;
-  pageId:string;
-  saleChannelIconUrl: string;
-  saleChannelAliasName:string;
-  totalUnread:number;
-}
