@@ -264,7 +264,7 @@ export enum SaleChannelSubType {
   GappBiz = 'gappBiz',
   Lazada = 'lazada',
   Shopee = 'shopee',
-  ShopeeConnect = 'shopeeconnect',
+  ShopeeConnect = 'shopeeConnect',
   JD = 'jd',
   Facebook = 'facebook',
   FacebookConnect = 'facebookconnect',
