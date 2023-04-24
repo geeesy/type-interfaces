@@ -1,4 +1,4 @@
-import { SaleChannelType } from "./enum-const";
+import {SaleChannelSubType, SaleChannelType} from "./enum-const";
 
 export type TSocialSource = 'facebook' | 'line';
 export type TMessageType = 'text' | 'image' | 'audio' | 'video' | 'file' | 'location' | 'sticker';
@@ -33,6 +33,7 @@ export interface ISocialChannel{
   pageId: string;
   saleChannelId: string;
   saleChannelType: SaleChannelType;
+  saleChannelSubType: SaleChannelSubType;
   saleChannelIconUrl: string;
   saleChannelAliasName: string;
   totalUnread: number;
