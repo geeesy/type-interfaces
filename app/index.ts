@@ -1306,8 +1306,8 @@ export namespace GappBiz {
   export type CreateSocialChannel = ISocialChannel & IApiCompanyParams
   export type SocialChannel = ISocialChannel & IDBLogTime
   // * Conversation
-  export type CreateConversation = IConversation & IDBConversationImmu & IDBActivityLog & IApiCompanyParams
-  export type Conversation = IConversation & IDBActivityLog & IDBLogTime
+  export type CreateSocialConversation = IConversation & IDBConversationImmu & IDBActivityLog & IApiCompanyParams
+  export type SocialConversation = IConversation & IDBActivityLog & IDBLogTime
   // * Chat Message
   export type CreateSocialChatMessage = ISocialChatMessage & ISocialChatMessageSender & IApiCompanyParams
   export type SocialChatMessage = ISocialChatMessage & ISocialChatMessageSender & IDBSocialChatMessageImmu & IDBLogTime
