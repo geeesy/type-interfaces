@@ -425,9 +425,9 @@ import {
 import {IReplyData} from "./type-reply";
 import {
   IConversation,
-  IDBConversation,
-  IDBSocialChatMessage,
-  ISaleChannelShort,
+  IDBConversationImmu,
+  IDBSocialChatMessageImmu,
+  ISocialChannel,
   ISocialChatMessage,
   ISocialChatMessageSender
 } from "./type-messenger";
@@ -1303,14 +1303,14 @@ export namespace GappBiz {
   // STUB: Social Chat Message
   // ! AppSync Schema
   // * Channel
-  export type CreateSocialChannel = ISaleChannelShort & IApiCompanyParams
-  export type SocialChannel = ISaleChannelShort & IDBLogTime
+  export type CreateSocialChannel = ISocialChannel & IApiCompanyParams
+  export type SocialChannel = ISocialChannel & IDBLogTime
   // * Conversation
-  export type CreateConversation = IConversation & IDBConversation & IDBActivityLog & IApiCompanyParams
+  export type CreateConversation = IConversation & IDBConversationImmu & IDBActivityLog & IApiCompanyParams
   export type Conversation = IConversation & IDBActivityLog & IDBLogTime
   // * Chat Message
   export type CreateSocialChatMessage = ISocialChatMessage & ISocialChatMessageSender & IApiCompanyParams
-  export type SocialChatMessage = ISocialChatMessage & ISocialChatMessageSender & IDBSocialChatMessage & IDBLogTime
+  export type SocialChatMessage = ISocialChatMessage & ISocialChatMessageSender & IDBSocialChatMessageImmu & IDBLogTime
 
 }
 

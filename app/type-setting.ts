@@ -17,7 +17,7 @@ import { SaleChannelSubType, SaleChannelType } from './enum-const';
 import {
   IFacebookData,
 } from './type-facebook';
-import {ILineData} from "./typ-line";
+import {ILineData} from "./type-line";
 
 // ANCHOR: Sale Channel Attribute (Type Default) test
 export interface ISaleChannelSubTypeDefault {
