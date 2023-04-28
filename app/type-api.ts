@@ -39,8 +39,4 @@ export interface IApiSupplierParams extends IApiCompanyParams {
   supplierId: string;
 }
 
-export interface IApiCompIdParams {
-  compId: string
-}
-
 export type TApiErrorModule = 'INVENTORY' | 'ERROR'
