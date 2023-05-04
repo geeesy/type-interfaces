@@ -1574,6 +1574,7 @@ export interface ICreateNotifyMessage {
   entityId: string;
   entityTitle: string;
   entitySubId: string;
+  entityImage: string;
   status: TNotifyStatus;
   refDocNo: string;
   notifiedAt: string;
