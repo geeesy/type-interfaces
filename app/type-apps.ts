@@ -631,6 +631,7 @@ export interface IQuotationRfqFormCreate {
   formGroupAccounting: IQuotationFormGroupAccounting;
   formGroupData: IQuotationFormGroupData;
   formGroupApprover: IQuotationFormGroupApprover;
+  formGroupShipper: IShipperContact;
 }
 
 export interface IQuotationFormGroupAccounting {
