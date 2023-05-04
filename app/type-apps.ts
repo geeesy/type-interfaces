@@ -294,9 +294,9 @@ export interface ISenderContact {
   senderCompanyContactInfo: ICompanyContactInfo;
 }
 
-export interface IDeliveryContact {
-  deliveryContactInfo: IPersonContactInfo;
-  deliveryCompanyContactInfo: ICompanyContactInfo;
+export interface IShipperContact {
+  shipperContactInfo: IPersonContactInfo;
+  shipperCompanyContactInfo: ICompanyContactInfo;
 }
 
 export interface IReceiverContact {
@@ -620,7 +620,7 @@ export interface IQuotationFormCreate {
   formGroupAccounting: IQuotationFormGroupAccounting;
   formGroupData: IQuotationFormGroupData;
   formGroupApprover: IQuotationFormGroupApprover;
-  formGroupDelivery: IDeliveryContact;
+  formGroupShipper: IShipperContact;
 }
 
 export interface IQuotationRfqFormCreate {
@@ -688,6 +688,7 @@ export interface IQuotationList {
   quotationId: string;
   sender: ISenderContact;
   receiver: IReceiverContact;
+  shipper: IShipperContact;
   docNo?: string;
   docDate?: string;
   productTitleFirst: string;
