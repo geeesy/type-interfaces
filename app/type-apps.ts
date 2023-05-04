@@ -294,6 +294,11 @@ export interface ISenderContact {
   senderCompanyContactInfo: ICompanyContactInfo;
 }
 
+export interface IDeliveryContact {
+  deliveryContactInfo: IPersonContactInfo;
+  deliveryCompanyContactInfo: ICompanyContactInfo;
+}
+
 export interface IReceiverContact {
   receiverContactInfo: IPersonContactInfo;
   receiverCompanyContactInfo: ICompanyContactInfo;
@@ -615,6 +620,7 @@ export interface IQuotationFormCreate {
   formGroupAccounting: IQuotationFormGroupAccounting;
   formGroupData: IQuotationFormGroupData;
   formGroupApprover: IQuotationFormGroupApprover;
+  formGroupDelivery: IDeliveryContact;
 }
 
 export interface IQuotationRfqFormCreate {
