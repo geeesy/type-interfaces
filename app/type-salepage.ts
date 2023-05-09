@@ -66,7 +66,6 @@ export interface ITimePeriod {
   chkSetTime: boolean;
   chkStartDate: boolean;
   chkEndDate: boolean;
-  chkStartNow: boolean;
 }
 
 // ANCHOR: SALE PAGE | Entity (4/4)
