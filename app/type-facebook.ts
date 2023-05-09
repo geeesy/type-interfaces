@@ -3,6 +3,7 @@ import { GappSetting } from './index';
 import { IOrderProductRow, StatusOrderSeller, TOrderType } from './type-order';
 import { IPaymentMethodEntity } from './type-payment';
 import { TShippingParty } from './type-shipping';
+import {ITimePeriod} from "./type-salepage";
 
 export type TStatusBroadcast =
   | 'UNPUBLISHED'
@@ -163,8 +164,6 @@ export interface IFacebookPostCreate {
   // facebookData: IFacebookData; // ! Wait Delete When New Api Completed !!!
   // facebookConnect: IFacebookConnectPost[];
   statusPost: string;
-  periodStartDate: Date;
-  periodEndDate: Date;
   shippingAvailableIds: string[]; // * USE ID FOR LATER
   paymentAvailableIds: string[]; // * USE ID FOR LATER
   shippingAvailableData: GappSetting.ShippingMethod[];
@@ -172,13 +171,11 @@ export interface IFacebookPostCreate {
   hasNoShipment: boolean;
   expiredPayment: IExpiredPayment;
   replyMessage: IReplyMessage;
-  chkEndDate: boolean;
-  chkSetTime: boolean;
-  chkStartDate: boolean;
-  chkStartNow: boolean;
   isPooling: boolean; // Pooling CF
   liveId: string;
   isPostFromLive: boolean
+  isActive: boolean;
+  timePeriod: ITimePeriod;
 }
 
 export interface IFacebookShowPost  extends  IFacebookPostData{
