@@ -53,6 +53,7 @@ export interface ISalepageAttr {
   companyName: string;
   businessId: string;
   compId: string;
+  shortSalepageId: string;
 }
 
 // ANCHOR: Campaign Type (Type 3)
