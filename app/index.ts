@@ -411,7 +411,7 @@ import {
   IFacebookData,
   IFacebookLiveOrderList,
   IFacebookCommentOrderStatus,
-  IGraphFacebookPagePostRequest, IGlobalCFSetting, IFacebookShowPost, ITagAttr, IProductLiveRow
+  IGraphFacebookPagePostRequest, IGlobalCFSetting, IFacebookShowPost, ITagAttr, IProductLiveRow, IGTMData
 } from './type-facebook';
 import {
   ICampaignConfigAttr, ICampaignCount,
@@ -1277,6 +1277,9 @@ export namespace GappBiz {
 
   // $Global CF SETTING
   export type GlobalCFSetting = IGlobalCFSetting & IApiCompanyParams & IDBCompanyActivityLog;
+
+  // $Global GTM SETTING
+  export type GlobalGTMSetting = IGTMData & IApiCompanyParams & IDBCompanyActivityLog;
 
   // $REPLY
   export type ReplyTemplate = IReplyData & IApiCompanyParams & IDBCompanyActivityLog;

@@ -548,3 +548,8 @@ export interface ITagAttr {
   tagDescription: string;
   tagColor: string;
 }
+
+// $GTM
+export interface IGTMData {
+  gtmId: string
+}
