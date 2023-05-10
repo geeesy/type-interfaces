@@ -572,3 +572,8 @@ export interface ICreatePaymentRowParams {
   salepageId?: string;
   orderType: TOrderType;
 }
+
+export interface IOrderAffiliateData {
+  campaignId: string;
+  partnerId: string;
+}
