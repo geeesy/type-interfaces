@@ -417,7 +417,7 @@ import {
     ICampaignConfigAttr, ICampaignCount,
     ICampaignData,
     ICampaignDataImmu,
-    ICampaignDateType,
+    ICampaignDateType, IConversionDataImmu,
     IPartnerCommissionData,
     IPartnerData,
     IPartnerDataImmu
@@ -1322,6 +1322,7 @@ export namespace GappBiz {
     export type Partner = IPartnerData & IPartnerDataImmu & IDBCompanyActivityLog;
     export type Conversion = ICampaignDateType
         & IPartnerCommissionData
+        & IConversionDataImmu
         & ICampaignConfigAttr
         & IOrderAffiliateData
         & IApiCompanyParams
@@ -1329,6 +1330,7 @@ export namespace GappBiz {
     export type ListConversion =
         ICampaignDateType
         & IPartnerCommissionData
+        & IConversionDataImmu
         & ICampaignConfigAttr
         & IOrderAffiliateData
         & IApiCompanyParams

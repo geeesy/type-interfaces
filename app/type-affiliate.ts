@@ -176,7 +176,9 @@ export interface ICampaignCount {
   partnerCount: 0
 }
 
-
+export interface IConversionDataImmu {
+  conversionId: string;
+}
 
 // ANCHOR: PARTNER | Entity (1/2)
 export interface IPartnerDataImmu {
