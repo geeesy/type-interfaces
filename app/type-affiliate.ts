@@ -206,6 +206,7 @@ export interface IPartnerCommissionData {
   status: TTypeCommissionStatus;
   totalSaleAmount: number;
   partnerFullName: string;
+  partnerImageUrl: string;
   docNo: string;
   totalCommission: number;
   channel: string;
