@@ -14,6 +14,8 @@ export type TTypeCampaign =
   | 'POST_BLOG'
   | 'GAPP_MARKET';
 
+export type TTypeCommissionStatus = 'APPROVE' | 'REJECT' | 'PENDING';
+
 export type TTypeConfigCampaign =
   | 'BY_NOT_CALCULATE_COMMISSION'
   | 'BY_PERCENTAGE_OF_SALES'
@@ -201,9 +203,10 @@ export interface IPartnerData {
 // ANCHOR: COMMISSION | Entity (1/1)
 export interface IPartnerCommissionData {
   docNoConversion: string;
-  status: string;
+  status: TTypeCommissionStatus;
   totalSaleAmount: number;
   partnerFullName: string;
+  partnerImageUrl: string;
   docNo: string;
   totalCommission: number;
   channel: string;
