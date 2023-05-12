@@ -1320,10 +1320,18 @@ export namespace GappBiz {
         & IDBCompanyActivityLog
         & ICampaignCount;
     export type Partner = IPartnerData & IPartnerDataImmu & IDBCompanyActivityLog;
-    export type ListConversionOn =
+    export type Conversion = ICampaignDateType
+        & IPartnerCommissionData
+        & ICampaignConfigAttr
+        & IOrderAffiliateData
+        & IApiCompanyParams
+        & IDBCompanyActivityLog;
+    export type ListConversion =
         ICampaignDateType
         & IPartnerCommissionData
         & ICampaignConfigAttr
+        & IOrderAffiliateData
+        & IApiCompanyParams
         & IDBCompanyActivityLog;
 
     // $ messenger

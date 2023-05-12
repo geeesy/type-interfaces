@@ -198,7 +198,7 @@ export interface IPartnerData {
 
 // ANCHOR: COMMISSION | Entity (1/1)
 export interface IPartnerCommissionData {
-  docNoCS: string;
+  docNoConversion: string;
   status: string;
   totalSaleAmount: number;
   partnerFullName: string;
