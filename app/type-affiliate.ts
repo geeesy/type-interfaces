@@ -202,6 +202,8 @@ export interface IPartnerData {
 
 // ANCHOR: COMMISSION | Entity (1/1)
 export interface IPartnerCommissionData {
+  orderId:string;
+  salepageId:string;
   docNoConversion: string;
   status: TTypeCommissionStatus;
   totalSaleAmount: number;
