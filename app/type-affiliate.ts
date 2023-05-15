@@ -1,5 +1,5 @@
 import { GappBiz, GappSetting } from './index';
-import { IImage } from './type-apps';
+import {IImage, IPersonContactInfo} from './type-apps';
 import {
   ISalePageComponent,
   ITimePeriod,
@@ -158,6 +158,7 @@ export interface ICampaignData {
   isActive: boolean;
   timePeriod: ITimePeriod;
   partners: GappBiz.Partner[];
+  hasArchived: boolean;
 }
 
 // ANCHOR: CAMPAIGN | Entity (4/5)
@@ -190,6 +191,19 @@ export interface IPartnerDataImmu {
 
 // ANCHOR: PARTNER | Entity (2/2)
 export interface IPartnerData {
+  partnerContact: IPersonContactInfo;
+  partnerFirstName: string;
+  partnerLastName: string;
+  link: string;
+  linkReport: string;
+  isCommission: boolean;
+  totalSaleAmount: number;
+  totalCommission: number;
+  hasArchived: boolean;
+}
+
+// ANCHOR: LISTPARTNER | Entity (2/2)
+export interface IListPartnerData {
   partnerFirstName: string;
   partnerLastName: string;
   partnerFullName: string;
@@ -199,6 +213,7 @@ export interface IPartnerData {
   isCommission: boolean;
   totalSaleAmount: number;
   totalCommission: number;
+  hasArchived: boolean;
 }
 
 // ANCHOR: COMMISSION | Entity (1/1)
