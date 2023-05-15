@@ -5,6 +5,7 @@ import {
   ITimePeriod,
   TSalepageType
 } from './type-salepage';
+import {SaleChannelSubType} from "./enum-const";
 
 export type TTypeCampaign =
   | 'SALEPAGE'
@@ -211,6 +212,8 @@ export interface IPartnerCommissionData {
   partnerImageUrl: string;
   docNo: string;
   totalCommission: number;
-  channel: string;
+  channel: SaleChannelSubType;
+  channelName: string;
+  channelImageUrl: string;
   commissionType: string;
 }
