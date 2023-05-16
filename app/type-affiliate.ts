@@ -196,6 +196,7 @@ export interface IPartnerData {
   partnerLastName: string;
   partnerEmail: string;
   link: string;
+  shortenLink: string;
   linkReport: string;
   isCommission: boolean;
   totalSaleAmount: number;
@@ -217,6 +218,7 @@ export interface IListPartnerData {
   partnerImageUrl: string;
   partnerEmail: string;
   link: string;
+  shortenLink: string;
   linkReport: string;
   isCommission: boolean;
   totalSaleAmount: number;
