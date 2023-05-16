@@ -184,12 +184,12 @@ export interface IConversionDataImmu {
   conversionId: string;
 }
 
-// ANCHOR: PARTNER | Entity (1/2)
+// ANCHOR: PARTNER | Entity (1/3)
 export interface IPartnerDataImmu {
   partnerId: string;
 }
 
-// ANCHOR: PARTNER | Entity (2/2)
+// ANCHOR: PARTNER | Entity (2/3)
 export interface IPartnerData {
   partnerContact: IPersonContactInfo;
   partnerFirstName: string;
@@ -200,6 +200,12 @@ export interface IPartnerData {
   totalSaleAmount: number;
   totalCommission: number;
   hasArchived: boolean;
+}
+
+// ANCHOR: PARTNER | Entity (3/3)
+export interface IDBPartner {
+  latestCampaignById: string;
+  latestCampaignByName: string;
 }
 
 // ANCHOR: LISTPARTNER | Entity (2/2)
