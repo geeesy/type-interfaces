@@ -194,6 +194,7 @@ export interface IPartnerData {
   partnerContact: IPersonContactInfo;
   partnerFirstName: string;
   partnerLastName: string;
+  partnerEmail: string;
   link: string;
   linkReport: string;
   isCommission: boolean;
@@ -214,6 +215,7 @@ export interface IListPartnerData {
   partnerLastName: string;
   partnerFullName: string;
   partnerImageUrl: string;
+  partnerEmail: string;
   link: string;
   linkReport: string;
   isCommission: boolean;
