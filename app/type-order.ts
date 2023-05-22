@@ -289,6 +289,7 @@ export interface IPaymentAttachmentData {
   paymentTime: string;
   paymentDate: string;
   paymentPrice: number;
+  shippingCost: number;
   note: string;
 }
 
