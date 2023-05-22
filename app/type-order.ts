@@ -289,6 +289,7 @@ export interface IPaymentAttachmentData {
   paymentTime: string;
   paymentDate: string;
   paymentPrice: number;
+  shippingCost: number;
   note: string;
 }
 
@@ -555,19 +556,29 @@ export interface IOrderPaymentRowData {
   identityData: GappBiz.User | null;
   isAutoConfirmSlip: boolean;
   isStatusPayment: TPaymentRowStatus;
+  productTitleFirst: string;
+  productImageFirstUrl: string;
+  productSkuFirst: string;
+  salepageId: string;
+  docNo: string;
+  customerFullName: string;
 }
+
 export interface IDBOrderPaymentRow {
   orderType:TOrderType;
   paymentRowId: string;
   confirmBy:string,
   confirmByFullName:string,
 }
+
 export interface IOrderPaymentRow
   extends IOrderPaymentRowData,
     IDBOrderPaymentRow {}
+
 export interface ISellerUpdateOrderPaymentRow {
   paymentRows: IOrderPaymentRow[];
 }
+
 export interface ICreatePaymentRowParams {
   salepageId?: string;
   orderType: TOrderType;
