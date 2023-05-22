@@ -21,10 +21,10 @@ export interface IPriceList {
 export interface IProductPrice {
   costPrice: number;
   buyPrice: number;
-  sellPrice: number;
+  sellPrice: number; // ? <= retailPrice
   wholesalePrice: number;
   wholesalePrice_market: number;
-  retailPrice: number;
+  retailPrice: number; // ? == price for sale to the end customer
   retailPrice_market: number; // ! -> Inc.vat
   priceList: IPriceList[]; // * <== SETTING
   priceGroupIds: string[]; // * ==> SETTING
