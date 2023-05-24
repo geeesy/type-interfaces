@@ -1,15 +1,15 @@
 
 export type TTypePackage = 'free' | 'demo' | 'micro' | 'small' | 'medium' | 'custom'
 
-// ANCHOR: PACKAGE | Entity (1/2)
+// ANCHOR: PACKAGE | Entity (1/4)
 export interface IPackageBusinessData {
     countCompany: number;
     countAdmin: number;
     countStaff: number;
 }
 
-// ANCHOR: PACKAGE | Entity (2/2)
-export interface IPackageData {
+// ANCHOR: PACKAGE | Entity (2/4)
+export interface IPackageCount {
     countCatalog: number;
     countSalePage: number;
     countQuotation: number;
@@ -18,8 +18,23 @@ export interface IPackageData {
     countInventory: number;
     countProduct: number;
     countOrderLink: number;
-    hasReport: boolean;
     countConnect: number;
     countPooling: number;
     countConversation: number;
 }
+
+// ANCHOR: PACKAGE | Entity (3/4)
+export interface IDBPackageImmu {
+    packageId: string;
+}
+
+// ANCHOR: PACKAGE | Entity (4/4)
+export interface IPackageData {
+    packageType: string;
+    packageName: string;
+    packageIndex: string;
+    packagePrice: number
+    hasReport: boolean;
+}
+
+

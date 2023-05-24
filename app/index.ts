@@ -449,7 +449,7 @@ import {
   ISocialChatMessage,
   ISocialChatMessageSender
 } from './type-messenger';
-import {IPackageBusinessData, IPackageData} from "./type-package";
+import {IDBPackageImmu, IPackageBusinessData, IPackageCount, IPackageData} from "./type-package";
 
 /* #region FIXME: Marketplace */
 export namespace GeeesyMarketplace {
@@ -977,8 +977,10 @@ export namespace GappBusiness {
     IUserRoleImmu &
     ICompanyUserData;
 
-  export type PackageBusiness = IPackageBusinessData & IPackageData
-  export type Package = IPackageData
+  export type CreatePackageBusiness = IPackageBusinessData & IPackageCount & IPackageData
+  export type PackageBusiness = IPackageBusinessData & IPackageCount & IDBPackageImmu & IPackageData
+  export type CreatePackage = IPackageCount & IPackageData
+  export type Package = IPackageCount & IDBPackageImmu & IPackageData
 }
 
 // --------------------------------
