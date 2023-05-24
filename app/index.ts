@@ -977,12 +977,12 @@ export namespace GappBusiness {
     IUserRoleImmu &
     ICompanyUserData;
 
-  export type CreatePackageBusiness = IPackageBusinessData & IPackageCount & IPackageData
-  export type PackageBusiness = IPackageBusinessData & IPackageCount & IDBPackageImmu & IPackageData
-  export type PackageBusinessCount = IPackageBusinessData & IPackageCount
-  export type CreatePackage = IPackageCount & IPackageData
-  export type Package = IPackageCount & IDBPackageImmu & IPackageData
-  export type PackageCount = IPackageCount
+  export type CreatePackageBusiness = IPackageBusinessData & IPackageCount & IPackageData & IDBLogTime
+  export type PackageBusiness = IPackageBusinessData & IPackageCount & IDBPackageImmu & IPackageData & IDBLogTime
+  export type PackageBusinessCount = IPackageBusinessData & IPackageCount & IDBLogTime
+  export type CreatePackage = IPackageCount & IPackageData & IDBLogTime
+  export type Package = IPackageCount & IDBPackageImmu & IPackageData & IDBLogTime
+  export type PackageCount = IPackageCount & IDBLogTime
 }
 
 // --------------------------------

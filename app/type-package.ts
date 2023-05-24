@@ -10,17 +10,17 @@ export interface IPackageBusinessData {
 
 // ANCHOR: PACKAGE | Entity (2/4)
 export interface IPackageCount {
-    countCatalog: number;
-    countSalePage: number;
-    countQuotation: number;
-    countReceipt: number;
-    countWarehouse: number;
-    countInventory: number;
-    countProduct: number;
-    countOrderLink: number;
-    countConnect: number;
-    countPooling: number;
-    countConversation: number;
+    countCatalog: number | null;
+    countSalePage: number | null;
+    countQuotation: number | null;
+    countReceipt: number | null;
+    countWarehouse: number | null;
+    countInventory: number | null;
+    countProduct: number | null;
+    countOrderLink: number | null;
+    countConnect: number | null;
+    countPooling: number | null;
+    countConversation: number | null;
 }
 
 // ANCHOR: PACKAGE | Entity (3/4)
