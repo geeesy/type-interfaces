@@ -35,6 +35,9 @@ export interface IPackageData {
     packageIndex: number;
     packagePrice: number
     hasReport: boolean;
+    startedDate: string;
+    expiredDate: string;
+    periodTime: string;
 }
 
 
