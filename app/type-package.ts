@@ -32,7 +32,7 @@ export interface IDBPackageImmu {
 export interface IPackageData {
     packageType: string;
     packageName: string;
-    packageIndex: string;
+    packageIndex: number;
     packagePrice: number
     hasReport: boolean;
 }
