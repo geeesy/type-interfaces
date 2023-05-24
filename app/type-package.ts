@@ -9,7 +9,7 @@ export interface IPackageBusinessData {
 }
 
 // ANCHOR: PACKAGE | Entity (2/2)
-export interface IPackageData {
+export interface IPackageCount {
     countCatalog: number;
     countSalePage: number;
     countQuotation: number;
@@ -18,8 +18,19 @@ export interface IPackageData {
     countInventory: number;
     countProduct: number;
     countOrderLink: number;
-    hasReport: boolean;
     countConnect: number;
     countPooling: number;
     countConversation: number;
 }
+
+export interface IDBPackageImmu {
+    packageId: string;
+}
+
+export interface IPackageData {
+    packageType: string;
+    packagePrice: number
+    hasReport: boolean;
+}
+
+
