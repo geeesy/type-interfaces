@@ -120,7 +120,7 @@ export interface IOrderProductRow {
   isDiscountOnPercent: boolean;
   itemsPriceRow: number;
   isVatable: boolean;
-  vatPercentage: boolean;
+  vatPercentage: number;
   warehouseId: string; // ! -> INVENTORY
   inventoryId: string; // ! -> INVENTORY
   productGroupId: string;
