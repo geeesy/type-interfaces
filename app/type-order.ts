@@ -120,6 +120,7 @@ export interface IOrderProductRow {
   isDiscountOnPercent: boolean;
   itemsPriceRow: number;
   isVatable: boolean;
+  vatPercentage: boolean;
   warehouseId: string; // ! -> INVENTORY
   inventoryId: string; // ! -> INVENTORY
   productGroupId: string;
@@ -137,6 +138,7 @@ export interface IOrderAccounting {
   totalDiscountAmount: number; // ส่วนลดรวม
   netAmount: number; // ยอดรวมก่อนภาษี
   vat: number; // ภาษีมูลค่าเพิ่ม
+  vatPercentage: number; // ภาษีมูลค่าเพิ่ม %
   grandTotalAmount: number; // ยอดรวมทั้งสิ้น -> USE IN LIST
   taxWithheldPercent: number; // อัตราหัก ณ ที่จ่าย
   withholdingTax: number; // ภาษีหัก ณ ที่จ่าย
