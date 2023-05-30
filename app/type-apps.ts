@@ -1580,6 +1580,7 @@ export interface ICreateNotifyMessage {
   entityInventoryId: string;
   entityInventoryName: string;
   entityStock: number;
+  entityIsVariant: boolean;
   status: TNotifyStatus;
   refDocNo: string;
   notifiedAt: string;
