@@ -274,6 +274,7 @@ export interface IProductEntity {
 }
 
 // REVIEW: PRODUCT | Entity (3/10)
+// STUB: Create Product with Variant (2/5)
 // NOTE === attributes on each SKU (+on parent product of variant product)
 export interface IProductEntityImmu {
   useInventory: boolean;
@@ -281,6 +282,7 @@ export interface IProductEntityImmu {
 }
 
 // REVIEW: PRODUCT | Entity (4/10)
+// STUB: Create Product with Variant (1/5)
 export interface IProductAttributes {
   display: IProductDisplay;
   isActive: boolean; // ! not show all
@@ -316,6 +318,7 @@ export interface IProductAttributes {
 }
 
 // REVIEW: PRODUCT | Entity (5/10)
+// STUB: Create Product with Variant (3/5)
 export interface IProductAssets {
   productCoverUrl: string; // STUB: Product Cover
   productCoverUrl_market: string;
@@ -324,6 +327,7 @@ export interface IProductAssets {
 }
 
 // REVIEW: PRODUCT | Entity (6/10)
+// STUB: Create Product with Variant (4/5)
 export interface IProductImages {
   productImagesUrl: IImage[]; // STUB: [Product Images]
   productImagesUrl_market: IImage[];
@@ -404,6 +408,8 @@ export interface IProductVariantAttributes {
   variants: IProductVariantOnly[];
 }
 
+
+// STUB: Create Product with Variant (5/5)
 export interface IProductVariantAttributesOnCreate {
   variantSelectors: IProductVariantSelector[];
   variants: IProductVariantOnlyWithStock[];
