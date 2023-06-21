@@ -143,6 +143,8 @@ export interface ITransferProductStock {
   variantId?: string;
   note: string;
   hasProductInDestinationStock: boolean;
+  hasKeepSellingDestination: boolean;
+  lowStockQtyDestination: number;
 }
 
 export interface ILogStockValue
