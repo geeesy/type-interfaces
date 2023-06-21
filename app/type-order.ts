@@ -564,6 +564,7 @@ export interface IOrderPaymentRowData {
   salepageId: string;
   docNo: string;
   customerFullName: string;
+  hasOverrideEmailSending: boolean
 }
 
 export interface IDBOrderPaymentRow {
