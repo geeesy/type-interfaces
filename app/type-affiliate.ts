@@ -196,6 +196,7 @@ export interface IPartnerData {
   partnerLastName: string;
   partnerEmail: string;
   link: string;
+  oldShortenLink: string;
   shortenLink: string;
   shortenId: string;
   shortSalepageId: string;
