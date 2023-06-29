@@ -111,7 +111,7 @@ import {
 import {
   IApiCompanyFacebookParams,
   IApiCompanyParams,
-  IApiSupplierParams,
+  IApiSupplierParams, IApiUserParams,
   IDBLogCreate,
   IDBLogTime,
   IDBLogUpdate,
@@ -946,7 +946,8 @@ export namespace GappBusiness {
   // * COMPANY
   export type CreateCompany = ICompanyPublicEntity &
     ICompanyPrivateEntity &
-    IApiCompanyParams;
+    IApiUserParams &
+    ICompanyEntityImmu;
   export type Company = IDBCompanyEntity &
     IDBCompanySupplierEntity &
     ICompanyEntityImmu &
@@ -1062,7 +1063,8 @@ export namespace GappBiz {
     IOrderLinkImmuDataOnConfirm &
     IDBOrderDataOnCancelImmu &
     IDBLogUpdate &
-    IDBLogCreate;
+    IDBLogCreate &
+    IApiCompanyParams;
   export type OrderSalePage = GappBiz.OrderLink;
   export type OrderGappMed = GappBiz.OrderLink;
   export type ListOrderLink = IListOrder & IDBLogTime;

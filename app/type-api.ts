@@ -29,6 +29,11 @@ export interface IApiCompanyParams {
   companyCode: string;
 }
 
+export interface IApiUserParams {
+  identityId: string;
+  identityFullName: string
+}
+
 export interface IApiCompanyFacebookParams {
   businessId: string;
   compId: string;
