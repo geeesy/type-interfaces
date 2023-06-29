@@ -1596,7 +1596,3 @@ export interface IImage {
   title: string;
   caption: string;
 }
-
-interface check {
-  check: boolean;
-}
