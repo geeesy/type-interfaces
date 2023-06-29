@@ -197,6 +197,8 @@ export interface IPartnerData {
   partnerEmail: string;
   link: string;
   shortenLink: string;
+  shortenId: string;
+  shortSalepageId: string;
   linkReport: string;
   isCommission: boolean;
   totalSaleAmount: number;
