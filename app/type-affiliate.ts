@@ -15,6 +15,9 @@ export type TTypeCampaign =
   | 'POST_BLOG'
   | 'GAPP_MARKET';
 
+export type TTypeStatusOnCampaign = 'Ended' | 'Eligible' | 'Paused'
+
+
 export type TTypeCommissionStatus = 'APPROVE' | 'REJECT' | 'PENDING';
 
 export type TTypeConfigCampaign =
@@ -159,6 +162,7 @@ export interface ICampaignData {
   timePeriod: ITimePeriod;
   partners: GappBiz.Partner[];
   hasArchived: boolean;
+  statusOnCampaign: TTypeStatusOnCampaign
 }
 
 // ANCHOR: CAMPAIGN | Entity (4/5)
