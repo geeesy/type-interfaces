@@ -946,8 +946,9 @@ export namespace GappBusiness {
   // * COMPANY
   export type CreateCompany = ICompanyPublicEntity &
     ICompanyPrivateEntity &
-    IApiUserParams &
-    ICompanyEntityImmu;
+    IApiCompanyParams;
+    // IApiUserParams &
+    // ICompanyEntityImmu;
   export type Company = IDBCompanyEntity &
     IDBCompanySupplierEntity &
     ICompanyEntityImmu &
