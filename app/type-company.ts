@@ -462,6 +462,7 @@ export interface ISettingDoc extends IDBCompanyActivityLog {
   isVatInc: boolean;
   vatPercent: number; // default = 7
   isVatEnabled: boolean;
+  conversion: ISettingDocAttributes;
 }
 
 export interface ITags {
