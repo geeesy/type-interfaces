@@ -163,6 +163,8 @@ export interface ICampaignData {
   partners: GappBiz.Partner[];
   hasArchived: boolean;
   statusOnCampaign: TTypeStatusOnCampaign
+  companyName: string;
+  companyEmail: string;
 }
 
 // ANCHOR: CAMPAIGN | Entity (4/5)
