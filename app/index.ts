@@ -111,7 +111,7 @@ import {
 import {
   IApiCompanyFacebookParams,
   IApiCompanyParams,
-  IApiSupplierParams, IApiUserParams,
+  IApiSupplierParams,
   IDBLogCreate,
   IDBLogTime,
   IDBLogUpdate,

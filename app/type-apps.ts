@@ -46,6 +46,7 @@ export interface IDocWorkCount {
   [DocWorkSeqIdCount.billingNote]: number;
   [DocWorkSeqIdCount.invoice]: number;
   [DocWorkSeqIdCount.receipt]: number;
+  [DocWorkSeqIdCount.conversion]: number;
 }
 
 export interface ISalePageUTMCount {
