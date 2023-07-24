@@ -450,6 +450,7 @@ import {
   ISocialChatMessageSender
 } from './type-messenger';
 import {IDBPackageImmu, IPackageBusinessData, IPackageCount, IPackageData} from "./type-package";
+import {ISurveyData} from "./type-survey";
 
 /* #region FIXME: Marketplace */
 export namespace GeeesyMarketplace {
@@ -985,6 +986,8 @@ export namespace GappBusiness {
   export type CreatePackage = IPackageCount & IPackageData & IDBLogTime
   export type Package = IPackageCount & IDBPackageImmu & IPackageData & IDBLogTime
   export type PackageCount = IPackageCount & IDBLogTime
+//  $Survey
+  export type Survey = ISurveyData
 }
 
 // --------------------------------
