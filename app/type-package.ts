@@ -21,6 +21,8 @@ export interface IPackageCount {
     countConnect: number | null;
     countPooling: number | null;
     countConversation: number | null;
+    countCampaign: number | null;
+    countPartner: number | null;
 }
 
 // ANCHOR: PACKAGE | Entity (3/4)
