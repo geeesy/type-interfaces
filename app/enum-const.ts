@@ -1,4 +1,9 @@
 /* eslint-disable no-unused-vars */
+export enum StatusPackage {
+  fulled = "package is fulled",
+  notFulled = "package is availabled"
+}
+
 export enum AccessName {
   menuPurchase = 'เอกสารขาย',
   menuOrder = 'ออเดอร์สินค้า',
