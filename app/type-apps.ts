@@ -151,6 +151,8 @@ export interface ICompanyTaxBranch {
 }
 
 export interface IPersonContactInfo {
+  firstName: string;
+  lastName: string
   fullName: string;
   emails: string[];
   mobiles: string[];
