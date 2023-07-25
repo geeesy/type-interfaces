@@ -451,6 +451,7 @@ import {
 } from './type-messenger';
 import {IDBPackageImmu, IPackageBusinessData, IPackageCount, IPackageData} from "./type-package";
 import {ISurveyData} from "./type-survey";
+import { ICatalogData, ICatalogEntity, ICatalogEntityImmu } from './type-catalog';
 
 /* #region FIXME: Marketplace */
 export namespace GeeesyMarketplace {
@@ -1415,6 +1416,9 @@ export namespace GappBiz {
     ISocialChatMessageSender &
     IDBSocialChatMessageImmu &
     IDBLogTime;
+
+  // STUB: Catalog
+  export type CreateCatalog = ICatalogEntityImmu & ICatalogEntity & ICatalogData
 }
 
 // REVIEW: G-MARKET
