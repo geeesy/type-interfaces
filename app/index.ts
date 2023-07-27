@@ -450,7 +450,7 @@ import {
   ISocialChatMessageSender
 } from './type-messenger';
 import {IDBPackageImmu, IPackageBusinessData, IPackageCount, IPackageData} from "./type-package";
-import {ISurveyData} from "./type-survey";
+import {INewsletterData} from "./type-newsletter";
 import { ICatalogData, ICatalogEntity, ICatalogEntityImmu } from './type-catalog';
 
 /* #region FIXME: Marketplace */
@@ -987,8 +987,8 @@ export namespace GappBusiness {
   export type CreatePackage = IPackageCount & IPackageData & IDBLogTime
   export type Package = IPackageCount & IDBPackageImmu & IPackageData & IDBLogTime
   export type PackageCount = IPackageCount & IDBLogTime
-//  $Survey
-  export type Survey = ISurveyData
+//  $Newsletter
+  export type Newsletter = INewsletterData
 }
 
 // --------------------------------
