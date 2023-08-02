@@ -477,6 +477,7 @@ export interface IProductGroup {
   productGroupName: string;
   productGroupInfo: string;
   productGroupIconUrl: string;
+  hasArchived: boolean;
 }
 export interface IDBProductGroupCount {
   countProduct: number;
