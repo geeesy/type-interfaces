@@ -178,7 +178,7 @@ export interface IDBBusinessCompanyUserIdentity {
 }
 // ANCHOR: COMPANY | USER (4/6)
 export interface IDBBusinessCompanyUserData {
-  avatarThumbUrl: string;
+  avatarThumbUrl: string; // --> avatarThumbUrl USER
 }
 
 // ANCHOR: COMPANY | USER (5/6)
