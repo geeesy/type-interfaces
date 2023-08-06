@@ -932,11 +932,13 @@ export namespace GappBusiness {
     IBusinessUserIdentity;
   export type DBCreateUser = IBusinessUserIdentityImmu &
     IBusinessUserIdentity &
+      IDBBusinessCompanyUserData &
     IDBBusinessUserIdentityStatus &
     IDBLogTime;
   // 👨‍💼 === BUSINESS USER
   export type User = IBusinessUserIdentityImmu &
     IBusinessUserIdentity &
+      IDBBusinessCompanyUserData &
     IDBBusinessUserIdentityStatus &
     IDBBusinessUserIdentity &
     IUserRoleImmu &
