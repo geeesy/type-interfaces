@@ -130,6 +130,10 @@ export interface IOrderProductRow {
   note?: string;
 }
 
+export interface IOrderProductCancelRow extends IOrderProductRow {
+  productQtyReturn: number;
+}
+
 export interface IOrderAccounting {
   subtotalAmount: number; // รวมเงิน
   shippingCost: number; // ค่าขนส่ง
@@ -426,7 +430,7 @@ export interface IDBOrderDataOnCancelImmu {
  * - Use Order row on DB
  */
 export interface ISellerReturnOrder {
-  returnProducts: IOrderProductRow[] | null;
+  returnProducts: IOrderProductCancelRow[] | null;
 }
 export interface IDBReturnOrderEntity {
   returnDocNo: string;
@@ -466,13 +470,13 @@ export interface IRefCancelWithReturn
 
 // STUB: RESTOCK
 export interface ISellerRestockOrder {
-  restockProducts: IOrderProductRow[] | null; // ? use null on complete return without products
+  restockProducts: IOrderProductCancelRow[] | null; // ? use null on complete return without products
   isCompletedReturn: boolean;
 }
 
 export interface IRestockRowData {
   restockRowId: string;
-  restockProduct: IOrderProductRow;
+  restockProduct: IOrderProductCancelRow;
 }
 // === === ===
 
