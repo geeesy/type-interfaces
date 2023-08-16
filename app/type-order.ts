@@ -571,8 +571,9 @@ export interface IDBOrderPaymentRow {
   orderType:TOrderType;
   paymentRowId: string;
   paymentRowIndex: number;
-  confirmBy:string,
-  confirmByFullName:string,
+  confirmBy:string;
+  confirmByFullName:string;
+  latestPaymentRowConfirm:boolean;
 }
 
 export interface IOrderPaymentRow
