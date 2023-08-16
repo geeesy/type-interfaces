@@ -130,29 +130,7 @@ export interface IOrderProductRow {
   note?: string;
 }
 
-export interface IOrderProductCancelRow {
-  productId: string;
-  variantId: string; // on product variant
-  productTitle: string;
-  productUnitPrice: number;
-  productUnit: string;
-  productQty: number;
-  productCoverUrl: string;
-  productWeight: number;
-  productWeightUnit: string;
-  productSku: string;
-  discountUnitPrice: number;
-  isDiscountOnPercent: boolean;
-  itemsPriceRow: number;
-  isVatable: boolean;
-  vatPercentage: number;
-  warehouseId: string; // ! -> INVENTORY
-  inventoryId: string; // ! -> INVENTORY
-  productGroupId: string;
-  productGroupName: string;
-  productCategoryId: string;
-  productCategoryName: string;
-  note?: string;
+export interface IOrderProductCancelRow extends IOrderProductRow {
   productQtyReturn: number;
 }
 
