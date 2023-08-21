@@ -36,6 +36,8 @@ export interface ISalePageEntityImmu {
   isOnePage?: boolean;
   hasVatRegistration: boolean;
   isActive: boolean;
+  isVatInc: boolean;
+  vatPercentage:number
 }
 
 // ANCHOR: SALE PAGE | Entity (2/4)
