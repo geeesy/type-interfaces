@@ -561,7 +561,7 @@ export interface IOrderPaymentRowData {
   paymentAttachmentData: IPaymentAttachmentData | null;
   identityData: GappBiz.User | null;
   isAutoConfirmSlip: boolean;
-  isStatusPayment: TPaymentRowStatus;
+  paymentRowStatus: TPaymentRowStatus;
   productTitleFirst: string;
   productImageFirstUrl: string;
   productSkuFirst: string;
