@@ -577,7 +577,7 @@ export interface IDBOrderPaymentRow {
   paymentRowIndex: number;
   confirmBy:string;
   confirmByFullName:string;
-  latestPaymentRowConfirm:boolean;
+  isLatestPaymentRowConfirm:boolean;
 }
 
 export interface IOrderPaymentRow
