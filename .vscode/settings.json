@@ -37,24 +37,5 @@
   },
   "editor.formatOnPaste": false,
   "editor.formatOnSave": false,
-  "workbench.colorCustomizations": {
-    "activityBar.activeBackground": "#52cfd6",
-    "activityBar.background": "#52cfd6",
-    "activityBar.foreground": "#15202b",
-    "activityBar.inactiveForeground": "#15202b99",
-    "activityBarBadge.background": "#ce31c6",
-    "activityBarBadge.foreground": "#e7e7e7",
-    "commandCenter.border": "#15202b99",
-    "sash.hoverBorder": "#52cfd6",
-    "statusBar.background": "#2fbec6",
-    "statusBar.foreground": "#15202b",
-    "statusBarItem.hoverBackground": "#25969d",
-    "statusBarItem.remoteBackground": "#2fbec6",
-    "statusBarItem.remoteForeground": "#15202b",
-    "titleBar.activeBackground": "#2fbec6",
-    "titleBar.activeForeground": "#15202b",
-    "titleBar.inactiveBackground": "#2fbec699",
-    "titleBar.inactiveForeground": "#15202b99"
-  },
   "peacock.color": "#2fbec6"
 }

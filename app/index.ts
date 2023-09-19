@@ -452,6 +452,7 @@ import {
 import {IDBPackageImmu, IPackageBusinessData, IPackageCount, IPackageData} from "./type-package";
 import {INewsletterData} from "./type-newsletter";
 import { ICatalogData, ICatalogEntity, ICatalogEntityImmu } from './type-catalog';
+import { IRespSlipData } from './type-slip';
 
 /* #region FIXME: Marketplace */
 export namespace GeeesyMarketplace {
@@ -1421,6 +1422,9 @@ export namespace GappBiz {
 
   // STUB: Catalog
   export type CreateCatalog = ICatalogEntityImmu & ICatalogEntity & ICatalogData
+
+  // STUB: Slip
+  export type SlipData = IRespSlipData
 }
 
 // REVIEW: G-MARKET
