@@ -69,7 +69,17 @@
           "Vatable",
           "instagram",
           "whatsapp",
-          "wechat"
+          "wechat",
+          "scbt",
+          "citi",
+          "hsbc",
+          "exim",
+          "mhcb",
+          "tbank",
+          "isbt",
+          "tisco",
+          "tcrb",
+          "smeb"
         ],
         "skipIfMatch": ["http://[^s]*"],
         "skipWordIfMatch": ["^foobar.*$"],
