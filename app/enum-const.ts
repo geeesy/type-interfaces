@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 export enum StatusPackage {
-  fulled = "package is fulled",
-  notFulled = "package is availabled"
+  fulled = 'package is fulled',
+  notFulled = 'package is availabled'
 }
 
 export enum AccessName {
@@ -35,7 +35,7 @@ export enum AccessScope {
   procurement = 'procurement',
   purchases = 'purchases',
   biz = 'biz',
-  finance = 'finance',
+  finance = 'finance'
 }
 
 export enum AccessStatementEntity {
@@ -595,19 +595,31 @@ export const FunnelBusinessTypeArr = [
   }
 ];
 
+//ANCHOR - BANK
 export type TBankName =
   | 'BBL'
   | 'KBANK'
   | 'KTB'
   | 'SCB'
+  | 'CITI'
+  | 'SCBT'
   | 'CIMB'
   | 'UOB'
   | 'BAY'
   | 'GSB'
+  | 'HSBC'
+  | 'GHB'
   | 'BAAC'
+  | 'EXIM'
+  | 'MHCB'
+  | 'TBANK'
+  | 'ISBT'
+  | 'TISCO'
   | 'KK'
   | 'ICBC'
+  | 'TCRB'
   | 'LHB'
+  | 'SMEB'
   | 'TTB';
 
 export enum BankName {
@@ -615,15 +627,26 @@ export enum BankName {
   KBANK = 'KBANK',
   KTB = 'KTB',
   SCB = 'SCB',
+  CITI = 'CITI',
+  SCBT = 'SCBT',
   CIMB = 'CIMB',
   UOB = 'UOB',
   BAY = 'BAY',
   GSB = 'GSB',
+  HSBC = 'HSBC',
+  GHB = 'GHB',
   BAAC = 'BAAC',
+  EXIM = 'EXIM',
+  MHCB = 'MHCB',
+  TBANK = 'TBANK',
+  ISBT = 'ISBT',
+  TISCO = 'TISCO',
   KK = 'KK',
   ICBC = 'ICBC',
+  TCRB = 'TCRB',
   LHB = 'LHB',
-  TTB = 'TTB'
+  TTB = 'TTB',
+  SMEB = 'SMEB'
 }
 
 export const BankList = {
@@ -654,8 +677,8 @@ export const BankList = {
   ttb: {
     code: '011',
     color: '#114ff1',
-    official_name: 'TTB BANK',
-    official_name_thai: 'ธนาคารทีเอ็มบีธนชาติ',
+    official_name: 'TMBThanachart Bank',
+    official_name_thai: 'ธนาคารทหารไทยธนชาต',
     nice_name: 'TTB Bank',
     acronym: BankName.TTB
   },
@@ -666,6 +689,24 @@ export const BankList = {
     official_name_thai: 'ธนาคารไทยพาณิชย์',
     nice_name: 'Siam Commercial Bank',
     acronym: BankName.SCB
+  },
+  // ! NEW
+  citi: {
+    code: '017',
+    color: '#000000',
+    official_name: 'CITIBANK, N.A.',
+    official_name_thai: 'ธนาคารซิตี้แบงก์',
+    nice_name: 'Citibank',
+    acronym: BankName.CITI
+  },
+  // ! NEW
+  scbt: {
+    code: '020',
+    color: '#000000',
+    official_name: 'STANDARD CHARTERED BANK (THAI) PUBLIC COMPANY LIMITED',
+    official_name_thai: 'ธนาคารสแตนดาร์ดชาร์เตอร์ด (ไทย)',
+    nice_name: 'Standard Chartered',
+    acronym: BankName.SCBT
   },
   cimb: {
     code: '022',
@@ -699,13 +740,76 @@ export const BankList = {
     nice_name: 'Government Savings Bank',
     acronym: BankName.GSB
   },
+  // ! NEW
+  hsbc: {
+    code: '031',
+    color: '#000000',
+    official_name: 'THE HONGKONG AND SHANGHAI BANKING CORPORATION LTD.',
+    official_name_thai: 'ธนาคารฮ่องกงและเซี่ยงไฮ้แบงกิ้งคอร์ปอเรชั่น',
+    nice_name: 'HSBC',
+    acronym: BankName.HSBC
+  },
+  // ! NEW
+  ghb: {
+    code: '033',
+    color: '#000000',
+    official_name: 'THE GOVERNMENT HOUSING BANK',
+    official_name_thai: 'ธนาคารอาคารสงเคราะห์',
+    nice_name: 'Government Housing Bank',
+    acronym: BankName.GHB
+  },
   baac: {
     code: '034',
     color: '#4b9b1d',
     official_name: 'BANK FOR AGRICULTURE AND AGRICULTURAL COOPERATIVES',
-    official_name_thai: 'ธนาคารเพื่อการเกษตร',
+    official_name_thai: 'ธนาคารเพื่อการเกษตรและสหกรณ์การเกษตร',
     nice_name: 'Bank for Agriculture and Agricultural Cooperatives',
     acronym: BankName.BAAC
+  },
+  // ! NEW
+  exim: {
+    code: '035',
+    color: '#000000',
+    official_name: 'EXPORT-IMPORT BANK OF THAILAND',
+    official_name_thai: 'ธนาคารเพื่อการส่งออกและนำเข้าแห่งประเทศไทย',
+    nice_name: 'EXIM Bank',
+    acronym: BankName.EXIM
+  },
+  // ! NEW
+  mhcb: {
+    code: '039',
+    color: '#000000',
+    official_name: 'MIZUHO CORPORATE BANK, LTD.',
+    official_name_thai: 'ธนาคาร มิซูโฮ คอร์ปอเรต จำกัด',
+    nice_name: 'MIZUHO',
+    acronym: BankName.MHCB
+  },
+  // ! NEW
+  tbank: {
+    code: '065',
+    color: '#000000',
+    official_name: 'THANACHART BANK PUBLIC COMPANY LTD.',
+    official_name_thai: 'ธนาคาร ธนชาต จำกัด (มหาชน)',
+    nice_name: 'Thanachart Bank',
+    acronym: BankName.TBANK
+  },
+  // ! NEW
+  isbt: {
+    code: '066',
+    color: '#000000',
+    official_name: 'ISLAMIC BANK OF THAILAND',
+    official_name_thai: 'ธนาคารอิสลามแห่งประเทศไทย',
+    nice_name: 'ibank',
+    acronym: BankName.ISBT
+  },
+  // ! NEW
+  tisco: {
+    code: '067',
+    color: '#000000',
+    official_name: 'TISCO BANK PUBLIC COMPANY LIMITED',
+    official_name_thai: 'ธนาคาร ทิสโก้ จำกัด (มหาชน)',
+    nice_name: 'TISCO',
+    acronym: BankName.TISCO
   },
   kk: {
     code: '069',
@@ -724,6 +828,15 @@ export const BankList = {
     nice_name: 'Industrial and Commercial Bank of China (Thai)',
     acronym: BankName.ICBC
   },
+  // ! NEW
+  tcrb: {
+    code: '071',
+    color: '#000000',
+    official_name: 'THE THAI CREDIT RETAIL BANK PUBLIC COMPANY LIMITED',
+    official_name_thai: 'ธนาคาร ไทยเครดิต เพื่อรายย่อย จำกัด (มหาชน)',
+    nice_name: 'THAI CREDIT',
+    acronym: BankName.TCRB
+  },
   lhb: {
     code: '073',
     color: '#6d6e71',
@@ -731,6 +844,15 @@ export const BankList = {
     official_name_thai: 'ธนาคารแลนด์ แอนด์ เฮ้าส์ ',
     nice_name: 'Land and Houses Bank',
     acronym: BankName.LHB
+  },
+  // ! NEW
+  smeb: {
+    code: '098',
+    color: '#000000',
+    official_name: 'SMALL AND MEDIUM ENTERPRISE DEVELOPMENT BANK OF THAILAND',
+    official_name_thai: 'ธนาคาร พัฒนาวิสาหกิจขนาดกลางและขนาดย่อมแห่งประเทศไทย',
+    nice_name: 'SME D Bank',
+    acronym: BankName.SMEB
   }
 };
 
