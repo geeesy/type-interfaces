@@ -598,32 +598,31 @@ export const FunnelBusinessTypeArr = [
 //ANCHOR - BANK
 
 export enum BankCode {
-  BBL = "002",
-  KBANK = "004",
-  KTB = "006",
-  TMB = "011",
-  SCB = "014",
-  CITI = "017",
-  SCBT = "020",
-  CIMBT = "022",
-  UOBT = "024",
-  BAY = "025",
-  GOV = "030",
-  HSBC = "031",
-  GHB = "033",
-  AGRI = "034",
-  EXIM = "035",
-  MHCB = "039",
-  TBANK = "065",
-  ISBT = "066",
-  TISCO = "067",
-  KK = "069",
-  ICBCT = "070",
-  TCRB = "071",
-  LHBANK = "073",
-  SMEB = "098"
+  BBL = '002',
+  KBANK = '004',
+  KTB = '006',
+  TMB = '011',
+  SCB = '014',
+  CITI = '017',
+  SCBT = '020',
+  CIMBT = '022',
+  UOBT = '024',
+  BAY = '025',
+  GOV = '030',
+  HSBC = '031',
+  GHB = '033',
+  AGRI = '034',
+  EXIM = '035',
+  MHCB = '039',
+  TBANK = '065',
+  ISBT = '066',
+  TISCO = '067',
+  KK = '069',
+  ICBCT = '070',
+  TCRB = '071',
+  LHBANK = '073',
+  SMEB = '098'
 }
-
 
 export type TBankName =
   | 'BBL'
