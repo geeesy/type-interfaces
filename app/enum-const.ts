@@ -677,9 +677,21 @@ export enum BankName {
   SMEB = 'SMEB'
 }
 
-export const BankList = {
-  bbl: {
-    code: '002',
+export type TBankList = {
+  [key in TBankName]: {
+    code: BankCode;
+    color: string;
+    official_name: string;
+    official_name_thai: string;
+    nice_name: string;
+    acronym: TBankName;
+    image: string;
+  };
+}
+
+export const BankList: TBankList = {
+  BBL: {
+    code: BankCode.BBL,
     color: '#1e4598',
     official_name: 'BANGKOK BANK PUBLIC COMPANY LTD.',
     official_name_thai: 'ธนาคารกรุงเทพ',
@@ -687,8 +699,8 @@ export const BankList = {
     acronym: BankName.BBL,
     image: 'https://raw.githubusercontent.com/casperstack/banks-logo/master/th/bbl.svg',
   },
-  kbank: {
-    code: '004',
+  KBANK: {
+    code: BankCode.KBANK,
     color: '#138f2d',
     official_name: 'KASIKORNBANK PUBLIC COMPANY LTD.',
     official_name_thai: 'ธนาคารกสิกรไทย',
@@ -696,8 +708,8 @@ export const BankList = {
     acronym: BankName.KBANK,
     image: 'https://raw.githubusercontent.com/casperstack/banks-logo/master/th/kbank.svg',
   },
-  ktb: {
-    code: '006',
+  KTB: {
+    code: BankCode.KTB,
     color: '#1ba5e1',
     official_name: 'KRUNG THAI BANK PUBLIC COMPANY LTD.',
     official_name_thai: 'ธนาคารกรุงไทย',
@@ -705,8 +717,8 @@ export const BankList = {
     acronym: BankName.KTB,
     image: 'https://raw.githubusercontent.com/casperstack/banks-logo/master/th/ktb.svg',
   },
-  ttb: {
-    code: '011',
+  TTB: {
+    code: BankCode.TMB,
     color: '#114ff1',
     official_name: 'TMBThanachart Bank',
     official_name_thai: 'ธนาคารทหารไทยธนชาต',
@@ -714,8 +726,8 @@ export const BankList = {
     acronym: BankName.TTB,
     image: 'https://raw.githubusercontent.com/casperstack/banks-logo/master/th/ttb.svg',
   },
-  scb: {
-    code: '014',
+  SCB: {
+    code: BankCode.SCB,
     color: '#4e2e7f',
     official_name: 'SIAM COMMERCIAL BANK PUBLIC COMPANY LTD.',
     official_name_thai: 'ธนาคารไทยพาณิชย์',
@@ -724,8 +736,8 @@ export const BankList = {
     image: 'https://raw.githubusercontent.com/casperstack/banks-logo/master/th/scb.svg',
   },
   // ! NEW
-  citi: {
-    code: '017',
+  CITI: {
+    code: BankCode.CITI,
     color: '#000000',
     official_name: 'CITIBANK, N.A.',
     official_name_thai: 'ธนาคารซิตี้แบงก์',
@@ -734,8 +746,8 @@ export const BankList = {
     image: ''
   },
   // ! NEW
-  scbt: {
-    code: '020',
+  SCBT: {
+    code: BankCode.SCBT,
     color: '#000000',
     official_name: 'STANDARD CHARTERED BANK (THAI) PUBLIC COMPANY LIMITED',
     official_name_thai: 'ธนาคารสแตนดาร์ดชาร์เตอร์ด (ไทย)',
@@ -743,8 +755,8 @@ export const BankList = {
     acronym: BankName.SCBT,
     image: ''
   },
-  cimb: {
-    code: '022',
+  CIMB: {
+    code: BankCode.CIMBT,
     color: '#7e2f36',
     official_name: 'CIMB THAI BANK PUPBLIC COMPANY LTD.',
     official_name_thai: 'ธนาคารซีไอเอ็มบี',
@@ -752,8 +764,8 @@ export const BankList = {
     acronym: BankName.CIMB,
     image: 'https://raw.githubusercontent.com/casperstack/banks-logo/master/th/cimb.svg',
   },
-  uob: {
-    code: '024',
+  UOB: {
+    code: BankCode.UOBT,
     color: '#0b3979',
     official_name: 'UNITED OVERSEAS BANK (THAI) PUBLIC COMPANY LIMITED',
     official_name_thai: 'ธนาคารยูโอบี',
@@ -761,8 +773,8 @@ export const BankList = {
     acronym: BankName.UOB,
     image: 'https://raw.githubusercontent.com/casperstack/banks-logo/master/th/uob.svg',
   },
-  bay: {
-    code: '025',
+  BAY: {
+    code: BankCode.BAY,
     color: '#fec43b',
     official_name: 'BANK OF AYUDHYA PUBLIC COMPANY LTD.',
     official_name_thai: 'ธนาคารกรุงศรีอยุธยา',
@@ -770,8 +782,8 @@ export const BankList = {
     acronym: BankName.BAY,
     image: 'https://raw.githubusercontent.com/casperstack/banks-logo/master/th/bay.svg',
   },
-  gsb: {
-    code: '030',
+  GSB: {
+    code: BankCode.GOV,
     color: '#eb198d',
     official_name: 'THE GOVERNMENT SAVINGS BANK',
     official_name_thai: 'ธนาคารออมสิน',
@@ -780,8 +792,8 @@ export const BankList = {
     image: 'https://raw.githubusercontent.com/casperstack/banks-logo/master/th/gsb.svg',
   },
   // ! NEW
-  hsbc: {
-    code: '031',
+  HSBC: {
+    code: BankCode.HSBC,
     color: '#000000',
     official_name: 'THE HONGKONG AND SHANGHAI BANKING CORPORATION LTD.',
     official_name_thai: 'ธนาคารฮ่องกงและเซี่ยงไฮ้แบงกิ้งคอร์ปอเรชั่น',
@@ -790,8 +802,8 @@ export const BankList = {
     image: ''
   },
   // ! NEW
-  ghb: {
-    code: '033',
+  GHB: {
+    code: BankCode.GHB,
     color: '#000000',
     official_name: 'THE GOVERNMENT HOUSING BANK',
     official_name_thai: 'ธนาคารอาคารสงเคราะห์',
@@ -799,8 +811,8 @@ export const BankList = {
     acronym: BankName.GHB,
     image: ''
   },
-  baac: {
-    code: '034',
+  BAAC: {
+    code: BankCode.AGRI,
     color: '#4b9b1d',
     official_name: 'BANK FOR AGRICULTURE AND AGRICULTURAL COOPERATIVES',
     official_name_thai: 'ธนาคารเพื่อการเกษตรและสหกรณ์การเกษตร',
@@ -809,8 +821,8 @@ export const BankList = {
     image: 'https://raw.githubusercontent.com/casperstack/banks-logo/master/th/baac.svg',
   },
   // ! NEW
-  exim: {
-    code: '035',
+  EXIM: {
+    code: BankCode.EXIM,
     color: '#000000',
     official_name: 'EXPORT-IMPORT BANK OF THAILAND',
     official_name_thai: 'ธนาคารเพื่อการส่งออกและนำเข้าแห่งประเทศไทย',
@@ -819,8 +831,8 @@ export const BankList = {
     image: ''
   },
   // ! NEW
-  mhcb: {
-    code: '039',
+  MHCB: {
+    code: BankCode.MHCB,
     color: '#000000',
     official_name: 'MIZUHO CORPORATE BANK, LTD.',
     official_name_thai: 'ธนาคาร มิซูโฮ คอร์ปอเรต จำกัด',
@@ -829,8 +841,8 @@ export const BankList = {
     image: ''
   },
   // ! NEW
-  tbank: {
-    code: '065',
+  TBANK: {
+    code: BankCode.TBANK,
     color: '#000000',
     official_name: 'THANACHART BANK PUBLIC COMPANY LTD.',
     official_name_thai: 'ธนาคาร ธนชาต จำกัด (มหาชน)',
@@ -839,8 +851,8 @@ export const BankList = {
     image: ''
   },
   // ! NEW
-  isbt: {
-    code: '066',
+  ISBT: {
+    code: BankCode.ISBT,
     color: '#000000',
     official_name: 'ISLAMIC BANK OF THAILAND',
     official_name_thai: 'ธนาคารอิสลามแห่งประเทศไทย',
@@ -849,8 +861,8 @@ export const BankList = {
     image: ''
   },
   // ! NEW
-  tisco: {
-    code: '067',
+  TISCO: {
+    code: BankCode.TISCO,
     color: '#000000',
     official_name: 'TISCO BANK PUBLIC COMPANY LIMITED',
     official_name_thai: 'ธนาคาร ทิสโก้ จำกัด (มหาชน)',
@@ -858,8 +870,8 @@ export const BankList = {
     acronym: BankName.TISCO,
     image: ''
   },
-  kk: {
-    code: '069',
+  KK: {
+    code: BankCode.KK,
     color: '#199cc5',
     official_name: 'KIATNAKIN BANK PUBLIC COMPANY LIMITED',
     official_name_thai: 'ธนาคารเกียรตินาคิน',
@@ -867,8 +879,8 @@ export const BankList = {
     acronym: BankName.KK,
     image: 'https://raw.githubusercontent.com/casperstack/banks-logo/master/th/kkp.svg',
   },
-  icbc: {
-    code: '070',
+  ICBC: {
+    code: BankCode.ICBCT,
     color: '#c50f1c',
     official_name:
       'INDUSTRIAL AND COMMERCIAL BANK OF CHINA (THAI) PUBLIC COMPANY LIMITED',
@@ -878,8 +890,8 @@ export const BankList = {
     image: 'https://raw.githubusercontent.com/casperstack/banks-logo/master/th/icbc.svg',
   },
   // ! NEW
-  tcrb: {
-    code: '071',
+  TCRB: {
+    code: BankCode.TCRB,
     color: '#000000',
     official_name: 'THE THAI CREDIT RETAIL BANK PUBLIC COMPANY LIMITED',
     official_name_thai: 'ธนาคาร ไทยเครดิต เพื่อรายย่อย จำกัด (มหาชน)',
@@ -887,8 +899,8 @@ export const BankList = {
     acronym: BankName.TCRB,
     image: ''
   },
-  lhb: {
-    code: '073',
+  LHB: {
+    code: BankCode.LHBANK,
     color: '#6d6e71',
     official_name: 'LAND AND HOUSES BANK PUBLIC COMPANY LIMITED',
     official_name_thai: 'ธนาคารแลนด์ แอนด์ เฮ้าส์ ',
@@ -897,8 +909,8 @@ export const BankList = {
     image: 'https://raw.githubusercontent.com/casperstack/banks-logo/master/th/lhb.svg',
   },
   // ! NEW
-  smeb: {
-    code: '098',
+  SMEB: {
+    code: BankCode.SMEB,
     color: '#000000',
     official_name: 'SMALL AND MEDIUM ENTERPRISE DEVELOPMENT BANK OF THAILAND',
     official_name_thai: 'ธนาคาร พัฒนาวิสาหกิจขนาดกลางและขนาดย่อมแห่งประเทศไทย',
@@ -910,55 +922,55 @@ export const BankList = {
 
 export const BankListArr = [
   {
-    text: BankList.bbl.official_name_thai,
-    value: BankList.bbl.official_name_thai
+    text: BankList.BBL.official_name_thai,
+    value: BankList.BBL.official_name_thai
   },
   {
-    text: BankList.kbank.official_name_thai,
-    value: BankList.kbank.official_name_thai
+    text: BankList.KBANK.official_name_thai,
+    value: BankList.KBANK.official_name_thai
   },
   {
-    text: BankList.ktb.official_name_thai,
-    value: BankList.ktb.official_name_thai
+    text: BankList.KTB.official_name_thai,
+    value: BankList.KTB.official_name_thai
   },
   {
-    text: BankList.ttb.official_name_thai,
-    value: BankList.ttb.official_name_thai
+    text: BankList.TTB.official_name_thai,
+    value: BankList.TTB.official_name_thai
   },
   {
-    text: BankList.scb.official_name_thai,
-    value: BankList.scb.official_name_thai
+    text: BankList.SCB.official_name_thai,
+    value: BankList.SCB.official_name_thai
   },
   {
-    text: BankList.cimb.official_name_thai,
-    value: BankList.cimb.official_name_thai
+    text: BankList.CIMB.official_name_thai,
+    value: BankList.CIMB.official_name_thai
   },
   {
-    text: BankList.uob.official_name_thai,
-    value: BankList.uob.official_name_thai
+    text: BankList.UOB.official_name_thai,
+    value: BankList.UOB.official_name_thai
   },
   {
-    text: BankList.bay.official_name_thai,
-    value: BankList.bay.official_name_thai
+    text: BankList.BAY.official_name_thai,
+    value: BankList.BAY.official_name_thai
   },
   {
-    text: BankList.gsb.official_name_thai,
-    value: BankList.gsb.official_name_thai
+    text: BankList.GSB.official_name_thai,
+    value: BankList.GSB.official_name_thai
   },
   {
-    text: BankList.baac.official_name_thai,
-    value: BankList.baac.official_name_thai
+    text: BankList.BAAC.official_name_thai,
+    value: BankList.BAAC.official_name_thai
   },
   {
-    text: BankList.kk.official_name_thai,
-    value: BankList.kk.official_name_thai
+    text: BankList.KK.official_name_thai,
+    value: BankList.KK.official_name_thai
   },
   {
-    text: BankList.icbc.official_name_thai,
-    value: BankList.icbc.official_name_thai
+    text: BankList.ICBC.official_name_thai,
+    value: BankList.ICBC.official_name_thai
   },
   {
-    text: BankList.lhb.official_name_thai,
-    value: BankList.lhb.official_name_thai
+    text: BankList.LHB.official_name_thai,
+    value: BankList.LHB.official_name_thai
   }
 ];
