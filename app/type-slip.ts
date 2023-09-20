@@ -38,4 +38,6 @@ export interface IRespSlipData {
 export interface IExtendSlipData {
   receivingBankCodeName: string | null
   sendingBankCodeName: string; 
+  receivingBankName: string | null
+  sendingBankName: string;
 }
