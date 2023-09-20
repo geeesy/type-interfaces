@@ -34,3 +34,8 @@ export interface IRespSlipData {
   ref3: string | null; // (20) <- payslip ref number 3
   toMerchantId: string | null; // (15)
 }
+
+export interface IExtendSlipData {
+  receivingBankCodeName: string | null
+  sendingBankCodeName: string; 
+}
