@@ -20,7 +20,7 @@ export interface IRespSlipData {
   receivingBank: string | null; // (3) = bank code
   sendingBank: string; // (3) = bank code
   transRef: string; // (25)
-  transDate: string | null; // (8) <- payslip date (yyyyMMdd)
+  transDate: string | null; // (8) <- payslip date (yyyy/MM/dd)
   transTime: string | null; // (8) <- payslip time (HH:mm:ss)
   sender: IRespSlipPerson;
   receiver: IRespSlipPerson;
@@ -37,7 +37,7 @@ export interface IRespSlipData {
 
 export interface IExtendSlipData {
   receivingBankCodeName: string | null
-  sendingBankCodeName: string; 
+  sendingBankCodeName: string; // ? Always have value
   receivingBankName: string | null
-  sendingBankName: string;
+  sendingBankName: string; // ? Always have value
 }

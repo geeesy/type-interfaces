@@ -38,6 +38,10 @@ export interface IDBInventoryEntity {
   totalProductBySku:number;
 }
 
+export interface IInventoryName {
+  inventoryName: string;
+}
+
 export interface IInventoryEntity {
   inventoryName: string;
   inventoryInternalId: string;
@@ -150,7 +154,7 @@ export interface ITransferProductStock {
 export interface ILogStockValue
   extends IProductInventoryImmu,
   IProductInventorySetting,
-  IDBProductInventory { }
+  IDBProductInventory, IInventoryName { }
 
 export enum StockMovementType {
   Initial = 'initial_entry',
