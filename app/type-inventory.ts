@@ -179,6 +179,7 @@ export interface ILogStock {
   newValue: ILogStockValue;
   note?: string; // only on action
   latestInOutInventoryId?: string; // only on transfer
+  latestInOutInventoryName?: string; // only on transfer
 }
 
 export interface IOrderInLogStock {
