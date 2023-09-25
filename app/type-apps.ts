@@ -656,9 +656,9 @@ export interface IQuotationFormGroupAccounting {
 export interface IQuotationFormGroupData {
   docNo: string;
   docDate: string;
-  validUntilDate: string;
+  validUntilDate: string; // กำหนดวันยืนราคา (วันเวลา)
   expiryDate: string;
-  creditDay: number;
+  creditDay: number; // ? เครดิตเทอม (จำนวนวัน)
   paymentTerm: IPaymentTerm[];
   bankingInfo: ICompanyBankingInfo[];
   shippingDate: string;
