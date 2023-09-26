@@ -156,6 +156,7 @@ export interface IComponentBlockProduct extends IOrderProductRow {
   variantSelectors?: IProductVariantSelector[];
   productVariantArr?: IProductVariantArr[];
   colorCard: string;
+  productImagesUrl: IImage[];
 }
 
 export interface ISettingDiscount {
@@ -184,6 +185,7 @@ export interface IProductVariantArr
   productPackage: IProductPackage;
   countRow: number;
   canBelowZero: boolean;
+  discountUnitPrice: number;
 }
 
 export interface IComponentBlockHTML {

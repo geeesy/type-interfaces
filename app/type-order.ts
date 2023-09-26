@@ -563,7 +563,7 @@ export interface IOrderPaymentRowData {
   isAutoConfirmSlip: boolean;
   paymentRowStatus: TPaymentRowStatus;
   productTitleFirst: string;
-  productImageFirstUrl: string;
+  productImageFirstUrl: string
   productSkuFirst: string;
   salepageId: string;
   docNo: string;
