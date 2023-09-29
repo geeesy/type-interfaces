@@ -186,6 +186,8 @@ export interface IProductVariantArr
   countRow: number;
   canBelowZero: boolean;
   discountUnitPrice: number;
+  isActive:boolean
+
 }
 
 export interface IComponentBlockHTML {
