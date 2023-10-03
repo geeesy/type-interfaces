@@ -509,6 +509,7 @@ export interface ICustomerWithOrder
     IOrderCustomerData {
   latestOrderType: TOrderType;
   latestOrderId: string;
+  latestSalepageId: string; // ?salepageId
   latestOrderDocNo: string;
   TotalPaidAmount: number;
   CountCompletedOrder: number;
