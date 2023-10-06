@@ -1,4 +1,3 @@
-import {ITimePeriod} from "./type-salepage";
 
 export interface IRespSlipProxy {
   type: string | null // (12) -> (NATID, MSISDN, EWALLETID, EMAIL, BILLERID)
