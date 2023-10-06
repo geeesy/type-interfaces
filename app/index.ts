@@ -452,7 +452,7 @@ import {
 import {IDBPackageImmu, IPackageBusinessData, IPackageCount, IPackageData} from "./type-package";
 import {INewsletterData} from "./type-newsletter";
 import { ICatalogData, ICatalogEntity, ICatalogEntityImmu } from './type-catalog';
-import { IExtendSlipData, IRespSlipData } from './type-slip';
+import {IExtendSlipData, IRespSlipData, ISlipSettingData} from './type-slip';
 
 /* #region FIXME: Marketplace */
 export namespace GeeesyMarketplace {
@@ -1328,6 +1328,11 @@ export namespace GappBiz {
   export type GlobalGTMSetting = IGTMData &
     IApiCompanyParams &
     IDBCompanyActivityLog;
+
+  // $Global GTM SETTING
+  export type GlobalSlipSetting = ISlipSettingData &
+      IApiCompanyParams &
+      IDBCompanyActivityLog;
 
   // $REPLY
   export type ReplyTemplate = IReplyData &

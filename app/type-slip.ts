@@ -1,3 +1,4 @@
+
 export interface IRespSlipProxy {
   type: string | null // (12) -> (NATID, MSISDN, EWALLETID, EMAIL, BILLERID)
   value: string | null  // (128)
@@ -41,3 +42,10 @@ export interface IExtendSlipData {
   receivingBankName: string | null
   sendingBankName: string; // ? Always have value
 }
+
+export interface ISlipSettingData {
+  isSlipAutomatic: boolean;
+  hasChangeStatus: boolean;
+  delayTime: number;
+}
+
