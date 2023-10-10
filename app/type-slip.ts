@@ -1,3 +1,4 @@
+import {TBankName} from "./enum-const";
 
 export interface IRespSlipProxy {
   type: string | null // (12) -> (NATID, MSISDN, EWALLETID, EMAIL, BILLERID)
@@ -49,3 +50,14 @@ export interface ISlipSettingData {
   delayTime: number;
 }
 
+export interface IReqDataBank {
+    compId: string
+    businessId: string
+    bankAccountNo: string
+    bankAccountName: string
+    bankAccountType: TBankName
+    paymentDate: string
+    paymentTime: string
+    totalSaleAmount: number
+    fee: number
+}
