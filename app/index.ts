@@ -452,7 +452,7 @@ import {
 import {IDBPackageImmu, IPackageBusinessData, IPackageCount, IPackageData} from "./type-package";
 import {INewsletterData} from "./type-newsletter";
 import { ICatalogData, ICatalogEntity, ICatalogEntityImmu } from './type-catalog';
-import {IExtendSlipData, IRespSlipData, ISlipSettingData} from './type-slip';
+import {IExtendSlipData, IReqVerifyPaymentData, IRespSlipData, ISlipSettingData} from './type-slip';
 
 /* #region FIXME: Marketplace */
 export namespace GeeesyMarketplace {
@@ -1333,6 +1333,9 @@ export namespace GappBiz {
   export type GlobalSlipSetting = ISlipSettingData &
       IApiCompanyParams &
       IDBCompanyActivityLog;
+
+    // $CheckDataBank to Matched Return Value From QR Code
+  export type VerifyPaymentData = IReqVerifyPaymentData;
 
   // $REPLY
   export type ReplyTemplate = IReplyData &
