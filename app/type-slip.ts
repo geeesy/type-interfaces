@@ -50,7 +50,7 @@ export interface ISlipSettingData {
   delayTime: number;
 }
 
-export interface IReqDataBank {
+export interface IReqVerifyPaymentData {
     compId: string
     businessId: string
     bankAccountNo: string
