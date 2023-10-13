@@ -284,7 +284,8 @@ export enum SaleChannelSubType {
   Phone = 'phone',
   CallCenter = 'callCenter',
   Store = 'store',
-  Other = 'other'
+  Other = 'other',
+  Unknown = 'unknown'
 }
 
 export const SaleChannelSubTypeArr = [
