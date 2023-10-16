@@ -104,6 +104,7 @@ export interface ISalePageComponent {
 export interface IContactForm {
   buttonColor: string;
   buttonLabel: string;
+  buttonSubLabel: string;
   formField: IContactFormField;
 }
 
