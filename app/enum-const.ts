@@ -624,6 +624,33 @@ export enum BankCode {
   SMEB = '098'
 }
 
+export enum CodeBank {
+    '002' = 'BBL',
+    '004' = 'KBANK',
+    '006' = 'KTB',
+    '011' = 'TMB', // ! TTB
+    '014' = 'SCB',
+    '017' = 'CITI',
+    '020' = 'SCBT',
+    '022' = 'CIMBT', // ! CIMB
+    '024' = 'UOBT', // ! UOB
+    '025' = 'BAY',
+    '030' = 'GOV',  // GSB
+    '031' = 'HSBC',
+    '033' = 'GHB',
+    '034' = 'AGRI',  // BAAC
+    '035' = 'EXIM',
+    '039' = 'MHCB',
+    '065' = 'TBANK',
+    '066' = 'ISBT',
+    '067' = 'TISCO',
+    '069' = 'KK',  // KKP
+    '070' = 'ICBCT',
+    '071' = 'TCRB',  //  TCD
+    '073' = 'LHBANK', // LHFG | LHB
+    '099' = 'SMEB'
+}
+
 export type TBankName =
   | 'BBL'
   | 'KBANK'
