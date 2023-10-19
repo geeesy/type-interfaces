@@ -473,6 +473,7 @@ export interface ICustomerData {
   tags: ITags[];
   isMember: boolean;
   isBlocked: boolean;
+  customerCode: string;
 }
 
 

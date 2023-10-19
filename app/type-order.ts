@@ -2,7 +2,7 @@ import { GappBiz, GappSetting } from '.';
 import { ICompanyContactInfo, IPeriodTime } from './type-company';
 
 import { IPersonContactInfo } from './type-apps';
-import { SaleChannelSubType } from './enum-const';
+import {SaleChannelSubType, TWarningLevel} from './enum-const';
 import {ISaleChannelEntity} from "./type-setting";
 import {IOrderInLogStock} from "./type-inventory";
 
@@ -571,6 +571,8 @@ export interface IOrderPaymentRowData {
   docNo: string;
   customerFullName: string;
   hasOverrideEmailSending: boolean
+  paymentRowWarning: string;
+  paymentRowWarningLevel: TWarningLevel;
 }
 
 export interface IDBOrderPaymentRow {
