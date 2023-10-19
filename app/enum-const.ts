@@ -1017,3 +1017,14 @@ export const BankListArr = [
 ];
 
 export type TWarningLevel = 'Level1' | 'Level2' | 'Level3';
+
+export enum BankWarning {
+  B0_NOT_FOUND = 'ไม่พบสลิป',
+  B1_SUCCESS = 'ตรวจสอบผ่าน',
+  B2_DUPLICATE = 'ตรวจพบสลิปซ้ำในระบบ',
+  B3_MATCHED_BANK = 'ธนาคารที่รับโอนไม่ตรงกับธนาคารที่ระบุ',
+  B4_MATCHED_ACCOUNT_NO = 'บัญชีผู้รับไม่ถูกต้อง',
+  B5_MATCHED_TIME = 'เวลาการชำระไม่ถูกต้อง',
+  B6_LESS_AMOUNT = 'ยอดโอนน้อยกว่าที่ระบุ',
+  B7_MORE_AMOUNT = 'ยอดโอนมากกว่าที่ระบุ'
+}
