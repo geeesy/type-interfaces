@@ -1015,3 +1015,5 @@ export const BankListArr = [
     value: BankList.LHB.official_name_thai
   }
 ];
+
+export type TWarningLevel = 'Level1' | 'Level2' | 'Level3';
