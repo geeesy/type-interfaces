@@ -571,8 +571,8 @@ export interface IOrderPaymentRowData {
   docNo: string;
   customerFullName: string;
   hasOverrideEmailSending: boolean
-  paymentRowWarning: BankWarning;
-  paymentRowWarningLevel: TWarningLevel;
+  paymentRowWarning: BankWarning | null;
+  paymentRowWarningLevel: TWarningLevel | null;
   isPaymentRowSlipAutomatic: boolean;
 }
 
