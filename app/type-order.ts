@@ -573,6 +573,7 @@ export interface IOrderPaymentRowData {
   hasOverrideEmailSending: boolean
   paymentRowWarning: BankWarning;
   paymentRowWarningLevel: TWarningLevel;
+  isPaymentRowSlipAutomatic: boolean;
 }
 
 export interface IDBOrderPaymentRow {
