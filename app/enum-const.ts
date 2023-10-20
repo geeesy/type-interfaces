@@ -1026,5 +1026,6 @@ export enum BankWarning {
   B4_MATCHED_ACCOUNT_NO = 'บัญชีผู้รับไม่ถูกต้อง',
   B5_MATCHED_TIME = 'เวลาการชำระไม่ถูกต้อง',
   B6_LESS_AMOUNT = 'ยอดโอนน้อยกว่าที่ระบุ',
-  B7_MORE_AMOUNT = 'ยอดโอนมากกว่าที่ระบุ'
+  B7_MORE_AMOUNT = 'ยอดโอนมากกว่าที่ระบุ',
+  B8_ERROR = 'ไม่สามารถตรวจสอบได้'
 }
