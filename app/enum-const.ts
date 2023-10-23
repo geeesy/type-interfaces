@@ -1019,7 +1019,7 @@ export const BankListArr = [
 export type TWarningLevel = 'Level1' | 'Level2' | 'Level3';
 
 export enum BankWarning {
-  B0_NOT_FOUND = 'QR Code Not Found', // ไม่พบ QR Code หรือ QR Code ผิดรูปแบบ
+  B0_NOT_FOUND = 'Cannot decode the QR code', // ไม่พบ QR Code หรือ QR Code ผิดรูปแบบ
   B1_SUCCESS = 'Success', // ตรวจสอบผ่าน
   B2_DUPLICATE = 'Duplicate Slip', // ตรวจพบสลิปซ้ำในระบบ
   B3_MATCHED_BANK = 'Bank Not Matched', // ธนาคารที่รับโอนไม่ตรงกับธนาคารที่ระบุ
@@ -1027,12 +1027,12 @@ export enum BankWarning {
   B5_MATCHED_TIME = 'Invalid Payment Time', // เวลาการชำระไม่ถูกต้อง
   B6_LESS_AMOUNT = 'Transfer Amount is Less Than Specified', // ยอดโอนน้อยกว่าที่ระบุ'
   B7_MORE_AMOUNT = 'Transfer Amount is Greater Than Specified', // ยอดโอนมากกว่าที่ระบุ
-  B8_ERROR = 'Unable To Verify' // ไม่สามารถตรวจสอบได้
+  B8_ERROR = 'No slip data from API' // ไม่สามารถตรวจสอบได้
 }
 
 export enum BankErrorCodes {
-  DECODE_QR_CODE = 'QR Code Not Found', // error code 400
-  INCORRECT_QR = 'Unable To Verify', // error code 404
-  REF_NOT_EXIST = 'Unable To Verify', // error code 404
-  SERVER_ERROR = 'Unable To Verify', // error code 500
+  DECODE_QR_CODE = 'Cannot decode the QR code', // error code 400
+  INCORRECT_QR = 'No slip data from API', // error code 404
+  REF_NOT_EXIST = 'No slip data from API', // error code 404
+  SERVER_ERROR = 'No slip data from API', // error code 500
 }
