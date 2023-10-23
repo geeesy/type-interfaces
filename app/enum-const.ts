@@ -1019,7 +1019,7 @@ export const BankListArr = [
 export type TWarningLevel = 'Level1' | 'Level2' | 'Level3';
 
 export enum BankWarning {
-  B0_NOT_FOUND = 'ไม่พบสลิป',
+  B0_NOT_FOUND = 'ไม่พบ QR Code หรือ QR Code ผิดรูปแบบ',
   B1_SUCCESS = 'ตรวจสอบผ่าน',
   B2_DUPLICATE = 'ตรวจพบสลิปซ้ำในระบบ',
   B3_MATCHED_BANK = 'ธนาคารที่รับโอนไม่ตรงกับธนาคารที่ระบุ',
