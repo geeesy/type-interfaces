@@ -1029,3 +1029,10 @@ export enum BankWarning {
   B7_MORE_AMOUNT = 'ยอดโอนมากกว่าที่ระบุ',
   B8_ERROR = 'ไม่สามารถตรวจสอบได้'
 }
+
+export enum BankErrorCodes {
+  DECODE_QR_CODE = 'ไม่พบสลิป', // error code 400
+  INCORRECT_QR = 'ไม่สามารถตรวจสอบได้', // error code 404
+  REF_NOT_EXIST = 'ไม่สามารถตรวจสอบได้', // error code 404
+  SERVER_ERROR = 'ไม่สามารถตรวจสอบได้', // error code 500
+}
