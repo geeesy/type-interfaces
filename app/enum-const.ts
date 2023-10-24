@@ -1018,18 +1018,18 @@ export const BankListArr = [
 
 export type TWarningLevel = 'Level1' | 'Level2' | 'Level3';
 
-// ^ status 200
 export enum BankWarning {
-  B0_SUCCESS = 'Success', // ตรวจสอบผ่าน
-  B1_DUPLICATE = 'Duplicate Slip', // ตรวจพบสลิปซ้ำในระบบ
-  B2_MATCHED_BANK = 'Bank Not Matched', // ธนาคารที่รับโอนไม่ตรงกับธนาคารที่ระบุ
-  B3_MATCHED_ACCOUNT_NO = 'Bank Account Not Matched', // บัญชีผู้รับไม่ถูกต้อง
-  B4_MATCHED_TIME = 'Invalid Payment Time', // เวลาการชำระไม่ถูกต้อง
-  B5_LESS_AMOUNT = 'Transfer Amount is Less Than Specified', // ยอดโอนน้อยกว่าที่ระบุ'
-  B6_MORE_AMOUNT = 'Transfer Amount is Greater Than Specified', // ยอดโอนมากกว่าที่ระบุ
+  B0_NOT_FOUND = 'Cannot decode the QR code', // ไม่พบ QR Code หรือ QR Code ผิดรูปแบบ
+  B1_SUCCESS = 'Success', // ตรวจสอบผ่าน
+  B2_DUPLICATE = 'Duplicate Slip', // ตรวจพบสลิปซ้ำในระบบ
+  B3_MATCHED_BANK = 'Bank Not Matched', // ธนาคารที่รับโอนไม่ตรงกับธนาคารที่ระบุ
+  B4_MATCHED_ACCOUNT_NO = 'Bank Account Not Matched', // บัญชีผู้รับไม่ถูกต้อง
+  B5_MATCHED_TIME = 'Invalid Payment Time', // เวลาการชำระไม่ถูกต้อง
+  B6_LESS_AMOUNT = 'Transfer Amount is Less Than Specified', // ยอดโอนน้อยกว่าที่ระบุ'
+  B7_MORE_AMOUNT = 'Transfer Amount is Greater Than Specified', // ยอดโอนมากกว่าที่ระบุ
+  B8_ERROR = 'No slip data from API' // ไม่สามารถตรวจสอบได้
 }
 
-// ^ status 400 | 500
 export enum BankErrorCodes {
   SERVER_ERROR, // error code 500 Server Error
   CANNOT_GET_SLIP , // error code 500 Cannot get slip data from K-Bank API
