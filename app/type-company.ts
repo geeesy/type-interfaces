@@ -1,4 +1,4 @@
-import { IImage, IPersonContactInfo } from './type-apps';
+import {IImage, IPersonContactInfo, TVendorType} from './type-apps';
 import {
   ICompanyUserData,
   TApproverFlow,
@@ -489,6 +489,7 @@ export interface ICustomer {
   CountCompletedOrder: number;
   AvgPaidAmount: number;
   hasArchived:boolean;
+  wasVendor?: boolean
 }
 
 export interface ICreateCustomer {
