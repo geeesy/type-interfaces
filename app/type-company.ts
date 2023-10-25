@@ -474,6 +474,7 @@ export interface ICustomerData {
   isMember: boolean;
   isBlocked: boolean;
   customerCode: string;
+  wasVendor?: boolean
 }
 
 
@@ -489,7 +490,6 @@ export interface ICustomer {
   CountCompletedOrder: number;
   AvgPaidAmount: number;
   hasArchived:boolean;
-  wasVendor?: boolean
 }
 
 export interface ICreateCustomer {
