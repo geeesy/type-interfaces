@@ -1019,7 +1019,7 @@ export const BankListArr = [
 export type TWarningLevel = 'Level1' | 'Level2' | 'Level3';
 
 export enum BankWarning {
-  B0_NOT_FOUND = 'Cannot decode the QR code', // ไม่พบ QR Code หรือ QR Code ผิดรูปแบบ
+  B0_NOT_FOUND = 'Cannot decode the QR code', // ไม่พบ QR Code
   B1_SUCCESS = 'Success', // ตรวจสอบผ่าน
   B2_DUPLICATE = 'Duplicate Slip', // ตรวจพบสลิปซ้ำในระบบ
   B3_MATCHED_BANK = 'Bank Not Matched', // ธนาคารที่รับโอนไม่ตรงกับธนาคารที่ระบุ
@@ -1027,12 +1027,14 @@ export enum BankWarning {
   B5_MATCHED_TIME = 'Invalid Payment Time', // เวลาการชำระไม่ถูกต้อง
   B6_LESS_AMOUNT = 'Transfer Amount is Less Than Specified', // ยอดโอนน้อยกว่าที่ระบุ'
   B7_MORE_AMOUNT = 'Transfer Amount is Greater Than Specified', // ยอดโอนมากกว่าที่ระบุ
-  B8_ERROR = 'No slip data from API' // ไม่สามารถตรวจสอบได้
+  B8_ERROR = 'No slip data from API',// ไม่สามารถตรวจสอบได้
+  B9_CANNOT_GET_SLIP = 'Cannot get slip data from K-Bank API', // ไม่สามารถตรวจสอบได้
+  B10_INCORRECT_QR = 'In Correct QR code' // QR Code ผิดรูปแบบ
 }
 
 export enum BankErrorCodes {
   SERVER_ERROR, // error code 500 Server Error
-  CANNOT_GET_SLIP , // error code 500 Cannot get slip data from K-Bank API
+  CANNOT_GET_SLIP , // error code 404 Cannot get slip data from K-Bank API
   DECODE_QR_CODE, // error code 400 Cannot decode the QR code
   INCORRECT_QR , // error code 404 In Correct QR code
   NO_SLIP_DATA , // error code 404 No slip data from API
