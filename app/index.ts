@@ -452,7 +452,14 @@ import {
 import {IDBPackageImmu, IPackageBusinessData, IPackageCount, IPackageData} from "./type-package";
 import {INewsletterData} from "./type-newsletter";
 import { ICatalogData, ICatalogEntity, ICatalogEntityImmu } from './type-catalog';
-import {IExtendSlipData, IReqVerifyPaymentData, IRespSlipData, ISlipSettingData} from './type-slip';
+import {
+  IExtendSlipData,
+  IReqVerifyPaymentData,
+  IRespSlipData, IReturnSlipError,
+  IReturnSlipMessage,
+  IReturnSlipSuccess,
+  ISlipSettingData
+} from './type-slip';
 
 /* #region FIXME: Marketplace */
 export namespace GeeesyMarketplace {
@@ -1433,6 +1440,8 @@ export namespace GappBiz {
 
   // STUB: Slip
   export type SlipData = IRespSlipData & IExtendSlipData
+  export type SlipSuccess = IReturnSlipSuccess & IReturnSlipMessage
+  export type SlipError = IReturnSlipError & IReturnSlipMessage
 }
 
 // REVIEW: G-MARKET
