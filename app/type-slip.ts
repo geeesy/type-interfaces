@@ -1,20 +1,20 @@
-import {TBankName} from "./enum-const";
+import {BankErrorCodes, TBankName} from "./enum-const";
 
 export interface IRespSlipProxy {
-  type: string | null // (12) -> (NATID, MSISDN, EWALLETID, EMAIL, BILLERID)
-  value: string | null  // (128)
+  type: string | null; // (12) -> (NATID, MSISDN, EWALLETID, EMAIL, BILLERID)
+  value: string | null;  // (128)
 }
 
 export interface IRespSlipAccount {
-  type: string  // (12) -> (BANKAC, TOKEN, DUMMY)
-  value: string // (40)
+  type: string;  // (12) -> (BANKAC, TOKEN, DUMMY)
+  value: string; // (40)
 }
 
 export interface IRespSlipPerson {
-  displayName: string | null // (50) ? Thai or English
-  name: string | null // (50) ? English
-  proxy: IRespSlipProxy
-  account: IRespSlipAccount
+  displayName: string | null; // (50) ? Thai or English
+  name: string | null; // (50) ? English
+  proxy: IRespSlipProxy;
+  account: IRespSlipAccount;
 }
 
 export interface IRespSlipData {
@@ -38,9 +38,9 @@ export interface IRespSlipData {
 }
 
 export interface IExtendSlipData {
-  receivingBankCodeName: string | null
+  receivingBankCodeName: string | null;
   sendingBankCodeName: string; // ? Always have value
-  receivingBankName: string | null
+  receivingBankName: string | null;
   sendingBankName: string; // ? Always have value
 }
 
@@ -51,13 +51,66 @@ export interface ISlipSettingData {
 }
 
 export interface IReqVerifyPaymentData {
-    compId: string
-    businessId: string
-    bankAccountNo: string
-    bankAccountName: string
-    bankAccountType: TBankName
-    paymentDate: string
-    paymentTime: string
-    totalSaleAmount: number
-    fee: number
+  compId: string;
+  businessId: string;
+  bankAccountNo: string;
+  bankAccountName: string;
+  bankAccountType: TBankName;
+  paymentDate: string;
+  paymentTime: string;
+  totalSaleAmount: number;
+  fee: number;
+}
+
+export interface IReturnSlipMessage {
+  message: string;
+}
+
+export interface IReturnSlipSuccess {
+  invalid: IInvalidSlip;
+  slipData: ISlipData;
+}
+
+export interface IReturnSlipError {
+  errorCode: BankErrorCodes;
+}
+
+export interface IInvalidSlip {
+  account_number: boolean;
+  bank: boolean;
+  duplicate: boolean;
+  recorded_at: string;
+  trans_ref: string;
+}
+
+export interface ISlipDataAccount{
+   account: {
+      type: string
+      value: string
+    }
+    displayName: string
+    name: string
+    proxy: {
+      type: string
+      value: string
+    }
+}
+export interface ISlipData {
+  amount: string;
+  countryCode: string;
+  language: string;
+  paidLocalAmount: string;
+  paidLocalCurrency: string;
+  receiver: ISlipDataAccount;
+  receivingBank: string;
+  ref1: string;
+  ref2: string;
+  ref3: string;
+  sender: ISlipDataAccount;
+  sendingBank: string;
+  toMerchantId: string;
+  transDate: string;
+  transFeeAmount: string;
+  transRef: string;
+  transTime: string;
 }
