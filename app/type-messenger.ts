@@ -80,7 +80,7 @@ export interface ISocialChatMessage {
   socialSource: TSocialSource;
   timestamp: number;
   messageStatus: string;
-  message: IMessage;
+  message: IMessageId & IMessage;
 }
 
 export interface ISocialChatMessageSender {
@@ -89,8 +89,11 @@ export interface ISocialChatMessageSender {
   isPageSender:boolean;
 }
 
+export interface IMessageId {
+    mid: string;
+}
+
 export interface IMessage {
-  mid: string;
   type: TMessageType;
   text?: string;
   attachments: [
