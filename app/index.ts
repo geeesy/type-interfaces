@@ -391,8 +391,8 @@ import {
   IShippingMethodEntityImmu
 } from './type-shipping';
 
-import { IAnalytics } from './interfaces';
-import { IInventoryExport, IOrderStatusExport, ITimeStamp } from './type-data';
+import {IAnalytics} from './interfaces';
+import {IInventoryExport, IOrderStatusExport, ITimeStamp} from './type-data';
 import {
   ICountFacebookPostRow,
   ICreateFacebookProductRow,
@@ -440,18 +440,18 @@ import {
   IPartnerData,
   IPartnerDataImmu
 } from './type-affiliate';
-import { IReplyData } from './type-reply';
+import {IReplyData} from './type-reply';
 import {
   IConversation,
   IDBConversationImmu,
-  IDBSocialChatMessageImmu,
+  IDBSocialChatMessageImmu, IPushMessageLine,
   ISocialChannel,
   ISocialChatMessage,
   ISocialChatMessageSender
 } from './type-messenger';
 import {IDBPackageImmu, IPackageBusinessData, IPackageCount, IPackageData} from "./type-package";
 import {INewsletterData} from "./type-newsletter";
-import { ICatalogData, ICatalogEntity, ICatalogEntityImmu } from './type-catalog';
+import {ICatalogData, ICatalogEntity, ICatalogEntityImmu} from './type-catalog';
 import {
   IExtendSlipData,
   IReqVerifyPaymentData,
@@ -712,11 +712,11 @@ export namespace GeeesyApps {
   export type QuotationRfq = IQuotationRfq & IDBCompanyDocHeader;
 
   /**
-     * @description
-     * FORM Interface for Purchase Order (PO) creation
-     * @param
+   * @description
+   * FORM Interface for Purchase Order (PO) creation
+   * @param
 
-     */
+   */
   export type POFormCreate = IPOFormCreate;
   export type POFormCreateParams = IPOFormCreateParams;
   export type POFormSubmit = IPOFormCreate &
@@ -729,11 +729,11 @@ export namespace GeeesyApps {
   export type PO = IPO & IDBCompanyDocHeader;
 
   /**
-     * @description
-     * FORM Interface for Sales Order (SO) creation
-     * @param
+   * @description
+   * FORM Interface for Sales Order (SO) creation
+   * @param
 
-     */
+   */
   // * SO
   export type SOFormCreate = ISOFormCreate;
   export type SoFormCreateParams = ISOFormCreateParams;
@@ -757,11 +757,11 @@ export namespace GeeesyApps {
   export type RO = IRO & IDBCompanyDocHeader;
 
   /**
-     * @description
-     * FORM Interface for Billing Note creation
-     * @param
+   * @description
+   * FORM Interface for Billing Note creation
+   * @param
 
-     */
+   */
 
   export type BillingNoteFormCreate = IBillingNoteFormCreate;
   export type BillingNoteFormCreateParams = IBillingNoteFormCreateParams;
@@ -775,11 +775,11 @@ export namespace GeeesyApps {
   export type BillingNote = IBillingNote & IDBCompanyDocHeader;
 
   /**
-     * @description
-     * FORM Interface for Invoice creation
-     * @param
+   * @description
+   * FORM Interface for Invoice creation
+   * @param
 
-     */
+   */
   export type InvoiceFormCreate = IInvoiceFormCreate;
   export type InvoiceFormCreateParams = IInvoiceFormCreateParams;
   export type InvoiceFormSubmit = IInvoiceFormCreate &
@@ -811,11 +811,11 @@ export namespace GeeesyApps {
   export type ReceiptUpdate = IReceipt & IApiCompanyParams;
 
   /**
-     * @description
-     * FORM Interface for TAX Invoice creation
-     * @param
+   * @description
+   * FORM Interface for TAX Invoice creation
+   * @param
 
-     */
+   */
   export type TaxInvoiceFormCreate = ITaxInvoiceFormCreate;
   export type TaxInvoiceFormCreateParams = ITaxInvoiceFormCreateParams;
   export type TaxInvoiceFormSubmit = ITaxInvoiceFormCreate &
@@ -827,11 +827,11 @@ export namespace GeeesyApps {
   export type TaxInvoice = ITaxInvoice & IDBCompanyDocHeader;
 
   /**
-     * @description
-     * FORM Interface for Approver Setting
-     * @param
+   * @description
+   * FORM Interface for Approver Setting
+   * @param
 
-     */
+   */
   export type ApproverFormCreate = IApproverFormCreate;
   export type ApproverFormCreateParams = IApproverFormCreateParams;
   export type ApproverFormSubmit = IApproverFormCreate &
@@ -865,8 +865,8 @@ export namespace GeeesyApps {
   export type CompanyOnList = ICompanyOnList;
 
   /**
-     Sales Rep
-     */
+   Sales Rep
+   */
   export type CreateSalesRep = ICompanyCreateSalesRep;
   export type SalesRep = ICompanySalesRep;
 }
@@ -940,13 +940,13 @@ export namespace GappBusiness {
     IBusinessUserIdentity;
   export type DBCreateUser = IBusinessUserIdentityImmu &
     IBusinessUserIdentity &
-      IDBBusinessCompanyUserData &
+    IDBBusinessCompanyUserData &
     IDBBusinessUserIdentityStatus &
     IDBLogTime;
   // 👨‍💼 === BUSINESS USER
   export type User = IBusinessUserIdentityImmu &
     IBusinessUserIdentity &
-      IDBBusinessCompanyUserData &
+    IDBBusinessCompanyUserData &
     IDBBusinessUserIdentityStatus &
     IDBBusinessUserIdentity &
     IUserRoleImmu &
@@ -959,8 +959,8 @@ export namespace GappBusiness {
   export type CreateCompany = ICompanyPublicEntity &
     ICompanyPrivateEntity &
     IApiCompanyParams;
-    // IApiUserParams &
-    // ICompanyEntityImmu;
+  // IApiUserParams &
+  // ICompanyEntityImmu;
   export type Company = IDBCompanyEntity &
     IDBCompanySupplierEntity &
     ICompanyEntityImmu &
@@ -1338,10 +1338,10 @@ export namespace GappBiz {
 
   // $Global GTM SETTING
   export type GlobalSlipSetting = ISlipSettingData &
-      IApiCompanyParams &
-      IDBCompanyActivityLog;
+    IApiCompanyParams &
+    IDBCompanyActivityLog;
 
-    // $CheckDataBank to Matched Return Value From QR Code
+  // $CheckDataBank to Matched Return Value From QR Code
   export type VerifyPaymentData = IReqVerifyPaymentData;
 
   // $REPLY
@@ -1434,6 +1434,8 @@ export namespace GappBiz {
     ISocialChatMessageSender &
     IDBSocialChatMessageImmu &
     IDBLogTime;
+  // * push message line
+  export type PushMessageLine = IPushMessageLine & IApiCompanyFacebookParams
 
   // STUB: Catalog
   export type CreateCatalog = ICatalogEntityImmu & ICatalogEntity & ICatalogData

@@ -106,5 +106,12 @@ export interface IMessage {
   ]
 }
 
+export interface IPushMessageLine {
+  saleChannelId:string,
+  receiver:string,
+  message:IMessage,
+  conversationId:string
+}
+
 
 
