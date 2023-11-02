@@ -348,7 +348,7 @@ import {
 } from './type-inventory';
 import {
   IDBPaymentMethod,
-  IDBPaymentMethodImmu,
+  IDBPaymentMethodImmu, IGenPromptPay,
   IPaymentMethodEntity,
   IPaymentMethodEntityImmu
 } from './type-payment';
@@ -1442,6 +1442,9 @@ export namespace GappBiz {
   export type SlipData = IRespSlipData & IExtendSlipData
   export type SlipSuccess = IReturnSlipSuccess & IReturnSlipMessage
   export type SlipError = IReturnSlipError & IReturnSlipMessage
+
+  // STUB: Generate Qr Code
+  export type GenQrPromptPay = IGenPromptPay
 }
 
 // REVIEW: G-MARKET
