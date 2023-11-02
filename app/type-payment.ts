@@ -56,3 +56,8 @@ export interface IUpdateMarketPaymentMethod {
   paymentMethodId: string
   activeOnMarket: boolean
 }
+
+export interface IGenPromptPay {
+   accountNumber: string;
+   amount: number;
+}
