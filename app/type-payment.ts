@@ -1,4 +1,4 @@
-import { BankAccountType, PaymentMethodType, TBankName } from './enum-const';
+import {BankAccountType, PaymentMethodType, TBankName, TPromptPay} from './enum-const';
 
 // ANCHOR: Payment Attribute (Type 1)
 export interface IPaymentMethodTypeDeposit {
@@ -8,22 +8,25 @@ export interface IPaymentMethodTypeDeposit {
   accountNo: string;
   branchName: string;
   caption: string;
-  QrImagesUrl: string
+  hasQRImagesUrl: boolean,
+  qrImagesUrl: string
 }
 
 // ANCHOR: Payment Attribute (Type 2)
 export interface IPaymentMethodTypeCod {
   caption: string;
-  QrImagesUrl: string
 }
 
 export interface IPaymentMethodTypeCash {
   caption: string;
-  QrImagesUrl: string
 }
 
 export interface IPaymentMethodTypePromptPay {
   caption: string;
+  promptPayType: TPromptPay,
+  promptPayImagesUrl: string;
+  accountNo: string;
+  accountName: string;
 }
 
 // REVIEW: PAYMENT METHOD

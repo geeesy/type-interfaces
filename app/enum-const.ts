@@ -430,6 +430,11 @@ export enum PaymentMethodType {
   PromptPay = 'promptPay'
 }
 
+export type TPromptPay =
+    | 'MOBILE'
+    | 'IDENTITYID'
+    | 'EWALLET' ;
+
 export enum ShippingMethodType {
   Free = 'free',
   FixedRate = 'fixedRate',
