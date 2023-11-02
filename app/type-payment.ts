@@ -8,14 +8,21 @@ export interface IPaymentMethodTypeDeposit {
   accountNo: string;
   branchName: string;
   caption: string;
+  QrImagesUrl: string
 }
 
 // ANCHOR: Payment Attribute (Type 2)
 export interface IPaymentMethodTypeCod {
   caption: string;
+  QrImagesUrl: string
 }
 
 export interface IPaymentMethodTypeCash {
+  caption: string;
+  QrImagesUrl: string
+}
+
+export interface IPaymentMethodTypePromptPay {
   caption: string;
 }
 
@@ -31,7 +38,7 @@ export interface IDBPaymentMethod {
 }
 
 export interface IPaymentMethodEntityImmu {
-  paymentMethodType: PaymentMethodType.BankDeposit | PaymentMethodType.COD | PaymentMethodType.Cash;
+  paymentMethodType: PaymentMethodType.BankDeposit | PaymentMethodType.COD | PaymentMethodType.Cash | PaymentMethodType.PromptPay;
 }
 
 export interface IPaymentMethodEntity {
@@ -39,7 +46,7 @@ export interface IPaymentMethodEntity {
   paymentIconUrl: string;
   paymentAliasName: string;
   note: string;
-  paymentMethodAttribute: IPaymentMethodTypeDeposit | IPaymentMethodTypeCod | IPaymentMethodTypeCash;
+  paymentMethodAttribute: IPaymentMethodTypeDeposit | IPaymentMethodTypeCod | IPaymentMethodTypeCash | IPaymentMethodTypePromptPay;
 }
 
 export interface IUpdateMarketPaymentMethod {

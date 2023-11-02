@@ -426,7 +426,8 @@ export const BankAccountTypeArr = [
 export enum PaymentMethodType {
   BankDeposit = 'bankDeposit',
   COD = 'COD',
-  Cash = 'cash'
+  Cash = 'cash',
+  PromptPay = 'promptPay'
 }
 
 export enum ShippingMethodType {
