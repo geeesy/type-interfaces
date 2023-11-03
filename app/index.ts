@@ -1435,7 +1435,7 @@ export namespace GappBiz {
     IDBSocialChatMessageImmu &
     IDBLogTime;
   // * push message line
-  export type PushMessageLine = IPushMessageLine & IApiCompanyFacebookParams
+  export type PushMessageLine = IPushMessageLine & IApiCompanyParams
 
   // STUB: Catalog
   export type CreateCatalog = ICatalogEntityImmu & ICatalogEntity & ICatalogData
