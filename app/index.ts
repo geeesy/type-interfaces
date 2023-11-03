@@ -1551,7 +1551,6 @@ export namespace GappInventory {
     IProductEntity &
     IProductImages &
     IDBProductAssets &
-    IDBProductAssets &
     IProductVariantEntity &
     IDBUpdateTime;
   export type ProductPackInVariant = IProductPackInVariant;
