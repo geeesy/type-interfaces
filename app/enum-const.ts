@@ -611,8 +611,8 @@ export enum BankCode {
   SCB = '014',
   CITI = '017',
   SCBT = '020',
-  CIMBT = '022',
-  UOBT = '024',
+  CIMB = '022',
+  UOB = '024',
   BAY = '025',
   GOV = '030',
   HSBC = '031',
@@ -638,8 +638,8 @@ export enum CodeBank {
     '014' = 'SCB',
     '017' = 'CITI',
     '020' = 'SCBT',
-    '022' = 'CIMBT', // ! CIMB
-    '024' = 'UOBT', // ! UOB
+    '022' = 'CIMB', // ! CIMBT
+    '024' = 'UOB', // ! UOBT
     '025' = 'BAY',
     '030' = 'GOV',  // GSB
     '031' = 'HSBC',
@@ -795,7 +795,7 @@ export const BankList: TBankList = {
     image: ''
   },
   CIMB: {
-    code: BankCode.CIMBT,
+    code: BankCode.CIMB,
     color: '#7e2f36',
     official_name: 'CIMB THAI BANK PUPBLIC COMPANY LTD.',
     official_name_thai: 'ธนาคารซีไอเอ็มบี',
@@ -805,7 +805,7 @@ export const BankList: TBankList = {
       'https://raw.githubusercontent.com/casperstack/banks-logo/master/th/cimb.svg'
   },
   UOB: {
-    code: BankCode.UOBT,
+    code: BankCode.UOB,
     color: '#0b3979',
     official_name: 'UNITED OVERSEAS BANK (THAI) PUBLIC COMPANY LIMITED',
     official_name_thai: 'ธนาคารยูโอบี',
