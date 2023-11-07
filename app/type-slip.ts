@@ -45,7 +45,7 @@ export interface IExtendSlipData {
 }
 
 export interface ISlipSettingData {
-  isSlipAutomatic: boolean;
+  useSlipVerify: boolean;
   hasChangeStatus: boolean;
   delayTime: number;
 }
