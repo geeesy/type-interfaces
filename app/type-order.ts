@@ -1,5 +1,5 @@
 import { GappBiz, GappSetting } from '.';
-import { ICompanyContactInfo, IPeriodTime } from './type-company';
+import {IAttrSocialEntity, ICompanyContactInfo, IPeriodTime} from './type-company';
 
 import { IPersonContactInfo } from './type-apps';
 import {BankWarning, SaleChannelSubType, TWarningLevel} from './enum-const';
@@ -177,9 +177,7 @@ export interface IListOrder
 }
 
 // ANCHOR: ORDER | Entity (1/13)
-export interface IOrderCustomerDataImmu {
-  facebookUserId: string;
-  facebookPages: ISaleChannelEntity[]
+export interface IOrderCustomerDataImmu{
   customerId: string;
   iamUserId?: string;
 }
