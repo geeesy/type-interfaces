@@ -8,6 +8,7 @@ import {
 import { IPaymentMethod, IShippingZone } from './type-console';
 import {TOrderType} from "./type-order";
 import {ISaleChannelEntity} from "./type-setting";
+import {SaleChannelSubType} from "./enum-const";
 
 /* #region COMPANY */
 
@@ -465,22 +466,16 @@ export interface ISettingDoc extends IDBCompanyActivityLog {
   conversion: ISettingDocAttributes;
 }
 
-export interface ITags {
-  tagId: string
+export interface ICreateCustomer {
+  compId:string;
+  customerContactInfo: IPersonContactInfo;
+  customerCompanyContactInfo: ICompanyContactInfo | null;
+  customerNote: string;
+  orderType:TOrderType;
 }
 
-export interface ICustomerData {
-  tags: ITags[];
-  isMember: boolean;
-  isBlocked: boolean;
-  customerCode: string;
-  wasVendor?: boolean
-}
-
-
+// ANCHOR: CUSTOMER | Entity (1/3)
 export interface ICustomer {
-  facebookPages: ISaleChannelEntity[];
-  facebookUserId: string;
   customerId: string;
   iamUserId?: string;
   customerContactInfo: IPersonContactInfo;
@@ -492,12 +487,34 @@ export interface ICustomer {
   hasArchived:boolean;
 }
 
-export interface ICreateCustomer {
-  compId:string;
-  facebookPages: ISaleChannelEntity[];
-  facebookUserId: string;
-  customerContactInfo: IPersonContactInfo;
-  customerCompanyContactInfo: ICompanyContactInfo | null;
-  customerNote: string;
-  orderType:TOrderType;
+// ANCHOR: CUSTOMER | Entity (2/3)
+export interface ICustomerData {
+  tags: ITags[];
+  isMember: boolean;
+  isBlocked: boolean;
+  customerCode: string;
+  wasVendor?: boolean
 }
+
+// ANCHOR: CUSTOMER | Entity (3/3)
+export interface ICustomerSocial {
+  socialContact: IAttrSocial[]
+}
+
+export interface IAttrSocial {
+  socialType: SaleChannelSubType,
+  saleChannelId: string;
+  socialAttr: IAttrSocialEntity
+}
+
+export interface IAttrSocialEntity {
+  userId: string;
+  channelId: string;
+  userFullName: string;
+  userImageUrl: string;
+}
+
+export interface ITags {
+  tagId: string
+}
+
