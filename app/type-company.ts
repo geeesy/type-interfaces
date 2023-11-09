@@ -509,8 +509,11 @@ export interface IAttrSocial {
 
 export interface IAttrSocialEntity {
   userId: string;
-  channelId: string;
-  userFullName: string;
+  userIdMappingField: string; // userSenderId
+  connectId: string;
+  connectIdMappingField: string; // channelId
+  username: string;
+  usernameMappingField: string; // displayName
   userImageUrl: string;
 }
 

@@ -285,7 +285,8 @@ export enum SaleChannelSubType {
   CallCenter = 'callCenter',
   Store = 'store',
   Other = 'other',
-  Unknown = 'unknown'
+  Unknown = 'unknown',
+  TikTok = 'tiktok'
 }
 
 export const SaleChannelSubTypeArr = [
