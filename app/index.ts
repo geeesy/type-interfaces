@@ -1169,7 +1169,7 @@ export namespace GappBiz {
   export type CreateOrderGappMed = GappBiz.CreateOrderLink &
     IOrderLinkDataOnConfirm;
   export type ListOrderByProduct = IDBListOrderByProduct;
-  export type ListCustomerWithOrder = ICustomerWithOrder & ICustomerData;
+  export type ListCustomerWithOrder = ICustomerWithOrder & ICustomerData & ICustomerSocial;
   export type Customer = ICustomer & ICustomerData & ICustomerSocial;
   export type CreateCustomer = ICreateCustomer & ICustomerData & ICustomerSocial;
   export type CreateSalepage = ISalePageEntityImmu &
