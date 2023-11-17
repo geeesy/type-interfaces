@@ -1,9 +1,8 @@
 import { GappBiz, GappSetting } from '.';
-import {IAttrSocialEntity, ICompanyContactInfo, IPeriodTime} from './type-company';
+import { ICompanyContactInfo, IPeriodTime} from './type-company';
 
 import { IPersonContactInfo } from './type-apps';
 import {BankWarning, SaleChannelSubType, TWarningLevel} from './enum-const';
-import {ISaleChannelEntity} from "./type-setting";
 import {IOrderInLogStock} from "./type-inventory";
 
 /* eslint-disable no-unused-vars */
@@ -163,10 +162,10 @@ export interface IListOrder
   statusOrderOnBuyer: StatusOrderCustomer;
   statusOrderOfPayment: StatusOrderOfPayment | null;
   paymentAttachmentData: IPaymentAttachmentData | null;
-  channel: SaleChannelSubType;
-  channelId: string; // * channelId
-  channelName: string;
-  channelImageUrl: string;
+  saleChannelType: SaleChannelSubType;
+  saleChannelId: string; // * channelId
+  saleChannelName: string;
+  saleChannelImageUrl: string;
   shippingTracking: string;
   shippingCost: number;
   completedCanceledAt: string;
@@ -264,9 +263,9 @@ export interface IDBListOrderByProduct
 export interface IOrderData {
   salepageName?: string;
   saleChannelId: string; // * id = OTHER000
-  channel: SaleChannelSubType;
-  channelName: string;
-  channelImageUrl: string;
+  saleChannelType: SaleChannelSubType;
+  saleChannelName: string;
+  saleChannelImageUrl: string;
   expiryTimestamp: number; // ! expire order -> ttl auto delete on timestamp 10 digit
   shippingAvailableIds: string[]; // * USE ID FOR LATER
   paymentAvailableIds: string[]; // * USE ID FOR LATER
