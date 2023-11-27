@@ -720,6 +720,7 @@ export type TBankList = {
     nice_name: string;
     acronym: TBankName;
     image: string;
+    digitOfNumber: number;
   };
 };
 
@@ -733,7 +734,8 @@ export const BankList: TBankList = {
     nice_name: 'Bangkok Bank',
     acronym: BankName.BBL,
     image:
-      'https://raw.githubusercontent.com/casperstack/banks-logo/master/th/bbl.svg'
+      'https://raw.githubusercontent.com/casperstack/banks-logo/master/th/bbl.svg',
+    digitOfNumber: 10
   },
   KBANK: {
     code: BankCode.KBANK,
@@ -743,7 +745,8 @@ export const BankList: TBankList = {
     nice_name: 'Kasikornbank',
     acronym: BankName.KBANK,
     image:
-      'https://raw.githubusercontent.com/casperstack/banks-logo/master/th/kbank.svg'
+      'https://raw.githubusercontent.com/casperstack/banks-logo/master/th/kbank.svg',
+    digitOfNumber: 10
   },
   KTB: {
     code: BankCode.KTB,
@@ -753,7 +756,8 @@ export const BankList: TBankList = {
     nice_name: 'Krungthai Bank',
     acronym: BankName.KTB,
     image:
-      'https://raw.githubusercontent.com/casperstack/banks-logo/master/th/ktb.svg'
+      'https://raw.githubusercontent.com/casperstack/banks-logo/master/th/ktb.svg',
+    digitOfNumber: 10
   },
   TTB: {
     code: BankCode.TMB,
@@ -763,7 +767,8 @@ export const BankList: TBankList = {
     nice_name: 'TTB Bank',
     acronym: BankName.TTB,
     image:
-      'https://raw.githubusercontent.com/casperstack/banks-logo/master/th/ttb.svg'
+      'https://raw.githubusercontent.com/casperstack/banks-logo/master/th/ttb.svg',
+    digitOfNumber: 10
   },
   SCB: {
     code: BankCode.SCB,
@@ -773,7 +778,8 @@ export const BankList: TBankList = {
     nice_name: 'Siam Commercial Bank',
     acronym: BankName.SCB,
     image:
-      'https://raw.githubusercontent.com/casperstack/banks-logo/master/th/scb.svg'
+      'https://raw.githubusercontent.com/casperstack/banks-logo/master/th/scb.svg',
+    digitOfNumber: 10
   },
   // ! NEW
   CITI: {
@@ -783,7 +789,8 @@ export const BankList: TBankList = {
     official_name_thai: 'ธนาคารซิตี้แบงก์',
     nice_name: 'Citibank',
     acronym: BankName.CITI,
-    image: ''
+    image: '',
+    digitOfNumber: 10
   },
   // ! NEW
   SCBT: {
@@ -793,7 +800,8 @@ export const BankList: TBankList = {
     official_name_thai: 'ธนาคารสแตนดาร์ดชาร์เตอร์ด (ไทย)',
     nice_name: 'Standard Chartered',
     acronym: BankName.SCBT,
-    image: ''
+    image: '',
+    digitOfNumber: 10
   },
   CIMB: {
     code: BankCode.CIMB,
@@ -803,7 +811,8 @@ export const BankList: TBankList = {
     nice_name: 'CIMB Thai Bank',
     acronym: BankName.CIMB,
     image:
-      'https://raw.githubusercontent.com/casperstack/banks-logo/master/th/cimb.svg'
+      'https://raw.githubusercontent.com/casperstack/banks-logo/master/th/cimb.svg',
+    digitOfNumber: 10
   },
   UOB: {
     code: BankCode.UOB,
@@ -813,7 +822,8 @@ export const BankList: TBankList = {
     nice_name: 'United Overseas Bank (Thai)',
     acronym: BankName.UOB,
     image:
-      'https://raw.githubusercontent.com/casperstack/banks-logo/master/th/uob.svg'
+      'https://raw.githubusercontent.com/casperstack/banks-logo/master/th/uob.svg',
+    digitOfNumber: 10
   },
   BAY: {
     code: BankCode.BAY,
@@ -823,7 +833,8 @@ export const BankList: TBankList = {
     nice_name: 'Krungsri',
     acronym: BankName.BAY,
     image:
-      'https://raw.githubusercontent.com/casperstack/banks-logo/master/th/bay.svg'
+      'https://raw.githubusercontent.com/casperstack/banks-logo/master/th/bay.svg',
+    digitOfNumber: 10
   },
   GSB: {
     code: BankCode.GOV,
@@ -833,7 +844,8 @@ export const BankList: TBankList = {
     nice_name: 'Government Savings Bank',
     acronym: BankName.GSB,
     image:
-      'https://raw.githubusercontent.com/casperstack/banks-logo/master/th/gsb.svg'
+      'https://raw.githubusercontent.com/casperstack/banks-logo/master/th/gsb.svg',
+    digitOfNumber: 12 || 15
   },
   // ! NEW
   HSBC: {
@@ -843,7 +855,8 @@ export const BankList: TBankList = {
     official_name_thai: 'ธนาคารฮ่องกงและเซี่ยงไฮ้แบงกิ้งคอร์ปอเรชั่น',
     nice_name: 'HSBC',
     acronym: BankName.HSBC,
-    image: ''
+    image: '',
+    digitOfNumber: 10
   },
   // ! NEW
   GHB: {
@@ -853,7 +866,8 @@ export const BankList: TBankList = {
     official_name_thai: 'ธนาคารอาคารสงเคราะห์',
     nice_name: 'Government Housing Bank',
     acronym: BankName.GHB,
-    image: ''
+    image: '',
+    digitOfNumber: 12
   },
   BAAC: {
     code: BankCode.AGRI,
@@ -863,7 +877,8 @@ export const BankList: TBankList = {
     nice_name: 'Bank for Agriculture and Agricultural Cooperatives',
     acronym: BankName.BAAC,
     image:
-      'https://raw.githubusercontent.com/casperstack/banks-logo/master/th/baac.svg'
+      'https://raw.githubusercontent.com/casperstack/banks-logo/master/th/baac.svg',
+    digitOfNumber: 12
   },
   // ! NEW
   EXIM: {
@@ -873,7 +888,8 @@ export const BankList: TBankList = {
     official_name_thai: 'ธนาคารเพื่อการส่งออกและนำเข้าแห่งประเทศไทย',
     nice_name: 'EXIM Bank',
     acronym: BankName.EXIM,
-    image: ''
+    image: '',
+    digitOfNumber: 10
   },
   // ! NEW
   MHCB: {
@@ -883,7 +899,8 @@ export const BankList: TBankList = {
     official_name_thai: 'ธนาคาร มิซูโฮ คอร์ปอเรต จำกัด',
     nice_name: 'MIZUHO',
     acronym: BankName.MHCB,
-    image: ''
+    image: '',
+    digitOfNumber: 10
   },
   // ! NEW
   TBANK: {
@@ -893,7 +910,8 @@ export const BankList: TBankList = {
     official_name_thai: 'ธนาคาร ธนชาต จำกัด (มหาชน)',
     nice_name: 'Thanachart Bank',
     acronym: BankName.TBANK,
-    image: ''
+    image: '',
+    digitOfNumber: 10
   },
   // ! NEW
   ISBT: {
@@ -903,7 +921,8 @@ export const BankList: TBankList = {
     official_name_thai: 'ธนาคารอิสลามแห่งประเทศไทย',
     nice_name: 'ibank',
     acronym: BankName.ISBT,
-    image: ''
+    image: '',
+    digitOfNumber: 10
   },
   // ! NEW
   TISCO: {
@@ -913,7 +932,8 @@ export const BankList: TBankList = {
     official_name_thai: 'ธนาคาร ทิสโก้ จำกัด (มหาชน)',
     nice_name: 'TISCO',
     acronym: BankName.TISCO,
-    image: ''
+    image: '',
+    digitOfNumber: 14
   },
   KK: {
     code: BankCode.KK,
@@ -923,7 +943,8 @@ export const BankList: TBankList = {
     nice_name: 'Kiatnakin Bank',
     acronym: BankName.KK,
     image:
-      'https://raw.githubusercontent.com/casperstack/banks-logo/master/th/kkp.svg'
+      'https://raw.githubusercontent.com/casperstack/banks-logo/master/th/kkp.svg',
+    digitOfNumber: 14
   },
   ICBC: {
     code: BankCode.ICBCT,
@@ -934,7 +955,8 @@ export const BankList: TBankList = {
     nice_name: 'Industrial and Commercial Bank of China (Thai)',
     acronym: BankName.ICBC,
     image:
-      'https://raw.githubusercontent.com/casperstack/banks-logo/master/th/icbc.svg'
+      'https://raw.githubusercontent.com/casperstack/banks-logo/master/th/icbc.svg',
+    digitOfNumber: 10
   },
   // ! NEW
   TCRB: {
@@ -944,7 +966,8 @@ export const BankList: TBankList = {
     official_name_thai: 'ธนาคาร ไทยเครดิต เพื่อรายย่อย จำกัด (มหาชน)',
     nice_name: 'THAI CREDIT',
     acronym: BankName.TCRB,
-    image: ''
+    image: '',
+    digitOfNumber: 10
   },
   LHB: {
     code: BankCode.LHBANK,
@@ -954,7 +977,8 @@ export const BankList: TBankList = {
     nice_name: 'Land and Houses Bank',
     acronym: BankName.LHB,
     image:
-      'https://raw.githubusercontent.com/casperstack/banks-logo/master/th/lhb.svg'
+      'https://raw.githubusercontent.com/casperstack/banks-logo/master/th/lhb.svg',
+    digitOfNumber: 10
   },
   // ! NEW
   SMEB: {
@@ -964,7 +988,8 @@ export const BankList: TBankList = {
     official_name_thai: 'ธนาคาร พัฒนาวิสาหกิจขนาดกลางและขนาดย่อมแห่งประเทศไทย',
     nice_name: 'SME D Bank',
     acronym: BankName.SMEB,
-    image: ''
+    image: '',
+    digitOfNumber: 10
   }
 };
 

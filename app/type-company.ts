@@ -493,7 +493,8 @@ export interface ICustomerData {
   isMember: boolean;
   isBlocked: boolean;
   customerCode: string;
-  wasVendor?: boolean
+  wasVendor?: boolean;
+  blockedNote?: string;
 }
 
 // ANCHOR: CUSTOMER | Entity (3/3)
