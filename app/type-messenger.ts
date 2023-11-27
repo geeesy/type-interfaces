@@ -104,6 +104,7 @@ export interface IMessage {
         address?: string;
         latitude?: string;
         longitude?: string;
+        size?: number;
       }
     }
   ]
