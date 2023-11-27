@@ -436,12 +436,6 @@ export type TPromptPay =
     | 'IDENTITYID'
     | 'EWALLET' ;
 
-export enum PromptPayMethodType {
-  MOBILE = 'เบอร์โทรศัพท์',
-  IDENTITYID = 'เลขประจำตัวประชาชน/เลขประจำตัวผู้เสียภาษี',
-  EWALLET = 'e-wallet'
-}
-
 export enum ShippingMethodType {
   Free = 'free',
   FixedRate = 'fixedRate',
