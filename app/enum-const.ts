@@ -720,7 +720,7 @@ export type TBankList = {
     nice_name: string;
     acronym: TBankName;
     image: string;
-    digitOfNumber: number;
+    maskNumber: string;
   };
 };
 
@@ -735,7 +735,7 @@ export const BankList: TBankList = {
     acronym: BankName.BBL,
     image:
       'https://raw.githubusercontent.com/casperstack/banks-logo/master/th/bbl.svg',
-    digitOfNumber: 10
+    maskNumber: '000-0-00000-0'
   },
   KBANK: {
     code: BankCode.KBANK,
@@ -746,7 +746,7 @@ export const BankList: TBankList = {
     acronym: BankName.KBANK,
     image:
       'https://raw.githubusercontent.com/casperstack/banks-logo/master/th/kbank.svg',
-    digitOfNumber: 10
+    maskNumber: '000-0-00000-0'
   },
   KTB: {
     code: BankCode.KTB,
@@ -757,7 +757,7 @@ export const BankList: TBankList = {
     acronym: BankName.KTB,
     image:
       'https://raw.githubusercontent.com/casperstack/banks-logo/master/th/ktb.svg',
-    digitOfNumber: 10
+    maskNumber: '000-0-00000-0'
   },
   TTB: {
     code: BankCode.TMB,
@@ -768,7 +768,7 @@ export const BankList: TBankList = {
     acronym: BankName.TTB,
     image:
       'https://raw.githubusercontent.com/casperstack/banks-logo/master/th/ttb.svg',
-    digitOfNumber: 10
+    maskNumber: '000-0-00000-0'
   },
   SCB: {
     code: BankCode.SCB,
@@ -779,7 +779,7 @@ export const BankList: TBankList = {
     acronym: BankName.SCB,
     image:
       'https://raw.githubusercontent.com/casperstack/banks-logo/master/th/scb.svg',
-    digitOfNumber: 10
+    maskNumber: '000-0-00000-0'
   },
   // ! NEW
   CITI: {
@@ -790,7 +790,7 @@ export const BankList: TBankList = {
     nice_name: 'Citibank',
     acronym: BankName.CITI,
     image: '',
-    digitOfNumber: 10
+    maskNumber: '000-0-00000-0'
   },
   // ! NEW
   SCBT: {
@@ -801,7 +801,7 @@ export const BankList: TBankList = {
     nice_name: 'Standard Chartered',
     acronym: BankName.SCBT,
     image: '',
-    digitOfNumber: 10
+    maskNumber: '000-0-00000-0'
   },
   CIMB: {
     code: BankCode.CIMB,
@@ -812,7 +812,7 @@ export const BankList: TBankList = {
     acronym: BankName.CIMB,
     image:
       'https://raw.githubusercontent.com/casperstack/banks-logo/master/th/cimb.svg',
-    digitOfNumber: 10
+    maskNumber: '000-0-00000-0'
   },
   UOB: {
     code: BankCode.UOB,
@@ -823,7 +823,7 @@ export const BankList: TBankList = {
     acronym: BankName.UOB,
     image:
       'https://raw.githubusercontent.com/casperstack/banks-logo/master/th/uob.svg',
-    digitOfNumber: 10
+    maskNumber: '000-0-00000-0'
   },
   BAY: {
     code: BankCode.BAY,
@@ -834,7 +834,7 @@ export const BankList: TBankList = {
     acronym: BankName.BAY,
     image:
       'https://raw.githubusercontent.com/casperstack/banks-logo/master/th/bay.svg',
-    digitOfNumber: 10
+    maskNumber: '000-0-00000-0'
   },
   GSB: {
     code: BankCode.GOV,
@@ -845,7 +845,7 @@ export const BankList: TBankList = {
     acronym: BankName.GSB,
     image:
       'https://raw.githubusercontent.com/casperstack/banks-logo/master/th/gsb.svg',
-    digitOfNumber: 12 || 15
+    maskNumber: '000-0-00000-000000'
   },
   // ! NEW
   HSBC: {
@@ -856,7 +856,7 @@ export const BankList: TBankList = {
     nice_name: 'HSBC',
     acronym: BankName.HSBC,
     image: '',
-    digitOfNumber: 10
+    maskNumber: '000-0-00000-0'
   },
   // ! NEW
   GHB: {
@@ -867,7 +867,7 @@ export const BankList: TBankList = {
     nice_name: 'Government Housing Bank',
     acronym: BankName.GHB,
     image: '',
-    digitOfNumber: 12
+    maskNumber: '000-0-00000-000'
   },
   BAAC: {
     code: BankCode.AGRI,
@@ -878,7 +878,7 @@ export const BankList: TBankList = {
     acronym: BankName.BAAC,
     image:
       'https://raw.githubusercontent.com/casperstack/banks-logo/master/th/baac.svg',
-    digitOfNumber: 12
+    maskNumber: '000-0-00000-000'
   },
   // ! NEW
   EXIM: {
@@ -889,7 +889,7 @@ export const BankList: TBankList = {
     nice_name: 'EXIM Bank',
     acronym: BankName.EXIM,
     image: '',
-    digitOfNumber: 10
+    maskNumber: '000-0-00000-0'
   },
   // ! NEW
   MHCB: {
@@ -900,7 +900,7 @@ export const BankList: TBankList = {
     nice_name: 'MIZUHO',
     acronym: BankName.MHCB,
     image: '',
-    digitOfNumber: 10
+    maskNumber: '000-0-00000-0'
   },
   // ! NEW
   TBANK: {
@@ -911,7 +911,7 @@ export const BankList: TBankList = {
     nice_name: 'Thanachart Bank',
     acronym: BankName.TBANK,
     image: '',
-    digitOfNumber: 10
+    maskNumber: '000-0-00000-0'
   },
   // ! NEW
   ISBT: {
@@ -922,7 +922,7 @@ export const BankList: TBankList = {
     nice_name: 'ibank',
     acronym: BankName.ISBT,
     image: '',
-    digitOfNumber: 10
+    maskNumber: '000-0-00000-0'
   },
   // ! NEW
   TISCO: {
@@ -933,7 +933,7 @@ export const BankList: TBankList = {
     nice_name: 'TISCO',
     acronym: BankName.TISCO,
     image: '',
-    digitOfNumber: 14
+    maskNumber: '000-0-00000-00000'
   },
   KK: {
     code: BankCode.KK,
@@ -944,7 +944,7 @@ export const BankList: TBankList = {
     acronym: BankName.KK,
     image:
       'https://raw.githubusercontent.com/casperstack/banks-logo/master/th/kkp.svg',
-    digitOfNumber: 14
+    maskNumber: '000-0-00000-00000'
   },
   ICBC: {
     code: BankCode.ICBCT,
@@ -956,7 +956,7 @@ export const BankList: TBankList = {
     acronym: BankName.ICBC,
     image:
       'https://raw.githubusercontent.com/casperstack/banks-logo/master/th/icbc.svg',
-    digitOfNumber: 10
+    maskNumber: '000-0-00000-0'
   },
   // ! NEW
   TCRB: {
@@ -967,7 +967,7 @@ export const BankList: TBankList = {
     nice_name: 'THAI CREDIT',
     acronym: BankName.TCRB,
     image: '',
-    digitOfNumber: 10
+    maskNumber: '000-0-00000-0'
   },
   LHB: {
     code: BankCode.LHBANK,
@@ -978,7 +978,7 @@ export const BankList: TBankList = {
     acronym: BankName.LHB,
     image:
       'https://raw.githubusercontent.com/casperstack/banks-logo/master/th/lhb.svg',
-    digitOfNumber: 10
+   maskNumber: '000-0-00000-0'
   },
   // ! NEW
   SMEB: {
@@ -989,7 +989,7 @@ export const BankList: TBankList = {
     nice_name: 'SME D Bank',
     acronym: BankName.SMEB,
     image: '',
-    digitOfNumber: 10
+   maskNumber: '000-0-00000-0'
   }
 };
 
