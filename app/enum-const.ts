@@ -721,7 +721,6 @@ export type TBankList = {
     acronym: TBankName;
     image: string;
     maskNumber: string;
-    short_name: string;
   };
 };
 
@@ -737,7 +736,6 @@ export const BankList: TBankList = {
     image:
       'https://gapp-media.s3.ap-southeast-1.amazonaws.com/public/icons/payment/bbl.webp',
     maskNumber: '000-0-00000-0',
-    short_name: 'bbl'
   },
   KBANK: {
     code: BankCode.KBANK,
@@ -749,7 +747,6 @@ export const BankList: TBankList = {
     image:
       'https://gapp-media.s3.ap-southeast-1.amazonaws.com/public/icons/payment/kbank.webp',
     maskNumber: '000-0-00000-0',
-    short_name: 'kbank'
   },
   KTB: {
     code: BankCode.KTB,
@@ -761,7 +758,6 @@ export const BankList: TBankList = {
     image:
       'https://gapp-media.s3.ap-southeast-1.amazonaws.com/public/icons/payment/ktb.webp',
     maskNumber: '000-0-00000-0',
-    short_name: 'ktb'
   },
   TTB: {
     code: BankCode.TMB,
@@ -773,7 +769,6 @@ export const BankList: TBankList = {
     image:
       'https://gapp-media.s3.ap-southeast-1.amazonaws.com/public/icons/payment/ttb.webp',
     maskNumber: '000-0-00000-0',
-    short_name: 'ttb'
   },
   SCB: {
     code: BankCode.SCB,
@@ -785,7 +780,6 @@ export const BankList: TBankList = {
     image:
       'https://gapp-media.s3.ap-southeast-1.amazonaws.com/public/icons/payment/scb.webp',
     maskNumber: '000-0-00000-0',
-    short_name: 'scb'
   },
   // ! NEW
   CITI: {
@@ -797,7 +791,6 @@ export const BankList: TBankList = {
     acronym: BankName.CITI,
     image: 'https://gapp-media.s3.ap-southeast-1.amazonaws.com/public/icons/payment/citi.webp', // empty
     maskNumber: '000-0-00000-0',
-    short_name: 'citi'
   },
   // ! NEW
   SCBT: {
@@ -809,7 +802,6 @@ export const BankList: TBankList = {
     acronym: BankName.SCBT,
     image: 'https://gapp-media.s3.ap-southeast-1.amazonaws.com/public/icons/payment/scbt.webp', // empty
     maskNumber: '000-0-00000-0',
-    short_name: 'scbt'
   },
   CIMB: {
     code: BankCode.CIMB,
@@ -821,7 +813,6 @@ export const BankList: TBankList = {
     image:
       'https://gapp-media.s3.ap-southeast-1.amazonaws.com/public/icons/payment/cimb.webp',
     maskNumber: '000-0-00000-0',
-    short_name: 'cimb'
   },
   UOB: {
     code: BankCode.UOB,
@@ -833,7 +824,6 @@ export const BankList: TBankList = {
     image:
       'https://gapp-media.s3.ap-southeast-1.amazonaws.com/public/icons/payment/uob.webp',
     maskNumber: '000-0-00000-0',
-    short_name: 'uob'
   },
   BAY: {
     code: BankCode.BAY,
@@ -845,7 +835,6 @@ export const BankList: TBankList = {
     image:
       'https://gapp-media.s3.ap-southeast-1.amazonaws.com/public/icons/payment/bay.webp',
     maskNumber: '000-0-00000-0',
-    short_name: 'bay'
   },
   GSB: {
     code: BankCode.GOV,
@@ -857,7 +846,6 @@ export const BankList: TBankList = {
     image:
       'https://gapp-media.s3.ap-southeast-1.amazonaws.com/public/icons/payment/gsb.webp',
     maskNumber: '000-0-00000-000000',
-    short_name: 'gsb'
   },
   // ! NEW
   HSBC: {
@@ -869,7 +857,6 @@ export const BankList: TBankList = {
     acronym: BankName.HSBC,
     image: 'https://gapp-media.s3.ap-southeast-1.amazonaws.com/public/icons/payment/hsbc.webp', // empty
     maskNumber: '000-0-00000-0',
-    short_name: 'hsbc'
   },
   // ! NEW
   GHB: {
@@ -881,7 +868,6 @@ export const BankList: TBankList = {
     acronym: BankName.GHB,
     image: 'https://gapp-media.s3.ap-southeast-1.amazonaws.com/public/icons/payment/ghb.webp', // empty
     maskNumber: '000-0-00000-000',
-    short_name: 'ghb'
   },
   BAAC: {
     code: BankCode.AGRI,
@@ -892,8 +878,7 @@ export const BankList: TBankList = {
     acronym: BankName.BAAC,
     image:
       'https://gapp-media.s3.ap-southeast-1.amazonaws.com/public/icons/payment/baac.webp',
-    maskNumber: '000-0-00000-000',
-    short_name: 'baac'
+    maskNumber: '000-0-00000-000'
   },
   // ! NEW
   EXIM: {
@@ -905,7 +890,6 @@ export const BankList: TBankList = {
     acronym: BankName.EXIM,
     image: 'https://gapp-media.s3.ap-southeast-1.amazonaws.com/public/icons/payment/exim.webp', // empty
     maskNumber: '000-0-00000-0',
-    short_name: 'exim'
   },
   // ! NEW
   MHCB: {
@@ -917,7 +901,6 @@ export const BankList: TBankList = {
     acronym: BankName.MHCB,
     image: 'https://gapp-media.s3.ap-southeast-1.amazonaws.com/public/icons/payment/mhcb.webp', // empty
     maskNumber: '000-0-00000-0',
-    short_name: 'mhcb'
   },
   // ! NEW
   TBANK: {
@@ -929,7 +912,6 @@ export const BankList: TBankList = {
     acronym: BankName.TBANK,
     image: 'https://gapp-media.s3.ap-southeast-1.amazonaws.com/public/icons/payment/tbank.webp', // empty
     maskNumber: '000-0-00000-0',
-    short_name: 'tbank'
   },
   // ! NEW
   ISBT: {
@@ -941,7 +923,6 @@ export const BankList: TBankList = {
     acronym: BankName.ISBT,
     image: 'https://gapp-media.s3.ap-southeast-1.amazonaws.com/public/icons/payment/isbt.webp', // empty
     maskNumber: '000-0-00000-0',
-    short_name: 'isbt'
   },
   // ! NEW
   TISCO: {
@@ -953,7 +934,6 @@ export const BankList: TBankList = {
     acronym: BankName.TISCO,
     image: 'https://gapp-media.s3.ap-southeast-1.amazonaws.com/public/icons/payment/tisco.webp', // empty
     maskNumber: '000-0-00000-00000',
-    short_name: 'tisco'
   },
   KK: {
     code: BankCode.KK,
@@ -965,7 +945,6 @@ export const BankList: TBankList = {
     image:
       'https://gapp-media.s3.ap-southeast-1.amazonaws.com/public/icons/payment/kk.webp',
     maskNumber: '000-0-00000-00000',
-    short_name: 'kk'
   },
   ICBC: {
     code: BankCode.ICBCT,
@@ -978,7 +957,6 @@ export const BankList: TBankList = {
     image:
       'https://gapp-media.s3.ap-southeast-1.amazonaws.com/public/icons/payment/icbc.webp',
     maskNumber: '000-0-00000-0',
-    short_name: 'ICBC'
   },
   // ! NEW
   TCRB: {
@@ -990,7 +968,6 @@ export const BankList: TBankList = {
     acronym: BankName.TCRB,
     image: '',
     maskNumber: '000-0-00000-0',
-    short_name: 'tcrb'
   },
   LHB: {
     code: BankCode.LHBANK,
@@ -1002,7 +979,6 @@ export const BankList: TBankList = {
     image:
       'https://gapp-media.s3.ap-southeast-1.amazonaws.com/public/icons/payment/lhb.webp',
     maskNumber: '000-0-00000-0',
-    short_name: 'lhb'
   },
   // ! NEW
   SMEB: {
@@ -1014,7 +990,6 @@ export const BankList: TBankList = {
     acronym: BankName.SMEB,
     image: 'https://gapp-media.s3.ap-southeast-1.amazonaws.com/public/icons/payment/smeb.webp', // empty
     maskNumber: '000-0-00000-0',
-    short_name: 'smeb'
   }
 };
 
