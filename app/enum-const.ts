@@ -717,6 +717,7 @@ export type TBankList = {
     color: string;
     official_name: string;
     official_name_thai: string;
+    official_short_name_thai: string;
     nice_name: string;
     acronym: TBankName;
     image: string;
@@ -731,6 +732,7 @@ export const BankList: TBankList = {
     color: '#1e4598',
     official_name: 'BANGKOK BANK PUBLIC COMPANY LTD.',
     official_name_thai: 'ธนาคารกรุงเทพ',
+    official_short_name_thai: 'กรุงเทพ',
     nice_name: 'Bangkok Bank',
     acronym: BankName.BBL,
     image:
@@ -742,6 +744,7 @@ export const BankList: TBankList = {
     color: '#138f2d',
     official_name: 'KASIKORNBANK PUBLIC COMPANY LTD.',
     official_name_thai: 'ธนาคารกสิกรไทย',
+    official_short_name_thai: 'กสิกรไทย',
     nice_name: 'Kasikornbank',
     acronym: BankName.KBANK,
     image:
@@ -753,6 +756,7 @@ export const BankList: TBankList = {
     color: '#1ba5e1',
     official_name: 'KRUNG THAI BANK PUBLIC COMPANY LTD.',
     official_name_thai: 'ธนาคารกรุงไทย',
+    official_short_name_thai: 'กรุงไทย',
     nice_name: 'Krungthai Bank',
     acronym: BankName.KTB,
     image:
@@ -764,6 +768,7 @@ export const BankList: TBankList = {
     color: '#114ff1',
     official_name: 'TMBThanachart Bank',
     official_name_thai: 'ธนาคารทหารไทยธนชาต',
+    official_short_name_thai: 'ทหารไทยธนชาต',
     nice_name: 'TTB Bank',
     acronym: BankName.TTB,
     image:
@@ -775,6 +780,7 @@ export const BankList: TBankList = {
     color: '#4e2e7f',
     official_name: 'SIAM COMMERCIAL BANK PUBLIC COMPANY LTD.',
     official_name_thai: 'ธนาคารไทยพาณิชย์',
+    official_short_name_thai: 'ไทยพาณิชย์',
     nice_name: 'Siam Commercial Bank',
     acronym: BankName.SCB,
     image:
@@ -787,6 +793,7 @@ export const BankList: TBankList = {
     color: '#000000',
     official_name: 'CITIBANK, N.A.',
     official_name_thai: 'ธนาคารซิตี้แบงก์',
+    official_short_name_thai: 'ซิตี้แบงก์',
     nice_name: 'Citibank',
     acronym: BankName.CITI,
     image: 'https://gapp-media.s3.ap-southeast-1.amazonaws.com/public/icons/payment/citi.webp', // empty
@@ -798,6 +805,7 @@ export const BankList: TBankList = {
     color: '#000000',
     official_name: 'STANDARD CHARTERED BANK (THAI) PUBLIC COMPANY LIMITED',
     official_name_thai: 'ธนาคารสแตนดาร์ดชาร์เตอร์ด (ไทย)',
+    official_short_name_thai: 'ซิตี้แบงก์',
     nice_name: 'Standard Chartered',
     acronym: BankName.SCBT,
     image: 'https://gapp-media.s3.ap-southeast-1.amazonaws.com/public/icons/payment/scbt.webp', // empty
@@ -808,6 +816,7 @@ export const BankList: TBankList = {
     color: '#7e2f36',
     official_name: 'CIMB THAI BANK PUPBLIC COMPANY LTD.',
     official_name_thai: 'ธนาคารซีไอเอ็มบี',
+    official_short_name_thai: 'ซีไอเอ็มบี',
     nice_name: 'CIMB Thai Bank',
     acronym: BankName.CIMB,
     image:
@@ -819,6 +828,7 @@ export const BankList: TBankList = {
     color: '#0b3979',
     official_name: 'UNITED OVERSEAS BANK (THAI) PUBLIC COMPANY LIMITED',
     official_name_thai: 'ธนาคารยูโอบี',
+    official_short_name_thai: 'ยูโอบี',
     nice_name: 'United Overseas Bank (Thai)',
     acronym: BankName.UOB,
     image:
@@ -830,6 +840,7 @@ export const BankList: TBankList = {
     color: '#fec43b',
     official_name: 'BANK OF AYUDHYA PUBLIC COMPANY LTD.',
     official_name_thai: 'ธนาคารกรุงศรีอยุธยา',
+    official_short_name_thai: 'กรุงศรีอยุธยา',
     nice_name: 'Krungsri',
     acronym: BankName.BAY,
     image:
@@ -841,6 +852,7 @@ export const BankList: TBankList = {
     color: '#eb198d',
     official_name: 'THE GOVERNMENT SAVINGS BANK',
     official_name_thai: 'ธนาคารออมสิน',
+    official_short_name_thai: 'ออมสิน',
     nice_name: 'Government Savings Bank',
     acronym: BankName.GSB,
     image:
@@ -853,6 +865,7 @@ export const BankList: TBankList = {
     color: '#000000',
     official_name: 'THE HONGKONG AND SHANGHAI BANKING CORPORATION LTD.',
     official_name_thai: 'ธนาคารฮ่องกงและเซี่ยงไฮ้แบงกิ้งคอร์ปอเรชั่น',
+    official_short_name_thai: 'ฮ่องกงและเซี่ยงไฮ้แบงกิ้งคอร์ปอเรชั่น',
     nice_name: 'HSBC',
     acronym: BankName.HSBC,
     image: 'https://gapp-media.s3.ap-southeast-1.amazonaws.com/public/icons/payment/hsbc.webp', // empty
@@ -864,6 +877,7 @@ export const BankList: TBankList = {
     color: '#000000',
     official_name: 'THE GOVERNMENT HOUSING BANK',
     official_name_thai: 'ธนาคารอาคารสงเคราะห์',
+    official_short_name_thai: 'อาคารสงเคราะห์',
     nice_name: 'Government Housing Bank',
     acronym: BankName.GHB,
     image: 'https://gapp-media.s3.ap-southeast-1.amazonaws.com/public/icons/payment/ghb.webp', // empty
@@ -874,6 +888,7 @@ export const BankList: TBankList = {
     color: '#4b9b1d',
     official_name: 'BANK FOR AGRICULTURE AND AGRICULTURAL COOPERATIVES',
     official_name_thai: 'ธนาคารเพื่อการเกษตรและสหกรณ์การเกษตร',
+    official_short_name_thai: 'เพื่อการเกษตรและสหกรณ์การเกษตร',
     nice_name: 'Bank for Agriculture and Agricultural Cooperatives',
     acronym: BankName.BAAC,
     image:
@@ -886,6 +901,7 @@ export const BankList: TBankList = {
     color: '#000000',
     official_name: 'EXPORT-IMPORT BANK OF THAILAND',
     official_name_thai: 'ธนาคารเพื่อการส่งออกและนำเข้าแห่งประเทศไทย',
+    official_short_name_thai: 'เพื่อการส่งออกและนำเข้า',
     nice_name: 'EXIM Bank',
     acronym: BankName.EXIM,
     image: 'https://gapp-media.s3.ap-southeast-1.amazonaws.com/public/icons/payment/exim.webp', // empty
@@ -897,6 +913,7 @@ export const BankList: TBankList = {
     color: '#000000',
     official_name: 'MIZUHO CORPORATE BANK, LTD.',
     official_name_thai: 'ธนาคาร มิซูโฮ คอร์ปอเรต จำกัด',
+    official_short_name_thai: 'มิซูโฮ คอร์ปอเรต',
     nice_name: 'MIZUHO',
     acronym: BankName.MHCB,
     image: 'https://gapp-media.s3.ap-southeast-1.amazonaws.com/public/icons/payment/mhcb.webp', // empty
@@ -908,6 +925,7 @@ export const BankList: TBankList = {
     color: '#000000',
     official_name: 'THANACHART BANK PUBLIC COMPANY LTD.',
     official_name_thai: 'ธนาคาร ธนชาต จำกัด (มหาชน)',
+    official_short_name_thai: 'ธนชาต',
     nice_name: 'Thanachart Bank',
     acronym: BankName.TBANK,
     image: 'https://gapp-media.s3.ap-southeast-1.amazonaws.com/public/icons/payment/tbank.webp', // empty
@@ -919,6 +937,7 @@ export const BankList: TBankList = {
     color: '#000000',
     official_name: 'ISLAMIC BANK OF THAILAND',
     official_name_thai: 'ธนาคารอิสลามแห่งประเทศไทย',
+    official_short_name_thai: 'อิสลาม',
     nice_name: 'ibank',
     acronym: BankName.ISBT,
     image: 'https://gapp-media.s3.ap-southeast-1.amazonaws.com/public/icons/payment/isbt.webp', // empty
@@ -930,6 +949,7 @@ export const BankList: TBankList = {
     color: '#000000',
     official_name: 'TISCO BANK PUBLIC COMPANY LIMITED',
     official_name_thai: 'ธนาคาร ทิสโก้ จำกัด (มหาชน)',
+    official_short_name_thai: 'ทิสโก้',
     nice_name: 'TISCO',
     acronym: BankName.TISCO,
     image: 'https://gapp-media.s3.ap-southeast-1.amazonaws.com/public/icons/payment/tisco.webp', // empty
@@ -940,6 +960,7 @@ export const BankList: TBankList = {
     color: '#199cc5',
     official_name: 'KIATNAKIN BANK PUBLIC COMPANY LIMITED',
     official_name_thai: 'ธนาคารเกียรตินาคิน',
+    official_short_name_thai: 'เกียรตินาคิน',
     nice_name: 'Kiatnakin Bank',
     acronym: BankName.KK,
     image:
@@ -952,6 +973,7 @@ export const BankList: TBankList = {
     official_name:
       'INDUSTRIAL AND COMMERCIAL BANK OF CHINA (THAI) PUBLIC COMPANY LIMITED',
     official_name_thai: 'ธนาคารไอซีบีซี',
+    official_short_name_thai: 'ไอซีบีซี',
     nice_name: 'Industrial and Commercial Bank of China (Thai)',
     acronym: BankName.ICBC,
     image:
@@ -964,6 +986,7 @@ export const BankList: TBankList = {
     color: '#000000',
     official_name: 'THE THAI CREDIT RETAIL BANK PUBLIC COMPANY LIMITED',
     official_name_thai: 'ธนาคาร ไทยเครดิต เพื่อรายย่อย จำกัด (มหาชน)',
+    official_short_name_thai: 'ไทยเครดิต เพื่อรายย่อย',
     nice_name: 'THAI CREDIT',
     acronym: BankName.TCRB,
     image: 'https://gapp-media.s3.ap-southeast-1.amazonaws.com/public/icons/payment/tcrb.webp', // empty,
@@ -973,7 +996,8 @@ export const BankList: TBankList = {
     code: BankCode.LHBANK,
     color: '#6d6e71',
     official_name: 'LAND AND HOUSES BANK PUBLIC COMPANY LIMITED',
-    official_name_thai: 'ธนาคารแลนด์ แอนด์ เฮ้าส์ ',
+    official_name_thai: 'ธนาคารแลนด์ แอนด์ เฮ้าส์',
+    official_short_name_thai: 'แลนด์ แอนด์ เฮ้าส์',
     nice_name: 'Land and Houses Bank',
     acronym: BankName.LHB,
     image:
@@ -986,6 +1010,7 @@ export const BankList: TBankList = {
     color: '#000000',
     official_name: 'SMALL AND MEDIUM ENTERPRISE DEVELOPMENT BANK OF THAILAND',
     official_name_thai: 'ธนาคาร พัฒนาวิสาหกิจขนาดกลางและขนาดย่อมแห่งประเทศไทย',
+    official_short_name_thai: 'พัฒนาวิสาหกิจขนาดกลางและขนาดย่อม',
     nice_name: 'SME D Bank',
     acronym: BankName.SMEB,
     image: 'https://gapp-media.s3.ap-southeast-1.amazonaws.com/public/icons/payment/smeb.webp', // empty
