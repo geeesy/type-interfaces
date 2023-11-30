@@ -966,7 +966,7 @@ export const BankList: TBankList = {
     official_name_thai: 'ธนาคาร ไทยเครดิต เพื่อรายย่อย จำกัด (มหาชน)',
     nice_name: 'THAI CREDIT',
     acronym: BankName.TCRB,
-    image: '',
+    image: 'https://gapp-media.s3.ap-southeast-1.amazonaws.com/public/icons/payment/tcrb.webp', // empty,
     maskNumber: '000-0-00000-0',
   },
   LHB: {
