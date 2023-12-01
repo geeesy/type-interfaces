@@ -805,7 +805,7 @@ export const BankList: TBankList = {
     color: '#000000',
     official_name: 'STANDARD CHARTERED BANK (THAI) PUBLIC COMPANY LIMITED',
     official_name_thai: 'ธนาคารสแตนดาร์ดชาร์เตอร์ด (ไทย)',
-    official_short_name_thai: 'ซิตี้แบงก์',
+    official_short_name_thai: 'สแตนดาร์ดชาร์เตอร์ด',
     nice_name: 'Standard Chartered',
     acronym: BankName.SCBT,
     image: 'https://gapp-media.s3.ap-southeast-1.amazonaws.com/public/icons/payment/scbt.webp', // empty
