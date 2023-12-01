@@ -95,14 +95,14 @@ export interface IMessageId {
 
 export interface IMessage {
   type: TMessageType;
-  text?: string;
+  text?: string; // type text
   packageId?: string; // type sticker
   stickerId?: string; // type sticker
   title?: string; // type location
   address?: string; // type location
   latitude?: string; // type location
   longitude?: string; // type location
-  url?:string // type image, video, audio, file
+  url?:string // type image, video, audio, file, sticker
   fileName?: string // type file
   fileSize?: number // type file
 }
