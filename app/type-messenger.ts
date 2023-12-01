@@ -29,7 +29,7 @@ export interface ISocialChannelImmu {
   channelId: string;
 }
 
-export interface ISocialChannel{
+export interface ISocialChannel {
   pageId: string;
   saleChannelId: string;
   saleChannelType: SaleChannelType;
@@ -52,17 +52,17 @@ export interface IDBConversationImmu {
 }
 
 // ANCHOR Conversation | Entity (2/2)
-export interface IConversation{
+export interface IConversation {
   hasBlocked: boolean;
   socialSource: TSocialSource;
   totalUnread: number;
-  profileName:string;
+  profileName: string;
   profileUrl: string;
-  latestMessage:{
+  latestMessage: {
     from: ISocialChatMessageSender;
     text: string;
     receivedTimestamp: number;
-  }
+  };
 }
 
 /**
@@ -85,12 +85,12 @@ export interface ISocialChatMessage {
 
 export interface ISocialChatMessageSender {
   senderId: string;
-  senderProfileName:string;
-  isPageSender:boolean;
+  senderProfileName: string;
+  isPageSender: boolean;
 }
 
 export interface IMessageId {
-    mid: string;
+  mid: string;
 }
 
 export interface IMessage {
@@ -107,14 +107,25 @@ export interface IMessage {
         size?: number;
       }
     }
-  ]
+  ];
+}
+
+export interface IMessagePush extends IMessage {
+  emojiList: IEmoji[]
+}
+
+export interface IEmoji {
+  index: number;
+  length: number;
+  productId: string;
+  emojiId: string;
 }
 
 export interface IPushMessageLine {
-  saleChannelId:string,
-  receiver:string,
-  message:IMessage,
-  conversationId:string
+  saleChannelId: string,
+  receiver: string,
+  message: IMessagePush,
+  conversationId: string
 }
 
 
