@@ -96,6 +96,8 @@ export interface IMessageId {
 export interface IMessage {
   type: TMessageType;
   text?: string;
+  packageId?: string;
+  stickerId?: string;
   attachments: [
     {
       payload: {
