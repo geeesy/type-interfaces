@@ -111,7 +111,7 @@ export interface IMessage {
 }
 
 export interface IMessagePush extends IMessage {
-  emojiList: IEmoji[]
+  emojiList?: IEmoji[]
 }
 
 export interface IEmoji {
