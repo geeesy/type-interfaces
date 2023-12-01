@@ -103,7 +103,8 @@ export interface IMessage {
   latitude?: string; // type location
   longitude?: string; // type location
   url?:string // type image, video, audio, file
-  size?: number; // type file
+  filename?: string // type file
+  fileSize?: number // type file
 }
 
 export interface IMessagePush extends IMessage {
