@@ -96,20 +96,14 @@ export interface IMessageId {
 export interface IMessage {
   type: TMessageType;
   text?: string;
-  packageId?: string;
-  stickerId?: string;
-  attachments: [
-    {
-      payload: {
-        url?: string;
-        title?: string;
-        address?: string;
-        latitude?: string;
-        longitude?: string;
-        size?: number;
-      }
-    }
-  ];
+  packageId?: string; // type sticker
+  stickerId?: string; // type sticker
+  title?: string; // type location
+  address?: string; // type location
+  latitude?: string; // type location
+  longitude?: string; // type location
+  url?:string // type image, video, audio, file
+  size?: number; // type file
 }
 
 export interface IMessagePush extends IMessage {
