@@ -95,28 +95,24 @@ export interface IMessageId {
 
 export interface IMessage {
   type: TMessageType;
-  text?: string;
-  attachments: [
-    {
-      payload: {
-        url?: string;
-        title?: string;
-        address?: string;
-        latitude?: string;
-        longitude?: string;
-        size?: number;
-      }
-    }
-  ];
+  text?: string; // type text
+  packageId?: string; // type sticker
+  stickerId?: string; // type sticker
+  title?: string; // type location
+  address?: string; // type location
+  latitude?: string; // type location
+  longitude?: string; // type location
+  url?:string // type image, video, audio, file, sticker
+  fileName?: string // type file
+  fileSize?: number // type file
 }
 
 export interface IMessagePush extends IMessage {
-  emojiList: IEmoji[]
+  emojiList?: IEmoji[]
 }
 
 export interface IEmoji {
   index: number;
-  length: number;
   productId: string;
   emojiId: string;
 }
