@@ -116,7 +116,6 @@ export interface IMessagePush extends IMessage {
 
 export interface IEmoji {
   index: number;
-  length: number;
   productId: string;
   emojiId: string;
 }
