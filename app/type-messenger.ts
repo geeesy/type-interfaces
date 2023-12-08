@@ -105,7 +105,8 @@ export interface IMessage {
         address?: string; // type location
         latitude?: string; // type location
         longitude?: string; // type location
-        url?:string // type image, video, audio, file, sticker
+        url?:string // type image, video, file, sticker
+        previewUrl?:string // type image, video
         duration?: number // type audio
         fileName?: string // type file
         fileSize?: number // type file
