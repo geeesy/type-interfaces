@@ -54,6 +54,7 @@ export interface IDBConversationImmu {
 // ANCHOR Conversation | Entity (2/2)
 export interface IConversation {
   hasBlocked: boolean;
+  hasFollowed: boolean;
   socialSource: TSocialSource;
   totalUnread: number;
   profileName: string;
