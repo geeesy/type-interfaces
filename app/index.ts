@@ -286,6 +286,8 @@ import {
   IUserNotificationToggle
 } from './type-setting';
 import {
+  ICartEntityImmu,
+  ICartSalePage,
   ICreatePaymentRowParams,
   ICustomerWithOrder,
   IDBListOrderByProduct,
@@ -1037,6 +1039,10 @@ export namespace GappBiz {
     ICompanyEntityImmu &
     IDBLogTime &
     IPortfolioImmu;
+
+  // STUB: CART
+  export type CreateCartSalePage = ICartSalePage & ICartEntityImmu
+  export type CartSalePage = ICartSalePage & ICartEntityImmu
 
   // STUB: ORDER
   export type UpdateOrderStatus = ISellerUpdateOrderStatus &

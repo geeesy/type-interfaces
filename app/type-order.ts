@@ -599,3 +599,12 @@ export interface IOrderAffiliateData {
   campaignId: string;
   partnerId: string;
 }
+
+export interface ICartSalePage {
+  products: IOrderProductRow[];
+}
+
+export interface ICartEntityImmu {
+  cartId: string;
+  compId: string;
+}
