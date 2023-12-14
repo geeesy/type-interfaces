@@ -4,6 +4,7 @@ import { ICompanyContactInfo, IPeriodTime} from './type-company';
 import { IPersonContactInfo } from './type-apps';
 import {BankWarning, SaleChannelSubType, TWarningLevel} from './enum-const';
 import {IOrderInLogStock} from "./type-inventory";
+import {IDBConversationImmu} from "./type-messenger";
 
 /* eslint-disable no-unused-vars */
 export enum StatusOrderSeller {
@@ -605,6 +606,10 @@ export interface ICartSalePage {
 }
 
 export interface ICartEntityImmu {
+  compId: string;
+}
+
+export interface IDBCartImmu {
   cartId: string;
   compId: string;
 }

@@ -289,7 +289,7 @@ import {
   ICartEntityImmu,
   ICartSalePage,
   ICreatePaymentRowParams,
-  ICustomerWithOrder,
+  ICustomerWithOrder, IDBCartImmu,
   IDBListOrderByProduct,
   IDBOrderActivityLog,
   IDBOrderDataImmu,
@@ -1042,7 +1042,7 @@ export namespace GappBiz {
 
   // STUB: CART
   export type CreateCartSalePage = ICartSalePage & ICartEntityImmu
-  export type CartSalePage = ICartSalePage & ICartEntityImmu
+  export type CartSalePage = ICartSalePage & IDBCartImmu
 
   // STUB: ORDER
   export type UpdateOrderStatus = ISellerUpdateOrderStatus &
