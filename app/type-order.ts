@@ -91,7 +91,8 @@ export type TOrderType =
   | 'GAPP_BIZ'
   | 'POST_FB'
   | 'LIVE_FB'
-  | 'CHAT_FB';
+  | 'CHAT_FB'
+    | 'LINE_OA';
 export type TOrderItemType = 'SERVICE' | 'PRODUCT';
 export type TOrderChannelUTM =
   | 'WEBSITE'
