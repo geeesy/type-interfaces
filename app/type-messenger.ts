@@ -97,7 +97,7 @@ export interface IMessageId {
 export interface IMessage {
   type: TMessageType;
   text?: string; // type text
-  contents?: any, // dynamic element dom
+  contents?: any, // ##dynamic element dom##
   attachments: [
     {
       payload: {
