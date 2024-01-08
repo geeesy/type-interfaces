@@ -1,7 +1,7 @@
 import {SaleChannelSubType, SaleChannelType} from "./enum-const";
 
 export type TSocialSource = 'facebook' | 'line';
-export type TMessageType = 'text' | 'image' | 'audio' | 'video' | 'file' | 'location' | 'sticker';
+export type TMessageType = 'text' | 'image' | 'audio' | 'video' | 'file' | 'location' | 'sticker' | 'flex';
 export type TMessageStatus = 'sent' | 'unread' | 'read' | 'failed' | 'unknown';
 /* type line
 Text
@@ -97,6 +97,7 @@ export interface IMessageId {
 export interface IMessage {
   type: TMessageType;
   text?: string; // type text
+  contents?: any, // dynamic element dom
   attachments: [
     {
       payload: {
