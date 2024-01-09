@@ -327,7 +327,7 @@ import {
     ISellerReturnOrder,
     ISellerUpdateOrder,
     ISellerUpdateOrderPaymentRow,
-    ISellerUpdateOrderStatus
+    ISellerUpdateOrderStatus, ISocialData
 } from './type-order';
 import {
     ICreateProductWithMultiStock,
@@ -1051,7 +1051,7 @@ export namespace GappBiz {
         IOrderDataOnComplete &
         IOrderLinkDataOnConfirm;
     // ! ORDER_LINK
-    export type CreateOrderLink = IOrderEntity &
+    export type CreateOrderLink = IOrderEntity & ISocialData &
         IOrderCustomerData &
         IOrderCustomerDataImmu &
         IOrderData &
@@ -1067,7 +1067,7 @@ export namespace GappBiz {
         ISellerCreateOrder &
         IOrderLinkDataOnConfirm &
         IApiCompanyParams;
-    export type OrderLink = IDBOrderEntity &
+    export type OrderLink = IDBOrderEntity & ISocialData &
         IDBOrderEntityImmu &
         IOrderEntity &
         IDBOrderSellerDataImmu &

@@ -614,3 +614,8 @@ export interface IDBCartImmu {
   cartId: string;
   compId: string;
 }
+
+export  interface ISocialData {
+  conversationId?: string;
+  conversationFullName?: string;
+}
