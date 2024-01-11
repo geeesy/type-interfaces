@@ -58,6 +58,7 @@ export interface IAddress {
   lng?: string;
   officeHours?: OfficeHour[];
   isPrimary?: boolean;
+  taxInvoiceName: string
 }
 
 export interface ISocial {
