@@ -163,6 +163,7 @@ export interface IPersonContactInfo {
   personPic: string;
   tags: string[];
   prefixName: string;
+  taxNo: string;
 }
 
 // STUB: VENDOR
