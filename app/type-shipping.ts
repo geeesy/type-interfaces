@@ -92,12 +92,13 @@ export interface IShippingMethodEntityImmu {
   | ShippingMethodType.BasedByStepPcs 
   | ShippingMethodType.BasedByStepWeight 
   | ShippingMethodType.BasedByOrderPrice
-  | ShippingMethodType.Pickup;
+  | ShippingMethodType.Pickup
+  | null;
 }
 
 export interface IShippingMethodEntity {
   activeOnMarket: boolean
-  shippingParty: TShippingParty;
+  shippingParty: TShippingParty | null;
   shippingIconUrl: string;
   shippingAliasName: string;
   isCOD: boolean;
