@@ -462,6 +462,7 @@ import {
     IReturnSlipSuccess,
     ISlipSettingData
 } from './type-slip';
+import {ILogsData} from "./type-log";
 
 /* #region FIXME: Marketplace */
 export namespace GeeesyMarketplace {
@@ -1489,6 +1490,7 @@ export namespace GappMarket {
     export type ListBanner = IDBBannerImmu & IBanner;
     export type ListShipmentAndPaymentByCompany =
         IListShipmentAndPaymentByCompany;
+    export type  LogsData = ILogsData & IDBLogTime;
 }
 
 // REVIEW: G-BIZ | PRODUCT
