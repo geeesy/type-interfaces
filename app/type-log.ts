@@ -1,18 +1,10 @@
 // * Log User
 
+import {AccessScope} from "./enum-const";
+
 export type TLogUserAction = 'create' | 'update' | 'delete' | 'read' | 'list' | 'manage'
-export type TLogUserType =
-    'PURCHASE'
-    | 'ORDER'
-    | 'SOCIAL'
-    | 'PRODUCT'
-    | 'INVENTORY'
-    | 'PARTNER'
-    | 'CATALOG'
-    | 'SALEPAGE'
-    | 'SETTING'
-    | 'REPORT'
-export type TLogUserName =
+
+export type ResourceEntity =
     'CAMPAIGN'
     | 'PARTNER_IN_CAMPAIGN'
     | 'USER_ROLE'
@@ -58,13 +50,14 @@ export type TLogUserName =
     | 'VENDOR'
 
 export interface ILogsData {
-    requestID: string;
-    eventID: string;
-    eventName: TLogUserName;
-    eventAction: TLogUserAction;
-    eventType: TLogUserType;
+    logId: string // random ksuid
+    eventName: string;
+    eventApiAction: 'POST' | 'PUT' | 'GET';
+    eventUserAction: TLogUserAction;
+    resourceScope: AccessScope;
+    resourceEntity: ResourceEntity;
     eventTime: string; // 2023-07-19T21:14:20Z
-    eventSource: string; // ec2.amazonaws.com
-    awsRegion: string; // us-east-1
     sourceIPAddress: string; //192.0.2.0
+    cognitoUsername: string;
+    context: Record<string,string|number|boolean>;
 }
