@@ -872,6 +872,8 @@ export namespace GeeesyApps {
      */
     export type CreateSalesRep = ICompanyCreateSalesRep;
     export type SalesRep = ICompanySalesRep;
+
+    export type  LogsData = ILogsData & IApiCompanyParams;
 }
 
 // --------------------------------
@@ -1490,7 +1492,7 @@ export namespace GappMarket {
     export type ListBanner = IDBBannerImmu & IBanner;
     export type ListShipmentAndPaymentByCompany =
         IListShipmentAndPaymentByCompany;
-    export type  LogsData = ILogsData & IApiCompanyParams & IDBLogTime;
+
 }
 
 // REVIEW: G-BIZ | PRODUCT
