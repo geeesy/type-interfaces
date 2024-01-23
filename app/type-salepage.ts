@@ -188,7 +188,7 @@ export interface IProductVariantArr
   canBelowZero: boolean;
   discountUnitPrice: number;
   isActive:boolean
-
+  settingDiscount?: ISettingDiscount;
 }
 
 export interface IComponentBlockHTML {
