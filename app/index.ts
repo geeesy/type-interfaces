@@ -1490,7 +1490,7 @@ export namespace GappMarket {
     export type ListBanner = IDBBannerImmu & IBanner;
     export type ListShipmentAndPaymentByCompany =
         IListShipmentAndPaymentByCompany;
-    export type  LogsData = ILogsData & IDBLogTime;
+    export type  LogsData = ILogsData & IApiCompanyParams & IDBLogTime;
 }
 
 // REVIEW: G-BIZ | PRODUCT
