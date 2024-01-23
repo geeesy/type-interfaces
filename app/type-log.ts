@@ -58,6 +58,7 @@ export type TLogUserName =
     | 'VENDOR'
 
 export interface ILogsData {
+    requestID: string;
     eventID: string;
     eventName: TLogUserName;
     eventAction: TLogUserAction;
