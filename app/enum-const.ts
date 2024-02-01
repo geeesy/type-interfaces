@@ -1105,7 +1105,7 @@ export enum templateRich {
   T3_Large = 'd',
   T4_Large = 'e',
   T5_Large = 'f',
-  T7_Large = 'g',
+  T6_Large = 'g',
   T0_Compact = 'h',
   T1_Compact = 'i',
   T2_Compact = 'j',
