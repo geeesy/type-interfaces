@@ -1460,6 +1460,7 @@ export namespace GappBiz {
 
     // STUB: Rich Menu
     export type CreateRichMenu = IRichMenu & IApiCompanyParams
+    export type UpdateRichMenu = CreateRichMenu
     export type RichMenu = IRichMenu & IRichMenuId & IApiCompanyParams & IDBLogTime & IDBActivityLog
 }
 
