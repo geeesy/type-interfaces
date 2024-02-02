@@ -463,6 +463,7 @@ import {
     ISlipSettingData
 } from './type-slip';
 import {ILogsData} from "./type-log";
+import {IRichMenu, IRichMenuId} from "./type-line";
 
 /* #region FIXME: Marketplace */
 export namespace GeeesyMarketplace {
@@ -1456,6 +1457,11 @@ export namespace GappBiz {
 
     // STUB: Generate Qr Code
     export type GenQrPromptPay = IGenPromptPay
+
+    // STUB: Rich Menu
+    export type CreateRichMenu = IRichMenu & IApiCompanyParams
+    export type UpdateRichMenu = CreateRichMenu
+    export type RichMenu = IRichMenu & IRichMenuId & IApiCompanyParams & IDBLogTime & IDBActivityLog
 }
 
 // REVIEW: G-MARKET

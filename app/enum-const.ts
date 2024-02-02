@@ -1096,19 +1096,3 @@ export enum BankErrorCodes {
   INCORRECT_QR , // error code 404 In Correct QR code
   NO_SLIP_DATA , // error code 404 No slip data from API
 }
-
-
-export enum templateRich {
-  T0_Large = 'a',
-  T1_Large = 'b',
-  T2_Large = 'c',
-  T3_Large = 'd',
-  T4_Large = 'e',
-  T5_Large = 'f',
-  T6_Large = 'g',
-  T0_Compact = 'h',
-  T1_Compact = 'i',
-  T2_Compact = 'j',
-  T3_Compact = 'k',
-  T4_Compact = 'l'
-}
