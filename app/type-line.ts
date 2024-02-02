@@ -87,6 +87,8 @@ export interface IRichMenu extends IRichTemplate {
   richShowImageUrl: string;
   selected: boolean;
   chatBarText: boolean;
+  hasArchived: boolean;
+  richMenuIds: string[]
 }
 
 // * START TEMPLATE RICH MENU
