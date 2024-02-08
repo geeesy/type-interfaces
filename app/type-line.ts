@@ -1,3 +1,6 @@
+import {IApiCompanyParams, IDBLogTime} from "./type-api";
+import {IDBActivityLog} from "./type-apps";
+
 export type TActionTypeRich =
   "postback"
   | "message"
@@ -88,9 +91,12 @@ export interface IRichMenu extends IRichTemplate {
   selected: boolean;
   chatBarText: boolean;
   hasArchived: boolean;
-  richMenuIds: string[]
+  richMenus: IRicMenus[];
   isActive: boolean;
   // isDefault: boolean;
+}
+
+interface IRicMenus extends ISaleChannelRichMenu, IConnectRichMenu, IRichMenuId, IRichMenuLineId, IApiCompanyParams, IDBLogTime, IDBActivityLog {
 }
 
 // * START TEMPLATE RICH MENU
@@ -693,14 +699,17 @@ export const TemplateRichMenu = {
   T3_Compact,
   T4_Compact
 };
+
 export interface IRichMenuLineId {
   richLineId: string;
 }
+
 export interface IConnectRichMenu {
-  isDefault: boolean
+  isDefault: boolean;
 }
+
 export interface ISaleChannelRichMenu {
-  saleChannelId: string
+  saleChannelId: string;
 }
 
 
