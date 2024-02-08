@@ -708,6 +708,7 @@ export interface IConnectRichMenu {
   isDefault: boolean;
 }
 
+// * saleChannel
 export interface ISaleChannelRichMenu {
   saleChannelId: string;
 }
