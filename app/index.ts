@@ -1464,7 +1464,7 @@ export namespace GappBiz {
     export type RichMenu = IRichMenu & IRichMenuId & IApiCompanyParams & IDBLogTime & IDBActivityLog
     export type CreateConnectRichMenu = IConnectRichMenu & IRichMenuId & IRichMenuLineId & IApiCompanyParams
     export type ConnectRichMenu  = ISaleChannelRichMenu & CreateConnectRichMenu & IDBLogTime & IDBActivityLog
-    export type SetDefaultRichMenu = ISaleChannelRichMenu & IRichMenuLineId & IApiCompanyParams
+    export type SetDefaultRichMenu = IRichMenuId & ISaleChannelRichMenu & IRichMenuLineId & IApiCompanyParams
     export type removeDefaultRichMenu = SetDefaultRichMenu
     export type removeRichMenu = SetDefaultRichMenu
 }
