@@ -91,7 +91,7 @@ export interface IRichMenu extends IRichTemplate {
   selected: boolean;
   chatBarText: boolean;
   hasArchived: boolean;
-  richMenus: IRicMenus[];
+  richMenus: IRicMenus[]; //all active
   isActive: boolean;
   // isDefault: boolean;
 }
