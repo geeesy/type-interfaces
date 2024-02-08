@@ -99,6 +99,7 @@ export interface IRichMenu extends IRichTemplate {
 interface IRicMenus extends ISaleChannelRichMenu, IConnectRichMenu, IRichMenuId, IRichMenuLineId, IApiCompanyParams, IDBLogTime, IDBActivityLog {
 }
 
+
 // * START TEMPLATE RICH MENU
 const SizeRichLarge: IRichSize = {
   width: 2500,
