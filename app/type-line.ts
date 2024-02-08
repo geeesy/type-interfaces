@@ -693,6 +693,15 @@ export const TemplateRichMenu = {
   T3_Compact,
   T4_Compact
 };
+export interface IRichMenuLineId {
+  richLineId: string;
+}
+export interface IConnectRichMenu {
+  isDefault: boolean
+}
+export interface ISaleChannelRichMenu {
+  saleChannelId: string
+}
 
 
 
