@@ -1465,8 +1465,8 @@ export namespace GappBiz {
     export type CreateConnectRichMenu = IConnectRichMenu & IRichMenuId & IRichMenuLineId & IApiCompanyParams
     export type ConnectRichMenu  = ISaleChannelRichMenu & CreateConnectRichMenu & IDBLogTime & IDBActivityLog
     export type SetDefaultRichMenu = IRichMenuId & ISaleChannelRichMenu & IRichMenuLineId & IApiCompanyParams
-    export type removeDefaultRichMenu = SetDefaultRichMenu
-    export type removeRichMenu = SetDefaultRichMenu
+    export type RemoveDefaultRichMenu = SetDefaultRichMenu
+    export type RemoveRichMenu = SetDefaultRichMenu
 }
 
 // REVIEW: G-MARKET
