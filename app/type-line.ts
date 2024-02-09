@@ -246,7 +246,7 @@ export interface IRichMenu extends IRichTemplate, IRichName, IRichMenuSub {
   isActive: boolean;
 }
 
-export interface IRichMenuSub extends IRichMenuDefault {
+export interface IRichMenuSub {
   chatBarText: boolean;
   selected: boolean;
   richShowImageUrl: string;
