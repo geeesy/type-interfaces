@@ -227,7 +227,7 @@ export interface IRichMenu extends IRichTemplate {
   activeEndDateTime: string; // timestamp
   richShowImageUrl: string;
   selected: boolean;
-  chatBarText: boolean;
+  chatBarText: string;
   hasArchived: boolean;
   richMenus: IRicMenus[]; //all active
   isActive: boolean;
