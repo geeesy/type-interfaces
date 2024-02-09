@@ -1,5 +1,5 @@
-import { IApiCompanyParams, IDBLogTime } from "./type-api";
-import { IDBActivityLog } from "./type-apps";
+import {IApiCompanyParams, IDBLogTime} from "./type-api";
+import {IDBActivityLog} from "./type-apps";
 
 export declare type Action<ExtraFields = {
   label: string;
@@ -17,7 +17,7 @@ export declare type Action<ExtraFields = {
  * When a control associated with this action is tapped, a postback event is
  * returned via webhook with the specified string in the data property.
  */
-export declare type TPostBackAction= {
+export declare type TPostBackAction = {
   type: "postback";
   /**
    * String returned via webhook in the `postback.data` property of the
@@ -65,9 +65,9 @@ export declare type TPostBackAction= {
   fillInText?: string;
 };
 /**
-* When a control associated with this action is tapped, the string in the text
-* property is sent as a message from the user.
-*/
+ * When a control associated with this action is tapped, the string in the text
+ * property is sent as a message from the user.
+ */
 export declare type TMessageAction = {
   type: "message";
   /**
@@ -76,9 +76,9 @@ export declare type TMessageAction = {
   text: string;
 };
 /**
-* When a control associated with this action is tapped, the URI specified in
-* the `uri` property is opened.
-*/
+ * When a control associated with this action is tapped, the URI specified in
+ * the `uri` property is opened.
+ */
 export declare type TURIAction = {
   type: "uri";
   /**
@@ -102,25 +102,25 @@ export declare type AltURI = {
   desktop: string;
 };
 /**
-* When a control associated with this action is tapped, a
-* [postback event](https://developers.line.biz/en/reference/messaging-api/#postback-event)
-* is returned via webhook with the date and time selected by the user from the
-* date and time selection dialog.
-*
-* The datetime picker action does not support time zones.
-*
-* #### Date and time format
-*
-* The date and time formats for the `initial`, `max`, and `min` values are
-* shown below. The `full-date`, `time-hour`, and `time-minute` formats follow
-* the [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) protocol.
-*
-* | Mode     | Format                                                       | Example                          |
-* | -------- | ------------------------------------------------------------ | -------------------------------- |
-* | date     | `full-date` (Max: 2100-12-31; Min: 1900-01-01)               | 2017-06-18                       |
-* | time     | `time-hour`:`time-minute` (Max: 23:59; Min: 00:00)           | 00:0006:1523:59                  |
-* | datetime | `full-date`T`time-hour`:`time-minute` or `full-date`t`time-hour`:`time-minute` (Max: 2100-12-31T23:59; Min: 1900-01-01T00:00) | 2017-06-18T06:152017-06-18t06:15 |
-*/
+ * When a control associated with this action is tapped, a
+ * [postback event](https://developers.line.biz/en/reference/messaging-api/#postback-event)
+ * is returned via webhook with the date and time selected by the user from the
+ * date and time selection dialog.
+ *
+ * The datetime picker action does not support time zones.
+ *
+ * #### Date and time format
+ *
+ * The date and time formats for the `initial`, `max`, and `min` values are
+ * shown below. The `full-date`, `time-hour`, and `time-minute` formats follow
+ * the [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) protocol.
+ *
+ * | Mode     | Format                                                       | Example                          |
+ * | -------- | ------------------------------------------------------------ | -------------------------------- |
+ * | date     | `full-date` (Max: 2100-12-31; Min: 1900-01-01)               | 2017-06-18                       |
+ * | time     | `time-hour`:`time-minute` (Max: 23:59; Min: 00:00)           | 00:0006:1523:59                  |
+ * | datetime | `full-date`T`time-hour`:`time-minute` or `full-date`t`time-hour`:`time-minute` (Max: 2100-12-31T23:59; Min: 1900-01-01T00:00) | 2017-06-18T06:152017-06-18t06:15 |
+ */
 export declare type TDateTimePickerAction = {
   type: "datetimepicker";
   /**
@@ -145,9 +145,9 @@ export declare type TDateTimePickerAction = {
   min?: string;
 };
 /**
-* When a control associated with this action is tapped, the URI specified in
-* the `uri` property is opened.
-*/
+ * When a control associated with this action is tapped, the URI specified in
+ * the `uri` property is opened.
+ */
 export declare type TRichMenuSwitchAction = {
   type: "richmenuswitch";
   /**
@@ -220,21 +220,39 @@ export interface IRichTemplate {
   areas: IRichMenuAreas[];
 }
 
-export interface IRichMenu extends IRichTemplate {
+export interface IRichName {
   richName: string;
+}
+
+export interface IRichMenuLineId {
+  richLineId: string;
+}
+
+export interface IRichMenuDefault {
+  isDefault: boolean;
+}
+
+// * saleChannel
+export interface IRichMenuSaleChannelId {
+  saleChannelId: string;
+}
+
+export interface IRichMenu extends IRichTemplate, IRichName, IRichMenuSub {
   template: TTemplateRich;
   activeStartDateTime: string; // timestamp
   activeEndDateTime: string; // timestamp
-  richShowImageUrl: string;
-  selected: boolean;
-  chatBarText: boolean;
   hasArchived: boolean;
   richMenus: IRicMenus[]; //all active
   isActive: boolean;
-  // isDefault: boolean;
 }
 
-interface IRicMenus extends ISaleChannelRichMenu, IConnectRichMenu, IRichMenuId, IRichMenuLineId, IApiCompanyParams, IDBLogTime, IDBActivityLog {
+export interface IRichMenuSub extends IRichMenuDefault {
+  chatBarText: boolean;
+  selected: boolean;
+  richShowImageUrl: string;
+}
+
+interface IRicMenus extends IRichMenuSaleChannelId, IRichMenuDefault, IRichMenuId, IRichMenuLineId, IApiCompanyParams, IDBLogTime, IDBActivityLog {
 }
 
 // * START TEMPLATE RICH MENU
@@ -773,19 +791,6 @@ export const TemplateRichMenu = {
   T3_Compact,
   T4_Compact
 };
-
-export interface IRichMenuLineId {
-  richLineId: string;
-}
-
-export interface IConnectRichMenu {
-  isDefault: boolean;
-}
-
-// * saleChannel
-export interface ISaleChannelRichMenu {
-  saleChannelId: string;
-}
 
 
 
