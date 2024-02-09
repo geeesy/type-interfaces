@@ -463,7 +463,13 @@ import {
     ISlipSettingData
 } from './type-slip';
 import {ILogsData} from "./type-log";
-import {IConnectRichMenu, IRichMenu, IRichMenuId, IRichMenuLineId, ISaleChannelRichMenu} from "./type-line";
+import {
+    IRichMenu, IRichMenuDefault,
+    IRichMenuId,
+    IRichMenuLineId, IRichMenuSaleChannelId, IRichMenuSub,
+    IRichName,
+    IRichTemplate,
+} from "./type-line";
 
 /* #region FIXME: Marketplace */
 export namespace GeeesyMarketplace {
@@ -1462,9 +1468,10 @@ export namespace GappBiz {
     export type CreateRichMenu = IRichMenu & IApiCompanyParams
     export type UpdateRichMenu = CreateRichMenu
     export type RichMenu = IRichMenu & IRichMenuId & IApiCompanyParams & IDBLogTime & IDBActivityLog
-    export type CreateConnectRichMenu = ISaleChannelRichMenu & IConnectRichMenu & IRichMenuId & IApiCompanyParams
+    export type CreateConnectRichMenu = IRichMenuSaleChannelId & IRichMenuDefault & IRichMenuId & IApiCompanyParams
     export type ConnectRichMenu  =  CreateConnectRichMenu & IRichMenuLineId & IDBLogTime & IDBActivityLog
-    export type SetDefaultRichMenu = IRichMenuId & ISaleChannelRichMenu & IRichMenuLineId & IApiCompanyParams
+    export type ConnectRichMenuList = IRichMenuId & IRichName & IRichTemplate & IRichMenuSub
+    export type SetDefaultRichMenu = IRichMenuId & IRichMenuSaleChannelId & IRichMenuLineId & IApiCompanyParams
     export type RemoveDefaultRichMenu = SetDefaultRichMenu
     export type RemoveRichMenu = SetDefaultRichMenu
 }
