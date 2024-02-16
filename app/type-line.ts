@@ -256,18 +256,18 @@ interface IRicMenus extends IRichMenuSaleChannelId, IRichMenuDefault, IRichMenuI
 }
 
 // * START TEMPLATE RICH MENU
-const SizeRichLarge: IRichSize = {
+export const SizeRichLarge: IRichSize = {
   width: 2500,
   height: 1686
 };
 
-const SizeRichCompact: IRichSize = {
+export const SizeRichCompact: IRichSize = {
   width: 2500,
   height: 843
 };
 
 // ^ Size Large
-const T0_Large: IRichTemplate = {
+export const T0_Large: IRichTemplate = {
   size: SizeRichLarge,
   areas: [
     {
@@ -356,7 +356,7 @@ const T0_Large: IRichTemplate = {
     }
   ]
 };
-const T1_Large: IRichTemplate = {
+export const T1_Large: IRichTemplate = {
   size: SizeRichLarge,
   areas: [
     {
@@ -417,7 +417,7 @@ const T1_Large: IRichTemplate = {
     }
   ]
 };
-const T2_Large: IRichTemplate = {
+export const T2_Large: IRichTemplate = {
   size: SizeRichLarge,
   areas: [
     {
@@ -450,7 +450,7 @@ const T2_Large: IRichTemplate = {
     }
   ]
 };
-const T3_Large: IRichTemplate = {
+export const T3_Large: IRichTemplate = {
   size: SizeRichLarge,
   areas: [
     {
@@ -511,7 +511,7 @@ const T3_Large: IRichTemplate = {
     }
   ]
 };
-const T4_Large: IRichTemplate = {
+export const T4_Large: IRichTemplate = {
   size: SizeRichLarge,
   areas: [
     {
@@ -558,7 +558,7 @@ const T4_Large: IRichTemplate = {
     }
   ]
 };
-const T5_Large: IRichTemplate = {
+export const T5_Large: IRichTemplate = {
   size: SizeRichLarge,
   areas: [
     {
@@ -591,7 +591,7 @@ const T5_Large: IRichTemplate = {
     }
   ]
 };
-const T6_Large: IRichTemplate = {
+export const T6_Large: IRichTemplate = {
   size: SizeRichLarge,
   areas: [
     {
@@ -611,7 +611,7 @@ const T6_Large: IRichTemplate = {
   ]
 };
 // ^ Size Compact
-const T0_Compact: IRichTemplate = {
+export const T0_Compact: IRichTemplate = {
   size: SizeRichCompact,
   areas: [
     {
@@ -658,7 +658,7 @@ const T0_Compact: IRichTemplate = {
     }
   ]
 };
-const T1_Compact: IRichTemplate = {
+export const T1_Compact: IRichTemplate = {
   size: SizeRichCompact,
   areas: [
     {
@@ -691,7 +691,7 @@ const T1_Compact: IRichTemplate = {
     }
   ]
 };
-const T2_Compact: IRichTemplate = {
+export const T2_Compact: IRichTemplate = {
   size: SizeRichCompact,
   areas: [
     {
@@ -724,7 +724,7 @@ const T2_Compact: IRichTemplate = {
     }
   ]
 };
-const T3_Compact: IRichTemplate = {
+export const T3_Compact: IRichTemplate = {
   size: SizeRichCompact,
   areas: [
     {
@@ -757,7 +757,7 @@ const T3_Compact: IRichTemplate = {
     }
   ]
 };
-const T4_Compact: IRichTemplate = {
+export const T4_Compact: IRichTemplate = {
   size: SizeRichCompact,
   areas: [
     {
