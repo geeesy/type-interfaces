@@ -794,6 +794,13 @@ export const TemplateRichMenu = {
 };
 
 
+/**
+ * Member Line
+ */
+
+export interface IMemberId {
+  userId: string;
+}
 export interface IMemberFromLine {
   firstName: string;
   lastName: string
@@ -802,7 +809,6 @@ export interface IMemberFromLine {
   address?: IAddress;
   personPic: string;
   prefixName: string;
-  userId: string;
 }
 
 
