@@ -802,6 +802,7 @@ export interface IMemberFromLine {
   address?: IAddress;
   personPic: string;
   prefixName: string;
+  userId: string;
 }
 
 
