@@ -464,6 +464,7 @@ import {
 } from './type-slip';
 import {ILogsData} from "./type-log";
 import {
+    IMemberFromLine,
     IRichMenu, IRichMenuDefault,
     IRichMenuId,
     IRichMenuLineId, IRichMenuSaleChannelId, IRichMenuSub,
@@ -1474,6 +1475,11 @@ export namespace GappBiz {
     export type SetDefaultRichMenu = IRichMenuId & IRichMenuSaleChannelId & IRichMenuLineId & IApiCompanyParams
     export type RemoveDefaultRichMenu = SetDefaultRichMenu
     export type RemoveRichMenu = SetDefaultRichMenu
+
+    // STUB: Member From Line
+    export type CreateMemberFromLine= IMemberFromLine
+    export type UpdateMemberFromLine= IMemberFromLine
+    export type MemberFromLine = IMemberFromLine
 }
 
 // REVIEW: G-MARKET
