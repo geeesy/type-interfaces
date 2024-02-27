@@ -245,7 +245,7 @@ export interface IRichMenu extends IRichTemplate, IRichName, IRichMenuSub {
   hasArchived: boolean;
   richMenus: IRicMenus[]; //all active
   isActive: boolean;
-  isFulledPiece: boolean;
+  isFullImage: boolean;
 }
 
 export interface IRichMenuSub {
