@@ -1,5 +1,6 @@
 import {IApiCompanyParams, IDBLogTime} from "./type-api";
-import {IDBActivityLog} from "./type-apps";
+import {IDBActivityLog, ISocial} from "./type-apps";
+import {IAddress} from "./type-company";
 
 export declare type Action<ExtraFields = {
   label: string;
@@ -792,6 +793,24 @@ export const TemplateRichMenu = {
   T3_Compact,
   T4_Compact
 };
+
+
+/**
+ * Member Line
+ */
+
+export interface IMemberId {
+  userId: string;
+}
+export interface IMemberFromLine {
+  firstName: string;
+  lastName: string
+  emails: string[];
+  mobiles: string[];
+  address?: IAddress;
+  personPic: string;
+  prefixName: string;
+}
 
 
 
