@@ -84,8 +84,7 @@ export enum StatusRefundOrder {
 }
 
 export type TPaymentRowStatus = 'WAIT' | 'REJECT' | 'COMPLETE';
-export type TOrderType =
-  | 'ORDER_LINK'
+export type TOrderType =| 'ORDER_LINK'
   | 'SALEPAGE'
   | 'GAPP_MARKET'
   | 'GAPP_BIZ'
@@ -93,6 +92,7 @@ export type TOrderType =
   | 'LIVE_FB'
   | 'CHAT_FB'
     | 'LINE_OA';
+
 export type TOrderItemType = 'SERVICE' | 'PRODUCT';
 export type TOrderChannelUTM =
   | 'WEBSITE'
