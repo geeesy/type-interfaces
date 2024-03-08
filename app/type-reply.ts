@@ -1,10 +1,21 @@
 import {IImage} from "./type-apps";
+import {IMessagePush} from "./type-messenger";
+
+export interface IReplyTemplate {
+  replyName: string;
+  replyKeyword: string;
+}
 
 export interface IReplyData {
-    replyId: string;
-    replyName: string;
-    replyKeyword: string;
-    replyDescription: string;
-    replyImagesUrl: IImage[];
+  replyDescription: string;
+  replyImagesUrl: IImage[];
+}
+
+export interface IDBReplyId {
+  replyId: string;
+}
+
+export interface IReplyDataLine {
+  messages: IMessagePush[];
 }
 

@@ -97,7 +97,7 @@ export interface IMessageId {
 export interface IMessage {
   type: TMessageType;
   text?: string; // type text
-  contents?: any, // ##dynamic element dom##
+  contents?: any; // ##dynamic element dom##
   attachments: [
     {
       payload: {
@@ -115,7 +115,16 @@ export interface IMessage {
       }
     }
   ];
+  aliasNameList?:IAliasNameList[]
 }
+
+export type TAliasNameType = 'customerName' | 'marketName';
+export interface IAliasNameList {
+  "index": number,
+  "type": TAliasNameType,
+  "value"?: string
+}
+
 
 export interface IMessagePush extends IMessage {
   emojiList?: IEmoji[]
