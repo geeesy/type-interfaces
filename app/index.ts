@@ -442,7 +442,7 @@ import {
   IPartnerData,
   IPartnerDataImmu
 } from './type-affiliate';
-import {IDBReplyId, IReplyData, IReplyDataLine, IReplyTemplate} from './type-reply';
+import {IDBReplyHasArchived, IDBReplyId, IReplyData, IReplyDataLine, IReplyTemplate} from './type-reply';
 import {
   IConversation,
   IDBConversationImmu,
@@ -1375,7 +1375,7 @@ export namespace GappBiz {
   // * Body Update Reply Template Line
   export type UpdateReplyTemplateLine = CreateReplyTemplateLine
   // * Reply Template Line DB
-  export type ReplyTemplateLine = IDBReplyId & IReplyTemplate & IReplyDataLine &
+  export type ReplyTemplateLine = IDBReplyId & IDBReplyHasArchived & IReplyTemplate & IReplyDataLine &
     IApiCompanyParams &
     IDBCompanyActivityLog;
   // * List Reply Template Line DB
