@@ -15,8 +15,11 @@ export interface IDBReplyId {
   replyId: string;
 }
 
+export  interface IDBReplyHasArchived{
+  hasArchived: boolean;
+}
 export interface IReplyDataLine {
   messages: IMessagePush[];
-  hasArchived: boolean;
+
 }
 
