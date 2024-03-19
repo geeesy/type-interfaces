@@ -289,8 +289,8 @@ export const T0_Large: IRichTemplate = {
     {
       sortNo: 2,
       bounds: {
-        x: 0,
-        y: 833,
+        x: 833,
+        y: 0,
         width: 833,
         height: 843
       },
@@ -303,8 +303,8 @@ export const T0_Large: IRichTemplate = {
     {
       sortNo: 3,
       bounds: {
-        x: 0,
-        y: 1666,
+        x: 1666,
+        y: 0,
         width: 834,
         height: 843
       },
@@ -317,8 +317,8 @@ export const T0_Large: IRichTemplate = {
     {
       sortNo: 4,
       bounds: {
-        x: 843,
-        y: 0,
+        x: 0,
+        y: 843,
         width: 833,
         height: 843
       },
@@ -331,8 +331,8 @@ export const T0_Large: IRichTemplate = {
     {
       sortNo: 5,
       bounds: {
-        x: 843,
-        y: 833,
+        x: 833,
+        y: 843,
         width: 833,
         height: 843
       },
@@ -345,8 +345,8 @@ export const T0_Large: IRichTemplate = {
     {
       sortNo: 6,
       bounds: {
-        x: 843,
-        y: 1666,
+        x: 1666,
+        y: 843,
         width: 834,
         height: 843
       },
@@ -378,8 +378,8 @@ export const T1_Large: IRichTemplate = {
     {
       sortNo: 2,
       bounds: {
-        x: 843,
-        y: 0,
+        x: 0,
+        y: 843,
         width: 833,
         height: 843
       },
@@ -392,8 +392,8 @@ export const T1_Large: IRichTemplate = {
     {
       sortNo: 3,
       bounds: {
-        x: 843,
-        y: 833,
+        x: 833,
+        y: 843,
         width: 833,
         height: 843
       },
@@ -406,8 +406,8 @@ export const T1_Large: IRichTemplate = {
     {
       sortNo: 4,
       bounds: {
-        x: 843,
-        y: 1666,
+        x: 1666,
+        y: 843,
         width: 834,
         height: 843
       },
@@ -439,8 +439,8 @@ export const T2_Large: IRichTemplate = {
     {
       sortNo: 2,
       bounds: {
-        x: 843,
-        y: 0,
+        x: 0,
+        y: 843,
         width: 2500,
         height: 843
       },
@@ -472,8 +472,8 @@ export const T3_Large: IRichTemplate = {
     {
       sortNo: 2,
       bounds: {
-        x: 0,
-        y: 1250,
+        x: 1250,
+        y: 0,
         width: 1250,
         height: 843
       },
@@ -486,8 +486,8 @@ export const T3_Large: IRichTemplate = {
     {
       sortNo: 3,
       bounds: {
-        x: 843,
-        y: 0,
+        x: 0,
+        y: 843,
         width: 1250,
         height: 843
       },
@@ -500,8 +500,8 @@ export const T3_Large: IRichTemplate = {
     {
       sortNo: 4,
       bounds: {
-        x: 843,
-        y: 1250,
+        x: 1250,
+        y: 843,
         width: 1250,
         height: 843
       },
@@ -533,8 +533,8 @@ export const T4_Large: IRichTemplate = {
     {
       sortNo: 2,
       bounds: {
-        x: 0,
-        y: 1666,
+        x: 1666,
+        y: 0,
         width: 834,
         height: 843
       },
@@ -547,8 +547,8 @@ export const T4_Large: IRichTemplate = {
     {
       sortNo: 3,
       bounds: {
-        x: 843,
-        y: 1666,
+        x: 1666,
+        y: 843,
         width: 834,
         height: 843
       },
@@ -580,8 +580,8 @@ export const T5_Large: IRichTemplate = {
     {
       sortNo: 2,
       bounds: {
-        x: 0,
-        y: 1250,
+        x: 1250,
+        y: 0,
         width: 1250,
         height: 1686
       },
@@ -633,8 +633,8 @@ export const T0_Compact: IRichTemplate = {
     {
       sortNo: 2,
       bounds: {
-        x: 0,
-        y: 833,
+        x: 833,
+        y: 0,
         width: 834,
         height: 843
       },
@@ -647,8 +647,8 @@ export const T0_Compact: IRichTemplate = {
     {
       sortNo: 3,
       bounds: {
-        x: 0,
-        y: 1667,
+        x: 1667,
+        y: 0,
         width: 833,
         height: 843
       },
@@ -680,8 +680,8 @@ export const T1_Compact: IRichTemplate = {
     {
       sortNo: 2,
       bounds: {
-        x: 0,
-        y: 833,
+        x: 833,
+        y: 0,
         width: 1667,
         height: 843
       },
@@ -713,8 +713,8 @@ export const T2_Compact: IRichTemplate = {
     {
       sortNo: 2,
       bounds: {
-        x: 0,
-        y: 1667,
+        x: 1667,
+        y: 0,
         width: 833,
         height: 843
       },
@@ -746,8 +746,8 @@ export const T3_Compact: IRichTemplate = {
     {
       sortNo: 2,
       bounds: {
-        x: 0,
-        y: 1250,
+        x: 1250,
+        y: 0,
         width: 1250,
         height: 843
       },
