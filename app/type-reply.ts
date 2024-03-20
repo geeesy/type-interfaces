@@ -1,5 +1,5 @@
 import {IImage} from "./type-apps";
-import {IMessagePush} from "./type-messenger";
+import {TMessagePush} from "./type-messenger";
 
 export interface IReplyTemplate {
   replyName: string;
@@ -19,7 +19,7 @@ export  interface IDBReplyHasArchived{
   hasArchived: boolean;
 }
 export interface IReplyDataLine {
-  messages: IMessagePush[];
+  messages: TMessagePush[];
 
 }
 
