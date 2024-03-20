@@ -81,7 +81,7 @@ export interface ISocialChatMessage {
   socialSource: TSocialSource;
   timestamp: number;
   messageStatus: string;
-  message: IMessageId & IMessage;
+  message: IMessageId & TMessagePush;
 }
 
 export interface ISocialChatMessageSender {
@@ -94,31 +94,92 @@ export interface IMessageId {
   mid: string;
 }
 
-export interface IMessage {
-  type: TMessageType;
-  text?: string; // type text
-  contents?: any; // ##dynamic element dom##
+export type TMessageText = {
+  type: "text";
+  text: string;
+  emojiList?: IEmoji[]
+  aliasNameList?: IAliasNameList[]
+}
+
+export type TMessageImage = {
+  type: "image";
   attachments: [
     {
       payload: {
-        packageId?: string; // type sticker
-        stickerId?: string; // type sticker
-        title?: string; // type location
-        address?: string; // type location
-        latitude?: string; // type location
-        longitude?: string; // type location
-        url?:string // type image, video, file, sticker
-        previewUrl?:string // type image, video
-        duration?: number // type audio
-        fileName?: string // type file
-        fileSize?: number // type file
+        url: string
+        previewUrl: string
       }
     }
   ];
-  aliasNameList?:IAliasNameList[]
 }
 
+export type TMessageVideo = {
+  type: "video";
+  attachments: [
+    {
+      payload: {
+        url: string
+        previewUrl: string
+        duration: number
+      }
+    }
+  ];
+}
+
+export type TMessageAudio = {
+  type: "audio";
+  attachments: [
+    {
+      payload: {
+        url: string
+        duration: number
+      }
+    }
+  ];
+}
+
+export type TMessageLocation = {
+  type: "location";
+  attachments: [
+    {
+      payload: {
+        title: string;
+        address: string;
+        latitude: string;
+        longitude: string;
+      }
+    }
+  ];
+}
+
+export type TMessageSticker = {
+  type: "sticker";
+  attachments: [
+    {
+      payload: {
+        packageId: string;
+        stickerId: string;
+      }
+    }
+  ];
+}
+
+export type TMessageFile = {
+  type: "file";
+  url: string;
+  fileName: string
+  fileSize: number
+}
+
+export type TMessageFlex = {
+  type: "flex";
+  altText: string;
+  contents: any; // ##dynamic element dom##
+}
+
+
 export type TAliasNameType = 'customerName' | 'marketName';
+
 export interface IAliasNameList {
   "index": number,
   "type": TAliasNameType,
@@ -126,9 +187,15 @@ export interface IAliasNameList {
 }
 
 
-export interface IMessagePush extends IMessage {
-  emojiList?: IEmoji[]
-}
+export type TMessagePush =
+  TMessageText |
+  TMessageImage |
+  TMessageVideo |
+  TMessageAudio |
+  TMessageLocation |
+  TMessageSticker |
+  TMessageFile |
+  TMessageFlex
 
 export interface IEmoji {
   index: number;
@@ -139,7 +206,7 @@ export interface IEmoji {
 export interface IPushMessageLine {
   saleChannelId: string,
   receiver: string,
-  message: IMessagePush,
+  messages: TMessagePush[],
   conversationId: string
 }
 
