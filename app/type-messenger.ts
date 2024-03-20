@@ -168,9 +168,11 @@ export type TMessageFile = {
   type: "file";
   attachments: [
     {
-      url: string;
-      fileName: string
-      fileSize: number
+      payload: {
+        url: string;
+        fileName: string
+        fileSize: number
+      }
     }
   ]
 }
@@ -181,30 +183,6 @@ export type TMessageFlex = {
   contents: any; // ##dynamic element dom##
 }
 
-
-export interface IMessage {
-  type: TMessageType;
-  text?: string; // type text
-  contents?: any; // ##dynamic element dom##
-  attachments: [
-    {
-      payload: {
-        packageId?: string; // type sticker
-        stickerId?: string; // type sticker
-        title?: string; // type location
-        address?: string; // type location
-        latitude?: string; // type location
-        longitude?: string; // type location
-        url?: string // type image, video, file, sticker
-        previewUrl?: string // type image, video
-        duration?: number // type audio
-        fileName?: string // type file
-        fileSize?: number // type file
-      }
-    }
-  ];
-  aliasNameList?: IAliasNameList[];
-}
 
 export type TAliasNameType = 'customerName' | 'marketName';
 
