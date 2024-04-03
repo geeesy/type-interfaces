@@ -99,6 +99,7 @@ export type TMessageText = {
   text: string;
   emojiList?: IEmoji[]
   aliasNameList?: IAliasNameList[]
+  innerHtml?: string
 }
 
 export type TMessageImage = {
@@ -183,6 +184,32 @@ export type TMessageFlex = {
   contents: any; // ##dynamic element dom##
 }
 
+export type TMessageFlexImage = {
+  type: "flexImage";
+  altText: string;
+  contents: TFlexImage;
+}
+
+export type TFlexImage = {
+  imageUrl: string
+  hasBanner: boolean
+  bannerText: string
+  bannerColor: string
+  hasAction: boolean
+  actionText: string
+  action?: TFlexImageActionText | TFlexImageActionLink | undefined
+}
+
+export type TFlexImageActionText = {
+  type: "text";
+  text: string;
+}
+
+export type TFlexImageActionLink = {
+  type: "link";
+  uri: string;
+}
+
 
 export type TAliasNameType = 'customerName' | 'marketName';
 
@@ -201,7 +228,8 @@ export type TMessagePush =
   TMessageLocation |
   TMessageSticker |
   TMessageFile |
-  TMessageFlex
+  TMessageFlex |
+  TMessageFlexImage
 
 export interface IEmoji {
   index: number;
