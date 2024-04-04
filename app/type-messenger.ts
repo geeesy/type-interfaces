@@ -188,6 +188,7 @@ export type TMessageFlexImage = {
   type: "flexImage";
   altText: string;
   contents: TFlexImage;
+  contentsJson: any;
 }
 
 export type TFlexImage = {
