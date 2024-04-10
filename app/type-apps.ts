@@ -164,6 +164,7 @@ export interface IPersonContactInfo {
   tags: string[];
   prefixName: string;
   taxNo: string;
+  taxAddress?: IAddress[];
 }
 
 // STUB: VENDOR
