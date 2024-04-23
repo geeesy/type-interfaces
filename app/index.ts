@@ -471,6 +471,7 @@ import {
   IRichName,
   IRichTemplate,
 } from "./type-line";
+import {IDBGappShopImmu, IGappPaymentEntity, IGappShopEntity, IGappUserEntity} from "./type-gapp-slip";
 
 /* #region FIXME: Marketplace */
 export namespace GeeesyMarketplace {
@@ -1759,6 +1760,12 @@ export namespace GappApi {
   export type OrderLink = GappBiz.OrderLink;
   export type OrderSalePage = GappBiz.OrderLink;
   export type OrderGappMed = GappBiz.OrderLink;
+}
+
+export namespace GappSlip {
+  export type CreateShopGappMethod = IGappShopEntity & IGappUserEntity ;
+  export type ShopGappMethod = IGappShopEntity & IGappUserEntity  & IDBGappShopImmu;
+  export type paymentGappMethod = IGappPaymentEntity;
 }
 
 export * as IMarketplace from './type-marketplace';
