@@ -53,4 +53,5 @@ export interface IGappPackageEntity {
     packagePrice: number;
     packageAmount: number;
     isRecommend: boolean;
+    hasArchived: boolean;
 }
