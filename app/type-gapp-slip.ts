@@ -46,6 +46,7 @@ export interface IGappUserEntity {
 
 // ANCHOR: GAPP SLIP PACKAGE | Entity (1/3)
 export interface IGappPackageEntity {
+    packageId: string;
     packageName: string;
     packageType: string;
     packageIndex: number;
