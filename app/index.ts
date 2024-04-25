@@ -1763,9 +1763,9 @@ export namespace GappApi {
 }
 
 export namespace GappSlip {
-  export type CreateShopGappMethod = IGappShopEntity & IGappUserEntity ;
-  export type ShopGappMethod = IGappShopEntity & IGappUserEntity  & IDBGappShopImmu;
-  export type paymentGappMethod = IGappPaymentEntity;
+  export type CreateShopGappMethod = IGappShopEntity & IGappUserEntity & IDBLogTime;
+  export type ShopGappMethod = IGappShopEntity & IGappUserEntity  & IDBGappShopImmu & IDBLogTime;
+  export type PaymentGappMethod = IGappPaymentEntity & IDBLogTime;
 }
 
 export * as IMarketplace from './type-marketplace';
