@@ -114,3 +114,8 @@ export interface ISlipData {
   transRef: string;
   transTime: string;
 }
+
+
+/**
+ * REGISTER SHOP SLIP VERIFY
+ */
