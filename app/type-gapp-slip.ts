@@ -35,6 +35,7 @@ export interface IGappShopEntity {
     shopPaymentData: IGappPaymentEntity[];
     shopTotalAmount: number;
     shopTotalAmountPerMonth: number;
+    isShopCompleted: boolean; // False in first time
 }
 
 // ANCHOR: GAPP SHOP | Entity (3/3)
