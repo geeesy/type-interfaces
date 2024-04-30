@@ -103,6 +103,7 @@ export interface ICompanyContactInfo {
   companyRegisNo: string;
   hasVatRegistration: boolean;
   companyTaxInfo?: ICompanyTaxInfo;
+  taxAddress?: IAddress[];
 }
 
 export interface ICompanyBoard {
