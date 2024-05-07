@@ -393,8 +393,8 @@ import {
   IShippingMethodEntityImmu
 } from './type-shipping';
 
-import {IAnalytics} from './interfaces';
-import {IInventoryExport, IOrderStatusExport, ITimeStamp} from './type-data';
+import { IAnalytics } from './interfaces';
+import { IInventoryExport, IOrderStatusExport, ITimeStamp } from './type-data';
 import {
   ICountFacebookPostRow,
   ICreateFacebookProductRow,
@@ -442,7 +442,7 @@ import {
   IPartnerData,
   IPartnerDataImmu
 } from './type-affiliate';
-import {IDBReplyHasArchived, IDBReplyId, IReplyData, IReplyDataLine, IReplyTemplate} from './type-reply';
+import { IDBReplyHasArchived, IDBReplyId, IReplyData, IReplyDataLine, IReplyTemplate } from './type-reply';
 import {
   IConversation,
   IDBConversationImmu,
@@ -451,9 +451,9 @@ import {
   ISocialChatMessage,
   ISocialChatMessageSender
 } from './type-messenger';
-import {IDBPackageImmu, IPackageBusinessData, IPackageCount, IPackageData} from "./type-package";
-import {INewsletterData} from "./type-newsletter";
-import {ICatalogData, ICatalogEntity, ICatalogEntityImmu} from './type-catalog';
+import { IDBPackageImmu, IPackageBusinessData, IPackageCount, IPackageData } from './type-package';
+import { INewsletterData } from './type-newsletter';
+import { ICatalogData, ICatalogEntity, ICatalogEntityImmu } from './type-catalog';
 import {
   IExtendSlipData,
   IReqVerifyPaymentData,
@@ -462,22 +462,22 @@ import {
   IReturnSlipSuccess,
   ISlipSettingData
 } from './type-slip';
-import {ILogsData} from "./type-log";
+import { ILogsData } from './type-log';
 import {
   IMemberFromLine, IMemberId,
   IRichMenu, IRichMenuDefault,
   IRichMenuId,
   IRichMenuLineId, IRichMenuSaleChannelId, IRichMenuSub,
   IRichName,
-  IRichTemplate,
-} from "./type-line";
+  IRichTemplate
+} from './type-line';
 import {
   IDBGappShopImmu,
   IGappPackageEntity,
   IGappPaymentEntity,
   IGappShopEntity,
-  IGappUserEntity
-} from "./type-gapp-slip";
+  IGappUserEntity, IPayPackageDB, IPayPackageEntity
+} from './type-gapp-slip';
 
 /* #region FIXME: Marketplace */
 export namespace GeeesyMarketplace {
@@ -1771,8 +1771,11 @@ export namespace GappApi {
 export namespace GappSlip {
   export type PackageGappMethod = IGappPackageEntity & IDBLogTime;
   export type CreateShopGappMethod = IGappShopEntity & IGappUserEntity & IDBLogTime;
-  export type ShopGappMethod = IGappShopEntity & IGappUserEntity  & IDBGappShopImmu & IDBLogTime;
+  export type ShopGappMethod = IGappShopEntity & IGappUserEntity & IDBGappShopImmu & IDBLogTime;
   export type PaymentGappMethod = IGappPaymentEntity & IDBLogTime;
+  export type CreatePayPackage = IPayPackageEntity & IDBLogTime;
+  export type UpdatePayPackage = CreatePayPackage
+  export type PayPackage = IPayPackageDB & IPayPackageEntity & IDBLogTime;
 }
 
 export * as IMarketplace from './type-marketplace';
