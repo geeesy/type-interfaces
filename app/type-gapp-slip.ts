@@ -55,4 +55,27 @@ export interface IGappPackageEntity {
     packageAmount: number;
     isRecommend: boolean;
     hasArchived: boolean;
+    expiryDate: string
+}
+
+// ANCHOR: GAPP PAY PACKAGE
+
+export enum StatusPayOfPackage {
+  PAY0_AwaitingPayment = 'AWAITING_PAYMENT',
+  PAY1_CompletedPayment = 'COMPLETED_PAYMENT',
+  PAY_Canceled = 'CANCELED',
+}
+
+export interface IPayPackageDB{
+      payId: string;
+      payNumber: string;
+      status: StatusPayOfPackage;
+}
+export interface IPayPackageEntity {
+    gappPackageId: string;
+    gappPackageMonth: number;
+    paymentMethodAttribute: string;
+    paymentMethodType: number;
+    amount: boolean;
+    expiryDate: string;
 }
