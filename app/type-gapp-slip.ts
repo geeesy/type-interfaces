@@ -71,6 +71,9 @@ export interface IPayPackageDB{
       paymentRowId: string;
       paymentRowNumber: string;
       paymentRowStatus: StatusPayOfPackage;
+      createdDay:string
+      createdMonth:string
+      createdYear:string
 }
 export interface IPayPackageEntity {
     shopId: string;
