@@ -73,6 +73,8 @@ export interface IPayPackageDB{
       paymentRowStatus: StatusPayOfPackage;
 }
 export interface IPayPackageEntity {
+    shopId: string;
+    transRef: number;
     gappPackageId: string;
     gappPackageMonth: number;
     paymentAttachmentData: IPaymentAttachmentData
