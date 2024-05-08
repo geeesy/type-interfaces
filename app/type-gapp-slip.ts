@@ -5,6 +5,7 @@ import {
     IPaymentMethodTypePromptPay
 } from "./type-payment";
 import {PaymentMethodType} from "./enum-const";
+import {IPaymentAttachmentData} from "./type-order";
 
 // ANCHOR: PAYMENT | Entity (1/1)
 export interface IGappPaymentEntity {
@@ -67,15 +68,15 @@ export enum StatusPayOfPackage {
 }
 
 export interface IPayPackageDB{
-      payId: string;
-      payNumber: string;
-      status: StatusPayOfPackage;
+      paymentRowId: string;
+      paymentRowNumber: string;
+      paymentRowStatus: StatusPayOfPackage;
 }
 export interface IPayPackageEntity {
     gappPackageId: string;
     gappPackageMonth: number;
-    paymentMethodAttribute: string;
-    paymentMethodType: number;
+    paymentAttachmentData: IPaymentAttachmentData
+    paymentConfirmedData: IGappPaymentEntity
     amount: boolean;
     expiryDate: string;
 }
