@@ -76,9 +76,12 @@ export interface ISubscriptionDB {
     createdYear: number
 }
 
-export interface ISubscriptionEntity {
+export interface ISubscriptionIdentity {
     uid: string;
     shopId: string;
+}
+
+export interface ISubscriptionEntity {
     transRef: number;
     gappPackageId: string;
     gappPackageMonth: number;
