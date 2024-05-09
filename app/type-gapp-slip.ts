@@ -76,6 +76,7 @@ export interface IPayPackageDB{
       createdYear:string
 }
 export interface IPayPackageEntity {
+    uid: string;
     shopId: string;
     transRef: number;
     gappPackageId: string;
