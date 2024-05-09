@@ -9,14 +9,14 @@ import {IPaymentAttachmentData} from "./type-order";
 
 // ANCHOR: PAYMENT | Entity (1/1)
 export interface IGappPaymentEntity {
-  paymentId: string;
-  paymentIconUrl: string;
-  paymentAliasName: string;
-  note: string;
-  paymentMethodAttribute: IPaymentMethodTypeDeposit | IPaymentMethodTypeCod | IPaymentMethodTypeCash | IPaymentMethodTypePromptPay;
-  paymentMethodType: PaymentMethodType.BankDeposit | PaymentMethodType.COD | PaymentMethodType.Cash | PaymentMethodType.PromptPay;
-  isActive: boolean;
-  hasArchived: boolean;
+    paymentId: string;
+    paymentIconUrl: string;
+    paymentAliasName: string;
+    note: string;
+    paymentMethodAttribute: IPaymentMethodTypeDeposit | IPaymentMethodTypeCod | IPaymentMethodTypeCash | IPaymentMethodTypePromptPay;
+    paymentMethodType: PaymentMethodType.BankDeposit | PaymentMethodType.COD | PaymentMethodType.Cash | PaymentMethodType.PromptPay;
+    isActive: boolean;
+    hasArchived: boolean;
 }
 
 export interface IDBGappShopImmu {
@@ -62,19 +62,20 @@ export interface IGappPackageEntity {
 // ANCHOR: GAPP PAY PACKAGE
 
 export enum StatusSubscription {
-  PAY0_AwaitingPayment = 'AWAITING_PAYMENT',
-  PAY1_CompletedPayment = 'COMPLETED_PAYMENT',
-  PAY_Canceled = 'CANCELED',
+    PAY0_AwaitingPayment = 'AWAITING_PAYMENT',
+    PAY1_CompletedPayment = 'COMPLETED_PAYMENT',
+    PAY_Canceled = 'CANCELED',
 }
 
-export interface IOrderPackageDB{
-      subscriptionId: string;
-      subscriptionNumber: string;
-      subscriptionStatus: StatusSubscription;
-      createdDay:number
-      createdMonth:number
-      createdYear:number
+export interface IOrderPackageDB {
+    subscriptionId: string;
+    subscriptionNumber: string;
+    subscriptionStatus: StatusSubscription;
+    createdDay: number
+    createdMonth: number
+    createdYear: number
 }
+
 export interface IOrderPackageEntity {
     uid: string;
     shopId: string;
@@ -84,5 +85,19 @@ export interface IOrderPackageEntity {
     paymentAttachmentData: IPaymentAttachmentData
     paymentConfirmedData: IGappPaymentEntity
     amount: number;
+    expiryDate: string;
+}
+
+export interface IPlanEntity {
+    planId: string;
+    subscriptionId: string;
+    packageId: string;
+    packageName: string;
+    packageType: string;
+    packagePrice: number;
+    packageIndex: number;
+    packageAmount: number;
+    isRecommend: boolean;
+    hasArchived: boolean;
     expiryDate: string;
 }
