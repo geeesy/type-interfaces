@@ -83,6 +83,6 @@ export interface IOrderPackageEntity {
     gappPackageMonth: number;
     paymentAttachmentData: IPaymentAttachmentData
     paymentConfirmedData: IGappPaymentEntity
-    amount: boolean;
+    amount: number;
     expiryDate: string;
 }
