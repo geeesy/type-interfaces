@@ -71,9 +71,9 @@ export interface IOrderPackageDB{
       orderId: string;
       orderNumber: string;
       orderStatus: StatusOrderPackage;
-      createdDay:string
-      createdMonth:string
-      createdYear:string
+      createdDay:number
+      createdMonth:number
+      createdYear:number
 }
 export interface IOrderPackageEntity {
     uid: string;
