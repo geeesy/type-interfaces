@@ -61,27 +61,28 @@ export interface IGappPackageEntity {
 
 // ANCHOR: GAPP PAY PACKAGE
 
-export enum StatusPayOfPackage {
+export enum StatusOrderPackage {
   PAY0_AwaitingPayment = 'AWAITING_PAYMENT',
   PAY1_CompletedPayment = 'COMPLETED_PAYMENT',
   PAY_Canceled = 'CANCELED',
 }
 
-export interface IPayPackageDB{
-      paymentRowId: string;
-      paymentRowNumber: string;
-      paymentRowStatus: StatusPayOfPackage;
-      createdDay:string
-      createdMonth:string
-      createdYear:string
+export interface IOrderPackageDB{
+      orderId: string;
+      orderNumber: string;
+      orderStatus: StatusOrderPackage;
+      createdDay:number
+      createdMonth:number
+      createdYear:number
 }
-export interface IPayPackageEntity {
+export interface IOrderPackageEntity {
+    uid: string;
     shopId: string;
     transRef: number;
     gappPackageId: string;
     gappPackageMonth: number;
     paymentAttachmentData: IPaymentAttachmentData
     paymentConfirmedData: IGappPaymentEntity
-    amount: boolean;
+    amount: number;
     expiryDate: string;
 }
