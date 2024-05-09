@@ -59,7 +59,7 @@ export interface IGappPackageEntity {
     expiryDate: string
 }
 
-// ANCHOR: GAPP PAY PACKAGE
+// ANCHOR: GAPP SUBSCRIPTION PACKAGE
 
 export enum StatusSubscription {
     PAY0_AwaitingPayment = 'AWAITING_PAYMENT',
@@ -67,7 +67,7 @@ export enum StatusSubscription {
     PAY_Canceled = 'CANCELED',
 }
 
-export interface IOrderPackageDB {
+export interface ISubscriptionDB {
     subscriptionId: string;
     subscriptionNumber: string;
     subscriptionStatus: StatusSubscription;
@@ -76,16 +76,19 @@ export interface IOrderPackageDB {
     createdYear: number
 }
 
-export interface IOrderPackageEntity {
+export interface ISubscriptionEntity {
     uid: string;
     shopId: string;
     transRef: number;
     gappPackageId: string;
     gappPackageMonth: number;
-    paymentAttachmentData: IPaymentAttachmentData
-    paymentConfirmedData: IGappPaymentEntity
     amount: number;
     expiryDate: string;
+}
+
+export interface ISubscriptionPayment {
+    paymentConfirmedData: IGappPaymentEntity
+    paymentAttachmentData: IPaymentAttachmentData
 }
 
 export interface IPlanEntity {

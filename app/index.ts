@@ -476,7 +476,11 @@ import {
   IGappPackageEntity,
   IGappPaymentEntity,
   IGappShopEntity,
-  IGappUserEntity, IOrderPackageDB, IOrderPackageEntity, IPlanEntity
+  IGappUserEntity,
+  IPlanEntity,
+  ISubscriptionDB,
+  ISubscriptionEntity,
+  ISubscriptionPayment
 } from './type-gapp-slip';
 
 /* #region FIXME: Marketplace */
@@ -1773,9 +1777,9 @@ export namespace GappSlip {
   export type CreateShop = IGappShopEntity & IGappUserEntity & IDBLogTime;
   export type Shop = IGappShopEntity & IGappUserEntity & IDBGappShopImmu & IDBLogTime;
   export type PaymentMethod = IGappPaymentEntity & IDBLogTime;
-  export type CreateSubscription = IOrderPackageEntity & IDBLogTime;
-  export type UpdateSubscription = CreateSubscription
-  export type Subscription = IOrderPackageDB & IOrderPackageEntity & IDBLogTime;
+  export type CreateSubscription = ISubscriptionEntity & ISubscriptionPayment;
+  export type UpdateSubscription = ISubscriptionPayment
+  export type Subscription = ISubscriptionDB & ISubscriptionEntity & IDBLogTime;
   export type Plan = IPlanEntity & IDBLogTime;
 }
 
