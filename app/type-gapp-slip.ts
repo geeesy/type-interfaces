@@ -61,16 +61,16 @@ export interface IGappPackageEntity {
 
 // ANCHOR: GAPP PAY PACKAGE
 
-export enum StatusOrderPackage {
+export enum StatusSubscription {
   PAY0_AwaitingPayment = 'AWAITING_PAYMENT',
   PAY1_CompletedPayment = 'COMPLETED_PAYMENT',
   PAY_Canceled = 'CANCELED',
 }
 
 export interface IOrderPackageDB{
-      orderId: string;
-      orderNumber: string;
-      orderStatus: StatusOrderPackage;
+      subscriptionId: string;
+      subscriptionNumber: string;
+      subscriptionStatus: StatusSubscription;
       createdDay:number
       createdMonth:number
       createdYear:number
