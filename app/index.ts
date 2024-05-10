@@ -1779,7 +1779,7 @@ export namespace GappSlip {
   export type PaymentMethod = IGappPaymentEntity & IDBLogTime;
   export type CreateSubscription = ISubscriptionIdentity & ISubscriptionEntity & ISubscriptionPayment;
   export type UpdateSubscription = ISubscriptionIdentity & ISubscriptionPayment
-  export type Subscription = ISubscriptionDB & ISubscriptionIdentity & ISubscriptionEntity & IDBLogTime;
+  export type Subscription = ISubscriptionDB & ISubscriptionIdentity & ISubscriptionPayment & ISubscriptionEntity & IDBLogTime;
   export type Plan = IPlanEntity & IDBLogTime;
 }
 
