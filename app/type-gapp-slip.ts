@@ -86,7 +86,7 @@ export interface ISubscriptionIdentity {
 export interface ISubscriptionEntity {
     gappPackageId: string;
     gappPackageMonth: number;
-    amount: number;
+    gappPackageAmount: number;
 }
 
 export interface ISubscriptionPayment {
