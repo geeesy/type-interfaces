@@ -1772,6 +1772,7 @@ export namespace GappApi {
   export type OrderGappMed = GappBiz.OrderLink;
 }
 
+// REVIEW: GAPP SLIP
 export namespace GappSlip {
   export type Package = IGappPackageEntity & IDBLogTime;
   export type CreateShop = IGappShopEntity & IGappUserEntity & IDBLogTime;
