@@ -71,7 +71,6 @@ export interface ISubscriptionDB {
   docNo:string;
   transRef: string;
   subscriptionId: string;
-  subscriptionNumber: string;
   subscriptionStatus: StatusSubscription;
   createdDay: number;
   createdMonth: number;
