@@ -433,8 +433,7 @@ export enum PaymentMethodType {
 
 export type TPromptPay =
     | 'MOBILE'
-    | 'IDENTITYID'
-    | 'EWALLET' ;
+    | 'IDENTITYID';
 
 export enum ShippingMethodType {
   Free = 'free',
