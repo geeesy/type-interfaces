@@ -68,12 +68,14 @@ export enum StatusSubscription {
 }
 
 export interface ISubscriptionDB {
+    transRef: string;
     subscriptionId: string;
     subscriptionNumber: string;
     subscriptionStatus: StatusSubscription;
     createdDay: number
     createdMonth: number
     createdYear: number
+    expiryDate: string;
 }
 
 export interface ISubscriptionIdentity {
@@ -82,11 +84,9 @@ export interface ISubscriptionIdentity {
 }
 
 export interface ISubscriptionEntity {
-    transRef: number;
     gappPackageId: string;
     gappPackageMonth: number;
-    amount: number;
-    expiryDate: string;
+    gappPackageAmount: number;
 }
 
 export interface ISubscriptionPayment {
