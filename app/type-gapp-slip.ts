@@ -19,6 +19,8 @@ export interface IGappPaymentEntity {
     hasArchived: boolean;
 }
 
+
+// ANCHOR: GAPP SHOP | Entity (1/3)
 export interface IDBGappShopImmu {
     shopId: string;
 }
@@ -100,4 +102,20 @@ export interface IPlanEntity {
     isRecommend: boolean;
     hasArchived: boolean;
     expiryDate: string;
+}
+
+export interface IBranchEntity {
+    branchId: string;
+    branchNumber: string;
+}
+
+export interface ISubscriptionEntity {
+    planId: string;
+}
+
+export interface ISlipEntity {
+    amount: number;
+    recordedAt: string;
+    shopId: string;
+    transRef: string;
 }

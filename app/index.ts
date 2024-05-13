@@ -472,11 +472,12 @@ import {
   IRichTemplate
 } from './type-line';
 import {
+  IBranchEntity,
   IDBGappShopImmu,
   IGappPackageEntity,
   IGappPaymentEntity,
   IGappShopEntity,
-  IGappUserEntity, IOrderPackageDB, IOrderPackageEntity, IPlanEntity
+  IGappUserEntity, IOrderPackageDB, IOrderPackageEntity, IPlanEntity, ISlipEntity, ISubscriptionEntity
 } from './type-gapp-slip';
 
 /* #region FIXME: Marketplace */
@@ -1777,6 +1778,9 @@ export namespace GappSlip {
   export type UpdateSubscription = CreateSubscription
   export type Subscription = IOrderPackageDB & IOrderPackageEntity & IDBLogTime;
   export type Plan = IPlanEntity & IDBLogTime;
+  export type ShopBranch = IBranchEntity & IGappShopEntity & IGappUserEntity & IDBGappShopImmu & IDBLogTime;
+  export type Slip = ISlipEntity;
+  export type SlipSubscription = ISubscriptionEntity & ISlipEntity;
 }
 
 export * as IMarketplace from './type-marketplace';
