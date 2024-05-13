@@ -472,14 +472,14 @@ import {
   IRichTemplate
 } from './type-line';
 import {
+  IBranchEntity,
   IDBGappShopImmu,
   IGappPackageEntity,
   IGappPaymentEntity,
-  IGappShopEntity,
+  IGappShopEntity, ISlipEntity, ISubscriptionEntity,
   IGappUserEntity,
   IPlanEntity,
-  ISubscriptionDB,
-  ISubscriptionEntity, ISubscriptionIdentity,
+  ISubscriptionDB,ISubscriptionIdentity,
   ISubscriptionPayment
 } from './type-gapp-slip';
 
@@ -1782,6 +1782,9 @@ export namespace GappSlip {
   export type UpdateSubscription = ISubscriptionIdentity & ISubscriptionPayment
   export type Subscription = ISubscriptionDB & ISubscriptionIdentity & ISubscriptionPayment & ISubscriptionEntity & IDBLogTime;
   export type Plan = IPlanEntity & IDBLogTime;
+  export type ShopBranch = IBranchEntity & IGappShopEntity & IGappUserEntity & IDBGappShopImmu & IDBLogTime;
+  export type Slip = ISlipEntity;
+  export type SlipSubscription = ISubscriptionEntity & ISlipEntity;
 }
 
 export * as IMarketplace from './type-marketplace';
