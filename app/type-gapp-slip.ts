@@ -16,7 +16,6 @@ export interface IGappPaymentEntity {
   paymentMethodAttribute: IPaymentMethodTypeDeposit | IPaymentMethodTypeCod | IPaymentMethodTypeCash | IPaymentMethodTypePromptPay;
   paymentMethodType: PaymentMethodType.BankDeposit | PaymentMethodType.COD | PaymentMethodType.Cash | PaymentMethodType.PromptPay;
   isActive: boolean;
-  hasArchived: boolean;
 }
 
 
