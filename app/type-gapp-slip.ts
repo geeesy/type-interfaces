@@ -118,7 +118,7 @@ export interface IBranchEntity {
 }
 
 export interface ISlipSubscriptionDB {
-    planId: string;
+    subscriptionId: string;
 }
 
 export interface ISlipEntity {
