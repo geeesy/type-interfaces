@@ -126,4 +126,5 @@ export interface ISlipEntity {
     recordedAt: string;
     shopId: string;
     transRef: string;
+    status: string
 }
