@@ -15,8 +15,7 @@ export interface IGappPaymentEntity {
     qrImagesUrl: string
     paymentMethodType: PaymentMethodType.BankDeposit | PaymentMethodType.COD | PaymentMethodType.Cash | PaymentMethodType.PromptPay;
     isActive: boolean;
-    promptPayType: TPromptPay,
-    promptPayImagesUrl: string;
+    promptPayType?: TPromptPay,
 }
 
 
@@ -115,7 +114,6 @@ export interface IPlanEntity {
     packageName: string;
     packageType: string;
     packagePrice: number;
-    packageIndex: number;
     packageAmount: number;
     isRecommend: boolean;
     hasArchived: boolean;
