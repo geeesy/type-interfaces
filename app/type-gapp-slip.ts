@@ -1,4 +1,4 @@
-import {BankAccountType, PaymentMethodType, TBankName, TPromptPay} from './enum-const';
+import { BankAccountType, BankWarning, PaymentMethodType, TBankName, TPromptPay } from './enum-const';
 
 // ANCHOR: PAYMENT | Entity (1/1)
 export interface IGappPaymentEntity {
@@ -140,5 +140,6 @@ export interface ISlipEntity {
     recordedAt: string;
     shopId: string;
     transRef: string;
-    status: string
+    status: string;
+    messageStatus: BankWarning | null;
 }
