@@ -141,5 +141,5 @@ export interface ISlipEntity {
     shopId: string;
     transRef: string;
     status: string;
-    messageStatus: BankWarning | null;
+    messageStatus: string
 }
