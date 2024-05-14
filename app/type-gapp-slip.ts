@@ -15,16 +15,21 @@ export interface IGappPaymentEntity {
     qrImagesUrl: string
     paymentMethodType: PaymentMethodType.BankDeposit | PaymentMethodType.COD | PaymentMethodType.Cash | PaymentMethodType.PromptPay;
     isActive: boolean;
-    promptPayType?: TPromptPay,
+    promptPayType: TPromptPay | undefined,
 }
 
 
-// ANCHOR: GAPP SHOP | Entity (1/3)
+// ANCHOR: GAPP SHOP | Entity (1/4)
 export interface IDBGappShopImmu {
     shopId: string;
 }
 
-// ANCHOR: GAPP SHOP | Entity (2/3)
+// ANCHOR: GAPP SHOP | Entity (2/4)
+export interface IGappShopPaymentData {
+    shopPaymentData: IGappPaymentEntity[];
+}
+
+// ANCHOR: GAPP SHOP | Entity (3/4)
 export interface IGappShopEntity {
     shopName: string;
     shopIconUrl: string;
@@ -40,7 +45,7 @@ export interface IGappShopEntity {
     isShopCompleted: boolean; // False in first time
 }
 
-// ANCHOR: GAPP SHOP | Entity (3/3)
+// ANCHOR: GAPP SHOP | Entity (4/4)
 export interface IGappUserEntity {
     uid: string;
     userName: string;
@@ -126,6 +131,7 @@ export interface IBranchEntity {
 }
 
 export interface ISlipSubscriptionDB {
+    planId: string;
     subscriptionId: string;
 }
 
