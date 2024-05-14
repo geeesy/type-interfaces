@@ -131,11 +131,11 @@ export interface IBranchEntity {
 }
 
 export interface ISlipSubscriptionDB {
-    planId: string;
     subscriptionId: string;
 }
 
 export interface ISlipEntity {
+    planId: string;
     amount: number;
     recordedAt: string;
     shopId: string;
