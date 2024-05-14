@@ -39,7 +39,6 @@ export interface IGappShopEntity {
     shopPackageType: string;
     shopPackageCount: number;
     shopPackageAmount: number;
-    shopPaymentData: IGappPaymentEntity[];
     shopTotalAmount: number;
     shopTotalAmountPerMonth: number;
     isShopCompleted: boolean; // False in first time
