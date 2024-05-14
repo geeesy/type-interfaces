@@ -1776,7 +1776,7 @@ export namespace GappSlip {
   export type Package = IGappPackageEntity & IDBLogTime;
   export type CreateShop = IGappShopEntity & IGappShopPaymentData & IGappUserEntity & IDBLogTime;
   export type Shop = IGappShopEntity & IGappUserEntity & IDBGappShopImmu & IDBLogTime;
-  export type ShopDetail = IGappShopPaymentData & IGappShopEntity & IGappUserEntity & IDBGappShopImmu & IDBLogTime;
+  export type ShopWithPayment = IGappShopPaymentData & IGappShopEntity & IGappUserEntity & IDBGappShopImmu & IDBLogTime;
   export type PaymentMethod = IGappPaymentEntity & IDBLogTime;
   export type CreateSubscription = ISubscriptionIdentity & ISubscriptionEntity;
   export type UpdateSubscription = ISubscriptionIdentity & ISubscriptionPayment
