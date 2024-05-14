@@ -1095,3 +1095,8 @@ export enum BankErrorCodes {
   INCORRECT_QR , // error code 404 In Correct QR code
   NO_SLIP_DATA , // error code 404 No slip data from API
 }
+
+export enum SlipPackageType {
+  FREE = 'ฟรี',
+  START = 'เริ่มต้น'
+}

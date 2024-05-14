@@ -1,115 +1,125 @@
-import {
-  IPaymentMethodTypeCash,
-  IPaymentMethodTypeCod,
-  IPaymentMethodTypeDeposit,
-  IPaymentMethodTypePromptPay
-} from './type-payment';
-import { PaymentMethodType } from './enum-const';
-import { IPaymentAttachmentData } from './type-order';
+import {BankAccountType, PaymentMethodType, TBankName, TPromptPay} from './enum-const';
 
 // ANCHOR: PAYMENT | Entity (1/1)
 export interface IGappPaymentEntity {
-  paymentId: string;
-  paymentIconUrl: string;
-  paymentAliasName: string;
-  note: string;
-  paymentMethodAttribute: IPaymentMethodTypeDeposit | IPaymentMethodTypeCod | IPaymentMethodTypeCash | IPaymentMethodTypePromptPay;
-  paymentMethodType: PaymentMethodType.BankDeposit | PaymentMethodType.COD | PaymentMethodType.Cash | PaymentMethodType.PromptPay;
-  isActive: boolean;
+    paymentId: string;
+    paymentAliasName: string;
+    note: string;
+    bankAccountType: BankAccountType.Current | BankAccountType.Saving;
+    bankAccountName: TBankName;
+    accountName: string;
+    accountNo: string;
+    branchName: string;
+    caption: string;
+    hasQRImagesUrl: boolean,
+    qrImagesUrl: string
+    paymentMethodType: PaymentMethodType.BankDeposit | PaymentMethodType.COD | PaymentMethodType.Cash | PaymentMethodType.PromptPay;
+    isActive: boolean;
+    promptPayType: TPromptPay,
+    promptPayImagesUrl: string;
 }
 
 
 // ANCHOR: GAPP SHOP | Entity (1/3)
 export interface IDBGappShopImmu {
-  shopId: string;
+    shopId: string;
 }
 
 // ANCHOR: GAPP SHOP | Entity (2/3)
 export interface IGappShopEntity {
-  shopName: string;
-  shopIconUrl: string;
-  shopBusinessType: string;
-  shopBusinessGroup: string;
-  shopPhoneNumber: string;
-  shopPackageType: string;
-  shopPackageCount: number;
-  shopPackageAmount: number;
-  shopPaymentData: IGappPaymentEntity[];
-  shopTotalAmount: number;
-  shopTotalAmountPerMonth: number;
-  isShopCompleted: boolean; // False in first time
+    shopName: string;
+    shopIconUrl: string;
+    shopBusinessType: string;
+    shopBusinessGroup: string;
+    shopPhoneNumber: string;
+    shopPackageType: string;
+    shopPackageCount: number;
+    shopPackageAmount: number;
+    shopPaymentData: IGappPaymentEntity[];
+    shopTotalAmount: number;
+    shopTotalAmountPerMonth: number;
+    isShopCompleted: boolean; // False in first time
 }
 
 // ANCHOR: GAPP SHOP | Entity (3/3)
 export interface IGappUserEntity {
-  uid: string;
-  userName: string;
-  userIconUrl: string;
+    uid: string;
+    userName: string;
+    userIconUrl: string;
 }
 
 // ANCHOR: GAPP SLIP PACKAGE | Entity (1/3)
 export interface IGappPackageEntity {
-  packageId: string;
-  packageName: string;
-  packageType: string;
-  packageIndex: number;
-  packagePrice: number;
-  packageAmount: number;
-  isRecommend: boolean;
-  hasArchived: boolean;
-  expiryDate: string;
+    packageId: string;
+    packageName: string;
+    packageType: string;
+    packageIndex: number;
+    packagePrice: number;
+    packageAmount: number;
+    isRecommend: boolean;
+    hasArchived: boolean;
+    expiryDate: string;
 }
 
 // ANCHOR: GAPP SUBSCRIPTION PACKAGE
 
 export enum StatusSubscription {
-  SUB0_AwaitingPayment = 'AWAITING_PAYMENT',
-  SUB1_Success = 'SUCCESS',
-  SUB_Decline = 'DECLINE',
+    SUB0_AwaitingPayment = 'AWAITING_PAYMENT',
+    SUB1_Success = 'SUCCESS',
+    SUB_Decline = 'DECLINE',
 }
 
 export interface ISubscriptionDB {
-  docNo:string;
-  transRef: string;
-  subscriptionId: string;
-  subscriptionStatus: StatusSubscription;
-  createdDay: number;
-  createdMonth: number;
-  createdYear: number;
-  expiryDate: string;
+    docNo: string;
+    transRef: string;
+    subscriptionId: string;
+    subscriptionStatus: StatusSubscription;
+    createdDay: number;
+    createdMonth: number;
+    createdYear: number;
+    expiryDate: string;
 }
 
 export interface ISubscriptionIdentity {
-  uid: string;
-  shopId: string;
+    uid: string;
+    shopId: string;
 }
 
 export interface ISubscriptionEntity {
-  gappPackageId: string;
-  gappPackageMonth: number;
-  gappPackageAmount: number;
-  gappPackageName: string;
-  gappPackageType: string;
-  gappPackagePrice: number;
+    gappPackageId: string;
+    gappPackageMonth: number;
+    gappPackageAmount: number;
+    gappPackageName: string;
+    gappPackageType: string;
+    gappPackagePrice: number;
 }
 
+export interface ISubscriptionPaymentAttachmentData {
+    paymentImageUrl: string;
+    paymentTime: string;
+    paymentDate: string;
+    paymentPrice: number;
+    note: string;
+}
+
+
 export interface ISubscriptionPayment {
-  paymentConfirmedData: IGappPaymentEntity;
-  paymentAttachmentData: IPaymentAttachmentData;
+    paymentConfirmedData: IGappPaymentEntity;
+    paymentAttachmentData: ISubscriptionPaymentAttachmentData;
 }
 
 export interface IPlanEntity {
-  planId: string;
-  subscriptionId: string;
-  packageId: string;
-  packageName: string;
-  packageType: string;
-  packagePrice: number;
-  packageIndex: number;
-  packageAmount: number;
-  isRecommend: boolean;
-  hasArchived: boolean;
-  expiryDate: string;
+    planId: string;
+    subscriptionId: string;
+    packageId: string;
+    packageName: string;
+    packageType: string;
+    packagePrice: number;
+    packageIndex: number;
+    packageAmount: number;
+    isRecommend: boolean;
+    hasArchived: boolean;
+    expiryDate: string;
 }
 
 export interface IBranchEntity {
