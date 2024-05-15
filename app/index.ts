@@ -1793,7 +1793,7 @@ export namespace GappSlip {
         & IDBLogTime;
     export type Plan = IPlanEntity & IDBLogTime;
     export type PlanDisplay = IPlanDisplay & IDBLogTime;
-    export type ShopBranch = IBranchEntity & IGappShopEntity & IGappUserEntity & IDBGappShopImmu & IDBLogTime;
+    export type ShopBranch = IBranchEntity & IDBLogTime;
     export type Slip = ISlipEntity;
     export type SlipSubscription = ISlipSubscriptionDB & ISlipEntity;
 }
