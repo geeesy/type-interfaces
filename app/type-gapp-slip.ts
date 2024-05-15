@@ -131,7 +131,7 @@ export interface IPlanDisplay extends IPlanEntity {
 
 export interface IBranchEntity {
     branchId: string;
-    branchNumber: string;
+    branchNumber: string; // 0000
 }
 
 export interface ISlipSubscriptionDB {
