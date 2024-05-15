@@ -118,6 +118,8 @@ export interface IPlanEntity {
     packageName: string;
     packageType: string;
     packagePrice: number;
+    shopPackageCount: number;
+    planAPICount: number;
     packageAmount: number;
     isRecommend: boolean;
     hasArchived: boolean;
