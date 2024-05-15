@@ -124,6 +124,11 @@ export interface IPlanEntity {
     expiryDate: string;
 }
 
+export interface IPlanDisplay extends IPlanEntity {
+    isExpired: boolean;
+}
+
+
 export interface IBranchEntity {
     branchId: string;
     branchNumber: string;
