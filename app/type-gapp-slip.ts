@@ -140,6 +140,10 @@ export interface ISlipSubscriptionDB {
     subscriptionId: string;
 }
 
+export interface ISlipVerifyDB{
+    branchId: string
+}
+
 export interface ISlipEntity {
     planId: string;
     amount: number;
