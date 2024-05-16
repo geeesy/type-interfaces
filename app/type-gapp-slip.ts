@@ -9,7 +9,7 @@ export interface IGappPaymentEntity {
     bankAccountName: TBankName;
     accountName: string;
     accountNo: string;
-    branchName: string;
+    bankBranchName: string;
     caption: string;
     hasQRImagesUrl: boolean,
     qrImagesUrl: string
