@@ -60,6 +60,8 @@ export interface IAddress {
   isPrimary?: boolean;
   taxInvoiceName: string
   taxInvoiceNo?: string
+  isHq?: boolean;
+  branch?: ICompanyTaxBranch;
 }
 
 export interface ISocial {
