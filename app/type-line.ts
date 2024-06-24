@@ -187,7 +187,10 @@ export interface ILineData {
   channelId: string;
   channelSecret: string;
   channelAccessToken: string;
+  channelIdLineLogin: string;
+  channelSecretLineLogin: string;
   channelWebHook: string;
+  callbackUrl: string;
 }
 
 // ^ interface rich menu
