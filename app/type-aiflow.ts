@@ -1,0 +1,1 @@
+export type TFeature = 'CHATBOT' | 'BROADCAST' | 'CHAT'

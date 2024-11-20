@@ -482,6 +482,7 @@ import {
     ISubscriptionDB, ISubscriptionIdentity,
     ISubscriptionPayment, ISlipSubscriptionDB, IGappShopPaymentData, IPlanDisplay, ISlipVerifyDB
 } from './type-gapp-slip';
+import { TFeature } from './type-aiflow';
 
 /* #region FIXME: Marketplace */
 export namespace GeeesyMarketplace {
@@ -1798,6 +1799,12 @@ export namespace GappSlip {
     export type Slip = ISlipVerifyDB & ISlipEntity;
     export type SlipSubscription = ISlipSubscriptionDB & ISlipEntity;
 }
+
+// REVIEW: AIFLOW
+export namespace AIFLOW {
+    export type Feature = TFeature;
+}
+
 
 export * as IMarketplace from './type-marketplace';
 export * as IConsole from './type-console';
