@@ -47,3 +47,7 @@ export interface IApiSupplierParams extends IApiCompanyParams {
 export type TApiErrorModule = 'INVENTORY' | 'ERROR'
 
 
+export interface IApiAccountParams {
+  ownerId: string;
+  accountId: string;
+}
