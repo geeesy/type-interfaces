@@ -109,6 +109,7 @@ import {
     IPaymentMethod
 } from './type-console';
 import {
+    IApiAccountParams,
     IApiCompanyFacebookParams,
     IApiCompanyParams,
     IApiSupplierParams,
@@ -430,6 +431,18 @@ import {
     IGTMData
 } from './type-facebook';
 import {
+     ICampaignConfigAttrAff,
+     ICampaignCountAff,
+     ICampaignDataAff,
+     ICampaignDataImmuAff,
+     ICampaignDateTypeAff,
+     IConversionDataImmuAff,
+     IListPartnerDataAff,
+     IPartnerCommissionDataAff,
+     IPartnerDataAff,
+     IPartnerDataImmuAff
+} from './type-gapp-aff';
+import {
     ICampaignConfigAttr,
     ICampaignCount,
     ICampaignData,
@@ -482,6 +495,7 @@ import {
     ISubscriptionDB, ISubscriptionIdentity,
     ISubscriptionPayment, ISlipSubscriptionDB, IGappShopPaymentData, IPlanDisplay, ISlipVerifyDB
 } from './type-gapp-slip';
+import {IAccount, IOwner, IParamCreateAccount, IParamCreateOwner} from "./type-gapp-account";
 
 /* #region FIXME: Marketplace */
 export namespace GeeesyMarketplace {
@@ -1796,6 +1810,55 @@ export namespace GappSlip {
     export type ShopBranch = IBranchEntity & IDBLogTime;
     export type Slip = ISlipVerifyDB & ISlipEntity;
     export type SlipSubscription = ISlipSubscriptionDB & ISlipEntity;
+}
+
+
+// REVIEW: GAPP AFFILIATE
+export namespace GappAffiliate {
+    export type CreateAccount = IParamCreateAccount
+    export type Account = IParamCreateAccount & IAccount & IDBLogCreate & IDBLogUpdate
+    export type CreateOwner = IParamCreateOwner
+    export type Owner = IParamCreateOwner & IOwner & IDBLogCreate & IDBLogUpdate
+
+    // $AFFILIATE
+    export type CreateCampaign = ICampaignDataAff &
+        ICampaignDateTypeAff &
+        IApiAccountParams &
+        ICampaignConfigAttrAff &
+        IDBCompanyActivityLog &
+        ICampaignCountAff;
+    export type Campaign = ICampaignDataImmuAff &
+        ICampaignDataAff &
+        ICampaignDateTypeAff &
+        ICampaignConfigAttrAff &
+        IApiAccountParams &
+        IDBCompanyActivityLog &
+        ICampaignCountAff;
+    export type CreatePartner = IPartnerDataAff &
+        IPartnerDataImmuAff &
+        IDBCompanyActivityLog;
+    export type ListPartner = IListPartnerDataAff &
+        IPartnerDataImmuAff &
+        IDBPartner &
+        IDBCompanyActivityLog;
+    export type Partner = IPartnerDataAff &
+        IPartnerDataImmuAff &
+        IDBPartner &
+        IDBCompanyActivityLog;
+    export type Conversion = ICampaignDateTypeAff &
+        IPartnerCommissionDataAff &
+        IConversionDataImmuAff &
+        ICampaignConfigAttrAff &
+        IOrderAffiliateData &
+        IApiAccountParams &
+        IDBCompanyActivityLog;
+    export type ListConversion = ICampaignDateTypeAff &
+        IPartnerCommissionDataAff &
+        IConversionDataImmuAff &
+        ICampaignConfigAttrAff &
+        IOrderAffiliateData &
+        IApiAccountParams &
+        IDBCompanyActivityLog;
 }
 
 export * as IMarketplace from './type-marketplace';
