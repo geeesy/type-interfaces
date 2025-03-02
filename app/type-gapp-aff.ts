@@ -9,6 +9,7 @@ import {SaleChannelSubType} from "./enum-const";
 
 export type TTypeCampaignAff =
   | 'SALEPAGE'
+  | 'SALEPAGE_URL'
   | 'LEADPAGE'
   | 'CONTENTPAGE'
   | 'COUPON_CODE'
